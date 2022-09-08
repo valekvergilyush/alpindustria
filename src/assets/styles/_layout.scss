@@ -3,7 +3,37 @@
 }
 
 .container {
-	max-width: 980px;
-	margin: auto;
-	box-sizing: content-box;
+	--container-padding: 5rem; // 80px
+	--container-max-width: 120rem; // 1920px
+
+	width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
+	margin-inline: auto;
+
+	@media (max-width: $desktop-lg) {
+		@include smoothValue('--container-padding', 64px, 80px, $desktop, $desktop-lg);
+	}
+	@media (max-width: $desktop) {
+		@include smoothValue('--container-padding', 40px, 64px, $laptop-lg, $desktop);
+	}
+	@media (max-width: $laptop-lg) {
+		@include smoothValue('--container-padding', 32px, 40px, $laptop, $laptop-lg);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--container-padding', 24px, 32px, $tablet, $laptop);
+	}
+	@media (max-width: $tablet) {
+		@include smoothValue('--container-padding', 16px, 24px, $mobile, $tablet);
+	}
+}
+
+.page {
+	$this: &;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+	&__main {
+		flex-grow: 1;
+	}
 }
