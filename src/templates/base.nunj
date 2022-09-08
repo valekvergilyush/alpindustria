@@ -9,6 +9,8 @@
 
 		{{ headScripts() }}
 
+		<link rel="preload" href="assets/fonts/SuisseIntl-Book.woff2" as="font" type="font/woff2" crossorigin>
+
 		{% block stylesheets %}
 			<link rel="stylesheet" href="assets/css/styles.css?hash" />
 		{% endblock stylesheets %}
