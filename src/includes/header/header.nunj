@@ -1,7 +1,5 @@
-{% from "../components/menu/menu.nunj" import menu %}
-
-<div class="header">
-	<div class="container">
-		{{ menu() }}
+<header class="page__header header">
+	<div class="header__container container">
+		<p class="h5">Шапка</p>
 	</div>
-</div>
+</header>
