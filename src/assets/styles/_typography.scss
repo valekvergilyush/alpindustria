@@ -1,0 +1,152 @@
+.h1 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h1);
+	line-height: 1;
+}
+
+.h2 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h2);
+	line-height: 1;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h2', 80px, 120px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h2', 54px, 80px, $mobile, $tablet);
+		line-height: 1.3;
+	}
+}
+
+.h3 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h3);
+	line-height: 1;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h3', 64px, 92px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h3', 38px, 64px, $mobile, $tablet);
+		line-height: 1.05;
+	}
+}
+
+.h4 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h4);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h4', 56px, 72px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h4', 32px, 56px, $mobile, $tablet);
+	}
+}
+
+.h5 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h5);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h5', 30px, 44px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h5', 22px, 30px, $mobile, $tablet);
+	}
+}
+
+.h6 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h6);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h6', 24px, 28px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h6', 18px, 24px, $mobile, $tablet);
+	}
+}
+
+.h7 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h7);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-h7', 16px, 18px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-h7', 14px, 16px, $mobile, $tablet);
+	}
+}
+
+.s1 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-s1);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-s1', 30px, 44px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-s1', 22px, 30px, $mobile, $tablet);
+	}
+}
+
+.s2 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-s2);
+	line-height: 1.3;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-s2', 22px, 32px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-s2', 16px, 22px, $mobile, $tablet);
+	}
+}
+
+.p1 {
+	font-size: var(--font-size-p1);
+	line-height: 1.33;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-p1', 18px, 24px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-p1', 16px, 18px, $mobile, $tablet);
+		line-height: 24px;
+	}
+}
+
+.p2 {
+	font-size: var(--font-size-p2);
+	line-height: 1.4;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-p2', 16px, 20px, $laptop, $desktop);
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-p2', 14px, 16px, $mobile, $tablet);
+		line-height: 24px;
+	}
+}
+
+.p3 {
+	font-size: var(--font-size-p3);
+	line-height: 1.5;
+	@media (max-width: $desktop) {
+		@include smoothValue('--font-size-p3', 14px, 16px, $laptop, $desktop);
+		line-height: 24px;
+	}
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-p3', 12px, 14px, $mobile, $tablet);
+		line-height: 24px;
+	}
+	@media (max-width: $mobile-only) {
+		line-height: 16px;
+	}
+}
+
+.p4 {
+	font-size: var(--font-size-p4);
+	line-height: 1.33;
+	@media (max-width: $laptop) {
+		@include smoothValue('--font-size-p4', 10px, 12px, $mobile, $tablet);
+		line-height: 16px;
+	}
+}
