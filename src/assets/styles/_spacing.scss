@@ -1,0 +1,118 @@
+$spacing-variants: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9;
+
+:root {
+	.p-0 {
+		padding: 0;
+	}
+	.px-0 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.py-0 {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.m-0 {
+		margin: 0;
+	}
+	.mx-0 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.my-0 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.space-x-0 > * + * {
+		margin-left: 0;
+	}
+	.space-y-0 > * + * {
+		margin-top: 0;
+	}
+
+	@each $i in $spacing-variants {
+		.m-#{$i} {
+			margin: var(--vr-#{$i});
+		}
+		.mx-#{$i} {
+			margin-left: var(--vr-#{$i});
+			margin-right: var(--vr-#{$i});
+		}
+		.my-#{$i} {
+			margin-top: var(--vr-#{$i});
+			margin-bottom: var(--vr-#{$i});
+		}
+		.mt-#{$i} {
+			margin-top: var(--vr-#{$i});
+		}
+		.mb-#{$i} {
+			margin-bottom: var(--vr-#{$i});
+		}
+		.ml-#{$i} {
+			margin-left: var(--vr-#{$i});
+		}
+		.mr-#{$i} {
+			margin-right: var(--vr-#{$i});
+		}
+
+		.p-#{$i} {
+			padding: var(--vr-#{$i});
+		}
+		.px-#{$i} {
+			padding-left: var(--vr-#{$i});
+			padding-right: var(--vr-#{$i});
+		}
+		.py-#{$i} {
+			padding-top: var(--vr-#{$i});
+			padding-bottom: var(--vr-#{$i});
+		}
+		.pt-#{$i} {
+			padding-top: var(--vr-#{$i});
+		}
+		.pb-#{$i} {
+			padding-bottom: var(--vr-#{$i});
+		}
+		.pl-#{$i} {
+			padding-left: var(--vr-#{$i});
+		}
+		.pr-#{$i} {
+			padding-right: var(--vr-#{$i});
+		}
+
+		.space-x-#{$i} > * + * {
+			margin-left: var(--vr-#{$i});
+		}
+		.space-y-#{$i} > * + * {
+			margin-top: var(--vr-#{$i});
+		}
+	}
+
+	@media (max-width: $desktop) {
+		@include smoothValue('--vr-4', 32px, 48px, $laptop-lg, $desktop);
+		@include smoothValue('--vr-5', 48px, 56px, $laptop-lg, $desktop);
+		@include smoothValue('--vr-6', 40px, 64px, $laptop-lg, $desktop);
+		@include smoothValue('--vr-7', 72px, 96px, $laptop-lg, $desktop);
+		@include smoothValue('--vr-8', 96px, 124px, $laptop-lg, $desktop);
+	}
+	@media (max-width: $laptop-lg) {
+		@include smoothValue('--vr-2', 20px, 24px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-3', 20px, 32px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-5', 32px, 48px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-6', 24px, 40px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-7', 56px, 72px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-8', 72px, 96px, $laptop, $laptop-lg);
+		@include smoothValue('--vr-9', 124px, 176px, $laptop, $laptop-lg);
+	}
+	@media (max-width: $tablet) {
+		@include smoothValue('--vr-1', 8px, 16px, $mobile, $tablet);
+		@include smoothValue('--vr-2', 16px, 20px, $mobile, $tablet);
+		@include smoothValue('--vr-3', 16px, 20px, $mobile, $tablet);
+		@include smoothValue('--vr-4', 24px, 32px, $mobile, $tablet);
+		@include smoothValue('--vr-6', 32px, 24px, $mobile, $tablet);
+		@include smoothValue('--vr-7', 40px, 56px, $mobile, $tablet);
+		@include smoothValue('--vr-8', 48px, 72px, $mobile, $tablet);
+		@include smoothValue('--vr-9', 64px, 124px, $mobile, $tablet);
+	}
+}
