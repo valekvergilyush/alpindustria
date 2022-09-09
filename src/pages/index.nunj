@@ -5,4 +5,5 @@
 
 {% block mainContent %}
 	{% include "../includes/hero/hero.nunj" %}
+	{% include "../includes/catalog/catalog.nunj" %}
 {% endblock %}
