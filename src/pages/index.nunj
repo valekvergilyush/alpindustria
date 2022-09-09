@@ -4,19 +4,5 @@
 {% set htmlClassMods = '_index' %}
 
 {% block mainContent %}
-	<div class="container">
-		<p class="h1">Заголовок .h1</p>
-		<p class="h2">Заголовок .h2</p>
-		<p class="h3">Заголовок .h3</p>
-		<p class="h4">Заголовок .h4</p>
-		<p class="h5">Заголовок .h5</p>
-		<p class="h6">Заголовок .h6</p>
-		<p class="h7">Заголовок .h7</p>
-		<p class="s1">Подзаголовок .s1</p>
-		<p class="s2">Подзаголовок .s2</p>
-		<p class="p1">Текст .p1</p>
-		<p class="p2">Текст .p2</p>
-		<p class="p3">Текст .p3</p>
-		<p class="p4">Текст .p4</p>
-	</div>
+	{% include "../includes/hero/hero.nunj" %}
 {% endblock %}
