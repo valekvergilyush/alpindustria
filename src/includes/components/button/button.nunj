@@ -1,8 +1,14 @@
+{% from "../icon/icon.nunj" import icon %}
+
 {% macro button(props) %}
-<button class="button{% if props.className %} {{ props.className }}{% endif %}">
-	{{ props.children }}
-	{% if props.chevronRight %}
-	<span class="button__chevron-right">&gt;</span>
-	{% endif %}
-</button>
+	<button class="{% if props.className %}{{ props.className }}{% endif %} button" type="{% if props.type %}{{ props.type }}{% else %}button{% endif %}"{% if props.attr %} {{ props.attr }}{% endif %}>
+		{{ props.children }}
+		{% if props.icon %}
+			{{ icon({
+				iconName: props.icon,
+				className: 'button__icon',
+				attr: props.iconData
+			}) }}
+		{% endif %}
+	</button>
 {% endmacro %}
