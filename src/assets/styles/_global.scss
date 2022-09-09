@@ -80,9 +80,9 @@
 }
 
 .transition-active {
-	transition: color $default-transition-duration $default-transition-function,
-		background $default-transition-duration $default-transition-function,
-		border-color $default-transition-duration $default-transition-function;
+	transition: color $fast-transition-duration $default-transition-function,
+		background $fast-transition-duration $default-transition-function,
+		border-color $fast-transition-duration $default-transition-function;
 }
 
 .transition-hover {
@@ -99,4 +99,12 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
+}
+
+.ttu {
+	text-transform: uppercase;
+}
+
+.tac {
+	text-align: center;
 }
