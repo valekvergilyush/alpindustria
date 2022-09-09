@@ -33,6 +33,13 @@
 		flex-direction: column;
 		min-height: 100%;
 	}
+	&__header {
+		position: fixed;
+		z-index: 5;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 	&__main {
 		flex-grow: 1;
 	}
