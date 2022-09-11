@@ -1,4 +1,120 @@
 .header {
-	padding: 20px 0;
-	background: #ccc;
+	$this: &;
+	display: flex;
+	height: var(--header-height);
+	color: var(--white);
+	transition: height $fast-transition-duration $default-transition-function;
+	box-sizing: border-box;
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: rem(20);
+	}
+	&__left,
+	&__actions {
+		display: flex;
+		flex-basis: 50%;
+	}
+	&__actions {
+		justify-content: flex-end;
+		column-gap: rem(6);
+	}
+	&__logo-link {
+		display: flex;
+	}
+	&__logo-icon {
+		transition: width $fast-transition-duration $default-transition-function,
+			height $fast-transition-duration $default-transition-function;
+		&._short {
+			display: none;
+			@media (max-width: $tablet) {
+				display: block;
+				width: 71px;
+				height: 36px;
+			}
+			@media (max-width: $mobile) {
+				width: 50px;
+				height: 26px;
+			}
+		}
+		&._full {
+			width: rem(244);
+			height: rem(27);
+			@media (max-width: $laptop) {
+				width: 226px;
+				height: 25px;
+			}
+			@media (max-width: $tablet) {
+				display: none;
+			}
+		}
+	}
+	&__actions-item {
+		&:last-child {
+			margin-right: 0 - rem(8);
+		}
+		&._user {
+			@media (max-width: $mobile-lg) {
+				display: none;
+			}
+		}
+	}
+	&__actions-link {
+		--size: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(50);
+		height: rem(50);
+		transition: transform $fast-transition-duration $default-transition-function;
+		will-change: transform scale;
+		svg {
+			--size: 2rem; // 32px
+			width: var(--size);
+			height: var(--size);
+			transition: width $fast-transition-duration $default-transition-function,
+				height $fast-transition-duration $default-transition-function;
+			@media (max-width: $tablet) {
+				--size: 28px;
+			}
+			@media (max-width: $mobile) {
+				--size: 25px;
+			}
+		}
+		&._cart {
+			position: relative;
+			#{$this} {
+				&__cart-number {
+					--size: 1rem; // 16px
+					&:empty {
+						display: none;
+					}
+					position: absolute;
+					top: em(7, 10);
+					right: em(6, 10);
+					display: block;
+					min-width: var(--size);
+					height: var(--size);
+					padding-left: em(2.5, 10);
+					padding-right: em(3, 10);
+					border-radius: 50%;
+					color: var(--white);
+					background-color: var(--red-light);
+					line-height: var(--size);
+					text-align: center;
+					box-sizing: border-box;
+					word-break: keep-all;
+				}
+			}
+		}
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	&._fixed {
+		color: var(--blue-dark);
+		background-color: var(--white);
+		border-bottom: 1px solid var(--blue-dark);
+	}
 }

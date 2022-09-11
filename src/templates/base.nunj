@@ -1,26 +1,28 @@
 {% from "./_head-scripts.nunj" import headScripts %}
 <!DOCTYPE html>
-<html>
+<html lang="{{ siteLang }}" class="page{% if htmlClassMods %} {{ htmlClassMods }}{% endif %}">
 	<head>
 		<meta charset="utf-8" />
-		<title>{% block title %}Project{% endblock %}</title>
+		<title>{% block title %}{{ siteName }}{% endblock %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 		{{ headScripts() }}
 
+		<link rel="preload" href="assets/fonts/SuisseIntl-Book.woff2" as="font" type="font/woff2" crossorigin>
+
 		{% block stylesheets %}
 			<link rel="stylesheet" href="assets/css/styles.css?hash" />
-		{% endblock stylesheets %}
+		{% endblock %}
 	</head>
-	<body>
+	<body class="page__body">
 
-		<div class="wrapper">
+		<div class="page__wrapper wrapper">
 			{% block content %}
-			{% endblock content %}
+			{% endblock %}
 		</div>
 
 		{% block scripts %}
 			<script src="assets/js/bundle.js?hash"></script>
-		{% endblock scripts %}
+		{% endblock %}
 	</body>
 </html>

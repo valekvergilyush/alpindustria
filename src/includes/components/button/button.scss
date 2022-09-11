@@ -1,35 +1,52 @@
 .button {
-	@extend .transition-active;
-	display: flex;
+	@include reset-btn();
+	display: inline-flex;
 	align-items: center;
-	justify-content: center;
-	border: 2px solid rgba(#000, 0.3);
-	height: 54px;
-	font-weight: 700;
-	cursor: pointer;
-	font-size: 16px;
-	letter-spacing: -0.5px;
-	padding: 1px 20px 0;
+	box-sizing: border-box;
 
-	&:hover {
-		background-color: rgba(#000, 0.3);
-		color: rgba(#000, 0.8);
-		transition: none;
+	&._burger {
+		--size: 4rem; // 64px
+		width: var(--size);
+		height: var(--size);
 	}
-
-	&:active {
-		background-color: rgba(#000, 0.25);
-		border-color: rgba(#000, 0.25);
-
-		.button__chevron-right {
-			transform: translateX(1px);
-			transition: none;
+	&._quick-filter {
+		@extend .animated;
+		height: rem(40);
+		padding: 0 rem(15);
+		border: 1px solid currentColor;
+		border-radius: 100vmax;
+		padding-top: em(6, 18);
+		@media (max-width: $mobile-lg) {
+			height: 32px;
+		}
+		&:hover {
+			border-color: var(--blue-dark);
+			color: var(--white);
+			background-color: var(--blue-dark);
 		}
 	}
-
-	&__chevron-right {
-		margin-left: 5px;
-		transition: transform 0.1s ease-out,
-			fill $default-transition-duration $default-transition-function;
+	&._layout {
+		--size: 2rem; // 32px
+		width: var(--size);
+		height: var(--size);
+		justify-content: center;
+		border: 1px solid currentColor;
+		border-radius: 50%;
+		font-size: 12px;
+		line-height: 1;
+		@media (max-width: $mobile-only) {
+			font-size: 10px;
+		}
+		&:hover {
+			border-color: var(--blue-dark);
+			color: var(--white);
+			background-color: var(--blue-dark);
+		}
+		&._active {
+			border-color: var(--blue-dark);
+			color: var(--white);
+			background-color: var(--blue-dark);
+			pointer-events: none;
+		}
 	}
 }

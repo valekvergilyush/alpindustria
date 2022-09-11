@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin b {
 	display: block;
 	content: ' ';
@@ -286,5 +288,63 @@
 @mixin phone {
 	@at-root html._phone #{&} {
 		@content;
+	}
+}
+
+@mixin reset-btn {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	color: inherit;
+	background: 0;
+	font: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@function em($px, $context: 16) {
+	@return calc(round(calc($px / $context) * 1em * 10000) / 10000);
+}
+
+@function rem($px, $context: 16) {
+	@return calc(round(calc($px / $context) * 1rem * 10000) / 10000);
+}
+
+@function vw($px, $width: 1920) {
+	@return calc(round(math.div($px, $width) * 100vw * 10000) / 10000);
+}
+
+@function vh($px, $height: 1080) {
+	@return calc(round(math.div($px, $height) * 100vh * 10000) / 10000);
+}
+
+@function strip-unit($number) {
+	@if (type-of($number) == 'number' and not unitless($number)) {
+		@return math.div($number, $number * 0 + 1);
+	}
+	@return $number;
+}
+
+@mixin smoothValue(
+	$prop,
+	$min,
+	$max,
+	$minViewPort: $mobile,
+	$maxViewPort: $desktop,
+	$minScreen: true
+) {
+	@if $minScreen {
+		@media (min-width: $minViewPort) {
+			#{$prop}: $max;
+		}
+	}
+	@media (min-width: $minViewPort) and (max-width: ($maxViewPort - 1)) {
+		#{$prop}: calc(
+			#{$min} + #{strip-unit($max - $min)} *
+				((100vw - #{$minViewPort}) / (#{strip-unit($maxViewPort - $minViewPort)}))
+		);
+	}
+	@media (max-width: ($minViewPort - 1)) {
+		#{$prop}: $min;
 	}
 }

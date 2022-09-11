@@ -1,0 +1,23 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set categories = [
+	'Одежда',
+	'Лыжный туризм',
+	'Туристическое снаряжение',
+	'Книги',
+	'Обувь',
+	'Альпинистское снаряжение',
+	'Сноуборды',
+	'Горные лыжи'
+] %}
+
+<ul class="hero__quick-filter quick-filter">
+	{% for caterogyName in categories %}
+		<li class="quick-filter__item h7">
+			{{ button({
+				className: 'quick-filter__button _quick-filter ttu',
+				children: caterogyName
+			}) }}
+		</li>
+	{% endfor %}
+</ul>

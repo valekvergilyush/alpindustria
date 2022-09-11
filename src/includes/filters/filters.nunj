@@ -1,0 +1,44 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="hero__filters filters">
+	<div class="filters__container container">
+		<div class="filters__left">
+			<button class="filters__button _filter ttu" type="button">
+				<span>Фильтры</span>
+				{{ icon({
+					iconName: 'filter',
+					className: 'filters__button-icon _filter',
+					attr: 'width="32" height="32"'
+				}) }}
+				{{ icon({
+					iconName: 'close-filter',
+					className: 'filters__button-icon _close',
+					attr: 'width="32" height="32"'
+				}) }}
+			</button>
+			{{ button({
+				className: 'filters__button _search',
+				attr: 'aria-label="Поиск"',
+				icon: 'search',
+				iconData: 'width="32" height="32"'
+			}) }}
+		</div>
+		<p class="filters__items-number p2">242 товара</p>
+		<p class="filters__layout-controls p2">
+			<span>Сетка</span>
+			{{ button({
+				children: '2',
+				className: 'filters__layout-button _layout'
+			}) }}
+			{{ button({
+				children: '3',
+				className: 'filters__layout-button _layout'
+			}) }}
+			{{ button({
+				children: '4',
+				className: 'filters__layout-button _layout _active'
+			}) }}
+		</p>
+	</div>
+</div>

@@ -9,7 +9,7 @@ gsap.defaults({
 	overwrite: 'auto',
 });
 
-class ProjectApp {
+class AlpIndustry {
 	constructor() {
 		this.env = require('./utils/env').default;
 		this.utils = require('./utils/utils').default;
@@ -22,10 +22,19 @@ class ProjectApp {
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
 		});
+
+		const calculateVh = () => {
+			const vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', vh + 'px');
+		};
+
+		calculateVh();
+		window.addEventListener('resize', calculateVh);
+		window.addEventListener('orientationchange', calculateVh);
 	}
 }
 
-global.ProjectApp = new ProjectApp();
+global.ProjectApp = new AlpIndustry();
 
 if (module.hot) {
 	module.hot.accept();

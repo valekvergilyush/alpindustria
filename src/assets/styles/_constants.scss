@@ -1,2 +1,89 @@
-$default-transition-duration: 0.4s;
+$default-transition-duration: 0.3s;
+$fast-transition-duration: 0.15s;
 $default-transition-function: ease-out;
+
+$blue-dark: #324481;
+$blue-light: #415c98;
+$green-dark: #03836e;
+$green-light: #0b994b;
+$red-dark: #b51f35;
+$red-light: #c9364c;
+$violet-dark: #6f2876;
+$violet-light: #8b4192;
+$gray-dark: #342c25;
+$gray-light: #f5f1ee;
+$white: #fefefe;
+
+// ======= BREAKPOINTS =======
+$desktop-lg: 1920px;
+$desktop: 1728px;
+$laptop-lg: 1440px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobile-only: 767px;
+$mobile-lg: 640px;
+$mobile: 375px;
+$mobile-sm: 320px;
+
+:root {
+	// ======= FONTS =======
+	--font-family-suisse: 'SuisseIntl-Book', Arial, sans-serif;
+	--font-size-h1: 11.875rem; // 190px
+	--font-size-h2: 7.5rem; // 120px
+	--font-size-h3: 5.75rem; // 92px
+	--font-size-h4: 4.5rem; // 72px
+	--font-size-h5: 2.75rem; // 44px
+	--font-size-h6: 1.75rem; // 28px
+	--font-size-h7: 1.125rem; // 18px
+	--font-size-s1: 2.75rem; // 44px
+	--font-size-s2: 2rem; // 32px
+	--font-size-p1: 1.5rem; // 24px
+	--font-size-p2: 1.25rem; // 20px
+	--font-size-p3: 1rem; // 16px
+	--font-size-p4: 0.75rem; // 12px
+
+	// ======= COLORS =======
+	--blue-dark: #{$blue-dark};
+	--blue-light: #{$blue-light};
+	--green-dark: #{$green-dark};
+	--green-light: #{$green-light};
+	--red-dark: #{$red-dark};
+	--red-light: #{$red-light};
+	--violet-dark: #{$violet-dark};
+	--violet-light: #{$violet-light};
+	--gray-dark: #{$gray-dark};
+	--gray-light: #{$gray-light};
+	--white: #{$white};
+
+	// ======= SPACING VARIANTS =======
+	--vr-0: 0.5rem; // 8px
+	--vr-1: 1rem; // 16px
+	--vr-2: 1.5rem; // 24px
+	--vr-3: 2rem; // 32px
+	--vr-4: 3rem; // 48px
+	--vr-5: 3.5rem; // 56px
+	--vr-6: 4rem; // 64px
+	--vr-7: 6rem; // 96px
+	--vr-8: 7.75rem; // 124px
+	--vr-9: 11rem; // 176px
+
+	// ======= DEFAULTS =======
+	--default-text-color: var(--blue-dark);
+	--default-bg-color: var(--gray-light);
+
+	--default-font-family: Arial, sans-serif;
+	--default-font-style: normal;
+	--default-font-size: var(--font-size-p3);
+	--default-font-weight: 400;
+	--default-line-height: 1.5;
+
+	--100vh: calc(var(--vh, 1vh) * 100);
+
+	--header-height: 4.5rem; // 72px
+	@media (max-width: $laptop) {
+		--header-height: 64px;
+	}
+	@media (max-width: $mobile) {
+		--header-height: 56px;
+	}
+}

@@ -1,0 +1,8 @@
+.page {
+	$this: &;
+	&._index {
+		#{$this}__main {
+			background: 0;
+		}
+	}
+}

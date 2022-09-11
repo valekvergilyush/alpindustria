@@ -1,0 +1,32 @@
+.quick-filter {
+	--gap: 1rem; // 16px
+	display: flex;
+	column-gap: var(--gap);
+	row-gap: var(--gap);
+	flex-wrap: wrap;
+	padding-top: rem(16);
+	padding-bottom: rem(32);
+	@media (max-width: $laptop-lg) {
+		max-width: 794px;
+	}
+	@media (max-width: $laptop) {
+		max-width: 727px;
+	}
+	@media (max-width: $tablet) {
+		--gap: 8px;
+		max-width: 703px;
+		padding-top: 8px;
+	}
+	@media (max-width: $mobile-lg) {
+		flex-wrap: nowrap;
+		overflow: auto;
+		padding-left: var(--container-padding);
+		padding-right: var(--container-padding);
+		box-sizing: border-box;
+	}
+	&__item {
+		@media (max-width: $mobile-lg) {
+			flex-shrink: 0;
+		}
+	}
+}

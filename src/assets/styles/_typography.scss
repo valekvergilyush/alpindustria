@@ -1,0 +1,165 @@
+.h1 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h1);
+	line-height: 1;
+	font-weight: var(--default-font-weight);
+}
+
+.h2 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h2);
+	line-height: 1;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h2: 80px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h2: 54px;
+		line-height: 1.3;
+	}
+}
+
+.h3 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h3);
+	line-height: 1;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h3: 64px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h3: 38px;
+		line-height: 1.05;
+	}
+}
+
+.h4 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h4);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h4: 56px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h4: 32px;
+	}
+}
+
+.h5 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h5);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h5: 30px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h5: 22px;
+	}
+}
+
+.h6 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h6);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h6: 24px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h6: 18px;
+	}
+}
+
+.h7 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-h7);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-h7: 16px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-h7: 14px;
+	}
+}
+
+.s1 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-s1);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-s1: 30px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-s1: 22px;
+	}
+}
+
+.s2 {
+	font-family: var(--font-family-suisse);
+	font-size: var(--font-size-s2);
+	line-height: 1.3;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-s2: 22px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-s2: 16px;
+	}
+}
+
+.p1 {
+	font-size: var(--font-size-p1);
+	line-height: 1.33;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-p1: 18px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-p1: 16px;
+		line-height: 24px;
+	}
+}
+
+.p2 {
+	font-size: var(--font-size-p2);
+	line-height: 1.4;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-p2: 16px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-p2: 14px;
+		line-height: 24px;
+	}
+}
+
+.p3 {
+	font-size: var(--font-size-p3);
+	line-height: 1.5;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $laptop) {
+		--font-size-p3: 16px;
+		line-height: 24px;
+	}
+	@media (max-width: $mobile-only) {
+		--font-size-p3: 12px;
+		line-height: 24px;
+	}
+	@media (max-width: $mobile-only) {
+		line-height: 16px;
+	}
+}
+
+.p4 {
+	font-size: var(--font-size-p4);
+	line-height: 1.33;
+	font-weight: var(--default-font-weight);
+	@media (max-width: $mobile-only) {
+		--font-size-p4: 10px;
+		line-height: 16px;
+	}
+}

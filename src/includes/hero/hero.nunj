@@ -1,0 +1,17 @@
+<section class="page__hero hero">
+	<picture>
+		<source media="(max-width: 375px)" srcset="assets/images/hero-shop/hero-shop-xs.webp, assets/images/hero-shop/hero-shop-xs@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 375px)" srcset="assets/images/hero-shop/hero-shop-xs.jpg, assets/images/hero-shop/hero-shop-xs@2x.jpg 2x">
+		<source media="(max-width: 768px)" srcset="assets/images/hero-shop/hero-shop-sm.webp, assets/images/hero-shop/hero-shop-sm@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 768px)" srcset="assets/images/hero-shop/hero-shop-sm.jpg, assets/images/hero-shop/hero-shop-sm@2x.jpg 2x">
+		<source media="(max-width: 1024px)" srcset="assets/images/hero-shop/hero-shop-md.webp, assets/images/hero-shop/hero-shop-md@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 1024px)" srcset="assets/images/hero-shop/hero-shop-md.jpg, assets/images/hero-shop/hero-shop-md@2x.jpg 2x">
+		<source srcset="assets/images/hero-shop/hero-shop.webp, assets/images/hero-shop/hero-shop@2x.webp 2x" type="image/webp">
+		<img class="hero__bg-img" src="assets/images/hero-shop/hero-shop.jpg" srcset="assets/images/hero-shop/hero-shop@2x.jpg 2x" width="1728" height="720" alt="" aria-hidden="true">
+	</picture>
+	<div class="hero__container container">
+		<h1 class="hero__title h4 ttu tac">Магазин</h1>
+		{% include "../quick-filter/quick-filter.nunj" %}
+	</div>
+	{% include "../filters/filters.nunj" %}
+</section>

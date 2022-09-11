@@ -2,16 +2,22 @@
 @import 'constants';
 @import 'lib/base';
 @import 'fonts';
+@import 'typography';
 @import 'reset';
 @import 'global';
+@import 'spacing';
 @import 'layout';
-// @import 'controls';
 
 // ======= COMPONENTS =======
 @import '../../includes/components/button/button';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
+@import '../../includes/footer/footer';
+@import '../../includes/quick-filter/quick-filter';
+@import '../../includes/filters/filters';
+@import '../../includes/hero/hero';
+@import '../../includes/catalog/catalog';
 
 // ======= PAGES =======
-@import 'pages/main';
+@import 'pages/index';

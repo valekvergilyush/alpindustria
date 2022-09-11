@@ -1,0 +1,5 @@
+<section class="page__catalog catalog">
+	<div class="catalog__container container">
+		<p class="h3">Каталог</p>
+	</div>
+</section>
