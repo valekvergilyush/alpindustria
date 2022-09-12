@@ -4,8 +4,8 @@
 <div class="hero__filters filters">
 	<div class="filters__container container">
 		<div class="filters__left">
-			<button class="filters__button _filter ttu" type="button">
-				<span>Фильтры</span>
+			<button class="filters__button _filter ttu" type="button" aria-labelledby="filter-button-label">
+				<span id="filter-button-label">Фильтры</span>
 				{{ icon({
 					iconName: 'filter',
 					className: 'filters__button-icon _filter',
@@ -25,20 +25,30 @@
 			}) }}
 		</div>
 		<p class="filters__items-number p2">242 товара</p>
-		<p class="filters__layout-controls p2">
-			<span>Сетка</span>
-			{{ button({
-				children: '2',
-				className: 'filters__layout-button _layout'
-			}) }}
-			{{ button({
-				children: '3',
-				className: 'filters__layout-button _layout'
-			}) }}
-			{{ button({
-				children: '4',
-				className: 'filters__layout-button _layout _active'
-			}) }}
-		</p>
+		<div class="filters__layout">
+			<p class="p2" id="layout-label">Сетка</p>
+			<div class="filters__layout-buttons" aria-labelledby="layout-label">
+				{{ button({
+					children: '1',
+					className: 'filters__layout-button _layout',
+					attr: 'data-cols="1"'
+				}) }}
+				{{ button({
+					children: '2',
+					className: 'filters__layout-button _layout',
+					attr: 'data-cols="2"'
+				}) }}
+				{{ button({
+					children: '3',
+					className: 'filters__layout-button _layout',
+					attr: 'data-cols="3"'
+				}) }}
+				{{ button({
+					children: '4',
+					className: 'filters__layout-button _layout _active',
+					attr: 'data-cols="4"'
+				}) }}
+			</div>
+		</div>
 	</div>
 </div>

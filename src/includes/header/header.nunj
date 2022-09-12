@@ -32,7 +32,7 @@
 		<ul class="header__actions">
 			{% for action in userActions %}
 				<li class="header__actions-item {{ action.className }}">
-					<a href="#" class="header__actions-link {{ action.className }}">
+					<a href="#" class="header__actions-link {{ action.className }}" aria-label="{{ action.name }}">
 						{{ icon({
 							iconName: action.icon,
 							attr: action.iconData

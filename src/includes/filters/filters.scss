@@ -10,30 +10,81 @@
 	}
 	@media (max-width: $mobile-lg) {
 		--filters-height: 56px;
+		--offset-height: 32px;
+		position: relative;
+		padding-bottom: var(--offset-height);
+		margin-bottom: calc(0px - var(--offset-height));
 	}
 	&__container {
 		display: flex;
 		align-items: center;
+		@media (max-width: $mobile-lg) {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 	}
 	&__left,
-	&__layout-controls {
+	&__layout {
 		display: flex;
 		align-items: center;
 		flex-basis: 50%;
 	}
-	&__layout-controls {
-		justify-content: flex-end;
-		span {
-			margin-right: rem(23);
+	&__left {
+		@media (max-width: $mobile-lg) {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+			justify-content: space-between;
 		}
 	}
+	&__layout {
+		justify-content: flex-end;
+		@media (max-width: $mobile-lg) {
+			grid-column: 2/3;
+			grid-row: 1/2;
+			justify-content: center;
+		}
+		p {
+			margin-right: rem(23);
+			@media (max-width: $mobile-lg) {
+				display: none;
+			}
+		}
+	}
+	&__layout-buttons {
+		display: flex;
+		column-gap: rem(8);
+	}
 	&__layout-button {
-		&:not(:last-child) {
-			margin-right: rem(8);
+		&:first-of-type {
+			display: none;
+			@media (max-width: $mobile-lg) {
+				display: inline-flex;
+			}
+		}
+		&:nth-of-type(3) {
+			@media (max-width: $mobile-lg) {
+				display: none;
+			}
+		}
+		@media (max-width: $laptop-sm) {
+			&:last-of-type {
+				display: none;
+			}
 		}
 	}
 	&__items-number {
 		flex-shrink: 0;
+		@media (max-width: $mobile-lg) {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: var(--offset-height);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--blue-light);
+		}
 	}
 	&__button {
 		@include reset-btn();
@@ -59,14 +110,31 @@
 		}
 		&._filter {
 			margin-right: rem(50);
+			@media (max-width: $mobile-lg) {
+				margin-right: 0;
+				margin-left: -13px;
+				span {
+					display: none;
+				}
+			}
+		}
+		&._search {
+			@media (max-width: $mobile-lg) {
+				margin-right: -13px;
+			}
 		}
 		&:hover {
 			color: var(--blue-dark);
 		}
 	}
-	&__button-icon {
+	&__button-icon,
+	.button__icon {
 		width: rem(32);
 		height: rem(32);
+		@media (max-width: $mobile-lg) {
+			width: 25px;
+			height: 25px;
+		}
 		&._close {
 			display: none;
 		}

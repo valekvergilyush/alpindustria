@@ -16,7 +16,9 @@ class AlpIndustry {
 		this.classes = {
 			Signal: require('./classes/Signal').default,
 		};
-		this.components = {};
+		this.components = {
+			Catalog: require('../../includes/catalog/catalog').default,
+		};
 		this.helpers = {};
 		this.modules = {};
 		document.addEventListener('DOMContentLoaded', () => {

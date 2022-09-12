@@ -3,10 +3,8 @@
 {% block content %}
 	{% include "../includes/header/header.nunj" %}
 
-	<main class="page__main">
-		{% block mainContent %}
-		{% endblock %}
-	</main>
+	{% block mainContent %}
+	{% endblock %}
 
 	{% include "../includes/footer/footer.nunj" %}
 {% endblock %}

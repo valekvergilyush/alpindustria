@@ -1,6 +1,8 @@
 $default-transition-duration: 0.3s;
 $fast-transition-duration: 0.15s;
 $default-transition-function: ease-out;
+$card-button-transition-duration: 0.4s;
+$card-button-transition-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 $blue-dark: #324481;
 $blue-light: #415c98;
@@ -19,6 +21,7 @@ $desktop-lg: 1920px;
 $desktop: 1728px;
 $laptop-lg: 1440px;
 $laptop: 1024px;
+$laptop-sm: 992px;
 $tablet: 768px;
 $mobile-only: 767px;
 $mobile-lg: 640px;
