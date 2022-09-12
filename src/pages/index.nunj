@@ -4,6 +4,8 @@
 {% set htmlClassMods = '_index' %}
 
 {% block mainContent %}
-	{% include "../includes/hero/hero.nunj" %}
-	{% include "../includes/catalog/catalog.nunj" %}
+	<main class="page__main">
+		{% include "../includes/hero/hero.nunj" %}
+		{% include "../includes/catalog/catalog.nunj" %}
+	</main>
 {% endblock %}
