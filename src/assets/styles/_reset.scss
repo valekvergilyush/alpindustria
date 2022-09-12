@@ -16,7 +16,7 @@ body {
 html {
 	font-size: 16px;
 	@media (min-width: ($desktop-lg + 1px)) {
-		font-size: clamp(16px, vw(16, 1920), 26px);
+		font-size: clamp(16px, vw(16, 1920), 20px);
 	}
 }
 
