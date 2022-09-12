@@ -1,8 +1,12 @@
 .button {
 	@include reset-btn();
 	display: inline-flex;
+	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
+	&__icon {
+		pointer-events: none;
+	}
 
 	&._burger {
 		--size: 4rem; // 64px
@@ -47,6 +51,35 @@
 			color: var(--white);
 			background-color: var(--blue-dark);
 			pointer-events: none;
+		}
+	}
+	&._product-card {
+		--height: 4.5rem; // 72px
+		width: 100%;
+		height: var(--height);
+		color: var(--white);
+		background-color: var(--blue-dark);
+		font-size: var(--font-size-h7);
+		text-transform: uppercase;
+		@media (max-width: $laptop) {
+			--font-size-h7: 16px;
+		}
+		@media (max-width: $mobile-only) {
+			--font-size-h7: 14px;
+		}
+	}
+	&._wishlist {
+		--size: 3.125rem; // 50px
+		width: var(--size);
+		height: var(--size);
+		background-image: inline('heart.svg');
+		background-size: rem(32);
+		background-position: center;
+		background-repeat: no-repeat;
+		&:hover,
+		&._active {
+			background-size: rem(28);
+			background-image: inline('heart-full.svg');
 		}
 	}
 }
