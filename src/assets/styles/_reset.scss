@@ -30,7 +30,6 @@ body {
 	color: var(--default-text-color);
 	background: var(--default-bg-color);
 
-	word-break: break-all;
 	@include mobile {
 		-webkit-text-size-adjust: 100%;
 	}
