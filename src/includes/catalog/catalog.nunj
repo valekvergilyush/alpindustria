@@ -29,5 +29,10 @@
 				{{ productCard(product) }}
 			</li>
 		{% endfor %}
+		<li class="catalog__item _promo-1">
+			{% include "../catalog-promo/promo-1.nunj" %}
+		</li>
+		<li class="catalog__item catalog-promo _empty _promo-2"></li>
+		<li class="catalog__item catalog-promo _empty _promo-3"></li>
 	</ul>
 </section>

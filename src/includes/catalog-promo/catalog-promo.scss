@@ -1,0 +1,86 @@
+.catalog-promo {
+	$this: &;
+	--card-height: 33.75rem; // 540px
+	--empty-logo-size: 22.5rem 18rem;
+	--card-padding: 1rem; // 16px
+	--card-margin: 0.5rem; // 8px
+	position: relative;
+	width: 100%;
+	min-height: var(--card-height);
+	box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
+		-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
+	overflow: hidden;
+	@media (max-width: $laptop-lg) {
+		--card-height: 450px;
+	}
+	@media (max-width: $laptop) {
+		--card-height: 420px;
+		--empty-logo-size: 200px 160px;
+	}
+	@media (max-width: $mobile-lg) {
+		--card-height: 320px;
+		--empty-logo-size: 146px 122px;
+	}
+	&._empty {
+		background-color: var(--gray-light);
+		background-image: inline('empty-logo.svg');
+		background-size: var(--empty-logo-size);
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	&._start {
+		--logo-width: 4.75rem; // 76px
+		--logo-height: 3.75rem; // 60px
+		color: var(--white);
+		background-color: var(--blue-dark);
+		&::after {
+			position: absolute;
+			top: var(--card-padding);
+			right: var(--card-padding);
+			content: '';
+			width: var(--logo-width);
+			height: var(--logo-height);
+			background-image: inline('promo-logo.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			@media (max-width: $laptop) {
+				right: auto;
+				left: var(--card-padding);
+			}
+		}
+		#{$this}__text {
+			width: 80%;
+			margin-top: auto;
+			@media (max-width: $laptop-lg) {
+				width: 100%;
+			}
+		}
+		#{$this}__tag {
+			position: absolute;
+			right: var(--card-padding);
+			bottom: var(--card-padding);
+			@media (max-width: $laptop-lg) {
+				position: static;
+			}
+		}
+	}
+	&__bg-img,
+	&__container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--card-margin);
+		padding: var(--card-padding);
+		@media (max-width: $laptop) {
+			padding-top: calc(var(--card-padding) + var(--logo-height) + var(--card-margin));
+		}
+	}
+}
