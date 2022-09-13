@@ -1,9 +1,11 @@
 .button {
+	$this: &;
 	@include reset-btn();
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
+	&__text,
 	&__icon {
 		pointer-events: none;
 	}
@@ -62,10 +64,21 @@
 		font-size: var(--font-size-h7);
 		text-transform: uppercase;
 		@media (max-width: $laptop) {
-			--font-size-h7: 16px;
+			--size: 50px;
+			width: var(--size);
+			height: var(--size);
+			background-color: transparent;
+			background-image: inline('cart.svg');
+			background-size: 36px;
+			background-position: center;
+			background-repeat: no-repeat;
+			#{$this}__text {
+				display: none;
+			}
 		}
-		@media (max-width: $mobile-only) {
-			--font-size-h7: 14px;
+		@media (max-width: $mobile-lg) {
+			--size: 40px;
+			background-size: 28px;
 		}
 	}
 	&._wishlist {
@@ -78,8 +91,24 @@
 		background-repeat: no-repeat;
 		&:hover,
 		&._active {
-			background-size: rem(28);
 			background-image: inline('heart-full.svg');
+			background-size: rem(28);
+		}
+		@media (max-width: $laptop) {
+			&:not(._active):hover {
+				background-image: inline('heart.svg');
+				background-size: 32px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 40px;
+			background-size: 24px;
+			&:not(._active):hover {
+				background-size: 24px;
+			}
+			&._active {
+				background-size: 22px;
+			}
 		}
 	}
 }
