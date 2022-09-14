@@ -1,4 +1,5 @@
 {% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
 
 {% set productList = [
 	{ className: 'catalog__card', url: '#', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-1', zoomPhoto: 'assets/images/catalog/item-4-zoom' },
@@ -39,4 +40,10 @@
 			{% include "../catalog-promo/promo-3.nunj" %}
 		</li>
 	</ul>
+	{{ button({
+		className: 'catalog__show-more-btn _show-more',
+		text: 'Показать еще',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"'
+	}) }}
 </section>
