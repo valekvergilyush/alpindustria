@@ -133,6 +133,79 @@
 			width: rem(72);
 			width: var(--arrow-size);
 			height: var(--arrow-size);
+			background-image: inline('promo-arrow-blue.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		#{$this}__title {
+			order: 2;
+			width: calc(100% - var(--arrow-size) - var(--card-padding));
+			margin-top: auto;
+		}
+		#{$this}__tag {
+			padding-top: var(--card-tag-padding);
+			border-top: 2px solid currentColor;
+			text-align: right;
+		}
+		#{$this}__bg-img {
+			left: auto;
+			right: var(--bg-img-right);
+			top: var(--bg-img-top);
+			width: var(--bg-img-width);
+			height: var(--bg-img-height, auto);
+			object-fit: var(--bg-img-fit, contain);
+		}
+	}
+	&._freeride {
+		--card-padding: 3rem; // 48px
+		--card-tag-padding: 2.5rem; // 40px
+		--logo-top: 1.5rem; // 24px
+		--logo-width: 6.25rem; // 100px
+		--logo-height: 5rem; // 80px
+		--arrow-size: 4.5rem; // 72px
+		color: var(--white);
+		background-color: var(--green-light);
+		@media (max-width: $laptop-lg) {
+			--card-padding: 32px;
+			--logo-width: 76px;
+			--logo-height: 60px;
+		}
+		@media (max-width: $laptop) {
+			--logo-top: 20px;
+			--card-tag-padding: 36px;
+		}
+		@media (max-width: $mobile-lg) {
+			--card-padding: 32px;
+			--card-tag-padding: 24px;
+			--logo-top: 16px;
+			--arrow-size: 56px;
+		}
+		&::after {
+			position: absolute;
+			top: calc(var(--card-padding) + var(--logo-top));
+			left: var(--card-padding);
+			content: '';
+			width: var(--logo-width);
+			height: var(--logo-height);
+			background-image: inline('promo-logo.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			@media (max-width: $laptop) {
+				right: auto;
+				left: var(--card-padding);
+			}
+		}
+		&::before {
+			position: absolute;
+			z-index: 1;
+			bottom: var(--card-padding);
+			right: var(--card-padding);
+			content: '';
+			width: rem(72);
+			width: var(--arrow-size);
+			height: var(--arrow-size);
 			background-image: inline('promo-arrow.svg');
 			background-size: contain;
 			background-position: center;
@@ -145,16 +218,12 @@
 		}
 		#{$this}__tag {
 			padding-top: var(--card-tag-padding);
-			border-top: 2px solid var(--blue-dark);
+			border-top: 2px solid currentColor;
 			text-align: right;
 		}
 		#{$this}__bg-img {
-			left: auto;
-			right: var(--bg-img-right);
-			top: var(--bg-img-top);
-			width: var(--bg-img-width);
-			height: var(--bg-img-height, auto);
-			object-fit: var(--bg-img-fit, contain);
+			object-fit: cover;
+			object-position: top left;
 		}
 	}
 	&__bg-img,
