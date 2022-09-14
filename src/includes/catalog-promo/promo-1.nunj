@@ -1,7 +1,7 @@
 <a class="catalog__promo-card catalog-promo _start" href="#">
 	<picture>
 		<source srcset="assets/images/catalog/promo/start.webp, assets/images/catalog/promo/start@2x.webp 2x" type="image/webp">
-		<img class="catalog-promo__bg-img" src="assets/images/catalog/promo/start.jpg" srcset="assets/images/catalog/promo/start@2x.jpg 2x" width="865" height="877" alt="">
+		<img class="catalog-promo__bg-img" src="assets/images/catalog/promo/start.jpg" srcset="assets/images/catalog/promo/start@2x.jpg 2x" width="865" height="877" alt="" loading="lazy">
 	</picture>
 	<div class="catalog-promo__container">
 		<p class="catalog-promo__title h5 ttu">Старт<br> 9 июня</p>
