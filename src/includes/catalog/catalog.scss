@@ -60,6 +60,16 @@
 					--photo-bottom: 40px;
 				}
 			}
+			#{$this}__promo-card {
+				.catalog-promo__tag {
+					@media (max-width: $laptop-lg) {
+						position: absolute;
+					}
+					@media (max-width: $laptop) {
+						position: static;
+					}
+				}
+			}
 		}
 		&._cols-2 {
 			--item-width: 50%;
@@ -147,6 +157,14 @@
 					--card-height: 320px;
 					--card-padding: 8px;
 					--card-margin: 8px;
+				}
+				.catalog-promo__tag {
+					@media (max-width: $laptop-lg) {
+						position: absolute;
+					}
+					@media (max-width: $laptop) {
+						position: static;
+					}
 				}
 			}
 		}
