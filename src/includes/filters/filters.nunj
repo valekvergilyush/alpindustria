@@ -29,22 +29,22 @@
 			<p class="p2" id="layout-label">Сетка</p>
 			<div class="filters__layout-buttons" aria-labelledby="layout-label">
 				{{ button({
-					children: '1',
+					text: '1',
 					className: 'filters__layout-button _layout',
 					attr: 'data-cols="1"'
 				}) }}
 				{{ button({
-					children: '2',
+					text: '2',
 					className: 'filters__layout-button _layout',
 					attr: 'data-cols="2"'
 				}) }}
 				{{ button({
-					children: '3',
+					text: '3',
 					className: 'filters__layout-button _layout',
 					attr: 'data-cols="3"'
 				}) }}
 				{{ button({
-					children: '4',
+					text: '4',
 					className: 'filters__layout-button _layout _active',
 					attr: 'data-cols="4"'
 				}) }}

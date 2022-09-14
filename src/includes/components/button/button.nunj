@@ -2,7 +2,9 @@
 
 {% macro button(props) %}
 	<button class="{% if props.className %}{{ props.className }} {% endif %}button" type="{% if props.type %}{{ props.type }}{% else %}button{% endif %}"{% if props.attr %} {{ props.attr }}{% endif %}>
-		{{ props.children }}
+		{% if props.text %}
+			<span class="button__text">{{ props.text }}</span>
+		{% endif %}
 		{% if props.icon %}
 			{{ icon({
 				iconName: props.icon,

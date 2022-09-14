@@ -16,7 +16,7 @@
 		<li class="quick-filter__item h7">
 			{{ button({
 				className: 'quick-filter__button _quick-filter ttu',
-				children: caterogyName
+				text: caterogyName
 			}) }}
 		</li>
 	{% endfor %}

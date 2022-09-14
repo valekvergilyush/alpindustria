@@ -1,4 +1,6 @@
 const ACTIVE_CLASS = '_active';
+const MOBILE_BREAKPOINT = 640;
+const TABLET_BREAKPOINT = 992;
 
 class Catalog {
 	constructor() {
@@ -13,21 +15,48 @@ class Catalog {
 			return;
 		}
 
-		this.layoutClassName = '_cols-4';
+		this.onLayoutButtonClick = this.onLayoutButtonClick.bind(this);
+		this.onWindowResize = this.onWindowResize.bind(this);
 
-		this.layoutControls.addEventListener('click', evt => {
-			evt.preventDefault();
+		if (window.innerWidth <= MOBILE_BREAKPOINT) {
+			this.layout = 2;
+		} else if (window.innerWidth <= TABLET_BREAKPOINT) {
+			this.layout = 3;
+		} else {
+			this.layout = 4;
+		}
 
-			const value = evt.target.getAttribute('data-cols');
+		this.setLayout(this.layout);
 
-			if (value) {
-				this.layoutControls.querySelector(`.${ACTIVE_CLASS}`).classList.remove(ACTIVE_CLASS);
-				evt.target.classList.add(ACTIVE_CLASS);
-				this.layoutClassName && this.catalogList.classList.remove(this.layoutClassName);
-				this.layoutClassName = `_cols-${value}`;
-				this.catalogList.classList.add(this.layoutClassName);
-			}
-		});
+		this.layoutControls.addEventListener('click', this.onLayoutButtonClick);
+		window.addEventListener('resize', this.onWindowResize);
+	}
+
+	onLayoutButtonClick(evt) {
+		evt.preventDefault();
+
+		const value = evt.target.getAttribute('data-cols');
+
+		if (value) {
+			this.setLayout(value);
+		}
+	}
+	setLayout(value) {
+		const button = this.layoutControls.querySelector(`[data-cols="${value}"]`);
+
+		this.layoutControls.querySelector(`.${ACTIVE_CLASS}`).classList.remove(ACTIVE_CLASS);
+		button.classList.add(ACTIVE_CLASS);
+		this.layoutClassName && this.catalogList.classList.remove(this.layoutClassName);
+		this.layout = Number(value);
+		this.layoutClassName = `_cols-${value}`;
+		this.catalogList.classList.add(this.layoutClassName);
+	}
+	onWindowResize() {
+		if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
+			this.setLayout(3);
+		} else if ((window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) || this.layout === 1) {
+			this.setLayout(2);
+		}
 	}
 }
 export default new Catalog();

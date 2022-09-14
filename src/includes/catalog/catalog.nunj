@@ -1,4 +1,5 @@
 {% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
 
 {% set productList = [
 	{ className: 'catalog__card', url: '#', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-1', zoomPhoto: 'assets/images/catalog/item-4-zoom' },
@@ -23,11 +24,26 @@
 ] %}
 
 <section class="page__catalog catalog">
-	<ul class="catalog__list _cols-4">
+	<ul class="catalog__list">
 		{% for product in productList %}
 			<li class="catalog__item">
 				{{ productCard(product) }}
 			</li>
 		{% endfor %}
+		<li class="catalog__item _promo-1">
+			{% include "../catalog-promo/promo-1.nunj" %}
+		</li>
+		<li class="catalog__item catalog-promo _empty _promo-2">
+			{% include "../catalog-promo/promo-2.nunj" %}
+		</li>
+		<li class="catalog__item catalog-promo _empty _promo-3">
+			{% include "../catalog-promo/promo-3.nunj" %}
+		</li>
 	</ul>
+	{{ button({
+		className: 'catalog__show-more-btn _show-more',
+		text: 'Показать еще',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"'
+	}) }}
 </section>
