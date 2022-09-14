@@ -17,6 +17,7 @@ class AlpIndustry {
 			Signal: require('./classes/Signal').default,
 		};
 		this.components = {
+			Header: require('../../includes/header/header').default,
 			Catalog: require('../../includes/catalog/catalog').default,
 		};
 		this.helpers = {};
