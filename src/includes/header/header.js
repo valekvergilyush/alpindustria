@@ -26,8 +26,9 @@ class Header {
 	}
 	onWindowScroll() {
 		this.scrollY = window.scrollY;
+		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
-		if (this.scrollY > this.filtersElementPos) {
+		if (this.filtersElementPos < 0) {
 			this.filtersElement.classList.add(ClassName.FIXED);
 		} else {
 			this.filtersElement.classList.remove(ClassName.FIXED);
@@ -45,7 +46,6 @@ class Header {
 		this.scrollPos = document.body.getBoundingClientRect().top;
 	}
 	onWindowResize() {
-		this.scrollY = window.scrollY;
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 	}
 	showHeader() {
