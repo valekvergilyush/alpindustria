@@ -33,7 +33,17 @@
 		flex-direction: column;
 	}
 	&__item {
+		height: var(--height);
 		border-top: 1px solid rgba(65, 92, 152, 0.3);
+		transition: height $default-transition-duration $default-transition-function;
+		overflow: hidden;
+		&._opened {
+			#{$this}__item-title {
+				&::after {
+					transform: scaleY(-1);
+				}
+			}
+		}
 	}
 	&__item-buttons {
 		padding-top: var(--margin);
@@ -59,6 +69,16 @@
 		}
 		@media (max-width: $mobile-lg) {
 			--font-size-h7: 14px;
+		}
+		&::after {
+			content: '';
+			width: var(--margin);
+			height: var(--margin);
+			background-image: inline('accordion-arrow.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: transform $default-transition-duration $default-transition-function;
 		}
 	}
 }

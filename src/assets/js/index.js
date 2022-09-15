@@ -22,9 +22,15 @@ class AlpIndustry {
 			Catalog: require('../../includes/catalog/catalog').default,
 		};
 		this.helpers = {};
-		this.modules = {};
+		this.modules = {
+			Accordion: require('./modules/Accordion').default,
+		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
+
+			document
+				.querySelectorAll('[data-accordion-toggle]')
+				.forEach(toggle => new this.modules.Accordion(toggle));
 		});
 
 		const calculateVh = () => {
