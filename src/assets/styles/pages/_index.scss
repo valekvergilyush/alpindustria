@@ -1,8 +1,11 @@
 .page {
 	$this: &;
 	&._index {
-		#{$this}__main {
-			background: 0;
+		#{$this}__filters {
+			position: sticky;
+			z-index: 4;
+			top: -1px;
+			margin-top: calc(0px - var(--filters-height));
 		}
 	}
 }

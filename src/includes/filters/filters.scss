@@ -1,15 +1,8 @@
 .filters {
-	--filters-height: 6rem; // 96px
 	display: flex;
 	height: var(--filters-height);
-	@media (max-width: $laptop-lg) {
-		--filters-height: 80px;
-	}
-	@media (max-width: $tablet) {
-		--filters-height: 72px;
-	}
+	color: var(--white);
 	@media (max-width: $mobile-lg) {
-		--filters-height: 56px;
 		--offset-height: 32px;
 		position: relative;
 		padding-bottom: var(--offset-height);
@@ -140,7 +133,9 @@
 		}
 	}
 	&._fixed {
+		--filters-height: var(--header-height);
 		color: var(--blue-dark);
 		background-color: var(--white);
+		border-bottom: 1px solid var(--blue-dark);
 	}
 }
