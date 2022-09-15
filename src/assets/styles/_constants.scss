@@ -83,18 +83,9 @@ $mobile-sm: 320px;
 	--100vh: calc(var(--vh, 1vh) * 100);
 
 	--header-height: 4.5rem; // 72px
-	--filters-height: 6rem; // 96px
-	@media (max-width: $laptop-lg) {
-		--filters-height: 80px;
-	}
+	--filters-height: var(--header-height); // 96px
 	@media (max-width: $laptop) {
 		--header-height: 64px;
-	}
-	@media (max-width: $tablet) {
-		--filters-height: 72px;
-	}
-	@media (max-width: $mobile-lg) {
-		--filters-height: 56px;
 	}
 	@media (max-width: $mobile) {
 		--header-height: 56px;
