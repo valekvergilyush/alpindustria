@@ -10,6 +10,9 @@
 	background-color: var(--white);
 	overflow: auto;
 	padding-bottom: var(--padding);
+	@include scrollbar {
+		display: none;
+	}
 	& > *:first-child {
 		padding-top: var(--padding);
 	}
