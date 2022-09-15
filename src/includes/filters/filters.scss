@@ -147,3 +147,22 @@
 		}
 	}
 }
+
+._filters-opened {
+	.filters__button-icon {
+		&._close {
+			display: block;
+		}
+		&._filter {
+			display: none;
+		}
+	}
+}
+
+._mobile {
+	.filters__button {
+		&:hover {
+			color: var(--white);
+		}
+	}
+}

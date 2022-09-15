@@ -18,6 +18,7 @@ class AlpIndustry {
 		};
 		this.components = {
 			Header: require('../../includes/header/header').default,
+			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
 		};
 		this.helpers = {};

@@ -1,0 +1,151 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set selectedFilters = [
+	{ className: ' _selected', name: 'По убыванию цены' },
+	{ className: ' _selected', name: 'The North Face' },
+	{ className: ' _selected', name: 'Мужской' },
+	{ className: ' _selected', name: 'Arcteryx' },
+	{ className: ' _selected', name: 'The North Face' }
+] %}
+{% set sortButtons = [
+	{ name: 'По названию', className: ' _active' },
+	{ name: 'По убыванию цены' },
+	{ name: 'По возрастанию цены' },
+	{ name: 'По скидке' },
+	{ name: 'По новизне' }
+] %}
+{% set brandButtons = [
+	{ name: 'MSR' },
+	{ name: 'Therm-A-Rest' },
+	{ name: 'Patagonia' },
+	{ name: 'Ternua' },
+	{ name: 'Lowe Alpine' },
+	{ name: 'Osprey' },
+	{ name: 'The North Face', className: ' _active' },
+	{ name: 'Ace Camp' },
+	{ name: 'Alexika' },
+	{ name: 'Alpina-Eyewear' },
+	{ name: 'Arcteryx', className: ' _active' },
+	{ name: 'Arva' },
+	{ name: 'Barocook' }
+] %}
+{% set genderButtons = [
+	{ name: 'Мужской', className: ' _active' },
+	{ name: 'Женский' }
+] %}
+{% set colorButtons = [
+	{ name: 'Красный', color: '#C9364C', className: ' _active' },
+	{ name: 'Тёмно-зелёный', color: '#03836E' },
+	{ name: 'Тёмно-фиолетовый', color: '#6F2876' },
+	{ name: 'Тёмно-серый', color: '#342C25' },
+	{ name: 'Светло-серый', color: '#F5F1EE' },
+	{ name: 'Тёмно-синий', color: '#324481' },
+	{ name: 'Светло-зелёный', color: '#0B994B' },
+	{ name: 'Светло-фиолетовый', color: '#8B4192' },
+	{ name: 'Белый', color: '#FEFEFE' }
+] %}
+
+<form class="page__filters-form filters-form">
+	<ul class="filters-form__selected-filters filters-form__container">
+		{% for btn in selectedFilters %}
+			<li>
+				{{ button({
+					className: 'filters-form__button _quick-filter' + btn.className,
+					text: btn.name,
+					icon: 'close-button',
+					iconData: 'width="24" height="24"'
+				}) }}
+			</li>
+		{% endfor %}
+		<li>
+			{{ button({
+				className: 'filters-form__button _clear-filter',
+				text: 'Очистить все'
+			}) }}
+		</li>
+	</ul>
+	<ul class="filters-form__list">
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Сортировка</button>
+			<div class="filters-form__item-buttons">
+				{% for btn in sortButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					{{ button({
+						className: 'filters-form__button _quick-filter' + className,
+						text: btn.name,
+						icon: 'close-button',
+						iconData: 'width="24" height="24"'
+					}) }}
+				{% endfor %}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Бренды</button>
+			<div class="filters-form__item-buttons">
+				{% for btn in brandButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					{{ button({
+						className: 'filters-form__button _quick-filter' + className,
+						text: btn.name,
+						icon: 'close-button',
+						iconData: 'width="24" height="24"'
+					}) }}
+				{% endfor %}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Пол</button>
+			<div class="filters-form__item-buttons">
+				{% for btn in genderButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					{{ button({
+						className: 'filters-form__button _quick-filter' + className,
+						text: btn.name,
+						icon: 'close-button',
+						iconData: 'width="24" height="24"'
+					}) }}
+				{% endfor %}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Вид активности</button>
+			<div class="filters-form__item-content"></div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Магазины (адреса)</button>
+			<div class="filters-form__item-content"></div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Цвет</button>
+			<div class="filters-form__item-buttons">
+				{% for btn in colorButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					{{ button({
+						className: 'filters-form__button _color' + className,
+						attr: 'aria-label="' + btn.name + '"' + 'style="background:' + btn.color + '"'
+					}) }}
+				{% endfor %}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Стоимость</button>
+			<div class="filters-form__item-content"></div>
+		</li>
+	</ul>
+</form>
