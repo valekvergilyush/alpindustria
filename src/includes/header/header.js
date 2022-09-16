@@ -24,10 +24,11 @@ class Header {
 		}
 
 		this.isHeaderHidden = false;
-		this.scrollPos = 0;
 		this.filtersElement = document.querySelector('.page__filters');
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
-		ScrollHelper.onDirectionChange.add(direction => this.onWindowScroll(direction));
+		this.headerElementHeight = this.headerElement.offsetHeight;
+		ScrollHelper.onScroll.add(y => this.onWindowScroll(y));
+		ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
 
 		this.onWindowScroll = this.onWindowScroll.bind(this);
 		this.onWindowResize = this.onWindowResize.bind(this);
@@ -35,8 +36,23 @@ class Header {
 		// window.addEventListener('scroll', this.onWindowScroll);
 		window.addEventListener('resize', this.onWindowResize);
 	}
-	onWindowScroll(direction) {
-		this.scrollY = window.scrollY;
+	_directionChangeController(direction) {
+		this.direction = direction;
+
+		if (this.direction === Direction.UP) {
+			this.showHeader();
+		}
+		if (this.direction === Direction.DOWN) {
+			this.hideHeader();
+		}
+	}
+	onWindowScroll(y) {
+		this.scrollY = y;
+		if (this.scrollY < this.headerElementHeight * 1.5) {
+			this.headerElement.classList.remove(ClassName.FIXED);
+		} else {
+			this.headerElement.classList.add(ClassName.FIXED);
+		}
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
 		if (this.filtersElementPos < 0) {
@@ -44,33 +60,12 @@ class Header {
 		} else {
 			this.filtersElement.classList.remove(ClassName.FIXED);
 		}
-
-		if (direction === Direction.UP) {
-			this.showHeader();
-		}
-		if (direction === Direction.DOWN) {
-			this.hideHeader();
-		}
-		// if (document.body.getBoundingClientRect().top > this.scrollPos) {
-		// 	// scroll UP
-
-		// 	this.showHeader();
-		// } else {
-		// 	// scroll DOWN
-
-		// 	this.hideHeader();
-		// }
-		this.scrollPos = document.body.getBoundingClientRect().top;
 	}
 	onWindowResize() {
+		this.headerElementHeight = this.headerElement.offsetHeight;
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 	}
 	showHeader() {
-		if (this.scrollY !== 0) {
-			this.headerElement.classList.add(ClassName.FIXED);
-		} else {
-			this.headerElement.classList.remove(ClassName.FIXED);
-		}
 		if (!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0) {
 			this.isHeaderHidden = !this.isHeaderHidden;
 			gsap.to(this.headerElement, {
@@ -86,6 +81,9 @@ class Header {
 			yPercent: -100,
 			duration: 0.1,
 			ease: 'linear',
+			onComplete: () => {
+				this.headerElement.classList.remove(ClassName.FIXED);
+			},
 		});
 	}
 }
