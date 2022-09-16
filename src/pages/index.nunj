@@ -7,5 +7,6 @@
 	<main class="page__main">
 		{% include "../includes/hero/hero.nunj" %}
 		{% include "../includes/catalog/catalog.nunj" %}
+		{% include "../includes/news-section/news-section.nunj" %}
 	</main>
 {% endblock %}
