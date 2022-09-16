@@ -1,6 +1,7 @@
 // ======= GLOBAL =======
 @import 'constants';
 @import 'lib/base';
+@import 'lib/nouislider';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -11,6 +12,7 @@
 // ======= COMPONENTS =======
 @import '../../includes/components/button/button';
 @import '../../includes/components/product-card/product-card';
+@import '../../includes/components/range-slider/range-slider';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';

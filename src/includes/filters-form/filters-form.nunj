@@ -1,4 +1,5 @@
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/range-slider/range-slider.nunj" import rangeSlider %}
 
 {% set selectedFilters = [
 	{ className: ' _selected', name: 'По убыванию цены' },
@@ -145,7 +146,17 @@
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle>Стоимость</button>
-			<div class="filters-form__item-content"></div>
+			<div class="filters-form__item-content">
+				{{ rangeSlider({
+					className: 'filters-form__price-range',
+					id: 'price-range',
+					min: 100,
+					max: 600000,
+					minValue: 100000,
+					maxValue: 433150,
+					step: 100
+				}) }}
+			</div>
 		</li>
 	</ul>
 </form>

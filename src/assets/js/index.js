@@ -23,6 +23,7 @@ class AlpIndustry {
 		};
 		this.helpers = {};
 		this.modules = {
+			RangeSlider: require('./modules/RangeSlider').default,
 			Accordion: require('./modules/Accordion').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
@@ -31,6 +32,8 @@ class AlpIndustry {
 			document
 				.querySelectorAll('[data-accordion-toggle]')
 				.forEach(toggle => new this.modules.Accordion(toggle));
+
+			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 		});
 
 		const calculateVh = () => {
