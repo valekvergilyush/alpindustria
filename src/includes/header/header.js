@@ -1,8 +1,15 @@
+import ScrollHelper from '../../assets/js/helpers/ScrollHelper';
+
 const HTML_CLASSLIST = document.documentElement.classList;
 
 const ClassName = {
 	FIXED: '_fixed',
 	FILTERS_OPENED: '_filters-opened',
+};
+
+const Direction = {
+	UP: 'up',
+	DOWN: 'down',
 };
 
 class Header {
@@ -20,14 +27,15 @@ class Header {
 		this.scrollPos = 0;
 		this.filtersElement = document.querySelector('.page__filters');
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+		ScrollHelper.onDirectionChange.add(direction => this.onWindowScroll(direction));
 
 		this.onWindowScroll = this.onWindowScroll.bind(this);
 		this.onWindowResize = this.onWindowResize.bind(this);
 
-		window.addEventListener('scroll', this.onWindowScroll);
+		// window.addEventListener('scroll', this.onWindowScroll);
 		window.addEventListener('resize', this.onWindowResize);
 	}
-	onWindowScroll() {
+	onWindowScroll(direction) {
 		this.scrollY = window.scrollY;
 		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
@@ -37,15 +45,21 @@ class Header {
 			this.filtersElement.classList.remove(ClassName.FIXED);
 		}
 
-		if (document.body.getBoundingClientRect().top > this.scrollPos) {
-			// scroll UP
-
+		if (direction === Direction.UP) {
 			this.showHeader();
-		} else {
-			// scroll DOWN
-
+		}
+		if (direction === Direction.DOWN) {
 			this.hideHeader();
 		}
+		// if (document.body.getBoundingClientRect().top > this.scrollPos) {
+		// 	// scroll UP
+
+		// 	this.showHeader();
+		// } else {
+		// 	// scroll DOWN
+
+		// 	this.hideHeader();
+		// }
 		this.scrollPos = document.body.getBoundingClientRect().top;
 	}
 	onWindowResize() {

@@ -21,7 +21,9 @@ class AlpIndustry {
 			Catalog: require('../../includes/catalog/catalog').default,
 			FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
-		this.helpers = {};
+		this.helpers = {
+			ScrollHelper: require('./helpers/ScrollHelper'),
+		};
 		this.modules = {
 			RangeSlider: require('./modules/RangeSlider').default,
 			Accordion: require('./modules/Accordion').default,
