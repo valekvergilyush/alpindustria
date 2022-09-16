@@ -1,0 +1,23 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro inputSearch(props) %}
+	<div class="{% if props.className %}{{ props.className }} {% endif %}input-search">
+		<label class="input-search__label">
+			<span class="input-search__label-text visually-hidden">{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}</span>
+			<input
+				class="input-search__input"
+				id="{{ props.id }}"
+				type="search"
+				name="{{ props.name }}"
+				{% if props.value %}value="{{ props.value }}"{% endif %}
+				{% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}
+			>
+			{{ icon({
+				iconName: 'search',
+				className: 'input-search__icon no-pe',
+				attr: 'width="24" height="24"'
+			}) }}
+		</label>
+		<span class="input-search__lang">A-Z</span>
+	</div>
+{% endmacro %}

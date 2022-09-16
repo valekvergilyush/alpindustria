@@ -1,6 +1,7 @@
 // ======= GLOBAL =======
 @import 'constants';
 @import 'lib/base';
+@import 'lib/nouislider';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -11,6 +12,8 @@
 // ======= COMPONENTS =======
 @import '../../includes/components/button/button';
 @import '../../includes/components/product-card/product-card';
+@import '../../includes/components/range-slider/range-slider';
+@import '../../includes/components/input-search/input-search';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -19,6 +22,7 @@
 @import '../../includes/filters/filters';
 @import '../../includes/hero/hero';
 @import '../../includes/catalog-promo/catalog-promo';
+@import '../../includes/filters-form/filters-form';
 @import '../../includes/catalog/catalog';
 @import '../../includes/news-section/news-section';
 

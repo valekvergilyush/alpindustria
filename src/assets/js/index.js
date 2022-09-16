@@ -17,24 +17,25 @@ class AlpIndustry {
 		};
 		this.components = {
 			Header: require('../../includes/header/header').default,
+			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
+			FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {};
 		this.modules = {
+			RangeSlider: require('./modules/RangeSlider').default,
+			Accordion: require('./modules/Accordion').default,
 			AnchorLinks: require('./modules/AnchorLinks').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
+
+			document
+				.querySelectorAll('[data-accordion-toggle]')
+				.forEach(toggle => new this.modules.Accordion(toggle));
+
+			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 		});
-
-		const calculateVh = () => {
-			const vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', vh + 'px');
-		};
-
-		calculateVh();
-		window.addEventListener('resize', calculateVh);
-		window.addEventListener('orientationchange', calculateVh);
 	}
 }
 

@@ -24,7 +24,7 @@
 ] %}
 
 <section class="page__catalog catalog">
-	<ul class="catalog__list">
+	<ul class="page__catalog-list catalog__list">
 		{% for product in productList %}
 			<li class="catalog__item">
 				{{ productCard(product) }}

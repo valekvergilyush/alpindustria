@@ -13,5 +13,4 @@
 		<h1 class="hero__title h4 ttu tac">Магазин</h1>
 		{% include "../quick-filter/quick-filter.nunj" %}
 	</div>
-	{% include "../filters/filters.nunj" %}
 </section>

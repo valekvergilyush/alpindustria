@@ -1,10 +1,10 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
 
-<div class="hero__filters filters">
+<div class="page__filters filters">
 	<div class="filters__container container">
 		<div class="filters__left">
-			<button class="filters__button _filter ttu" type="button" aria-labelledby="filter-button-label">
+			<button class="filters__button _filter ttu" type="button" aria-labelledby="filter-button-label" data-filters-toggle>
 				<span id="filter-button-label">Фильтры</span>
 				{{ icon({
 					iconName: 'filter',
@@ -51,4 +51,5 @@
 			</div>
 		</div>
 	</div>
+	{% include "../filters-form/filters-form.nunj" %}
 </div>
