@@ -1,5 +1,6 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/range-slider/range-slider.nunj" import rangeSlider %}
+{% from "../components/input-search/input-search.nunj" import inputSearch %}
 
 {% set selectedFilters = [
 	{ className: ' _selected', name: 'По убыванию цены' },
@@ -86,13 +87,13 @@
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Бренды</button>
-			<div class="filters-form__item-buttons">
-				{% for btn in brandButtons %}
-					{% if btn.className %}
-						{% set className = btn.className %}
-					{% else %}
-						{% set className = '' %}
-					{% endif %}
+			<div class="filters-form__item-wrapper">
+				{{ inputSearch({
+					className: 'filters-form__search',
+					id: 'brand-search',
+					placeholder: 'Поиск по брендам',
+					name: 'Поиск по брендам'
+				}) }}
 					{{ button({
 						className: 'filters-form__button _quick-filter' + className,
 						text: btn.name,
