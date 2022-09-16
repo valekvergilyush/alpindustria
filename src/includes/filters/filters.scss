@@ -165,4 +165,11 @@
 			color: var(--white);
 		}
 	}
+	._fixed {
+		.filters__button {
+			&:hover {
+				color: var(--blue-dark);
+			}
+		}
+	}
 }
