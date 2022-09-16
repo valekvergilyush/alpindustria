@@ -13,10 +13,12 @@
 
 <ul class="hero__quick-filter quick-filter">
 	{% for caterogyName in categories %}
-		<li class="quick-filter__item h7">
+		<li class="quick-filter__item">
 			{{ button({
-				className: 'quick-filter__button _quick-filter ttu',
-				text: caterogyName
+				className: 'quick-filter__button _quick-filter',
+				text: caterogyName,
+				icon: 'close-button',
+				iconData: 'width="24" height="24"'
 			}) }}
 		</li>
 	{% endfor %}

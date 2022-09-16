@@ -95,6 +95,7 @@
 .transition-active {
 	transition: color $fast-transition-duration $default-transition-function,
 		background $fast-transition-duration $default-transition-function,
+		outline $fast-transition-duration $default-transition-function,
 		border-color $fast-transition-duration $default-transition-function;
 }
 

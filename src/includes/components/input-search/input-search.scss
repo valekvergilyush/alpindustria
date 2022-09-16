@@ -1,0 +1,48 @@
+.input-search {
+	position: relative;
+	display: flex;
+	column-gap: rem(48);
+	&__label {
+		position: relative;
+		flex-grow: 1;
+	}
+	&__input {
+		box-sizing: border-box;
+		width: 100%;
+		height: rem(36);
+		padding-bottom: rem(8);
+		border: 0;
+		border-bottom: 1px solid var(--blue-light);
+		outline: 0;
+		background: 0;
+		font: inherit;
+		font-size: rem(16);
+		line-height: 1.5;
+		color: var(--gray-dark);
+		@include placeholder {
+			font-family: var(--font-family-suisse);
+			font-size: rem(16);
+			line-height: 1.5;
+			line-height: 1;
+			letter-spacing: -0.04em;
+			color: var(--blue-light);
+		}
+	}
+	&__icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: rem(24);
+		height: rem(24);
+	}
+	&__lang {
+		font-family: var(--font-family-suisse);
+		font-size: rem(24);
+		line-height: rem(36);
+		color: var(--blue-light);
+		opacity: 0.5;
+		@media (max-width: $mobile-lg) {
+			font-size: 22px;
+		}
+	}
+}

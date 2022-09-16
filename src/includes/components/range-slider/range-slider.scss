@@ -1,0 +1,42 @@
+.range-slider {
+	--handle-size: #{rem(20)};
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: rem(16);
+	max-width: rem(330);
+	box-shadow: none;
+	color: var(--gray-dark);
+	&__slider {
+		width: 100%;
+		border: 0;
+		height: rem(4);
+		&:active {
+			cursor: grabbing !important;
+		}
+	}
+	.noUi-base {
+		background-color: rgba(65, 92, 152, 0.2);
+	}
+	.noUi-connect {
+		background-color: var(--blue-dark);
+	}
+	.noUi-handle {
+		top: calc(var(--handle-size) / -2.5);
+		right: calc(var(--handle-size) / -2);
+		width: var(--handle-size);
+		height: var(--handle-size);
+		border-radius: 50%;
+		background-color: var(--blue-dark);
+		border: 2px solid var(--white);
+		outline: 1px solid var(--blue-dark);
+		outline-offset: -1px;
+		box-sizing: border-box;
+		box-shadow: none;
+		cursor: grab;
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}

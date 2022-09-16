@@ -84,6 +84,7 @@ $mobile-sm: 320px;
 	--100vh: calc(var(--vh, 1vh) * 100);
 
 	--header-height: 4.5rem; // 72px
+	--filters-height: var(--header-height); // 96px
 	@media (max-width: $laptop) {
 		--header-height: 64px;
 	}

@@ -1,0 +1,264 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/range-slider/range-slider.nunj" import rangeSlider %}
+{% from "../components/input-search/input-search.nunj" import inputSearch %}
+
+{% set selectedFilters = [
+	{ className: ' _selected', name: 'По убыванию цены' },
+	{ className: ' _selected', name: 'The North Face' },
+	{ className: ' _selected', name: 'Мужской' },
+	{ className: ' _selected', name: 'Arcteryx' },
+	{ className: ' _selected', name: 'The North Face' }
+] %}
+{% set brandButtons = [
+	{ name: 'MSR' },
+	{ name: 'Therm-A-Rest' },
+	{ name: 'Patagonia' },
+	{ name: 'Ternua' },
+	{ name: 'Lowe Alpine' },
+	{ name: 'Osprey' },
+	{ name: 'The North Face', className: ' _active' },
+	{ name: 'Ace Camp' },
+	{ name: 'Alexika' },
+	{ name: 'Alpina-Eyewear' },
+	{ name: 'Arcteryx', className: ' _active' },
+	{ name: 'Arva' },
+	{ name: 'Barocook' }
+] %}
+{% set genderButtons = [
+	{ name: 'Мужской', className: ' _active' },
+	{ name: 'Женский' }
+] %}
+{% set activityButtons = [
+	{ name: 'Горный туризм' },
+	{ name: 'Треккинг' },
+	{ name: 'Трейлраннинг' },
+	{ name: 'Кемпинг' },
+	{ name: 'Высотный альпинизм', className: ' _active' },
+	{ name: 'Веревочные парки и Via Ferrata' },
+	{ name: 'Скалолазание' },
+	{ name: 'Технический альпинизм' },
+	{ name: 'Горные лыжи' },
+	{ name: 'Городской стиль' },
+	{ name: 'Промышленный альпинизм' },
+	{ name: 'Спелеология' },
+	{ name: 'Фрирайд' },
+	{ name: 'Экспедиционные лыжи' },
+	{ name: 'Ледолазание' },
+	{ name: 'Ски-тур' }
+] %}
+{% set cityButtons = [
+	{ name: 'Санкт-Петербург', categories: [ { name: 'Черная речка' }, { name: 'Заневский', className: ' _active' } ] },
+	{ name: 'Москва' },
+	{ name: 'Новосибирск' },
+	{ name: 'Пермь' },
+	{ name: 'Архыз' },
+	{ name: 'Екатеринбург' },
+	{ name: 'Пятигорск' },
+	{ name: 'Воронеж' },
+	{ name: 'Краснодар' },
+	{ name: 'Приэльбрусье' },
+	{ name: 'Красная поляна' },
+	{ name: 'Безенги' },
+	{ name: 'Красноярск' },
+	{ name: 'Нижний Новгород' }
+] %}
+{% set colorButtons = [
+	{ name: 'Красный', color: '#C9364C', className: ' _selected' },
+	{ name: 'Тёмно-зелёный', color: '#03836E' },
+	{ name: 'Тёмно-фиолетовый', color: '#6F2876' },
+	{ name: 'Тёмно-серый', color: '#342C25' },
+	{ name: 'Светло-серый', color: '#F5F1EE' },
+	{ name: 'Тёмно-синий', color: '#324481' },
+	{ name: 'Светло-зелёный', color: '#0B994B' },
+	{ name: 'Светло-фиолетовый', color: '#8B4192' },
+	{ name: 'Белый', color: '#FEFEFE' }
+] %}
+<form class="page__filters-form filters-form">
+	<ul class="filters-form__selected-filters filters-form__container">
+		{% for btn in selectedFilters %}
+			<li>
+				{{ button({
+					className: 'filters-form__button _quick-filter' + btn.className,
+					text: btn.name,
+					icon: 'close-button',
+					iconData: 'width="24" height="24"'
+				}) }}
+			</li>
+		{% endfor %}
+		<li>
+			{{ button({
+				className: 'filters-form__button _clear-filter',
+				text: 'Очистить все'
+			}) }}
+		</li>
+	</ul>
+	<ul class="filters-form__list">
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Сортировка</button>
+			<div class="filters-form__item-content _buttons _sort">
+				{{ button({
+					className: 'filters-form__button _quick-filter _active',
+					text: 'По названию'
+				}) }}
+				<div class="filters-form__row">
+					{{ button({
+						className: 'filters-form__button _quick-filter',
+						text: 'По убыванию цены'
+					}) }}
+					{{ button({
+						className: 'filters-form__button _quick-filter',
+						text: 'По возрастанию цены'
+					}) }}
+				</div>
+				<div class="filters-form__row">
+					{{ button({
+						className: 'filters-form__button _quick-filter',
+						text: 'По скидке'
+					}) }}
+					{{ button({
+						className: 'filters-form__button _quick-filter',
+						text: 'По новизне'
+					}) }}
+				</div>
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Бренды</button>
+			<div class="filters-form__item-wrapper">
+				{{ inputSearch({
+					className: 'filters-form__search',
+					id: 'brand-search',
+					placeholder: 'Поиск по брендам',
+					name: 'Поиск по брендам'
+				}) }}
+				<ul class="filters-form__item-content _buttons">
+					{% for btn in brandButtons %}
+						{% if btn.className %}
+							{% set className = btn.className %}
+						{% else %}
+							{% set className = '' %}
+						{% endif %}
+						<li>
+							{{ button({
+								className: 'filters-form__button _quick-filter' + className,
+								text: btn.name
+							}) }}
+						</li>
+					{% endfor %}
+				</ul>
+				{{ button({
+						className: 'filters-form__show-more-btn _show-more _no-bd',
+						text: 'Показать еще',
+						icon: 'plus-circle',
+						iconData: 'width="32" height="32"'
+					}) }}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Пол</button>
+			<ul class="filters-form__item-content _buttons">
+				{% for btn in genderButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li>
+						{{ button({
+							className: 'filters-form__button _quick-filter' + className,
+							text: btn.name
+						}) }}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Вид активности</button>
+			<ul class="filters-form__item-content _buttons">
+				{% for btn in activityButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li>
+						{{ button({
+							className: 'filters-form__button _quick-filter' + className,
+							text: btn.name
+						}) }}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Магазины (адреса)</button>
+			<ul class="filters-form__item-content _buttons" data-subcategory>
+				{% for btn in cityButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li {% if btn.categories %}data-subcategory-item{% endif %}>
+						{{ button({
+							className: 'filters-form__button _quick-filter' + className,
+							text: btn.name
+						}) }}
+						{% if btn.categories %}
+							<div class="filters-form__subcategories-wrapper">
+								{{ button({
+									className: 'filters-form__button _back',
+									attr: 'aria-label="Назад"',
+									icon: 'arrow-left',
+									iconData: 'width="24" height="24"'
+								}) }}
+								<ul class="filters-form__subcategories">
+									{% for category in btn.categories %}
+										<li>
+											{{ button({
+												className: 'filters-form__button _quick-filter' + className,
+												text: category.name
+											}) }}
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Цвет</button>
+			<ul class="filters-form__item-content _buttons">
+				{% for btn in colorButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li>
+						{{ button({
+							className: 'filters-form__button _color' + className,
+							attr: 'aria-label="' + btn.name + '"' + 'style="background:' + btn.color + '"'
+						}) }}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Стоимость</button>
+			<div class="filters-form__item-content">
+				{{ rangeSlider({
+					className: 'filters-form__price-range',
+					id: 'price-range',
+					min: 100,
+					max: 600000,
+					minValue: 100000,
+					maxValue: 433150,
+					step: 100
+				}) }}
+			</div>
+		</li>
+	</ul>
+</form>
