@@ -6,16 +6,17 @@
 	position: relative;
 	background-color: var(--blue-dark);
 	color: var(--white);
+	overflow: hidden;
 	@media (max-width: $laptop-md) {
-		--footer-spacing-1: #{rem(8)};
-		--footer-spacing-2: #{rem(24)};
+		--footer-spacing-1: 8px;
+		--footer-spacing-2: 24px;
 	}
 	@media (max-width: $tablet) {
-		--footer-spacing-1: #{rem(16)};
-		--footer-spacing-2: #{rem(16)};
+		--footer-spacing-1: 16px;
+		--footer-spacing-2: 16px;
 	}
 	@media (max-width: $mobile) {
-		--footer-spacing-1: #{rem(8)};
+		--footer-spacing-1: 8px;
 	}
 	&::before {
 		content: '';
@@ -51,7 +52,6 @@
 	}
 	&__social-link {
 		margin-right: var(--footer-spacing-1);
-		text-transform: uppercase;
 	}
 	&__to-top {
 		--size: #{rem(104)};
@@ -62,7 +62,7 @@
 		height: var(--size);
 		fill: currentColor;
 		color: transparent;
-		transition: color $fast-transition-duration;
+		@extend .animated;
 		&:hover {
 			color: var(--white);
 		}
@@ -75,13 +75,16 @@
 		}
 	}
 	&__to-top-icon {
-		width: 70%;
-		height: 70%;
+		--size: rem(72);
+		width: var(--size);
+		height: var(--size);
 		transform-origin: center;
 		transform: rotate(-45deg);
 		@media (max-width: $laptop-md) {
-			width: 73%;
-			height: 73%;
+			--size: 64px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 32px;
 		}
 	}
 	&__center {
@@ -109,8 +112,7 @@
 		display: inline-block;
 		margin-right: var(--footer-spacing-2);
 		margin-bottom: var(--footer-spacing-2);
-		text-transform: uppercase;
-		transition: color $fast-transition-duration;
+		@extend .animated;
 		@media (max-width: $laptop-sm) {
 			margin-bottom: 0;
 			margin-right: 0;
@@ -141,7 +143,7 @@
 	}
 	&__phone {
 		letter-spacing: -0.04em;
-		transition: color $fast-transition-duration;
+		@extend .animated;
 		@media (max-width: $laptop-md) {
 			letter-spacing: 0;
 		}
@@ -152,9 +154,11 @@
 	&__partners {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: flex-end;
 		gap: var(--footer-spacing-1);
 		margin-bottom: var(--footer-spacing-2);
 		@media (max-width: $laptop-sm) {
+			justify-content: flex-start;
 			grid-column: 1/3;
 			order: -1;
 			margin-bottom: 0;
@@ -227,7 +231,6 @@
 		background-repeat: no-repeat;
 		background-position: bottom #{rem(4)} right #{rem(4)};
 		background-size: rem(16) rem(16);
-		text-transform: uppercase;
 		transition: background-position $default-transition-duration;
 		&:hover {
 			background-position: bottom #{rem(4)} right 0;
@@ -278,8 +281,8 @@
 		}
 	}
 	&__link {
-		transition: color $fast-transition-duration;
 		justify-self: flex-start;
+		@extend .animated;
 		&:hover {
 			color: var(--footer-hover);
 		}

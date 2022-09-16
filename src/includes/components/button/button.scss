@@ -12,8 +12,8 @@
 	}
 	&._white-border {
 		color: var(--white);
-		border: rem(2) solid var(--white);
-		transition: border $fast-transition-duration, background-color $fast-transition-duration;
+		border: 2px solid currentColor;
+		@extend .animated;
 		&:hover {
 			background-color: var(--blue-dark);
 			border-color: var(--blue-dark);
@@ -163,7 +163,7 @@
 		}
 	}
 	&._social-l {
-		padding: rem(3.5) rem(29);
+		padding: rem(4) rem(29);
 		border-radius: rem(100);
 		@media (max-width: $laptop) {
 			padding-top: 5.5px;

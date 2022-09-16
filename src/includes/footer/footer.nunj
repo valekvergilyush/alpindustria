@@ -5,9 +5,9 @@
 	<div class="footer__container container">
 		<div class="footer__top">
 			<div class="footer__socials">
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4" aria-label="VK">VK</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4" aria-label="Telegram">TG</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4" aria-label="Youtube">YT</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="VK">VK</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Telegram">TG</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Youtube">YT</a>
 			</div>
 			<a href="#" class="footer__to-top" aria-label="Наверх">
 				{{ icon({
@@ -19,7 +19,7 @@
 		</div>
 		<div class="footer__center">
 			<div class="footer__center-left">
-				<a href="mailto:sale@alpindustria.ru" class="footer__email h5">sale@alpindustria.ru</a>
+				<a href="mailto:sale@alpindustria.ru" class="footer__email ttu h5">sale@alpindustria.ru</a>
 				<ul class="footer__phones">
 					<li class="footer__phones-item h6">
 						<a href="tel:88007751630" class="footer__phone">8 800 775 16 30</a>
@@ -94,13 +94,13 @@
 			</ul>
 			<ul class="footer__links">
 				<li class="footer__link-item">
-					<a href="#" class="footer__arrow-link h7">Стать партнером</a>
+					<a href="#" class="footer__arrow-link ttu h7">Стать партнером</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="#" class="footer__arrow-link h7">Дистрибьюция</a>
+					<a href="#" class="footer__arrow-link ttu h7">Дистрибьюция</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="#" class="footer__arrow-link h7">Карьера у нас</a>
+					<a href="#" class="footer__arrow-link ttu h7">Карьера у нас</a>
 				</li>
 			</ul>
 		</div>
