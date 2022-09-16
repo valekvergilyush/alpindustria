@@ -9,7 +9,7 @@
 				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Telegram">TG</a>
 				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Youtube">YT</a>
 			</div>
-			<a href="#" class="footer__to-top" aria-label="Наверх">
+			<a href="#" class="footer__to-top" data-anchor-link aria-label="Наверх">
 				{{ icon({
 					iconName: 'promo-arrow',
 					className: 'footer__to-top-icon',

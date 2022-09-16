@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
-
-// import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js';
-// gsap.registerPlugin(ScrollToPlugin);
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
 
 global.gsap = gsap;
 
@@ -21,7 +20,9 @@ class AlpIndustry {
 			Catalog: require('../../includes/catalog/catalog').default,
 		};
 		this.helpers = {};
-		this.modules = {};
+		this.modules = {
+			AnchorLinks: require('./modules/AnchorLinks').default,
+		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
 		});
