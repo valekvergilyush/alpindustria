@@ -3,9 +3,13 @@
 	--footer-spacing-1: #{rem(16)};
 	--footer-spacing-2: #{rem(32)};
 	--footer-hover: #{darken($white, 15%)};
-	position: relative;
 	background-color: var(--blue-dark);
 	color: var(--white);
+	background-image: url('../images/footer/footer-bg.jpg');
+	background-size: cover;
+	@include retina {
+		background-image: url('../images/footer/footer-bg@2x.jpg');
+	}
 	overflow: hidden;
 	@media (max-width: $laptop-md) {
 		--footer-spacing-1: 8px;
@@ -17,20 +21,6 @@
 	}
 	@media (max-width: $mobile) {
 		--footer-spacing-1: 8px;
-	}
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0.1;
-		background-image: url('../images/footer/footer-bg.jpg');
-		background-size: cover;
-		@include retina {
-			background-image: url('../images/footer/footer-bg@2x.jpg');
-		}
 	}
 	&__container {
 		position: relative;
