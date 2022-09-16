@@ -1,5 +1,120 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+
 <footer class="page__footer footer">
 	<div class="footer__container container">
-		<p class="h5">Подвал</p>
+		<div class="footer__top">
+			<div class="footer__socials">
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="VK">VK</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Telegram">TG</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Youtube">YT</a>
+			</div>
+			<a href="#" class="footer__to-top" data-anchor-link aria-label="Наверх">
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'footer__to-top-icon',
+					attr: 'width="72" height="72"'
+				}) }}
+			</a>
+		</div>
+		<div class="footer__center">
+			<div class="footer__center-left">
+				<a href="mailto:sale@alpindustria.ru" class="footer__email ttu h5">sale@alpindustria.ru</a>
+				<ul class="footer__phones">
+					<li class="footer__phones-item h6">
+						<a href="tel:88007751630" class="footer__phone">8 800 775 16 30</a>
+					</li>
+					<li class="footer__phones-item h6">
+						<a href="tel:88125283776" class="footer__phone">8 812 528 37 76</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="footer__partners">
+				<li class="footer__partners-item">
+					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img class="footer__partner-img"
+							src="assets/images/footer/logo-partner-1.png"
+							srcset="assets/images/footer/logo-partner-1@2x.png 2x"
+							width="88"
+							height="88"
+							alt="logo-partner-1">
+					</a>
+				</li>
+				<li class="footer__partners-item">
+					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+					<img
+						class="footer__partner-img"
+						src="assets/images/footer/logo-partner-2.png"
+						srcset="assets/images/footer/logo-partner-2@2x.png 2x"
+						width="88"
+						height="62"
+						alt="logo-partner-2">
+				</a>
+				</li>
+				<li class="footer__partners-item">
+					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img
+							class="footer__partner-img"
+							src="assets/images/footer/logo-partner-3.png"
+							srcset="assets/images/footer/logo-partner-3@2x.png 2x"
+							width="88"
+							height="88"
+							alt="logo-partner-3">
+					</a>
+				</li>
+				<li class="footer__partners-item">
+					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img
+							class="footer__partner-img"
+							src="assets/images/footer/logo-partner-4.png"
+							srcset="assets/images/footer/logo-partner-4@2x.png 2x"
+							width="88"
+							height="88"
+							alt="logo-partner-4">
+					</a>
+				</li>
+				<li class="footer__partners-item">
+					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img
+							class="footer__partner-img"
+							src="assets/images/footer/logo-partner-5.svg"
+							width="88"
+							height="44"
+							alt="logo-partner-5">
+					</a>
+				</li>
+			</ul>
+			<ul class="footer__phones _tablet">
+				<li class="footer__phones-item h6">
+					<a href="tel:88007751630" class="footer__phone">8 800 775 16 30</a>
+				</li>
+				<li class="footer__phones-item h6">
+					<a href="tel:88125283776" class="footer__phone">8 812 528 37 76</a>
+				</li>
+			</ul>
+			<ul class="footer__links">
+				<li class="footer__link-item">
+					<a href="#" class="footer__arrow-link ttu h7">Стать партнером</a>
+				</li>
+				<li class="footer__link-item">
+					<a href="#" class="footer__arrow-link ttu h7">Дистрибьюция</a>
+				</li>
+				<li class="footer__link-item">
+					<a href="#" class="footer__arrow-link ttu h7">Карьера у нас</a>
+				</li>
+			</ul>
+		</div>
+		{{ icon({
+			iconName: 'logo-full',
+			className: 'footer__logo',
+			attr: 'width="1600" height="185"'
+		}) }}
+		<div class="footer__bottom">
+			<a href="#" class="footer__link _copy p4">(c) 2020 EDELVEIS, OOO</a>
+			<a href="#" class="footer__link p4">Условия использования сайта</a>
+			<a href="#" class="footer__link p4">Контакты юр. лица «Интернет-магазин»</a>
+			<a href="#" class="footer__link p4">Контакты юр. лица «Сообщество»</a>
+			<a href="#" class="footer__link p4">Контакты юр. лица «Дистрибуция»</a>
+		</div>
 	</div>
 </footer>

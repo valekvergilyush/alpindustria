@@ -10,7 +10,15 @@
 	&__icon {
 		pointer-events: none;
 	}
-
+	&._white-border {
+		color: var(--white);
+		border: 2px solid currentColor;
+		@extend .animated;
+		&:hover {
+			background-color: var(--blue-dark);
+			border-color: var(--blue-dark);
+		}
+	}
 	&._burger {
 		--size: 4rem; // 64px
 		width: var(--size);
@@ -152,6 +160,38 @@
 			order: -1;
 			width: var(--icon-size);
 			height: var(--icon-size);
+		}
+	}
+	&._social-l {
+		padding: rem(4) rem(29);
+		border-radius: rem(100);
+		@media (max-width: $laptop) {
+			padding-top: 5.5px;
+			padding-bottom: 5.5px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 1px 16px;
+		}
+	}
+	&._social-m {
+		padding: rem(1.5) rem(22);
+		border-radius: rem(100);
+		@media (max-width: $laptop) {
+			padding: 2.5px 18px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 3.5px 14px;
+		}
+	}
+	&._social-s {
+		padding: rem(3) rem(11);
+		border-radius: rem(100);
+		border-width: rem(1);
+		@media (max-width: $laptop) {
+			padding: 5px 11px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 3px 7px;
 		}
 	}
 }
