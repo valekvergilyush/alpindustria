@@ -1,5 +1,8 @@
+const HTML_CLASSLIST = document.documentElement.classList;
+
 const ClassName = {
 	FIXED: '_fixed',
+	FILTERS_OPENED: '_filters-opened',
 };
 
 class Header {
@@ -54,12 +57,14 @@ class Header {
 		} else {
 			this.headerElement.classList.remove(ClassName.FIXED);
 		}
-		this.isHeaderHidden = !this.isHeaderHidden;
-		gsap.to(this.headerElement, {
-			yPercent: 0,
-			duration: 0.1,
-			ease: 'linear',
-		});
+		if (!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0) {
+			this.isHeaderHidden = !this.isHeaderHidden;
+			gsap.to(this.headerElement, {
+				yPercent: 0,
+				duration: 0.1,
+				ease: 'linear',
+			});
+		}
 	}
 	hideHeader() {
 		this.isHeaderHidden = !this.isHeaderHidden;
