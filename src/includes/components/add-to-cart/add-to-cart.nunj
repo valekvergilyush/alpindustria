@@ -1,0 +1,36 @@
+{% from "../icon/icon.nunj" import icon %}
+{% from "../counter/counter.nunj" import counter %}
+
+{% macro addToCart(props) %}
+	<div class="add-to-cart {% if props.className %}{{ props.className }} {% endif %}">
+		{% if props.list %}
+			<div class="add-to-cart__list">
+				{% for item in props.list %}
+					<div class="add-to-cart__item">
+						{% if item.text %}
+							<p class="add-to-cart__text p3">{{ item.text }}</p>
+						{% endif %}
+						{% if item.oldPrice %}
+							<p class="add-to-cart__old-price">{{ item.oldPrice }}</p>
+						{% endif %}
+						{% if item.price %}
+							<p class="add-to-cart__price h5">{{ item.price }}</p>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+		{% if props.counter %}
+			{{ counter({
+				number: props.counter,
+				className: 'add-to-cart__link-icon'
+			}) }}
+		{% endif %}
+		<a href="{{ props.link.href }}" class="add-to-cart__link h7 ttu">{{props.link.text}}
+			{{ icon({
+				iconName: 'promo-arrow',
+				className: 'add-to-cart__link-icon'
+			}) }}
+		</a>
+	</div>
+{% endmacro %}

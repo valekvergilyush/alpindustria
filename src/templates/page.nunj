@@ -1,7 +1,7 @@
 {% extends "./base.nunj" %}
 
 {% block content %}
-	{% include "../includes/header/header.nunj" %}
+	{# {% include "../includes/header/header.nunj" %} #}
 
 	{% block mainContent %}
 	{% endblock %}

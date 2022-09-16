@@ -12,6 +12,8 @@
 @import '../../includes/components/button/button';
 @import '../../includes/components/product-card/product-card';
 @import '../../includes/components/breadcrumbs/breadcrumbs';
+@import '../../includes/components/add-to-cart/add-to-cart';
+@import '../../includes/components/counter/counter';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -22,6 +24,7 @@
 @import '../../includes/catalog-promo/catalog-promo';
 @import '../../includes/catalog/catalog';
 @import '../../includes/news-section/news-section';
+@import '../../includes/product/product';
 
 // ======= PAGES =======
 @import 'pages/index';

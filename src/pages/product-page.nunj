@@ -18,6 +18,6 @@
 {% block mainContent %}
 	<main class="page__main">
 		{{ breadcrumbs(breadcrumbsData) }}
-		{% include "../includes/catalog/catalog.nunj" %}
+		{% include "../includes/product/product.nunj" %}
 	</main>
 {% endblock %}

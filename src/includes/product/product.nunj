@@ -1,0 +1,62 @@
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+<section class="product">
+	<div class="product__content">
+		<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
+		<div class="product__brand-rating">
+			{{ button({
+				className: 'product__brand _arrow-m p2',
+				text: 'The North Face',
+				href: '#',
+				icon: 'promo-arrow'
+			}) }}
+			<span href="#" class="product__rating h5">
+				{{ icon({
+					iconName: 'star',
+					className: 'product__rating-icon',
+					attr: 'width="32" height="32"'
+				}) }}
+				4.9
+			</span>
+		</div>
+	</div>
+	<div class="product__img">
+		<div class="product__slider">
+			<img src="assets/images/catalog/item-4.png" alt="">
+		</div>
+		{{ addToCart({
+			className: 'product__add',
+			link: {
+				text: 'оформить',
+				url: '#'
+			}
+		}) }}
+		{{ addToCart({
+			className: 'product__add',
+			list: [
+				{
+					text: 'Стоимость аренды:',
+					price: '145 000 ₽'
+				},
+				{
+					oldPrice: '200 000 ₽',
+					price: '145 000 ₽'
+				}
+			],
+			link: {
+				text: 'оформить',
+				url: '#'
+			}
+		}) }}
+		{{ addToCart({
+			className: 'product__add',
+			counter: 3,
+			link: {
+				text: 'добавить в корзину',
+				url: '#'
+			}
+		}) }}
+	</div>
+</section>
