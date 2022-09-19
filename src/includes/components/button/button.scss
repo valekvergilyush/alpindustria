@@ -250,7 +250,7 @@
 			--icon-size: 20px;
 		}
 		&:hover {
-			transform: scale(1.05);
+			transform: scale(0.95);
 		}
 		#{$this}__icon {
 			width: var(--icon-size);
