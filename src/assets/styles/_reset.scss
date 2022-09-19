@@ -127,3 +127,11 @@ button {
 	user-select: none;
 	border-radius: 0;
 }
+
+[data-drag-scroll] {
+	cursor: grab;
+	overflow: auto;
+	@include scrollbar {
+		display: none;
+	}
+}

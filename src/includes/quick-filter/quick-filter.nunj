@@ -43,7 +43,7 @@
 	{% else %}
 		{% set mod = '' %}
 	{% endif %}
-		<li class="quick-filter__item"{% if category.subcategories %} data-subcategory-item{% endif %}>
+		<li class="quick-filter__item"{% if category.subcategories %}data-drag-scroll data-subcategory-item{% endif %}>
 			{{ button({
 				className: 'quick-filter__button _quick-filter',
 				text: category.name,

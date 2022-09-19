@@ -27,6 +27,7 @@ class AlpIndustry {
 			Accordion: require('./modules/Accordion').default,
 			AnchorLinks: require('./modules/AnchorLinks').default,
 			FilterSubcategory: require('./modules/FilterSubcategory').default,
+			DragScroll: require('./modules/DragScroll').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
