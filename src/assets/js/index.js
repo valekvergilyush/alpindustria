@@ -19,13 +19,14 @@ class AlpIndustry {
 			Header: require('../../includes/header/header').default,
 			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
-			FiltersForm: require('../../includes/filters-form/filters-form').default,
+			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {};
 		this.modules = {
 			RangeSlider: require('./modules/RangeSlider').default,
 			Accordion: require('./modules/Accordion').default,
 			AnchorLinks: require('./modules/AnchorLinks').default,
+			FilterSubcategory: require('./modules/FilterSubcategory').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

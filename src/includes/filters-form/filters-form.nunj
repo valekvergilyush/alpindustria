@@ -202,13 +202,14 @@
 					<li {% if btn.categories %}data-subcategory-item{% endif %}>
 						{{ button({
 							className: 'filters-form__button _quick-filter' + className,
-							text: btn.name
+							text: btn.name,
+							attr: 'data-subcategory-opener'
 						}) }}
 						{% if btn.categories %}
 							<div class="filters-form__subcategories-wrapper">
 								{{ button({
 									className: 'filters-form__button _back',
-									attr: 'aria-label="Назад"',
+									attr: 'aria-label="Назад" data-subcategory-back',
 									icon: 'arrow-left',
 									iconData: 'width="24" height="24"'
 								}) }}
