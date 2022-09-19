@@ -105,7 +105,8 @@
 		outline-offset: -1px;
 		border-radius: 50%;
 		&:hover,
-		&._selected {
+		&._selected,
+		input:checked + & {
 			outline: 2px solid var(--blue-dark);
 			outline-offset: -2px;
 		}

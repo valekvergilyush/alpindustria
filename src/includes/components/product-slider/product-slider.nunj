@@ -1,0 +1,18 @@
+{% macro productSlider(props) %}
+	<div class="product-slider {% if props.className %}{{ props.className }} {% endif %}">
+		<div class="product-slider__main" data-product-slider>
+			{% for sliderImg in props.imgsList %}
+				<div class="product-slider__img-wrap">
+					<img class="product-slider__img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="704" height="737" alt="slider-img">
+				</div>
+			{% endfor %}
+		</div>
+		<div class="product-slider__thumbnails">
+			{% for sliderImg in props.imgsList %}
+				<button type="button" class="product-slider__thumbnail">
+					<img class="product-slider__thumbnail-img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="153" height="153" alt="thumbnail">
+				</button>
+			{% endfor %}
+		</div>
+	</div>
+{% endmacro %}

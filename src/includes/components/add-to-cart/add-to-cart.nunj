@@ -23,7 +23,7 @@
 		{% if props.counter %}
 			{{ counter({
 				number: props.counter,
-				className: 'add-to-cart__link-icon'
+				className: 'add-to-cart__counter'
 			}) }}
 		{% endif %}
 		<a href="{{ props.link.href }}" class="add-to-cart__link h7 ttu">{{props.link.text}}
