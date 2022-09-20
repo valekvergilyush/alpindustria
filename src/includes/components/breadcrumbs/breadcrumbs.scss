@@ -4,6 +4,7 @@
 	column-gap: rem(32);
 	padding: rem(16) rem(64) rem(15);
 	border-bottom: 1px solid var(--blue-dark);
+	background-color: var(--white);
 	@media (max-width: $laptop-lg) {
 		padding: 8px 40px 7px;
 	}

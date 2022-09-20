@@ -2,6 +2,8 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/product-slider/product-slider.nunj" import productSlider %}
+{% from "../components/counter/counter.nunj" import counter %}
+{% from "../components/product-reviews/product-reviews.nunj" import productReviews %}
 
 {% set productSliderImgs = [
 	'assets/images/catalog/item-1',
@@ -16,92 +18,157 @@
 	'assets/images/catalog/item-4-mini'
 ] %}
 {% set colorButtons = [
-	{ name: 'Красный', color: '#C9364C', className: ' _selected' },
-	{ name: 'Тёмно-зелёный', color: '#03836E' },
-	{ name: 'Тёмно-фиолетовый', color: '#6F2876' },
-	{ name: 'Тёмно-серый', color: '#342C25' },
-	{ name: 'Светло-серый', color: '#F5F1EE' },
+	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
+	{ name: 'Красный', color: '#C9364C' },
+	{ name: 'Тёмно-фиолетовый', color: '#6F2876', disabled: true },
 	{ name: 'Тёмно-синий', color: '#324481' },
-	{ name: 'Светло-зелёный', color: '#0B994B' },
-	{ name: 'Светло-фиолетовый', color: '#8B4192' },
-	{ name: 'Белый', color: '#FEFEFE' }
+	{ name: 'Белый', color: '#FEFEFE' },
+	{ name: 'Тёмно-серый', color: '#342C25' },
+	{ name: 'Светло-зелёный', color: '#0B994B' }
+] %}
+{% set sizeButtons = [
+	{ value: '37' },
+	{ value: '38', disabled: true },
+	{ value: '39', selected: true },
+	{ value: '40' },
+	{ value: '41' },
+	{ value: '42' },
+	{ value: '43' },
+	{ value: '44' },
+	{ value: '45' }
 ] %}
 
 <section class="product">
-	<div class="product__content">
-		<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
-		<div class="product__main-info">
-			{{ button({
-				className: 'product__brand _arrow-m p2',
-				text: 'The North Face',
-				href: '#',
-				icon: 'promo-arrow'
-			}) }}
-			<span href="#" class="product__rating">
-				{{ icon({
-					iconName: 'star',
-					className: 'product__rating-icon',
-					attr: 'width="32" height="32"'
+	<div class="product__wrap _bdb">
+		<div class="product__content">
+			<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
+			<div class="product__main-info">
+				{{ button({
+					className: 'product__brand _arrow-m p2',
+					text: 'The North Face',
+					href: '#',
+					icon: 'promo-arrow'
 				}) }}
-				4.9
-			</span>
-			<div class="product__price-wrap">
-				<p class="product__old-price">45 780 руб.</p>
-				<p class="product__price s1">33 150 руб.</p>
+				<span href="#" class="product__rating">
+					{{ icon({
+						iconName: 'star',
+						className: 'product__rating-icon',
+						attr: 'width="32" height="32"'
+					}) }}
+					4.9
+				</span>
+				<div class="product__price-wrap">
+					<p class="product__old-price">45 780 руб.</p>
+					<p class="product__price s1">33 150 руб.</p>
+				</div>
+				{{ button({
+					className: 'product__favorite _wishlist',
+					attr: 'aria-label="Добавить в вишлист"'
+				}) }}
 			</div>
-			{{ button({
-				className: 'product__favorite _wishlist',
-				attr: 'aria-label="Добавить в вишлист"'
+			<div class="product__badges">
+				<div class="product__badges-left">
+					{% include "../product-badge/new.nunj" %}
+					{% include "../product-badge/50%.nunj" %}
+				</div>
+				{% include "../product-badge/dry-feature.nunj" %}
+			</div>
+			<div class="product__shops">
+				<p class="product__code p4">Код товара для заказа по телефону: 402317</p>
+				{{ button({
+					className: 'product__available _arrow-m p4',
+					text: 'В наличии в 2 магазинах',
+					icon: 'promo-arrow'
+				}) }}
+			</div>
+			<div class="product__colors-sizes">
+				<div class="product__colors">
+					<div class="product__title-sm-wrap">
+						<p class="product__title-sm ttu">Цвет</p>
+					</div>
+					<ul class="product__inputs-list">
+						{% for btn in colorButtons %}
+							<li>
+								<label class="product__color">
+									<input class="product__radio-input" type="radio" name="color" value="{{btn.name}}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+									<span class="button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="product__sizes">
+					<div class="product__title-sm-wrap">
+						<p class="product__title-sm ttu">Размер</p>
+						<a href="#" class="product__size-table p4">Таблица размеров</a>
+					</div>
+					<ul class="product__inputs-list">
+						{% for btn in sizeButtons %}
+							<li>
+								<label class="product__size">
+									<input class="product__radio-input" type="radio" name="size" value="{{ btn.value }}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+									<span class="button _size" aria-label="Размер {{ btn.value }}">{{ btn.value }}</span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="product__img">
+			{{ productSlider({
+				class: 'product__slider',
+				imgsList: productSliderImgs,
+				thumbsList: productSliderThumbs
+			}) }}
+			{{ addToCart({
+				className: 'product__add',
+				counter: 3,
+				link: {
+					text: 'добавить в корзину',
+					url: '#'
+				}
 			}) }}
 		</div>
-		<div class="product__badges">
-			<div class="product__badges-left">
-				{% include "../product-badge/new.nunj" %}
-				{% include "../product-badge/50%.nunj" %}
+	</div>
+	<div class="product__wrap">
+		<div class="product__content">
+			<div class="product__counter-block">
+				<div class="product__title-sm-wrap">
+					<p class="product__title-sm ttu">количество</p>
+				</div>
+				{{ counter({
+					number: 3,
+					className: 'product__counter'
+				}) }}
 			</div>
-			{% include "../product-badge/dry-feature.nunj" %}
-		</div>
-		<div class="product__shops">
-			<p class="product__code p4">Код товара для заказа по телефону: 402317</p>
-			{{ button({
-				className: 'product__available _arrow-m p4',
-				text: 'В наличии в 2 магазинах',
-				icon: 'promo-arrow'
-			}) }}
-		</div>
-		<div class="product__colors-sizes">
-			<div class="product__colors">
-				<p class="product__title-sm ttu">цвет</p>
-				<ul class="product__colors-list">
-					{% for btn in colorButtons %}
-						<li class="product__color-item">
-							<label class="product__color">
-								<input class="product__color-input" type="radio" name="color" value="{{btn.name}}">
-								<span class="product__color-label button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
-							</label>
-						</li>
-					{% endfor %}
+			<div class="product__block">
+				<p class="h6 product__title-md ttu">Описание</p>
+				<div class="product__descr p3">
+					<p>Ботинки Zamberlan 8000 Everest Evo RR специально разработаны для экстремальных экспедиций на больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram® Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и долговечности. Промежуточная подошва из двух слоев полиуретана - жесткого и более мягкого, для обеспечения поддержки, амортизирующих свойств и небольшого веса. Прочная застежка устойчива к механическим нагрузкам и повреждениям, высокое голенище с ветро и водонепроницаемой молнией YKK устойчивой к УФ. Теплоизоляция этой модели была сертифицирована для температур до -30 °C при отсутствии движения, но при ходьбе может выдерживать более низкие температуры - до -60 °C.</p>
+					<p>Артикул: # 8000PM3T</p>
+				</div>
+			</div>
+			<div class="product__block">
+				<p class="h6 product__title-md ttu">Особенности</p>
+				<ul class="product__features">
+					<li class="product__feature p3">Верх: Cordura® / микрофибра</li>
+					<li class="product__feature p3">Съемный внутренник</li>
+					<li class="product__feature p3">Стелька из углеродного волокна Zamberlan® 5 мм</li>
+					<li class="product__feature p3">Промежуточная подошва: двойной слой полиуретана + Zamberlan® PCS EVO</li>
+					<li class="product__feature p3">Подошва Zamberlan® Vibram® Penia</li>
+					<li class="product__feature p3">Колодка: Z8000</li>
+					<li class="product__feature p3">Совместимость с автоматическими кошками</li>
+					<li class="product__feature p3">Вес: 2640 г (пара 42 р)</li>
 				</ul>
 			</div>
-			<div class="product__sizes">sizes</div>
 		</div>
-		<div class="product__block">counter</div>
-		<div class="product__features">features</div>
-		<div class="product__reviwes">reviwes</div>
 	</div>
-	<div class="product__img">
-		{{ productSlider({
-			class: 'product__slider',
-			imgsList: productSliderImgs,
-			thumbsList: productSliderThumbs
-		}) }}
-		{{ addToCart({
-			className: 'product__add',
-			counter: 3,
-			link: {
-				text: 'добавить в корзину',
-				url: '#'
-			}
-		}) }}
+	<div class="product__wrap">
+		<div class="product__content _no-bd">
+			{{ productReviews({
+				className: 'product__reviews'
+			}) }}
+		</div>
 	</div>
 </section>

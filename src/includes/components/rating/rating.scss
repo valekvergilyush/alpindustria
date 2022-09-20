@@ -1,0 +1,8 @@
+.rating {
+	display: flex;
+	column-gap: 4px;
+	&__star {
+		width: rem(25);
+		height: rem(25);
+	}
+}
