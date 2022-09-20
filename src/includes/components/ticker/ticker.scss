@@ -8,7 +8,7 @@
 		flex-shrink: 0;
 		column-gap: var(--gap);
 		height: rem(92);
-		animation: tickerAnim 15s linear infinite;
+		animation: tickerAnim 10s linear infinite;
 		@media (max-width: $laptop) {
 			height: 76px;
 		}
@@ -38,10 +38,9 @@
 
 @keyframes tickerAnim {
 	0% {
-		transform: translate3d(0, 0, 0);
-		visibility: visible;
+		transform: translateX(0);
 	}
 	100% {
-		transform: translate3d(-100%, 0, 0);
+		transform: translateX(-100%);
 	}
 }
