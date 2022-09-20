@@ -6,14 +6,24 @@
 	&__container {
 		display: flex;
 		flex-shrink: 0;
-		column-gap: var(--gap);
 		height: rem(92);
-		animation: tickerAnim 10s linear infinite;
 		@media (max-width: $laptop) {
 			height: 76px;
 		}
 		@media (max-width: $tablet) {
 			--gap: 8px;
+		}
+		& > * {
+			display: flex;
+			column-gap: var(--gap);
+			flex-shrink: 0;
+			animation: animate 30s linear infinite;
+			animation-delay: -30s;
+			&:nth-child(2) {
+				margin-left: var(--gap);
+				animation: animate2 30s linear infinite;
+				animation-delay: -15s;
+			}
 		}
 	}
 	&__text {
@@ -36,11 +46,25 @@
 	}
 }
 
-@keyframes tickerAnim {
+@keyframes animate {
 	0% {
-		transform: translateX(0);
+		transform: translateX(calc(100% + 2 * var(--gap)));
 	}
 	100% {
 		transform: translateX(-100%);
 	}
+}
+
+@keyframes animate2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+section .scroll div:nth-child(2) {
+	animation: animate2 30s linear infinite;
+	animation-delay: -15s;
 }
