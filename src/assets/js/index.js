@@ -19,14 +19,20 @@ class AlpIndustry {
 			Header: require('../../includes/header/header').default,
 			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
-			FiltersForm: require('../../includes/filters-form/filters-form').default,
 			ProductSlider: require('../../includes/components/product-slider/product-slider').default,
+			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
+			Ticker: require('../../includes/components/ticker/ticker').default,
+			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
-		this.helpers = {};
+		this.helpers = {
+			ScrollHelper: require('./helpers/ScrollHelper'),
+		};
 		this.modules = {
 			RangeSlider: require('./modules/RangeSlider').default,
 			Accordion: require('./modules/Accordion').default,
 			AnchorLinks: require('./modules/AnchorLinks').default,
+			FilterSubcategory: require('./modules/FilterSubcategory').default,
+			DragScroll: require('./modules/DragScroll').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

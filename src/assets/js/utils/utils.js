@@ -95,6 +95,14 @@ const utils = {
 			number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]
 		];
 	},
+	getCurrentScrollTop() {
+		return Math.max(
+			0,
+			window.pageYOffset,
+			document.documentElement.scrollTop,
+			document.body.scrollTop
+		);
+	},
 };
 
 export default utils;

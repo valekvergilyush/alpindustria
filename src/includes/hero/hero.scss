@@ -1,4 +1,5 @@
 .hero {
+	$this: &;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -26,10 +27,16 @@
 		height: 100%;
 		object-fit: cover;
 		pointer-events: none;
+		display: none;
+		&._hero {
+			display: block;
+		}
 	}
 	&__container {
 		position: relative;
 		z-index: 1;
+		display: flex;
+		flex-direction: column;
 		flex-grow: 1;
 		@media (max-width: $tablet) {
 			display: flex;
@@ -37,15 +44,20 @@
 		}
 	}
 	&__title {
+		display: flex;
+		flex-direction: column;
+		max-width: min(rem(650), 100%);
+		margin: 0 auto;
 		margin-top: rem(164);
-		margin-bottom: rem(207);
+		margin-bottom: auto;
+		// margin-bottom: rem(207);
 		@media (max-width: $laptop-lg) {
 			margin-top: 136px;
-			margin-bottom: 155px;
+			// margin-bottom: 155px;
 		}
 		@media (max-width: $laptop) {
 			margin-top: 108px;
-			margin-bottom: 183px;
+			// margin-bottom: 183px;
 		}
 		@media (max-width: $tablet) {
 			margin-top: auto;
@@ -54,6 +66,15 @@
 		@media (max-width: $mobile) {
 			margin-top: auto;
 			margin-bottom: calc(128 / 640 * 100 * var(--vh, 1vh));
+		}
+	}
+	&__title-root {
+		display: none;
+		justify-content: center;
+		column-gap: rem(8);
+		margin-bottom: rem(16);
+		@media (max-width: $tablet) {
+			margin-bottom: 8px;
 		}
 	}
 	&__quick-filter {
@@ -66,5 +87,10 @@
 	&__filters {
 		position: relative;
 		z-index: 1;
+	}
+	&._subcategory {
+		#{$this}__title-root {
+			display: flex;
+		}
 	}
 }
