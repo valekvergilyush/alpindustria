@@ -20,6 +20,7 @@ class AlpIndustry {
 			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
 			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
+			Ticker: require('../../includes/components/ticker/ticker').default,
 			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {

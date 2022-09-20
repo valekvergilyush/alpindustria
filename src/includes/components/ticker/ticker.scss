@@ -1,5 +1,6 @@
 .ticker {
 	--gap: #{rem(16)};
+	$this: &;
 	color: var(--white);
 	background-color: var(--blue-light);
 	overflow: hidden;
@@ -17,12 +18,12 @@
 			display: flex;
 			column-gap: var(--gap);
 			flex-shrink: 0;
-			animation: animate 30s linear infinite;
-			animation-delay: -30s;
+			animation: animate 60s linear infinite;
+			animation-delay: -60s;
 			&:nth-child(2) {
 				margin-left: var(--gap);
-				animation: animate2 30s linear infinite;
-				animation-delay: -15s;
+				animation: animate2 60s linear infinite;
+				animation-delay: -30s;
 			}
 		}
 	}
@@ -44,6 +45,13 @@
 			background-repeat: no-repeat;
 		}
 	}
+	&._paused {
+		#{$this}__container {
+			& > * {
+				animation-play-state: paused;
+			}
+		}
+	}
 }
 
 @keyframes animate {
@@ -62,9 +70,4 @@
 	100% {
 		transform: translateX(-200%);
 	}
-}
-
-section .scroll div:nth-child(2) {
-	animation: animate2 30s linear infinite;
-	animation-delay: -15s;
 }
