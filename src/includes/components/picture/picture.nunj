@@ -1,0 +1,22 @@
+{% macro picture(props) %}
+	{% set className = props.className %}
+	{% set path = props.path %}
+	{% set ext = props.ext %}
+	{% set width = props.width %}
+	{% set height = props.height %}
+	{% set alt = props.alt %}
+	{% set attr = props.attr %}
+
+	<picture>
+		<source media="(max-width: 375px)" srcset="{{ path }}-xs.webp, {{ path }}-xs@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 375px)" srcset="{{ path }}-xs.{{ ext }}, {{ path }}-xs@2x.{{ ext }} 2x">
+		<source media="(max-width: 768px)" srcset="{{ path }}-sm.webp, {{ path }}-sm@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 768px)" srcset="{{ path }}-sm.{{ ext }}, {{ path }}-sm@2x.{{ ext }} 2x">
+		<source media="(max-width: 1024px)" srcset="{{ path }}-md.webp, {{ path }}-md@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 1024px)" srcset="{{ path }}-md.{{ ext }}, {{ path }}-md@2x.{{ ext }} 2x">
+		<source media="(max-width: 1440px)" srcset="{{ path }}-lg.webp, {{ path }}-lg@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 1440px)" srcset="{{ path }}-lg.{{ ext }}, {{ path }}-lg@2x.{{ ext }} 2x">
+		<source srcset="{{ path }}.webp, {{ path }}@2x.webp 2x" type="image/webp">
+		<img class="picture{% if className %} {{ className }}{% endif %}" src="{{ path }}.{{ ext }}" srcset="{{ path }}@2x.{{ ext }} 2x"{% if width %} width="{{ width }}"{% endif %}{% if height %} height="{{ height }}"{% endif %} alt="{% if alt %}{{ alt }}{% endif %}"{% if attr %} {{ attr }}{% endif %}>
+	</picture>
+{% endmacro %}

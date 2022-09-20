@@ -1,0 +1,20 @@
+{% macro ticker(props) %}
+	<div class="{% if props.className %}{{ props.className }} {% endif %}ticker">
+		<div class="ticker__container">
+			<div>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+			</div>
+			<div>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				<p class="ticker__text h6 ttu">{{ props.text }}</p>
+			</div>
+		</div>
+	</div>
+{% endmacro %}

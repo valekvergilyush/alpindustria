@@ -1,25 +1,74 @@
 {% from "../components/button/button.nunj" import button %}
 
 {% set categories = [
-	'Одежда',
-	'Лыжный туризм',
-	'Туристическое снаряжение',
-	'Книги',
-	'Обувь',
-	'Альпинистское снаряжение',
-	'Сноуборды',
-	'Горные лыжи'
+	{ name: 'Одежда' },
+	{ name: 'Лыжный туризм' },
+	{ name: 'Туристическое снаряжение',
+		modifier: 'equipment',
+		subcategories: [
+			{ name: 'Все туристическое снаряжение' },
+			{ name: 'Коньки и сани-волокуши' },
+			{ name: 'Палатки и тенты' },
+			{ name: 'Оптика' },
+			{ name: 'Косметика для путешествий' },
+			{ name: 'Аксессуары и запчасти' },
+			{ name: 'Спальники' },
+			{ name: 'Снегоступы' },
+			{ name: 'Рюкзаки' },
+			{ name: 'Треккинговые палки' },
+			{ name: 'Коврики' },
+			{ name: 'Фонари' },
+			{ name: 'Часы и приборы' },
+			{ name: 'Посуда и термосы' },
+			{ name: 'Гермоснаряжение ' },
+			{ name: 'Ножи и инструменты' },
+			{ name: 'Спортивное питание' },
+			{ name: 'Туристическая мебель' },
+			{ name: 'Горелки и лампы' },
+			{ name: 'Сумки и баулы' },
+			{ name: 'Фляги и бурдюки' }
+		]
+	},
+	{ name: 'Книги' },
+	{ name: 'Обувь' },
+	{ name: 'Альпинистское снаряжение' },
+	{ name: 'Сноуборды' },
+	{ name: 'Горные лыжи' }
 ] %}
 
-<ul class="hero__quick-filter quick-filter">
-	{% for caterogyName in categories %}
-		<li class="quick-filter__item">
+<ul class="hero__quick-filter quick-filter" data-subcategory>
+	{% for category in categories %}
+	{% if category.subcategories %}
+		{% set mod = ' data-subcategory-mod="_' + category.modifier + '"' %}
+	{% else %}
+		{% set mod = '' %}
+	{% endif %}
+		<li class="quick-filter__item"{% if category.subcategories %}data-drag-scroll data-subcategory-item{% endif %}>
 			{{ button({
 				className: 'quick-filter__button _quick-filter',
-				text: caterogyName,
-				icon: 'close-button',
-				iconData: 'width="24" height="24"'
+				text: category.name,
+				attr: 'data-subcategory-opener' + mod
 			}) }}
+			{% if category.subcategories %}
+				<div class="quick-filter__subcategories-wrapper">
+					{{ button({
+						className: 'quick-filter__button _back',
+						attr: 'aria-label="Назад" data-subcategory-back',
+						icon: 'arrow-left',
+						iconData: 'width="24" height="24"'
+					}) }}
+					<ul class="quick-filter__subcategories" data-subcategory-list>
+						{% for subcategory in category.subcategories %}
+							<li>
+								{{ button({
+									className: 'quick-filter__button _quick-filter',
+									text: subcategory.name
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
 		</li>
 	{% endfor %}
 </ul>

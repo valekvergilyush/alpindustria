@@ -70,6 +70,7 @@
 	&._clear-filter {
 		@extend .animated;
 		height: rem(40);
+		padding: 0 rem(15);
 		color: var(--blue-light);
 		opacity: 0.5;
 		font-size: rem(14);
@@ -250,7 +251,7 @@
 			--icon-size: 20px;
 		}
 		&:hover {
-			transform: scale(1.05);
+			transform: scale(0.95);
 		}
 		#{$this}__icon {
 			width: var(--icon-size);
