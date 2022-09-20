@@ -9,5 +9,6 @@
 		{% include "../includes/filters/filters.nunj" %}
 		{% include "../includes/catalog/catalog.nunj" %}
 		{% include "../includes/news-section/news-section.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion.nunj" %}
 	</main>
 {% endblock %}
