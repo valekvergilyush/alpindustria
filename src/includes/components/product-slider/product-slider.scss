@@ -1,5 +1,6 @@
 .product-slider {
 	display: flex;
+	background-color: var(--default-bg-color);
 	&__main {
 		flex-grow: 1;
 	}

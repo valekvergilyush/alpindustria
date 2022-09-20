@@ -2,7 +2,7 @@
 @import 'constants';
 @import 'lib/base';
 @import 'lib/nouislider';
-@import 'lib/nouislider';
+@import 'lib/flickity';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -31,6 +31,7 @@
 @import '../../includes/catalog/catalog';
 @import '../../includes/news-section/news-section';
 @import '../../includes/product/product';
+@import '../../includes/product-badge/product-badge';
 
 // ======= PAGES =======
 @import 'pages/index';

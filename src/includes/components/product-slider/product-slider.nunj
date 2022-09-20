@@ -8,7 +8,7 @@
 			{% endfor %}
 		</div>
 		<div class="product-slider__thumbnails">
-			{% for sliderImg in props.imgsList %}
+			{% for sliderImg in props.thumbsList %}
 				<button type="button" class="product-slider__thumbnail">
 					<img class="product-slider__thumbnail-img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="153" height="153" alt="thumbnail">
 				</button>

@@ -1,0 +1,35 @@
+.product-badge {
+	--badge-size: 3rem; // 48px
+	--fs-badge: 0.875rem; // 14px
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: var(--badge-size);
+	height: var(--badge-size);
+	padding-top: 0.3em;
+	font-family: var(--font-family-suisse);
+	font-size: var(--fs-badge);
+	line-height: 1;
+	color: var(--white);
+	box-sizing: border-box;
+	pointer-events: all;
+	@media (max-width: $desktop-lg) {
+		padding-top: 0.1em;
+	}
+	@media (max-width: $mobile-lg) {
+		--badge-size: 32px;
+		--fs-badge: 10px;
+	}
+	&._new {
+		border-radius: 50%;
+		background-color: var(--violet-light);
+	}
+	&._discount {
+		border-radius: 50%;
+		background-color: var(--red-light);
+	}
+	&._feature {
+		padding-top: 0;
+		margin-left: auto;
+	}
+}

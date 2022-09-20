@@ -3,11 +3,17 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/product-slider/product-slider.nunj" import productSlider %}
 
-{% set productSliderData = [
+{% set productSliderImgs = [
 	'assets/images/catalog/item-1',
 	'assets/images/catalog/item-2',
 	'assets/images/catalog/item-3',
 	'assets/images/catalog/item-4'
+] %}
+{% set productSliderThumbs = [
+	'assets/images/catalog/item-1-mini',
+	'assets/images/catalog/item-2-mini',
+	'assets/images/catalog/item-3-mini',
+	'assets/images/catalog/item-4-mini'
 ] %}
 {% set colorButtons = [
 	{ name: 'Красный', color: '#C9364C', className: ' _selected' },
@@ -50,16 +56,10 @@
 		</div>
 		<div class="product__badges">
 			<div class="product__badges-left">
-				<p class="product__badge _new ttu">New</p>
-				<p class="product__badge _discount">-50%</p>
+				{% include "../product-badge/new.nunj" %}
+				{% include "../product-badge/50%.nunj" %}
 			</div>
-			<img
-				class="product__badge _feature"
-				src="assets/images/catalog/product-feature.png"
-				width="48"
-				height="48"
-				alt="Core-Tex products Guaranteed to keep you dry"
-			>
+			{% include "../product-badge/dry-feature.nunj" %}
 		</div>
 		<div class="product__shops">
 			<p class="product__code p4">Код товара для заказа по телефону: 402317</p>
@@ -76,7 +76,7 @@
 					{% for btn in colorButtons %}
 						<li class="product__color-item">
 							<label class="product__color">
-								<input class="product__color-input" type="radio" name="color" value="color-{{ loop.index }}">
+								<input class="product__color-input" type="radio" name="color" value="{{btn.name}}">
 								<span class="product__color-label button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
 							</label>
 						</li>
@@ -92,7 +92,8 @@
 	<div class="product__img">
 		{{ productSlider({
 			class: 'product__slider',
-			imgsList: productSliderData
+			imgsList: productSliderImgs,
+			thumbsList: productSliderThumbs
 		}) }}
 		{{ addToCart({
 			className: 'product__add',
