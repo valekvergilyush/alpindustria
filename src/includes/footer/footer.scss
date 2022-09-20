@@ -65,7 +65,7 @@
 		}
 	}
 	&__to-top-icon {
-		--size: rem(72);
+		--size: #{rem(72)};
 		width: var(--size);
 		height: var(--size);
 		transform-origin: center;

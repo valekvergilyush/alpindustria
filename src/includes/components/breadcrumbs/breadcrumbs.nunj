@@ -1,0 +1,12 @@
+{% macro breadcrumbs(props) %}
+	<div class="breadcrumbs">
+		<ul class="breadcrumbs__list">
+			{% for item in props.list %}
+				<li class="breadcrumbs__item p3">
+					<a href="{{ item.href }}" class="breadcrumbs__link">{{ item.text }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<a href="{{ link.href }}" class="breadcrumbs__link _side p3">{{ props.link.text }}</a>
+	</div>
+{% endmacro %}

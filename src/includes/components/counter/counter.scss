@@ -1,0 +1,38 @@
+.counter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: rem(135);
+	&__btn {
+		@include reset-btn;
+		--size: #{rem(32)};
+		position: relative;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		background-color: var(--gray-light);
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: rem(24);
+			height: 1px;
+			background-color: var(--blue-dark);
+		}
+		&::before {
+			content: '';
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 25px;
+		}
+
+		&._plus {
+			&::after {
+				content: '';
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+		}
+	}
+}

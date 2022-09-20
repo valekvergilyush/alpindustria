@@ -106,7 +106,8 @@
 		outline-offset: -1px;
 		border-radius: 50%;
 		&:hover,
-		&._selected {
+		&._selected,
+		input:checked + & {
 			outline: 2px solid var(--blue-dark);
 			outline-offset: -2px;
 		}
@@ -288,6 +289,46 @@
 		}
 		@media (max-width: $mobile-lg) {
 			padding: 3px 7px;
+		}
+	}
+	&._arrow-l {
+		&:hover {
+			#{$this}__icon {
+				transform: translate3d(#{rem(-12)}, 0, 0);
+				@media (max-width: $mobile-lg) {
+					transform: none;
+				}
+			}
+		}
+		#{$this}__icon {
+			--size: #{rem(24)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: var(--size);
+			transition: transform $default-transition-duration $default-transition-function;
+			fill: currentColor;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 16px;
+			margin-left: 12px;
+		}
+	}
+	&._arrow-m {
+		&:hover {
+			#{$this}__icon {
+				transform: translate3d(#{rem(-8)}, 0, 0);
+				@media (max-width: $mobile-lg) {
+					transform: none;
+				}
+			}
+		}
+		#{$this}__icon {
+			--size: #{rem(16)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: var(--size);
+			transition: transform $default-transition-duration $default-transition-function;
+			fill: currentColor;
 		}
 	}
 }

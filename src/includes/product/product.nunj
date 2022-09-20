@@ -1,0 +1,107 @@
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/product-slider/product-slider.nunj" import productSlider %}
+
+{% set productSliderImgs = [
+	'assets/images/catalog/item-1',
+	'assets/images/catalog/item-2',
+	'assets/images/catalog/item-3',
+	'assets/images/catalog/item-4'
+] %}
+{% set productSliderThumbs = [
+	'assets/images/catalog/item-1-mini',
+	'assets/images/catalog/item-2-mini',
+	'assets/images/catalog/item-3-mini',
+	'assets/images/catalog/item-4-mini'
+] %}
+{% set colorButtons = [
+	{ name: 'Красный', color: '#C9364C', className: ' _selected' },
+	{ name: 'Тёмно-зелёный', color: '#03836E' },
+	{ name: 'Тёмно-фиолетовый', color: '#6F2876' },
+	{ name: 'Тёмно-серый', color: '#342C25' },
+	{ name: 'Светло-серый', color: '#F5F1EE' },
+	{ name: 'Тёмно-синий', color: '#324481' },
+	{ name: 'Светло-зелёный', color: '#0B994B' },
+	{ name: 'Светло-фиолетовый', color: '#8B4192' },
+	{ name: 'Белый', color: '#FEFEFE' }
+] %}
+
+<section class="product">
+	<div class="product__content">
+		<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
+		<div class="product__main-info">
+			{{ button({
+				className: 'product__brand _arrow-m p2',
+				text: 'The North Face',
+				href: '#',
+				icon: 'promo-arrow'
+			}) }}
+			<span href="#" class="product__rating">
+				{{ icon({
+					iconName: 'star',
+					className: 'product__rating-icon',
+					attr: 'width="32" height="32"'
+				}) }}
+				4.9
+			</span>
+			<div class="product__price-wrap">
+				<p class="product__old-price">45 780 руб.</p>
+				<p class="product__price s1">33 150 руб.</p>
+			</div>
+			{{ button({
+				className: 'product__favorite _wishlist',
+				attr: 'aria-label="Добавить в вишлист"'
+			}) }}
+		</div>
+		<div class="product__badges">
+			<div class="product__badges-left">
+				{% include "../product-badge/new.nunj" %}
+				{% include "../product-badge/50%.nunj" %}
+			</div>
+			{% include "../product-badge/dry-feature.nunj" %}
+		</div>
+		<div class="product__shops">
+			<p class="product__code p4">Код товара для заказа по телефону: 402317</p>
+			{{ button({
+				className: 'product__available _arrow-m p4',
+				text: 'В наличии в 2 магазинах',
+				icon: 'promo-arrow'
+			}) }}
+		</div>
+		<div class="product__colors-sizes">
+			<div class="product__colors">
+				<p class="product__title-sm ttu">цвет</p>
+				<ul class="product__colors-list">
+					{% for btn in colorButtons %}
+						<li class="product__color-item">
+							<label class="product__color">
+								<input class="product__color-input" type="radio" name="color" value="{{btn.name}}">
+								<span class="product__color-label button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
+							</label>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="product__sizes">sizes</div>
+		</div>
+		<div class="product__block">counter</div>
+		<div class="product__features">features</div>
+		<div class="product__reviwes">reviwes</div>
+	</div>
+	<div class="product__img">
+		{{ productSlider({
+			class: 'product__slider',
+			imgsList: productSliderImgs,
+			thumbsList: productSliderThumbs
+		}) }}
+		{{ addToCart({
+			className: 'product__add',
+			counter: 3,
+			link: {
+				text: 'добавить в корзину',
+				url: '#'
+			}
+		}) }}
+	</div>
+</section>

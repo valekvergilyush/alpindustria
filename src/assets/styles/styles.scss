@@ -2,6 +2,7 @@
 @import 'constants';
 @import 'lib/base';
 @import 'lib/nouislider';
+@import 'lib/flickity';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -12,8 +13,12 @@
 // ======= COMPONENTS =======
 @import '../../includes/components/button/button';
 @import '../../includes/components/product-card/product-card';
+@import '../../includes/components/breadcrumbs/breadcrumbs';
+@import '../../includes/components/add-to-cart/add-to-cart';
+@import '../../includes/components/counter/counter';
 @import '../../includes/components/range-slider/range-slider';
 @import '../../includes/components/input-search/input-search';
+@import '../../includes/components/product-slider/product-slider';
 @import '../../includes/components/ticker/ticker';
 
 // ======= INCLUDES =======
@@ -26,6 +31,8 @@
 @import '../../includes/filters-form/filters-form';
 @import '../../includes/catalog/catalog';
 @import '../../includes/news-section/news-section';
+@import '../../includes/product/product';
+@import '../../includes/product-badge/product-badge';
 @import '../../includes/catalog-accordion/catalog-accordion';
 @import '../../includes/advantages/advantages';
 

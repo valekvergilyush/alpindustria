@@ -19,6 +19,7 @@ class AlpIndustry {
 			Header: require('../../includes/header/header').default,
 			Filters: require('../../includes/filters/filters').default,
 			Catalog: require('../../includes/catalog/catalog').default,
+			ProductSlider: require('../../includes/components/product-slider/product-slider').default,
 			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			// FiltersForm: require('../../includes/filters-form/filters-form').default,

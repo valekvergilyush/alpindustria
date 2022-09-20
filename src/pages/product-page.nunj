@@ -1,0 +1,23 @@
+{% extends "../templates/page.nunj" %}
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+
+{% block title %}Куртка The North Face | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Online', href: '#'},
+		{ text: 'Туристическое  снаряжение', href: '#'},
+		{ text: 'Спальники', href: '#'}
+	],
+	link: {
+		href: '#',
+		text: 'В каталог'
+	}
+} %}
+
+{% block mainContent %}
+	<main class="page__main">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{% include "../includes/product/product.nunj" %}
+	</main>
+{% endblock %}
