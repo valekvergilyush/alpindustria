@@ -11,6 +11,7 @@
 		{% include "../includes/filters/filters.nunj" %}
 		{% include "../includes/catalog/catalog.nunj" %}
 		{% include "../includes/news-section/news-section.nunj" %}
+		{% include "../includes/advantages/advantages.nunj" %}
 		{{ ticker({
 			className: 'page__ticker',
 			text: 'Команда, влюбленная в горы'
