@@ -19,5 +19,6 @@
 	<main class="page__main">
 		{{ breadcrumbs(breadcrumbsData) }}
 		{% include "../includes/product/product.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion-product.nunj" %}
 	</main>
 {% endblock %}
