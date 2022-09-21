@@ -1,22 +1,15 @@
 .product {
-	--product-padding: #{rem(64)};
 	--block-margin: #{rem(124)};
 	--badges-margin: #{rem(16)};
 	@media (max-width: $desktop) {
-		--product-padding: 40px;
 		--block-margin: 96px;
 	}
 	@media (max-width: $laptop-lg) {
-		--product-padding: 32px;
 		--block-margin: 72px;
 	}
 	@media (max-width: $laptop-sm) {
-		--product-padding: 24px;
 		--block-margin: 64px;
 		background-color: var(--white);
-	}
-	@media (max-width: $mobile-lg) {
-		--product-padding: 16px;
 	}
 	&__wrap {
 		display: flex;
@@ -42,7 +35,7 @@
 		flex-direction: column;
 		width: 50%;
 		flex-shrink: 0;
-		padding: var(--product-padding);
+		padding: var(--container-padding);
 		padding-bottom: 0;
 		border-right: 1px solid var(--blue-dark);
 		background-color: var(--white);
@@ -107,7 +100,19 @@
 		}
 	}
 	&__rating-icon {
+		--size: #{rem(32)};
 		margin-right: rem(12);
+		width: var(--size);
+		height: var(--size);
+		@media (max-width: $laptop-md) {
+			--size: 29px;
+		}
+		@media (max-width: $laptop-sm) {
+			--size: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 29px;
+		}
 	}
 	&__price-wrap {
 		grid-area: price;
@@ -179,9 +184,9 @@
 		}
 		@media (max-width: $laptop-sm) {
 			position: absolute;
-			top: var(--product-padding);
-			left: var(--product-padding);
-			right: var(--product-padding);
+			top: var(--container-padding);
+			left: var(--container-padding);
+			right: var(--container-padding);
 			width: auto;
 			margin-bottom: 0;
 		}
@@ -222,7 +227,7 @@
 	&__colors-sizes {
 		display: grid;
 		grid-template-columns: 280fr 392fr;
-		column-gap: var(--product-padding);
+		column-gap: var(--container-padding);
 		padding-top: rem(16);
 		border-top: 1px solid var(--gray-light);
 	}
@@ -317,7 +322,7 @@
 	}
 	&__feature {
 		position: relative;
-		padding-left: 22px;
+		padding-left: rem(22);
 		@media (max-width: $laptop-sm) {
 			font-size: 16px;
 			line-height: 24px;
@@ -330,8 +335,8 @@
 			position: absolute;
 			left: 0;
 			top: 2px;
-			width: 10px;
-			height: 19px;
+			width: rem(10);
+			height: rem(19);
 			background-image: inline('grey-arrow.svg');
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -343,6 +348,6 @@
 		}
 	}
 	&__reviews {
-		--reviews-padding: var(--product-padding);
+		--reviews-padding: var(--container-padding);
 	}
 }

@@ -24,9 +24,6 @@
 		@media (max-width: $laptop-sm) {
 			margin-bottom: 32px;
 		}
-		@media (max-width: $mobile-lg) {
-			margin-bottom: 32px;
-		}
 	}
 	&__count {
 		--size: #{rem(32)};
@@ -49,7 +46,11 @@
 		letter-spacing: 0.02em;
 	}
 	&__add-icon {
+		--size: #{rem(32)};
 		margin-left: rem(10);
+		@media (max-width: $mobile-lg) {
+			--size: 25px;
+		}
 	}
 	&__list {
 		border-bottom: 1px solid var(--blue-dark);
@@ -114,7 +115,7 @@
 		bottom: calc(100% + #{rem(35)});
 		display: none;
 		transform: translateX(-50%);
-		width: 188px;
+		width: rem(188);
 		padding: rem(7) rem(37);
 		border: 1px solid var(--blue-dark);
 		background-color: var(--white);

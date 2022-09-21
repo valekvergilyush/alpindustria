@@ -74,7 +74,7 @@
 				{% include "../product-badge/dry-feature.nunj" %}
 			</div>
 			<div class="product__shops">
-				<p class="product__code p4">Код товара для заказа по телефону: 402317</p>
+				<p class="product__code p4">Код товара для заказа по&nbsp;телефону: 402317</p>
 				{{ button({
 					className: 'product__available _arrow-m p4',
 					text: 'В наличии в 2 магазинах',
@@ -145,21 +145,21 @@
 			<div class="product__block">
 				<p class="h6 product__title-md ttu">Описание</p>
 				<div class="product__descr p3">
-					<p>Ботинки Zamberlan 8000 Everest Evo RR специально разработаны для экстремальных экспедиций на больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram® Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и долговечности. Промежуточная подошва из двух слоев полиуретана - жесткого и более мягкого, для обеспечения поддержки, амортизирующих свойств и небольшого веса. Прочная застежка устойчива к механическим нагрузкам и повреждениям, высокое голенище с ветро и водонепроницаемой молнией YKK устойчивой к УФ. Теплоизоляция этой модели была сертифицирована для температур до -30 °C при отсутствии движения, но при ходьбе может выдерживать более низкие температуры - до -60 °C.</p>
+					<p>Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ. Теплоизоляция этой модели была сертифицирована для температур до &minus;30 &deg;C&nbsp;при отсутствии движения, но&nbsp;при ходьбе может выдерживать более низкие температуры&nbsp;&mdash; до &minus;60 &deg;C.</p>
 					<p>Артикул: # 8000PM3T</p>
 				</div>
 			</div>
 			<div class="product__block">
 				<p class="h6 product__title-md ttu">Особенности</p>
-				<ul class="product__features">
-					<li class="product__feature p3">Верх: Cordura® / микрофибра</li>
-					<li class="product__feature p3">Съемный внутренник</li>
-					<li class="product__feature p3">Стелька из углеродного волокна Zamberlan® 5 мм</li>
-					<li class="product__feature p3">Промежуточная подошва: двойной слой полиуретана + Zamberlan® PCS EVO</li>
-					<li class="product__feature p3">Подошва Zamberlan® Vibram® Penia</li>
-					<li class="product__feature p3">Колодка: Z8000</li>
-					<li class="product__feature p3">Совместимость с автоматическими кошками</li>
-					<li class="product__feature p3">Вес: 2640 г (пара 42 р)</li>
+				<ul class="product__features p3">
+					<li class="product__feature">Верх: Cordura&reg;&nbsp;/ микрофибра</li>
+					<li class="product__feature">Съемный внутренник</li>
+					<li class="product__feature">Стелька из&nbsp;углеродного волокна Zamberlan&reg; 5&nbsp;мм</li>
+					<li class="product__feature">Промежуточная подошва: двойной слой полиуретана + Zamberlan&reg; PCS EVO</li>
+					<li class="product__feature">Подошва Zamberlan&reg; Vibram&reg; Penia</li>
+					<li class="product__feature">Колодка: Z8000</li>
+					<li class="product__feature">Совместимость с&nbsp;автоматическими кошками</li>
+					<li class="product__feature">Вес: 2640 г (пара 42 р)</li>
 				</ul>
 			</div>
 		</div>
