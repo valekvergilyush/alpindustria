@@ -220,12 +220,10 @@
 		@media (max-width: $mobile-lg) {
 			--height: 128px;
 			--font-size-h7: 14px;
+			column-gap: 16px;
 		}
 		#{$this}__text {
 			padding-top: 0.3em;
-			@media (max-width: $mobile-lg) {
-				padding-top: 0;
-			}
 		}
 		#{$this}__icon {
 			order: -1;
@@ -267,7 +265,7 @@
 			padding-bottom: 5.5px;
 		}
 		@media (max-width: $mobile-lg) {
-			padding: 1px 16px;
+			padding: 3px 10px;
 		}
 	}
 	&._social-m {

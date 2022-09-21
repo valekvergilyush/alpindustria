@@ -108,6 +108,14 @@
 			--bg-img-height: 500px;
 			--bg-img-fit: auto;
 		}
+		@media (max-width: $mobile) {
+			#{$this}__container {
+				padding-top: 21px;
+			}
+			#{$this}__tag {
+				margin-right: -8px;
+			}
+		}
 		&::after {
 			position: absolute;
 			top: calc(var(--card-padding) + var(--logo-top));
