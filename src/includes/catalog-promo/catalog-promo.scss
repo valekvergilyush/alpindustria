@@ -1,9 +1,9 @@
 .catalog-promo {
 	$this: &;
-	--card-height: 33.75rem; // 540px
+	--card-height: #{rem(540)};
 	--empty-logo-size: 22.5rem 18rem;
-	--card-padding: 1rem; // 16px
-	--card-margin: 0.5rem; // 8px
+	--card-padding: #{rem(16)};
+	--card-margin: #{rem(8)};
 	position: relative;
 	width: 100%;
 	min-height: var(--card-height);
@@ -29,8 +29,8 @@
 		background-repeat: no-repeat;
 	}
 	&._start {
-		--logo-width: 4.75rem; // 76px
-		--logo-height: 3.75rem; // 60px
+		--logo-width: #{rem(76)};
+		--logo-height: #{rem(60)};
 		color: var(--white);
 		background-color: var(--blue-dark);
 		&::after {
@@ -71,15 +71,15 @@
 		}
 	}
 	&._new-drop {
-		--card-padding: 3rem; // 48px
-		--card-tag-padding: 2.5rem; // 40px
-		--logo-top: 1.5rem; // 24px
-		--logo-width: 6.25rem; // 100px
-		--logo-height: 5rem; // 80px
-		--arrow-size: 4.5rem; // 72px
-		--bg-img-top: -11rem; // 176px
-		--bg-img-right: 0.625rem; // 10px
-		--bg-img-width: 44.5rem; // 712px
+		--card-padding: #{rem(48)};
+		--card-tag-padding: #{rem(40)};
+		--logo-top: #{rem(24)};
+		--logo-width: #{rem(100)};
+		--logo-height: #{rem(80)};
+		--arrow-size: #{rem(72)};
+		--bg-img-top: #{0 - rem(176)};
+		--bg-img-right: #{rem(10)};
+		--bg-img-width: #{rem(712)};
 		color: var(--blue-dark);
 		background-color: var(--gray-light);
 		@media (max-width: $laptop-lg) {
@@ -166,12 +166,12 @@
 		}
 	}
 	&._freeride {
-		--card-padding: 3rem; // 48px
-		--card-tag-padding: 2.5rem; // 40px
-		--logo-top: 1.5rem; // 24px
-		--logo-width: 6.25rem; // 100px
-		--logo-height: 5rem; // 80px
-		--arrow-size: 4.5rem; // 72px
+		--card-padding: #{rem(48)};
+		--card-tag-padding: #{rem(40)};
+		--logo-top: #{rem(24)};
+		--logo-width: #{rem(100)};
+		--logo-height: #{rem(80)};
+		--arrow-size: #{rem(72)};
 		color: var(--white);
 		background-color: var(--green-light);
 		@media (max-width: $laptop-lg) {

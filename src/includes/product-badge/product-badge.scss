@@ -1,6 +1,6 @@
 .product-badge {
-	--badge-size: 3rem; // 48px
-	--fs-badge: 0.875rem; // 14px
+	--badge-size: #{rem(48)};
+	--fs-badge: #{rem(14)};
 	display: flex;
 	justify-content: center;
 	align-items: center;

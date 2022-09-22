@@ -1,8 +1,8 @@
 .filters-form {
-	--buttons-gap: 1rem; // 16px
-	--padding: 4rem; // 64px
-	--spacing-1: 1.5rem; // 24px
-	--spacing-2: 3rem; // 48px
+	--buttons-gap: #{rem(16)};
+	--padding: #{rem(64)};
+	--spacing-1: #{rem(24)};
+	--spacing-2: #{rem(48)};
 	$this: &;
 	height: var(--100vh);
 	box-sizing: border-box;

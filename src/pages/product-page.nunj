@@ -1,4 +1,5 @@
-{% extends "../templates/page.nunj" %}
+{% extends "../templates/inner-page.nunj" %}
+
 {% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
 
 {% block title %}Куртка The North Face | {{ super() }}{% endblock title %}
