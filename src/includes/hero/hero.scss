@@ -65,7 +65,7 @@
 		}
 		@media (max-width: $mobile) {
 			margin-top: auto;
-			margin-bottom: calc(128 / 640 * 100 * var(--vh, 1vh));
+			margin-bottom: calc(18 * var(--vh, 1vh));
 		}
 	}
 	&__title-root {

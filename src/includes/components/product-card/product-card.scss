@@ -42,7 +42,7 @@
 		--fs-badge: 10px;
 	}
 	@media (max-width: $mobile-lg) {
-		--card-height: 320px;
+		--card-height: 321px;
 		--card-padding: 8px;
 		--photo-width: 171px;
 		--photo-height: 194px;
@@ -87,6 +87,9 @@
 		font-family: var(--font-family-suisse);
 		font-size: var(--fs-title);
 		line-height: 1.3;
+		@media (max-width: $mobile-lg) {
+			line-height: 1.2;
+		}
 	}
 	&__brand,
 	&__price {

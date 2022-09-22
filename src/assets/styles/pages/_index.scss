@@ -3,7 +3,7 @@
 	&._index {
 		#{$this}__filters {
 			position: sticky;
-			z-index: 4;
+			z-index: 9;
 			top: -2px;
 			margin-top: calc(0px - var(--filters-height));
 		}
