@@ -19,6 +19,9 @@
 	&__actions {
 		justify-content: flex-end;
 		column-gap: rem(6);
+		@media (max-width: $tablet) {
+			column-gap: 11px;
+		}
 		@media (max-width: $mobile) {
 			column-gap: 1px;
 		}
@@ -59,6 +62,9 @@
 			@media (max-width: $laptop) {
 				margin-right: -10px;
 			}
+			@media (max-width: $tablet) {
+				margin-right: -6px;
+			}
 			@media (max-width: $mobile) {
 				margin-right: -7px;
 			}
@@ -77,8 +83,8 @@
 		width: var(--size);
 		height: var(--size);
 		transition: transform $fast-transition-duration $default-transition-function;
-		will-change: transform scale;
-		@media (max-width: $mobile) {
+		will-change: transform, scale;
+		@media (max-width: $tablet) {
 			--size: 40px;
 		}
 		svg {
@@ -88,7 +94,7 @@
 			transition: width $fast-transition-duration $default-transition-function,
 				height $fast-transition-duration $default-transition-function;
 			@media (max-width: $tablet) {
-				--size: 28px;
+				--size: 30px;
 			}
 			@media (max-width: $mobile) {
 				--size: 25px;

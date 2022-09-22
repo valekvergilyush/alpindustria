@@ -58,7 +58,7 @@
 		}
 		@media (max-width: $tablet) {
 			margin-top: auto;
-			margin-bottom: calc(248 / 996 * 100 * var(--vh, 1vh));
+			margin-bottom: calc(23 * var(--vh, 1vh));
 		}
 		@media (max-width: $mobile) {
 			margin-top: auto;
