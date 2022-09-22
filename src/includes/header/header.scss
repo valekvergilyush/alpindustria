@@ -56,6 +56,9 @@
 	&__actions-item {
 		&:last-child {
 			margin-right: 0 - rem(8);
+			@media (max-width: $laptop) {
+				margin-right: -10px;
+			}
 			@media (max-width: $mobile) {
 				margin-right: -7px;
 			}
