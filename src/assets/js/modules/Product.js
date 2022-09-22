@@ -80,7 +80,6 @@ class Product {
 			opacity: 0,
 			autoAlpha: 0,
 		});
-		console.log('hide');
 		this.isAddBlockVisibile = false;
 	}
 
@@ -93,7 +92,6 @@ class Product {
 			opacity: 1,
 			autoAlpha: 1,
 		});
-		console.log('show');
 		this.isAddBlockVisibile = true;
 	}
 
