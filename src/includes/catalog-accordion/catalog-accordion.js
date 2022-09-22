@@ -22,9 +22,7 @@ class CatalogAccordion {
 				this.openedSectionContent = section.querySelector('[data-accordion-content]');
 			}
 
-			section.addEventListener('click', evt => {
-				evt.preventDefault();
-
+			section.addEventListener('click', () => {
 				this.toggle(section);
 			});
 		});
@@ -65,7 +63,12 @@ class CatalogAccordion {
 			clearProps: 'height',
 			duration: DURATION,
 		});
-		gsap.to(section, { marginBottom: -1, clearProps: 'marginBottom', duration: DURATION });
+		gsap.to(section, {
+			y: 0,
+			marginBottom: -1,
+			clearProps: 'marginBottom,transform',
+			duration: DURATION,
+		});
 
 		this.openedSection = section;
 		this.openedSectionContent = content;

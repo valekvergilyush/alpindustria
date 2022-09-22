@@ -39,6 +39,9 @@
 	}
 	&__socials {
 		display: flex;
+		@media (max-width: $mobile-lg) {
+			column-gap: 8px;
+		}
 	}
 	&__social-link {
 		margin-right: var(--footer-spacing-1);

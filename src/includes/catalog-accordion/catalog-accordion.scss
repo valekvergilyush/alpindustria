@@ -6,7 +6,7 @@
 		--offset: 40px;
 	}
 	@media (max-width: $mobile-lg) {
-		--offset: 24px;
+		--offset: 26px;
 	}
 	&__title {
 		--size: #{rem(88)};
@@ -60,6 +60,9 @@
 			&::after {
 				opacity: 1;
 			}
+			@media (max-width: $mobile-lg) {
+				padding-top: 10px;
+			}
 		}
 		&._opened._ticker {
 			#{$this}__title-text {
@@ -107,7 +110,12 @@
 		background-color: var(--default-bg-color);
 		overflow: hidden;
 		margin-bottom: calc(0px - var(--offset));
-		transition: height 1s;
+		transition: height 1s, transform $card-button-transition-duration $default-transition-function;
+		&:hover {
+			&:not(:last-child):not(._opened) {
+				transform: translateY(calc(1px - var(--offset) * 0.7));
+			}
+		}
 		&:last-child {
 			margin-bottom: -1px;
 		}

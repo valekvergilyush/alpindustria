@@ -4,7 +4,7 @@
 	height: var(--filters-height);
 	color: var(--white);
 	@media (max-width: $mobile-lg) {
-		--offset-height: 32px;
+		--offset-height: 34px;
 		position: relative;
 		padding-bottom: var(--offset-height);
 		margin-bottom: calc(0px - var(--offset-height));
@@ -79,6 +79,9 @@
 			align-items: center;
 			justify-content: center;
 			background-color: var(--blue-light);
+		}
+		@media (max-width: $mobile) {
+			font-size: 12px;
 		}
 	}
 	&__button {

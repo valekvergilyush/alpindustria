@@ -24,22 +24,10 @@
 	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-3', zoomPhoto: 'assets/images/catalog/item-4-zoom', new: true, featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
 	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-4', zoomPhoto: 'assets/images/catalog/item-4-zoom', featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
 ] %}
-{% set productList5 = [
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-1', zoomPhoto: 'assets/images/catalog/item-4-zoom' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-2', zoomPhoto: 'assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-3', zoomPhoto: 'assets/images/catalog/item-4-zoom', new: true, featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-4', zoomPhoto: 'assets/images/catalog/item-4-zoom', featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
-] %}
-{% set productList6 = [
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-1', zoomPhoto: 'assets/images/catalog/item-4-zoom' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-2', zoomPhoto: 'assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-3', zoomPhoto: 'assets/images/catalog/item-4-zoom', new: true, featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
-	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: 'assets/images/catalog/item-4', zoomPhoto: 'assets/images/catalog/item-4-zoom', featureImg: 'assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
-] %}
 
 <div class="catalog-accordion">
 	<section class="catalog-accordion__section" data-accordion-section>
-		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Лыжный туризм</span></h2>
+		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Технический альпинизм</span></h2>
 		{% if productList1 %}
 			<ul class="catalog-accordion__list" data-accordion-content>
 				{% for product in productList1 %}
@@ -49,7 +37,7 @@
 		{% endif %}
 	</section>
 	<section class="catalog-accordion__section _opened" data-accordion-section>
-		<h2 class="catalog-accordion__title _opened h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Одежда</span></h2>
+		<h2 class="catalog-accordion__title _opened h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Трекинг</span></h2>
 		{% if productList2 %}
 			<ul class="catalog-accordion__list" data-accordion-content>
 				{% for product in productList2 %}
@@ -59,7 +47,7 @@
 		{% endif %}
 	</section>
 	<section class="catalog-accordion__section" data-accordion-section>
-		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Книги</span></h2>
+		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Ледолазание</span></h2>
 		{% if productList3 %}
 			<ul class="catalog-accordion__list" data-accordion-content>
 				{% for product in productList3 %}
@@ -69,30 +57,10 @@
 		{% endif %}
 	</section>
 	<section class="catalog-accordion__section" data-accordion-section>
-		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Обувь</span></h2>
+		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Горный туризм</span></h2>
 		{% if productList4 %}
 			<ul class="catalog-accordion__list" data-accordion-content>
 				{% for product in productList4 %}
-					<li class="catalog-accordion__item">{{ productCard(product) }}</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
-		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Сноуборды</span></h2>
-		{% if productList5 %}
-			<ul class="catalog-accordion__list" data-accordion-content>
-				{% for product in productList5 %}
-					<li class="catalog-accordion__item">{{ productCard(product) }}</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
-		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Все бренды</span></h2>
-		{% if productList6 %}
-			<ul class="catalog-accordion__list" data-accordion-content>
-				{% for product in productList6 %}
 					<li class="catalog-accordion__item">{{ productCard(product) }}</li>
 				{% endfor %}
 			</ul>

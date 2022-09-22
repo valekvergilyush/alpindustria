@@ -25,7 +25,9 @@ class Header {
 
 		this.isHeaderHidden = false;
 		this.filtersElement = document.querySelector('.page__filters');
-		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+		if (this.filtersElement) {
+			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+		}
 		this.headerElementHeight = this.headerElement.offsetHeight;
 		ScrollHelper.onScroll.add(y => this.onWindowScroll(y));
 		ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
@@ -33,7 +35,6 @@ class Header {
 		this.onWindowScroll = this.onWindowScroll.bind(this);
 		this.onWindowResize = this.onWindowResize.bind(this);
 
-		// window.addEventListener('scroll', this.onWindowScroll);
 		window.addEventListener('resize', this.onWindowResize);
 	}
 	_directionChangeController(direction) {
@@ -53,20 +54,30 @@ class Header {
 		} else {
 			this.headerElement.classList.add(ClassName.FIXED);
 		}
-		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
-		if (this.filtersElementPos < 0) {
-			this.filtersElement.classList.add(ClassName.FIXED);
-		} else {
-			this.filtersElement.classList.remove(ClassName.FIXED);
+		if (this.filtersElement) {
+			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+
+			if (this.filtersElementPos < 0) {
+				this.filtersElement.classList.add(ClassName.FIXED);
+			} else {
+				this.filtersElement.classList.remove(ClassName.FIXED);
+			}
 		}
 	}
 	onWindowResize() {
 		this.headerElementHeight = this.headerElement.offsetHeight;
-		this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+		if (this.filtersElement) {
+			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+		}
 	}
 	showHeader() {
-		if (!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0) {
+		let isFilterNotOpened = true;
+		if (this.filtersElement) {
+			isFilterNotOpened =
+				!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0;
+		}
+		if (isFilterNotOpened) {
 			this.isHeaderHidden = !this.isHeaderHidden;
 			gsap.to(this.headerElement, {
 				yPercent: 0,
