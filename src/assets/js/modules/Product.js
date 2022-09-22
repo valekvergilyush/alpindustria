@@ -2,12 +2,18 @@ class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
 		this.review = document.querySelector('[data-product-review]');
-		this.colors = document.querySelector('[data-product-colors]');
-		this.colorsNextBtn = document.querySelector('[data-product-colors-next]');
-		this.sizes = document.querySelector('[data-product-sizes]');
-		this.sizesNextBtn = document.querySelector('[data-product-sizes-next]');
+		this.colors = {
+			block: document.querySelector('[data-product-colors]'),
+			nextBtn: document.querySelector('[data-product-colors-next]'),
+			step: 160,
+		};
+		this.sizes = {
+			block: document.querySelector('[data-product-sizes]'),
+			nextBtn: document.querySelector('[data-product-sizes-next]'),
+			step: 192,
+		};
 		this.breakpointWidth = 992;
-		this.sliderBreakpoint = window.matchMedia(`(max-width:1280px) and (min-width: 922px)`);
+		this.sliderOffsetGap = 20;
 
 		this.init();
 	}
@@ -24,23 +30,23 @@ class Product {
 	}
 
 	initInputSliders() {
-		this.initInputSlider(this.colors, this.colorsNextBtn, 152);
-		this.initInputSlider(this.sizes, this.sizesNextBtn, 192);
+		this.initInputSlider(this.colors);
+		this.initInputSlider(this.sizes);
 	}
 
-	initInputSlider(sliderblock, nextBtn, step) {
+	initInputSlider(element) {
 		let scroll = 0;
-		const elemWidth = sliderblock.offsetWidth;
-		const maxScroll = sliderblock.scrollWidth - elemWidth - 10;
-		const scrollStep = step;
+		const elemWidth = element.block.offsetWidth;
+		const maxScroll = element.block.scrollWidth - elemWidth - this.sliderOffsetGap;
+		const scrollStep = element.step;
 
-		nextBtn.addEventListener('click', () => {
+		element.nextBtn.addEventListener('click', () => {
 			if (maxScroll < scroll) {
-				sliderblock.scrollTo(0, 0);
+				element.block.scrollTo(0, 0);
 				scroll = 0;
 				return;
 			}
-			sliderblock.scrollBy(scrollStep, 0);
+			element.block.scrollBy(scrollStep, 0);
 			scroll += scrollStep;
 		});
 	}
