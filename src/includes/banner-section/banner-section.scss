@@ -1,0 +1,117 @@
+.banner-section {
+	position: relative;
+	background-color: var(--blue-dark);
+	color: var(--white);
+	&__wrap {
+		position: relative;
+		z-index: 1;
+		padding-top: var(--container-padding);
+		padding-bottom: var(--container-padding);
+		&::before {
+			--size: #{rem(121)};
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: var(--container-padding);
+			width: var(--size);
+			height: var(--size);
+			background-image: inline('promo-arrow.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			@media (max-width: $laptop-md) {
+				--size: 64px;
+			}
+			@media (max-width: $laptop-sm) {
+				--size: 96px;
+			}
+			@media (max-width: $mobile-lg) {
+				--size: 40px;
+			}
+		}
+	}
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		column-gap: rem(16);
+		padding-top: rem(32);
+		margin-bottom: rem(128);
+		border-top: 2px solid var(--white);
+		@media (max-width: $desktop) {
+			padding-top: 24px;
+			margin-bottom: 184px;
+		}
+		@media (max-width: $laptop-md) {
+			padding-top: 16px;
+			margin-bottom: 78px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 160px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-top: 8px;
+			margin-bottom: 102px;
+			border-width: 1px;
+		}
+	}
+	&__logo {
+		width: rem(76);
+		height: rem(40);
+		padding: rem(20) rem(12);
+		@media (max-width: $mobile-lg) {
+			width: 60px;
+			height: 32px;
+			padding: 16px 10px;
+		}
+	}
+	&__name {
+		font-family: var(--font-family-suisse);
+		font-weight: 450;
+		font-size: rem(24);
+		line-height: 120%;
+		text-align: right;
+		letter-spacing: -0.04em;
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+	&__title {
+		max-width: rem(700);
+		margin-bottom: rem(32);
+		@media (max-width: $laptop-md) {
+			max-width: 600px;
+			margin-bottom: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			max-width: 251px;
+			margin-bottom: 8px;
+			font-size: 22px;
+			line-height: 29px;
+		}
+	}
+	&__text {
+		max-width: rem(600);
+		@media (max-width: $laptop-md) {
+			max-width: 430px;
+		}
+		@media (max-width: $laptop-sm) {
+			max-width: 466px;
+		}
+		@media (max-width: $mobile-lg) {
+			max-width: 251px;
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
