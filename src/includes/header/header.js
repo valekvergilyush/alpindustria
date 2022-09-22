@@ -1,3 +1,4 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import ScrollHelper from '../../assets/js/helpers/ScrollHelper';
 
 const HTML_CLASSLIST = document.documentElement.classList;
@@ -109,10 +110,12 @@ class Header {
 	openMenu() {
 		HTML_CLASSLIST.add('_menu-opened');
 		this.isMenuOpened = !this.isMenuOpened;
+		disableBodyScroll(this.menu);
 	}
 	closeMenu() {
 		HTML_CLASSLIST.remove('_menu-opened');
 		this.isMenuOpened = !this.isMenuOpened;
+		enableBodyScroll(this.menu);
 	}
 	toggleMenu() {
 		this.isMenuOpened ? this.closeMenu() : this.openMenu();
