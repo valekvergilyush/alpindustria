@@ -47,6 +47,7 @@
 	}
 	&__slider {
 		flex-grow: 1;
+		overflow: hidden;
 	}
 	&__add {
 		position: sticky;
@@ -326,8 +327,8 @@
 			overflow: auto;
 			padding-left: var(--container-padding);
 			padding-right: var(--container-padding);
-			margin-left: calc(var(--container-padding) * -1);
-			margin-right: calc(var(--container-padding) * -1);
+			margin-left: calc(var(--container-padding) * -1px);
+			margin-right: calc(var(--container-padding) * -1px);
 			&._colors {
 				gap: 16px;
 			}

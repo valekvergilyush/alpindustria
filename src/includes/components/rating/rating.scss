@@ -1,15 +1,15 @@
 .rating {
+	--size: #{rem(25)};
 	display: flex;
 	column-gap: 4px;
 	@media (max-width: $mobile-lg) {
 		column-gap: 0;
 	}
 	&__star {
-		width: rem(25);
-		height: rem(25);
+		width: var(--size);
+		height: var(--size);
 		@media (max-width: $mobile-lg) {
-			width: 16px;
-			height: 16px;
+			--size: 16px;
 		}
 	}
 }

@@ -12,7 +12,7 @@
 	'assets/images/catalog/item-4'
 ] %}
 {% set productSliderThumbs = [
-	'assets/images/catalog/item-1-mini',
+	'assets/images/catalog/item-2-mini',
 	'assets/images/catalog/item-2-mini',
 	'assets/images/catalog/item-3-mini',
 	'assets/images/catalog/item-4-mini'
@@ -89,7 +89,7 @@
 						<div class="product__title-sm-wrap">
 							<p class="product__title-sm ttu">Цвет</p>
 						</div>
-						<ul class="product__inputs-list _colors">
+						<ul class="product__inputs-list data-colors _colors">
 							{% for btn in colorButtons %}
 								<li>
 									<label class="product__color">

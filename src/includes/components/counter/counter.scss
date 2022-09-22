@@ -4,13 +4,13 @@
 	justify-content: space-between;
 	min-width: rem(135);
 	&__number {
+		flex-grow: 1;
 		font-family: var(--font-family-suisse);
-		font-size: 32px;
-		line-height: 24px;
+		font-size: rem(32);
+		line-height: 1;
 		text-align: center;
 		@media (max-width: $laptop-sm) {
 			font-size: 24px;
-			line-height: 24px;
 		}
 	}
 	&__btn {
@@ -19,6 +19,7 @@
 		--size: #{rem(32)};
 		--icon-size: #{rem(24)};
 		position: relative;
+		flex-shrink: 0;
 		width: var(--size);
 		height: var(--size);
 		border-radius: 50%;

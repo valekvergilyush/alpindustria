@@ -48,7 +48,7 @@
 		font-size: rem(16);
 		line-height: rem(21);
 		letter-spacing: 0.02em;
-		.desktop {
+		#{$this}__desktop-text {
 			@media (max-width: $mobile-lg) {
 				display: none;
 			}

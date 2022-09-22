@@ -2,7 +2,7 @@ class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
 		this.review = document.querySelector('[data-product-review]');
-		this.breakpointWidth = 1024;
+		this.breakpointWidth = 992;
 
 		this.init();
 	}
