@@ -113,13 +113,8 @@
 		}
 		input:disabled + & {
 			cursor: default;
-			// border-color: var(--grey-dark);
 			outline: 1px solid var(--gray-dark);
 			outline-offset: -1px;
-			// &:hover {
-			// 	background-color: transparent;
-			// 	color: var(--blue-dark);
-			// }
 			&::before {
 				content: '';
 				position: absolute;

@@ -102,19 +102,11 @@
 			'brand rating'
 			'price price'
 			'favorite favorite';
-		// margin-bottom: rem(64);
-		// @media (max-width: $desktop) {
-		// 	margin-bottom: 24px;
-		// }
 		@media (max-width: $laptop-sm) {
 			grid-template-areas:
 				'brand brand'
 				'rating favorite';
-			// margin-bottom: 72px;
 		}
-		// @media (max-width: $mobile-lg) {
-		// 	margin-bottom: 64px;
-		// }
 	}
 	&__brand {
 		grid-area: brand;
@@ -441,9 +433,6 @@
 		}
 		p + p {
 			margin-top: rem(24);
-			// @media (max-width: $mobile-lg) {
-			// 	margin-top: 16px;
-			// }
 		}
 	}
 	&__features {
