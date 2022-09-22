@@ -139,7 +139,8 @@
 			transform: scale(1.1);
 		}
 	}
-	&._fixed {
+	&._fixed,
+	&._inner-page {
 		color: var(--blue-dark);
 		background-color: var(--white);
 		border-bottom: 1px solid var(--blue-dark);
