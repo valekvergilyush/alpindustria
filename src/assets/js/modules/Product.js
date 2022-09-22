@@ -1,5 +1,3 @@
-import Flickity from 'flickity';
-
 class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
@@ -9,7 +7,7 @@ class Product {
 		this.sizes = document.querySelector('[data-product-sizes]');
 		this.sizesNextBtn = document.querySelector('[data-product-sizes-next]');
 		this.breakpointWidth = 992;
-		this.sliderBreakpoint = window.matchMedia(`(max-width:1439px) and (min-width: 922px)`);
+		this.sliderBreakpoint = window.matchMedia(`(max-width:1280px) and (min-width: 922px)`);
 
 		this.init();
 	}
@@ -26,51 +24,24 @@ class Product {
 	}
 
 	initInputSliders() {
-		const breakpointChecker = () => {
-			if (this.sliderBreakpoint.matches) {
-				console.log('initSlider');
-				this.sizesSlider = this.initSlider(this.sizes);
-				this.colorsSlider = this.initSlider(this.colors);
-			} else {
-				console.log('destroySlider');
-				this.destroySlider(this.sizesSlider);
-				this.destroySlider(this.colorsSlider);
+		this.initInputSlider(this.colors, this.colorsNextBtn, 152);
+		this.initInputSlider(this.sizes, this.sizesNextBtn, 192);
+	}
+
+	initInputSlider(sliderblock, nextBtn, step) {
+		let scroll = 0;
+		const elemWidth = sliderblock.offsetWidth;
+		const maxScroll = sliderblock.scrollWidth - elemWidth - 10;
+		const scrollStep = step;
+
+		nextBtn.addEventListener('click', () => {
+			if (maxScroll < scroll) {
+				sliderblock.scrollTo(0, 0);
+				scroll = 0;
+				return;
 			}
-		};
-		this.sliderBreakpoint.addListener(breakpointChecker);
-		breakpointChecker();
-
-		this.initSliderBtnHandlers(this.colorsSlider, this.colorsNextBtn);
-		this.initSliderBtnHandlers(this.sizesSlider, this.sizesNextBtn);
-	}
-
-	initSlider(sliderblock) {
-		const slider = new Flickity(sliderblock, {
-			pageDots: false,
-			prevNextButtons: false,
-			groupCells: sliderblock.dataset.sliderGroup,
-			draggable: false,
-			// wrapAround: true,
-			percentPosition: false,
-			// contain: true,
-		});
-		return slider;
-	}
-
-	destroySlider(slider) {
-		if (slider) {
-			this.colorsSlider.destroy();
-		}
-	}
-
-	initSliderBtnHandlers(slider, btn) {
-		if (!btn) {
-			return;
-		}
-		btn.addEventListener('click', () => {
-			if (slider) {
-				slider.next(true);
-			}
+			sliderblock.scrollBy(scrollStep, 0);
+			scroll += scrollStep;
 		});
 	}
 

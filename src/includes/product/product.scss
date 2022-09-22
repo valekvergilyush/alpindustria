@@ -305,6 +305,9 @@
 		}
 		@media (max-width: $laptop-md) {
 			min-height: 112px;
+			grid-template-columns: auto auto;
+			justify-content: space-between;
+			column-gap: 0;
 		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
@@ -322,37 +325,32 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem(8);
-		// slider
 		@media (max-width: $laptop-md) {
-			display: block;
-			gap: 0;
+			flex-wrap: nowrap;
+			overflow: auto;
 			&._colors {
 				width: 152px;
 			}
 			&._sizes {
-				width: 186px;
+				width: 184px;
+			}
+			@include scrollbar {
+				display: none;
 			}
 		}
-		@media (max-width: $mobile-lg) {
+		@media (max-width: $laptop-sm) {
 			flex-wrap: nowrap;
 			overflow: auto;
 			padding-left: var(--container-padding);
 			padding-right: var(--container-padding);
-			margin-left: calc(var(--container-padding) * -1px);
-			margin-right: calc(var(--container-padding) * -1px);
+			margin-left: calc(var(--container-padding) * -1);
+			margin-right: calc(var(--container-padding) * -1);
 			&._colors {
 				width: auto;
 			}
 			&._sizes {
 				width: auto;
 			}
-		}
-	}
-	&__inputs-item {
-		@media (max-width: $laptop-md) {
-			position: absolute;
-			// width: 30%;
-			margin-right: 8px;
 		}
 	}
 	&__colors {
@@ -373,6 +371,14 @@
 	&__input-span {
 		display: block;
 	}
+	&__input-span {
+		&._size {
+			width: 56px;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
+		}
+	}
 	&__radio-input {
 		display: none;
 	}
@@ -382,7 +388,7 @@
 	&__inputs-next {
 		--size: #{rem(32)};
 		@include reset-btn;
-		display: flex;
+		display: none;
 		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
@@ -394,7 +400,7 @@
 		border-radius: 50%;
 		color: var(--white);
 		@media (max-width: $laptop-md) {
-			display: block;
+			display: flex;
 		}
 		@media (max-width: $laptop-sm) {
 			display: none;
