@@ -12,7 +12,7 @@
 		<div class="header__left">
 			{{ button({
 				className: 'header__button _burger',
-				attr: 'aria-label="Меню"',
+				attr: 'aria-label="Меню" data-menu-opener',
 				icon: 'burger',
 				iconData: 'width="64" height="64"'
 			}) }}

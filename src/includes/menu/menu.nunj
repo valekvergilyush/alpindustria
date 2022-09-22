@@ -1,0 +1,46 @@
+{% set navLinks = [
+	{
+		text: 'Магазин',
+		url: '#',
+		list: []
+	},
+	{ text: 'Адреса', url: '#' },
+	{ text: 'Сообщество', url: '#' },
+	{ text: 'Прокат', url: '#' },
+	{ text: 'Сервисы', url: '#' },
+	{ text: 'Новости', url: '#' },
+	{ text: 'О нас', url: '#' }
+] %}
+
+{% set menuLinks = [
+	{ text: 'Доставка', url: '#' },
+	{ text: 'Бренды', url: '#' },
+	{ text: 'Экология', url: '#' }
+] %}
+
+<div class="page__menu menu" data-menu>
+	<div class="menu__top">
+		<p class="menu__info p4">Звоните нам ежедневно с 9:00 до 21:00 или напишите нам:</p>
+		<p class="menu__info-links h7 ttu">
+			<a class="menu__tel" href="tel:88125283776">8 812 528 37 76</a>
+			<a class="menu__tel" href="tel:88007751630">8 800 775 16 30</a>
+			<a class="menu__mail" href="mailto:sale@alpindustria.ru">sale@alpindustria.ru</a>
+		</p>
+	</div>
+	<nav class="menu__nav">
+		<ul class="menu__nav-list">
+			{% for link in navLinks %}
+				<li class="menu__nav-item">
+					<a href="{{ link.url }}" class="menu__nav-link ttu">{{ link.text }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+	<ul class="menu__links">
+		{% for link in menuLinks %}
+			<li class="menu__links-item">
+				<a href="{{ link.url }}" class="menu__link h6 ttu">{{ link.text }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
