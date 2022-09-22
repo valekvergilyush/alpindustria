@@ -3,12 +3,15 @@
 {% from "../button/button.nunj" import button %}
 
 {% macro productReviews(props) %}
-	<div class="product-reviews {% if props.className %}{{ props.className }} {% endif %}">
+	<div class="product-reviews {% if props.className %}{{ props.className }} {% endif %}" {% if props.attributes %}{{ props.attributes }} {% endif %}>
 		<div class="product-reviews__header">
-			<p class="product-reviews__title ttu h6">Отзывы</p>
-			<span class="product-reviews__count p3">34</span>
+			<p class="product-reviews__title ttu h6">
+				Отзывы
+				<span class="product-reviews__count p3">34</span>
+			</p>
+
 			<a href="#" class="product-reviews__add ttu">
-				Добавить свой
+				<span>Добавить <span class="desktop">свой</span></span>
 				{{ icon({
 					iconName: 'plus-circle-blue',
 					className: 'product-reviews__add-icon',
@@ -57,7 +60,7 @@
 			</li>
 		</ul>
 		{{ button({
-			className: 'product-reviews__more _show-more _no-bd',
+			className: 'product-reviews__more _show-more _show-more-md _no-bd',
 			text: 'Показать еще',
 			icon: 'plus-circle',
 			iconData: 'width="32" height="32"'

@@ -3,7 +3,6 @@
 	--reviews-padding: #{rem(64)};
 	--reviews-margin-1: #{rem(16)};
 	--reviews-margin-2: #{rem(24)};
-	border-bottom: 1px solid var(--blue-dark);
 	@media (max-width: $laptop-md) {
 		--reviews-margin-1: 8px;
 		--reviews-margin-2: 16px;
@@ -15,7 +14,7 @@
 		padding-left: var(--reviews-padding);
 		padding-right: var(--reviews-padding);
 		margin-bottom: rem(48);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			margin-bottom: 32px;
 		}
 		@media (max-width: $laptop-md) {
@@ -32,8 +31,13 @@
 		justify-content: center;
 		width: var(--size);
 		height: var(--size);
+		margin-left: rem(12);
 		border: 1px solid var(--blue-dark);
 		border-radius: 50%;
+		@media (max-width: $mobile-lg) {
+			--size: 20px;
+			margin-left: 8px;
+		}
 	}
 	&__add {
 		display: flex;
@@ -44,6 +48,11 @@
 		font-size: rem(16);
 		line-height: rem(21);
 		letter-spacing: 0.02em;
+		.desktop {
+			@media (max-width: $mobile-lg) {
+				display: none;
+			}
+		}
 	}
 	&__add-icon {
 		--size: #{rem(32)};
@@ -62,7 +71,7 @@
 		padding-left: var(--reviews-padding);
 		padding-right: var(--reviews-padding);
 		border-top: 1px solid var(--gray-light);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			padding-bottom: 32px;
 		}
 		@media (max-width: $laptop-md) {
@@ -86,6 +95,14 @@
 		margin-bottom: var(--reviews-margin-2);
 		color: var(--gray-dark);
 	}
+	&__title {
+		display: flex;
+		align-items: center;
+		letter-spacing: -0.04em;
+		@media (max-width: $laptop-sm) {
+			letter-spacing: 0;
+		}
+	}
 	&__interests {
 		color: var(--gray-dark);
 	}
@@ -94,10 +111,13 @@
 		top: 0;
 		right: var(--reviews-padding);
 		background-color: var(--blue-dark);
-		padding: rem(16) 4px rem(8);
+		padding: rem(16) 4px 2px;
 		&:hover {
 			#{$this}__tooltip-text {
 				display: block;
+				@media (max-width: $laptop-sm) {
+					display: none;
+				}
 			}
 		}
 	}
@@ -109,6 +129,7 @@
 	&__tooltip-text {
 		position: absolute;
 		left: 50%;
+		z-index: 5;
 		bottom: calc(100% + #{rem(35)});
 		display: none;
 		transform: translateX(-50%);
@@ -135,11 +156,11 @@
 	}
 	&__more {
 		--height: #{rem(160)};
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			--height: 112px;
 			--font-size-h7: 16px;
 		}
-		@media (max-width: $laptop-lg) {
+		@media (max-width: $laptop-md) {
 			--height: 80px;
 		}
 		@media (max-width: $laptop-sm) {

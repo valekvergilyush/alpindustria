@@ -86,8 +86,10 @@ $mobile-sm: 320px;
 
 	--header-height: 4.5rem; // 72px
 	--filters-height: var(--header-height); // 96px
+	--breadcrumbs-height: #{rem(56)};
 	@media (max-width: $laptop) {
 		--header-height: 64px;
+		--breadcrumbs-height: #{rem(56)};
 	}
 	@media (max-width: $mobile) {
 		--header-height: 56px;
@@ -96,6 +98,7 @@ $mobile-sm: 320px;
 	--container-padding: 5rem; // 80px
 	@media (max-width: $desktop) {
 		--container-padding: 64px;
+		--breadcrumbs-height: 40px;
 	}
 	@media (max-width: $laptop-lg) {
 		--container-padding: 40px;

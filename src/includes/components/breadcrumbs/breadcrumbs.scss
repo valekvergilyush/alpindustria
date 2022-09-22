@@ -13,6 +13,7 @@
 	}
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 	}
 	&__item {
 		@media (max-width: $mobile-lg) {
@@ -21,8 +22,19 @@
 			font-size: 14px;
 			text-transform: uppercase;
 			&:nth-last-child(1),
-			&:nth-last-child(2) {
+			&:nth-last-child(2),
+			&:nth-last-child(3) {
 				display: block;
+			}
+			&:nth-last-child(3) {
+				font-size: 0;
+				&::after {
+					content: '...';
+					font-size: 14px;
+				}
+				&::before {
+					content: none;
+				}
 			}
 		}
 		&:not(:first-child) {

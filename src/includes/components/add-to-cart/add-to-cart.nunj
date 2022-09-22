@@ -2,7 +2,7 @@
 {% from "../counter/counter.nunj" import counter %}
 
 {% macro addToCart(props) %}
-	<div class="add-to-cart {% if props.className %}{{ props.className }} {% endif %}">
+	<div class="add-to-cart {% if props.className %}{{ props.className }} {% endif %}" {% if props.attributes %}{{ props.attributes }} {% endif %}>
 		{% if props.list %}
 			<div class="add-to-cart__list">
 				{% for item in props.list %}

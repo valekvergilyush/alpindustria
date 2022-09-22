@@ -212,6 +212,14 @@
 			}
 		}
 	}
+	&._wishlist-sm {
+		--size: #{rem(40)};
+		background-size: #{rem(40)};
+		@media (max-width: $laptop-lg) {
+			--size: 32px;
+			background-size: 32px;
+		}
+	}
 	&._show-more {
 		--icon-size: 2rem; // 32px
 		@extend .animated;
@@ -254,6 +262,19 @@
 		}
 		&._no-bd {
 			border: 0;
+		}
+	}
+	&._show-more-md {
+		@media (max-width: $laptop-lg) {
+			--height: 112px;
+		}
+		@media (max-width: $laptop) {
+			--height: 80px;
+		}
+		@media (max-width: $mobile-lg) {
+			--height: 88px;
+			--icon-size: 24px;
+			column-gap: 16px;
 		}
 	}
 	&._back {
@@ -349,6 +370,28 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+		}
+	}
+	&._arrow-s {
+		&:hover {
+			#{$this}__icon {
+				transform: translate3d(#{rem(-8)}, 0, 0);
+				@media (max-width: $mobile-lg) {
+					transform: none;
+				}
+			}
+		}
+		#{$this}__icon {
+			--size: #{rem(16)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: var(--size);
+			transition: transform $default-transition-duration $default-transition-function;
+			fill: currentColor;
+			@media (max-width: $laptop-md) {
+				--size: 12px;
+				margin-left: 8px;
+			}
 		}
 	}
 	&._size {

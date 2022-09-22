@@ -25,5 +25,11 @@
 	}
 	&__main {
 		flex-grow: 1;
+		&._pt {
+			padding-top: var(--header-height);
+		}
+		&._white-bg {
+			background-color: var(--white);
+		}
 	}
 }
