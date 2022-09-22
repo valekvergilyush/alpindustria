@@ -258,14 +258,16 @@
 		}
 	}
 	&._social-l {
-		padding: rem(4) rem(29);
+		padding: rem(14) rem(30);
 		border-radius: rem(100);
+		line-height: 1;
 		@media (max-width: $laptop) {
-			padding-top: 5.5px;
-			padding-bottom: 5.5px;
+			padding-top: 18px;
+			padding-bottom: 10px;
 		}
 		@media (max-width: $mobile-lg) {
-			padding: 3px 10px;
+			padding: 5px 10px;
+			padding-top: 10px;
 		}
 	}
 	&._social-m {
