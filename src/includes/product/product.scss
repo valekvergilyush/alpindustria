@@ -8,7 +8,7 @@
 		--block-margin: 72px;
 		--badges-margin: 8px;
 	}
-	@media (max-width: $laptop-sm) {
+	@media (max-width: $mobile-lg) {
 		--block-margin: 64px;
 	}
 	&__wrap {
@@ -32,9 +32,14 @@
 		width: 100%;
 		flex-direction: column;
 		max-height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
-		height: 52.6vw;
+		// height: 52.6vw;
+		height: rem(910);
 		@media (max-width: $laptop-lg) {
-			height: 45.2vw;
+			// height: 45.2vw;
+			height: 650px;
+		}
+		@media (max-width: $laptop-md) {
+			height: 518px;
 		}
 		@media (max-width: $laptop-sm) {
 			height: 74.2vw;
@@ -53,6 +58,12 @@
 		position: sticky;
 		bottom: 0;
 		flex-shrink: 0;
+		.add-to-cart__counter {
+			align-self: center;
+			@media (max-width: $laptop-lg) {
+				align-self: flex-end;
+			}
+		}
 		@media (max-width: $laptop-sm) {
 			display: none;
 		}
@@ -72,7 +83,14 @@
 		flex-direction: column;
 		padding-top: var(--container-padding);
 		margin-bottom: var(--block-margin);
+		min-height: rem(910);
 		box-sizing: border-box;
+		@media (max-width: $laptop-lg) {
+			min-height: 650px;
+		}
+		@media (max-width: $laptop-md) {
+			min-height: 518px;
+		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
 			max-height: none;
@@ -304,10 +322,11 @@
 			padding-bottom: 32px;
 		}
 		@media (max-width: $laptop-md) {
-			min-height: 112px;
+			min-height: 120px;
 			grid-template-columns: auto auto;
 			justify-content: space-between;
 			column-gap: 0;
+			padding-bottom: 23px;
 		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
@@ -325,17 +344,25 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem(8);
-		@media (max-width: $laptop-md) {
+		@media (max-width: $laptop-lg) {
 			flex-wrap: nowrap;
 			overflow: auto;
+			&._colors {
+				width: 192px;
+			}
+			&._sizes {
+				width: 312px;
+			}
+			@include scrollbar {
+				display: none;
+			}
+		}
+		@media (max-width: $laptop-lg-2) {
 			&._colors {
 				width: 152px;
 			}
 			&._sizes {
 				width: 184px;
-			}
-			@include scrollbar {
-				display: none;
 			}
 		}
 		@media (max-width: $laptop-sm) {
@@ -399,7 +426,7 @@
 		margin-left: 8px;
 		border-radius: 50%;
 		color: var(--white);
-		@media (max-width: $laptop-md) {
+		@media (max-width: $laptop-lg) {
 			display: flex;
 		}
 		@media (max-width: $laptop-sm) {

@@ -25,8 +25,9 @@ class Product {
 				this.checkAddBlockVisibility();
 			});
 		}
-
-		this.initInputSliders();
+		if (this.colors.block && this.sizes.block) {
+			this.initInputSliders();
+		}
 	}
 
 	initInputSliders() {
