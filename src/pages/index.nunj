@@ -1,4 +1,4 @@
-{% extends "../templates/page.nunj" %}
+{% extends "../templates/index-page.nunj" %}
 
 {% from "../includes/components/ticker/ticker.nunj" import ticker %}
 

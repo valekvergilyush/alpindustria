@@ -1,0 +1,10 @@
+{% extends "./base.nunj" %}
+
+{% block content %}
+	{% include "../includes/header/header-inner.nunj" %}
+
+	{% block mainContent %}
+	{% endblock %}
+
+	{% include "../includes/footer/footer.nunj" %}
+{% endblock %}
