@@ -1,16 +1,16 @@
 .product-card {
 	$this: &;
-	--card-padding: 1rem; // 16px
-	--card-margin: 0.5rem; // 8px
-	--button-height: 4.5rem; // 72px
-	--card-height: 33.75rem; // 540px
-	--photo-top: 7.125rem; // 114px
-	--photo-width: 19rem; // 304px
-	--photo-height: 22.75rem; // 364px
-	--fs-title: 1.125rem; // 18px
-	--fs-desc: 1rem; // 16px
-	--badge-size: 3rem; // 48px
-	--fs-badge: 0.875rem; // 14px
+	--card-padding: #{rem(16)};
+	--card-margin: #{rem(8)};
+	--button-height: #{rem(72)};
+	--card-height: #{rem(540)};
+	--photo-top: #{rem(114)};
+	--photo-width: #{rem(304)};
+	--photo-height: #{rem(364)};
+	--fs-title: #{rem(18)};
+	--fs-desc: #{rem(16)};
+	--badge-size: #{rem(48)};
+	--fs-badge: #{rem(14)};
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;

@@ -22,7 +22,7 @@
 		}
 	}
 	&._burger {
-		--size: 4rem; // 64px
+		--size: #{rem(64)};
 		width: var(--size);
 		height: var(--size);
 	}
@@ -98,7 +98,7 @@
 	}
 	&._color {
 		@extend .animated;
-		--size: 2rem; // 32px
+		--size: #{rem(32)};
 		width: var(--size);
 		height: var(--size);
 		border: 3px solid var(--white);
@@ -113,7 +113,7 @@
 		}
 	}
 	&._layout {
-		--size: 2rem; // 32px
+		--size: #{rem(32)};
 		width: var(--size);
 		height: var(--size);
 		justify-content: center;
@@ -137,7 +137,7 @@
 		}
 	}
 	&._product-card {
-		--height: 4.5rem; // 72px
+		--height: #{rem(72)};
 		width: 100%;
 		height: var(--height);
 		color: var(--white);
@@ -163,7 +163,7 @@
 		}
 	}
 	&._wishlist {
-		--size: 3.125rem; // 50px
+		--size: #{rem(50)};
 		width: var(--size);
 		height: var(--size);
 		background-image: inline('heart.svg');
@@ -193,11 +193,11 @@
 		}
 	}
 	&._show-more {
-		--icon-size: 2rem; // 32px
+		--icon-size: #{rem(32)};
 		@extend .animated;
 		column-gap: rem(24);
 		width: var(--width, 100%);
-		height: var(--height, 17.5rem); // 280px
+		height: var(--height, #{rem(280)});
 		border: 1px solid currentColor;
 		text-transform: uppercase;
 

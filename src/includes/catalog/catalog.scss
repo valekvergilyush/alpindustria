@@ -25,12 +25,12 @@
 			#{$this}__card {
 				--card-padding: 1.5rem;
 				--card-margin: 1rem;
-				--card-height: 45rem; // 720px
-				--photo-width: 26rem; // 416px
-				--photo-height: 32rem; // 512px
+				--card-height: #{rem(720)};
+				--photo-width: #{rem(416)};
+				--photo-height: #{rem(512)};
 				--photo-top: auto;
-				--photo-bottom: 3.5rem; // 56px
-				--button-height: 3.5rem; // 56px
+				--photo-bottom: #{rem(56)};
+				--button-height: #{rem(56)};
 				.product-card__photo._zoom {
 					transform: scale(1.07);
 				}
@@ -62,10 +62,10 @@
 			}
 			#{$this}__promo-card {
 				&._new-drop {
-					--card-padding: 4rem; // 64px
-					--bg-img-width: 59.375rem; // 950px
-					--bg-img-top: -14.75rem; // -236px
-					--bg-img-right: 0.8125rem; // 13px
+					--card-padding: #{rem(64)};
+					--bg-img-width: #{rem(950)};
+					--bg-img-top: #{0 - rem(236)};
+					--bg-img-right: #{rem(13)};
 					@media (max-width: $laptop-lg) {
 						--card-padding: 40px;
 						--bg-img-width: 795px;
@@ -80,7 +80,7 @@
 					}
 				}
 				&._freeride {
-					--card-padding: 4rem; // 64px
+					--card-padding: #{rem(64)};
 					@media (max-width: $laptop-lg) {
 						--card-padding: 40px;
 					}
@@ -105,15 +105,15 @@
 			#{$this}__card {
 				--card-padding: 1.5rem;
 				--card-margin: 1rem;
-				--card-height: 54.875rem; // 878px
-				--photo-width: 39rem; // 624px
-				--photo-height: 40.375rem; // 646px
-				--photo-top: 10.75rem; // 172px
-				--button-height: 4.5rem; // 72px
-				--fs-title: 1.75rem; // 28px
-				--fs-desc: 1.5rem; // 24px
-				--fs-badge: 1rem; // 16px
-				--badge-size: 3.5rem; // 56px
+				--card-height: #{rem(878)};
+				--photo-width: #{rem(624)};
+				--photo-height: #{rem(646)};
+				--photo-top: #{rem(172)};
+				--button-height: #{rem(72)};
+				--fs-title: #{rem(28)};
+				--fs-desc: #{rem(24)};
+				--fs-badge: #{rem(16)};
+				--badge-size: #{rem(56)};
 				.product-card__photo._zoom {
 					transform: scale(1.07);
 				}
@@ -174,8 +174,8 @@
 			}
 			#{$this}__promo-card {
 				&._new-drop {
-					--card-padding: 4rem; // 64px
-					--bg-img-width: 54.125rem; // 866px
+					--card-padding: #{rem(64)};
+					--bg-img-width: #{rem(866)};
 					--bg-img-top: 0;
 					--bg-img-right: 0;
 					@media (max-width: $laptop-lg) {
@@ -204,7 +204,7 @@
 					}
 				}
 				&._freeride {
-					--card-padding: 4rem; // 64px
+					--card-padding: #{rem(64)};
 					@media (max-width: $laptop-lg) {
 						--card-padding: 40px;
 					}
@@ -216,9 +216,9 @@
 					}
 				}
 				&._start {
-					--card-height: 54.875rem; // 878px
-					--card-padding: 1.5rem; // 24px
-					--card-margin: 1rem; // 16px
+					--card-height: #{rem(878)};
+					--card-padding: #{rem(24)};
+					--card-margin: #{rem(16)};
 					@media (max-width: $laptop-lg) {
 						--card-height: 736px;
 					}

@@ -3,7 +3,7 @@
 }
 
 .container {
-	--container-max-width: 120rem; // 1920px
+	--container-max-width: #{rem(1920)};
 
 	width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
 	margin-inline: auto;
