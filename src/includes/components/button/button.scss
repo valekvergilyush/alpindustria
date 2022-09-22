@@ -111,6 +111,21 @@
 			outline: 2px solid var(--blue-dark);
 			outline-offset: -2px;
 		}
+		input:disabled + & {
+			cursor: default;
+			outline: 1px solid var(--gray-dark);
+			outline-offset: -1px;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(-59.35deg);
+				width: 100%;
+				height: 1px;
+				background-color: var(--gray-dark);
+			}
+		}
 	}
 	&._layout {
 		--size: 2rem; // 32px
@@ -192,6 +207,14 @@
 			}
 		}
 	}
+	&._wishlist-sm {
+		--size: #{rem(40)};
+		background-size: #{rem(40)};
+		@media (max-width: $laptop-lg) {
+			--size: 32px;
+			background-size: 32px;
+		}
+	}
 	&._show-more {
 		--icon-size: 2rem; // 32px
 		@extend .animated;
@@ -232,6 +255,19 @@
 		}
 		&._no-bd {
 			border: 0;
+		}
+	}
+	&._show-more-md {
+		@media (max-width: $laptop-lg) {
+			--height: 112px;
+		}
+		@media (max-width: $laptop) {
+			--height: 80px;
+		}
+		@media (max-width: $mobile-lg) {
+			--height: 88px;
+			--icon-size: 24px;
+			column-gap: 16px;
 		}
 	}
 	&._back {
@@ -327,6 +363,51 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+		}
+	}
+	&._arrow-s {
+		&:hover {
+			#{$this}__icon {
+				transform: translate3d(#{rem(-8)}, 0, 0);
+				@media (max-width: $mobile-lg) {
+					transform: none;
+				}
+			}
+		}
+		#{$this}__icon {
+			--size: #{rem(16)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: var(--size);
+			transition: transform $default-transition-duration $default-transition-function;
+			fill: currentColor;
+			@media (max-width: $laptop-md) {
+				--size: 12px;
+				margin-left: 8px;
+			}
+		}
+	}
+	&._size {
+		@extend .animated;
+		padding: rem(5) rem(18);
+		border: 1px solid var(--blue-dark);
+		border-radius: rem(247);
+		font-family: var(--font-family-suisse);
+		font-weight: 450;
+		font-size: rem(16);
+		line-height: rem(21);
+		input:checked + &,
+		&:hover {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+		input:disabled + & {
+			opacity: 0.3;
+			cursor: default;
+			&:hover {
+				background-color: transparent;
+				color: var(--blue-dark);
+			}
 		}
 	}
 }

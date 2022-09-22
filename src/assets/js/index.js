@@ -22,6 +22,7 @@ class AlpIndustry {
 			ProductSlider: require('../../includes/components/product-slider/product-slider').default,
 			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
 			Ticker: require('../../includes/components/ticker/ticker').default,
+			Counter: require('../../includes/components/counter/counter').default,
 			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {
@@ -33,6 +34,7 @@ class AlpIndustry {
 			AnchorLinks: require('./modules/AnchorLinks').default,
 			FilterSubcategory: require('./modules/FilterSubcategory').default,
 			DragScroll: require('./modules/DragScroll').default,
+			Product: require('./modules/Product').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

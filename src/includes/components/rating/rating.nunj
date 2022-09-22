@@ -1,0 +1,13 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro rating(props) %}
+	<div class="rating {% if props.className %}{{ props.className }} {% endif %}">
+		{% for i in range(0, props.rating) -%}
+				{{ icon({
+					iconName: 'star',
+					className: 'rating__star',
+					attr: 'width="25" height="25" viewBox="0 0 32 32"'
+				}) }}
+		{%- endfor %}
+	</div>
+{% endmacro %}

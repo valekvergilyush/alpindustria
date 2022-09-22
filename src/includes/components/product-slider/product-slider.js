@@ -1,15 +1,39 @@
+import Flickity from 'flickity';
+import 'flickity-fade';
 class ProductSlider {
 	constructor() {
-		this.sliders = document.querySelectorAll(['data-product-sliders']);
+		this.sliderBlock = document.querySelector('[data-product-slider]');
+		this.sliderBtns = document.querySelectorAll('[data-slider-btn]');
 		this.init();
 	}
 
 	init() {
-		if (this.sliders.length) {
+		if (!this.sliderBlock) {
 			return;
 		}
-		console.log(this.sliders);
+		this.initSlider();
+	}
+
+	initSlider() {
+		this.slider = new Flickity(this.sliderBlock, {
+			fade: true,
+			pageDots: false,
+			prevNextButtons: false,
+			draggable: false,
+			imagesLoaded: true,
+		});
+		this.sliderBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				this.sliderBtnHandler(btn);
+			});
+		});
+	}
+
+	sliderBtnHandler(btn) {
+		const index = btn.dataset.sliderBtn;
+		console.log(index);
+		this.slider.select(index);
 	}
 }
 
-export default ProductSlider;
+export default new ProductSlider();

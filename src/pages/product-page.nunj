@@ -7,7 +7,7 @@
 	list:	[
 		{ text: 'Online', href: '#'},
 		{ text: 'Туристическое  снаряжение', href: '#'},
-		{ text: 'Спальники', href: '#'}
+		{ text: 'Спальники'}
 	],
 	link: {
 		href: '#',
@@ -16,7 +16,7 @@
 } %}
 
 {% block mainContent %}
-	<main class="page__main">
+	<main class="page__main _pt _white-bg">
 		{{ breadcrumbs(breadcrumbsData) }}
 		{% include "../includes/product/product.nunj" %}
 		{% include "../includes/catalog-accordion/catalog-accordion-product.nunj" %}

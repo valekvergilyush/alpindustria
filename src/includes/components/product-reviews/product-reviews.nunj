@@ -1,0 +1,69 @@
+{% from "../rating/rating.nunj" import rating %}
+{% from "../icon/icon.nunj" import icon %}
+{% from "../button/button.nunj" import button %}
+
+{% macro productReviews(props) %}
+	<div class="product-reviews {% if props.className %}{{ props.className }} {% endif %}" {% if props.attributes %}{{ props.attributes }} {% endif %}>
+		<div class="product-reviews__header">
+			<p class="product-reviews__title ttu h6">
+				Отзывы
+				<span class="product-reviews__count p3">34</span>
+			</p>
+
+			<a href="#" class="product-reviews__add ttu">
+				<span>Добавить <span class="product-reviews__desktop-text">свой</span></span>
+				{{ icon({
+					iconName: 'plus-circle-blue',
+					className: 'product-reviews__add-icon',
+					attr: 'width="32" height="32"'
+				}) }}
+			</a>
+		</div>
+		<ul class="product-reviews__list">
+			<li class="product-reviews__review">
+				{{ rating({
+					className: 'product-reviews__raitng',
+					rating: 5
+				}) }}
+				<p class="product-reviews__author p2">Наталья</p>
+				<p class="product-reviews__review-title p1">Отличный продукт</p>
+				<div class="product-reviews__text p3">
+					<p>Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы.</p>
+					<p>Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+					<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы. Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+					<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!</p>
+				</div>
+				<p class="product-reviews__interests p3"><span class="c-blue-light">Увлечения:</span> Альпинизм, Горный туризм</p>
+			</li>
+			<li class="product-reviews__review">
+				{{ rating({
+					className: 'product-reviews__raitng',
+					rating: 5
+				}) }}
+				<p class="product-reviews__author p2">Наталья</p>
+				<p class="product-reviews__review-title p1">Отличный продукт</p>
+				<div class="product-reviews__text p3">
+					<p>Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы.</p>
+					<p>Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+					<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы. Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+					<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!</p>
+				</div>
+				<p class="product-reviews__interests p3"><span class="c-blue-light">Увлечения:</span> Альпинизм, Горный туризм</p>
+				<div class="product-reviews__tooltip">
+					{{ icon({
+						iconName: 'logo-short',
+						className: 'product-reviews__tooltip-icon',
+						attr: 'width="40" height="32"'
+					}) }}
+					<span class="product-reviews__tooltip-text p4">Эксперт альпиндустрии</span>
+				</div>
+			</li>
+		</ul>
+		{{ button({
+			className: 'product-reviews__more _show-more _show-more-md _no-bd',
+			text: 'Показать еще',
+			icon: 'plus-circle',
+			iconData: 'width="32" height="32"'
+		}) }}
+	</div>
+{% endmacro %}
