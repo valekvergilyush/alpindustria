@@ -2,6 +2,8 @@ class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
 		this.review = document.querySelector('[data-product-review]');
+		this.img = document.querySelector('[data-product-img]');
+		this.info = document.querySelector('[data-product-info]');
 		this.colors = {
 			block: document.querySelector('[data-product-colors]'),
 			nextBtn: document.querySelector('[data-product-colors-next]'),
@@ -28,6 +30,10 @@ class Product {
 		if (this.colors.block && this.sizes.block) {
 			this.initInputSliders();
 		}
+		this.checkImgHeight();
+		window.addEventListener('resize', () => {
+			this.checkImgHeight();
+		});
 	}
 
 	initInputSliders() {
@@ -52,20 +58,43 @@ class Product {
 		});
 	}
 
+	checkImgHeight() {
+		if (!this.info || !this.img) {
+			return;
+		}
+		const infoHeight = this.info.offsetHeight;
+		const imgHeight = this.img.offsetHeight;
+		if (infoHeight >= imgHeight) {
+			this.img.style.height = infoHeight + 'px';
+			return;
+		}
+		this.img.style.height = '';
+	}
+
 	hideAddBlock() {
+		if (this.isAddBlockVisibile === false) {
+			return;
+		}
 		gsap.to(this.addBlock, {
 			duration: 0.4,
 			opacity: 0,
-			display: 'none',
+			autoAlpha: 0,
 		});
+		console.log('hide');
+		this.isAddBlockVisibile = false;
 	}
 
 	showAddBlock() {
+		if (this.isAddBlockVisibile === true) {
+			return;
+		}
 		gsap.to(this.addBlock, {
 			duration: 0.4,
 			opacity: 1,
-			display: 'flex',
+			autoAlpha: 1,
 		});
+		console.log('show');
+		this.isAddBlockVisibile = true;
 	}
 
 	checkAddBlockVisibility() {

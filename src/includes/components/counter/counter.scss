@@ -1,8 +1,14 @@
 .counter {
+	--size: #{rem(32)};
+	--icon-size: #{rem(24)};
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	min-width: rem(135);
+	@media (max-width: $mobile-lg) {
+		--size: 25px;
+		--icon-size: 16px;
+	}
 	&__number {
 		flex-grow: 1;
 		font-family: var(--font-family-suisse);
@@ -16,8 +22,6 @@
 	&__btn {
 		@include reset-btn;
 		@extend .animated;
-		--size: #{rem(32)};
-		--icon-size: #{rem(24)};
 		position: relative;
 		flex-shrink: 0;
 		width: var(--size);
@@ -30,15 +34,12 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			width: rem(24);
+			width: var(--icon-size);
 			height: 1px;
 			background-color: var(--blue-dark);
 		}
 		&::before {
 			content: '';
-		}
-		@media (max-width: $mobile-lg) {
-			--size: 25px;
 		}
 		&:hover {
 			background-color: var(--white);

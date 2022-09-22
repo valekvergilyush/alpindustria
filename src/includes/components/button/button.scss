@@ -258,11 +258,12 @@
 		}
 	}
 	&._show-more-md {
+		--height: #{rem(172)};
 		@media (max-width: $laptop-lg) {
-			--height: 112px;
+			--height: 134px;
 		}
-		@media (max-width: $laptop) {
-			--height: 80px;
+		@media (max-width: $laptop-md) {
+			--height: 119px;
 		}
 		@media (max-width: $mobile-lg) {
 			--height: 88px;

@@ -32,10 +32,8 @@
 		width: 100%;
 		flex-direction: column;
 		max-height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
-		// height: 52.6vw;
 		height: rem(910);
 		@media (max-width: $laptop-lg) {
-			// height: 45.2vw;
 			height: 650px;
 		}
 		@media (max-width: $laptop-md) {
@@ -43,11 +41,12 @@
 		}
 		@media (max-width: $laptop-sm) {
 			height: 74.2vw;
-			max-height: none;
+			max-height: 74.2vw;
 			flex-direction: row;
 		}
 		@media (max-width: $mobile-lg) {
 			height: 98.7vw;
+			max-height: 98.7vw;
 		}
 	}
 	&__slider {
@@ -512,6 +511,10 @@
 	}
 	&__descr {
 		color: var(--gray-dark);
+		@media (max-width: $laptop-md) {
+			font-size: 16px;
+			line-height: 24px;
+		}
 		@media (max-width: $laptop-sm) {
 			font-size: 16px;
 			line-height: 24px;

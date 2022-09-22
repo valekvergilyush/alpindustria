@@ -155,15 +155,8 @@
 		}
 	}
 	&__more {
-		--height: #{rem(160)};
-		@media (max-width: $laptop-lg) {
-			--height: 112px;
+		@media (max-width: $desktop) {
 			--font-size-h7: 16px;
-		}
-		@media (max-width: $laptop-md) {
-			--height: 80px;
-		}
-		@media (max-width: $laptop-sm) {
 		}
 		@media (max-width: $mobile-lg) {
 			--font-size-h7: 88px;

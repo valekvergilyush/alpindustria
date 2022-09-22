@@ -35,8 +35,9 @@
 		column-gap: rem(16);
 		padding-top: rem(32);
 		margin-bottom: rem(128);
+		margin-top: -2px;
 		border-top: 2px solid var(--white);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			padding-top: 24px;
 			margin-bottom: 184px;
 		}
