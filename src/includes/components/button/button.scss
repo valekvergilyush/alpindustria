@@ -22,7 +22,7 @@
 		}
 	}
 	&._burger {
-		--size: 4rem; // 64px
+		--size: #{rem(64)};
 		width: var(--size);
 		height: var(--size);
 	}
@@ -98,7 +98,7 @@
 	}
 	&._color {
 		@extend .animated;
-		--size: 2rem; // 32px
+		--size: #{rem(32)};
 		width: var(--size);
 		height: var(--size);
 		border: 3px solid var(--white);
@@ -128,7 +128,7 @@
 		}
 	}
 	&._layout {
-		--size: 2rem; // 32px
+		--size: #{rem(32)};
 		width: var(--size);
 		height: var(--size);
 		justify-content: center;
@@ -152,7 +152,7 @@
 		}
 	}
 	&._product-card {
-		--height: 4.5rem; // 72px
+		--height: #{rem(72)};
 		width: 100%;
 		height: var(--height);
 		color: var(--white);
@@ -165,7 +165,7 @@
 			height: var(--size);
 			background-color: transparent;
 			background-image: inline('cart.svg');
-			background-size: 36px;
+			background-size: 38px;
 			background-position: center;
 			background-repeat: no-repeat;
 			#{$this}__text {
@@ -178,7 +178,7 @@
 		}
 	}
 	&._wishlist {
-		--size: 3.125rem; // 50px
+		--size: #{rem(50)};
 		width: var(--size);
 		height: var(--size);
 		background-image: inline('heart.svg');
@@ -216,11 +216,11 @@
 		}
 	}
 	&._show-more {
-		--icon-size: 2rem; // 32px
+		--icon-size: #{rem(32)};
 		@extend .animated;
 		column-gap: rem(24);
 		width: var(--width, 100%);
-		height: var(--height, 17.5rem); // 280px
+		height: var(--height, #{rem(280)});
 		border: 1px solid currentColor;
 		text-transform: uppercase;
 
@@ -294,14 +294,16 @@
 		}
 	}
 	&._social-l {
-		padding: rem(4) rem(29);
+		padding: rem(14) rem(30);
 		border-radius: rem(100);
+		line-height: 1;
 		@media (max-width: $laptop) {
-			padding-top: 5.5px;
-			padding-bottom: 5.5px;
+			padding-top: 18px;
+			padding-bottom: 10px;
 		}
 		@media (max-width: $mobile-lg) {
-			padding: 3px 10px;
+			padding: 5px 10px;
+			padding-top: 10px;
 		}
 	}
 	&._social-m {

@@ -19,6 +19,9 @@
 	&__actions {
 		justify-content: flex-end;
 		column-gap: rem(6);
+		@media (max-width: $tablet) {
+			column-gap: 11px;
+		}
 		@media (max-width: $mobile) {
 			column-gap: 1px;
 		}
@@ -56,6 +59,12 @@
 	&__actions-item {
 		&:last-child {
 			margin-right: 0 - rem(8);
+			@media (max-width: $laptop) {
+				margin-right: -10px;
+			}
+			@media (max-width: $tablet) {
+				margin-right: -6px;
+			}
 			@media (max-width: $mobile) {
 				margin-right: -7px;
 			}
@@ -74,18 +83,18 @@
 		width: var(--size);
 		height: var(--size);
 		transition: transform $fast-transition-duration $default-transition-function;
-		will-change: transform scale;
-		@media (max-width: $mobile) {
+		will-change: transform, scale;
+		@media (max-width: $tablet) {
 			--size: 40px;
 		}
 		svg {
-			--size: 2rem; // 32px
+			--size: #{rem(32)};
 			width: var(--size);
 			height: var(--size);
 			transition: width $fast-transition-duration $default-transition-function,
 				height $fast-transition-duration $default-transition-function;
 			@media (max-width: $tablet) {
-				--size: 28px;
+				--size: 30px;
 			}
 			@media (max-width: $mobile) {
 				--size: 25px;
@@ -95,7 +104,7 @@
 			position: relative;
 			#{$this} {
 				&__cart-number {
-					--size: 1rem; // 16px
+					--size: #{rem(16)};
 					&:empty {
 						display: none;
 					}
@@ -130,7 +139,8 @@
 			transform: scale(1.1);
 		}
 	}
-	&._fixed {
+	&._fixed,
+	&._inner-page {
 		color: var(--blue-dark);
 		background-color: var(--white);
 		border-bottom: 1px solid var(--blue-dark);

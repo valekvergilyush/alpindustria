@@ -1,6 +1,6 @@
 .quick-filter {
 	$this: &;
-	--gap: 1rem; // 16px
+	--gap: #{rem(16)};
 	display: flex;
 	column-gap: var(--gap);
 	row-gap: var(--gap);

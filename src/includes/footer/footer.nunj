@@ -5,9 +5,9 @@
 	<div class="footer__container container">
 		<div class="footer__top">
 			<div class="footer__socials">
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="VK">VK</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Telegram">TG</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l h4 ttu" aria-label="Youtube">YT</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _vk h4 ttu" aria-label="VK">VK</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _tg h4 ttu" aria-label="Telegram">TG</a>
+				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _yt h4 ttu" aria-label="Youtube">YT</a>
 			</div>
 			<a href="#" class="footer__to-top" data-anchor-link aria-label="Наверх">
 				{{ icon({

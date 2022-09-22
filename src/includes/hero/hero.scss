@@ -50,18 +50,15 @@
 		margin: 0 auto;
 		margin-top: rem(164);
 		margin-bottom: auto;
-		// margin-bottom: rem(207);
 		@media (max-width: $laptop-lg) {
 			margin-top: 136px;
-			// margin-bottom: 155px;
 		}
 		@media (max-width: $laptop) {
-			margin-top: 108px;
-			// margin-bottom: 183px;
+			margin-top: 112px;
 		}
 		@media (max-width: $tablet) {
 			margin-top: auto;
-			margin-bottom: calc(248 / 996 * 100 * var(--vh, 1vh));
+			margin-bottom: calc(23 * var(--vh, 1vh));
 		}
 		@media (max-width: $mobile) {
 			margin-top: auto;
