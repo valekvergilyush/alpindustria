@@ -41,6 +41,8 @@
 		--fs-desc: 14px;
 		--badge-size: 32px;
 		--fs-badge: 10px;
+		--card-padding-bottom: #{rem(60)};
+		padding-bottom: var(--card-padding-bottom);
 	}
 	@media (max-width: $mobile-lg) {
 		--card-height: 321px;
@@ -52,6 +54,7 @@
 		--fs-desc: 12px;
 		--badge-size: 24px;
 		--fs-badge: 8px;
+		--card-padding-bottom: 40px;
 	}
 	&:hover {
 		padding-bottom: calc(var(--button-height) + var(--card-padding));
