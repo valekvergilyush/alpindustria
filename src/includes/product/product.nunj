@@ -80,7 +80,8 @@
 						{{ button({
 							className: 'product__available _arrow-s p4',
 							text: 'В наличии в 2 магазинах',
-							icon: 'promo-arrow'
+							icon: 'promo-arrow',
+							attr: 'data-popup-opener="availability"'
 						}) }}
 					</div>
 				</div>
