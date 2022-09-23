@@ -38,13 +38,20 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+		opacity: 0;
 		transform: translateY(-100%);
-		transition: transform $default-transition-duration $default-transition-function;
+		transition: opacity $fast-transition-duration $default-transition-function,
+			transform $fast-transition-duration $default-transition-function;
 		will-change: transform;
 	}
 	&._menu-opened {
 		#{$this}__menu {
+			opacity: 1;
 			transform: translateY(0);
+		}
+		#{$this}__header {
+			background-color: var(--blue-dark);
+			border-bottom: 1px solid currentColor;
 		}
 	}
 }
