@@ -1,4 +1,3 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import ScrollHelper from '../../assets/js/helpers/ScrollHelper';
 
 const HTML_CLASSLIST = document.documentElement.classList;
@@ -24,10 +23,6 @@ class Header {
 			return;
 		}
 
-		this.menuOpener = document.querySelector('[data-menu-opener]');
-		this.menu = document.querySelector('[data-menu]');
-
-		this.isMenuOpened = false;
 		this.isHeaderHidden = false;
 		this.filtersElement = document.querySelector('.page__filters');
 		if (this.filtersElement) {
@@ -39,13 +34,8 @@ class Header {
 
 		this.onWindowScroll = this.onWindowScroll.bind(this);
 		this.onWindowResize = this.onWindowResize.bind(this);
-		this.onWindowKeydown = this.onWindowKeydown.bind(this);
-		this.onMenuOpenerClick = this.onMenuOpenerClick.bind(this);
 
 		window.addEventListener('resize', this.onWindowResize);
-		window.addEventListener('keydown', this.onWindowKeydown);
-
-		this.menuOpener.addEventListener('click', this.onMenuOpenerClick);
 	}
 	_directionChangeController(direction) {
 		this.direction = direction;
@@ -65,6 +55,10 @@ class Header {
 			this.headerElement.classList.add(ClassName.FIXED);
 		}
 
+		if (this.filtersElementPos > 0 && this.direction === Direction.UP) {
+			this.showHeader();
+		}
+
 		if (this.filtersElement) {
 			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
@@ -82,12 +76,12 @@ class Header {
 		}
 	}
 	showHeader() {
-		let isFilterNotOpened = true;
+		this.isFilterNotOpened = true;
 		if (this.filtersElement) {
-			isFilterNotOpened =
+			this.isFilterNotOpened =
 				!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0;
 		}
-		if (isFilterNotOpened) {
+		if (this.isFilterNotOpened || this.scrollY === 0) {
 			this.isHeaderHidden = !this.isHeaderHidden;
 			gsap.to(this.headerElement, {
 				yPercent: 0,
@@ -106,29 +100,6 @@ class Header {
 				this.headerElement.classList.remove(ClassName.FIXED);
 			},
 		});
-	}
-	openMenu() {
-		HTML_CLASSLIST.add('_menu-opened');
-		this.isMenuOpened = !this.isMenuOpened;
-		disableBodyScroll(this.menu);
-	}
-	closeMenu() {
-		HTML_CLASSLIST.remove('_menu-opened');
-		this.isMenuOpened = !this.isMenuOpened;
-		enableBodyScroll(this.menu);
-	}
-	toggleMenu() {
-		this.isMenuOpened ? this.closeMenu() : this.openMenu();
-	}
-	onMenuOpenerClick(evt) {
-		evt.preventDefault();
-
-		this.toggleMenu();
-	}
-	onWindowKeydown(evt) {
-		if (evt.key === 'Escape') {
-			this.closeMenu();
-		}
 	}
 }
 
