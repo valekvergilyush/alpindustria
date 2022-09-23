@@ -1,0 +1,6 @@
+{% macro buttonBurger(props) %}
+	<button class="{% if props.className %}{{ props.className }} {% endif %}button _burger" aria-label="Меню" data-menu-opener>
+		<span class="button__line"></span>
+		<span class="button__line"></span>
+	</button>
+{% endmacro %}

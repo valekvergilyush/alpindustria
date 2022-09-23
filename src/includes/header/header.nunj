@@ -1,5 +1,6 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/button/button-burger.nunj" import buttonBurger %}
 
 {% set userActions = [
 	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"' },
@@ -10,12 +11,7 @@
 <header class="page__header header">
 	<div class="header__container container">
 		<div class="header__left">
-			{{ button({
-				className: 'header__button _burger',
-				attr: 'aria-label="Меню" data-menu-opener',
-				icon: 'burger',
-				iconData: 'width="64" height="64"'
-			}) }}
+			{{ buttonBurger({ className: 'header__button' }) }}
 		</div>
 		<a href="/" class="header__logo-link" aria-label="На главную">
 			{{ icon({
