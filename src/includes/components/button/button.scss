@@ -265,6 +265,9 @@
 		@media (max-width: $laptop-md) {
 			--height: 119px;
 		}
+		@media (max-width: $laptop-sm) {
+			--height: 80px;
+		}
 		@media (max-width: $mobile-lg) {
 			--height: 88px;
 			--icon-size: 24px;
@@ -303,7 +306,7 @@
 			padding-bottom: 10px;
 		}
 		@media (max-width: $mobile-lg) {
-			padding: 5px 10px;
+			padding: 2px 17px;
 			padding-top: 10px;
 		}
 	}
