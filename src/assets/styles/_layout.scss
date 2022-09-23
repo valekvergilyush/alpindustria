@@ -50,6 +50,7 @@
 			transform: translateY(0);
 		}
 		#{$this}__header {
+			color: var(--white);
 			background-color: var(--blue-dark);
 			border-bottom: 1px solid currentColor;
 		}
