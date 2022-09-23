@@ -13,5 +13,5 @@
 		<h2 class="banner-section__title ttu h3">новое поступление</h2>
 		<p class="banner-section__text p1">Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.</p>
 	</div>
-	<img src="assets/images/product/banner-bg.jpg" srcset="assets/images/product/banner-bg@2x.jpg 2x" alt="Новое поступление" class="banner-section__bg">
+	<img src="assets/images/product/banner-bg.jpg" srcset="assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
 </section>

@@ -40,12 +40,12 @@
 			height: 518px;
 		}
 		@media (max-width: $laptop-sm) {
-			height: 74.2vw;
+			height: 74.2vw; // 570/768
 			max-height: 74.2vw;
 			flex-direction: row;
 		}
 		@media (max-width: $mobile-lg) {
-			height: 98.7vw;
+			height: 98.7vw; // 370/375
 			max-height: 98.7vw;
 		}
 	}
