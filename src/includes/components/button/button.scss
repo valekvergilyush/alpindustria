@@ -17,8 +17,8 @@
 		border: 2px solid currentColor;
 		@extend .animated;
 		&:hover {
-			background-color: var(--blue-dark);
-			border-color: var(--blue-dark);
+			background-color: var(--white);
+			color: var(--blue-dark);
 		}
 	}
 	&._burger {

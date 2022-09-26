@@ -53,9 +53,9 @@
 		height: var(--size);
 		fill: currentColor;
 		color: transparent;
-		@extend .animated;
+		transition: transform $default-transition-duration $default-transition-function;
 		&:hover {
-			color: var(--white);
+			transform: scale(1.05);
 		}
 		@media (max-width: $laptop-md) {
 			--size: 88px;
