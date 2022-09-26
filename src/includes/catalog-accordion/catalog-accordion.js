@@ -13,8 +13,12 @@ class CatalogAccordion {
 		this.sections = document.querySelectorAll('[data-accordion-section]');
 
 		this.sections.length &&
-			this.sections.forEach(section => {
+			this.sections.forEach((section, index) => {
 				section.opened = false;
+
+				if (index === this.sections.length - 1) {
+					this.lastSection = section;
+				}
 
 				if (section.classList.contains(ClassName.OPENED)) {
 					section.opened = true;
@@ -55,19 +59,19 @@ class CatalogAccordion {
 
 		gsap.to(content, {
 			height: contentHeight,
-			onComplete: () => {
-				section.classList.add(ClassName.OPENED);
-				this.openedSection = section;
-				this.openedSectionContent = content;
-			},
 			clearProps: 'height',
-			duration: DURATION,
+			duration: DURATION * 2,
 		});
 		gsap.to(section, {
 			y: 0,
 			marginBottom: -1,
 			clearProps: 'marginBottom,transform',
 			duration: DURATION,
+			onComplete: () => {
+				section.classList.add(ClassName.OPENED);
+				this.openedSection = section;
+				this.openedSectionContent = content;
+			},
 		});
 	}
 	close(section, content, cb) {
@@ -77,17 +81,15 @@ class CatalogAccordion {
 			height: 0,
 			duration: DURATION,
 			clearProps: 'height',
-			onComplete: () => {
-				section.classList.remove(ClassName.OPENED);
-			},
 		});
 		gsap.to(section, {
-			marginBottom: this.offset,
+			marginBottom: section === this.lastSection ? -1 : this.offset,
 			clearProps: 'marginBottom',
 			duration: DURATION,
 			onComplete: () => {
 				this.openedSection = null;
 				this.openedSectionContent = null;
+				section.classList.remove(ClassName.OPENED);
 				cb && cb();
 			},
 		});
