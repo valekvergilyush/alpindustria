@@ -194,7 +194,8 @@
 					imgsList: productSliderImgs,
 					thumbsList: productSliderThumbs
 				}) }}
-				{{ addToCart({
+			</div>
+			{{ addToCart({
 					className: 'product__add',
 					counter: 3,
 					link: {
@@ -202,7 +203,6 @@
 						url: '#'
 					}
 				}) }}
-			</div>
 		</div>
 	</div>
 </section>

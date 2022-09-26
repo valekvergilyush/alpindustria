@@ -30,10 +30,6 @@ class Product {
 		if (this.colors.block && this.sizes.block) {
 			this.initInputSliders();
 		}
-		this.checkImgHeight();
-		window.addEventListener('resize', () => {
-			this.checkImgHeight();
-		});
 	}
 
 	initInputSliders() {
@@ -56,19 +52,6 @@ class Product {
 			element.block.scrollBy(scrollStep, 0);
 			scroll += scrollStep;
 		});
-	}
-
-	checkImgHeight() {
-		if (!this.info || !this.img) {
-			return;
-		}
-		const infoHeight = this.info.offsetHeight;
-		const imgHeight = this.img.offsetHeight;
-		if (infoHeight >= imgHeight) {
-			this.img.style.height = infoHeight + 'px';
-			return;
-		}
-		this.img.style.height = '';
 	}
 
 	hideAddBlock() {
