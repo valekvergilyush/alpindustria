@@ -55,6 +55,10 @@ class Header {
 			this.headerElement.classList.add(ClassName.FIXED);
 		}
 
+		if (this.filtersElementPos > 0 && this.direction === Direction.UP) {
+			this.showHeader();
+		}
+
 		if (this.filtersElement) {
 			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 
@@ -72,12 +76,12 @@ class Header {
 		}
 	}
 	showHeader() {
-		let isFilterNotOpened = true;
+		this.isFilterNotOpened = true;
 		if (this.filtersElement) {
-			isFilterNotOpened =
+			this.isFilterNotOpened =
 				!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0;
 		}
-		if (isFilterNotOpened) {
+		if (this.isFilterNotOpened || this.scrollY === 0) {
 			this.isHeaderHidden = !this.isHeaderHidden;
 			gsap.to(this.headerElement, {
 				yPercent: 0,
