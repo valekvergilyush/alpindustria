@@ -1,0 +1,117 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set navLinks = [
+	{
+		text: 'Магазин',
+		img: { src: 'assets/images/menu/menu-shop.jpg', srcset: 'assets/images/menu/menu-shop@2x.jpg 2x' },
+		url: '#',
+		opened: true,
+		list: [
+			{ text: 'Все товары', url: '#' },
+			{ text: 'Одежда', url: '#' },
+			{ text: 'Лыжный туризм', url: '#' },
+			{ text: 'Туристическое снаряжение', url: '#' },
+			{ text: 'Книги', url: '#' },
+			{ text: 'Обувь', url: '#' },
+			{ text: 'Альпинистское снаряжение', url: '#' },
+			{ text: 'Сноуборды', url: '#' },
+			{ text: 'Горные лыжи', url: '#' }
+		]
+	},
+	{ text: 'Адреса', url: '#' },
+	{
+		text: 'Сообщество',
+		img: { src: 'assets/images/menu/menu-community.jpg', srcset: 'assets/images/menu/menu-community@2x.jpg 2x' },
+		url: '#',
+		list: [
+			{ text: 'Горный клуб', url: '#', img: { src: 'assets/images/menu/menu-club.jpg', srcset: 'assets/images/menu/menu-club@2x.jpg 2x' } },
+			{ text: 'Занятие', url: '#' },
+			{ text: 'Трейлы', url: '#' },
+			{ text: 'Фрирайд', url: '#' }
+		]
+	},
+	{ text: 'Прокат', url: '#' },
+	{ text: 'Сервисы', url: '#' },
+	{ text: 'Новости', url: '#' },
+	{ text: 'О нас', url: '#' }
+] %}
+
+{% set menuLinks = [
+	{ text: 'Доставка', url: '#' },
+	{ text: 'Бренды', url: '#' },
+	{ text: 'Экология', url: '#', img: { src: 'assets/images/menu/menu-eco.jpg', srcset: 'assets/images/menu/menu-eco@2x.jpg 2x' } }
+] %}
+
+<div class="page__menu menu" data-menu>
+	<div class="menu__top">
+		<button class="menu__location ttu" type="button" data-menu-location-opener>
+			{{ icon({
+				iconName: 'map-pin',
+				className: 'menu__location-icon _map',
+				attr: 'width="16" height="16"'
+			}) }}
+			Санкт-Петербург
+			{{ icon({
+				iconName: 'accordion-arrow',
+				className: 'menu__location-icon _arrow',
+				attr: 'width="16" height="16"'
+			}) }}
+		</button>
+		<p class="menu__info p4">Звоните нам ежедневно с 9:00 до 21:00 или напишите нам:</p>
+		<p class="menu__info-links h7 ttu">
+			<a class="menu__tel" href="tel:88125283776">8 812 528 37 76</a>
+			<a class="menu__tel" href="tel:88007751630">8 800 775 16 30</a>
+			<a class="menu__mail" href="mailto:sale@alpindustria.ru">sale@alpindustria.ru</a>
+		</p>
+	</div>
+	<nav class="menu__nav">
+		<ul class="menu__nav-list">
+			{% for link in navLinks %}
+				<li class="menu__nav-item{% if link.list %} _dropdown{% endif %}">
+					<a
+						class="menu__nav-link ttu"
+						href="{{ link.url }}"
+						{% if link.list %} data-accordion-toggle{% if link.opened %}="opened"{% endif %}{% endif %}
+						{% if link.img %} data-menu-img-src="{{ link.img.src }}" data-menu-img-srcset="{{ link.img.srcset }}"{% endif %}
+					>
+						{{ link.text }}
+						{% if link.list %}
+							{{ icon({
+								iconName: 'accordion-arrow',
+								className: 'menu__accordion-icon',
+								attr: 'width="32" height="32"'
+							}) }}
+						{% endif %}
+					</a>
+					{% if link.list %}
+						<ul class="menu__dropdown">
+							{% for item in link.list %}
+								<li class="menu__dropdown-item">
+									<a
+										class="menu__dropdown-link h7 ttu"
+										href="{{ item.url }}"
+										{% if item.img %} data-menu-img-src="{{ item.img.src }}" data-menu-img-srcset="{{ item.img.srcset }}"{% endif %}
+									>{{ item.text }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+	<ul class="menu__links">
+		{% for link in menuLinks %}
+			<li class="menu__links-item">
+				<a
+					class="menu__link h6 ttu"
+					href="{{ link.url }}"
+					{% if link.img %} data-menu-img-src="{{ link.img.src }}" data-menu-img-srcset="{{ link.img.srcset }}"{% endif %}
+				>{{ link.text }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="menu__bg-wrapper">
+		<img class="menu__bg-img" src="#" srcset="#" width="1024" height="819" alt="" data-menu-img>
+	</div>
+</div>

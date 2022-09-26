@@ -12,66 +12,87 @@ class CatalogAccordion {
 	init() {
 		this.sections = document.querySelectorAll('[data-accordion-section]');
 
-		this.sections.forEach(section => {
-			this.offset = parseFloat(getComputedStyle(section).marginBottom);
+		this.sections.length &&
+			this.sections.forEach((section, index) => {
+				section.opened = false;
 
-			this.addTickerClass(section);
+				if (index === this.sections.length - 1) {
+					this.lastSection = section;
+				}
 
-			if (section.classList.contains(ClassName.OPENED)) {
-				this.openedSection = section;
-				this.openedSectionContent = section.querySelector('[data-accordion-content]');
-			}
+				if (section.classList.contains(ClassName.OPENED)) {
+					section.opened = true;
+					this.openedSection = section;
+					this.openedSectionContent = section.querySelector('[data-accordion-content]');
+				}
 
-			section.addEventListener('click', () => {
-				this.toggle(section);
+				if (!section.opened && !this.offset) {
+					this.offset = parseFloat(getComputedStyle(section).marginBottom);
+				}
+
+				section.addEventListener('click', () => {
+					this.toggle(section);
+				});
+
+				this.addTickerClass(section);
 			});
-		});
 	}
 	toggle(section) {
-		if (this.openedSection === section) {
-			return;
-		}
-
 		const content = section.querySelector('[data-accordion-content]');
 		const contentHeight = content.scrollHeight;
 
-		if (this.openedSection && this.openedSectionContent) {
-			this.openedSection.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
-			gsap.to(this.openedSectionContent, {
-				height: 0,
-				duration: DURATION,
-				onComplete: () => {
-					this.openedSection.classList.remove(ClassName.OPENED);
-					this.open(section, content, contentHeight);
-				},
-				clearProps: 'height',
-			});
-			gsap.to(this.openedSection, {
-				marginBottom: 0 - this.offset,
-				clearProps: 'marginBottom',
-				duration: DURATION,
-			});
+		if (this.openedSection === section) {
+			this.close(section, content);
 		} else {
-			this.open(section, content, contentHeight);
+			const cb = () => {
+				this.open(section, content, contentHeight);
+			};
+			if (this.openedSection && this.openedSectionContent) {
+				this.close(this.openedSection, this.openedSectionContent, cb);
+			} else {
+				this.open(section, content, contentHeight);
+			}
 		}
 	}
 	open(section, content, contentHeight) {
 		section.querySelector('[data-accordion-title]').classList.add(ClassName.OPENED);
+
 		gsap.to(content, {
 			height: contentHeight,
-			onComplete: () => section.classList.add(ClassName.OPENED),
 			clearProps: 'height',
-			duration: DURATION,
+			duration: DURATION * 2,
 		});
 		gsap.to(section, {
 			y: 0,
 			marginBottom: -1,
 			clearProps: 'marginBottom,transform',
 			duration: DURATION,
+			onComplete: () => {
+				section.classList.add(ClassName.OPENED);
+				this.openedSection = section;
+				this.openedSectionContent = content;
+			},
 		});
+	}
+	close(section, content, cb) {
+		section.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
 
-		this.openedSection = section;
-		this.openedSectionContent = content;
+		gsap.to(content, {
+			height: 0,
+			duration: DURATION,
+			clearProps: 'height',
+		});
+		gsap.to(section, {
+			marginBottom: section === this.lastSection ? -1 : this.offset,
+			clearProps: 'marginBottom',
+			duration: DURATION,
+			onComplete: () => {
+				this.openedSection = null;
+				this.openedSectionContent = null;
+				section.classList.remove(ClassName.OPENED);
+				cb && cb();
+			},
+		});
 	}
 	addTickerClass(section) {
 		const title = section.querySelector('[data-accordion-title]');

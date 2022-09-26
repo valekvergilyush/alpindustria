@@ -25,12 +25,22 @@ export default class Accordion {
 		this.getHeighValues();
 
 		this.trigger.setAttribute('aria-expanded', false);
+		this.parentElement.parentElement.style.setProperty(
+			'--item-height',
+			`${this.triggerHeight + 1}px`
+		);
 		this.parentElement.style.setProperty('--height', `${this.triggerHeight}px`);
 
 		toggle.addEventListener('click', this.toggle);
 		window.addEventListener('resize', () => {
+			this.parentElement.parentElement.removeAttribute('style');
+			this.parentElement.removeAttribute('style');
 			this.getHeighValues();
 
+			this.parentElement.parentElement.style.setProperty(
+				'--item-height',
+				`${this.triggerHeight + 1}px`
+			);
 			this.isExpanded && this.parentElement.style.setProperty('--height', `${this.sumHeight}px`);
 			!this.isExpanded &&
 				this.parentElement.style.setProperty('--height', `${this.triggerHeight}px`);
@@ -58,12 +68,23 @@ export default class Accordion {
 	}
 	close() {
 		this.parentElement.classList.remove(ClassName.OPENED);
+		this.parentElement.parentElement.style.setProperty(
+			'--item-height',
+			`${this.triggerHeight + 1}px`
+		);
 		this.parentElement.style.setProperty('--height', `${this.triggerHeight}px`);
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
 	}
 	getHeighValues() {
-		this.triggerHeight = this.trigger.scrollHeight;
+		const triggerBorderWidth = getComputedStyle(this.trigger)
+			.borderWidth.split(' ')
+			.reduce((prevValue, currentValue) => parseFloat(prevValue) + parseFloat(currentValue), 0);
+		const contentBorderWidth = getComputedStyle(this.trigger)
+			.borderWidth.split(' ')
+			.reduce((prevValue, currentValue) => parseFloat(prevValue) + parseFloat(currentValue), 0);
+
+		this.triggerHeight = this.trigger.scrollHeight + triggerBorderWidth + contentBorderWidth;
 		this.contentHeight = this.content.scrollHeight;
 		this.sumHeight = this.triggerHeight + this.contentHeight;
 	}
