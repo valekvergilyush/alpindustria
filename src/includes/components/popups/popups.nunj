@@ -5,7 +5,7 @@
 			{% for i in names %}
 				<div class="popups__popup" data-popup="{{ i.name }}">
 					{% include './popups-' + i.name + '.nunj' %}
-					<button class="popups__close-button close-button" type="button" data-popup-closer>
+					<button class="popups__close-button" type="button" data-popup-closer>
 						{{ icon({
 								iconName: "close",
 								className: "popups__close-icon",

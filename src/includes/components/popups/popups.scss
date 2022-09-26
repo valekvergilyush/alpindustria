@@ -6,12 +6,12 @@
 	display: flex;
 	width: 100%;
 	height: 100%;
-	// display: none;
+	display: none;
 	overflow: hidden;
 	overflow-y: auto;
 	background-color: rgba(0, 0, 0, 0.5);
 	&__popup {
-		// display: none;
+		display: none;
 		position: relative;
 		z-index: 100;
 		width: 50%;

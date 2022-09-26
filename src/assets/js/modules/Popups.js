@@ -88,9 +88,6 @@ class Popups {
 				duration: 0.35,
 				autoAlpha: 1,
 				scale: 1,
-				/*onStart: () => {
-					this.activePopup.querySelectorAll('video').forEach(video => video.play());
-				},*/
 				onComplete: () => {
 					const focusElement = this.activePopup.querySelector('[data-popup-focus]');
 					if (focusElement) {
@@ -129,7 +126,6 @@ class Popups {
 				},
 			});
 
-			this.activePopup.querySelectorAll('video').forEach(video => video.pause());
 			if (!documentClassList.contains('_modal-opened') && !documentClassList.contains('_safari')) {
 				enableBodyScroll(this.activePopup);
 			}

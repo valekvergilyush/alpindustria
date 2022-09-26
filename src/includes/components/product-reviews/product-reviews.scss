@@ -45,7 +45,6 @@
 		align-items: center;
 		margin-left: auto;
 		font-family: var(--font-family-suisse);
-		font-weight: 450;
 		font-size: rem(16);
 		line-height: rem(21);
 		letter-spacing: 0.02em;
@@ -121,7 +120,6 @@
 		@media (max-width: $laptop-sm) {
 			padding: 8px 0;
 			letter-spacing: 0;
-			font-weight: 450;
 			font-size: 24px;
 			line-height: 31px;
 		}
@@ -142,7 +140,6 @@
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 16px;
-			line-height: 24px;
 		}
 	}
 	&__text {
