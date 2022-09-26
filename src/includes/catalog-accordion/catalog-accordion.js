@@ -12,54 +12,54 @@ class CatalogAccordion {
 	init() {
 		this.sections = document.querySelectorAll('[data-accordion-section]');
 
-		this.sections.forEach(section => {
-			this.offset = parseFloat(getComputedStyle(section).marginBottom);
+		this.sections.length &&
+			this.sections.forEach(section => {
+				section.opened = false;
 
-			this.addTickerClass(section);
+				if (section.classList.contains(ClassName.OPENED)) {
+					section.opened = true;
+					this.openedSection = section;
+					this.openedSectionContent = section.querySelector('[data-accordion-content]');
+				}
 
-			if (section.classList.contains(ClassName.OPENED)) {
-				this.openedSection = section;
-				this.openedSectionContent = section.querySelector('[data-accordion-content]');
-			}
+				if (!section.opened && !this.offset) {
+					this.offset = parseFloat(getComputedStyle(section).marginBottom);
+				}
 
-			section.addEventListener('click', () => {
-				this.toggle(section);
+				section.addEventListener('click', () => {
+					this.toggle(section);
+				});
+
+				this.addTickerClass(section);
 			});
-		});
 	}
 	toggle(section) {
-		if (this.openedSection === section) {
-			return;
-		}
-
 		const content = section.querySelector('[data-accordion-content]');
 		const contentHeight = content.scrollHeight;
 
-		if (this.openedSection && this.openedSectionContent) {
-			this.openedSection.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
-			gsap.to(this.openedSectionContent, {
-				height: 0,
-				duration: DURATION,
-				onComplete: () => {
-					this.openedSection.classList.remove(ClassName.OPENED);
-					this.open(section, content, contentHeight);
-				},
-				clearProps: 'height',
-			});
-			gsap.to(this.openedSection, {
-				marginBottom: 0 - this.offset,
-				clearProps: 'marginBottom',
-				duration: DURATION,
-			});
+		if (this.openedSection === section) {
+			this.close(section, content);
 		} else {
-			this.open(section, content, contentHeight);
+			const cb = () => {
+				this.open(section, content, contentHeight);
+			};
+			if (this.openedSection && this.openedSectionContent) {
+				this.close(this.openedSection, this.openedSectionContent, cb);
+			} else {
+				this.open(section, content, contentHeight);
+			}
 		}
 	}
 	open(section, content, contentHeight) {
 		section.querySelector('[data-accordion-title]').classList.add(ClassName.OPENED);
+
 		gsap.to(content, {
 			height: contentHeight,
-			onComplete: () => section.classList.add(ClassName.OPENED),
+			onComplete: () => {
+				section.classList.add(ClassName.OPENED);
+				this.openedSection = section;
+				this.openedSectionContent = content;
+			},
 			clearProps: 'height',
 			duration: DURATION,
 		});
@@ -69,9 +69,28 @@ class CatalogAccordion {
 			clearProps: 'marginBottom,transform',
 			duration: DURATION,
 		});
+	}
+	close(section, content, cb) {
+		section.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
 
-		this.openedSection = section;
-		this.openedSectionContent = content;
+		gsap.to(content, {
+			height: 0,
+			duration: DURATION,
+			clearProps: 'height',
+			onComplete: () => {
+				section.classList.remove(ClassName.OPENED);
+			},
+		});
+		gsap.to(section, {
+			marginBottom: this.offset,
+			clearProps: 'marginBottom',
+			duration: DURATION,
+			onComplete: () => {
+				this.openedSection = null;
+				this.openedSectionContent = null;
+				cb && cb();
+			},
+		});
 	}
 	addTickerClass(section) {
 		const title = section.querySelector('[data-accordion-title]');
