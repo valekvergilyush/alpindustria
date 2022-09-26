@@ -19,7 +19,7 @@
 		--footer-spacing-1: 16px;
 		--footer-spacing-2: 16px;
 	}
-	@media (max-width: $mobile) {
+	@media (max-width: $mobile-lg) {
 		--footer-spacing-1: 8px;
 	}
 	&__container {
@@ -29,7 +29,7 @@
 		row-gap: var(--container-padding);
 		padding-top: var(--container-padding);
 		@media (max-width: $mobile-lg) {
-			row-gap: 48px;
+			row-gap: 32px;
 		}
 	}
 	&__top {
@@ -40,9 +40,6 @@
 	&__socials {
 		display: flex;
 		align-items: flex-start;
-		@media (max-width: $mobile-lg) {
-			column-gap: 8px;
-		}
 	}
 	&__social-link {
 		margin-right: var(--footer-spacing-1);
@@ -56,9 +53,9 @@
 		height: var(--size);
 		fill: currentColor;
 		color: transparent;
-		@extend .animated;
+		transition: transform $default-transition-duration $default-transition-function;
 		&:hover {
-			color: var(--white);
+			transform: scale(1.05);
 		}
 		@media (max-width: $laptop-md) {
 			--size: 88px;
@@ -93,6 +90,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			row-gap: 0;
+			margin-bottom: 12px;
 		}
 	}
 	&__center-left {
@@ -103,7 +101,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			grid-column: auto;
-			margin-bottom: 31px;
+			margin-bottom: 16px;
 		}
 	}
 	&__email {
@@ -129,8 +127,7 @@
 			@media (max-width: $laptop-sm) {
 				display: flex;
 				flex-direction: column;
-				row-gap: 8px;
-				margin-bottom: 90px;
+				margin-bottom: 16px;
 			}
 		}
 	}
@@ -168,8 +165,8 @@
 			grid-column: auto;
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
-			gap: 8px;
-			margin-bottom: 50px;
+			gap: 16px;
+			margin-bottom: 32px;
 		}
 	}
 	&__partner {
@@ -216,9 +213,6 @@
 			flex-direction: column;
 			align-items: flex-end;
 		}
-		@media (max-width: $mobile-lg) {
-			row-gap: 16px;
-		}
 	}
 	&__link-item {
 		margin-bottom: var(--footer-spacing-1);
@@ -246,6 +240,7 @@
 		@media (max-width: $mobile-lg) {
 			padding-right: 25px;
 			background-position: top 1px right 1px;
+			line-height: 16px;
 		}
 	}
 	&__logo {

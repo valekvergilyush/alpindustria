@@ -1,4 +1,9 @@
 {
 	"siteLang": "ru",
-	"siteName": "АльпИндустрия"
+	"siteName": "АльпИндустрия",
+	"popupsList": [
+		{
+			"name": "availability"
+		}
+	]
 }

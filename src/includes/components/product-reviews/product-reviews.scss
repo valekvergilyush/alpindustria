@@ -22,6 +22,7 @@
 		}
 		@media (max-width: $laptop-sm) {
 			margin-bottom: 32px;
+			align-items: flex-end;
 		}
 	}
 	&__count {
@@ -44,7 +45,6 @@
 		align-items: center;
 		margin-left: auto;
 		font-family: var(--font-family-suisse);
-		font-weight: 450;
 		font-size: rem(16);
 		line-height: rem(21);
 		letter-spacing: 0.02em;
@@ -56,6 +56,8 @@
 	}
 	&__add-icon {
 		--size: #{rem(32)};
+		width: var(--size);
+		height: var(--size);
 		margin-left: rem(10);
 		@media (max-width: $mobile-lg) {
 			--size: 25px;
@@ -79,7 +81,8 @@
 			padding-bottom: 24px;
 		}
 		@media (max-width: $laptop-sm) {
-			padding-bottom: 32px;
+			padding-bottom: 31px;
+			padding-top: 15px;
 		}
 		@media (max-width: $mobile-lg) {
 			padding-top: 24px;
@@ -95,16 +98,76 @@
 		margin-bottom: var(--reviews-margin-2);
 		color: var(--gray-dark);
 	}
+	&__author {
+		@media (max-width: $laptop-md) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
 	&__title {
 		display: flex;
 		align-items: center;
 		letter-spacing: -0.04em;
+		@media (max-width: $laptop-md) {
+			padding: 5px 0;
+			font-size: 28px;
+			line-height: 36px;
+		}
 		@media (max-width: $laptop-sm) {
+			padding: 8px 0;
 			letter-spacing: 0;
+			font-size: 24px;
+			line-height: 31px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 0;
+			font-size: 18px;
+			line-height: 23px;
+		}
+	}
+	&__review-title {
+		@media (max-width: $laptop-md) {
+			font-size: 24px;
+			line-height: 32px;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 16px;
+		}
+	}
+	&__text {
+		@media (max-width: $laptop-md) {
+			font-size: 16px;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 14px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
 		}
 	}
 	&__interests {
 		color: var(--gray-dark);
+		@media (max-width: $laptop-md) {
+			font-size: 16px;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 14px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+			.c-blue-light {
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
 	}
 	&__tooltip {
 		position: absolute;
@@ -153,17 +216,13 @@
 			background-color: var(--white);
 			pointer-events: none;
 		}
+		@media (max-width: $laptop-md) {
+			bottom: 10px;
+		}
 	}
 	&__more {
-		--height: #{rem(160)};
-		@media (max-width: $laptop-lg) {
-			--height: 112px;
+		@media (max-width: $desktop) {
 			--font-size-h7: 16px;
-		}
-		@media (max-width: $laptop-md) {
-			--height: 80px;
-		}
-		@media (max-width: $laptop-sm) {
 		}
 		@media (max-width: $mobile-lg) {
 			--font-size-h7: 88px;

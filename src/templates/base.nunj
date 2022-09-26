@@ -1,4 +1,6 @@
 {% from "./_head-scripts.nunj" import headScripts %}
+{% from "../includes/components/popups/popups.nunj" import popups %}
+
 <!DOCTYPE html>
 <html lang="{{ siteLang }}" class="page{% if htmlClassMods %} {{ htmlClassMods }}{% endif %}">
 	<head>
@@ -19,6 +21,8 @@
 		<div class="page__wrapper wrapper">
 			{% block content %}
 			{% endblock %}
+
+			{{ popups(popupsList) }}
 		</div>
 
 		{% block scripts %}

@@ -2,12 +2,20 @@ class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
 		this.review = document.querySelector('[data-product-review]');
-		this.colors = document.querySelector('[data-product-colors]');
-		this.colorsNextBtn = document.querySelector('[data-product-colors-next]');
-		this.sizes = document.querySelector('[data-product-sizes]');
-		this.sizesNextBtn = document.querySelector('[data-product-sizes-next]');
+		this.img = document.querySelector('[data-product-img]');
+		this.info = document.querySelector('[data-product-info]');
+		this.colors = {
+			block: document.querySelector('[data-product-colors]'),
+			nextBtn: document.querySelector('[data-product-colors-next]'),
+			step: 160,
+		};
+		this.sizes = {
+			block: document.querySelector('[data-product-sizes]'),
+			nextBtn: document.querySelector('[data-product-sizes-next]'),
+			step: 192,
+		};
 		this.breakpointWidth = 992;
-		this.sliderBreakpoint = window.matchMedia(`(max-width:1280px) and (min-width: 922px)`);
+		this.sliderOffsetGap = 20;
 
 		this.init();
 	}
@@ -19,46 +27,72 @@ class Product {
 				this.checkAddBlockVisibility();
 			});
 		}
-
-		this.initInputSliders();
+		if (this.colors.block && this.sizes.block) {
+			this.initInputSliders();
+		}
+		this.checkImgHeight();
+		window.addEventListener('resize', () => {
+			this.checkImgHeight();
+		});
 	}
 
 	initInputSliders() {
-		this.initInputSlider(this.colors, this.colorsNextBtn, 152);
-		this.initInputSlider(this.sizes, this.sizesNextBtn, 192);
+		this.initInputSlider(this.colors);
+		this.initInputSlider(this.sizes);
 	}
 
-	initInputSlider(sliderblock, nextBtn, step) {
+	initInputSlider(element) {
 		let scroll = 0;
-		const elemWidth = sliderblock.offsetWidth;
-		const maxScroll = sliderblock.scrollWidth - elemWidth - 10;
-		const scrollStep = step;
+		const elemWidth = element.block.offsetWidth;
+		const maxScroll = element.block.scrollWidth - elemWidth - this.sliderOffsetGap;
+		const scrollStep = element.step;
 
-		nextBtn.addEventListener('click', () => {
+		element.nextBtn.addEventListener('click', () => {
 			if (maxScroll < scroll) {
-				sliderblock.scrollTo(0, 0);
+				element.block.scrollTo(0, 0);
 				scroll = 0;
 				return;
 			}
-			sliderblock.scrollBy(scrollStep, 0);
+			element.block.scrollBy(scrollStep, 0);
 			scroll += scrollStep;
 		});
 	}
 
+	checkImgHeight() {
+		if (!this.info || !this.img) {
+			return;
+		}
+		const infoHeight = this.info.offsetHeight;
+		const imgHeight = this.img.offsetHeight;
+		if (infoHeight >= imgHeight) {
+			this.img.style.height = infoHeight + 'px';
+			return;
+		}
+		this.img.style.height = '';
+	}
+
 	hideAddBlock() {
+		if (this.isAddBlockVisibile === false) {
+			return;
+		}
 		gsap.to(this.addBlock, {
 			duration: 0.4,
 			opacity: 0,
-			display: 'none',
+			autoAlpha: 0,
 		});
+		this.isAddBlockVisibile = false;
 	}
 
 	showAddBlock() {
+		if (this.isAddBlockVisibile === true) {
+			return;
+		}
 		gsap.to(this.addBlock, {
 			duration: 0.4,
 			opacity: 1,
-			display: 'flex',
+			autoAlpha: 1,
 		});
+		this.isAddBlockVisibile = true;
 	}
 
 	checkAddBlockVisibility() {

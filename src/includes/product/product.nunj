@@ -41,7 +41,7 @@
 <section class="product">
 	<div class="product__wrap">
 		<div class="product__content-wrap">
-			<div class="product__content-main">
+			<div class="product__content-main" data-product-info>
 				<div class="product__content _main">
 					<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
 					<div class="product__main-info">
@@ -80,7 +80,8 @@
 						{{ button({
 							className: 'product__available _arrow-s p4',
 							text: 'В наличии в 2 магазинах',
-							icon: 'promo-arrow'
+							icon: 'promo-arrow',
+							attr: 'data-popup-opener="availability"'
 						}) }}
 					</div>
 				</div>
@@ -187,7 +188,7 @@
 			}) }}
 		</div>
 		<div class="product__img">
-			<div class="product__img-wrap">
+			<div class="product__img-wrap" data-product-img>
 				{{ productSlider({
 					className: 'product__slider',
 					imgsList: productSliderImgs,
