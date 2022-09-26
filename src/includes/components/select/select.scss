@@ -1,0 +1,61 @@
+.select {
+	user-select: none;
+	.custom-select-container {
+		background-color: var(--white);
+		&::before {
+			content: '';
+			position: absolute;
+			right: 4px;
+			top: 10px;
+			transform-origin: 70% 70%;
+			transform: rotate(45deg);
+			width: rem(14);
+			height: rem(14);
+			border-bottom: 2px solid var(--gray-dark);
+			border-right: 2px solid var(--gray-dark);
+			transition: transform $default-transition-duration $default-transition-function;
+			pointer-events: none;
+			@media (max-width: $desktop) {
+				right: 11px;
+				top: 6px;
+			}
+		}
+		&.is-open {
+			&::before {
+				transform: rotate(225deg);
+			}
+			.custom-select-panel {
+				max-height: rem(295);
+			}
+		}
+	}
+	.custom-select-opener {
+		background-color: var(--white);
+		padding: 0;
+		padding-bottom: 16px;
+	}
+	.custom-select-panel {
+		top: calc(100% - 1px);
+		background-color: var(--white);
+		border: 1px solid var(--blue-light);
+		border-top: none;
+		box-shadow: 0px 1px 0px 0px var(--blue-light) inset;
+		@include scrollbar {
+			display: none;
+		}
+	}
+	.custom-select-option {
+		cursor: pointer;
+		&:first-child {
+			margin-top: 1px;
+		}
+		&.is-selected {
+			&::before {
+				content: none;
+			}
+		}
+		&.has-focus {
+			background-color: transparent;
+		}
+	}
+}

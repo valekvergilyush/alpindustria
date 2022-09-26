@@ -3,6 +3,7 @@
 	"siteName": "АльпИндустрия",
 	"popupsList": [
 		{
+			"title": "Наличие в рознице",
 			"name": "availability"
 		}
 	]

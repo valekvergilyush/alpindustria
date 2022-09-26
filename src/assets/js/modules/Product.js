@@ -100,7 +100,9 @@ class Product {
 			this.hideAddBlock();
 			return;
 		}
-		if (this.getCoords(this.review).top < this.getCoords(this.addBlock).top) {
+		console.log('add top: ' + this.addBlock.getBoundingClientRect().top);
+		console.log('review bottom: ' + this.review.getBoundingClientRect().bottom);
+		if (this.addBlock.getBoundingClientRect().top > this.review.getBoundingClientRect().bottom) {
 			this.hideAddBlock();
 			return;
 		}
@@ -115,14 +117,17 @@ class Product {
 
 		const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
 		const scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+		const scrollBottom = window.pageXOffset || docEl.scrollBottom || body.scrollBottom;
 
 		const clientTop = docEl.clientTop || body.clientTop || 0;
 		const clientLeft = docEl.clientLeft || body.clientLeft || 0;
+		const clientBottom = docEl.clientbottom || body.clientBottom || 0;
 
 		const top = box.top + scrollTop - clientTop;
 		const left = box.left + scrollLeft - clientLeft;
+		const bottom = box.bottom + scrollBottom - clientBottom;
 
-		return { top: Math.round(top), left: Math.round(left) };
+		return { top: Math.round(top), left: Math.round(left), bottom: Math.round(bottom) };
 	}
 }
 

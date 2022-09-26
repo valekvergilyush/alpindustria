@@ -35,7 +35,8 @@ class AlpIndustry {
 			FilterSubcategory: require('./modules/FilterSubcategory').default,
 			DragScroll: require('./modules/DragScroll').default,
 			Product: require('./modules/Product').default,
-			// Popups: require('./modules/Popups').default,
+			Popups: require('./modules/Popups').default,
+			Select: require('./modules/Select').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

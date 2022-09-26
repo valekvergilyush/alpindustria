@@ -3,6 +3,7 @@
 @import 'lib/base';
 @import 'lib/nouislider';
 @import 'lib/flickity';
+@import 'lib/custom-select';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -23,6 +24,7 @@
 @import '../../includes/components/rating/rating';
 @import '../../includes/components/product-reviews/product-reviews';
 @import '../../includes/components/popups/popups';
+@import '../../includes/components/select/select';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -39,6 +41,8 @@
 @import '../../includes/catalog-accordion/catalog-accordion';
 @import '../../includes/advantages/advantages';
 @import '../../includes/banner-section/banner-section';
+@import '../../includes/availability/availability';
+@import '../../includes/availability/availability-table';
 
 // ======= PAGES =======
 @import 'pages/index';

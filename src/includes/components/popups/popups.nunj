@@ -4,14 +4,17 @@
 	<div class="popups" data-popups>
 			{% for i in names %}
 				<div class="popups__popup" data-popup="{{ i.name }}">
+					<div class="popups__header">
+						<h2 class="popups__title h5 ttu">{{ i.title }}</h2>
+						<button class="popups__close-button" type="button" data-popup-closer>
+							{{ icon({
+									iconName: "close-popup",
+									className: "popups__close-icon",
+									attr: 'width="32" height="32" viewBox="0 0 32 32"'
+							}) }}
+						</button>
+					</div>
 					{% include './popups-' + i.name + '.nunj' %}
-					<button class="popups__close-button" type="button" data-popup-closer>
-						{{ icon({
-								iconName: "close",
-								className: "popups__close-icon",
-								attributes: "width=\"24\" height=\"24\" stroke=\"currentColor\""
-						}) }}
-					</button>
 				</div>
 			{% endfor %}
 	</div>
