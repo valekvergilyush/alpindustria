@@ -32,13 +32,13 @@
 			flex-grow: 1;
 		}
 		&._size {
-			width: 52px;
+			width: rem(52);
 		}
 		&._color {
-			width: 40px;
+			width: rem(40);
 		}
 		&._amount {
-			width: 104px;
+			width: rem(104);
 			@media (max-width: $desktop) {
 				width: 96px;
 			}
@@ -47,7 +47,7 @@
 			}
 		}
 		#{$this}__size {
-			width: 52px;
+			width: rem(52);
 			padding-left: 0;
 			padding-right: 0;
 		}

@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 10;
+	z-index: 31;
 	display: flex;
 	display: none;
 	width: 100%;
@@ -51,10 +51,7 @@
 			padding: 16px;
 		}
 	}
-	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+	&__title {
 		margin-bottom: rem(80);
 		@media (max-width: $desktop) {
 			margin-bottom: 64px;
@@ -71,6 +68,9 @@
 	}
 	&__close-button {
 		@extend .animated;
+		position: absolute;
+		top: 47px;
+		right: 40px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -81,6 +81,22 @@
 		transition: 0.3s ease;
 		outline: 0;
 		color: var(--blue-dark);
+		@media (max-width: $desktop) {
+			top: 39px;
+			right: 32px;
+		}
+		@media (max-width: $laptop-md) {
+			top: 24px;
+			right: 20px;
+			width: 24px;
+			height: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			top: 19px;
+			right: 16px;
+			width: 18px;
+			height: 18px;
+		}
 		&:hover {
 			color: var(--gray-dark);
 		}
