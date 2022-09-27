@@ -30,11 +30,14 @@
 		&._filters-opened {
 			#{$this}__filters-form {
 				transform: translateX(0%);
+				@media (max-width: $laptop-sm) {
+					transform: translateX(-100%);
+				}
 			}
 			#{$this}__catalog-list {
 				transform: translateX(50%);
 				@media (max-width: $laptop-sm) {
-					transform: translateX(100%);
+					transform: none;
 				}
 			}
 		}
