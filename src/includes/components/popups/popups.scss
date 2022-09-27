@@ -69,8 +69,8 @@
 	&__close-button {
 		@extend .animated;
 		position: absolute;
-		top: 47px;
-		right: 40px;
+		top: rem(47);
+		right: rem(40);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -78,7 +78,6 @@
 		border: none;
 		background-color: transparent;
 		cursor: pointer;
-		transition: 0.3s ease;
 		outline: 0;
 		color: var(--blue-dark);
 		@media (max-width: $desktop) {
