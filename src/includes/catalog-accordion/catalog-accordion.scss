@@ -1,19 +1,30 @@
 .catalog-accordion {
 	--offset: #{rem(64)};
+	--size: #{rem(88)};
+	--title-min-height: #{rem(140)};
 	$this: &;
 	position: relative;
 	@media (max-width: $laptop) {
 		--offset: 40px;
+		--size: 64px;
+		--title-min-height: 100px;
+		&._opened {
+			--title-min-height: 104px;
+		}
 	}
 	@media (max-width: $mobile-lg) {
 		--offset: 26px;
+		--size: 40px;
+		--title-min-height: 64px;
+		&._opened {
+			--title-min-height: 72px;
+		}
 	}
 	&__title {
-		--size: #{rem(88)};
 		position: relative;
 		display: flex;
 		align-items: center;
-		min-height: rem(140);
+		min-height: var(--title-min-height);
 		padding-left: var(--container-padding);
 		padding-right: calc(var(--size) + var(--container-padding) + rem(16));
 		border-top: 1px solid var(--blue-dark);
@@ -71,20 +82,6 @@
 				animation: ticker 5s ease-in infinite;
 			}
 		}
-		@media (max-width: $laptop) {
-			--size: 64px;
-			min-height: 100px;
-			&._opened {
-				min-height: 104px;
-			}
-		}
-		@media (max-width: $mobile-lg) {
-			--size: 40px;
-			min-height: 64px;
-			&._opened {
-				min-height: 72px;
-			}
-		}
 	}
 	&__list {
 		display: flex;
@@ -110,14 +107,12 @@
 		background-color: var(--default-bg-color);
 		overflow: hidden;
 		margin-bottom: calc(0px - var(--offset));
-		transition: height 1s, transform $card-button-transition-duration $default-transition-function;
+		transition: height 1s, transform 0.4s ease-in;
 		&:hover {
-			&:not(:last-child):not(._opened) {
+			&:not(._opened) {
 				transform: translateY(calc(1px - var(--offset) * 0.7));
+				transition: transform 0.3s $default-transition-function;
 			}
-		}
-		&:last-child {
-			margin-bottom: -1px;
 		}
 		&._opened {
 			margin-bottom: -1px;
