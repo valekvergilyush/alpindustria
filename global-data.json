@@ -3,6 +3,9 @@
 	"siteName": "АльпИндустрия",
 	"popupsList": [
 		{
+			"name": "filters-form"
+		},
+		{
 			"name": "availability"
 		},
 		{

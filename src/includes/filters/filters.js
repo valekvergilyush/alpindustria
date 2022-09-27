@@ -39,6 +39,12 @@ class Filters {
 
 		this.mqTablet.addEventListener('change', onWindowWidthChange);
 		onWindowWidthChange(this.mqTablet);
+
+		Popups.onCloseStart.add(() => {
+			if (Popups.activePopupName === 'filters-form') {
+				this.close();
+			}
+		});
 	}
 	toggle() {
 		this.isOpened ? this.close() : this.open();
