@@ -62,7 +62,6 @@ class Popups {
 		const popup = this.wrapper.querySelector('[data-popup="' + name + '"]');
 		const overlay = this.wrapper.querySelector('.popups__overlay');
 		const icon = this.wrapper.querySelector('.popups__icon');
-		// const content = this.wrapper.querySelector('[data-popup="' + name + '"]');
 		if (!documentClassList.contains('_modal-opened') && !documentClassList.contains('_safari')) {
 			disableBodyScroll(popup);
 		}
@@ -79,9 +78,7 @@ class Popups {
 
 		this.wrapper.classList.remove('no-pe');
 		// wrapper
-		gsap.set(this.wrapper, {
-			display: 'flex',
-		});
+		gsap.set(this.wrapper, { display: 'flex' });
 		// overlay
 		gsap.fromTo(overlay, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 });
 		// popup
@@ -107,28 +104,22 @@ class Popups {
 			this.activePopupName = '';
 
 			this.wrapper.classList.add('no-pe');
-			// const popup = this.wrapper.querySelector('[data-popup="' + name + '"]');
 			const overlay = this.wrapper.querySelector('.popups__overlay');
 			const icon = this.wrapper.querySelector('.popups__icon');
 			// wrapper
-			gsap.set(this.wrapper, { delay: 0.35, display: 'none' });
+			gsap.set(this.wrapper, {
+				delay: 0.35,
+				display: 'none',
+				onComplete: () => {
+					this.onClose.call();
+				},
+			});
 			// overlay
 			gsap.to(overlay, { duration: 0.35, autoAlpha: 0 });
 			// popup
 			gsap.to(this.activePopup, { duration: 0.35, xPercent: 100 });
 			// icon
 			gsap.to(icon, { duration: 0.35, autoAlpha: 0 });
-
-			// gsap.to(this.wrapper, 0.35, { duration: 0.35, autoAlpha: 0, display: 'none' });
-			// gsap.to(this.activePopup, {
-			// 	duration: immediate ? 0 : 0.35,
-			// 	autoAlpha: 0,
-			// 	scale: 0.98,
-			// 	display: 'none',
-			// 	onComplete: () => {
-			// 		this.onClose.call();
-			// 	},
-			// });
 
 			if (!documentClassList.contains('_modal-opened') && !documentClassList.contains('_safari')) {
 				enableBodyScroll(this.activePopup);

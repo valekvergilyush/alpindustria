@@ -18,6 +18,7 @@
 		transform: translate(#{rem(-24)}, -50%);
 		background-image: inline('dobble-arrow.svg');
 		background-size: contain;
+		pointer-events: none;
 		@media (max-width: $laptop-md) {
 			content: none;
 		}
