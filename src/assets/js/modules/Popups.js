@@ -76,9 +76,8 @@ class Popups {
 		const popup = this.wrapper.querySelector('[data-popup="' + name + '"]');
 		const popupAnimation = popup.getAttribute('data-popup-animation');
 
-		if (!documentClassList.contains('_modal-opened') && !documentClassList.contains('_safari')) {
-			disableBodyScroll(popup);
-		}
+		disableBodyScroll(popup);
+
 		if (!popup) {
 			console.log('No popup for ' + name + ' opener');
 			return;
@@ -221,9 +220,7 @@ class Popups {
 				});
 			}
 
-			if (!documentClassList.contains('_modal-opened') && !documentClassList.contains('_safari')) {
-				enableBodyScroll(this.activePopup);
-			}
+			enableBodyScroll(this.activePopup);
 
 			documentClassList.remove('_popup-opened');
 
