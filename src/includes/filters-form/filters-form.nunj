@@ -129,7 +129,8 @@
 					className: 'filters-form__search',
 					id: 'brand-search',
 					placeholder: 'Поиск по брендам',
-					name: 'Поиск по брендам'
+					name: 'Поиск по брендам',
+					lang: true
 				}) }}
 				<ul class="filters-form__item-content _buttons">
 					{% for btn in brandButtons %}
