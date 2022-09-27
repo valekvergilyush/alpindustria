@@ -19,6 +19,10 @@
 				right: 11px;
 				top: 6px;
 			}
+			@media (max-width: $laptop-md) {
+				right: 6px;
+				top: 4px;
+			}
 		}
 		&.is-open {
 			&::before {
