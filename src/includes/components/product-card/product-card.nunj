@@ -24,19 +24,13 @@
 		}) }}
 		<div class="product-card__badges">
 			{% if props.new %}
-				<p class="product-card__badge _new ttu">New</p>
+				{% include "../../product-badge/new.nunj" %}
 			{% endif %}
 			{% if props.discount %}
-				<p class="product-card__badge _discount">{{ props.discount }}</p>
+				{% include "../../product-badge/50%.nunj" %}
 			{% endif %}
 			{% if props.featureImg %}
-				<img
-					class="product-card__badge _feature"
-					src="{{ props.featureImg }}.png"
-					width="48"
-					height="48"
-					alt="{% if props.featureImgAlt %}{{ props.featureImgAlt }}{% endif %}"
-				>
+				{% include "../../product-badge/dry-feature.nunj" %}
 			{% endif %}
 		</div>
 	</article>

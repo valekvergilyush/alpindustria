@@ -137,12 +137,14 @@
 					--badge-size: 40px;
 					.button {
 						&._wishlist {
+							left: 16px;
 							background-size: 40px;
 							&._active {
 								background-size: 36px;
 							}
 						}
 						&._product-card {
+							right: 8px;
 							background-size: 40px;
 						}
 					}
@@ -161,12 +163,14 @@
 					.button {
 						&._wishlist {
 							--size: 40px;
+							left: 4px;
 							background-size: 24px;
 							&._active {
 								background-size: 22px;
 							}
 						}
 						&._product-card {
+							right: 4px;
 							background-size: 27px;
 						}
 					}
@@ -269,9 +273,12 @@
 				--fs-desc: 14px;
 				--badge-size: 32px;
 				--fs-badge: 10px;
+				--card-padding-bottom: 56px;
 				.button {
 					&._wishlist {
 						--size: 50px;
+						left: 8px;
+						bottom: 4px;
 						background-size: 32px;
 						&._active {
 							background-size: 28px;
@@ -279,6 +286,8 @@
 					}
 					&._product-card {
 						--size: 50px;
+						right: 4px;
+						bottom: 4px;
 						background-size: 36px;
 					}
 				}
