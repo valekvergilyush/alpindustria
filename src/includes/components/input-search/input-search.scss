@@ -1,7 +1,15 @@
 .input-search {
+	@extend .animated;
+	$this: &;
+	--icon-size: #{rem(24)};
 	position: relative;
 	display: flex;
 	column-gap: rem(48);
+	opacity: 0.5;
+	&:hover,
+	&:focus-within {
+		opacity: 1;
+	}
 	@media (max-width: $laptop-lg) {
 		column-gap: 32px;
 	}
@@ -17,6 +25,7 @@
 		width: 100%;
 		height: rem(36);
 		padding-bottom: rem(8);
+		padding-right: var(--icon-size);
 		border: 0;
 		border-bottom: 1px solid var(--blue-light);
 		outline: 0;
@@ -28,7 +37,6 @@
 		@include placeholder {
 			font-family: var(--font-family-suisse);
 			font-size: rem(16);
-			line-height: 1.5;
 			line-height: 1;
 			letter-spacing: -0.04em;
 			color: var(--blue-light);
@@ -38,17 +46,38 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: rem(24);
-		height: rem(24);
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 	&__lang {
 		font-family: var(--font-family-suisse);
 		font-size: rem(24);
 		line-height: rem(36);
 		color: var(--blue-light);
-		opacity: 0.5;
 		@media (max-width: $mobile-lg) {
 			font-size: 22px;
+		}
+	}
+	&._city {
+		--icon-size: #{rem(36)};
+		@media (max-width: $tablet) {
+			--icon-size: 24px;
+		}
+		#{$this}__input {
+			height: rem(48);
+			padding-bottom: rem(12);
+			border-color: var(--blue-dark);
+			@include placeholder {
+				position: absolute;
+				top: em(5, 16);
+				left: 0;
+				font-family: var(--default-font-family);
+				line-height: 1.5;
+				@media (max-width: $tablet) {
+					font-size: 12px;
+					line-height: 1.33;
+				}
+			}
 		}
 	}
 }
