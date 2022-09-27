@@ -51,5 +51,4 @@
 			</div>
 		</div>
 	</div>
-	{% include "../filters-form/filters-form.nunj" %}
 </div>

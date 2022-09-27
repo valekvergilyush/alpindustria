@@ -1,5 +1,6 @@
 import Popups from '../../assets/js/modules/Popups';
 import Accordion from '../../assets/js/modules/Accordion';
+import Catalog from '../catalog/catalog';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 const TABLET_BREAKPOINT = 992;
@@ -15,8 +16,9 @@ class Filters {
 
 	init() {
 		this.filtersContainer = document.querySelector('.page__filters');
+		this.filtersForm = document.querySelector('.filters-form');
 
-		if (!this.filtersContainer) {
+		if (!this.filtersContainer && !this.filtersForm) {
 			return;
 		}
 
@@ -59,6 +61,12 @@ class Filters {
 			Popups.open('filters-form');
 		}
 
+		if (window.innerWidth >= TABLET_BREAKPOINT) {
+			this.layout = Catalog.getLayout();
+			Catalog.setLayout(2);
+			document.querySelector('.filters__layout').classList.add('no-pe');
+		}
+
 		clearTimeout(this.TO);
 
 		if (!this.accordions.length) {
@@ -76,6 +84,11 @@ class Filters {
 		this.isOpened = false;
 
 		Popups.close();
+
+		if (this.layout) {
+			Catalog.setLayout(this.layout);
+			document.querySelector('.filters__layout').classList.remove('no-pe');
+		}
 
 		window.removeEventListener('keydown', this.onWindowKeydown);
 	}

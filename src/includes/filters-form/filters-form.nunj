@@ -73,7 +73,7 @@
 	{ name: 'Светло-фиолетовый', color: '#8B4192' },
 	{ name: 'Белый', color: '#FEFEFE' }
 ] %}
-<form class="page__filters-form filters-form">
+<form class="catalog__filters-form filters-form">
 	<ul class="filters-form__selected-filters filters-form__container">
 		{% for btn in selectedFilters %}
 			<li>

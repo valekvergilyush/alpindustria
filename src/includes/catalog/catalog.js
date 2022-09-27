@@ -31,7 +31,6 @@ class Catalog {
 		this.layoutControls.addEventListener('click', this.onLayoutButtonClick);
 		window.addEventListener('resize', this.onWindowResize);
 	}
-
 	onLayoutButtonClick(evt) {
 		evt.preventDefault();
 
@@ -50,6 +49,9 @@ class Catalog {
 		this.layout = Number(value);
 		this.layoutClassName = `_cols-${value}`;
 		this.catalogList.classList.add(this.layoutClassName);
+	}
+	getLayout() {
+		return this.layout;
 	}
 	onWindowResize() {
 		if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {

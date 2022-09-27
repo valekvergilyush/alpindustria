@@ -35,10 +35,11 @@
 			}
 		}
 		&[data-popup='filters-form'] {
-			.page__filters-form {
+			.catalog__filters-form {
 				position: static !important;
-				border: 0 !important;
+				width: 100% !important;
 				padding: 0 !important;
+				border: 0 !important;
 				transform: none !important;
 			}
 		}

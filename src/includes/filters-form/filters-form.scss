@@ -4,12 +4,12 @@
 	--spacing-1: #{rem(24)};
 	--spacing-2: #{rem(48)};
 	$this: &;
-	height: var(--100vh);
 	box-sizing: border-box;
 	border-right: 1px solid var(--blue-dark);
 	color: var(--blue-dark);
 	background-color: var(--white);
 	overflow: auto;
+	padding-top: var(--padding);
 	padding-bottom: var(--padding);
 	@include scrollbar {
 		display: none;
@@ -26,18 +26,13 @@
 	@media (max-width: $laptop-sm) {
 		--padding: 24px;
 		padding-bottom: calc(2 * var(--padding));
+		border: 0;
 	}
 	@media (max-width: $mobile-lg) {
 		--padding: 16px;
 		--spacing-1: 16px;
 		--spacing-2: 24px;
 		padding-bottom: calc(4 * var(--padding));
-	}
-	& > *:first-child {
-		padding-top: var(--padding);
-	}
-	& > *:last-child {
-		padding-bottom: var(--padding);
 	}
 	&__container {
 		padding: 0 var(--padding);
