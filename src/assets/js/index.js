@@ -43,7 +43,7 @@ class AlpIndustry {
 			document.documentElement.classList.remove('_loading');
 
 			document
-				.querySelectorAll('.page__wrapper [data-accordion-toggle]')
+				.querySelectorAll('.page__menu [data-accordion-toggle]')
 				.forEach(toggle => new this.modules.Accordion(toggle));
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));

@@ -61,7 +61,12 @@ class Popups {
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
 
 		this.onOpened.add(popup => {
-			popup.querySelectorAll('[data-accordion-toggle]').forEach(toggle => new Accordion(toggle));
+			if (!popup.accorions) {
+				popup.accorions = [];
+				popup
+					.querySelectorAll('[data-accordion-toggle]')
+					.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
+			}
 		});
 	}
 	open(name) {

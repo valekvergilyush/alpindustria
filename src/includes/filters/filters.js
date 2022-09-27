@@ -1,4 +1,5 @@
 import Popups from '../../assets/js/modules/Popups';
+import Accordion from '../../assets/js/modules/Accordion';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 const TABLET_BREAKPOINT = 992;
@@ -21,6 +22,7 @@ class Filters {
 
 		this.toggler = this.filtersContainer.querySelector('[data-filters-toggle]');
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
+		this.accordions = [];
 
 		this.isOpened = HTML_CLASSLIST.contains(ClassName.OPENED);
 
@@ -55,6 +57,16 @@ class Filters {
 
 		if (window.innerWidth <= TABLET_BREAKPOINT) {
 			Popups.open('filters-form');
+		}
+
+		clearTimeout(this.TO);
+
+		if (!this.accordions.length) {
+			this.TO = setTimeout(() => {
+				this.filtersForm
+					.querySelectorAll('[data-accordion-toggle]')
+					.forEach(toggle => this.accordions.push(new Accordion(toggle)));
+			}, 300);
 		}
 
 		window.addEventListener('keydown', this.onWindowKeydown);
