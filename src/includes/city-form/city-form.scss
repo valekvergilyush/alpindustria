@@ -1,0 +1,25 @@
+.city-form {
+	&__title,
+	&__search {
+		margin-bottom: var(--container-padding);
+		@media (max-width: $tablet) {
+			margin-bottom: 32px;
+		}
+	}
+	&__cities {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(18);
+	}
+	&__radio-label {
+		@extend .animated;
+		opacity: 0.4;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&__radio-input:checked + &__radio-label {
+		opacity: 1;
+	}
+}

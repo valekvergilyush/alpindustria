@@ -4,6 +4,10 @@
 	"popupsList": [
 		{
 			"name": "availability"
+		},
+		{
+			"name": "city-form",
+			"animation": "RTL"
 		}
 	]
 }

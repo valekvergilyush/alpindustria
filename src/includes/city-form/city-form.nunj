@@ -1,0 +1,57 @@
+{% from "../components/input-search/input-search.nunj" import inputSearch %}
+
+{% set cityList = [
+	{ name: 'Москва' },
+	{ name: 'Санкт-Петербург', checked: true },
+	{ name: 'Новосибирск' },
+	{ name: 'Пермь' },
+	{ name: 'Екатеринбург' },
+	{ name: 'Пятигорск' },
+	{ name: 'Воронеж' },
+	{ name: 'Пермь' },
+	{ name: 'Краснодар' },
+	{ name: 'Приэльбрусье' },
+	{ name: 'Красная Поляна' },
+	{ name: 'Безенги' },
+	{ name: 'Нижний Новгород' },
+	{ name: 'Красноярск' },
+	{ name: 'Пятигорск' },
+	{ name: 'Воронеж' },
+	{ name: 'Пермь' },
+	{ name: 'Краснодар' },
+	{ name: 'Приэльбрусье' },
+	{ name: 'Красная Поляна' },
+	{ name: 'Безенги' },
+	{ name: 'Нижний Новгород' },
+	{ name: 'Красноярск' }
+] %}
+
+<div class="city-form">
+	<h2 class="city-form__title h5 ttu">Город</h2>
+	<form class="city-form__form">
+		{{ inputSearch({
+			className: 'city-form__search _city',
+			id: 'city-search',
+			placeholder: 'Поиск по городам',
+			name: 'Поиск по городам',
+			inputAttr: 'data-popup-focus'
+		}) }}
+
+		<ul class="city-form__cities">
+			{% for city in cityList %}
+				{% set cityId = loop.index + '-' + city.name %}
+				<li class="city-form__radio">
+					<input
+						class="city-form__radio-input visually-hidden"
+						type="radio"
+						name="city"
+						id="{{ cityId }}"
+						value="{{ city.name }}"
+						{% if city.checked %}checked{% endif %}
+					>
+					<label class="city-form__radio-label h7 ttu" for="{{ cityId }}">{{ city.name }}</label>
+				</li>
+			{% endfor %}
+		</ul>
+	</form>
+</div>
