@@ -1,5 +1,7 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Signal from '../classes/Signal';
+import Accordion from './Accordion';
+
 const Animation = {
 	RTL: 'RTL',
 };
@@ -57,6 +59,10 @@ class Popups {
 		});
 
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
+
+		this.onOpened.add(popup => {
+			popup.querySelectorAll('[data-accordion-toggle]').forEach(toggle => new Accordion(toggle));
+		});
 	}
 	open(name) {
 		if (this.activePopupName === name) {
