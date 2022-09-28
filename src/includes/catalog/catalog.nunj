@@ -24,22 +24,25 @@
 ] %}
 
 <section class="page__catalog catalog">
-	<ul class="page__catalog-list catalog__list">
-		{% for product in productList %}
-			<li class="catalog__item">
-				{{ productCard(product) }}
+	<div class="catalog__wrapper">
+		{% include "../filters-form/filters-form.nunj" %}
+		<ul class="page__catalog-list catalog__list">
+			{% for product in productList %}
+				<li class="catalog__item">
+					{{ productCard(product) }}
+				</li>
+			{% endfor %}
+			<li class="catalog__item _promo-1">
+				{% include "../catalog-promo/promo-1.nunj" %}
 			</li>
-		{% endfor %}
-		<li class="catalog__item _promo-1">
-			{% include "../catalog-promo/promo-1.nunj" %}
-		</li>
-		<li class="catalog__item catalog-promo _empty _promo-2">
-			{% include "../catalog-promo/promo-2.nunj" %}
-		</li>
-		<li class="catalog__item catalog-promo _empty _promo-3">
-			{% include "../catalog-promo/promo-3.nunj" %}
-		</li>
-	</ul>
+			<li class="catalog__item catalog-promo _empty _promo-2">
+				{% include "../catalog-promo/promo-2.nunj" %}
+			</li>
+			<li class="catalog__item catalog-promo _empty _promo-3">
+				{% include "../catalog-promo/promo-3.nunj" %}
+			</li>
+		</ul>
+	</div>
 	{{ button({
 		className: 'catalog__show-more-btn _show-more',
 		text: 'Показать еще',

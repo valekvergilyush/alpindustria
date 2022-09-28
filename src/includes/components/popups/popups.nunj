@@ -2,9 +2,9 @@
 
 {% macro popups(props) %}
 	<div class="popups" data-popups>
-			{% for i in props %}
-				<div class="popups__popup" data-popup="{{ i.name }}">
-					<h2 class="popups__title h5 ttu">{{ i.title }}</h2>
+			{% for i in names %}
+				<div class="popups__popup" data-popup="{{ i.name }}" data-popup-animation="{{ i.animation }}">
+					{% include './popups-' + i.name + '.nunj' %}
 					<button class="popups__close-button" type="button" data-popup-closer>
 						{{ icon({
 							iconName: "close-popup",

@@ -4,10 +4,26 @@
 		--offset-height: 32px;
 		padding-top: var(--offset-height);
 	}
+	&__wrapper {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+	}
+	&__filters-form {
+		position: sticky;
+		top: var(--header-height);
+		width: 0;
+		height: 0;
+		opacity: 0;
+		transition: opacity $default-transition-duration $default-transition-function,
+			width $default-transition-duration $default-transition-function;
+	}
 	&__list {
 		--item-width: 25%;
 		display: grid;
+		width: 100%;
 		grid-template-columns: repeat(auto-fit, minmax(var(--item-width), 1fr));
+		grid-auto-rows: min-content;
 		@media (min-width: 1734px) {
 			border-top: 1px solid var(--blue-dark);
 		}
@@ -137,12 +153,14 @@
 					--badge-size: 40px;
 					.button {
 						&._wishlist {
+							left: 16px;
 							background-size: 40px;
 							&._active {
 								background-size: 36px;
 							}
 						}
 						&._product-card {
+							right: 8px;
 							background-size: 40px;
 						}
 					}
@@ -161,12 +179,14 @@
 					.button {
 						&._wishlist {
 							--size: 40px;
+							left: 4px;
 							background-size: 24px;
 							&._active {
 								background-size: 22px;
 							}
 						}
 						&._product-card {
+							right: 4px;
 							background-size: 27px;
 						}
 					}
@@ -269,9 +289,12 @@
 				--fs-desc: 14px;
 				--badge-size: 32px;
 				--fs-badge: 10px;
+				--card-padding-bottom: 56px;
 				.button {
 					&._wishlist {
 						--size: 50px;
+						left: 8px;
+						bottom: 4px;
 						background-size: 32px;
 						&._active {
 							background-size: 28px;
@@ -279,6 +302,8 @@
 					}
 					&._product-card {
 						--size: 50px;
+						right: 4px;
+						bottom: 4px;
 						background-size: 36px;
 					}
 				}
@@ -322,6 +347,61 @@
 		}
 	}
 	&__show-more-btn {
+		grid-column: 1/-1;
 		margin-top: -1px;
+	}
+}
+
+._filters-opened {
+	.catalog {
+		&__filters-form {
+			width: 100%;
+			opacity: 1;
+			height: auto;
+			@media (max-width: $laptop-sm) {
+				width: 0;
+				opacity: 1;
+			}
+		}
+		@media (min-width: ($laptop-sm + 1px)) {
+			&__list {
+				&._cols-2 {
+					.catalog__card {
+						--card-padding: #{rem(16)};
+						--card-margin: #{rem(8)};
+						--button-height: #{rem(72)};
+						--card-height: #{rem(540)};
+						--photo-top: #{rem(114)};
+						--photo-width: #{rem(304)};
+						--photo-height: #{rem(364)};
+						--fs-title: #{rem(18)};
+						--fs-desc: #{rem(16)};
+						--badge-size: #{rem(48)};
+						--fs-badge: #{rem(14)};
+						@media (max-width: $laptop) {
+							--card-margin: 11px;
+							--card-height: 420px;
+							--photo-width: 224px;
+							--photo-height: 252px;
+							--photo-bottom: 57px;
+							--fs-title: 16px;
+							--fs-desc: 14px;
+							--badge-size: 32px;
+							--fs-badge: 10px;
+						}
+					}
+					.catalog__promo-card {
+						--card-height: #{rem(540)};
+						--empty-logo-size: 22.5rem 18rem;
+						--card-padding: #{rem(16)};
+						--card-margin: #{rem(8)};
+						@media (max-width: $laptop) {
+							--card-height: 420px;
+							--empty-logo-size: 200px 160px;
+						}
+					}
+				}
+			}
+		}
 	}
 }

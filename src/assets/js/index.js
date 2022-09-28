@@ -24,6 +24,7 @@ class AlpIndustry {
 			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			Counter: require('../../includes/components/counter/counter').default,
+			Hero: require('../../includes/hero/hero').default,
 			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {
@@ -44,7 +45,7 @@ class AlpIndustry {
 			document.documentElement.classList.remove('_loading');
 
 			document
-				.querySelectorAll('[data-accordion-toggle]')
+				.querySelectorAll('.page__menu [data-accordion-toggle]')
 				.forEach(toggle => new this.modules.Accordion(toggle));
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));

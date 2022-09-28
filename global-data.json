@@ -3,8 +3,14 @@
 	"siteName": "АльпИндустрия",
 	"popupsList": [
 		{
-			"title": "Наличие в рознице",
+			"name": "filters-form"
+		},
+		{
 			"name": "availability"
+		},
+		{
+			"name": "city-form",
+			"animation": "RTL"
 		}
 	]
 }

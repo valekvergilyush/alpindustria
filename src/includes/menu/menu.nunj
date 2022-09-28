@@ -44,7 +44,7 @@
 
 <div class="page__menu menu" data-menu>
 	<div class="menu__top">
-		<button class="menu__location ttu" type="button" data-menu-location-opener>
+		<button class="menu__location ttu" type="button" data-popup-opener="city-form">
 			{{ icon({
 				iconName: 'map-pin',
 				className: 'menu__location-icon _map',

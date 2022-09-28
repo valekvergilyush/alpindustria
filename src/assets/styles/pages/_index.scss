@@ -7,36 +7,5 @@
 			top: -2px;
 			margin-top: calc(0px - var(--filters-height));
 		}
-		#{$this}__catalog {
-			overflow: hidden;
-		}
-		#{$this}__filters-form {
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 50%;
-			transform: translateX(-100%);
-			transition: width $default-transition-duration $default-transition-function,
-				transform $default-transition-duration $default-transition-function;
-			will-change: width, transform;
-			@media (max-width: $laptop-sm) {
-				width: 100%;
-			}
-		}
-		#{$this}__catalog-list {
-			transition: transform $default-transition-duration $default-transition-function;
-			will-change: transform;
-		}
-		&._filters-opened {
-			#{$this}__filters-form {
-				transform: translateX(0%);
-			}
-			#{$this}__catalog-list {
-				transform: translateX(50%);
-				@media (max-width: $laptop-sm) {
-					transform: translateX(100%);
-				}
-			}
-		}
 	}
 }
