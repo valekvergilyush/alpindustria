@@ -18,7 +18,7 @@ class Filters {
 		this.filtersContainer = document.querySelector('.page__filters');
 		this.filtersForm = document.querySelector('.filters-form');
 
-		if (!this.filtersContainer && !this.filtersForm) {
+		if (!this.filtersContainer || !this.filtersForm) {
 			return;
 		}
 
