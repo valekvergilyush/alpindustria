@@ -87,30 +87,32 @@ $mobile-sm: 320px;
 
 	--header-height: 4.5rem; // 72px
 	--filters-height: var(--header-height); // 96px
-	--breadcrumbs-height: #{rem(56)};
-	@media (max-width: $laptop) {
-		--header-height: 64px;
-		--breadcrumbs-height: #{rem(56)};
-	}
-	@media (max-width: $mobile) {
-		--header-height: 56px;
-	}
-
+	--breadcrumbs-height: 3.5rem; // 56px
+	--add-block-height: 10.8125rem; //173px
 	--container-padding: 5rem; // 80px
 	@media (max-width: $desktop) {
 		--container-padding: 64px;
-		--breadcrumbs-height: 40px;
 	}
 	@media (max-width: $laptop-lg) {
+		--add-block-height: 134px;
 		--container-padding: 40px;
+		--breadcrumbs-height: 40px;
+	}
+	@media (max-width: $laptop-md) {
+		--add-block-height: 120px;
 	}
 	@media (max-width: $laptop) {
 		--container-padding: 32px;
+		--header-height: 64px;
 	}
 	@media (max-width: $tablet) {
 		--container-padding: 24px;
 	}
 	@media (max-width: $mobile-lg) {
 		--container-padding: 16px;
+		--add-block-height: 64px;
+	}
+	@media (max-width: $mobile) {
+		--header-height: 56px;
 	}
 }

@@ -143,7 +143,14 @@
 		outline: 1px solid rgba(76, 95, 168, 0.2);
 		outline-offset: -1px;
 		border-radius: 50%;
-		&:hover,
+		input + &,
+		&[href],
+		&[type='button'] {
+			&:hover {
+				outline: 2px solid var(--blue-dark);
+				outline-offset: -2px;
+			}
+		}
 		&._selected,
 		input:checked + & {
 			outline: 2px solid var(--blue-dark);
@@ -447,10 +454,17 @@
 		font-family: var(--font-family-suisse);
 		font-size: rem(16);
 		line-height: rem(21);
-		input:checked + &,
-		&:hover {
+		input:checked + & {
 			background-color: var(--blue-dark);
 			color: var(--white);
+		}
+		input + &,
+		&[href],
+		&[button] {
+			&:hover {
+				background-color: var(--blue-dark);
+				color: var(--white);
+			}
 		}
 		input:disabled + & {
 			opacity: 0.3;

@@ -31,7 +31,6 @@ class ProductSlider {
 
 	sliderBtnHandler(btn) {
 		const index = btn.dataset.sliderBtn;
-		console.log(index);
 		this.slider.select(index);
 	}
 }

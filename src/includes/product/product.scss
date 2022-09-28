@@ -22,36 +22,27 @@
 	&__img {
 		flex-grow: 1;
 		display: flex;
+		flex-direction: column;
 		background-color: var(--default-bg-color);
 		border-bottom: 1px solid var(--blue-dark);
 	}
 	&__img-wrap {
-		position: sticky;
-		top: 0;
+		flex-grow: 1;
 		display: flex;
 		width: 100%;
 		flex-direction: column;
-		max-height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
-		height: rem(910);
-		@media (max-width: $laptop-lg) {
-			height: 650px;
-		}
-		@media (max-width: $laptop-md) {
-			height: 518px;
-		}
 		@media (max-width: $laptop-sm) {
-			height: 74.2vw; // 570/768
-			max-height: 74.2vw;
+			display: block;
 			flex-direction: row;
-		}
-		@media (max-width: $mobile-lg) {
-			height: 98.7vw; // 370/375
-			max-height: 98.7vw;
 		}
 	}
 	&__slider {
-		flex-grow: 1;
+		position: sticky;
+		top: calc((var(--header-height) + var(--breadcrumbs-height)) / 2);
 		overflow: hidden;
+		height: calc(
+			100vh - var(--header-height) - var(--breadcrumbs-height) - var(--add-block-height)
+		);
 	}
 	&__add {
 		position: sticky;
@@ -82,14 +73,8 @@
 		flex-direction: column;
 		padding-top: var(--container-padding);
 		margin-bottom: var(--block-margin);
-		min-height: rem(910);
+		min-height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
 		box-sizing: border-box;
-		@media (max-width: $laptop-lg) {
-			min-height: 650px;
-		}
-		@media (max-width: $laptop-md) {
-			min-height: 518px;
-		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
 			max-height: none;
@@ -307,20 +292,18 @@
 		display: grid;
 		grid-template-columns: 280fr 392fr;
 		column-gap: var(--container-padding);
-		min-height: rem(173);
-		padding: rem(16) var(--container-padding) rem(32);
+		min-height: var(--add-block-height);
+		padding: rem(16) var(--container-padding) rem(24);
 		border-top: 1px solid var(--gray-light);
 		border-bottom: 1px solid var(--gray-light);
 		font-family: var(--font-family-suisse);
 		box-sizing: border-box;
 		@media (max-width: $laptop-lg) {
 			grid-template-columns: 192fr 224fr;
-			min-height: 134px;
 			padding-top: 24px;
 			padding-bottom: 32px;
 		}
 		@media (max-width: $laptop-md) {
-			min-height: 120px;
 			grid-template-columns: auto auto;
 			justify-content: space-between;
 			column-gap: 0;
@@ -579,7 +562,7 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			z-index: 1;
+			z-index: 2;
 		}
 	}
 }

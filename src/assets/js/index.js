@@ -38,6 +38,8 @@ class AlpIndustry {
 			DragScroll: require('./modules/DragScroll').default,
 			Product: require('./modules/Product').default,
 			Popups: require('./modules/Popups').default,
+			Select: require('./modules/Select').default,
+			Availability: require('./modules/Availability').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
