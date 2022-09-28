@@ -24,7 +24,7 @@
 
 		</div>
 
-		{{ popups(popupsList) }}
+		{{ popups({ list: popupsList }) }}
 
 		{% block scripts %}
 			<script src="assets/js/bundle.js?hash"></script>

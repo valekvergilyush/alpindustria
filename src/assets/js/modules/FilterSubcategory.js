@@ -16,9 +16,11 @@ class FilterSubcategory {
 		}
 
 		this.heroContainer = document.querySelector('.page__hero');
-		this.heroTitleCategory = this.heroContainer.querySelector('.hero__title-category');
-		this.heroTitleText = this.heroTitleCategory.textContent;
-		this.heroBgImage = this.heroContainer.querySelector('.hero__bg-img._hero');
+		if (this.heroContainer) {
+			this.heroTitleCategory = this.heroContainer.querySelector('.hero__title-category');
+			this.heroTitleText = this.heroTitleCategory.textContent;
+			this.heroBgImage = this.heroContainer.querySelector('.hero__bg-img._hero');
+		}
 
 		this.subContainers.forEach(subContainer => {
 			subContainer.querySelectorAll('[data-subcategory-item]').forEach(item => {
@@ -44,8 +46,10 @@ class FilterSubcategory {
 		container.classList.add(ClassName.OPENED);
 		item.classList.add(ClassName.OPENED);
 
-		this.showSubcategoryBg(button);
-		this.showSubcategoryTitle(button);
+		if (this.heroContainer) {
+			this.showSubcategoryBg(button);
+			this.showSubcategoryTitle(button);
+		}
 
 		if (list) {
 			this.calcListWidth(list);
@@ -59,8 +63,10 @@ class FilterSubcategory {
 		container.classList.remove(ClassName.OPENED);
 		item.classList.remove(ClassName.OPENED);
 
-		this.showHeroBg();
-		this.showHeroTitle();
+		if (this.heroContainer) {
+			this.showHeroBg();
+			this.showHeroTitle();
+		}
 	}
 	calcListWidth(list) {
 		list.style.flexWrap = 'nowrap';

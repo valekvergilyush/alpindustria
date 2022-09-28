@@ -25,7 +25,6 @@ class AlpIndustry {
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			Counter: require('../../includes/components/counter/counter').default,
 			Hero: require('../../includes/hero/hero').default,
-			// FiltersForm: require('../../includes/filters-form/filters-form').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

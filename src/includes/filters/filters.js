@@ -18,7 +18,7 @@ class Filters {
 		this.filtersContainer = document.querySelector('.page__filters');
 		this.filtersForm = document.querySelector('.filters-form');
 
-		if (!this.filtersContainer && !this.filtersForm) {
+		if (!this.filtersContainer || !this.filtersForm) {
 			return;
 		}
 
@@ -80,10 +80,11 @@ class Filters {
 		window.addEventListener('keydown', this.onWindowKeydown);
 	}
 	close() {
+		if (HTML_CLASSLIST.contains(ClassName.OPENED)) {
+			Popups.close();
+		}
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.isOpened = false;
-
-		Popups.close();
 
 		if (this.layout) {
 			Catalog.setLayout(this.layout);

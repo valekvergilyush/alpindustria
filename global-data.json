@@ -6,7 +6,8 @@
 			"name": "filters-form"
 		},
 		{
-			"name": "availability"
+			"name": "availability",
+			"animation": "RTL"
 		},
 		{
 			"name": "city-form",
