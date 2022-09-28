@@ -71,7 +71,11 @@
 			&::after {
 				opacity: 1;
 			}
+			@media (max-width: $laptop) {
+				min-height: 104px;
+			}
 			@media (max-width: $mobile-lg) {
+				min-height: 72px;
 				padding-top: 10px;
 			}
 		}
@@ -80,6 +84,9 @@
 				padding-left: var(--container-padding);
 				margin-left: calc(0px - var(--container-padding));
 				animation: ticker 5s ease-in infinite;
+				@media (max-width: $mobile-lg) {
+					animation-duration: 10s;
+				}
 			}
 		}
 	}
