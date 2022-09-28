@@ -1,9 +1,6 @@
 .page {
 	$this: &;
 	&._index {
-		#{$this}__main {
-			overflow: hidden;
-		}
 		#{$this}__filters {
 			position: sticky;
 			z-index: 9;

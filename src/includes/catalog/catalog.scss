@@ -14,7 +14,9 @@
 		top: var(--header-height);
 		width: 0;
 		height: 0;
-		transition: width $default-transition-duration $default-transition-function;
+		opacity: 0;
+		transition: opacity $default-transition-duration $default-transition-function,
+			width $default-transition-duration $default-transition-function;
 	}
 	&__list {
 		--item-width: 25%;
@@ -354,9 +356,11 @@
 	.catalog {
 		&__filters-form {
 			width: 100%;
+			opacity: 1;
 			height: auto;
 			@media (max-width: $laptop-sm) {
 				width: 0;
+				opacity: 1;
 			}
 		}
 		@media (min-width: ($laptop-sm + 1px)) {
