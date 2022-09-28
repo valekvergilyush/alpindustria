@@ -13,12 +13,8 @@ class CatalogAccordion {
 		this.sections = document.querySelectorAll('[data-accordion-section]');
 
 		this.sections.length &&
-			this.sections.forEach((section, index) => {
+			this.sections.forEach(section => {
 				section.opened = false;
-
-				if (index === this.sections.length - 1) {
-					this.lastSection = section;
-				}
 
 				if (section.classList.contains(ClassName.OPENED)) {
 					section.opened = true;
@@ -42,19 +38,19 @@ class CatalogAccordion {
 		const contentHeight = content.scrollHeight;
 
 		if (this.openedSection === section) {
-			this.close(section, content);
+			this.close(section, content, true);
 		} else {
 			const cb = () => {
-				this.open(section, content, contentHeight);
+				this.close(this.openedSection, this.openedSectionContent);
 			};
 			if (this.openedSection && this.openedSectionContent) {
-				this.close(this.openedSection, this.openedSectionContent, cb);
+				this.open(section, content, contentHeight, cb);
 			} else {
 				this.open(section, content, contentHeight);
 			}
 		}
 	}
-	open(section, content, contentHeight) {
+	open(section, content, contentHeight, cb) {
 		section.querySelector('[data-accordion-title]').classList.add(ClassName.OPENED);
 
 		gsap.to(content, {
@@ -69,12 +65,13 @@ class CatalogAccordion {
 			duration: DURATION,
 			onComplete: () => {
 				section.classList.add(ClassName.OPENED);
+				cb && cb();
 				this.openedSection = section;
 				this.openedSectionContent = content;
 			},
 		});
 	}
-	close(section, content, cb) {
+	close(section, content, clear = false) {
 		section.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
 
 		gsap.to(content, {
@@ -83,14 +80,15 @@ class CatalogAccordion {
 			clearProps: 'height',
 		});
 		gsap.to(section, {
-			marginBottom: section === this.lastSection ? -1 : this.offset,
+			marginBottom: this.offset,
 			clearProps: 'marginBottom',
 			duration: DURATION,
 			onComplete: () => {
-				this.openedSection = null;
-				this.openedSectionContent = null;
+				if (clear) {
+					this.openedSection = null;
+					this.openedSectionContent = null;
+				}
 				section.classList.remove(ClassName.OPENED);
-				cb && cb();
 			},
 		});
 	}

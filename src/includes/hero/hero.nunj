@@ -1,6 +1,6 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<section class="page__hero hero">
+<section class="page__hero hero" data-parallax>
 	{{ picture({
 		className: 'hero__bg-img _hero',
 		path: 'assets/images/hero-shop/hero-shop',

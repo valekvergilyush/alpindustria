@@ -123,6 +123,10 @@
 					text-align: center;
 					box-sizing: border-box;
 					word-break: keep-all;
+					@media (max-width: $tablet) {
+						top: 0.3em;
+						right: 0.3em;
+					}
 					@media (max-width: $mobile) {
 						top: 0.5em;
 						right: 0.3em;
