@@ -1,6 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 <div class="availability">
+	<h2 class="availability__title h5 ttu">Наличие в рознице</h2>
 	<div class="availability__select select h6 ttu">
 		<select data-select="availability">
 			<option value="Москва">Москва</option>

@@ -6,6 +6,9 @@
 			margin-bottom: 32px;
 		}
 	}
+	&__title {
+		padding-right: rem(50);
+	}
 	&__cities {
 		display: flex;
 		flex-direction: column;

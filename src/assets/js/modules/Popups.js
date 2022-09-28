@@ -2,6 +2,12 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
+const HTML_CLASSLIST = document.documentElement.classList;
+
+const ClassName = {
+	OPENED_MENU: '_menu-opened',
+};
+
 const Animation = {
 	RTL: 'RTL',
 };
@@ -27,7 +33,7 @@ class Popups {
 
 		this.activePopup = null;
 		this.activePopupName = '';
-		this.popups = document.querySelectorAll('[data-popup]');
+		this.popups = document.querySelectorAll('[data-popup-wrapper]');
 		this.closeButton = document.querySelector('.popups__close-button.close-button');
 
 		Array.from(document.querySelectorAll('[data-popup-opener]')).forEach(element => {
@@ -68,6 +74,17 @@ class Popups {
 					.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
 			}
 		});
+
+		const onWindowWidthChange = evt => {
+			if (evt.matches) {
+				this.close();
+			} else {
+				this.close();
+			}
+		};
+
+		this.mqTablet.addEventListener('change', onWindowWidthChange);
+		onWindowWidthChange(this.mqTablet);
 	}
 	open(name) {
 		if (this.activePopupName === name) {
@@ -78,10 +95,12 @@ class Popups {
 			this.close(true);
 		}
 
-		const popup = this.wrapper.querySelector('[data-popup="' + name + '"]');
+		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
 		const popupAnimation = popup.getAttribute('data-popup-animation');
 
-		disableBodyScroll(popup);
+		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
+			disableBodyScroll(popup);
+		}
 
 		if (!popup) {
 			console.log('No popup for ' + name + ' opener');
@@ -225,7 +244,9 @@ class Popups {
 				});
 			}
 
-			enableBodyScroll(this.activePopup);
+			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
+				enableBodyScroll(this.activePopup);
+			}
 
 			documentClassList.remove('_popup-opened');
 
@@ -236,7 +257,7 @@ class Popups {
 		}
 	}
 	getPopup(name) {
-		return this.wrapper.querySelector('[data-popup="' + name + '"]');
+		return this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
 	}
 }
 
