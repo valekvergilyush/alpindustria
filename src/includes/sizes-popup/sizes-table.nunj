@@ -1,0 +1,40 @@
+<div class="sizes-popup__table p4 sizes-table">
+	<table>
+		<tr>
+			<th>Измерения тела</th>
+			<th>X-Small | 36</th>
+			<th>Small | 38</th>
+			<th>Medium | 40</th>
+			<th>Large | 43</th>
+			<th>X-Large | 46</th>
+			<th>XX-Large | 50</th>
+		</tr>
+		<tr>
+			<th>Грудь, см</th>
+			<td>94</td>
+			<td>97</td>
+			<td>102</td>
+			<td>109</td>
+			<td>117</td>
+			<td>120</td>
+		</tr>
+		<tr>
+			<th>Бедра, см</th>
+			<td>94</td>
+			<td>97</td>
+			<td>102</td>
+			<td>109</td>
+			<td>117</td>
+			<td>120</td>
+		</tr>
+		<tr>
+			<th>Рукав, см</th>
+			<td>94</td>
+			<td>97</td>
+			<td>102</td>
+			<td>109</td>
+			<td>117</td>
+			<td>120</td>
+		</tr>
+	</table>
+</div>

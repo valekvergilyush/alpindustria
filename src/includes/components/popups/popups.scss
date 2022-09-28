@@ -27,10 +27,12 @@
 	&__popup-wrapper {
 		position: relative;
 		display: none;
-		&[data-popup-wrapper='availability'] {
+		&[data-popup-wrapper='availability'],
+		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
 		&[data-popup-wrapper='city-form'],
+		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;

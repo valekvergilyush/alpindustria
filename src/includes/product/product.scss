@@ -420,6 +420,7 @@
 		transform: rotate(180deg);
 	}
 	&__size-table {
+		@include reset-btn;
 		display: block;
 		padding-top: 2px;
 		padding-bottom: 1px;

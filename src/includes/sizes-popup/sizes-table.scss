@@ -1,0 +1,66 @@
+.sizes-table {
+	--width-first-cell: #{rem(140)};
+	--columns: 7;
+	width: 100%;
+	padding-bottom: rem(24);
+	text-align: center;
+	overflow-x: auto;
+	@media (max-width: $laptop-md) {
+		--width-first-cell: 120px;
+		padding-bottom: 20px;
+	}
+	@media (max-width: $mobile-lg) {
+		--width-first-cell: 94px;
+		padding-bottom: 24px;
+	}
+	@include scrollbar {
+		height: 4px;
+		background-color: rgba($blue-dark, 0.2);
+	}
+	@include scrollbar-thumb {
+		background-color: var(--blue-dark);
+	}
+	table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	table,
+	th,
+	td {
+		border: 1px solid var(--blue-dark);
+		border-collapse: collapse;
+	}
+	th,
+	td {
+		padding: rem(12) rem(5);
+		height: rem(56);
+		vertical-align: middle;
+		box-sizing: border-box;
+		font-weight: normal;
+		@media (max-width: $mobile-lg) {
+			height: 46px;
+			padding: 7px 5px;
+		}
+		&:first-child {
+			width: var(--width-first-cell);
+			min-width: var(--width-first-cell);
+			max-width: var(--width-first-cell);
+			padding: rem(12) rem(24);
+			text-align: left;
+			@media (max-width: $laptop-md) {
+				padding: 12px 12px 12px 16px;
+			}
+			@media (max-width: $mobile-lg) {
+				height: 46px;
+				padding: 7px 12px;
+			}
+		}
+		&:not(:first-child) {
+			width: rem(89);
+		}
+	}
+	th {
+		background-color: var(--gray-light);
+		color: var(--gray-dark);
+	}
+}

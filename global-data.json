@@ -12,6 +12,10 @@
 		{
 			"name": "city-form",
 			"animation": "RTL"
+		},
+		{
+			"name": "sizes",
+			"animation": "RTL"
 		}
 	]
 }
