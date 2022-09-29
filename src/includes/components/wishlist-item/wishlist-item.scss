@@ -65,7 +65,6 @@
 		}
 		&:first-child {
 			flex-shrink: 0;
-			// padding: rem(19) rem(11);
 		}
 		&:not(:last-child) {
 			border-right: 1px solid var(--blue-dark);
