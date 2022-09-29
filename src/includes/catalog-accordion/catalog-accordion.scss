@@ -4,6 +4,7 @@
 	--title-min-height: #{rem(140)};
 	$this: &;
 	position: relative;
+	overflow: hidden;
 	@media (max-width: $laptop) {
 		--offset: 40px;
 		--size: 64px;
