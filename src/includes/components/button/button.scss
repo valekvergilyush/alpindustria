@@ -475,6 +475,25 @@
 			}
 		}
 	}
+	&._arrow {
+		column-gap: rem(12);
+		font-size: rem(18);
+		line-height: 1.33;
+		text-transform: uppercase;
+		#{$this}__text {
+			padding-top: 0.2em;
+		}
+		#{$this}__icon {
+			--size: #{rem(18)};
+			width: var(--size);
+			height: var(--size);
+			fill: currentColor;
+			transform: rotate(45deg);
+		}
+		@media (max-width: $laptop-lg) {
+			font-size: 16px;
+		}
+	}
 }
 
 ._mobile {
