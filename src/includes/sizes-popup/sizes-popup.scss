@@ -9,7 +9,7 @@
 	@media (max-width: $mobile-lg) {
 		--sizes-margin: 24px;
 	}
-	&__header {
+	&__title {
 		padding-right: rem(50);
 		margin-bottom: rem(80);
 		@media (max-width: $laptop-lg) {
@@ -25,7 +25,7 @@
 			margin-bottom: 40px;
 		}
 	}
-	&__title {
+	&__subtitle {
 		margin-bottom: var(--sizes-margin);
 		@media (max-width: $laptop-md) {
 			font-size: 18px;
