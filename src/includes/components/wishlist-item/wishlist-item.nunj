@@ -1,0 +1,26 @@
+{% from "../button/button.nunj" import button %}
+
+{% macro wishlistItem(props) %}
+	<div class="wishlist-item {% if props.className %}{{ props.className }} {% endif %}">
+		<div class="wishlist-item__imgs">
+			{% for img in props.data.imgs %}
+				<div class="wishlist-item__img">
+					<img src="{{ img }}.png" srcset="{{ img }}@2x.png 2x" width="106" height="123" alt="thumbnail">
+				</div>
+			{% endfor %}
+		</div>
+		<div class="wishlist-item__top">
+			<p class="wishlist-item__title h6 ttu">{{ props.data.name }}</p>
+			<p class="wishlist-item__small">{{ props.data.year }}</p>
+		</div>
+		<div class="wishlist-item__bottom">
+			<p class="wishlist-item__small">{{ props.data.number }}</p>
+			{{ button({
+				className: 'wishlist-item__btn h7 ttu _plus',
+				text: 'Добавить',
+				icon: 'plus-circle-blue',
+				iconData: 'width="32" height="33" viewBox="0 0 32 33"'
+			}) }}
+		</div>
+	</div>
+{% endmacro %}

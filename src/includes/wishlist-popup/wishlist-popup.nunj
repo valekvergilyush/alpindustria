@@ -1,0 +1,83 @@
+{% from "../components/wishlist-item/wishlist-item.nunj" import wishlistItem %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/input/input.nunj" import input %}
+
+{% set whishlistList = [
+	{
+		name: 'восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'assets/images/catalog/item-3'
+		]
+	},
+	{
+		name: 'восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'assets/images/catalog/item-3',
+			'assets/images/catalog/item-1'
+		]
+	},
+	{
+		name: 'восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'assets/images/catalog/item-3',
+			'assets/images/catalog/item-1',
+			'assets/images/catalog/item-2'
+		]
+	},
+	{
+		name: 'восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'assets/images/catalog/item-3',
+			'assets/images/catalog/item-1',
+			'assets/images/catalog/item-2',
+			'assets/images/catalog/item-4'
+		]
+	}
+] %}
+
+<div class="whishlist-popup">
+	<h2 class="whishlist-popup__title h5 ttu">Вишлист</h2>
+	<form class="whishlist-popup__form _hide" data-wishlist-form>
+		{{ input({
+			type: 'text',
+			id: 'wishlist-name',
+			className: 'whishlist-popup__input',
+			name: 'Название',
+			inputAttr: 'data-wishlist-input'
+		}) }}
+		<p class="whishlist-popup__input-text">до 25 символов</p>
+		<div class="whishlist-popup__form-btns">
+			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>отмена</button>
+			{{ button({
+				className: 'h7 ttu _arrow-s whishlist-popup__submit',
+				text: 'создать',
+				icon: 'promo-arrow',
+				type: 'submit',
+				iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+			}) }}
+		</div>
+	</form>
+	{{ button({
+		className: 'whishlist-popup__new h7 ttu _plus',
+		text: 'создать новый',
+		icon: 'plus-circle-blue',
+		iconData: 'width="32" height="33" viewBox="0 0 32 33"',
+		attr: 'data-wishlist-show'
+	}) }}
+	<div class="whishlist-popup__list">
+		{% for item in whishlistList %}
+			{{ wishlistItem({
+				data: item,
+				className: 'whishlist-popup__item'
+			}) }}
+		{% endfor %}
+	</div>
+</div>

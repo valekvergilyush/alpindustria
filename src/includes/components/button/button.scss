@@ -494,6 +494,16 @@
 			font-size: 16px;
 		}
 	}
+	&._plus {
+		display: inline-flex;
+		align-items: center;
+		#{$this}__icon {
+			--size: #{rem(32)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: rem(16);
+		}
+	}
 }
 
 ._mobile {

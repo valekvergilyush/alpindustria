@@ -65,7 +65,7 @@
 						</div>
 						{{ button({
 							className: 'product__favorite _wishlist _wishlist-sm',
-							attr: 'aria-label="Добавить в вишлист"'
+							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist"'
 						}) }}
 					</div>
 					<div class="product__badges">
