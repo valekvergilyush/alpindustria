@@ -1,0 +1,60 @@
+<div class="sizes-popup">
+	<h2 class="sizes-popup__title h5 ttu">arcterys размерная&nbsp;линейка</h2>
+	<h3 class="sizes-popup__subtitle h7 ttu">Размеры мужских курток/рубашек Arcteryx:</h3>
+	{% include "../sizes-table/sizes-table.nunj" %}
+	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских курток/рубашек Arcteryx:</h3>
+	{% include "../sizes-table/sizes-table.nunj" %}
+	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских платьев Arcteryx:</h3>
+	{% include "../sizes-table/sizes-table.nunj" %}
+	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских платьев Arcteryx:</h3>
+	<div class="sizes-popup__table p4 sizes-table">
+		<table>
+			<tr>
+				<th>Измерения руки</th>
+				<th>X-Small</th>
+				<th>Small</th>
+				<th>Medium</th>
+				<th>Large</th>
+				<th>X-Large</th>
+			</tr>
+			<tr>
+				<th>Ширина ладони, см</th>
+				<td>19, 2-20</td>
+				<td>20-20, 9</td>
+				<td>20, 9-21, 8</td>
+				<td>21, 8-22, 6</td>
+				<td>22, 6-23, 5</td>
+			</tr>
+			<tr>
+				<th>Длина ладони,&nbsp;см</th>
+				<td>19, 2-20</td>
+				<td>20-20, 9</td>
+				<td>20, 9-21, 8</td>
+				<td>21, 8-22, 6</td>
+				<td>22, 6-23, 5</td>
+			</tr>
+		</table>
+	</div>
+	<h3 class="sizes-popup__subtitle h7 ttu">Как правильно произвести измерения тела:</h3>
+	<div class="sizes-popup__columns">
+		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-1.jpg" srcset="assets/images/sizes/sizes-img-1@2x.jpg 2x" alt="Размеры">
+		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-2.jpg" srcset="assets/images/sizes/sizes-img-2@2x.jpg 2x" alt="Размеры">
+		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-3.jpg" srcset="assets/images/sizes/sizes-img-3@2x.jpg 2x" alt="Размеры">
+	</div>
+	<div class="sizes-popup__columns _2">
+		<div>
+			<p class="sizes-popup__subtitle-small p3">Рукав:</p>
+			<p class="sizes-popup__text p4">Рука должна быть в слегка согнутом состоянии. Измеряется расстояние от середины задней части шеи по всей длине руки до запястья.</p>
+			<p class="sizes-popup__subtitle-small p3">Бедра:</p>
+			<p class="sizes-popup__text p4">Измеряется окружность груди по наиболее выступающим точкам.</p>
+			<p class="sizes-popup__subtitle-small p3">Грудь:</p>
+			<p class="sizes-popup__text p4">Измеряется окружность талии в самом узком месте.</p>
+		</div>
+		<div>
+			<p class="sizes-popup__subtitle-small p3">Талия:</p>
+			<p class="sizes-popup__text p4">Измеряется окружность бедер в самом широком месте.</p>
+			<p class="sizes-popup__subtitle-small p3">Шаговый шов:</p>
+			<p class="sizes-popup__text p4">В положении стоя измеряется длина ноги от промежности до голеностопа.</p>
+		</div>
+	</div>
+</div>

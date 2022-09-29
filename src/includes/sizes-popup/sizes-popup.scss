@@ -1,0 +1,107 @@
+.sizes-popup {
+	--sizes-margin: #{rem(40)};
+	@media (max-width: $desktop) {
+		--sizes-margin: 32px;
+	}
+	@media (max-width: $laptop-md) {
+		--sizes-margin: 20px;
+	}
+	@media (max-width: $mobile-lg) {
+		--sizes-margin: 24px;
+	}
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(80);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 64px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 40px;
+		}
+	}
+	&__subtitle {
+		margin-bottom: var(--sizes-margin);
+		@media (max-width: $laptop-md) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+			line-height: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+	&__table {
+		margin-bottom: rem(56);
+		@media (max-width: $desktop) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 38px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 40px;
+		}
+	}
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(50);
+		margin-bottom: var(--sizes-margin);
+		@media (max-width: $desktop) {
+			gap: 28px;
+		}
+		@media (max-width: $laptop-md) {
+			gap: 2px;
+		}
+		@media (max-width: $laptop-sm) {
+			gap: 34px;
+		}
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&._2 {
+			grid-template-columns: repeat(2, 1fr);
+			gap: rem(60);
+			@media (max-width: $laptop-md) {
+				gap: 40px;
+			}
+			@media (max-width: $mobile-lg) {
+				grid-template-columns: 1fr;
+				gap: 24px;
+			}
+		}
+	}
+	&__img {
+		width: 100%;
+		@media (max-width: mobile-lg) {
+			max-width: 232px;
+		}
+	}
+	&__title-small {
+		margin-bottom: rem(8);
+	}
+	&__text {
+		margin-bottom: rem(24);
+		color: var(--gray-dark);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

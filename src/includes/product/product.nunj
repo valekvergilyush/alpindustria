@@ -113,7 +113,7 @@
 					<div class="product__sizes">
 						<div class="product__title-sm-wrap">
 							<p class="product__title-sm ttu">Размер</p>
-							<a href="#" class="product__size-table p4">Таблица размеров</a>
+							<button type="button" class="product__size-table p4" data-popup-opener="sizes">Таблица размеров</button>
 						</div>
 						<div class="product__inputs-wrap">
 							<ul class="product__inputs-list _sizes" data-product-sizes  data-slider-group="3">
