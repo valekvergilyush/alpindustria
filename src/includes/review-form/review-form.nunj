@@ -1,0 +1,58 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/textarea/textarea.nunj" import textarea %}
+{% from "../components/input-rating/input-rating.nunj" import inputRating %}
+{% from "../components/button/button.nunj" import button %}
+
+<section class="review-form">
+	<h2 class="review-form__title h5 ttu">Добавить отзыв</h2>
+	<form class="review-form__form">
+		<div class="review-form__fields">
+			{{ input({
+				type: 'text',
+				id: 'review-author-name',
+				className: 'review-form__input',
+				name: 'Имя'
+			}) }}
+			{{ input({
+				type: 'text',
+				id: 'review-author-surname',
+				className: 'review-form__input',
+				name: 'Фамилия'
+			}) }}
+		</div>
+		{{ input({
+			type: 'email',
+			id: 'review-author-email',
+			className: 'review-form__input',
+			name: 'Почта'
+		}) }}
+		{{ input({
+			type: 'tel',
+			id: 'review-author-tel',
+			className: 'review-form__input',
+			name: 'Телефон'
+		}) }}
+		{{ textarea({
+			id: 'review-author-message',
+			className: 'review-form__input _message',
+			name: 'Комментарий',
+			wordCounter: 500
+		}) }}
+		{{ inputRating({
+			className: 'review-form__input _rating',
+			name: 'Ваша оценка',
+			min: 1,
+			max: 5,
+			value: 4
+		}) }}
+		<div class="review-form__bottom">
+			{{ button({
+				type: 'submit',
+				text: 'Отправить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'review-form__submit _arrow'
+			}) }}
+		</div>
+	</form>
+</section>

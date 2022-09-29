@@ -26,7 +26,7 @@
 	{ name: 'Красноярск' }
 ] %}
 
-<div class="city-form">
+<section class="city-form">
 	<h2 class="city-form__title h5 ttu">Город</h2>
 	<form class="city-form__form">
 		{{ inputSearch({
@@ -54,4 +54,4 @@
 			{% endfor %}
 		</ul>
 	</form>
-</div>
+</section>

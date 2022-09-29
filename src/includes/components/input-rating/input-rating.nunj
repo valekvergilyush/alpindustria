@@ -1,0 +1,17 @@
+{% macro inputRating(props) %}
+	<div class="{% if props.className %}{{ props.className }} {% endif %}input-rating">
+		<p class="input-rating__label ttu{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}">
+			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}
+		</p>
+		<ul class="input-rating__inputs">
+			{% for rating in range(props.min, props.max + 1) %}
+				<li class="input-rating__radio">
+					<input class="input-rating__radio-input visually-hidden" type="radio" name="{{ props.name }}" id="input-rating-{{ rating }}" value="{{ rating }}"{% if props.value === rating %} checked{% endif %}>
+					<label class="input-rating__radio-label{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}" for="input-rating-{{ rating }}">
+						{{ rating }}
+					</label>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endmacro %}

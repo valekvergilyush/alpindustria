@@ -16,6 +16,10 @@
 		{
 			"name": "sizes",
 			"animation": "RTL"
+		},
+		{
+			"name": "review-form",
+			"animation": "RTL"
 		}
 	]
 }

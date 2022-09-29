@@ -1,0 +1,17 @@
+{% macro textarea(props) %}
+	<div class="{% if props.className %}{{ props.className }} {% endif %}textarea">
+		<textarea
+			class="textarea__input"
+			id="{{ props.id }}"
+			name="{{ props.name }}"
+			{% if props.value %}value="{{ props.value }}"{% endif %}
+			{% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}
+			{% if props.inputAttr %}{{ props.inputAttr }}{% endif %}
+			{% if props.wordCounter %}maxlength="{{ props.wordCounter }}"{% endif %}
+		></textarea>
+		<label class="textarea__label{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}" for="{{ props.id }}">
+			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}
+		</label>
+		{% if props.wordCounter %}<p class="textarea__words-counter">до {{ props.wordCounter }} символов</p>{% endif %}
+	</div>
+{% endmacro %}
