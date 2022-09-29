@@ -39,6 +39,7 @@ class AlpIndustry {
 			Popups: require('./modules/Popups').default,
 			Select: require('./modules/Select').default,
 			Availability: require('./modules/Availability').default,
+			Input: require('./modules/input').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
