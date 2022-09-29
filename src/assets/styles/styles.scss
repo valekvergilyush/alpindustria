@@ -25,6 +25,9 @@
 @import '../../includes/components/product-reviews/product-reviews';
 @import '../../includes/components/popups/popups';
 @import '../../includes/components/select/select';
+@import '../../includes/components/input/input';
+@import '../../includes/components/textarea/textarea';
+@import '../../includes/components/input-rating/input-rating';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -45,6 +48,7 @@
 @import '../../includes/availability/availability';
 @import '../../includes/availability/availability-table';
 @import '../../includes/city-form/city-form';
+@import '../../includes/review-form/review-form';
 
 // ======= PAGES =======
 @import 'pages/index';
