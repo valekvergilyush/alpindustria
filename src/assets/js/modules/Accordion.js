@@ -12,7 +12,7 @@ export default class Accordion {
 		this.open = this.open.bind(this);
 		this.close = this.close.bind(this);
 		this.toggle = this.toggle.bind(this);
-		this.getHeighValues = this.getHeighValues.bind(this);
+		this._getHeighValues = this._getHeighValues.bind(this);
 
 		this.init(elem);
 	}
@@ -22,7 +22,7 @@ export default class Accordion {
 		this.content = this.trigger.nextElementSibling;
 		this.parentElement = this.trigger.parentElement;
 
-		this.getHeighValues();
+		this._getHeighValues();
 
 		this.trigger.setAttribute('aria-expanded', false);
 		this.parentElement.parentElement.style.setProperty(
@@ -35,7 +35,7 @@ export default class Accordion {
 		window.addEventListener('resize', () => {
 			this.parentElement.parentElement.removeAttribute('style');
 			this.parentElement.removeAttribute('style');
-			this.getHeighValues();
+			this._getHeighValues();
 
 			this.parentElement.parentElement.style.setProperty(
 				'--item-height',
@@ -76,7 +76,7 @@ export default class Accordion {
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
 	}
-	getHeighValues() {
+	_getHeighValues() {
 		const triggerBorderWidth = getComputedStyle(this.trigger)
 			.borderWidth.split(' ')
 			.reduce((prevValue, currentValue) => parseFloat(prevValue) + parseFloat(currentValue), 0);
