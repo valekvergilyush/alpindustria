@@ -1,0 +1,56 @@
+.input-rating {
+	&__label {
+		margin-bottom: rem(24);
+		font-family: var(--font-family-suisse);
+		font-size: rem(18);
+		line-height: 1.33;
+		@media (max-width: $laptop) {
+			margin-bottom: 20px;
+			font-size: rem(16);
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+		}
+	}
+	&__inputs {
+		display: flex;
+	}
+	&__radio {
+		&:not(:first-child) {
+			margin-left: -1px;
+		}
+	}
+	&__radio-label {
+		--size: #{rem(72)};
+		@extend .animated;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--size);
+		height: var(--size);
+		border: 1px solid var(--blue-dark);
+		font-family: var(--font-family-suisse);
+		font-size: rem(28);
+		line-height: 1;
+		letter-spacing: -0.04em;
+		box-sizing: border-box;
+		cursor: pointer;
+		&:hover {
+			color: var(--white);
+			background-color: var(--blue-dark);
+		}
+		@media (max-width: $laptop) {
+			font-size: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 68px;
+			font-size: 22px;
+		}
+	}
+	&__radio-input:checked + &__radio-label {
+		color: var(--white);
+		background-color: var(--blue-dark);
+		pointer-events: none;
+	}
+}
