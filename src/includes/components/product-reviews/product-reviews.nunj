@@ -10,7 +10,7 @@
 				<span class="product-reviews__count p3">34</span>
 			</p>
 
-			<a href="#" class="product-reviews__add ttu">
+			<a href="#" class="product-reviews__add ttu" data-popup-opener="review-form">
 				<span>Добавить <span class="product-reviews__desktop-text">свой</span></span>
 				{{ icon({
 					iconName: 'plus-circle-blue',
