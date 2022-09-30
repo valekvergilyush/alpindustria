@@ -10,11 +10,13 @@ class Catalog {
 	init() {
 		this.layoutControls = document.querySelector('.filters__layout-buttons');
 		this.catalogList = document.querySelector('.catalog__list');
-		this.filtersForm = document.querySelector('.filters-form');
+		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
 
-		if (!this.layoutControls && !this.catalogList && !this.filtersForm) {
+		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
 			return;
 		}
+
+		this.filtersForm = this.filtersWrapper.querySelector('.filters-form');
 
 		this.setFiltersFormWidth();
 
