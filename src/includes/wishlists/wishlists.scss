@@ -1,0 +1,88 @@
+.wishlists {
+	padding-top: rem(78);
+	padding-bottom: rem(160);
+	@media (max-width: $laptop-lg) {
+		padding-top: 64px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-top: 40px;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		column-gap: rem(24);
+		margin-bottom: rem(80);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 64px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 48px;
+		}
+		@media (max-width: $mobile-lg) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	&__title {
+		display: flex;
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 18px;
+		}
+	}
+	&__title-number {
+		color: var(--blue-light);
+		opacity: 0.5;
+		margin-left: rem(24);
+		@media (max-width: $mobile-lg) {
+			display: none;
+		}
+	}
+	&__new {
+		@media (max-width: $laptop-md) {
+			&._plus {
+				.button__icon {
+					--size: 24px;
+					margin-left: 10px;
+				}
+			}
+		}
+		.desktop {
+			@media (max-width: $mobile-lg) {
+				display: none;
+			}
+		}
+		.mobile {
+			display: none;
+			@media (max-width: $mobile-lg) {
+				display: inline-flex;
+			}
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: rem(81) rem(40);
+		width: 100%;
+		@media (max-width: $laptop-lg) {
+			gap: 64px 32px;
+		}
+		@media (max-width: $laptop-md) {
+			gap: 47px 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 48px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 46px;
+		}
+	}
+	&__item {
+		display: flex;
+		@media (max-width: $mobile-lg) {
+			padding-top: 12px;
+			border-top: 1px solid rgba($blue-light, 0.2);
+		}
+	}
+}

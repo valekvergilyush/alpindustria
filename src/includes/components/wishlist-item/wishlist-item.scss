@@ -52,7 +52,7 @@
 		align-items: center;
 		justify-content: flex-end;
 		overflow: hidden;
-		padding: rem(19) rem(2);
+		padding: rem(19) 2px;
 		@media (max-width: $mobile-lg) {
 			padding: 10px 2px;
 		}
@@ -73,7 +73,6 @@
 			width: rem(121);
 			height: 100%;
 			object-fit: contain;
-
 			@media (max-width: $laptop-md) {
 				width: 74px;
 			}
