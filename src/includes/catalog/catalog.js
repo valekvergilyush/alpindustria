@@ -1,6 +1,11 @@
-const ACTIVE_CLASS = '_active';
+const HTML_CLASSLIST = document.documentElement.classList;
 const MOBILE_BREAKPOINT = 640;
 const TABLET_BREAKPOINT = 992;
+
+const ClassName = {
+	ACTIVE: '_active',
+	FILTERS_OPENED: '_filters-opened',
+};
 
 class Catalog {
 	constructor() {
@@ -48,8 +53,8 @@ class Catalog {
 	setLayout(value) {
 		const button = this.layoutControls.querySelector(`[data-cols="${value}"]`);
 
-		this.layoutControls.querySelector(`.${ACTIVE_CLASS}`).classList.remove(ACTIVE_CLASS);
-		button.classList.add(ACTIVE_CLASS);
+		this.layoutControls.querySelector(`.${ClassName.ACTIVE}`).classList.remove(ClassName.ACTIVE);
+		button.classList.add(ClassName.ACTIVE);
 		this.layoutClassName && this.catalogList.classList.remove(this.layoutClassName);
 		this.layout = Number(value);
 		this.layoutClassName = `_cols-${value}`;
@@ -75,6 +80,9 @@ class Catalog {
 	}
 	setFiltersFormWidth() {
 		if (window.innerWidth > TABLET_BREAKPOINT) {
+			if (HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED)) {
+				this.filtersWrapper.style.width = `${document.body.clientWidth / 2}px`;
+			}
 			this.filtersForm.style.width = `${document.body.clientWidth / 2}px`;
 		}
 	}

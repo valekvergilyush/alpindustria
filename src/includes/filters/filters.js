@@ -60,7 +60,7 @@ class Filters {
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(this.filtersWrapper, {
-				width: '100%',
+				width: document.body.clientWidth / 2,
 				opacity: 1,
 				duration: 0.3,
 				ease: 'linear',
@@ -97,7 +97,7 @@ class Filters {
 		this.isOpened = false;
 
 		gsap.to(this.filtersWrapper, {
-			width: '0%',
+			width: 0,
 			opacity: 0,
 			duration: 0.3,
 			ease: 'linear',
