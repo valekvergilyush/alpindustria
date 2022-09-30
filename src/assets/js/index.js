@@ -26,6 +26,7 @@ class AlpIndustry {
 			Counter: require('../../includes/components/counter/counter').default,
 			Tabs: require('../../includes/components/tabs/tabs').default,
 			Hero: require('../../includes/hero/hero').default,
+			Cart: require('../../includes/cart/cart').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

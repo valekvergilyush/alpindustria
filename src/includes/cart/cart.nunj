@@ -7,8 +7,17 @@
 %}
 
 <section class="cart">
-	<h2 class="cart__title h5 ttu">Корзина</h2>
-	<div class="cart__tabs tabs" data-tabs>
+	<div class="cart__title-wrapper _cart">
+		{{ button({
+			icon: 'double-arrow-left',
+			iconData: 'width="32" height="32"',
+			className: 'cart__back-btn',
+			attr: 'aria-label="Назад" data-cart-back'
+		}) }}
+		<h2 class="cart__title h5 ttu">Корзина</h2>
+	</div>
+
+	<div class="cart__tabs tabs" data-tabs data-cart-products>
 		<ul class="tabs__tab-list" role="tablist">
 			{% for item in tabs %}
 				<li class="tabs__tab-item">
@@ -20,22 +29,51 @@
 		</ul>
 		<section class="cart__section _shop tabs__panel" aria-labelledby="shop" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 			{% include '../cart-list/cart-list.nunj' %}
-			<div class="cart__shop-bottom">
-				<p class="cart__price p3">
-					Итого без учета доставки:<br>
-					<span class="cart__price-value h5 ttu">145 000 ₽</span>
-				</p>
-				{{ button({
-					type: 'submit',
-					text: 'Отправить',
-					icon: 'promo-arrow',
-					iconData: 'width="18" height="18"',
-					className: 'cart__submit _arrow'
-				}) }}
-			</div>
 		</section>
 		<section class="tabs__panel" aria-labelledby="rental" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
-			Rental
+			{% include '../cart-list/cart-list.nunj' %}
 		</section>
+		<div class="cart__shop-bottom">
+			<p class="cart__price p3">
+				Итого без учета доставки:<br>
+				<span class="cart__price-value h5 ttu">145 000 ₽</span>
+			</p>
+			{{ button({
+				type: 'submit',
+				text: 'Отправить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'cart__submit _arrow',
+				attr: 'data-cart-delivery-opener'
+			}) }}
+		</div>
 	</div>
+
+	<div class="cart__cart-list hidden" data-cart-list>
+		{% include '../cart-list/cart-list.nunj' %}
+		<p class="cart__price _secondary p3">
+			Стоимость товаров:<br>
+			<span class="cart__price-value h5">145 000 руб.</span>
+		</p>
+	</div>
+	<div class="cart__delivery hidden" data-cart-delivery>
+		<div class="cart__title-wrapper _delivery">
+			<h2 class="cart__title h5 ttu">Доставка</h2>
+		</div>
+		<div class="cart__delivery-bottom">
+			<p class="cart__price p3">
+				Итого с учетом доставки:<br>
+				<span class="cart__price-value h5 ttu">145 000 ₽</span>
+			</p>
+			{{ button({
+				type: 'submit',
+				text: 'Оформить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'cart__submit _arrow',
+				attr: 'data-cart-delivery-submit'
+			}) }}
+		</div>
+	</div>
+
 </section>
