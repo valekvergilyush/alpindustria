@@ -20,6 +20,10 @@
 		{
 			"name": "review-form",
 			"animation": "RTL"
+		},
+		{
+			"name": "cart",
+			"animation": "RTL"
 		}
 	]
 }

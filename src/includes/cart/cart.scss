@@ -1,0 +1,91 @@
+.cart {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 32px;
+		}
+	}
+	&__tabs {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+	&__section {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		&._shop {
+			row-gap: rem(27);
+		}
+	}
+	&__list {
+		flex-grow: 1;
+	}
+	&__shop-bottom {
+		position: sticky;
+		bottom: 0;
+		display: flex;
+		box-sizing: border-box;
+		width: calc(100% + var(--popup-padding) * 2);
+		padding: rem(47) var(--popup-padding) rem(40) var(--popup-padding);
+		margin-left: calc(0px - var(--popup-padding));
+		color: var(--white);
+		background-color: var(--blue-dark);
+		min-height: rem(176);
+		@media (max-width: $laptop-lg) {
+			min-height: 134px;
+			padding-top: 38px;
+			padding-bottom: 32px;
+		}
+		@media (max-width: $laptop) {
+			min-height: 120px;
+			padding-top: 29px;
+			padding-bottom: 24px;
+		}
+		@media (max-width: $tablet) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 64px;
+			padding: 13px var(--popup-padding) 12px var(--popup-padding);
+		}
+	}
+	&__submit {
+		margin-top: auto;
+		margin-left: auto;
+	}
+	&__price {
+		color: var(--gray-light);
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+			line-height: 1.6;
+		}
+	}
+	&__price-value {
+		display: inline-block;
+		margin-top: rem(8);
+		color: var(--white);
+		@media (max-width: $laptop-lg) {
+			margin-top: 4px;
+			font-size: 28px;
+			line-height: 1.3;
+			letter-spacing: -0.04em;
+		}
+		@media (max-width: $laptop) {
+			font-size: 24px;
+			letter-spacing: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 0;
+			font-size: 18px;
+		}
+	}
+}
