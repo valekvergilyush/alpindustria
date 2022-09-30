@@ -46,6 +46,7 @@
 		height: rem(160);
 		margin-right: rem(16);
 		object-fit: cover;
+		object-position: center;
 		@media (max-width: $laptop) {
 			width: 100px;
 			height: 127px;
