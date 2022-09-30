@@ -16,6 +16,7 @@ class Filters {
 
 	init() {
 		this.filtersContainer = document.querySelector('.page__filters');
+		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
 		this.filtersForm = document.querySelector('.filters-form');
 
 		if (!this.filtersContainer || !this.filtersForm) {
@@ -57,6 +58,15 @@ class Filters {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.isOpened = true;
 
+		if (window.innerWidth > TABLET_BREAKPOINT) {
+			gsap.to(this.filtersWrapper, {
+				width: '100%',
+				opacity: 1,
+				duration: 0.3,
+				ease: 'linear',
+			});
+		}
+
 		if (window.innerWidth <= TABLET_BREAKPOINT) {
 			Popups.open('filters-form');
 		}
@@ -85,6 +95,13 @@ class Filters {
 		}
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.isOpened = false;
+
+		gsap.to(this.filtersWrapper, {
+			width: '0%',
+			opacity: 0,
+			duration: 0.3,
+			ease: 'linear',
+		});
 
 		if (this.layout) {
 			Catalog.setLayout(this.layout);

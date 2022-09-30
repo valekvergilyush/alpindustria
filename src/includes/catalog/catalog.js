@@ -10,10 +10,13 @@ class Catalog {
 	init() {
 		this.layoutControls = document.querySelector('.filters__layout-buttons');
 		this.catalogList = document.querySelector('.catalog__list');
+		this.filtersForm = document.querySelector('.filters-form');
 
-		if (!this.layoutControls && !this.catalogList) {
+		if (!this.layoutControls && !this.catalogList && !this.filtersForm) {
 			return;
 		}
+
+		this.setFiltersFormWidth();
 
 		this.onLayoutButtonClick = this.onLayoutButtonClick.bind(this);
 		this.onWindowResize = this.onWindowResize.bind(this);
@@ -54,6 +57,8 @@ class Catalog {
 		return this.layout;
 	}
 	onWindowResize() {
+		this.setFiltersFormWidth();
+
 		if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
 			this.setLayout(3);
 		} else if (window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) {
@@ -64,6 +69,11 @@ class Catalog {
 			this.setLayout(2);
 		} else if (this.layout === 2 && window.innerWidth > TABLET_BREAKPOINT) {
 			this.setLayout(4);
+		}
+	}
+	setFiltersFormWidth() {
+		if (window.innerWidth > TABLET_BREAKPOINT) {
+			this.filtersForm.style.width = `${document.body.clientWidth / 2}px`;
 		}
 	}
 }
