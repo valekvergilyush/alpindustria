@@ -80,10 +80,13 @@ class Catalog {
 	}
 	setFiltersFormWidth() {
 		if (window.innerWidth > TABLET_BREAKPOINT) {
+			const halfScreenWidth = `${document.body.clientWidth / 2}px`;
+
 			if (HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED)) {
-				this.filtersWrapper.style.width = `${document.body.clientWidth / 2}px`;
+				this.filtersWrapper.style.width = halfScreenWidth;
 			}
-			this.filtersForm.style.width = `${document.body.clientWidth / 2}px`;
+
+			this.filtersForm.style.width = halfScreenWidth;
 		}
 	}
 }
