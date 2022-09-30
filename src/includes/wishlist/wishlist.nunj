@@ -51,14 +51,14 @@
 			id: 'wishlist-name',
 			className: 'whishlist-popup__input',
 			name: 'Название',
-			inputAttr: 'data-wishlist-input'
+			inputAttr: 'data-wishlist-input',
+			wordCounter: 25
 		}) }}
-		<p class="whishlist-popup__input-text">до 25 символов</p>
 		<div class="whishlist-popup__form-btns">
-			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>отмена</button>
+			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
 			{{ button({
 				className: 'h7 ttu _arrow-s whishlist-popup__submit',
-				text: 'создать',
+				text: 'Создать',
 				icon: 'promo-arrow',
 				type: 'submit',
 				iconData: 'width="16" height="16" viewBox="0 0 72 72"'
@@ -67,7 +67,7 @@
 	</form>
 	{{ button({
 		className: 'whishlist-popup__new h7 ttu _plus',
-		text: 'создать новый',
+		text: 'Создать новый',
 		icon: 'plus-circle-blue',
 		iconData: 'width="32" height="33" viewBox="0 0 32 33"',
 		attr: 'data-wishlist-show'

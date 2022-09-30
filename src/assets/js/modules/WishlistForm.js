@@ -1,42 +1,43 @@
 class WishlistForm {
 	constructor() {
 		this.form = document.querySelector('[data-wishlist-form]');
-		this.showBtn = document.querySelector('[data-wishlist-show]');
+		this.opener = document.querySelector('[data-wishlist-show]');
 		this.cancelBtn = document.querySelector('[data-wishlist-cancel]');
 		this.input = document.querySelector('[data-wishlist-input]');
+		this.hideClass = '_hide';
 		this.init();
 	}
 	init() {
-		if (!this.form || !this.showBtn) {
+		if (!this.form || !this.opener) {
 			return;
 		}
 
-		this.showBtn.addEventListener('click', () => {
-			this.hideShowBtn();
+		this.opener.addEventListener('click', () => {
+			this.hideOpener();
 			this.showForm();
 			this.input.focus();
 		});
 		this.cancelBtn.addEventListener('click', () => {
 			this.hideForm();
-			this.showShowBtn();
+			this.showOpener();
 			this.input.value = '';
 		});
 	}
 
-	showShowBtn() {
-		this.showBtn.classList.remove('_hide');
+	showOpener() {
+		this.opener.classList.remove(this.hideClass);
 	}
 
-	hideShowBtn() {
-		this.showBtn.classList.add('_hide');
+	hideOpener() {
+		this.opener.classList.add(this.hideClass);
 	}
 
 	showForm() {
-		this.form.classList.remove('_hide');
+		this.form.classList.remove(this.hideClass);
 	}
 
 	hideForm() {
-		this.form.classList.add('_hide');
+		this.form.classList.add(this.hideClass);
 	}
 }
 

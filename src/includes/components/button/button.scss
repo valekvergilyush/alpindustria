@@ -495,8 +495,6 @@
 		}
 	}
 	&._plus {
-		display: inline-flex;
-		align-items: center;
 		#{$this}__icon {
 			--size: #{rem(32)};
 			width: var(--size);

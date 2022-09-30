@@ -21,18 +21,8 @@
 	&__input {
 		margin-bottom: rem(16);
 	}
-	&__input-text {
-		margin-top: rem(-5);
-		margin-bottom: rem(16);
-		font-family: var(--font-family-suisse);
-		font-size: rem(12);
-		line-height: 1.33;
-		color: var(--gray-dark);
-		text-align: right;
-		opacity: 0.2;
-	}
 	&__form {
-		@media (max-width: $laptop-lg) {
+		@media (max-width: $laptop-md) {
 			padding-bottom: 10px;
 		}
 		&._hide {
@@ -73,7 +63,7 @@
 		@media (max-width: $laptop-md) {
 			margin-top: 20px;
 		}
-		@media (max-width: $mobile) {
+		@media (max-width: $mobile-lg) {
 			margin-top: 16px;
 		}
 	}

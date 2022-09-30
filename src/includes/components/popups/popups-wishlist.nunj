@@ -1,1 +1,1 @@
-{% include '../../wishlist-popup/wishlist-popup.nunj' %}
+{% include '../../wishlist/wishlist.nunj' %}
