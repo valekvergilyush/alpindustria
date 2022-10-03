@@ -27,7 +27,22 @@
 	&__popup-wrapper {
 		position: relative;
 		display: none;
+		background-color: var(--white);
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: rem(5);
+			left: 50%;
+			transform: translateX(-50%);
+			width: rem(40);
+			height: 2px;
+			background-color: var(--blue-dark);
+			opacity: 0.2;
+			display: none;
+		}
 		&[data-popup-wrapper='availability'],
+		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='review-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='sizes'] {
@@ -42,16 +57,28 @@
 				width: 100%;
 				height: 75%;
 				margin-top: auto;
+				&::before {
+					display: block;
+				}
 			}
 			#{$this}__icon {
 				display: block;
+			}
+		}
+		&._animation {
+			& > * {
+				opacity: 0;
+			}
+		}
+		&._opened-delivery {
+			#{$this}__close-button {
+				display: none;
 			}
 		}
 	}
 	&__popup {
 		--popup-padding: var(--container-padding);
 		position: relative;
-		z-index: 100;
 		width: 100%;
 		height: 100%;
 		padding: var(--popup-padding);
@@ -95,6 +122,7 @@
 				--popup-padding: 16px;
 			}
 		}
+		&[data-popup='cart'],
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
 		}

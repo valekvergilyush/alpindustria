@@ -1,7 +1,7 @@
 {% macro counter(props) %}
 	<div data-counter="block" class="counter {% if props.className %}{{ props.className }} {% endif %}">
 		<button data-counter="minus" class="counter__btn" type="button" aria-label="Уменьшить"></button>
-		<span data-counter="number" class="counter__number">3</span>
+		<span data-counter="number" class="counter__number">{% if props.number %}{{ props.number }}{% else %}1{% endif %}</span>
 		<button data-counter="plus" class="counter__btn _plus" type="button" aria-label="Увеличить"></button>
 	</div>
 {% endmacro %}

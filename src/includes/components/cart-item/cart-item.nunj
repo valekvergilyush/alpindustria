@@ -1,0 +1,41 @@
+{% from "../select/select-color.nunj" import selectColor %}
+{% from "../select/select.nunj" import select %}
+{% from "../counter/counter.nunj" import counter %}
+
+{% macro cartItem(props) %}
+	{% set colorList = [
+		{ name: 'Красный', code: '#C9364C' },
+		{ name: 'Тёмно-фиолетовый', code: '#6F2876' },
+		{ name: 'Тёмно-синий', code: '#324481' },
+		{ name: 'Тёмно-зелёный', code: '#03836E' },
+		{ name: 'Тёмно-серый', code: '#342C25' },
+		{ name: 'Светло-серый', code: '#F5F1EE' },
+		{ name: 'Светло-зелёный', code: '#0B994B' },
+		{ name: 'Светло-фиолетовый', code: '#8B4192' },
+		{ name: 'Белый', code: '#FEFEFE' }
+	] %}
+	{% set sizeList = [
+		{ name: '37', value: '37' },
+		{ name: '38', value: '38' },
+		{ name: '41', value: '41', selected: true },
+		{ name: '42', value: '42' },
+		{ name: '43', value: '43' },
+		{ name: '44', value: '44' },
+		{ name: '45', value: '45' },
+		{ name: '46', value: '46' }
+	] %}
+
+	<div class="cart-item">
+		<div class="cart-item__info">
+			<p class="cart-item__title h7 ttu">{{ props.title }}</p>
+			<p class="cart-item__price">{{ props.price }}</p>
+		</div>
+		<img class="cart-item__img" src="{{ props.srcImg }}" srcset="{{ props.srcsetImg }}" width="126" height="160" alt="" loading="lazy">
+		<div class="cart-item__controls">
+			{{ selectColor({ colors: colorList, className: 'cart-item__select' }) }}
+			{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}
+			{{ counter({ number: 1, className: 'cart-item__counter' }) }}
+		</div>
+	</div>
+{% endmacro %}
+
