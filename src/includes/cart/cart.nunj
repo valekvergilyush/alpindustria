@@ -56,12 +56,16 @@
 			<span class="cart__price-value h5">145 000 руб.</span>
 		</p>
 	</div>
-	<div class="cart__delivery" data-cart-delivery>
+
+	<div class="cart__delivery">
 		<div class="cart__title-wrapper _delivery">
 			<h2 class="cart__title h5 ttu">Доставка</h2>
 		</div>
-		<div class="cart__delivery-bottom">
-			<p class="cart__price p3">
+
+		{% include '../cart-delivery/cart-delivery.nunj' %}
+
+		<div class="cart-bottom">
+			<p class="cart__price _white p3">
 				Итого с учетом доставки:<br>
 				<span class="cart__price-value h5 ttu">145 000 ₽</span>
 			</p>
