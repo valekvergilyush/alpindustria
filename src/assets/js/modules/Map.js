@@ -184,7 +184,6 @@ class Map {
 		this.init();
 	}
 	init() {
-		console.log('map');
 		if (!this.mapBlock) {
 			return;
 		}
