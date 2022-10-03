@@ -83,8 +83,6 @@
 		height: var(--size);
 		margin-top: auto;
 		margin-left: auto;
-		background-color: currentColor;
-		opacity: 0.3;
 		@media (max-width: $mobile-lg) {
 			--size: 120px;
 		}
@@ -96,6 +94,5 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		display: none;
 	}
 }

@@ -5,6 +5,8 @@
 	$this: &;
 	position: relative;
 	overflow: hidden;
+	padding-top: var(--offset);
+	margin-top: calc(0px - var(--offset));
 	@media (max-width: $laptop) {
 		--offset: 40px;
 		--size: 64px;

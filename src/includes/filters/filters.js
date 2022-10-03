@@ -77,14 +77,10 @@ class Filters {
 			document.querySelector('.filters__layout').classList.add('no-pe');
 		}
 
-		clearTimeout(this.TO);
-
 		if (!this.accordions.length) {
-			this.TO = setTimeout(() => {
-				this.filtersForm
-					.querySelectorAll('[data-accordion-toggle]')
-					.forEach(toggle => this.accordions.push(new Accordion(toggle)));
-			}, 300);
+			this.filtersForm
+				.querySelectorAll('[data-accordion-toggle]')
+				.forEach(toggle => this.accordions.push(new Accordion(toggle)));
 		}
 
 		window.addEventListener('keydown', this.onWindowKeydown);

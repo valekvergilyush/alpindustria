@@ -55,7 +55,7 @@
 		color: transparent;
 		transition: transform $default-transition-duration $default-transition-function;
 		&:hover {
-			transform: scale(1.05);
+			color: var(--white);
 		}
 		@media (max-width: $laptop-md) {
 			--size: 88px;
@@ -66,6 +66,7 @@
 		}
 	}
 	&__to-top-icon {
+		@extend .animated;
 		--size: #{rem(72)};
 		width: var(--size);
 		height: var(--size);
@@ -229,18 +230,21 @@
 		background-repeat: no-repeat;
 		background-position: bottom #{rem(4)} right #{rem(4)};
 		background-size: rem(16) rem(16);
-		transition: background-position $default-transition-duration;
+		transition: padding $default-transition-duration;
 		text-align: right;
 		&:hover {
-			background-position: bottom #{rem(4)} right 0;
-			@media (max-width: $mobile-lg) {
-				background-position: top 1px right 1px;
-			}
+			padding-right: rem(29);
 		}
 		@media (max-width: $mobile-lg) {
 			padding-right: 25px;
 			background-position: top 1px right 1px;
 			line-height: 16px;
+			&:hover {
+				padding-right: 25px;
+			}
+			&:active {
+				padding-right: 22px;
+			}
 		}
 	}
 	&__logo {

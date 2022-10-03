@@ -152,9 +152,6 @@
 		--height: #{rem(32)} !important;
 		--width: auto;
 		@extend .animated;
-		&:hover {
-			opacity: 0.85;
-		}
 	}
 	&__subcategories-wrapper {
 		display: none;

@@ -1,6 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 <section class="banner-section">
+	<img src="assets/images/product/banner-bg.jpg" srcset="assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
 	<div class="banner-section__wrap container">
 		<div class="banner-section__top">
 			{{ icon({
@@ -10,8 +11,7 @@
 			}) }}
 			<p class="banner-section__name ttu">статья</p>
 		</div>
-		<h2 class="banner-section__title ttu h3">новое поступление</h2>
+		<h2 class="banner-section__title ttu h3"><a class="banner-section__link" href="#">Новое поступление</a></h2>
 		<p class="banner-section__text p1">Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.</p>
 	</div>
-	<img src="assets/images/product/banner-bg.jpg" srcset="assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
 </section>
