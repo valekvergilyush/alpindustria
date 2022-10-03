@@ -8,7 +8,7 @@
 		align-items: center;
 		column-gap: rem(12);
 		padding-right: rem(50);
-		margin-bottom: rem(56);
+		margin-bottom: rem(50);
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 40px;
 		}
@@ -22,28 +22,14 @@
 	&__title {
 		padding-top: 0.2em;
 	}
-	&__tabs {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-	}
-	&__section {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		&._shop {
-			row-gap: rem(27);
-		}
-	}
 	&__list {
 		flex-grow: 1;
 	}
 	&__cart-list {
-		// display: flex;
 		display: none;
 		flex-direction: column;
 		row-gap: rem(40);
-		max-width: rem(736);
+		padding-right: var(--popup-padding);
 		padding-bottom: rem(45);
 		grid-column: 1/2;
 		grid-row: 2/3;
@@ -52,99 +38,45 @@
 		display: none;
 		grid-column: 2/3;
 		grid-row: 1/-1;
-		// display: flex;
 		flex-direction: column;
 		padding: var(--popup-padding);
 		padding-bottom: 0;
 		margin: calc(0px - var(--popup-padding));
 		margin-bottom: 0;
 		margin-left: 0;
+		border-left: 1px solid var(--blue-dark);
 		box-sizing: border-box;
 		background-color: var(--gray-light);
 	}
-	&__delivery-bottom {
-		position: sticky;
-		bottom: 0;
-		display: flex;
-		box-sizing: border-box;
-		width: calc(100% + var(--popup-padding) * 2);
-		padding: rem(47) var(--popup-padding) rem(40) var(--popup-padding);
-		margin-top: auto;
-		margin-left: calc(0px - var(--popup-padding));
-		color: var(--white);
-		background-color: var(--blue-dark);
-		min-height: rem(176);
-		@media (max-width: $laptop-lg) {
-			min-height: 134px;
-			padding-top: 38px;
-			padding-bottom: 32px;
-		}
-		@media (max-width: $laptop) {
-			min-height: 120px;
-			padding-top: 29px;
-			padding-bottom: 24px;
-		}
-		@media (max-width: $tablet) {
-			padding-left: 32px;
-			padding-right: 32px;
-		}
-		@media (max-width: $mobile-lg) {
-			min-height: 64px;
-			padding: 13px var(--popup-padding) 12px var(--popup-padding);
-		}
-	}
-	&__shop-bottom {
-		position: sticky;
-		bottom: 0;
-		display: flex;
-		box-sizing: border-box;
-		width: calc(100% + var(--popup-padding) * 2);
-		padding: rem(47) var(--popup-padding) rem(40) var(--popup-padding);
-		margin-left: calc(0px - var(--popup-padding));
-		color: var(--white);
-		background-color: var(--blue-dark);
-		min-height: rem(176);
-		@media (max-width: $laptop-lg) {
-			min-height: 134px;
-			padding-top: 38px;
-			padding-bottom: 32px;
-		}
-		@media (max-width: $laptop) {
-			min-height: 120px;
-			padding-top: 29px;
-			padding-bottom: 24px;
-		}
-		@media (max-width: $tablet) {
-			padding-left: 32px;
-			padding-right: 32px;
-		}
-		@media (max-width: $mobile-lg) {
-			min-height: 64px;
-			padding: 13px var(--popup-padding) 12px var(--popup-padding);
-		}
+	&__delivery-content {
+		flex-grow: 1;
 	}
 	&__submit {
 		margin-top: auto;
 		margin-left: auto;
 	}
 	&__price {
-		color: var(--gray-light);
+		color: var(--blue-light);
 		@media (max-width: $mobile-lg) {
 			font-size: 10px;
 			line-height: 1.6;
 		}
+		&._white {
+			color: var(--gray-light);
+			#{$this}__price-value {
+				color: var(--white);
+			}
+		}
 		&._secondary {
-			color: var(--blue-light);
 			#{$this}__price-value {
 				font-size: rem(32);
-				color: var(--blue-dark);
 			}
 		}
 	}
 	&__price-value {
 		display: inline-block;
 		margin-top: rem(8);
-		color: var(--white);
+		color: var(--blue-dark);
 		@media (max-width: $laptop-lg) {
 			margin-top: 4px;
 			font-size: 28px;
