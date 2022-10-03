@@ -1,10 +1,15 @@
 .counter {
 	--size: #{rem(32)};
 	--icon-size: #{rem(24)};
+	--font-size: #{rem(32)};
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	column-gap: rem(4);
 	min-width: rem(135);
+	@media (max-width: $laptop-sm) {
+		--font-size: 24px;
+	}
 	@media (max-width: $mobile-lg) {
 		--size: 25px;
 		--icon-size: 16px;
@@ -12,12 +17,9 @@
 	&__number {
 		flex-grow: 1;
 		font-family: var(--font-family-suisse);
-		font-size: rem(32);
+		font-size: var(--font-size);
 		line-height: 1;
 		text-align: center;
-		@media (max-width: $laptop-sm) {
-			font-size: 24px;
-		}
 	}
 	&__btn {
 		@include reset-btn;

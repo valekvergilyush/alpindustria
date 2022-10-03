@@ -1,0 +1,115 @@
+.cart {
+	$this: &;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	&__title-wrapper {
+		display: flex;
+		align-items: center;
+		column-gap: rem(12);
+		padding-right: rem(50);
+		margin-bottom: rem(50);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 32px;
+		}
+	}
+	&__back-btn {
+		display: none;
+	}
+	&__title {
+		padding-top: 0.2em;
+	}
+	&__list {
+		flex-grow: 1;
+	}
+	&__cart-list {
+		display: none;
+		flex-direction: column;
+		row-gap: rem(40);
+		padding-right: var(--popup-padding);
+		padding-bottom: rem(45);
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+	&__delivery {
+		display: none;
+		grid-column: 2/3;
+		grid-row: 1/-1;
+		flex-direction: column;
+		padding: var(--popup-padding);
+		padding-bottom: 0;
+		margin: calc(0px - var(--popup-padding));
+		margin-bottom: 0;
+		margin-left: 0;
+		border-left: 1px solid var(--blue-dark);
+		box-sizing: border-box;
+		background-color: var(--gray-light);
+	}
+	&__delivery-content {
+		flex-grow: 1;
+	}
+	&__submit {
+		margin-top: auto;
+		margin-left: auto;
+	}
+	&__price {
+		color: var(--blue-light);
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+			line-height: 1.6;
+		}
+		&._white {
+			color: var(--gray-light);
+			#{$this}__price-value {
+				color: var(--white);
+			}
+		}
+		&._secondary {
+			#{$this}__price-value {
+				font-size: rem(32);
+			}
+		}
+	}
+	&__price-value {
+		display: inline-block;
+		margin-top: rem(8);
+		color: var(--blue-dark);
+		@media (max-width: $laptop-lg) {
+			margin-top: 4px;
+			font-size: 28px;
+			line-height: 1.3;
+			letter-spacing: -0.04em;
+		}
+		@media (max-width: $laptop) {
+			font-size: 24px;
+			letter-spacing: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 0;
+			font-size: 18px;
+		}
+	}
+}
+
+._opened-delivery {
+	.cart {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: min-content 1fr;
+		&__cart-list {
+			display: flex;
+		}
+		&__delivery {
+			display: flex;
+		}
+		&__tabs {
+			display: none;
+		}
+		&__back-btn {
+			display: inline-flex;
+		}
+	}
+}

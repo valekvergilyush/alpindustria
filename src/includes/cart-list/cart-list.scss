@@ -1,0 +1,42 @@
+.cart-list {
+	&__number {
+		margin-bottom: rem(48);
+		font-size: rem(16);
+		line-height: 1.5;
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 1.71;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+			font-size: 12px;
+			line-height: 1.33;
+		}
+	}
+	&__number-value {
+		display: inline-block;
+		margin-top: rem(4);
+		font-size: rem(24);
+		line-height: 1.33;
+		@media (max-width: $laptop) {
+			font-size: 18px;
+		}
+		@media (max-width: $tablet) {
+			margin-top: 8px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 4px;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+	}
+}

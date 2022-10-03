@@ -1,0 +1,41 @@
+.cart-tabs {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	&__section {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	&__price {
+		color: var(--gray-light);
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+			line-height: 1.6;
+		}
+	}
+	&__price-value {
+		display: inline-block;
+		margin-top: rem(8);
+		color: var(--white);
+		@media (max-width: $laptop-lg) {
+			margin-top: 4px;
+			font-size: 28px;
+			line-height: 1.3;
+			letter-spacing: -0.04em;
+		}
+		@media (max-width: $laptop) {
+			font-size: 24px;
+			letter-spacing: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 0;
+			font-size: 18px;
+		}
+	}
+	&__submit {
+		margin-top: auto;
+		margin-left: auto;
+	}
+}

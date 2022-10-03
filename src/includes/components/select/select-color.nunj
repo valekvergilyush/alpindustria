@@ -1,0 +1,10 @@
+{% macro selectColor(props) %}
+	<div class="{% if props.className %}{{ props.className }} {% endif %}select _rounded _color">
+		<select class="select__select" data-select="color">
+			{% for color in props.colors %}
+				<option value="{{ color.code }}"{% if color.selected %} selected{% endif %} aria-label="{{ color.name }}">
+				</option>
+			{% endfor %}
+		</select>
+	</div>
+{% endmacro %}

@@ -5,7 +5,7 @@
 {% set userActions = [
 	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"' },
 	{ name: 'Вишлист', className: '_wishlist', icon: 'heart', iconData: 'width="32" height="32"', href: 'wishlists.html' },
-	{ name: 'Корзина', className: '_cart', icon: 'cart', iconData: 'width="32" height="32"' }
+  { name: 'Корзина', className: '_cart', icon: 'cart', iconData: 'width="32" height="32"', attr: 'data-popup-opener="cart"' }
 ] %}
 
 <header class="page__header header _inner-page">
@@ -28,7 +28,12 @@
 		<ul class="header__actions">
 			{% for action in userActions %}
 				<li class="header__actions-item {{ action.className }}">
-					<a href="{% if action.href %}{{ action.href }}{% else %}#{% endif  %}" class="header__actions-link {{ action.className }}" aria-label="{{ action.name }}">
+					<a 
+            href="{% if action.href %}{{ action.href }}{% else %}#{% endif  %}" 
+            class="header__actions-link {{ action.className }}" 
+            aria-label="{{ action.name }}"
+            {% if action.attr %} {{ action.attr }}{% endif %}
+          >
 						{{ icon({
 							iconName: action.icon,
 							attr: action.iconData
