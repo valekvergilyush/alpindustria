@@ -135,4 +135,14 @@
 			}
 		}
 	}
+	&__img-empty {
+		width: rem(152);
+		height: rem(80);
+		margin: auto;
+		opacity: 0.05;
+		@media (max-width: $laptop-md) {
+			width: 76px;
+			height: 40px;
+		}
+	}
 }

@@ -4,6 +4,11 @@
 
 {% set whishlistList = [
 	{
+		name: 'новый вишлист',
+		year: '2022',
+		number: '16 товаров'
+	},
+	{
 		name: 'восхождение на&nbsp;эльбрус',
 		year: '2022',
 		number: '16 товаров',
