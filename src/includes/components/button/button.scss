@@ -11,6 +11,7 @@
 	&__icon {
 		pointer-events: none;
 		flex-shrink: 0;
+		transition: transform $default-transition-duration $default-transition-function;
 	}
 	&._white-border {
 		color: var(--white);
@@ -272,15 +273,9 @@
 		font-size: var(--font-size-h7);
 		line-height: 1.3;
 		font-weight: var(--default-font-weight);
-		#{$this}__text,
-		#{$this}__icon {
-			transition: transform $default-transition-duration $default-transition-function;
-			will-change: transform;
-		}
 		&:hover {
-			#{$this}__text,
-			#{$this}__icon {
-				transform: scale(1.05);
+			#{$this}__text {
+				transform: translateX(-0.2em);
 			}
 		}
 		@media (max-width: $laptop-lg) {
@@ -408,8 +403,10 @@
 	}
 	&._arrow-m {
 		&:hover {
+			#{$this}__text {
+				transform: translateX(0.2em);
+			}
 			#{$this}__icon {
-				transform: translate3d(#{rem(-8)}, 0, 0);
 				@media (max-width: $mobile-lg) {
 					transform: none;
 				}
@@ -425,12 +422,12 @@
 		}
 	}
 	&._arrow-s {
+		#{$this}__text {
+			padding-top: 0.15em;
+		}
 		&:hover {
-			#{$this}__icon {
-				transform: translate3d(#{rem(-8)}, 0, 0);
-				@media (max-width: $mobile-lg) {
-					transform: none;
-				}
+			#{$this}__text {
+				transform: translateX(0.2em);
 			}
 		}
 		#{$this}__icon {
@@ -495,6 +492,14 @@
 		}
 	}
 	&._plus {
+		#{$this}__text {
+			padding-top: 0.15em;
+		}
+		&:hover {
+			#{$this}__text {
+				transform: translateX(0.2em);
+			}
+		}
 		#{$this}__icon {
 			--size: #{rem(32)};
 			width: var(--size);

@@ -89,17 +89,19 @@
 		margin-left: auto;
 		&:hover {
 			#{$this}__link-icon {
-				margin-left: rem(12);
+				margin-left: rem(20);
 			}
 		}
 	}
 	&__link-icon {
 		--size: #{rem(16)};
+		position: relative;
+		top: 0.1em;
 		width: var(--size);
 		height: var(--size);
 		margin-left: rem(24);
 		fill: currentColor;
 		transform: rotate(45deg);
-		transition: margin-left $fast-transition-duration $default-transition-function;
+		transition: margin-left $default-transition-duration $default-transition-function;
 	}
 }

@@ -53,6 +53,15 @@
 				display: none;
 			}
 		}
+		& > span {
+			padding-top: 0.25em;
+			transition: transform $default-transition-duration $default-transition-function;
+		}
+		&:hover {
+			& > span {
+				transform: translateX(0.2em);
+			}
+		}
 	}
 	&__add-icon {
 		--size: #{rem(32)};
