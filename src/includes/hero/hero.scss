@@ -27,6 +27,7 @@
 		width: 100%;
 		height: 100%;
 		clip-path: inset(0);
+		transition: height $fast-transition-duration $default-transition-function;
 	}
 	&__bg-img {
 		position: fixed;
