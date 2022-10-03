@@ -17,6 +17,7 @@ class Hero {
 		if (this.container.hasAttribute('data-parallax')) {
 			this.title = this.container.querySelector('.hero__title');
 			this.filter = this.container.querySelector('.hero__quick-filter');
+			this.bgImages = this.container.querySelectorAll('.hero__bg-img');
 
 			ScrollHelper.onScroll.add(this.initParallax);
 		}
@@ -26,6 +27,7 @@ class Hero {
 
 		gsap.set(this.title, { y: -ratio * 250 });
 		gsap.set(this.filter, { y: -ratio * 150 });
+		gsap.set(this.bgImages, { y: ratio * 350 });
 	}
 }
 export default new Hero();

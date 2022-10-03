@@ -9,6 +9,7 @@
 	color: var(--white);
 	background-color: var(--blue-dark);
 	box-sizing: border-box;
+	overflow: hidden;
 	transition: min-height $fast-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
 		min-height: 680px;
