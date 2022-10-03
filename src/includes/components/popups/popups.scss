@@ -27,6 +27,7 @@
 	&__popup-wrapper {
 		position: relative;
 		display: none;
+		background-color: var(--white);
 		&::before {
 			content: '';
 			position: absolute;
@@ -61,6 +62,16 @@
 			}
 			#{$this}__icon {
 				display: block;
+			}
+		}
+		&._animation {
+			& > * {
+				opacity: 0;
+			}
+		}
+		&._opened-delivery {
+			#{$this}__close-button {
+				display: none;
 			}
 		}
 	}

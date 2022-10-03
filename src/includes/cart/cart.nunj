@@ -49,14 +49,14 @@
 		</div>
 	</div>
 
-	<div class="cart__cart-list hidden" data-cart-list>
+	<div class="cart__cart-list" data-cart-list>
 		{% include '../cart-list/cart-list.nunj' %}
 		<p class="cart__price _secondary p3">
 			Стоимость товаров:<br>
 			<span class="cart__price-value h5">145 000 руб.</span>
 		</p>
 	</div>
-	<div class="cart__delivery hidden" data-cart-delivery>
+	<div class="cart__delivery" data-cart-delivery>
 		<div class="cart__title-wrapper _delivery">
 			<h2 class="cart__title h5 ttu">Доставка</h2>
 		</div>
