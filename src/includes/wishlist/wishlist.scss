@@ -1,0 +1,76 @@
+.whishlist-popup {
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 32px;
+		}
+	}
+	&__new {
+		@media (max-width: $mobile-lg) {
+			font-size: 16px;
+			line-height: 20px;
+		}
+		&._hide {
+			display: none;
+		}
+	}
+	&__input {
+		margin-bottom: rem(16);
+	}
+	&__form {
+		@media (max-width: $laptop-md) {
+			padding-bottom: 10px;
+		}
+		&._hide {
+			display: none;
+		}
+	}
+	&__form-btns {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(16);
+	}
+	&__cancel {
+		@extend .animated;
+		color: rgba($gray-dark, 0.4);
+		&:hover {
+			color: var(--gray-dark);
+		}
+	}
+	&__submit {
+		&._arrow-s .button__icon {
+			@media (max-width: $laptop-lg) {
+				--size: 16px;
+			}
+			@media (max-width: $laptop-md) {
+				--size: 16px;
+				margin-left: 16px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-left: 8px;
+			}
+		}
+	}
+	&__list {
+		margin-top: rem(48);
+		@media (max-width: $laptop-lg) {
+			margin-top: 32px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-top: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 16px;
+		}
+	}
+	&__item {
+		border-bottom: 1px solid rgba($blue-light, 0.2);
+		&:first-child {
+			border-top: 1px solid rgba($blue-light, 0.2);
+		}
+	}
+}

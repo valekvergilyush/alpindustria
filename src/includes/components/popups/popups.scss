@@ -41,17 +41,18 @@
 			opacity: 0.2;
 			display: none;
 		}
-		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='availability'],
-		&[data-popup-wrapper='sizes'],
-		&[data-popup-wrapper='review-form'] {
+		&[data-popup-wrapper='cart'],
+		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='wishlist'],
+		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
-		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='city-form'],
-		&[data-popup-wrapper='availability'],
-		&[data-popup-wrapper='review-form'] {
+		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='wishlist'],
+		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
 				height: 75%;

@@ -34,6 +34,16 @@
 		outline: 0;
 		border-bottom: 1px solid rgba($blue-light, 0.4);
 	}
+	&__words-counter {
+		margin-top: rem(8);
+		font-family: var(--font-family-suisse);
+		font-size: rem(12);
+		line-height: 1.33;
+		color: var(--gray-dark);
+		text-align: right;
+		opacity: 0.2;
+		order: 2;
+	}
 	&._filled {
 		#{$this}__label {
 			font-size: rem(12);

@@ -31,6 +31,8 @@
 @import '../../includes/components/tabs/tabs';
 @import '../../includes/components/select/select-rounded';
 @import '../../includes/components/cart-item/cart-item';
+@import '../../includes/components/wishlist-item/wishlist-item';
+@import '../../includes/components/wishlist-card/wishlist-card';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -59,6 +61,8 @@
 @import '../../includes/cart-delivery/cart-delivery';
 @import '../../includes/cart/cart-bottom';
 @import '../../includes/cart/cart';
+@import '../../includes/wishlist/wishlist';
+@import '../../includes/wishlists/wishlists';
 
 // ======= PAGES =======
 @import 'pages/index';
