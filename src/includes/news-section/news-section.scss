@@ -23,17 +23,9 @@
 	}
 	&[href] {
 		&:hover {
-			// #{$this}__img {
-			// 	transform: scale(1.1);
-			// }
 			#{$this}__content {
-				background-color: var(--white);
-				@media (max-width: $laptop-sm) {
-					background-color: transparent;
-				}
 				&::before {
-					content: '';
-					transform: scale(1.1);
+					background-image: inline('promo-arrow-blue-filled.svg');
 				}
 			}
 		}
@@ -112,7 +104,7 @@
 			background-image: inline('promo-arrow-blue.svg');
 			background-repeat: no-repeat;
 			background-size: contain;
-			transition: transform $default-transition-duration $default-transition-function;
+			transition: background $default-transition-duration $default-transition-function;
 			@media (max-width: $laptop-sm) {
 				bottom: 0;
 				right: 0;
