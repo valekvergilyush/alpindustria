@@ -12,5 +12,6 @@
 		<label class="input__label{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}" for="{{ props.id }}">
 			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}
 		</label>
+		{% if props.wordCounter %}<p class="input__words-counter">до {{ props.wordCounter }} символов</p>{% endif %}
 	</div>
 {% endmacro %}
