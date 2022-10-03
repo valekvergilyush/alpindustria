@@ -66,12 +66,24 @@
 		}
 	}
 	&__title-root {
+		@extend .animated;
 		display: none;
 		justify-content: center;
 		column-gap: rem(8);
 		margin-bottom: rem(16);
+		color: var(--gray-light);
+
 		@media (max-width: $tablet) {
 			margin-bottom: 8px;
+		}
+	}
+	&__title-separator {
+		opacity: 0.8;
+	}
+	&__title-link {
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
 		}
 	}
 	&__quick-filter {

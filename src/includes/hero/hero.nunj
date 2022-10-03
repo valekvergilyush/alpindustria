@@ -19,7 +19,7 @@
 	}) }}
 	<div class="hero__container container">
 		<h1 class="hero__title ttu tac">
-			<span class="hero__title-root h7">Магазин <span class="hero__title-separator">/</span></span>
+			<span class="hero__title-root h7"><a class="hero__title-link" href="/">Магазин</a> <span class="hero__title-separator">/</span></span>
 			<span class="hero__title-category h4">Магазин</span>
 		</h1>
 	{% include "../quick-filter/quick-filter.nunj" %}
