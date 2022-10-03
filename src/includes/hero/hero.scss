@@ -20,8 +20,16 @@
 	@media (max-width: $tablet) {
 		min-height: var(--100vh);
 	}
-	&__bg-img {
+	&__bg-img-wrapper {
 		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		clip-path: inset(0);
+	}
+	&__bg-img {
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;

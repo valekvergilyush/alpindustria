@@ -13,13 +13,18 @@ class Hero {
 		}
 
 		this.initParallax = this.initParallax.bind(this);
+		this.setBgImgHeight = this.setBgImgHeight.bind(this);
 
 		if (this.container.hasAttribute('data-parallax')) {
 			this.title = this.container.querySelector('.hero__title');
 			this.filter = this.container.querySelector('.hero__quick-filter');
 			this.bgImages = this.container.querySelectorAll('.hero__bg-img');
+			this.bgImageWrapper = this.container.querySelector('.hero__bg-img-wrapper');
+
+			this.setBgImgHeight();
 
 			ScrollHelper.onScroll.add(this.initParallax);
+			window.addEventListener('resize', this.setBgImgHeight);
 		}
 	}
 	initParallax() {
@@ -27,7 +32,12 @@ class Hero {
 
 		gsap.set(this.title, { y: -ratio * 250 });
 		gsap.set(this.filter, { y: -ratio * 150 });
-		gsap.set(this.bgImages, { y: ratio * 350 });
+	}
+	setBgImgHeight() {
+		this.bgImageHeight = this.bgImageWrapper.offsetHeight;
+		gsap.set(this.bgImages, {
+			height: this.bgImageHeight,
+		});
 	}
 }
 export default new Hero();
