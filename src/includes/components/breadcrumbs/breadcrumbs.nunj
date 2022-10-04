@@ -7,6 +7,6 @@
 				</li>
 			{% endfor %}
 		</ul>
-		<a href="{{ link.href }}" class="breadcrumbs__link _side p3">{{ props.link.text }}</a>
+		<a href="{{ props.link.href }}" class="breadcrumbs__link _side p3">{{ props.link.text }}</a>
 	</div>
 {% endmacro %}

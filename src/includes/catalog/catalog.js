@@ -51,10 +51,13 @@ class Catalog {
 		}
 	}
 	setLayout(value) {
-		const button = this.layoutControls.querySelector(`[data-cols="${value}"]`);
+		const buttons = this.layoutControls.querySelectorAll(`[data-cols="${value}"]`);
 
-		this.layoutControls.querySelector(`.${ClassName.ACTIVE}`).classList.remove(ClassName.ACTIVE);
-		button.classList.add(ClassName.ACTIVE);
+		this.layoutControls
+			.querySelectorAll(`.${ClassName.ACTIVE}`)
+			.forEach(control => control.classList.remove(ClassName.ACTIVE));
+		buttons.forEach(button => button.classList.add(ClassName.ACTIVE));
+
 		this.layoutClassName && this.catalogList.classList.remove(this.layoutClassName);
 		this.layout = Number(value);
 		this.layoutClassName = `_cols-${value}`;

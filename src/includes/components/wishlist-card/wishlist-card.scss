@@ -147,6 +147,14 @@
 				--size: 24px;
 			}
 		}
+		.button__text {
+			padding-top: 0.15em;
+		}
+		&:hover {
+			.button__text {
+				transform: translateX(0.2em);
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			display: none;
 		}

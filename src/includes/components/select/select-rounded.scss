@@ -62,7 +62,6 @@
 		opacity: 0;
 		pointer-events: none;
 		background-color: var(--white);
-		overflow: overlay;
 		transition: opacity $fast-transition-duration $default-transition-function,
 			transform $fast-transition-duration $default-transition-function;
 

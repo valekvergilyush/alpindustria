@@ -364,6 +364,11 @@
 		@media (min-width: ($laptop-sm + 1px)) {
 			&__list {
 				&._cols-2 {
+					.catalog__item {
+						&._promo-3 {
+							grid-column: 1/-1;
+						}
+					}
 					.catalog__card {
 						--card-padding: #{rem(16)};
 						--card-margin: #{rem(8)};

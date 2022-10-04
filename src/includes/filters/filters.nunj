@@ -29,9 +29,14 @@
 			<p class="p2" id="layout-label">Сетка</p>
 			<div class="filters__layout-buttons" aria-labelledby="layout-label">
 				{{ button({
-					text: '1',
-					className: 'filters__layout-button _layout',
-					attr: 'data-cols="1"'
+					className: 'filters__layout-button _layout _mobile',
+					attr: 'data-cols="2" aria-label="2"',
+					icon: 'grid'
+				}) }}
+				{{ button({
+					className: 'filters__layout-button _layout _mobile',
+					attr: 'data-cols="1" aria-label="1"',
+					icon: 'rows'
 				}) }}
 				{{ button({
 					text: '2',

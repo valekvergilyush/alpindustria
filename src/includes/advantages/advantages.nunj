@@ -1,18 +1,18 @@
 {% set advantagesList = [
-	{ text: '25 магазинов профессионального снаряжения по России', img: '#' },
-	{ text: 'Экипировка и&nbsp;одежда мировых спортивных брендов', img: '#' },
-	{ text: 'Обучение альпинизму с&nbsp;опытными инструкторами в&nbsp;Горном клубе', img: '#' },
-	{ text: 'Скидки до&nbsp;30% для&nbsp;постоянных клиентов', img: '#' }
+	{ text: '25 магазинов профессионального снаряжения по&nbsp;России', img: 'assets/images/advantages/boot.svg' },
+	{ text: 'Экипировка и&nbsp;одежда мировых спортивных брендов', img: 'assets/images/advantages/hook.svg' },
+	{ text: 'Обучение альпинизму с&nbsp;опытными инструкторами в&nbsp;Горном&nbsp;клубе', img: 'assets/images/advantages/mountain.svg' },
+	{ text: 'Скидки до&nbsp;30% для&nbsp;постоянных клиентов', img: 'assets/images/advantages/discount.svg' }
 ] %}
 
 <section class="page__advantages advantages">
-	<p class="advantages__title ttu">АльпИндустрия &mdash; это</p>
+	<p class="advantages__title h4 ttu">АльпИндустрия &mdash; это</p>
 	{% if advantagesList %}
 		<ul class="advantages__list">
 			{% for advantage in advantagesList %}
-				<li class="advantages__item ttu">
+				<li class="advantages__item">
 					{{ advantage.text }}
-					<div class="advantages__img-wrapper"><img class="advantages__img" src="{{ advantage.img }}" alt=""></div>
+					<div class="advantages__img-wrapper"><img class="advantages__img" src="{{ advantage.img }}" width="140" height="140" alt="" aria-hidden="true"></div>
 				</li>
 			{% endfor %}
 		</ul>

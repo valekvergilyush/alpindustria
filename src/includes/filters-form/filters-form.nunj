@@ -94,7 +94,7 @@
 	</ul>
 	<ul class="filters-form__list">
 		<li class="filters-form__item filters-form__container">
-			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Сортировка</button>
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Сортировка</button>
 			<div class="filters-form__item-content _buttons _sort">
 				{{ button({
 					className: 'filters-form__button _quick-filter _active',
@@ -123,7 +123,7 @@
 			</div>
 		</li>
 		<li class="filters-form__item filters-form__container">
-			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Бренды</button>
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Бренды</button>
 			<div class="filters-form__item-wrapper">
 				{{ inputSearch({
 					className: 'filters-form__search',
@@ -156,7 +156,7 @@
 			</div>
 		</li>
 		<li class="filters-form__item filters-form__container">
-			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Пол</button>
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Пол</button>
 			<ul class="filters-form__item-content _buttons">
 				{% for btn in genderButtons %}
 					{% if btn.className %}
