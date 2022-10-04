@@ -1,13 +1,22 @@
 {% from "../button/button.nunj" import button %}
+{% from "../icon/icon.nunj" import icon %}
 
 {% macro wishlistItem(props) %}
 	<div class="wishlist-item {% if props.className %}{{ props.className }} {% endif %}">
 		<div class="wishlist-item__imgs">
-			{% for img in props.data.imgs %}
-				<div class="wishlist-item__img">
-					<img src="{{ img }}.png" srcset="{{ img }}@2x.png 2x" width="106" height="123" alt="thumbnail">
-				</div>
-			{% endfor %}
+			{% if props.data.imgs.length %}
+				{% for img in props.data.imgs %}
+					<div class="wishlist-item__img">
+						<img src="{{ img }}.png" srcset="{{ img }}@2x.png 2x" width="106" height="123" alt="thumbnail">
+					</div>
+				{% endfor %}
+			{% else %}
+				{{ icon({
+					iconName: 'logo-short',
+					className: 'wishlist-item__img-empty',
+					attr: props.iconData
+				}) }}
+			{% endif %}
 		</div>
 		<div class="wishlist-item__top">
 			<p class="wishlist-item__title h6 ttu">{{ props.data.name }}</p>

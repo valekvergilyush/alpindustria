@@ -83,8 +83,6 @@ class Product {
 			this.hideAddBlock();
 			return;
 		}
-		console.log('add top: ' + this.addBlock.getBoundingClientRect().top);
-		console.log('review bottom: ' + this.review.getBoundingClientRect().bottom);
 		if (this.addBlock.getBoundingClientRect().top > this.review.getBoundingClientRect().bottom) {
 			this.hideAddBlock();
 			return;

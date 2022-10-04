@@ -43,6 +43,14 @@
 		height: calc(
 			100vh - var(--header-height) - var(--breadcrumbs-height) - var(--add-block-height)
 		);
+		@media (max-width: $laptop-sm) {
+			// 570/768
+			height: 74.21vw;
+		}
+		@media (max-width: $mobile-lg) {
+			// 370/375
+			height: 98.67vw;
+		}
 	}
 	&__add {
 		position: sticky;

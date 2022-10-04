@@ -22,6 +22,15 @@
 			color: var(--blue-dark);
 		}
 	}
+	&._blue-border {
+		color: var(--blue-dark);
+		border: 2px solid currentColor;
+		@extend .animated;
+		&:hover {
+			background-color: var(--white);
+			color: var(--blue-dark);
+		}
+	}
 	&._burger {
 		--size: #{rem(64)};
 		display: block;
