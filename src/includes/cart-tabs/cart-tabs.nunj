@@ -12,7 +12,7 @@
 		{% include '../cart-list/cart-list.nunj' %}
 	</section>
 	<section class="tabs__panel" aria-labelledby="rental" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
-		{% include '../cart-list/cart-list.nunj' %}
+		{% include '../cart-list/cart-list-no-photo.nunj' %}
 	</section>
 	<div class="cart-bottom">
 		<p class="cart-tabs__price p3">

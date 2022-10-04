@@ -40,11 +40,17 @@
 		line-height: 1.31;
 		color: var(--gray-dark);
 	}
-	&__img {
+	&__img-wrapper {
 		order: -1;
 		width: rem(126);
 		height: rem(160);
 		margin-right: rem(16);
+		background-color: var(--gray-light);
+	}
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 		object-position: center;
 		@media (max-width: $laptop) {
