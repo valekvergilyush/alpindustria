@@ -230,20 +230,20 @@
 		background-repeat: no-repeat;
 		background-position: bottom #{rem(4)} right #{rem(4)};
 		background-size: rem(16) rem(16);
-		transition: padding $default-transition-duration;
+		transition: background-position $default-transition-duration $default-transition-function;
 		text-align: right;
 		&:hover {
-			padding-right: rem(29);
+			background-position: bottom #{rem(4)} right #{rem(8)};
 		}
 		@media (max-width: $mobile-lg) {
 			padding-right: 25px;
 			background-position: top 1px right 1px;
 			line-height: 16px;
 			&:hover {
-				padding-right: 25px;
+				background-position: top 1px right 1px;
 			}
 			&:active {
-				padding-right: 22px;
+				background-position: top 1px right 5px;
 			}
 		}
 	}

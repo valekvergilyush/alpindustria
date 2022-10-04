@@ -53,20 +53,21 @@
 		column-gap: rem(8);
 	}
 	&__layout-button {
+		&._mobile {
+			display: none;
+		}
 		&:first-of-type {
 			display: none;
-			@media (max-width: $mobile-lg) {
-				display: inline-flex;
-			}
-		}
-		&:nth-of-type(3) {
-			@media (max-width: $mobile-lg) {
-				display: none;
-			}
 		}
 		@media (max-width: $laptop-sm) {
 			&:last-of-type {
 				display: none;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			display: none;
+			&._mobile {
+				display: inline-flex;
 			}
 		}
 	}

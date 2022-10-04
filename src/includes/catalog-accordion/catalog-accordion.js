@@ -13,8 +13,12 @@ class CatalogAccordion {
 		this.sections = document.querySelectorAll('[data-accordion-section]');
 
 		this.sections.length &&
-			this.sections.forEach(section => {
+			this.sections.forEach((section, index) => {
 				section.opened = false;
+
+				if (index === this.sections.length - 1) {
+					this.lastSection = section;
+				}
 
 				if (section.classList.contains(ClassName.OPENED)) {
 					section.opened = true;
@@ -80,7 +84,7 @@ class CatalogAccordion {
 			clearProps: 'height',
 		});
 		gsap.to(section, {
-			marginBottom: this.offset,
+			marginBottom: section === this.lastSection ? -1 : this.offset,
 			clearProps: 'marginBottom',
 			duration: DURATION,
 			onComplete: () => {

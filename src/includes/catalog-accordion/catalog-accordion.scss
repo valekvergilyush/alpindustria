@@ -93,9 +93,13 @@
 			}
 		}
 	}
+	&__title:not(._opened) + &__list {
+		opacity: 0;
+	}
 	&__list {
 		display: flex;
 		height: 0;
+		transition: opacity $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-sm) {
 			--item-width: calc(100% / 3);
 			overflow: auto;
@@ -117,7 +121,7 @@
 		background-color: var(--default-bg-color);
 		overflow: hidden;
 		margin-bottom: calc(0px - var(--offset));
-		transition: height 1s, transform 0.4s ease-in;
+		transition: height 1s ease-out, transform 0.4s ease-in;
 		&:hover {
 			&:not(._opened) {
 				transform: translateY(calc(1px - var(--offset) * 0.7));
@@ -129,6 +133,9 @@
 			#{$this}__list {
 				height: auto;
 			}
+		}
+		&:last-child {
+			margin-bottom: -1px;
 		}
 		&:nth-child(2) {
 			z-index: 2;
