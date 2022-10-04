@@ -456,6 +456,19 @@
 			}
 		}
 	}
+	&._auth {
+		@media (max-width: $mobile-lg) {
+			#{$this}__text {
+				display: none;
+			}
+			#{$this}__icon {
+				--size: 24px;
+				width: var(--size);
+				height: var(--size);
+				margin: 0;
+			}
+		}
+	}
 	&._size {
 		@extend .animated;
 		padding: rem(5) rem(18);
