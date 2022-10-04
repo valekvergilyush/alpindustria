@@ -66,15 +66,6 @@ class Popups {
 
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
 
-		this.onOpened.add(popup => {
-			if (!popup.accorions) {
-				popup.accorions = [];
-				popup
-					.querySelectorAll('[data-accordion-toggle]')
-					.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
-			}
-		});
-
 		const onWindowWidthChange = evt => {
 			if (evt.matches) {
 				this.close();
@@ -99,9 +90,8 @@ class Popups {
 		const popupAnimation = popup.getAttribute('data-popup-animation');
 
 		if (
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains('_safari') &&
-			!HTML_CLASSLIST.contains('_mobile')
+			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) ||
+			(!HTML_CLASSLIST.contains('_safari') && !HTML_CLASSLIST.contains('_mobile'))
 		) {
 			disableBodyScroll(popup);
 		}
@@ -139,6 +129,7 @@ class Popups {
 							if (focusElement) {
 								focusElement.focus && focusElement.focus();
 							}
+							this.initPopupAccordions(popup);
 						},
 						paused: true,
 					}
@@ -155,6 +146,7 @@ class Popups {
 							if (focusElement) {
 								focusElement.focus && focusElement.focus();
 							}
+							this.initPopupAccordions(popup);
 						},
 						paused: true,
 					}
@@ -180,6 +172,7 @@ class Popups {
 							focusElement.focus && focusElement.focus();
 						}
 						this.onOpened.call(popup);
+						this.initPopupAccordions(popup);
 					},
 				}
 			);
@@ -249,9 +242,8 @@ class Popups {
 			}
 
 			if (
-				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-				!HTML_CLASSLIST.contains('_safari') &&
-				!HTML_CLASSLIST.contains('_mobile')
+				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) ||
+				(!HTML_CLASSLIST.contains('_safari') && !HTML_CLASSLIST.contains('_mobile'))
 			) {
 				enableBodyScroll(this.activePopup);
 			}
@@ -266,6 +258,14 @@ class Popups {
 	}
 	getPopup(name) {
 		return this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
+	}
+	initPopupAccordions(popup) {
+		if (!popup.accorions) {
+			popup.accorions = [];
+			popup
+				.querySelectorAll('[data-accordion-toggle]')
+				.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
+		}
 	}
 }
 
