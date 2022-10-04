@@ -1,0 +1,28 @@
+.checkbox {
+	--size: #{rem(16)};
+	display: flex;
+	&__label {
+		position: relative;
+		padding-left: calc(var(--size) + rem(16));
+		color: var(--gray-dark);
+		cursor: pointer;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0.2em;
+			left: 0;
+			width: var(--size);
+			height: var(--size);
+			border: 1px solid var(--blue-dark);
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			box-sizing: border-box;
+			transition: background $fast-transition-duration $default-transition-function;
+		}
+	}
+	input:checked + &__label::before {
+		background-color: var(--blue-dark);
+		background-image: inline('tick.svg');
+	}
+}
