@@ -14,6 +14,7 @@
 		flex-grow: 1;
 	}
 	&__link {
+		@extend .animated;
 		display: inline-flex;
 		align-items: center;
 		height: rem(35);
@@ -23,5 +24,9 @@
 		box-sizing: border-box;
 		border: 1px solid var(--blue-dark);
 		border-radius: 100vmax;
+		&:hover {
+			color: var(--white);
+			background-color: var(--blue-dark);
+		}
 	}
 }
