@@ -1,17 +1,12 @@
 .map {
 	.gm-style-iw {
 		background: var(--white);
-		box-shadow: 0 0 25px rgba(0, 22, 61, 0.1);
+		box-shadow: 0 0 rem(25) rgba(0, 22, 61, 0.1);
 		border-radius: 0;
 		padding: rem(32);
 		@media (max-width: $mobile-lg) {
 			padding: 24px;
 		}
-	}
-	.gm-style .gm-style-iw-c {
-		// top: rem(20);
-		// left: rem(40);
-		// transform: none;
 	}
 	.gm-style-iw-d {
 		padding: rem(32);
@@ -34,7 +29,7 @@
 	a {
 		display: inline-block;
 		margin-top: rem(47);
-		padding-right: 32px;
+		padding-right: rem(32);
 		color: var(--blue-dark);
 		background-image: inline('promo-arrow-blue.svg');
 		background-repeat: no-repeat;
