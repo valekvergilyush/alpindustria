@@ -196,6 +196,10 @@
 			background-color: var(--blue-dark);
 			pointer-events: none;
 		}
+		#{$this}__icon {
+			width: rem(14);
+			height: rem(14);
+		}
 	}
 	&._product-card {
 		--height: #{rem(72)};
