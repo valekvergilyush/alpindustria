@@ -7,7 +7,6 @@
 		flex-direction: column;
 		flex-grow: 1;
 	}
-
 	&__price {
 		color: var(--gray-light);
 		@media (max-width: $mobile-lg) {

@@ -1,6 +1,12 @@
+{% set cartTabs = [
+	{ id: 'shop', name: 'Магазин', isSelected: true, tabindex: '0' },
+	{ id: 'rental', name: 'Прокат', tabindex: '-1' }
+]
+%}
+
 <div class="cart__tabs cart-tabs tabs" data-tabs>
 	<ul class="tabs__tab-list" role="tablist">
-		{% for item in tabs %}
+		{% for item in cartTabs %}
 			<li class="tabs__tab-item">
 				<button class="tabs__trigger{% if item.isSelected %} _selected{% endif %}" id="{{ item.id }}" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="{{ item.tabindex }}">
 					{{ item.name }}
@@ -11,7 +17,7 @@
 	<section class="cart-tabs__section _shop tabs__panel" aria-labelledby="shop" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 		{% include '../cart-list/cart-list.nunj' %}
 	</section>
-	<section class="tabs__panel" aria-labelledby="rental" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
+	<section class="cart-tabs__section _rental tabs__panel" aria-labelledby="rental" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
 		{% include '../cart-list/cart-list-no-photo.nunj' %}
 	</section>
 	<div class="cart-bottom">
