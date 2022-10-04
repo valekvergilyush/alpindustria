@@ -82,6 +82,11 @@
 		--bg-img-width: #{rem(712)};
 		color: var(--blue-dark);
 		background-color: var(--gray-light);
+		&:hover {
+			&::before {
+				background-image: inline('promo-arrow-blue-filled.svg');
+			}
+		}
 		@media (max-width: $laptop-lg) {
 			--card-padding: 32px;
 			--logo-width: 76px;
@@ -145,6 +150,7 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function;
 		}
 		#{$this}__title {
 			order: 2;
@@ -174,6 +180,11 @@
 		--arrow-size: #{rem(72)};
 		color: var(--white);
 		background-color: var(--green-light);
+		&:hover {
+			&::before {
+				background-image: inline('promo-arrow-white.svg');
+			}
+		}
 		@media (max-width: $laptop-lg) {
 			--card-padding: 32px;
 			--logo-width: 76px;
@@ -218,6 +229,7 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function;
 		}
 		#{$this}__title {
 			order: 2;
