@@ -1,5 +1,8 @@
 {% macro select(props) %}
 	<div class="select{% if props.className %} {{ props.className }}{% endif %}">
+		{% if props.label %}
+			<label class="select__label" for="{{ props.id }}">{{ props.label }}</label>
+		{% endif %}
 		<select class="select__select" data-select="{{ props.id }}">
 			{% for option in props.options %}
 				<option value="{{ option.value }}"{% if option.selected %} selected{% endif %}>

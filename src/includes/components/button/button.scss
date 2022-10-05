@@ -456,6 +456,19 @@
 			}
 		}
 	}
+	&._auth {
+		@media (max-width: $mobile-lg) {
+			#{$this}__text {
+				display: none;
+			}
+			#{$this}__icon {
+				--size: 24px;
+				width: var(--size);
+				height: var(--size);
+				margin: 0;
+			}
+		}
+	}
 	&._size {
 		@extend .animated;
 		padding: rem(5) rem(18);
@@ -502,6 +515,11 @@
 		}
 		@media (max-width: $laptop-lg) {
 			font-size: 16px;
+		}
+		&:hover {
+			#{$this}__text {
+				transform: translateX(0.2em);
+			}
 		}
 	}
 	&._plus {

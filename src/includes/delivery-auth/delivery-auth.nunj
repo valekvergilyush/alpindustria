@@ -1,0 +1,32 @@
+{% from "../components/input/input.nunj" import input %}
+
+{% set authLinks = [
+	{ text: 'VK', href: '#', className: ' _vk ttu p1' },
+	{ text: 'Yandex', href: '#', className: ' _yandex ttu p1' },
+	{ text: 'Google', href: '#', className: ' _google ttu p1' }
+] %}
+
+<form class="cart-delivery__auth-form delivery-auth">
+	<p class="delivery-auth__title h7 ttu">Частным покупателям:</p>
+	<div class="delivery-auth__fields">
+		{{ input({
+			type: 'tel',
+			id: 'delivery-auth-tel',
+			className: 'delivery-auth__input',
+			name: 'Телефон'
+		}) }}
+		{{ button({
+			type: 'submit',
+			text: 'Авторизоваться',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16"',
+			className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+			attr: 'aria-label="Авторизоваться"'
+		}) }}
+	</div>
+	<div class="delivery-auth__fields">
+		{% for authLink in authLinks %}
+			<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
+		{% endfor %}
+	</div>
+</form>

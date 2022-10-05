@@ -1,0 +1,40 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/button/button.nunj" import button %}
+
+<form class="cart-delivery__register-form delivery-register">
+	<p class="delivery-register__title h7 ttu">Новым покупателям:</p>
+	<div class="delivery-register__fields">
+		{{ input({
+			type: text,
+			id: 'delivery-register-name',
+			name: 'Имя',
+			className: 'delivery-register__input'
+		}) }}
+		{{ input({
+			type: text,
+			id: 'delivery-register-surname',
+			name: 'Фамилия',
+			className: 'delivery-register__input'
+		}) }}
+	</div>
+	<div class="delivery-register__fields">
+		{{ input({
+			type: email,
+			id: 'delivery-register-email',
+			name: 'Почта',
+			className: 'delivery-register__input'
+		}) }}
+		{{ input({
+			type: tel,
+			id: 'delivery-register-tel',
+			name: 'Телефон',
+			className: 'delivery-register__input'
+		}) }}
+	</div>
+	{{ checkbox({
+		id: 'legal-entity-checkbox',
+		name: 'legal-entity',
+		text: 'Я являюсь юридическим лицом'
+	}) }}
+</form>

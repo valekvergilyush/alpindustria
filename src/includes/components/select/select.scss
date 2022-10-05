@@ -1,19 +1,54 @@
 .select {
 	user-select: none;
+	&._delivery {
+		.custom-select-container,
+		.custom-select-opener,
+		.custom-select-panel {
+			background-color: var(--gray-light);
+		}
+		.custom-select-container {
+			&::before {
+				--size: #{rem(10)};
+				border-color: var(--blue-dark);
+			}
+		}
+		.custom-select-opener {
+			padding-left: rem(12);
+			padding-bottom: rem(10);
+			line-height: 1.5;
+			color: var(--gray-dark);
+		}
+		.custom-select-panel {
+			color: var(--gray-dark);
+		}
+		.custom-select-option {
+			padding: rem(12);
+			&.has-focus {
+				color: var(--white);
+				background-color: var(--blue-light);
+			}
+		}
+	}
+	&__label {
+		padding-left: rem(12);
+		font-size: rem(12);
+		line-height: 2;
+	}
 	.custom-select-container {
 		background-color: var(--white);
 		&::before {
+			--size: #{rem(14)};
 			content: '';
 			position: absolute;
 			right: 4px;
 			top: 10px;
 			transform-origin: 70% 70%;
 			transform: rotate(45deg);
-			width: rem(14);
-			height: rem(14);
+			width: var(--size);
+			height: var(--size);
 			border-bottom: 2px solid var(--gray-dark);
 			border-right: 2px solid var(--gray-dark);
-			transition: transform $default-transition-duration $default-transition-function;
+			transition: transform $fast-transition-duration $default-transition-function;
 			pointer-events: none;
 			@media (max-width: $desktop) {
 				right: 11px;
@@ -49,6 +84,7 @@
 		}
 	}
 	.custom-select-option {
+		@extend .animated;
 		cursor: pointer;
 		&:first-child {
 			margin-top: 1px;
