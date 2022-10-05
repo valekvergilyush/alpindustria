@@ -1,4 +1,5 @@
 .cart-item {
+	position: relative;
 	display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;
@@ -95,6 +96,30 @@
 			&:active {
 				transform: scale(1);
 				background-color: var(--gray-light);
+			}
+		}
+	}
+	&__btns {
+		position: absolute;
+		bottom: rem(24);
+		right: 0;
+		display: flex;
+		gap: rem(12) rem(24);
+		@media (max-width: $mobile-lg) {
+			bottom: 16px;
+			flex-direction: column;
+		}
+	}
+	&__btn {
+		.button__icon {
+			--size: #{rem(32)};
+			width: var(--size);
+			height: var(--size);
+			fill: none;
+		}
+		&._active {
+			.button__icon {
+				fill: currentColor;
 			}
 		}
 	}

@@ -3,9 +3,17 @@
 	padding-bottom: rem(160);
 	@media (max-width: $laptop-lg) {
 		padding-top: 64px;
+		padding-bottom: 470px;
+	}
+	@media (max-width: $laptop-md) {
+		padding-bottom: 441px;
+	}
+	@media (max-width: $laptop-sm) {
+		padding-bottom: 207px;
 	}
 	@media (max-width: $mobile-lg) {
 		padding-top: 40px;
+		padding-bottom: 309px;
 	}
 	&__header {
 		display: flex;

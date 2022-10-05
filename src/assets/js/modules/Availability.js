@@ -14,7 +14,7 @@ class Availability {
 		}
 		this.cities.forEach(function (city) {
 			if (city.dataset.availability === value) {
-				city.style.display = 'block';
+				city.style.display = 'flex';
 				return;
 			}
 			city.style.display = 'none';

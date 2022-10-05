@@ -1,6 +1,7 @@
 {% from "../select/select-color.nunj" import selectColor %}
 {% from "../select/select.nunj" import select %}
 {% from "../counter/counter.nunj" import counter %}
+{% from "../button/button.nunj" import button %}
 
 {% macro cartItem(props) %}
 	{% set colorList = [
@@ -36,6 +37,21 @@
 			{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}
 			{{ counter({ number: 1, className: 'cart-item__counter' }) }}
 		</div>
+		{% if props.btns %}
+			<div class="cart-item__btns">
+				{{ button({
+					className: 'cart-item__btn',
+					icon: 'cart-2',
+					iconData: 'width="32" height="32" viewBox="0 0 36 36"',
+					attr: 'aria-label="Добавить в корзину"'
+				}) }}
+				{{ button({
+					className: 'cart-item__btn',
+					icon: 'heart-full',
+					iconData: 'width="32" height="32" viewBox="0 0 36 36"',
+					attr: 'aria-label="Добавить в избранное"'
+				}) }}
+			</div>
+		{% endif %}
 	</div>
 {% endmacro %}
-

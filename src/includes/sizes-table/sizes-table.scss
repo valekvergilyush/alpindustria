@@ -44,6 +44,7 @@
 		&:first-child {
 			width: var(--width-first-cell);
 			min-width: var(--width-first-cell);
+			max-width: var(--width-first-cell);
 			padding: rem(12) rem(24);
 			text-align: left;
 			@media (max-width: $laptop-md) {

@@ -3,7 +3,7 @@
 {% from "../components/input-rating/input-rating.nunj" import inputRating %}
 {% from "../components/button/button.nunj" import button %}
 
-<section class="review-form">
+<section class="review-form" data-validate>
 	<h2 class="review-form__title h5 ttu">Добавить отзыв</h2>
 	<form class="review-form__form">
 		<div class="review-form__fields">
@@ -11,39 +11,45 @@
 				type: 'text',
 				id: 'review-author-name',
 				className: 'review-form__input',
-				name: 'Имя'
+				name: 'Имя',
+				attr: 'data-validate-type="name"'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'review-author-surname',
 				className: 'review-form__input',
-				name: 'Фамилия'
+				name: 'Фамилия',
+				attr: 'data-validate-type="name"'
 			}) }}
 		</div>
 		{{ input({
 			type: 'email',
 			id: 'review-author-email',
 			className: 'review-form__input',
-			name: 'Почта'
+			name: 'Почта',
+			attr: 'data-validate-type="email"'
 		}) }}
 		{{ input({
 			type: 'tel',
 			id: 'review-author-tel',
 			className: 'review-form__input',
-			name: 'Телефон'
+			name: 'Телефон',
+			attr: 'data-validate-type="phone"'
 		}) }}
 		{{ textarea({
 			id: 'review-author-message',
 			className: 'review-form__input _message',
 			name: 'Комментарий',
-			wordCounter: 500
+			wordCounter: 500,
+			attr: 'data-validate-type="text"'
 		}) }}
 		{{ inputRating({
 			className: 'review-form__input _rating',
 			name: 'Ваша оценка',
 			min: 1,
 			max: 5,
-			value: 4
+			value: 4,
+			attr: 'data-validate-type="toggle-group"'
 		}) }}
 		<div class="review-form__bottom">
 			{{ button({

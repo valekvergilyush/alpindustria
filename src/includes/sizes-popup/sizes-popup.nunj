@@ -3,9 +3,9 @@
 	<h3 class="sizes-popup__subtitle h7 ttu">Размеры мужских курток/рубашек Arcteryx:</h3>
 	{% include "../sizes-table/sizes-table.nunj" %}
 	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских курток/рубашек Arcteryx:</h3>
-	{% include "../sizes-table/sizes-table.nunj" %}
+	{% include "../sizes-table/sizes-table-2.nunj" %}
 	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских платьев Arcteryx:</h3>
-	{% include "../sizes-table/sizes-table.nunj" %}
+	{% include "../sizes-table/sizes-table-3.nunj" %}
 	<h3 class="sizes-popup__subtitle h7 ttu">Размеры женских платьев Arcteryx:</h3>
 	<div class="sizes-popup__table p4 sizes-table">
 		<table>

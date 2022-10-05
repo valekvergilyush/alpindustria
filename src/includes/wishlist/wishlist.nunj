@@ -50,26 +50,29 @@
 
 <div class="whishlist-popup">
 	<h2 class="whishlist-popup__title h5 ttu">Вишлист</h2>
-	<form class="whishlist-popup__form _hide" data-wishlist-form>
-		{{ input({
-			type: 'text',
-			id: 'wishlist-name',
-			className: 'whishlist-popup__input',
-			name: 'Название',
-			inputAttr: 'data-wishlist-input',
-			wordCounter: 25
-		}) }}
-		<div class="whishlist-popup__form-btns">
-			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
-			{{ button({
-				className: 'h7 ttu _arrow-s whishlist-popup__submit',
-				text: 'Создать',
-				icon: 'promo-arrow',
-				type: 'submit',
-				iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+	<div class="whishlist-popup__form _hide" data-validate data-wishlist-form>
+		<form>
+			{{ input({
+				type: 'text',
+				id: 'wishlist-name',
+				className: 'whishlist-popup__input',
+				name: 'Название',
+				inputAttr: 'data-wishlist-input maxlength="25',
+				attr: 'data-validate-type="text" ',
+				wordCounter: 25
 			}) }}
-		</div>
-	</form>
+			<div class="whishlist-popup__form-btns">
+				<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
+				{{ button({
+					className: 'h7 ttu _arrow-s whishlist-popup__submit',
+					text: 'Создать',
+					icon: 'promo-arrow',
+					type: 'submit',
+					iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+				}) }}
+			</div>
+		</form>
+	</div>
 	{{ button({
 		className: 'whishlist-popup__new h7 ttu _plus',
 		text: 'Создать новый',

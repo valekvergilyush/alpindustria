@@ -10,7 +10,7 @@
 			{% endfor %}
 		</div>
 		<div class="wishlist-card__row _title">
-			<a href="#" class="wishlist-card__name h5 ttu">{{ props.name }}</a>
+			<a href="wishlist-page.html" class="wishlist-card__name h5 ttu">{{ props.name }}</a>
 			<p class="wishlist-card__small">{{ props.year }}</p>
 		</div>
 		<div class="wishlist-card__row _bottom">
@@ -19,7 +19,7 @@
 				className: 'h7 ttu wishlist-card__add',
 				text: 'Добавить все в корзину',
 				icon: 'cart-2',
-				iconData: 'width="32" height="32" viewBox="0 0 32 33"'
+				iconData: 'width="36" height="36" viewBox="0 0 36 36"'
 			}) }}
 			{{ button({
 				className: 'wishlist-card__add-mobile h7 ttu _plus',

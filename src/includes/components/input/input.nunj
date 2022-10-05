@@ -1,5 +1,7 @@
 {% macro input(props) %}
-	<div class="{% if props.className %}{{ props.className }} {% endif %}input">
+	<div
+		class="{% if props.className %}{{ props.className }} {% endif %}input"
+		{% if props.attr %} {{ props.attr }}{% endif %}>
 		<input
 			class="input__input"
 			id="{{ props.id }}"
