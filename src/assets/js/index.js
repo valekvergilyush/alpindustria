@@ -25,6 +25,7 @@ class AlpIndustry {
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			Counter: require('../../includes/components/counter/counter').default,
 			Tabs: require('../../includes/components/tabs/tabs').default,
+			DeliveryAddress: require('../../includes/delivery-address/delivery-address').default,
 			Hero: require('../../includes/hero/hero').default,
 			Cart: require('../../includes/cart/cart').default,
 		};

@@ -1,6 +1,8 @@
 {% from "../components/select/select.nunj" import select %}
 {% from "../components/input/input.nunj" import input %}
 {% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/input-date/input-date.nunj" import inputDate %}
+{% from "../components/input-time/input-time.nunj" import inputTime %}
 
 {% set addressTabs = [
 	{ id: 'pickup', name: 'Самовывоз', isSelected: true, tabindex: '0' },
@@ -28,7 +30,7 @@
 			</li>
 		{% endfor %}
 	</ul>
-	<section class="delivery-address__section _pickup tabs__panel" aria-labelledby="pickup" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
+	<section class="delivery-address__section tabs__panel" aria-labelledby="pickup" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 		{{ select({
 			id: 'city-select-pickup',
 			options: cityList,
@@ -38,10 +40,11 @@
 		{{ select({
 			id: 'shop-select',
 			options: shopList,
-			className: 'delivery-address__select _delivery',
+			className: 'delivery-address__select _delivery _store',
 			label: 'Магазин'
 		}) }}
 		<div class="delivery-address__map"></div>
+		{% include "../store-info/store-info.nunj" %}
 	</section>
 	<section class="delivery-address__section _courier tabs__panel" aria-labelledby="courier" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
 		{{ select({
@@ -87,6 +90,8 @@
 				id: 'delivery-address-radio-1',
 				className: 'delivery-address__radio _v-center',
 				name: 'delivery-address-radio',
+				value: 'courier',
+				attr: 'data-value="courier"',
 				label: 'Курьерская',
 				text: 'Завтра и позже, бесплатная доставка от 10 000 ₽',
 				checked: true
@@ -95,10 +100,40 @@
 				id: 'delivery-address-radio-2',
 				className: 'delivery-address__radio _v-center',
 				name: 'delivery-address-radio',
+				value: 'sdek',
+				attr: 'data-value="sdek"',
 				label: 'Доставка по пунктам выдачи СДЭК',
 				text: '3-5 дней, бесплатная доставка от 10 000 ₽'
 			}) }}
 		</div>
-		<p class="delivery-address__title h7 ttu">Выберите время, когда вы хотите получить заказ:</p>
+		<div class="delivery-address__date-time">
+			<p class="delivery-address__title h7 ttu">Выберите время, когда вы хотите получить заказ:</p>
+			{{ inputDate({
+				name: 'Дата',
+				label: 'Дата',
+				id: 'delivery-date-input',
+				value: '20/08/22',
+				className: 'delivery-address__date'
+			}) }}
+			{{ inputTime({
+				name: 'Время',
+				label: 'Время',
+				id: 'delivery-time-input',
+				value: '19:00',
+				className: 'delivery-address__time'
+			}) }}
+		</div>
+		{{ select({
+			id: 'city-select-sdek',
+			options: shopList,
+			className: 'delivery-address__select _delivery _sdek',
+			label: 'Пункт выдачи СДЭК'
+		}) }}
+		<div class="delivery-address__map _sdek"></div>
+		{% include "../store-info/store-info-no-photo.nunj" %}
+		<p class="delivery-address__price">
+			Стоимость доставки:<br>
+			<span class="delivery-address__price-value">Бесплатно</span>
+		</p>
 	</section>
 </div>
