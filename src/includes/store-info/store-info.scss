@@ -1,0 +1,46 @@
+.store-info {
+	&__title {
+		margin-bottom: rem(30);
+	}
+	&__date {
+		span {
+			display: inline-block;
+			margin-top: rem(17);
+		}
+	}
+	&__text {
+		margin-bottom: rem(34);
+		opacity: 0.5;
+	}
+	&__table {
+		margin-bottom: rem(45);
+		text-align: left;
+		tr {
+			display: flex;
+			column-gap: rem(16);
+			&:not(:last-child) {
+				margin-bottom: rem(24);
+			}
+			& > * {
+				width: 50%;
+				box-sizing: border-box;
+			}
+		}
+		th {
+			font-weight: 400;
+		}
+		td {
+			padding-right: rem(22);
+			color: var(--gray-dark);
+		}
+	}
+	&__photos {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(24);
+	}
+	&__img {
+		height: rem(500);
+		object-fit: cover;
+	}
+}
