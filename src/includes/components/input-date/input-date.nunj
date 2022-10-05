@@ -1,0 +1,12 @@
+{% macro inputDate(args) %}
+	<div class="input-date{% if props.className %} {{ props.className }}{% endif %}">
+		<label class="input-date__label" for="{{ props.id }}">{% if props.label %}{{ props.label }}{% endif %}</label>
+		<input
+			class="input-date__input"
+			type="date"
+			id="{{ props.id }}"
+			name="{{ props.name }}"
+			{% if props.value %}value="{{ props.value }}"{% endif %}
+		>
+	</div>
+{% endmacro %}
