@@ -1,5 +1,22 @@
 .cart-delivery {
 	display: flex;
 	flex-direction: column;
-	row-gap: rem(96);
+	&__auth-form {
+		margin-bottom: rem(98);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 73px;
+		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 57px;
+		}
+	}
+	&__register-form {
+		margin-bottom: rem(96);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 72px;
+		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 54px;
+		}
+	}
 }

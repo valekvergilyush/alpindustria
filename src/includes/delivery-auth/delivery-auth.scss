@@ -1,6 +1,12 @@
 .delivery-auth {
 	&__title {
-		margin-bottom: rem(84);
+		margin-bottom: rem(46);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 18px;
+		}
 	}
 	&__fields {
 		display: flex;
@@ -8,6 +14,12 @@
 		align-items: flex-end;
 		&:not(:last-child) {
 			margin-bottom: rem(48);
+			@media (max-width: $laptop-lg) {
+				margin-bottom: 32px;
+			}
+			@media (max-width: $laptop) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 	&__input {
@@ -17,16 +29,21 @@
 		@extend .animated;
 		display: inline-flex;
 		align-items: center;
+		box-sizing: border-box;
 		height: rem(35);
-		padding: 0 rem(16);
+		padding: 0 rem(15);
 		padding-top: 0.2em;
 		font-family: var(--font-family-suisse);
-		box-sizing: border-box;
 		border: 1px solid var(--blue-dark);
 		border-radius: 100vmax;
 		&:hover {
 			color: var(--white);
 			background-color: var(--blue-dark);
+		}
+		@media (max-width: $laptop) {
+			height: 32px;
+			padding: 0 11px;
+			padding-top: 0.2em;
 		}
 	}
 }

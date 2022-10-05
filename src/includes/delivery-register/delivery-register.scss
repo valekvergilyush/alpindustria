@@ -1,17 +1,29 @@
 .delivery-register {
 	&__title {
-		margin-bottom: rem(84);
+		margin-bottom: rem(46);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 17px;
+		}
 	}
 	&__fields {
 		display: flex;
 		column-gap: rem(16);
 		align-items: flex-end;
-		&:not(:last-child) {
-			margin-bottom: rem(48);
+		&:first-of-type {
+			margin-bottom: rem(16);
 		}
 	}
 	&__input {
 		flex-grow: 1;
+	}
+	&__checkbox {
+		margin-top: rem(25);
+		@media (max-width: $laptop) {
+			margin-top: 19px;
+		}
 	}
 	&__link {
 		display: inline-flex;

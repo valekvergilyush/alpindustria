@@ -33,6 +33,7 @@
 		}) }}
 	</div>
 	{{ checkbox({
+		className: 'delivery-register__checkbox',
 		id: 'legal-entity-checkbox',
 		name: 'legal-entity',
 		text: 'Я являюсь юридическим лицом'
