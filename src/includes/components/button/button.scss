@@ -457,6 +457,18 @@
 		}
 	}
 	&._auth {
+		#{$this}__text {
+			line-height: 1;
+		}
+		#{$this}__icon {
+			margin-left: rem(9);
+		}
+		@media (max-width: $laptop-md) {
+			#{$this}__icon {
+				--size: 16px;
+				margin-left: 16px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			#{$this}__text {
 				display: none;
@@ -499,7 +511,7 @@
 		}
 	}
 	&._arrow {
-		column-gap: rem(12);
+		column-gap: rem(18);
 		font-size: rem(18);
 		line-height: 1.33;
 		text-transform: uppercase;
