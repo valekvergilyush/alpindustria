@@ -31,7 +31,11 @@
 			<p class="cart-item__title h7 ttu">{{ props.title }}</p>
 			<p class="cart-item__price">{{ props.price }}</p>
 		</div>
-		<img class="cart-item__img" src="{{ props.srcImg }}" srcset="{{ props.srcsetImg }}" width="126" height="160" alt="" loading="lazy">
+		<div class="cart-item__img-wrapper">
+			{% if props.srcImg %}
+				<img class="cart-item__img" src="{{ props.srcImg }}" srcset="{{ props.srcsetImg }}" width="126" height="160" alt="" loading="lazy">
+			{% endif %}
+		</div>
 		<div class="cart-item__controls">
 			{{ selectColor({ colors: colorList, className: 'cart-item__select' }) }}
 			{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}

@@ -1,25 +1,20 @@
 {% from "../components/button/button.nunj" import button %}
 
-{% set tabs = [
-	{ id: 'shop', name: 'Магазин', isSelected: true, tabindex: '0' },
-	{ id: 'rental', name: 'Прокат', tabindex: '-1' }
-]
-%}
-
 <section class="cart">
-	<div class="cart__title-wrapper _cart">
-		{{ button({
-			icon: 'double-arrow-left',
-			iconData: 'width="32" height="32"',
-			className: 'cart__back-btn',
-			attr: 'aria-label="Назад" data-cart-back'
-		}) }}
-		<h2 class="cart__title h5 ttu">Корзина</h2>
-	</div>
+	<h2 class="cart__title h5 ttu">Корзина</h2>
 
 	{% include '../cart-tabs/cart-tabs.nunj' %}
 
 	<div class="cart__cart-list" data-cart-list>
+		<div class="cart__title-wrapper">
+			{{ button({
+				icon: 'double-arrow-left',
+				iconData: 'width="32" height="32"',
+				className: 'cart__back-btn',
+				attr: 'aria-label="Назад" data-cart-back'
+			}) }}
+			<h2 class="cart__title _cart h5 ttu">Корзина</h2>
+		</div>
 		{% include '../cart-list/cart-list.nunj' %}
 
 		<p class="cart__price _secondary p3">
@@ -29,9 +24,7 @@
 	</div>
 
 	<div class="cart__delivery">
-		<div class="cart__title-wrapper _delivery">
-			<h2 class="cart__title h5 ttu">Доставка</h2>
-		</div>
+		<h2 class="cart__title _delivery h5 ttu">Доставка</h2>
 
 		{% include '../cart-delivery/cart-delivery.nunj' %}
 

@@ -34,6 +34,8 @@
 @import '../../includes/components/wishlist-item/wishlist-item';
 @import '../../includes/components/wishlist-card/wishlist-card';
 @import '../../includes/components/title-block/title-block';
+@import '../../includes/components/checkbox/checkbox';
+@import '../../includes/components/radio/radio';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -66,6 +68,9 @@
 @import '../../includes/wishlists/wishlists';
 @import '../../includes/map/map';
 @import '../../includes/wishlist-lists/wishlist-lists';
+@import '../../includes/delivery-auth/delivery-auth';
+@import '../../includes/delivery-register/delivery-register';
+@import '../../includes/delivery-address/delivery-address';
 
 // ======= PAGES =======
 @import 'pages/index';

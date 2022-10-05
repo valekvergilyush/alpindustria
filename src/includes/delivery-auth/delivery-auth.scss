@@ -1,0 +1,32 @@
+.delivery-auth {
+	&__title {
+		margin-bottom: rem(84);
+	}
+	&__fields {
+		display: flex;
+		column-gap: rem(16);
+		align-items: flex-end;
+		&:not(:last-child) {
+			margin-bottom: rem(48);
+		}
+	}
+	&__input {
+		flex-grow: 1;
+	}
+	&__link {
+		@extend .animated;
+		display: inline-flex;
+		align-items: center;
+		height: rem(35);
+		padding: 0 rem(16);
+		padding-top: 0.2em;
+		font-family: var(--font-family-suisse);
+		box-sizing: border-box;
+		border: 1px solid var(--blue-dark);
+		border-radius: 100vmax;
+		&:hover {
+			color: var(--white);
+			background-color: var(--blue-dark);
+		}
+	}
+}

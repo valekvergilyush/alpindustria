@@ -74,6 +74,9 @@
 			#{$this}__close-button {
 				display: none;
 			}
+			#{$this}__popup {
+				overflow: hidden;
+			}
 		}
 	}
 	&__popup {

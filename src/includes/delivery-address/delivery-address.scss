@@ -1,0 +1,40 @@
+.delivery-address {
+	padding-bottom: rem(48);
+	&__title {
+		margin-bottom: rem(36);
+	}
+	&__section {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(28);
+	}
+	&__select {
+		position: relative;
+	}
+	&__map {
+		position: relative;
+		width: calc(100% + var(--popup-padding) * 2);
+		margin-left: calc(0px - var(--popup-padding));
+		padding-bottom: 87.4%;
+		background-color: var(--white);
+	}
+	&__fields {
+		display: flex;
+		column-gap: rem(16);
+		flex-wrap: wrap;
+		&._cols-4 {
+			.delivery-address__input {
+				width: 20%;
+				flex-grow: 1;
+				@media (max-width: $mobile-lg) {
+					width: 30%;
+				}
+			}
+		}
+	}
+	&__radios {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(24);
+	}
+}
