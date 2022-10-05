@@ -176,7 +176,39 @@ const MAP_STYLES = [
 		],
 	},
 ];
-const INFO_MAX_WIDTH = 295;
+const CONTENT = `
+	<div class="map-popup">
+		<h3 class="p2">г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
+		<p class="p3">Ежедневно c 10:00 до 22:00</p>
+		<p class="p3">Телефон: +7 (812) 242-11-95</p>
+		<a href="#" class="h7 ttu">Выбрать магазин</a>
+	</div>`;
+const gApiKey = `AIzaSyAghvGrW2kSxzqP6cfhFoP5GOuSUd6as8o`;
+const MAP_DATA_CART = {
+	mapData: {
+		center: {
+			lat: 40.712784,
+			lng: -74.005941,
+		},
+		zoom: 11,
+	},
+	pointsData: [
+		{
+			position: {
+				lat: 40.712784,
+				lng: -73.994606,
+			},
+			content: CONTENT,
+		},
+		{
+			position: {
+				lat: 40.712784,
+				lng: -74.1,
+			},
+			content: CONTENT,
+		},
+	],
+};
 
 class Map {
 	constructor() {
@@ -190,20 +222,19 @@ class Map {
 		this.initMap();
 	}
 	initMap() {
-		const gApiKey = `AIzaSyAghvGrW2kSxzqP6cfhFoP5GOuSUd6as8o`;
 		const gmapApi = new GoogleMapsApi(gApiKey);
 
 		gmapApi.load().then(() => {
-			this.renderMap();
+			//cart map
+			const cartMapBlock = document.querySelector(`[data-map="cart"]`);
+			if (cartMapBlock) {
+				this.renderMap(cartMapBlock, MAP_DATA_CART);
+			}
 		});
 	}
-	renderMap() {
+	renderMap(mapBlock, data) {
 		this.opts = {
-			center: {
-				lat: 40.712784,
-				lng: -74.005941,
-			},
-			zoom: 11,
+			...data.mapData,
 			styles: MAP_STYLES,
 			maxZoom: 20,
 			minZoom: 0,
@@ -227,18 +258,20 @@ class Map {
 		this.setControlOptions('streetView', false, 'DEFAULT', '', null);
 		this.setControlOptions('zoom', true, 'LEFT_BOTTOM', '', null);
 		// eslint-disable-next-line no-undef
-		this.map = new google.maps.Map(this.mapBlock, this.opts);
+		const googleMap = new google.maps.Map(mapBlock, this.opts);
 
-		// marker
+		data.pointsData.forEach(point => {
+			this.setPoint(googleMap, point);
+		});
+	}
+
+	setPoint(map, pointData) {
 		const markerOptions = {
-			map: this.map,
-			position: {
-				lat: 40.712784,
-				lng: -73.994606,
-			},
+			map: map,
+			position: pointData.position,
 		};
 		markerOptions.icon = {
-			url: 'https://snazzy-maps-cdn.azureedge.net/assets/marker-e72f515f-d133-42c0-a793-917b85ff4d9a.svg',
+			url: 'assets/images/cart/marker.svg',
 			// eslint-disable-next-line no-undef
 			scaledSize: new google.maps.Size(52, 80),
 			// eslint-disable-next-line no-undef
@@ -252,29 +285,20 @@ class Map {
 		// eslint-disable-next-line no-undef
 		const marker = new google.maps.Marker(markerOptions);
 
-		// InfoWindow content
-		const content =
-			'<div class="map-popup">' +
-			'<h3 class="p2">г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>' +
-			'<p class="p3">Ежедневно c 10:00 до 22:00</p>' +
-			'<p class="p3">Телефон: +7 (812) 242-11-95</p>' +
-			'<a href="#" class="h7 ttu">Выбрать магазин</a>' +
-			'</div>';
-
 		// eslint-disable-next-line no-undef
 		const infowindow = new google.maps.InfoWindow({
-			content: content,
-			maxWidth: INFO_MAX_WIDTH,
+			content: pointData.content,
 		});
 		// eslint-disable-next-line no-undef
 		google.maps.event.addListener(marker, 'click', function () {
-			infowindow.open(this.map, marker);
+			infowindow.open(map, marker);
 		});
 		// eslint-disable-next-line no-undef
-		google.maps.event.addListener(this.map, 'click', function () {
+		google.maps.event.addListener(map, 'click', function () {
 			infowindow.close();
 		});
 	}
+
 	setControlOptions(key, enabled, position, style, mapTypeIds) {
 		this.opts[key + 'Control'] = enabled;
 		this.opts[key + 'ControlOptions'] = {

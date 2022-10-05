@@ -28,8 +28,8 @@
 			<div class="wishlist-lists__block">
 				<div class="wishlist-lists__top">
 					<div class="wishlist-lists__text">
-						<p class="p3">Всего:</p>
-						<p class="s2">16 товаров</p>
+						<p class="p3 wishlist-lists__small">Всего:</p>
+						<p class="s2 wishlist-lists__number">16 товаров</p>
 					</div>
 					{{ button({
 						className: 'wishlist-lists__add h7 ttu',
@@ -44,10 +44,10 @@
 					{% endfor %}
 				</ul>
 			</div>
-			<div class="wishlist-lists__block">
+			<div class="wishlist-lists__block _desktop">
 				<div class="wishlist-lists__top">
 					<div class="wishlist-lists__text">
-						<p class="p3">Купленные товары:</p>
+						<p class="p3 wishlist-lists__small">Купленные товары:</p>
 					</div>
 				</div>
 				<ul class="wishlist-lists__list">
