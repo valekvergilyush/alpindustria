@@ -13,10 +13,16 @@
 		padding-right: rem(50);
 		margin-bottom: rem(80);
 		@media (max-width: $laptop-lg) {
+			margin-bottom: 64px;
+		}
+		@media (max-width: $laptop-md) {
 			margin-bottom: 40px;
 		}
-		@media (max-width: $laptop) {
-			margin-bottom: 32px;
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 40px;
 		}
 	}
 	&__subtitle {

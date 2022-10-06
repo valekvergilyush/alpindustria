@@ -84,6 +84,15 @@
 	&__color {
 		cursor: default;
 	}
+	&__size {
+		@media (max-width: $mobile-lg) {
+			&._size {
+				padding: 7px 19px;
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+	}
 	&__color {
 		display: block;
 		&._color {

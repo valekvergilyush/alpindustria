@@ -38,7 +38,7 @@
 		box-sizing: border-box;
 		font-weight: normal;
 		@media (max-width: $mobile-lg) {
-			height: 46px;
+			height: 44px;
 			padding: 7px 5px;
 		}
 		&:first-child {
@@ -57,6 +57,9 @@
 		}
 		&:not(:first-child) {
 			width: rem(89);
+			@media (max-width: $mobile-lg) {
+				width: 80px;
+			}
 		}
 	}
 	th {

@@ -20,6 +20,9 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(40);
+		@media (max-width: $laptop-md) {
+			row-gap: 20px;
+		}
 		@media (max-width: $laptop-sm) {
 			row-gap: 24px;
 		}
