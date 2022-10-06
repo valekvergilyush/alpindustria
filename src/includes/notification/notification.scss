@@ -1,0 +1,51 @@
+.notification {
+	position: fixed;
+	bottom: rem(64);
+	left: rem(64);
+	z-index: 5;
+	display: flex;
+	align-items: flex-start;
+	width: rem(467);
+	padding: rem(12);
+	background: var(--white);
+	border: 1px solid var(--blue-dark);
+	@media (max-width: $laptop-lg) {
+		bottom: 22px;
+		left: 28px;
+		width: rem(420);
+	}
+	@media (max-width: $laptop-md) {
+		bottom: 20px;
+		left: auto;
+		right: 20px;
+		width: rem(400);
+	}
+	@media (max-width: $mobile-lg) {
+		left: 16px;
+		right: 16px;
+		width: auto;
+	}
+	&._hide {
+		display: none;
+	}
+	&__content {
+		flex-grow: 1;
+	}
+	&__close {
+		@include reset-btn;
+		--size: #{rem(44)};
+		flex-shrink: 0;
+		width: var(--size);
+		height: var(--size);
+		padding: rem(6);
+		margin-left: rem(16);
+		@media (max-width: $laptop-md) {
+			--size: 32px;
+			padding: 4px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 24px;
+			padding: 3px;
+		}
+	}
+}
