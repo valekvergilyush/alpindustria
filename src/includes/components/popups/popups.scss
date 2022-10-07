@@ -102,6 +102,7 @@
 		background-color: var(--white);
 		overflow: auto;
 		box-sizing: border-box;
+
 		&[data-popup='city-form'] {
 			width: rem(704);
 			@media (max-width: $laptop-lg) {
@@ -130,6 +131,7 @@
 			}
 		}
 		&[data-popup='availability'],
+		&[data-popup='sizes'],
 		&[data-popup='review-form'] {
 			--popup-padding: #{rem(40)};
 			--close-button-padding: #{rem(6)};

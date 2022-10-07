@@ -1,0 +1,28 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set notificationImgs = [
+	'assets/images/catalog/item-3',
+	'assets/images/catalog/item-1',
+	'assets/images/catalog/item-4'
+] %}
+
+<div class="notification__content notification-wishlist">
+	<div class="notification-wishlist__imgs">
+		{% for img in notificationImgs %}
+			<div class="notification-wishlist__img-wrap">
+				<img class="notification-wishlist__img" src="{{ img }}.png" srcset="{{ img }}@2x.png 2x" width="356" height="415" alt="">
+			</div>
+		{% endfor %}
+	</div>
+	<div class="notification-wishlist__content">
+		<p class="notification-wishlist__text p3">Сохранено в вишлист</p>
+		<a href="#" class="notification-wishlist__link h7 ttu">
+			Восхождение<br>на&nbsp;эльбрус
+			{{ icon({
+				iconName: "promo-arrow",
+				className: "notification-wishlist__link-icon",
+				attr: 'width="18" height="18" viewBox="0 0 72 72"'
+			}) }}
+		</a>
+	</div>
+</div>

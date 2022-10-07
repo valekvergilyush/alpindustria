@@ -1,6 +1,6 @@
 .sizes-popup {
 	--sizes-margin: #{rem(40)};
-	@media (max-width: $desktop) {
+	@media (max-width: $laptop-lg) {
 		--sizes-margin: 32px;
 	}
 	@media (max-width: $laptop-md) {
@@ -11,12 +11,18 @@
 	}
 	&__title {
 		padding-right: rem(50);
-		margin-bottom: rem(64);
+		margin-bottom: rem(80);
 		@media (max-width: $laptop-lg) {
+			margin-bottom: 64px;
+		}
+		@media (max-width: $laptop-md) {
 			margin-bottom: 40px;
 		}
-		@media (max-width: $laptop) {
-			margin-bottom: 32px;
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 40px;
 		}
 	}
 	&__subtitle {
@@ -36,7 +42,7 @@
 	}
 	&__table {
 		margin-bottom: rem(56);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			margin-bottom: 40px;
 		}
 		@media (max-width: $laptop-md) {
@@ -54,7 +60,7 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: rem(50);
 		margin-bottom: var(--sizes-margin);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			gap: 28px;
 		}
 		@media (max-width: $laptop-md) {
@@ -88,7 +94,7 @@
 			max-width: 232px;
 		}
 	}
-	&__title-small {
+	&__subtitle-small {
 		margin-bottom: rem(8);
 	}
 	&__text {

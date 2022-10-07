@@ -5,7 +5,7 @@
 		display: flex;
 		column-gap: rem(80);
 		border-bottom: 1px solid rgba($blue-light, 0.2);
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			column-gap: 60px;
 		}
 		@media (max-width: $laptop-md) {
@@ -61,7 +61,7 @@
 		}
 		&._amount {
 			width: rem(104);
-			@media (max-width: $desktop) {
+			@media (max-width: $laptop-lg) {
 				width: 96px;
 			}
 			@media (max-width: $laptop-md) {
@@ -84,20 +84,23 @@
 	&__color {
 		cursor: default;
 	}
+	&__size {
+		@media (max-width: $mobile-lg) {
+			&._size {
+				padding: 7px 19px;
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+	}
 	&__color {
 		display: block;
-		@media (max-width: $desktop) {
-			&._color {
-				--size: 40px;
-			}
-		}
-		@media (max-width: $laptop-md) {
-			&._color {
+		&._color {
+			--size: #{rem(40)};
+			@media (max-width: $laptop-md) {
 				--size: 33px;
 			}
-		}
-		@media (max-width: $mobile-lg) {
-			&._color {
+			@media (max-width: $mobile-lg) {
 				--size: 31px;
 			}
 		}

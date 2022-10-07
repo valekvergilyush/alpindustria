@@ -47,6 +47,8 @@ class AlpIndustry {
 			Input: require('./modules/Input').default,
 			WishlistForm: require('./modules/WishlistForm').default,
 			Map: require('./modules/Map').default,
+			FormValidate: require('./modules/FormValidate').default,
+			Notification: require('./modules/Notification').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

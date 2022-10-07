@@ -4,8 +4,18 @@
 	flex-direction: column;
 	row-gap: rem(24);
 	width: 100%;
+	@media (max-width: $laptop-lg) {
+		min-height: 600px;
+	}
 	@media (max-width: $laptop-md) {
+		min-height: 434px;
 		row-gap: 16px;
+	}
+	@media (max-width: $laptop-sm) {
+		min-height: 379px;
+	}
+	@media (max-width: $mobile-lg) {
+		min-height: auto;
 	}
 	&__imgs {
 		display: flex;
@@ -140,6 +150,7 @@
 			width: var(--size);
 			height: var(--size);
 			margin-left: 10px;
+			fill: none;
 			@media (max-width: $laptop-lg) {
 				--size: 36px;
 			}

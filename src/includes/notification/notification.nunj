@@ -1,0 +1,12 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="notification _hide" data-notification>
+	{% include "../notification-wishlist/notification-wishlist.nunj" %}
+	<button class="notification__close" type="button" data-notification-close>
+		{{ icon({
+			iconName: "close-popup",
+			className: "popups__close-icon",
+			attr: 'width="32" height="32" viewBox="0 0 32 32"'
+		}) }}
+	</button>
+</div>

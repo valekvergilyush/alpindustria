@@ -11,7 +11,7 @@
 		<p class="product-card__price p3">{{ props.price }}</p>
 		{{ button({
 			className: 'product-card__button _wishlist' + activeClassName,
-			attr: 'aria-label="Добавить в вишлист"'
+			attr: 'aria-label="Добавить в вишлист" data-notification-open'
 		}) }}
 		<a class="product-card__link-photo" href="{{ props.url }}">
 			<img class="product-card__photo" src="{{ props.photo }}.png" srcset="{{ props.photo }}@2x.png 2x" width="304" height="364" alt="">

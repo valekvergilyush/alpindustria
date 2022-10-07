@@ -1,5 +1,5 @@
 {% macro inputRating(props) %}
-	<div class="{% if props.className %}{{ props.className }} {% endif %}input-rating">
+	<div class="{% if props.className %}{{ props.className }} {% endif %}input-rating" {% if props.attr %} {{ props.attr }}{% endif %}>
 		<p class="input-rating__label ttu{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}">
 			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}
 		</p>

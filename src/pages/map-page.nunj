@@ -5,6 +5,6 @@
 
 {% block mainContent %}
 	<main class="page__main _pt _white-bg">
-		<div class="map" data-map style="height: 500px;"></div>
+		<div class="map" data-map="cart" style="height: 500px;"></div>
 	</main>
 {% endblock %}
