@@ -28,6 +28,7 @@ class AlpIndustry {
 			DeliveryAddress: require('../../includes/delivery-address/delivery-address').default,
 			Hero: require('../../includes/hero/hero').default,
 			Cart: require('../../includes/cart/cart').default,
+			InputDate: require('../../includes/components/input-date/input-date').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
