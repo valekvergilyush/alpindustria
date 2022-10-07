@@ -1,12 +1,14 @@
-{% macro inputTime(args) %}
+{% macro inputTime(props) %}
 	<div class="input-time{% if props.className %} {{ props.className }}{% endif %}">
 		<label class="input-time__label" for="{{ props.id }}">{% if props.label %}{{ props.label }}{% endif %}</label>
 		<input
 			class="input-time__input"
-			type="time"
+			type="text"
 			id="{{ props.id }}"
 			name="{{ props.name }}"
 			{% if props.value %}value="{{ props.value }}"{% endif %}
+			readonly
+			data-timepicker
 		>
 	</div>
 {% endmacro %}
