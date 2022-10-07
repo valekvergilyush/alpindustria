@@ -1,4 +1,4 @@
-class WishlistForm {
+class Notification {
 	constructor() {
 		this.notification = document.querySelector('[data-notification]');
 		this.openBtn = document.querySelectorAll('[data-notification-open]');
@@ -12,23 +12,23 @@ class WishlistForm {
 		}
 		this.openBtn.forEach(btn => {
 			btn.addEventListener('click', () => {
-				this.showNotification();
+				this.show();
 			});
 		});
 		this.closeBtn.forEach(btn => {
 			btn.addEventListener('click', () => {
-				this.hideNotification();
+				this.hide();
 			});
 		});
 	}
 
-	showNotification() {
+	show() {
 		this.notification.classList.remove(this.hideClass);
 	}
 
-	hideNotification() {
+	hide() {
 		this.notification.classList.add(this.hideClass);
 	}
 }
 
-export default new WishlistForm();
+export default new Notification();

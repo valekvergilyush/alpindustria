@@ -128,7 +128,6 @@ const prettifyPhoneInput = input => {
 			input.value = `${BASE_COUNTRY_CODE}${input.value}`;
 		}
 	}
-	// onInputPhoneInput({input});
 	const matrix = `${BASE_COUNTRY_CODE}${BASE_MATRIX}`;
 	const def = matrix.replace(/\D/g, '');
 	let i = 0;
