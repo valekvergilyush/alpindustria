@@ -1,4 +1,10 @@
 .store-info {
+	$this: &;
+	&._no-photo {
+		#{$this}__table {
+			margin-bottom: 0;
+		}
+	}
 	&__title {
 		margin-bottom: rem(30);
 	}
@@ -6,24 +12,78 @@
 		span {
 			display: inline-block;
 			margin-top: rem(17);
+			@media (max-width: $laptop) {
+				margin-top: 21px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-top: 14px;
+				&.h5 {
+					font-size: 44px;
+				}
+				&.h6 {
+					margin-left: 6px;
+					font-size: 28px;
+					letter-spacing: -0.04em;
+				}
+			}
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 4px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 0;
 		}
 	}
 	&__text {
 		margin-bottom: rem(34);
 		opacity: 0.5;
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 31px;
+		}
+		@media (max-width: $mobile-lg) {
+			max-width: 300px;
+		}
 	}
 	&__table {
 		margin-bottom: rem(45);
 		text-align: left;
+		@media (max-width: $laptop) {
+			margin-bottom: 31px;
+		}
 		tr {
 			display: flex;
 			column-gap: rem(16);
 			&:not(:last-child) {
 				margin-bottom: rem(24);
+				@media (max-width: $laptop) {
+					margin-bottom: 15px;
+				}
+				@media (max-width: $laptop-sm) {
+					margin-bottom: 16px;
+				}
+				@media (max-width: $mobile-lg) {
+					margin-bottom: 25px;
+				}
 			}
 			& > * {
 				width: 50%;
 				box-sizing: border-box;
+				@media (max-width: $laptop) {
+					flex-grow: 1;
+					&:first-child {
+						width: 37%;
+					}
+				}
+				@media (max-width: $laptop-sm) {
+					&:first-child {
+						width: 6%;
+					}
+				}
+				@media (max-width: $mobile-lg) {
+					&:first-child {
+						width: 13%;
+					}
+				}
 			}
 		}
 		th {
@@ -32,6 +92,15 @@
 		td {
 			padding-right: rem(22);
 			color: var(--gray-dark);
+			@media (max-width: $laptop) {
+				padding-right: 0;
+			}
+			@media (max-width: $laptop-sm) {
+				padding-right: 90px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding-right: 0;
+			}
 		}
 	}
 	&__photos {
@@ -42,5 +111,11 @@
 	&__img {
 		height: rem(500);
 		object-fit: cover;
+		@media (max-width: $tablet) {
+			height: 459px;
+		}
+		@media (max-width: $mobile-lg) {
+			height: 228px;
+		}
 	}
 }

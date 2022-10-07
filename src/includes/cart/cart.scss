@@ -16,6 +16,9 @@
 		@media (max-width: $laptop) {
 			margin-bottom: 32px;
 		}
+		@media (max-width: $tablet) {
+			margin-bottom: 29px;
+		}
 		#{$this}__title {
 			margin: 0;
 			padding-right: 0;
@@ -32,6 +35,9 @@
 			}
 			@media (max-width: $laptop) {
 				margin-bottom: 54px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 48px;
 			}
 		}
 	}
@@ -170,6 +176,18 @@
 		}
 		&__back-btn {
 			display: inline-flex;
+		}
+		@media (max-width: $laptop-sm) {
+			display: block;
+			&__cart-list {
+				display: none;
+			}
+			&__delivery {
+				margin-left: calc(0px - var(--popup-padding));
+				.cart__back-btn {
+					display: inline-flex;
+				}
+			}
 		}
 	}
 }

@@ -108,20 +108,21 @@
 		</div>
 		<div class="delivery-address__date-time">
 			<p class="delivery-address__title h7 ttu">Выберите время, когда вы хотите получить заказ:</p>
-			{{ inputDate({
-				name: 'Дата',
-				label: 'Дата',
-				id: 'delivery-date-input',
-				value: '20/08/22',
-				className: 'delivery-address__date'
-			}) }}
-			{{ inputTime({
-				name: 'Время',
-				label: 'Время',
-				id: 'delivery-time-input',
-				value: '19:00',
-				className: 'delivery-address__time'
-			}) }}
+			<div class="delivery-address__fields _datetime">
+				{{ inputDate({
+					name: 'Дата',
+					label: 'Дата',
+					id: 'delivery-date-input',
+					className: 'delivery-address__date'
+				}) }}
+				{{ inputTime({
+					name: 'Время',
+					label: 'Время',
+					id: 'delivery-time-input',
+					value: '19:00',
+					className: 'delivery-address__time'
+				}) }}
+			</div>
 		</div>
 		{{ select({
 			id: 'city-select-sdek',

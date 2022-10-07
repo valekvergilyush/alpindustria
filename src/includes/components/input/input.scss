@@ -16,6 +16,9 @@
 			border-color: var(--blue-light);
 		}
 	}
+	@media (max-width: $mobile-lg) {
+		--height: 58px;
+	}
 	&__label {
 		@extend .animated;
 		position: absolute;
@@ -27,6 +30,9 @@
 		color: var(--blue-light);
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+		}
 	}
 	&__input {
 		@extend .animated;
@@ -55,6 +61,9 @@
 		#{$this}__label {
 			top: 15%;
 			font-size: rem(12);
+			@media (max-width: $mobile-lg) {
+				font-size: 10px;
+			}
 		}
 	}
 }

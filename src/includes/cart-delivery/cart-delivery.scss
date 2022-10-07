@@ -6,17 +6,23 @@
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 73px;
 		}
-		@media (max-width: $laptop-lg) {
+		@media (max-width: $laptop) {
 			margin-bottom: 57px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 48px;
 		}
 	}
 	&__register-form {
 		margin-bottom: rem(96);
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 72px;
+			margin-bottom: 71px;
 		}
-		@media (max-width: $laptop-lg) {
-			margin-bottom: 54px;
+		@media (max-width: $laptop) {
+			margin-bottom: 56px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 48px;
 		}
 	}
 }

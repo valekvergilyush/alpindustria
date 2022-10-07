@@ -2,6 +2,7 @@
 	position: sticky;
 	bottom: 0;
 	display: flex;
+	column-gap: rem(20);
 	box-sizing: border-box;
 	width: calc(100% + var(--popup-padding) * 2);
 	padding: rem(49) var(--popup-padding) rem(37) var(--popup-padding);
@@ -15,7 +16,7 @@
 		padding-bottom: 32px;
 	}
 	@media (max-width: $laptop) {
-		min-height: 120px;
+		min-height: 112px;
 		padding-top: 29px;
 		padding-bottom: 24px;
 	}

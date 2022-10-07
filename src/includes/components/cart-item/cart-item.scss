@@ -12,6 +12,9 @@
 		column-gap: 12px;
 		row-gap: 12px;
 	}
+	@media (max-width: $tablet) {
+		padding-bottom: 23px;
+	}
 	&__info {
 		flex-grow: 1;
 		width: min-content;
@@ -37,6 +40,9 @@
 	}
 	&__title {
 		margin-bottom: rem(16);
+		@media (max-width: $tablet) {
+			margin-bottom: 11px;
+		}
 	}
 	&__price {
 		font-family: var(--font-family-suisse);
