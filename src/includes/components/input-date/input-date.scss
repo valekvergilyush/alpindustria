@@ -1,0 +1,91 @@
+.input-date {
+	$this: &;
+	--padding-top: #{rem(35)};
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	height: rem(72);
+	padding-top: var(--padding-top);
+	&:hover,
+	&:focus-within {
+		#{$this}__label {
+			color: var(--blue-dark);
+		}
+		#{$this}__input {
+			border-color: var(--blue-light);
+		}
+	}
+	@media (max-width: $mobile-lg) {
+		height: 56px;
+		--padding-top: 30px;
+	}
+	&::before {
+		--size: #{rem(10)};
+		content: '';
+		position: absolute;
+		top: calc(var(--padding-top) + rem(3));
+		right: rem(18);
+		transform-origin: 70% 70%;
+		transform: rotate(45deg);
+		width: var(--size);
+		height: var(--size);
+		border-bottom: 2px solid var(--blue-dark);
+		border-right: 2px solid var(--blue-dark);
+		transition: transform $fast-transition-duration $default-transition-function;
+		pointer-events: none;
+		@media (max-width: $mobile-lg) {
+			top: var(--padding-top);
+			right: 20px;
+		}
+	}
+	&__label {
+		position: absolute;
+		top: 16%;
+		left: 0;
+		padding-left: rem(12);
+		font-size: rem(12);
+		line-height: 2;
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+		}
+	}
+	&__input {
+		@extend .animated;
+		width: 100%;
+		padding-left: rem(12);
+		padding-bottom: rem(11);
+		font-family: var(--default-font-family);
+		font-size: rem(16);
+		line-height: 1.5;
+		background: 0;
+		border: 0;
+		outline: 0;
+		border-bottom: 1px solid rgba($blue-light, 0.4);
+		color: var(--gray-dark);
+		cursor: pointer;
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 7px;
+			font-size: 14px;
+		}
+	}
+}
+
+.air-datepicker {
+	--adp-font-family: var(--default-font-family);
+	--adp-day-name-color: var(--blue-dark);
+	--adp-accent-color: var(--blue-dark);
+	--adp-cell-background-color-selected: var(--blue-dark);
+	--adp-cell-background-color-selected-hover: var(--blue-dark);
+	--adp-nav-arrow-color: var(--blue-dark);
+	--adp-cell-background-color-hover: #{rgba($blue-dark, 0.1)};
+	.air-datepicker-cell.-current- {
+		color: var(--adp-color-current-date);
+		background-color: rgba($blue-dark, 0.1);
+		border-radius: 100vmax;
+	}
+	&.-is-mobile-.-active-:not(.-custom-position-),
+	&.-is-mobile-:not(.-custom-position-) {
+		transform: translate(-50%, -50%);
+	}
+}

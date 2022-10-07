@@ -20,6 +20,7 @@
 		font-size: var(--font-size);
 		line-height: 1;
 		text-align: center;
+		padding-top: em(3, 24);
 	}
 	&__btn {
 		@include reset-btn;

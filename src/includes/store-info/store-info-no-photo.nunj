@@ -1,0 +1,33 @@
+<section class="delivery-address__store-info store-info _no-photo">
+	<h2 class="store-info__title h5 ttu">
+		г. Санкт-Петербург,<br>
+		наб. Черной речки, д.&nbsp;6<br>
+		(ст.м. Черная Речка)</h2>
+	<p class="store-info__date h7 ttu">
+		Ближайшая доставка:<br>
+		<span class="h5">20-26</span> <span class="h6">июня</span>
+	</p>
+	<p class="store-info__text p3 c-gray-dark">Без возможности отказаться от&nbsp;части товаров. Оплата любым удобным способом.</p>
+	<table class="store-info__table p3">
+		<tr>
+			<th>Время работы</th>
+			<td>Пн-Вс 10:00-22:00</td>
+		</tr>
+		<tr>
+			<th>Срок хранения</th>
+			<td>3&nbsp;дня</td>
+		</tr>
+		<tr>
+			<th>Оплата</th>
+			<td>Любым удобным способом</td>
+		</tr>
+		<tr>
+			<th>Телефон</th>
+			<td>+7 (812) 242-11-95</td>
+		</tr>
+		<tr>
+			<th>Как доехать</th>
+			<td>Здесь будет текст о&nbsp;том, как доехать до&nbsp;этого пункта самовывоза наиболее легким способом</td>
+		</tr>
+	</table>
+</section>

@@ -13,15 +13,22 @@
 		column-gap: 12px;
 		row-gap: 12px;
 	}
+	@media (max-width: $tablet) {
+		padding-bottom: 23px;
+	}
 	&__info {
 		flex-grow: 1;
 		width: min-content;
+		padding-top: rem(4);
 		margin-right: rem(48);
 		@media (max-width: $laptop-lg) {
 			margin-right: 24px;
 		}
-		@media (max-width: $laptop-md) {
+		@media (max-width: $laptop-lg-3) {
 			margin-right: 0;
+		}
+		@media (max-width: $laptop) {
+			padding-top: 0;
 		}
 		@media (max-width: $tablet) {
 			max-width: 242px;
@@ -34,6 +41,9 @@
 	}
 	&__title {
 		margin-bottom: rem(16);
+		@media (max-width: $tablet) {
+			margin-bottom: 11px;
+		}
 	}
 	&__price {
 		font-family: var(--font-family-suisse);
@@ -47,16 +57,10 @@
 		height: rem(160);
 		margin-right: rem(16);
 		background-color: var(--gray-light);
-	}
-	&__img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
 		@media (max-width: $laptop) {
 			width: 100px;
 			height: 127px;
+			margin-right: 12px;
 		}
 		@media (max-width: $tablet) {
 			width: 126px;
@@ -64,13 +68,20 @@
 			margin-right: 0;
 		}
 	}
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 	&__controls {
 		display: flex;
 		column-gap: rem(24);
 		@media (max-width: $laptop-lg) {
 			column-gap: 16px;
 		}
-		@media (max-width: $laptop-md) {
+		@media (max-width: $laptop-lg-3) {
 			width: 100%;
 		}
 		@media (max-width: $tablet) {

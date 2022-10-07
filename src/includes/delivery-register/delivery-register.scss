@@ -1,17 +1,44 @@
 .delivery-register {
 	&__title {
-		margin-bottom: rem(84);
+		margin-bottom: rem(46);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 17px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 23px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 20px;
+		}
 	}
 	&__fields {
 		display: flex;
 		column-gap: rem(16);
 		align-items: flex-end;
-		&:not(:last-child) {
-			margin-bottom: rem(48);
+		&:first-of-type {
+			margin-bottom: rem(24);
+		}
+		@media (max-width: $mobile-lg) {
+			column-gap: 8px;
+			&:first-of-type {
+				margin-bottom: 22px;
+			}
 		}
 	}
 	&__input {
 		flex-grow: 1;
+	}
+	&__checkbox {
+		margin-top: rem(34);
+		@media (max-width: $laptop) {
+			margin-top: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 24px;
+		}
 	}
 	&__link {
 		display: inline-flex;
