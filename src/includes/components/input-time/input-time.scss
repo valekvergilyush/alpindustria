@@ -1,0 +1,125 @@
+.input-time {
+	$this: &;
+	--padding-top: #{rem(35)};
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	height: rem(72);
+	padding-top: var(--padding-top);
+	&:hover,
+	&:focus-within {
+		#{$this}__label {
+			color: var(--blue-dark);
+		}
+		#{$this}__input {
+			border-color: var(--blue-light);
+		}
+	}
+	@media (max-width: $mobile-lg) {
+		height: 56px;
+		--padding-top: 30px;
+	}
+	&::before {
+		--size: #{rem(10)};
+		content: '';
+		position: absolute;
+		top: calc(var(--padding-top) + rem(3));
+		right: rem(18);
+		transform-origin: 70% 70%;
+		transform: rotate(45deg);
+		width: var(--size);
+		height: var(--size);
+		border-bottom: 2px solid var(--blue-dark);
+		border-right: 2px solid var(--blue-dark);
+		transition: transform $fast-transition-duration $default-transition-function;
+		pointer-events: none;
+		@media (max-width: $mobile-lg) {
+			top: var(--padding-top);
+			right: 20px;
+		}
+	}
+	&__label {
+		position: absolute;
+		top: 16%;
+		left: 0;
+		padding-left: rem(12);
+		font-size: rem(12);
+		line-height: 2;
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+		}
+	}
+	&__input {
+		@extend .animated;
+		width: 100%;
+		padding-left: rem(12);
+		padding-bottom: rem(11);
+		font-family: var(--default-font-family);
+		font-size: rem(16);
+		line-height: 1.5;
+		background: 0;
+		border: 0;
+		outline: 0;
+		border-bottom: 1px solid rgba($blue-light, 0.4);
+		color: var(--gray-dark);
+		cursor: pointer;
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 7px;
+			font-size: 14px;
+		}
+	}
+}
+
+.picker {
+	transition: opacity 0.3s;
+}
+
+.picker-fixed {
+	& > .picker-dialog {
+		width: rem(200);
+		top: 50%;
+		left: 50%;
+		bottom: auto;
+		transform: translate(-50%, -50%);
+		border-radius: 4px;
+	}
+	.picker-header {
+		height: rem(47);
+		padding: 0;
+	}
+	.picker-title {
+		display: none;
+	}
+	.picker-cancel,
+	.picker-item {
+		color: var(--gray-dark);
+	}
+	.picker-close {
+		@extend .animated;
+		color: var(--blue-dark);
+	}
+	.picker-confirm {
+		color: var(--blue-dark);
+	}
+	.picker-picked {
+		color: var(--white);
+	}
+	.picker-item {
+		position: relative;
+		z-index: 1;
+	}
+	.picker-dialog {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-42%);
+			width: 100%;
+			height: rem(32);
+			border-radius: 4px;
+			background-color: var(--blue-dark);
+		}
+	}
+}

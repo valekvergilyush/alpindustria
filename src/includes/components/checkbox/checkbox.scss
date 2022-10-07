@@ -19,6 +19,9 @@
 			background-repeat: no-repeat;
 			box-sizing: border-box;
 			transition: background $fast-transition-duration $default-transition-function;
+			@media (max-width: $mobile-lg) {
+				top: 0;
+			}
 		}
 	}
 	input:checked + &__label::before {

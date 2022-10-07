@@ -7,7 +7,7 @@
 ] %}
 
 <form class="cart-delivery__auth-form delivery-auth">
-	<p class="delivery-auth__title h7 ttu">Частным покупателям:</p>
+	<p class="delivery-auth__title h7 ttu">Частым покупателям:</p>
 	<div class="delivery-auth__fields">
 		{{ input({
 			type: 'tel',

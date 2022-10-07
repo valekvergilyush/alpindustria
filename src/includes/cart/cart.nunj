@@ -24,7 +24,15 @@
 	</div>
 
 	<div class="cart__delivery">
-		<h2 class="cart__title _delivery h5 ttu">Доставка</h2>
+		<div class="cart__title-wrapper _delivery">
+			{{ button({
+				icon: 'double-arrow-left',
+				iconData: 'width="32" height="32"',
+				className: 'cart__back-btn',
+				attr: 'aria-label="Назад" data-cart-back'
+			}) }}
+			<h2 class="cart__title _delivery h5 ttu">Доставка</h2>
+		</div>
 
 		{% include '../cart-delivery/cart-delivery.nunj' %}
 

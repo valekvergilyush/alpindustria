@@ -25,8 +25,11 @@ class AlpIndustry {
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			Counter: require('../../includes/components/counter/counter').default,
 			Tabs: require('../../includes/components/tabs/tabs').default,
+			DeliveryAddress: require('../../includes/delivery-address/delivery-address').default,
 			Hero: require('../../includes/hero/hero').default,
 			Cart: require('../../includes/cart/cart').default,
+			InputDate: require('../../includes/components/input-date/input-date').default,
+			InputTime: require('../../includes/components/input-time/input-time').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
