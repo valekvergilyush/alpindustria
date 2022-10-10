@@ -1,0 +1,11 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Бренды | {{ super() }}{% endblock title %}
+
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{% include "../includes/brands-title/brands-title.nunj" %}
+		{% include "../includes/brands/brands.nunj" %}
+	</main>
+{% endblock %}
