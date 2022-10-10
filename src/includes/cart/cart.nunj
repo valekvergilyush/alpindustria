@@ -31,12 +31,13 @@
 				icon: 'double-arrow-left',
 				iconData: 'width="32" height="32"',
 				className: 'cart__back-btn',
-				attr: 'aria-label="Назад" data-cart-back'
+				attr: 'aria-label="Назад" data-cart-back="delivery"'
 			}) }}
 			<h2 class="cart__title _delivery h5 ttu">Доставка</h2>
 		</div>
 
 		{% include '../cart-delivery/cart-delivery.nunj' %}
+		{% include '../cart-delivery/cart-delivery-total.nunj' %}
 
 		<div class="cart-bottom">
 			<p class="cart__price _white p3">
