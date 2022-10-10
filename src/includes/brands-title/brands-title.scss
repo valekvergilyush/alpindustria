@@ -70,6 +70,8 @@
 	}
 	&__grid {
 		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 	}
 	&__search {
 		@include reset-btn;
@@ -79,6 +81,9 @@
 		fill: none;
 	}
 	&__grid-btn {
+		display: flex;
+		align-items: center;
+		column-gap: rem(8);
 		@include reset-btn;
 		--size: #{rem(32)};
 		width: var(--size);
