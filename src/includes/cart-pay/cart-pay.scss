@@ -1,0 +1,55 @@
+.cart-pay {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: rem(18);
+	@media (max-width: $laptop-lg) {
+		padding-bottom: 25px;
+	}
+	@media (max-width: $laptop) {
+		padding-bottom: 31px;
+	}
+	&__radios {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+		margin-bottom: rem(30);
+		@media (max-width: $laptop-lg) {
+			row-gap: 14px;
+		}
+		@media (max-width: $laptop) {
+			row-gap: 22px;
+		}
+	}
+	&__checkbox {
+		margin-top: auto;
+		margin-bottom: rem(40);
+		.checkbox__label {
+			font-size: rem(14);
+		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 22px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 14px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 26px;
+		}
+	}
+	&__offer-link {
+		@extend .animated;
+		font-family: var(--font-family-suisse);
+		color: var(--gray-dark);
+		opacity: 0.4;
+		text-decoration: underline;
+		&:hover {
+			opacity: 1;
+		}
+		@media (max-width: $laptop-lg) {
+			font-family: var(--default-font-family);
+		}
+		@media (max-width: $laptop) {
+			font-size: 12px;
+		}
+	}
+}
