@@ -14,15 +14,14 @@ class Select {
 		this.selectList = [];
 
 		this.selects.forEach(select => {
+			select.searchField = select.parentElement.querySelector('[data-select-search]');
 			customSelect(select);
 
 			select.customSelect.container.addEventListener('custom-select:open', () => {
 				select.customSelect.panel.scrollTo(0, 0);
 			});
 
-			if (select.getAttribute('data-select') === 'color') {
-				this._initColorSelect(select);
-			}
+			select.searchField && this._initSearchField(select);
 
 			if (select.getAttribute('data-select') === 'availability') {
 				select.addEventListener('change', e => {
@@ -50,6 +49,39 @@ class Select {
 			colorElement.style.backgroundColor = opt.value;
 
 			customOptions[index].append(colorElement);
+		});
+	}
+	_initSearchField(select) {
+		select.searchField.addEventListener('input', evt => {
+			const customOptions = select.customSelect.panel.querySelectorAll('[role="option"]');
+			const searchValue = evt.target.value.toLowerCase();
+			// eslint-disable-next-line no-unused-vars
+			let openerTextContent = select.customSelect.opener.querySelector('span').textContent;
+			this._filterOptions(customOptions, searchValue);
+
+			if (searchValue) {
+				openerTextContent = searchValue;
+				select.customSelect.opener.style.opacity = 0;
+				select.customSelect.open = true;
+			} else {
+				openerTextContent = select.customSelect.value;
+				select.customSelect.opener.style.opacity = 1;
+				select.customSelect.open = false;
+			}
+		});
+
+		select.addEventListener('change', evt => {
+			select.searchField.value = evt.target.value;
+		});
+	}
+	_filterOptions(options, searchValue) {
+		options.forEach(option => {
+			const label = option.textContent.toLowerCase();
+			if (label.indexOf(searchValue) !== -1) {
+				option.style.display = 'block';
+			} else {
+				option.style.display = 'none';
+			}
 		});
 	}
 }

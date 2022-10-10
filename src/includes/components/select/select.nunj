@@ -10,5 +10,8 @@
 				</option>
 			{% endfor %}
 		</select>
+		{% if props.search %}
+			<input class="select__search-input" type="text" name="select-search" data-select-search>
+		{% endif %}
 	</div>
 {% endmacro %}
