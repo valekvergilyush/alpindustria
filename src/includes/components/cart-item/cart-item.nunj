@@ -26,10 +26,17 @@
 		{ name: '46', value: '46' }
 	] %}
 
-	<div class="cart-item">
+	<div class="cart-item{% if props.readonly %} _readonly{% endif %}{% if props.className %} {{ props.className }}{% endif %}">
 		<div class="cart-item__info">
 			<p class="cart-item__title h7 ttu">{{ props.title }}</p>
 			<p class="cart-item__price">{{ props.price }}</p>
+			{% if props.readonly %}
+				<div class="cart-item__props">
+					{{ selectColor({ colors: colorList, className: 'cart-item__select _readonly' }) }}
+					{{ select({ options: sizeList, className: 'cart-item__select _rounded _size _readonly' }) }}
+					{{ counter({ number: 1, className: 'cart-item__counter _readonly' }) }}
+				</div>
+			{% endif %}
 		</div>
 		<div class="cart-item__img-wrapper">
 			{% if props.srcImg %}
@@ -37,9 +44,11 @@
 			{% endif %}
 		</div>
 		<div class="cart-item__controls">
-			{{ selectColor({ colors: colorList, className: 'cart-item__select' }) }}
-			{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}
-			{{ counter({ number: 1, className: 'cart-item__counter' }) }}
+			{% if not props.readonly %}
+				{{ selectColor({ colors: colorList, className: 'cart-item__select' }) }}
+				{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}
+				{{ counter({ number: 1, className: 'cart-item__counter' }) }}
+			{% endif %}
 		</div>
 		{% if props.btns %}
 			<div class="cart-item__btns">

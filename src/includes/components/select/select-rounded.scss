@@ -101,7 +101,39 @@
 		}
 	}
 
+	&._readonly {
+		pointer-events: none;
+		--width: auto;
+		.custom-select-opener {
+			justify-content: center;
+			padding-inline: rem(16);
+			background-color: var(--blue-dark);
+			color: var(--white);
+			&::after {
+				display: none;
+			}
+		}
+		.select__select {
+			display: none;
+		}
+		.custom-select-panel {
+			display: none;
+		}
+	}
+
 	&._color {
+		&._readonly {
+			--width: #{rem(40)};
+			--height: #{rem(40)};
+			.custom-select-opener {
+				border: 1px solid rgba(76, 95, 168, 0.2);
+				padding: 3px;
+				background: 0;
+			}
+			.custom-select-opener-color {
+				--size: 32px;
+			}
+		}
 		.custom-select-opener {
 			padding: rem(3);
 		}

@@ -1,0 +1,31 @@
+{% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+
+<div class="cart__cart-pay cart-pay">
+	<div class="cart-pay__radios">
+		{{ radio({
+			id: 'cart-pay-radio-1',
+			className: 'delivery-address__radio _text',
+			name: 'pay-way-radio',
+			value: 'visit',
+			attr: 'data-value="visit"',
+			text: 'Оплата при получении любым удобным способом',
+			checked: true
+		}) }}
+		{{ radio({
+			id: 'cart-pay-radio-2',
+			className: 'delivery-address__radio _text',
+			name: 'pay-way-radio',
+			value: 'online',
+			attr: 'data-value="online"',
+			text: 'Оплата картой на сайте (AlfaBank)'
+		}) }}
+	</div>
+	{{ checkbox({
+		className: 'cart-pay__checkbox',
+		id: 'cart-pay-sms-checkbox',
+		name: 'sms-info',
+		text: 'SMS информирование об операциях по заказу'
+	}) }}
+	<a class="cart-pay__offer-link" href="#">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+</div>
