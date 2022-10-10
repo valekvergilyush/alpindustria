@@ -1,8 +1,12 @@
 .input {
 	$this: &;
 	--padding: #{rem(11)};
+	--height: #{rem(72)};
+	position: relative;
 	display: flex;
-	flex-direction: column;
+	height: var(--height);
+	padding-top: rem(35);
+	box-sizing: border-box;
 	&:hover,
 	&:focus-within {
 		#{$this}__label {
@@ -12,18 +16,27 @@
 			border-color: var(--blue-light);
 		}
 	}
+	@media (max-width: $mobile-lg) {
+		--height: 58px;
+	}
 	&__label {
 		@extend .animated;
+		position: absolute;
+		top: 53%;
+		left: 0;
 		padding: 0 var(--padding);
-		padding-top: var(--padding);
 		font-size: rem(16);
 		line-height: rem(24);
 		color: var(--blue-light);
-		transition: font-size $fast-transition-duration $default-transition-function;
+		transition: top $fast-transition-duration $default-transition-function,
+			font-size $fast-transition-duration $default-transition-function;
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+		}
 	}
 	&__input {
 		@extend .animated;
-		order: 2;
+		width: 100%;
 		padding: 0 var(--padding);
 		padding-bottom: var(--padding);
 		font-family: var(--default-font-family);
@@ -46,7 +59,11 @@
 	}
 	&._filled {
 		#{$this}__label {
+			top: 15%;
 			font-size: rem(12);
+			@media (max-width: $mobile-lg) {
+				font-size: 10px;
+			}
 		}
 	}
 }

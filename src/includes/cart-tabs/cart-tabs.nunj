@@ -27,7 +27,7 @@
 		</p>
 		{{ button({
 			type: 'submit',
-			text: 'Отправить',
+			text: 'Оформить',
 			icon: 'promo-arrow',
 			iconData: 'width="18" height="18"',
 			className: 'cart-tabs__submit _arrow',

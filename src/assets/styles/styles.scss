@@ -4,6 +4,8 @@
 @import 'lib/nouislider';
 @import 'lib/flickity';
 @import 'lib/custom-select';
+@import 'lib/air-datepicker';
+@import 'lib/picker';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -36,6 +38,8 @@
 @import '../../includes/components/title-block/title-block';
 @import '../../includes/components/checkbox/checkbox';
 @import '../../includes/components/radio/radio';
+@import '../../includes/components/input-date/input-date';
+@import '../../includes/components/input-time/input-time';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -75,6 +79,7 @@
 @import '../../includes/notification-wishlist/notification-wishlist';
 @import '../../includes/brands/brands';
 @import '../../includes/brands-title/brands-title';
+@import '../../includes/store-info/store-info';
 
 // ======= PAGES =======
 @import 'pages/index';

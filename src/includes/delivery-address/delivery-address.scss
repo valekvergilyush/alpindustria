@@ -1,34 +1,114 @@
 .delivery-address {
+	$this: &;
 	padding-bottom: rem(48);
+	@media (max-width: $laptop-lg) {
+		padding-bottom: 32px;
+	}
+	@media (max-width: $laptop) {
+		padding-bottom: 46px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-bottom: 52px;
+	}
 	&__title {
-		margin-bottom: rem(36);
+		margin-bottom: rem(24);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 10px;
+		}
 	}
 	&__section {
 		display: flex;
 		flex-direction: column;
-		row-gap: rem(28);
+		&._courier {
+			#{$this}__store-info {
+				display: none;
+			}
+		}
+		&._sdek {
+			#{$this}__date-time {
+				display: none;
+			}
+			#{$this}__store-info {
+				display: block;
+			}
+			#{$this}__map._sdek {
+				display: block;
+			}
+			#{$this}__select._sdek {
+				display: block;
+			}
+		}
 	}
 	&__select {
-		position: relative;
+		margin-bottom: rem(24);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 24px;
+		}
+		&._sdek {
+			display: none;
+			margin-bottom: rem(48);
+		}
+		&._store {
+			margin-bottom: rem(48);
+			@media (max-width: $laptop) {
+				margin-bottom: 32px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 46px;
+			}
+		}
 	}
 	&__map {
 		position: relative;
 		width: calc(100% + var(--popup-padding) * 2);
 		margin-left: calc(0px - var(--popup-padding));
+		margin-bottom: 48px;
 		padding-bottom: 87.4%;
 		background-color: var(--white);
+		@media (max-width: $laptop) {
+			margin-bottom: 35px;
+		}
+		@media (max-width: $tablet) {
+			padding-bottom: 76.8%;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 0;
+			height: 540px;
+		}
+		&._sdek {
+			display: none;
+		}
 	}
 	&__fields {
 		display: flex;
 		column-gap: rem(16);
 		flex-wrap: wrap;
+		@media (max-width: $mobile-lg) {
+			column-gap: 8px;
+		}
+		& > * {
+			flex-grow: 1;
+		}
 		&._cols-4 {
+			margin-top: rem(24);
+			margin-bottom: rem(48);
 			.delivery-address__input {
 				width: 20%;
-				flex-grow: 1;
 				@media (max-width: $mobile-lg) {
-					width: 30%;
+					width: 40%;
 				}
+			}
+			@media (max-width: $tablet) {
+				margin-bottom: 50px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-top: 22px;
+				row-gap: 6px;
+			}
+		}
+		&._datetime {
+			@media (max-width: $mobile-lg) {
+				flex-wrap: nowrap;
 			}
 		}
 	}
@@ -36,5 +116,25 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(24);
+		margin-bottom: rem(48);
+		@media (max-width: $mobile-lg) {
+			row-gap: 26px;
+		}
+	}
+	&__price {
+		margin-top: rem(94);
+		padding-top: rem(49);
+		border-top: 1px solid rgba($blue-light, 0.2);
+		font-family: var(--font-family-suisse);
+		@media (max-width: $laptop-lg) {
+			margin-top: 70px;
+			padding-top: 32px;
+		}
+	}
+	&__price-value {
+		display: inline-block;
+		margin-top: rem(7);
+		font-size: rem(32);
+		line-height: 1.3;
 	}
 }
