@@ -80,6 +80,9 @@
 				overflow: hidden;
 			}
 			@media (max-width: $laptop-sm) {
+				#{$this}__popup {
+					overflow: auto;
+				}
 				#{$this}__close-button {
 					display: inline-flex;
 				}
