@@ -28,7 +28,6 @@ class AlpIndustry {
 			DeliveryAddress: require('../../includes/delivery-address/delivery-address').default,
 			Hero: require('../../includes/hero/hero').default,
 			Cart: require('../../includes/cart/cart').default,
-			BrandsTitle: require('../../includes/brands-title/brands-title').default,
 			InputDate: require('../../includes/components/input-date/input-date').default,
 			InputTime: require('../../includes/components/input-time/input-time').default,
 		};

@@ -7,7 +7,7 @@
 
 <div class="brands-title">
 	<h1 class="brands-title__title container h2 ttu">Бренды</h1>
-	<div class="brands-title__scroll" data-brands-scroll>
+	<div class="brands-title__scroll" data-drag-scroll>
 		<div class="brands-title__scroll-wrap">
 			<a href="#" class="brands-title__all h7 ttu">Все бренды</a>
 			<ul class="brands-title__letters">
@@ -35,17 +35,17 @@
 		<div class="brands-title__grid">
 			<p class="brands-title__grid-text">Сетка</p>
 			<div class="brands-title__grid-btns">
-				<button class="brands-title__search" type="button" aria-label="Поиск">
+				<button class="brands-title__grid-btn" type="button" aria-label="Поиск">
 					{{ icon({
-						iconName: 'search',
-						className: 'brands-title__search-icon',
+						iconName: 'grid-2',
+						className: 'brands-title__grid-icon',
 						attr: 'width="32" height="32", viewBox="0 0 32 32"'
 					}) }}
 				</button>
-				<button class="brands-title__search" type="button" aria-label="Поиск">
+				<button class="brands-title__grid-btn" type="button" aria-label="Поиск">
 					{{ icon({
-						iconName: 'search',
-						className: 'brands-title__search-icon',
+						iconName: 'list',
+						className: 'brands-title__grid-icon',
 						attr: 'width="32" height="32", viewBox="0 0 32 32"'
 					}) }}
 				</button>

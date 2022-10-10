@@ -76,5 +76,13 @@
 		--size: #{rem(36)};
 		width: var(--size);
 		height: var(--size);
+		fill: none;
+	}
+	&__grid-btn {
+		@include reset-btn;
+		--size: #{rem(32)};
+		width: var(--size);
+		height: var(--size);
+		fill: none;
 	}
 }
