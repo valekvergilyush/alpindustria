@@ -1,0 +1,74 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% set brands = [
+	{
+		name: 'PackTowl',
+		logo: 'brand-logo-1'
+	},
+	{
+		name: 'MSR',
+		logo: 'brand-logo-2'
+	},
+	{
+		name: 'The Noth Face',
+		logo: 'brand-logo-3'
+	},
+	{
+		name: 'MSR',
+		logo: 'brand-logo-2'
+	},
+	{
+		name: 'The Noth Face',
+		logo: 'brand-logo-3'
+	},
+	{
+		name: 'PackTowl',
+		logo: 'brand-logo-1'
+	},
+	{
+		name: 'Salomon',
+		logo: 'brand-logo-4'
+	},
+	{
+		name: 'PackTowl',
+		logo: 'brand-logo-1'
+	},
+	{
+		name: 'Salomon',
+		logo: 'brand-logo-4'
+	},
+	{
+		name: 'PackTowl',
+		logo: 'brand-logo-1'
+	},
+	{
+		name: 'MSR',
+		logo: 'brand-logo-2'
+	}
+] %}
+{% set letters = ['A','B','C','D','F']%}
+{% set activeLetter = 2 %}
+
+<ul class="brands _logo">
+	{% for letter in letters %}
+		<li class="brands__brand {% if loop.index === activeLetter %}_active{% endif %}">
+			<div class="brands__brand-wrap container">
+				<p class="brands__letter h1">{{ letter }}</p>
+				<ul class="brands__list">
+					{% for brand in brands %}
+						<li class="brands__item">
+							<a href="#" class="brands__link">
+								<p class="brands__name h7">{{ brand.name }}</p>
+								{{ icon({
+									iconName: brand.logo,
+									className: 'brands__img',
+									attr: 'width="293" height="293"'
+								}) }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<button class="brands__btn" type="button" aria-label="Показать бренды"></button>
+		</li>
+	{% endfor %}
+</ul>

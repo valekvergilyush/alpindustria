@@ -1,0 +1,55 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set brandsLetters = [
+{letter: 'A', active: true}, {letter: 'B', active: true}, {letter: 'C', active: true}, {letter: 'D', active: true}, {letter: 'E'}, {letter: 'F'}, {letter: 'G'}, {letter: 'H'}, {letter: 'I'}, {letter: 'J'}, {letter: 'K'}, {letter: 'L', active: true}, {letter: 'M', active: true}, {letter: 'N'}, {letter: 'O', active: true}, {letter: 'P'}, {letter: 'Q'}, {letter: 'R'}, {letter: 'S'}, {letter: 'T'}, {letter: 'U'}, {letter: 'V'}, {letter: 'W'}, {letter: 'X'}, {letter: 'Y'}, {letter: 'Z'}
+] %}
+
+<div class="brands-title">
+	<h1 class="brands-title__title container h2 ttu">Бренды</h1>
+	<div class="brands-title__scroll" data-brands-scroll>
+		<div class="brands-title__scroll-wrap">
+			<a href="#" class="brands-title__all h7 ttu">Все бренды</a>
+			<ul class="brands-title__letters">
+				{% for item in brandsLetters %}
+					<li class="brands-title__letter-item">
+						<a href="#" class="brands-title__link h7 ttu {% if item.active %}_active{% endif %}">{{ item.letter }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="brands-title__extra">
+				<a href="#" class="brands-title__link h7">0-9</a>
+				<a href="#" class="brands-title__link h7">А-Я</a>
+			</div>
+		</div>
+	</div>
+	<div class="brands-title__bottom container">
+		<button class="brands-title__search" type="button" aria-label="Поиск">
+			{{ icon({
+				iconName: 'search',
+				className: 'brands-title__search-icon',
+				attr: 'width="32" height="32", viewBox="0 0 32 32"'
+			}) }}
+		</button>
+		<p class="brands-title__number">242 бренда</p>
+		<div class="brands-title__grid">
+			<p class="brands-title__grid-text">Сетка</p>
+			<div class="brands-title__grid-btns">
+				<button class="brands-title__search" type="button" aria-label="Поиск">
+					{{ icon({
+						iconName: 'search',
+						className: 'brands-title__search-icon',
+						attr: 'width="32" height="32", viewBox="0 0 32 32"'
+					}) }}
+				</button>
+				<button class="brands-title__search" type="button" aria-label="Поиск">
+					{{ icon({
+						iconName: 'search',
+						className: 'brands-title__search-icon',
+						attr: 'width="32" height="32", viewBox="0 0 32 32"'
+					}) }}
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

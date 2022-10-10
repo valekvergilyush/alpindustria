@@ -1,0 +1,67 @@
+.brands {
+	// --padding: #{rem(64)};
+	background-color: var(--gray-light);
+	&__brand {
+		position: relative;
+		max-height: rem(560);
+		padding-top: var(--container-padding);
+		padding-bottom: var(--container-padding);
+		border-bottom: 1px solid var(--blue-dark);
+		overflow: hidden;
+		box-sizing: border-box;
+		&._active {
+			max-height: none;
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+	&__brand-wrap {
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+	}
+	&__list {
+		flex-grow: 1;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		max-width: rem(961);
+	}
+	&__name {
+		._logo & {
+			display: none;
+		}
+	}
+	&__item {
+		._logo & {
+			--size: #{rem(321)};
+			width: var(--size);
+			height: var(--size);
+			border-bottom: 1px solid currentColor;
+			border-right: 1px solid currentColor;
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				border-top: 1px solid currentColor;
+			}
+			&:nth-child(3n + 1) {
+				border-left: 1px solid currentColor;
+			}
+		}
+	}
+	&__btn {
+		@include reset-btn;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		._active & {
+			display: none;
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
