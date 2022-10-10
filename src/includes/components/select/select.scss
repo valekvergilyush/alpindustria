@@ -2,6 +2,10 @@
 	user-select: none;
 	position: relative;
 	box-sizing: border-box;
+	overflow: hidden;
+	&._opened {
+		overflow: visible;
+	}
 	&._delivery {
 		height: rem(72);
 		padding-top: rem(38);
