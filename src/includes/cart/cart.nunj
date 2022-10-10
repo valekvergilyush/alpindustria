@@ -15,7 +15,9 @@
 			}) }}
 			<h2 class="cart__title _cart h5 ttu">Корзина</h2>
 		</div>
+
 		{% include '../cart-list/cart-list.nunj' %}
+		{% include '../cart-list/cart-list-readonly.nunj' %}
 
 		<p class="cart__price _secondary p3">
 			Стоимость товаров:<br>
