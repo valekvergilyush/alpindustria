@@ -23,9 +23,6 @@ class Brands {
 				item.classList.add(this.activeItemClass);
 			});
 		});
-		console.log(this.brandsBlock);
-		console.log(this.gridBtn);
-		console.log(this.listBtn);
 		if (!this.brandsBlock || !this.gridBtn || !this.listBtn) {
 			return;
 		}
