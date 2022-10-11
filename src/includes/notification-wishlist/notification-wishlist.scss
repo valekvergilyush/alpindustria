@@ -47,6 +47,7 @@
 	}
 	&__img {
 		width: rem(53);
+		max-width: none;
 		height: 100%;
 		object-fit: contain;
 		@media (max-width: $laptop-lg) {
