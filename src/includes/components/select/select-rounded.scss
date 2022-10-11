@@ -175,14 +175,34 @@
 		}
 		.custom-select-color {
 			--size: #{rem(32)};
+			position: relative;
 			border: 3px solid var(--white);
-			outline: 1px solid rgba(76, 95, 168, 0.2);
-			outline-offset: -1px;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: calc(100% - 2px);
+				height: calc(100% - 2px);
+				border: 1px solid rgba(76, 95, 168, 0.2);
+				border-radius: 50%;
+			}
 		}
 		.custom-select-opener-color {
 			--size: #{rem(24)};
-			outline: 1px solid rgba(76, 95, 168, 0.2);
-			outline-offset: -1px;
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: calc(100% - 2px);
+				height: calc(100% - 2px);
+				border: 1px solid rgba(76, 95, 168, 0.2);
+				border-radius: 50%;
+			}
 		}
 	}
 }

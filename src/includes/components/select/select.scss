@@ -3,6 +3,9 @@
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
+	* {
+		outline: none !important;
+	}
 	&._opened {
 		overflow: visible;
 	}
