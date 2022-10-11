@@ -31,11 +31,12 @@
 	&__link {
 		@extend .animated;
 		display: inline-flex;
-		align-items: center;
+		align-items: flex-start;
 		box-sizing: border-box;
 		height: rem(35);
 		padding: 0 rem(15);
-		padding-top: 0.1em;
+		padding-top: 0.2em;
+		line-height: 1;
 		font-family: var(--font-family-suisse);
 		border: 1px solid var(--blue-dark);
 		border-radius: 100vmax;
