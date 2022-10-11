@@ -7,7 +7,7 @@
 		overflow: visible;
 	}
 	&._delivery {
-		height: rem(72);
+		height: rem(73);
 		padding-top: rem(38);
 		@media (max-width: $mobile-lg) {
 			height: 56px;
@@ -35,7 +35,7 @@
 		.custom-select-opener {
 			padding-right: rem(30);
 			padding-left: rem(12);
-			padding-bottom: rem(5);
+			padding-bottom: rem(4);
 			line-height: 1.5;
 			color: var(--gray-dark);
 			& > * {
@@ -81,7 +81,7 @@
 		width: calc(100% - rem(50));
 		padding-right: rem(30);
 		padding-left: rem(12);
-		padding-bottom: rem(10);
+		padding-bottom: rem(11);
 		border: 0;
 		background: 0;
 		outline: 0;

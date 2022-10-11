@@ -22,7 +22,7 @@
 		justify-content: flex-end;
 		column-gap: rem(6);
 		@media (max-width: $tablet) {
-			column-gap: 11px;
+			column-gap: 7px;
 		}
 		@media (max-width: $mobile) {
 			column-gap: 1px;
@@ -96,7 +96,7 @@
 			transition: width $fast-transition-duration $default-transition-function,
 				height $fast-transition-duration $default-transition-function;
 			@media (max-width: $tablet) {
-				--size: 30px;
+				--size: 24px;
 			}
 			@media (max-width: $mobile) {
 				--size: 25px;
@@ -133,11 +133,6 @@
 						top: 0.5em;
 						right: 0.3em;
 					}
-				}
-			}
-			svg {
-				@media (max-width: $mobile) {
-					--size: 30px;
 				}
 			}
 		}
