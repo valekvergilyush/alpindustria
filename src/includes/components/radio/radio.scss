@@ -3,7 +3,7 @@
 	position: relative;
 	&._v-center {
 		#{$this}__label {
-			&::before {
+			#{$this}__box {
 				top: 50%;
 				transform: translateY(-50%);
 				@media (max-width: $tablet) {
@@ -16,13 +16,13 @@
 		#{$this}__label {
 			justify-content: center;
 			@media (max-width: $laptop-lg) {
-				&::before {
+				#{$this}__box {
 					top: 50%;
 					transform: translateY(-62%);
 				}
 			}
 			@media (max-width: $laptop-sm) {
-				&::before {
+				#{$this}__box {
 					transform: translateY(-50%);
 				}
 			}
@@ -53,31 +53,31 @@
 		font-size: rem(16);
 		line-height: 1.5;
 		cursor: pointer;
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: var(--size);
-			height: var(--size);
-			border: 1px solid var(--blue-dark);
-			border-radius: 50%;
-			box-sizing: border-box;
+		@media (max-width: $tablet) {
+			row-gap: 11px;
+			font-size: 14px;
 		}
+	}
+	&__box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--size);
+		height: var(--size);
+		border: 1px solid var(--blue-dark);
+		border-radius: 50%;
+		box-sizing: border-box;
 		&::after {
 			content: '';
 			position: absolute;
-			top: 1px;
-			left: 1px;
+			top: 0px;
+			left: 0px;
 			z-index: 1;
 			width: calc(var(--size) - rem(4));
 			height: calc(var(--size) - rem(4));
 			border: 1px solid var(--gray-light);
 			border-radius: 50%;
-		}
-		@media (max-width: $tablet) {
-			row-gap: 11px;
-			font-size: 14px;
+			display: none;
 		}
 	}
 	&__text {
@@ -90,8 +90,11 @@
 	}
 	&__input:checked {
 		+ #{$this}__label {
-			&::before {
+			#{$this}__box {
 				background-color: var(--blue-dark);
+				&::after {
+					display: block;
+				}
 			}
 		}
 	}
