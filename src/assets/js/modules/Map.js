@@ -178,10 +178,10 @@ const MAP_STYLES = [
 ];
 const CONTENT = `
 	<div class="map-popup">
-		<h3 class="p2">г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
-		<p class="p3">Ежедневно c 10:00 до 22:00</p>
-		<p class="p3">Телефон: +7 (812) 242-11-95</p>
-		<a href="#" class="h7 ttu">Выбрать магазин</a>
+		<h3>г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
+		<p>Ежедневно c 10:00 до 22:00</p>
+		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
+		<a href="#" class="choose ttu">Выбрать магазин</a>
 	</div>`;
 const gApiKey = `AIzaSyAghvGrW2kSxzqP6cfhFoP5GOuSUd6as8o`;
 const MAP_DATA_CART = {

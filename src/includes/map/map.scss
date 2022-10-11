@@ -5,7 +5,7 @@
 		border-radius: 0;
 		padding: rem(32);
 		@media (max-width: $mobile-lg) {
-			padding: 24px;
+			padding: 20px;
 		}
 	}
 	.gm-style-iw-d {
@@ -13,7 +13,7 @@
 		padding-top: 0;
 		padding-left: 0;
 		@media (max-width: $mobile-lg) {
-			padding: 24px;
+			padding: 20px;
 			padding-top: 0;
 			padding-left: 0;
 		}
@@ -22,22 +22,55 @@
 
 .map-popup {
 	max-width: rem(219);
-	color: var(--gray-dark);
+	font-family: var(--default-font-family);
+	h3 {
+		color: var(--gray-dark);
+		font-size: rem(20);
+		line-height: rem(28);
+		font-weight: normal;
+		@media (max-width: $mobile-lg) {
+			line-height: 26px;
+		}
+	}
 	p {
 		margin-top: rem(8);
-		opacity: 0.54;
+		color: rgba($gray-dark, 0.54);
+		font-size: rem(16);
+		line-height: rem(24);
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 20px;
+		}
 	}
 	a {
+		[href] {
+			@extend .animated;
+			&:hover {
+				color: var(--gray-dark);
+			}
+		}
+	}
+	.choose {
 		display: inline-block;
 		margin-top: rem(47);
 		padding-right: rem(32);
 		color: var(--blue-dark);
-		background-image: inline('promo-arrow-blue.svg');
+		background-image: inline('promo-arrow-blue-filled.svg');
 		background-repeat: no-repeat;
 		background-size: rem(16);
 		background-position: right 0 top 50%;
+		font-family: var(--font-family-suisse);
+		font-size: rem(18);
+		line-height: rem(24);
+		transition: background-position $fast-transition-duration $default-transition-function;
 		@media (max-width: $mobile-lg) {
 			padding-right: 24px;
+			margin-top: 32px;
+			font-size: 14px;
+			line-height: 16px;
+		}
+		&:hover {
+			background-position: right 4px top 50%;
 		}
 	}
 }

@@ -44,7 +44,7 @@
 			label: 'Магазин'
 		}) }}
 		<div class="delivery-address__map-wrapper">
-			<div class="delivery-address__map" data-map="cart"></div>
+			<div class="delivery-address__map map" data-map="cart"></div>
 		</div>
 		{% include "../store-info/store-info.nunj" %}
 	</section>

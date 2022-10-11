@@ -57,6 +57,9 @@
 		}
 		&:not(:first-child) {
 			width: rem(89);
+			@media (max-width: $laptop-lg) {
+				width: 85px;
+			}
 			@media (max-width: $mobile-lg) {
 				width: 80px;
 			}
