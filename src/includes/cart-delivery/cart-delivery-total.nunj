@@ -1,0 +1,32 @@
+<div class="cart__delivery-content cart-delivery _total">
+	<table class="cart-delivery__table">
+		<tr>
+			<th>ФИО</th>
+			<td>Константин Константинопольский</td>
+		</tr>
+		<tr>
+			<th>Почта</th>
+			<td>konstantin@gmail.com</td>
+		</tr>
+		<tr>
+			<th>Телефон</th>
+			<td>+7 (902) 222 01 02</td>
+		</tr>
+		<tr>
+			<th>Тип доставки</th>
+			<td>Самовывоз</td>
+		</tr>
+		<tr>
+			<th>Магазин</th>
+			<td>г. Санкт-Петербург, наб. Черной речки, д. 6  (ст.м. Черная Речка)</td>
+		</tr>
+		<tr>
+			<th>Дата доставки</th>
+			<td>20-26 июня</td>
+		</tr>
+	</table>
+	<p class="cart-delivery__price">
+		Стоимость доставки:<br>
+		<span class="h6">900 ₽</span>
+	</p>
+</div>

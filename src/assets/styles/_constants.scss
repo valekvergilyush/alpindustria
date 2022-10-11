@@ -15,6 +15,7 @@ $violet-light: #8b4192;
 $gray-dark: #342c25;
 $gray-light: #f5f1ee;
 $white: #fefefe;
+$black: #333;
 
 // ======= BREAKPOINTS =======
 $desktop-lg: 1920px;
@@ -61,6 +62,7 @@ $mobile-sm: 320px;
 	--gray-dark: #{$gray-dark};
 	--gray-light: #{$gray-light};
 	--white: #{$white};
+	--black: #{$black};
 
 	// ======= SPACING VARIANTS =======
 	--vr-0: 0.5rem; // 8px

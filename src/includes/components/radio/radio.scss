@@ -12,12 +12,42 @@
 			}
 		}
 	}
+	&._text {
+		#{$this}__label {
+			justify-content: center;
+			@media (max-width: $laptop-lg) {
+				&::before {
+					top: 50%;
+					transform: translateY(-62%);
+				}
+			}
+			@media (max-width: $laptop-sm) {
+				&::before {
+					transform: translateY(-50%);
+				}
+			}
+		}
+		#{$this}__text {
+			font-size: rem(16);
+			color: var(--black);
+			font-family: var(--font-family-suisse);
+			@media (max-width: $laptop) {
+				font-size: 14px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding-top: 0.4em;
+				font-family: var(--default-font-family);
+				font-size: 12px;
+			}
+		}
+	}
 	&__label {
 		--size: #{rem(24)};
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(8);
+		min-height: rem(24);
 		padding-left: calc(var(--size) + rem(16));
 		color: var(--blue-dark);
 		font-size: rem(16);
