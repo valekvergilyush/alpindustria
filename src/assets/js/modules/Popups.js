@@ -89,12 +89,19 @@ class Popups {
 		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
 		const popupAnimation = popup.getAttribute('data-popup-animation');
 
-		if (
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains('_safari') &&
-			!HTML_CLASSLIST.contains('_mobile')
-		) {
-			disableBodyScroll(popup);
+		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
+			disableBodyScroll(popup, {
+				allowTouchMove: el => {
+					while (el && el !== document.body) {
+						if (el.getAttribute('body-scroll-lock-ignore') !== null) {
+							return true;
+						}
+
+						el = el.parentElement;
+					}
+					return false;
+				},
+			});
 		}
 
 		if (!popup) {
@@ -242,11 +249,7 @@ class Popups {
 				});
 			}
 
-			if (
-				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-				!HTML_CLASSLIST.contains('_safari') &&
-				!HTML_CLASSLIST.contains('_mobile')
-			) {
+			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
 				enableBodyScroll(this.activePopup);
 			}
 

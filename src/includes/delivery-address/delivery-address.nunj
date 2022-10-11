@@ -35,7 +35,8 @@
 			id: 'city-select-pickup',
 			options: cityList,
 			className: 'delivery-address__select _delivery',
-			label: 'Город'
+			label: 'Город',
+			search: true
 		}) }}
 		{{ select({
 			id: 'shop-select',
@@ -53,7 +54,8 @@
 			id: 'city-select-courier',
 			options: cityList,
 			className: 'delivery-address__select _delivery',
-			label: 'Город'
+			label: 'Город',
+			search: true
 		}) }}
 		{{ input({
 			type: 'text',
