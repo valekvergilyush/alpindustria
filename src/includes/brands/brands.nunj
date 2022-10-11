@@ -45,12 +45,12 @@
 		logo: 'brand-logo-2'
 	}
 ] %}
-{% set letters = ['A','B','C','D','F']%}
+{% set letters = ['A','B','C','D','E','F'] %}
 {% set activeLetter = 2 %}
 
-<ul class="brands _logo">
+<ul class="brands" data-brand-block>
 	{% for letter in letters %}
-		<li class="brands__brand {% if loop.index === activeLetter %}_active{% endif %}">
+		<li class="brands__brand {% if loop.index === activeLetter %}_active{% endif %}" data-brand-item>
 			<div class="brands__brand-wrap container">
 				<p class="brands__letter h1">{{ letter }}</p>
 				<ul class="brands__list">
@@ -68,7 +68,7 @@
 					{% endfor %}
 				</ul>
 			</div>
-			<button class="brands__btn" type="button" aria-label="Показать бренды"></button>
+			<button data-brand-btn class="brands__btn" type="button" aria-label="Показать бренды"></button>
 		</li>
 	{% endfor %}
 </ul>

@@ -1,17 +1,26 @@
 .brands {
+	--item-max-height: #{rem(560)};
 	background-color: var(--gray-light);
 	&__brand {
 		position: relative;
-		max-height: rem(560);
+		max-height: var(--item-max-height);
 		padding-top: var(--container-padding);
-		padding-bottom: var(--container-padding);
+		padding-bottom: rem(120);
 		border-bottom: 1px solid var(--blue-dark);
 		overflow: hidden;
 		box-sizing: border-box;
-		&._active {
-			max-height: none;
-			background-color: var(--blue-dark);
-			color: var(--white);
+		transition: background-color $default-transition-duration $default-transition-function,
+			color $default-transition-duration $default-transition-function,
+			max-height $default-transition-duration $default-transition-function;
+		._logo & {
+			&:hover {
+				max-height: calc(var(--item-max-height) * 1.1);
+			}
+			&._active {
+				max-height: none;
+				background-color: var(--blue-dark);
+				color: var(--white);
+			}
 		}
 	}
 	&__brand-wrap {
@@ -47,6 +56,18 @@
 			}
 		}
 	}
+	&__link {
+		display: block;
+		@extend .animated;
+		&:hover {
+			color: var(--blue-dark);
+		}
+		._logo & {
+			&:hover {
+				background-color: var(--white);
+			}
+		}
+	}
 	&__btn {
 		@include reset-btn;
 		position: absolute;
@@ -59,8 +80,12 @@
 		}
 	}
 	&__img {
+		display: none;
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		._logo & {
+			display: block;
+		}
 	}
 }
