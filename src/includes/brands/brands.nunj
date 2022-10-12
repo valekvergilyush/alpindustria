@@ -48,7 +48,7 @@
 {% set letters = ['A','B','C','D','E','F'] %}
 {% set activeLetter = 2 %}
 
-<ul class="brands" data-brand-block>
+<ul class="brands _logo" data-brand-block>
 	{% for letter in letters %}
 		<li class="brands__brand {% if loop.index === activeLetter %}_active{% endif %}" data-brand-item>
 			<div class="brands__brand-wrap container">
@@ -61,7 +61,7 @@
 								{{ icon({
 									iconName: brand.logo,
 									className: 'brands__img',
-									attr: 'width="293" height="293"'
+									attr: 'width="293" height="293" viewBox="0 0 321 321"'
 								}) }}
 							</a>
 						</li>

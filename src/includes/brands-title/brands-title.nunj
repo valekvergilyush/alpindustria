@@ -35,14 +35,14 @@
 		<div class="brands-title__grid">
 			<p class="brands-title__grid-text">Сетка</p>
 			<div class="brands-title__grid-btns">
-				<button class="brands-title__grid-btn" type="button" aria-label="Сетка" data-brand-grid>
+				<button class="brands-title__grid-btn _active" type="button" aria-label="Сетка" data-brand-grid>
 					{{ icon({
 						iconName: 'grid-2',
 						className: 'brands-title__grid-icon',
 						attr: 'width="20" height="20", viewBox="0 0 20 20"'
 					}) }}
 				</button>
-				<button class="brands-title__grid-btn _active" type="button" aria-label="Список" data-brand-list>
+				<button class="brands-title__grid-btn" type="button" aria-label="Список" data-brand-list>
 					{{ icon({
 						iconName: 'list',
 						className: 'brands-title__grid-icon',
