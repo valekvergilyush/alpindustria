@@ -35,10 +35,8 @@
 			border-top: 1px solid var(--blue-dark);
 			&:not(._active) {
 				&:hover {
-					// z-index: 1;
-					max-height: calc(var(--item-max-height) + 50px);
-					margin-top: -50px;
-					// transform: translateY(-50px);
+					max-height: calc(var(--item-max-height) + #{rem(50)});
+					margin-top: rem(-50);
 				}
 			}
 			&._active {
