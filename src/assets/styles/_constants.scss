@@ -86,7 +86,10 @@ $mobile-sm: 320px;
 	--default-font-weight: 400;
 	--default-line-height: 1.5;
 
-	--100vh: calc(var(--vh, 1vh) * 100);
+	--100vh: 100vh;
+	&._mobile {
+		--100vh: calc(var(--vh, 1vh) * 100);
+	}
 
 	--header-height: 4.5rem; // 72px
 	--filters-height: var(--header-height); // 96px

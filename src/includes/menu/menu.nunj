@@ -5,7 +5,6 @@
 		text: 'Магазин',
 		img: { src: 'assets/images/menu/menu-shop.jpg', srcset: 'assets/images/menu/menu-shop@2x.jpg 2x' },
 		url: '#',
-		opened: true,
 		list: [
 			{ text: 'Все товары', url: '#' },
 			{ text: 'Одежда', url: '#' },
@@ -18,7 +17,7 @@
 			{ text: 'Горные лыжи', url: '#' }
 		]
 	},
-	{ text: 'Адреса', url: '#' },
+	{ text: 'Адреса', url: '#', img: { src: 'assets/images/menu/menu-address.jpg', srcset: 'assets/images/menu/menu-address@2x.jpg 2x' } },
 	{
 		text: 'Сообщество',
 		img: { src: 'assets/images/menu/menu-community.jpg', srcset: 'assets/images/menu/menu-community@2x.jpg 2x' },
@@ -30,35 +29,43 @@
 			{ text: 'Фрирайд', url: '#' }
 		]
 	},
-	{ text: 'Прокат', url: '#' },
-	{ text: 'Сервисы', url: '#' },
-	{ text: 'Новости', url: '#' },
-	{ text: 'О нас', url: '#' }
+	{ text: 'Прокат', url: '#', img: { src: 'assets/images/menu/menu-rent.jpg', srcset: 'assets/images/menu/menu-rent@2x.jpg 2x' } },
+	{ text: 'Сервисы', url: '#', img: { src: 'assets/images/menu/menu-service.jpg', srcset: 'assets/images/menu/menu-service@2x.jpg 2x' } },
+	{ text: 'Новости', url: '#', img: { src: 'assets/images/menu/menu-news.jpg', srcset: 'assets/images/menu/menu-news@2x.jpg 2x' } },
+	{ text: 'О нас', url: '#', img: { src: 'assets/images/menu/menu-about.jpg', srcset: 'assets/images/menu/menu-about@2x.jpg 2x' } }
 ] %}
 
 {% set menuLinks = [
-	{ text: 'Доставка', url: '#' },
-	{ text: 'Бренды', url: 'brands.html' },
+	{ text: 'Доставка', url: '#', img: { src: 'assets/images/menu/menu-delivery.jpg', srcset: 'assets/images/menu/menu-delivery@2x.jpg 2x' } },
+	{ text: 'Бренды', url: 'brands.html', img: { src: 'assets/images/menu/menu-brand.jpg', srcset: 'assets/images/menu/menu-brand@2x.jpg 2x' } },
 	{ text: 'Экология', url: '#', img: { src: 'assets/images/menu/menu-eco.jpg', srcset: 'assets/images/menu/menu-eco@2x.jpg 2x' } }
 ] %}
 
 <div class="page__menu menu" data-menu>
 	<div class="menu__top">
+		<a href="#" class="menu__user-link ttu">
+			{{ icon({
+				iconName: 'user',
+				className: 'menu__user-icon',
+				attr: 'width="24" height="24"'
+			}) }}
+			Личный кабинет
+		</a>
 		<button class="menu__location ttu" type="button" data-popup-opener="city-form">
 			{{ icon({
 				iconName: 'map-pin',
 				className: 'menu__location-icon _map',
 				attr: 'width="16" height="16"'
 			}) }}
-			Санкт-Петербург
+			Санкт - Петербург
 			{{ icon({
-				iconName: 'accordion-arrow',
+				iconName: 'arrow-down',
 				className: 'menu__location-icon _arrow',
 				attr: 'width="16" height="16"'
 			}) }}
 		</button>
 		<p class="menu__info p4">Звоните нам ежедневно с 9:00 до 21:00 или напишите нам:</p>
-		<p class="menu__info-links h7 ttu">
+		<p class="menu__info-links h7">
 			<a class="menu__tel" href="tel:88125283776">8 812 528 37 76</a>
 			<a class="menu__tel" href="tel:88007751630">8 800 775 16 30</a>
 			<a class="menu__mail" href="mailto:sale@alpindustria.ru">sale@alpindustria.ru</a>

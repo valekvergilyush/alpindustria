@@ -1,5 +1,11 @@
 import customSelect from 'custom-select';
 import Availability from './Availability';
+import Utils from '../utils/utils';
+
+const ClassName = {
+	OPENED: '_opened',
+};
+
 class Select {
 	constructor() {
 		this.selects = document.querySelectorAll('[data-select]');
@@ -14,15 +20,20 @@ class Select {
 		this.selectList = [];
 
 		this.selects.forEach(select => {
+			select.searchField = select.parentElement.querySelector('[data-select-search]');
+			const isColorSelect = select.getAttribute('data-select') === 'color';
+
 			customSelect(select);
 
-			select.customSelect.container.addEventListener('custom-select:open', () => {
-				select.customSelect.panel.scrollTo(0, 0);
-			});
+			select.customSelect.container.addEventListener('custom-select:open', () =>
+				this._onSelectOpen(select)
+			);
+			select.customSelect.container.addEventListener('custom-select:close', () =>
+				this._onSelectClose(select)
+			);
 
-			if (select.getAttribute('data-select') === 'color') {
-				this._initColorSelect(select);
-			}
+			isColorSelect && this._initColorSelect(select);
+			select.searchField && this._initSearchField(select);
 
 			if (select.getAttribute('data-select') === 'availability') {
 				select.addEventListener('change', e => {
@@ -51,6 +62,60 @@ class Select {
 
 			customOptions[index].append(colorElement);
 		});
+	}
+	_initSearchField(select) {
+		select.searchField.addEventListener('input', evt => {
+			const customOptions = select.customSelect.panel.querySelectorAll('[role="option"]');
+			const searchValue = evt.target.value.toLowerCase();
+			// eslint-disable-next-line no-unused-vars
+			let openerTextContent = select.customSelect.opener.querySelector('span').textContent;
+			this._filterOptions(customOptions, searchValue);
+
+			if (searchValue) {
+				openerTextContent = searchValue;
+				select.customSelect.opener.style.opacity = 0;
+				select.customSelect.open = true;
+			} else {
+				openerTextContent = select.customSelect.value;
+				select.customSelect.opener.style.opacity = 1;
+				select.customSelect.open = false;
+			}
+		});
+
+		select.addEventListener('change', evt => {
+			select.searchField.value = evt.target.value;
+		});
+	}
+	_filterOptions(options, searchValue) {
+		options.forEach(option => {
+			const label = option.textContent.toLowerCase();
+			if (label.indexOf(searchValue) !== -1) {
+				option.style.display = 'block';
+			} else {
+				option.style.display = 'none';
+			}
+		});
+	}
+	_onSelectOpen(select) {
+		const isInViewport = Utils.isElementInViewport(select.customSelect.panel);
+		if (!isInViewport) {
+			select.customSelect.panel.style.transition = 'none';
+			select.customSelect.panel.style.transform = 'translate(0%, -100%)';
+			select.customSelect.panel.style.top = '-0.25rem';
+		}
+
+		select.customSelect.container.parentElement.classList.add(ClassName.OPENED);
+		select.customSelect.panel.scrollTo(0, 0);
+	}
+	_onSelectClose(select) {
+		const isInViewport = Utils.isElementInViewport(select.customSelect.panel);
+		if (!isInViewport) {
+			select.customSelect.panel.style.transform = 'translateY(-5px)';
+			select.customSelect.panel.style.top = '0.25rem';
+			select.customSelect.panel.style.transition =
+				'transition: opacity .15s ease-out,transform .15s ease-out;';
+		}
+		select.customSelect.container.parentElement.classList.remove(ClassName.OPENED);
 	}
 }
 

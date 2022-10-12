@@ -1,5 +1,6 @@
 .cart-bottom {
 	position: sticky;
+	z-index: 50;
 	bottom: 0;
 	display: flex;
 	column-gap: rem(20);
