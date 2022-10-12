@@ -57,7 +57,7 @@
 					{% for brand in brands %}
 						<li class="brands__item">
 							<a href="#" class="brands__link">
-								<p class="brands__name h7">{{ brand.name }}</p>
+								<span class="brands__name h7">{{ brand.name }}</span>
 								{{ icon({
 									iconName: brand.logo,
 									className: 'brands__img',

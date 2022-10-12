@@ -37,7 +37,7 @@
 		}
 	}
 	&__scroll-wrap {
-		min-width: 1280px;
+		min-width: rem(1280);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

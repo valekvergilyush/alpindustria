@@ -29,7 +29,6 @@
 		width: auto;
 	}
 	&._hide {
-		// display: none;
 		transform: translate3d(0, #{rem(20)}, 0);
 		visibility: hidden;
 		opacity: 0;

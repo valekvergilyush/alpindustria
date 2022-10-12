@@ -11,19 +11,16 @@
 			padding-top: 0;
 		}
 	}
-	&._logo {
-		border-top: 1px solid var(--blue-dark);
-	}
 	&__brand {
 		position: relative;
 		max-height: var(--item-max-height);
 		padding-top: var(--container-padding);
 		padding-bottom: rem(120);
-		border-bottom: 1px solid var(--blue-dark);
 		overflow: hidden;
 		box-sizing: border-box;
 		transition: background-color $default-transition-duration $default-transition-function,
 			color $default-transition-duration $default-transition-function,
+			margin-top $default-transition-duration $default-transition-function,
 			max-height $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-lg) {
 			padding-top: 64px;
@@ -33,8 +30,14 @@
 			padding-bottom: 40px;
 		}
 		._logo & {
-			&:hover {
-				max-height: calc(var(--item-max-height) * 1.1);
+			position: relative;
+			background-color: var(--gray-light);
+			border-top: 1px solid var(--blue-dark);
+			&:not(._active) {
+				&:hover {
+					max-height: calc(var(--item-max-height) + #{rem(50)});
+					margin-top: rem(-50);
+				}
 			}
 			&._active {
 				max-height: none;
@@ -42,7 +45,7 @@
 				color: var(--white);
 			}
 		}
-		&:not(._logo) {
+		#{$this}:not(._logo) & {
 			border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 			padding-bottom: rem(73);
 			padding-top: rem(40);
@@ -100,11 +103,9 @@
 			--size: #{rem(321)};
 			display: flex;
 			width: var(--size);
-			// height: var(--size);
 			border-bottom: 1px solid currentColor;
 			border-right: 1px solid currentColor;
 			@media (max-width: $laptop-md) {
-				// --size: 318px;
 				width: auto;
 			}
 			&:nth-child(1),
@@ -132,9 +133,11 @@
 	}
 	&__link {
 		@extend .animated;
-		color: rgba(0, 0, 0, 0.5);
-		&:hover {
-			color: var(--blue-dark);
+		#{$this}:not(._logo) & {
+			color: rgba(0, 0, 0, 0.5);
+			&:hover {
+				color: var(--blue-dark);
+			}
 		}
 		._logo & {
 			position: relative;
@@ -142,8 +145,13 @@
 			width: 100%;
 			height: 0;
 			padding-bottom: 100%;
+			color: var(--gray-dark);
+		}
+		._logo ._active & {
+			color: var(--white);
 			&:hover {
 				background-color: var(--white);
+				color: var(--blue-dark);
 			}
 		}
 	}
@@ -155,11 +163,11 @@
 		display: none;
 		width: 100%;
 		height: 100%;
-		._active & {
-			display: none;
-		}
 		._logo & {
 			display: block;
+		}
+		._active & {
+			display: none;
 		}
 	}
 	&__img {
