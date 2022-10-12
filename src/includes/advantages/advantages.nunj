@@ -1,8 +1,8 @@
 {% set advantagesList = [
-	{ text: '25 магазинов профессионального снаряжения по&nbsp;России', img: 'assets/images/advantages/boot.svg' },
-	{ text: 'Экипировка и&nbsp;одежда мировых спортивных брендов', img: 'assets/images/advantages/hook.svg' },
-	{ text: 'Обучение альпинизму с&nbsp;опытными инструкторами в&nbsp;Горном&nbsp;клубе', img: 'assets/images/advantages/mountain.svg' },
-	{ text: 'Скидки до&nbsp;30% для&nbsp;постоянных клиентов', img: 'assets/images/advantages/discount.svg' }
+	{ text: '25 магазинов профессионального снаряжения по&nbsp;России', img: '/assets/images/advantages/boot.svg' },
+	{ text: 'Экипировка и&nbsp;одежда мировых спортивных брендов', img: '/assets/images/advantages/hook.svg' },
+	{ text: 'Обучение альпинизму с&nbsp;опытными инструкторами в&nbsp;Горном&nbsp;клубе', img: '/assets/images/advantages/mountain.svg' },
+	{ text: 'Скидки до&nbsp;30% для&nbsp;постоянных клиентов', img: '/assets/images/advantages/discount.svg' }
 ] %}
 
 <section class="page__advantages advantages">

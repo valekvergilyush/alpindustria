@@ -1,6 +1,6 @@
 <section class="news-section">
 	<div class="news-section__img-wrap">
-		<img class="news-section__img" src="assets/images/news/news-section.jpg" srcset="assets/images/news/news-section@2x.jpg 2x" alt="" width="865" height="606">
+		<img class="news-section__img" src="/assets/images/news/news-section.jpg" srcset="/assets/images/news/news-section@2x.jpg 2x" alt="" width="865" height="606">
 	</div>
 	<div class="news-section__content">
 		<h2 class="news-section__title ttu h5"><a class="news-section__link" href="#">Обувь для&nbsp;активного отдыха, альпинизма, туризма и&nbsp;трейлраннинга</a></h2>
