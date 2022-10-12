@@ -21,6 +21,14 @@ class Brands {
 				}
 				this.removeItemsClass();
 				item.classList.add(this.activeItemClass);
+				gsap.to(window, {
+					duration: 0.2,
+					delay: 0.3,
+					scrollTo: {
+						y: item,
+					},
+					ease: 'Power1.easeInOut',
+				});
 			});
 		});
 		if (!this.brandsBlock || !this.gridBtn || !this.listBtn) {
