@@ -84,6 +84,7 @@ class Select {
 
 		select.addEventListener('change', evt => {
 			select.searchField.value = evt.target.value;
+			select.customSelect.opener.style.opacity = 0;
 		});
 	}
 	_filterOptions(options, searchValue) {
