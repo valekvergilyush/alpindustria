@@ -84,6 +84,7 @@ class Select {
 
 		select.addEventListener('change', evt => {
 			select.searchField.value = evt.target.value;
+			select.customSelect.opener.style.opacity = 0;
 		});
 	}
 	_filterOptions(options, searchValue) {
@@ -106,6 +107,12 @@ class Select {
 
 		select.customSelect.container.parentElement.classList.add(ClassName.OPENED);
 		select.customSelect.panel.scrollTo(0, 0);
+		select.onScroll = () => {
+			select.customSelect.open = false;
+		};
+		setTimeout(() => {
+			document.addEventListener('scroll', select.onScroll, true);
+		}, 300);
 	}
 	_onSelectClose(select) {
 		const isInViewport = Utils.isElementInViewport(select.customSelect.panel);
@@ -116,6 +123,7 @@ class Select {
 				'transition: opacity .15s ease-out,transform .15s ease-out;';
 		}
 		select.customSelect.container.parentElement.classList.remove(ClassName.OPENED);
+		document.removeEventListener('scroll', select.onScroll, true);
 	}
 }
 
