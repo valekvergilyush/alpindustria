@@ -9,6 +9,9 @@
 	padding: rem(12);
 	background: var(--white);
 	border: 1px solid var(--blue-dark);
+	transition: visability $default-transition-duration $default-transition-function,
+		opacity $default-transition-duration $default-transition-function,
+		transform $default-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
 		bottom: 22px;
 		left: 28px;
@@ -26,7 +29,10 @@
 		width: auto;
 	}
 	&._hide {
-		display: none;
+		// display: none;
+		transform: translate3d(0, #{rem(20)}, 0);
+		visibility: hidden;
+		opacity: 0;
 	}
 	&__content {
 		flex-grow: 1;
@@ -39,6 +45,7 @@
 		height: var(--size);
 		padding: rem(6);
 		margin-left: rem(16);
+		@extend .animated;
 		@media (max-width: $laptop-md) {
 			--size: 32px;
 			padding: 4px;
@@ -46,6 +53,9 @@
 		@media (max-width: $mobile-lg) {
 			--size: 24px;
 			padding: 3px;
+		}
+		&:hover {
+			opacity: 0.7;
 		}
 	}
 }
