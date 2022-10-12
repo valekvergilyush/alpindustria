@@ -6,5 +6,6 @@
 {% block mainContent %}
 	<main class="page__main _pt">
 		{% include "../../includes/community-nav/community-nav.nunj" %}
+		{% include "../../includes/community-hero/community-hero.nunj" %}
 	</main>
 {% endblock %}
