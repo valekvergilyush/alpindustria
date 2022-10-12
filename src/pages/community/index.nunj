@@ -1,0 +1,10 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% block title %}Сообщество | {{ super() }}{% endblock title %}
+
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../../includes/community-nav/community-nav.nunj" %}
+	</main>
+{% endblock %}
