@@ -7,5 +7,6 @@
 	<main class="page__main _pt">
 		{% include "../../includes/community-nav/community-nav.nunj" %}
 		{% include "../../includes/community-hero/community-hero.nunj" %}
+		{% include "../../includes/community-slider/community-slider.nunj" %}
 	</main>
 {% endblock %}
