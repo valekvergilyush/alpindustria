@@ -1,0 +1,35 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+{% from "../includes/components/brand-main/brand-main.nunj" import brandMain %}
+
+{% block title %}Бренды | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Бренды', href: '#'}
+	],
+	link: {
+		href: '/',
+		text: 'В каталог'
+	}
+} %}
+
+{% set brandMainData = {
+	title: 'Salomon',
+	text: 'Компания Salomon покоряет французские Альпы с 1947 года. Страсть к спорту, новые технологии и мастерство помогают компании создавать экипировку нового поколения для всех видов outdoor активностей - от лыжного спорта до трейлраннинга, способную раскрыть индивидуальность каждого человека во время занятий спортом',
+	img: 'assets/images/brand/brand-main',
+	logo: 'brand-logo-4',
+	linkText: 'Каталог',
+	linkHref: '#'
+} %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{{ brandMain(brandMainData) }}
+		{# {% include "../includes/brand-history/brand-history.nunj" %} #}
+		{% include "../includes/banner-section/banner-section.nunj" %}
+		{% include "../includes/catalog/catalog.nunj" %}
+	</main>
+{% endblock %}
