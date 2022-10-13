@@ -83,14 +83,18 @@
 				#{$this}__popup {
 					overflow: auto;
 				}
-				#{$this}__close-button {
-					display: inline-flex;
-				}
 			}
 			@media (max-width: $tablet) {
 				height: 100%;
 				&::before {
 					display: none;
+				}
+			}
+		}
+		&._opened-pay {
+			@media (max-width: $laptop-sm) {
+				#{$this}__close-button {
+					display: inline-flex;
 				}
 			}
 		}

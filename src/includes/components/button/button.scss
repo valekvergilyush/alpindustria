@@ -12,6 +12,7 @@
 		pointer-events: none;
 		flex-shrink: 0;
 		transition: transform $default-transition-duration $default-transition-function;
+		font-weight: var(--default-font-weight);
 	}
 	&._white-border {
 		color: var(--white);

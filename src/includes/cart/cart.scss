@@ -220,6 +220,9 @@
 				.cart__back-btn {
 					display: inline-flex;
 				}
+				.popups__close-button {
+					display: inline-flex;
+				}
 			}
 		}
 	}
@@ -293,7 +296,7 @@
 			}
 			&__delivery {
 				grid-column: 1/2;
-				margin-left: calc(0px - var(--popup-padding));
+				margin-left: 0;
 			}
 			&__pay {
 				grid-column: 2/3;
