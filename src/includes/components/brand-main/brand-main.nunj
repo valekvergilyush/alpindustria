@@ -1,0 +1,28 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro brandMain(props) %}
+	<section class="brand-main">
+		<div class="brand-main__content">
+			<h1 class="brand-main__title h2 ttu">{{ props.title }}</h1>
+			<p class="brand-main__text p1">{{ props.text }}</p>
+		</div>
+		<div class="brand-main__img-block">
+			<div class="brand-main__img-wrap">
+				<img src="{{ props.img }}.jpg" srcset="a{{ props.img }}@2x.jpg 2x" alt="Salomon" class="brand-main__img">
+				{{ icon({
+					iconName: props.logo,
+					className: 'brand-main__logo',
+					attr: ''
+				}) }}
+				<a href="{{ props.linkHref }}" class="brand-main__link h5 ttu">
+					{{ props.linkText }}
+					{{ icon({
+						iconName: 'promo-arrow',
+						className: 'brand-main__link-icon',
+						attr: ''
+					}) }}
+				</a>
+			</div>
+		</div>
+	</section>
+{% endmacro %}
