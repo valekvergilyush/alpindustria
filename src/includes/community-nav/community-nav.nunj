@@ -1,0 +1,16 @@
+{% set navList = [
+	{ text: 'О горном клубе', url: '#' },
+	{ text: 'Занятия', url: '#' },
+	{ text: 'Трейлы', url: '#' },
+	{ text: 'Фрирайд', url: '#' }
+] %}
+
+<div class="page__community-nav community-nav">
+	<ul class="community-nav__list container">
+		{% for item in navList %}
+			<li class="community-nav__item">
+				<a class="community-nav__link h7 ttu" href="{{ item.url }}">{{ item.text }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

@@ -1,7 +1,7 @@
 <a class="catalog__promo-card catalog-promo _new-drop" href="#">
 	<picture>
-		<source srcset="assets/images/catalog/promo/backpack.webp, assets/images/catalog/promo/backpack@2x.webp 2x" type="image/webp">
-		<img class="catalog-promo__bg-img" src="assets/images/catalog/promo/backpack.png" srcset="assets/images/catalog/promo/backpack@2x.png 2x" width="865" height="877" alt="" loading="lazy">
+		<source srcset="/assets/images/catalog/promo/backpack.webp, /assets/images/catalog/promo/backpack@2x.webp 2x" type="image/webp">
+		<img class="catalog-promo__bg-img" src="/assets/images/catalog/promo/backpack.png" srcset="/assets/images/catalog/promo/backpack@2x.png 2x" width="865" height="877" alt="" loading="lazy">
 	</picture>
 	<div class="catalog-promo__container">
 		<p class="catalog-promo__title h5 ttu">Новое<br> поступление</p>

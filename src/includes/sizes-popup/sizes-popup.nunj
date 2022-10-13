@@ -37,9 +37,9 @@
 	</div>
 	<h3 class="sizes-popup__subtitle h7 ttu">Как правильно произвести измерения тела:</h3>
 	<div class="sizes-popup__columns">
-		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-1.jpg" srcset="assets/images/sizes/sizes-img-1@2x.jpg 2x" alt="Размеры">
-		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-2.jpg" srcset="assets/images/sizes/sizes-img-2@2x.jpg 2x" alt="Размеры">
-		<img class="sizes-popup__img" src="assets/images/sizes/sizes-img-3.jpg" srcset="assets/images/sizes/sizes-img-3@2x.jpg 2x" alt="Размеры">
+		<img class="sizes-popup__img" src="/assets/images/sizes/sizes-img-1.jpg" srcset="/assets/images/sizes/sizes-img-1@2x.jpg 2x" alt="Размеры">
+		<img class="sizes-popup__img" src="/assets/images/sizes/sizes-img-2.jpg" srcset="/assets/images/sizes/sizes-img-2@2x.jpg 2x" alt="Размеры">
+		<img class="sizes-popup__img" src="/assets/images/sizes/sizes-img-3.jpg" srcset="/assets/images/sizes/sizes-img-3@2x.jpg 2x" alt="Размеры">
 	</div>
 	<div class="sizes-popup__columns _2">
 		<div>

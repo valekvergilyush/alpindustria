@@ -55,4 +55,9 @@
 			border-bottom: 1px solid currentColor;
 		}
 	}
+	&__community-nav {
+		@media (max-width: $mobile-lg) {
+			display: none;
+		}
+	}
 }

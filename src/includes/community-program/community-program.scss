@@ -1,0 +1,55 @@
+.community-program {
+	--padding: #{rem(24)};
+	display: grid;
+	grid-template-columns: 1fr min-content 1fr;
+	grid-template-rows: repeat(6, min-content);
+	grid-template-areas:
+		'theory img trip'
+		'theory img trip'
+		'theory img collection'
+		'practice img collection'
+		'practice img meetings'
+		'practice img meetings';
+	box-sizing: border-box;
+	max-height: rem(824);
+	outline: 1px solid var(--blue-dark);
+	&__item {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(19);
+		width: rem(640);
+		padding: var(--padding);
+		&._theory {
+			grid-area: theory;
+			border-bottom: 1px solid var(--blue-dark);
+		}
+		&._practice {
+			grid-area: practice;
+		}
+		&._trip {
+			grid-area: trip;
+			border-bottom: 1px solid var(--blue-dark);
+		}
+		&._collection {
+			grid-area: collection;
+			border-bottom: 1px solid var(--blue-dark);
+		}
+		&._meetings {
+			grid-area: meetings;
+		}
+	}
+	&__img {
+		grid-area: img;
+		pointer-events: none;
+		outline: 1px solid var(--blue-dark);
+		img {
+			width: rem(334);
+			max-width: none;
+			height: 100%;
+		}
+	}
+	&__title {
+		margin-bottom: auto;
+	}
+}
