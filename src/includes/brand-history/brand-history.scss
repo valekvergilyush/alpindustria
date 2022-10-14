@@ -1,0 +1,20 @@
+.brand-history {
+	--padding: #{rem(126)};
+	padding-top: var(--padding);
+	padding-bottom: var(--padding);
+	background-color: var(--gray-light);
+	@media (max-width: $laptop-lg) {
+		--padding: 120px;
+	}
+	@media (max-width: $laptop-sm) {
+		padding-top: 0;
+	}
+	@media (max-width: $mobile-lg) {
+		--padding: 64px;
+	}
+	&__block {
+		& + & {
+			border-top: 1px solid var(--blue-dark);
+		}
+	}
+}

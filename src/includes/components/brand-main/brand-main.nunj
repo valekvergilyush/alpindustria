@@ -8,18 +8,18 @@
 		</div>
 		<div class="brand-main__img-block">
 			<div class="brand-main__img-wrap">
-				<img src="{{ props.img }}.jpg" srcset="a{{ props.img }}@2x.jpg 2x" alt="Salomon" class="brand-main__img">
+				<img src="{{ props.img }}.jpg" srcset="a{{ props.img }}@2x.jpg 2x" alt="{{ props.title }}" class="brand-main__img">
 				{{ icon({
 					iconName: props.logo,
 					className: 'brand-main__logo',
-					attr: ''
+					attr: 'viewBox="0 0 321 321"'
 				}) }}
 				<a href="{{ props.linkHref }}" class="brand-main__link h5 ttu">
 					{{ props.linkText }}
 					{{ icon({
 						iconName: 'promo-arrow',
 						className: 'brand-main__link-icon',
-						attr: ''
+						attr: 'viewBox="0 0 72 72"'
 					}) }}
 				</a>
 			</div>

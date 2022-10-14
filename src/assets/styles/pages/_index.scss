@@ -1,11 +1,27 @@
 .page {
 	$this: &;
-	&._index {
+	&._index,
+	&._brand {
 		#{$this}__filters {
 			position: sticky;
 			z-index: 9;
 			top: -2px;
+		}
+	}
+	&._index {
+		#{$this}__filters {
 			margin-top: calc(0px - var(--filters-height));
+		}
+	}
+	&._brand {
+		#{$this}__filters {
+			color: var(--dark-blue);
+		}
+		.filters__button {
+			&:hover {
+				color: var(--blue-dark);
+				opacity: 0.7;
+			}
 		}
 	}
 	&._filters-opened {
