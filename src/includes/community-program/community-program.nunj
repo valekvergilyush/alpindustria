@@ -1,9 +1,9 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<div class="community-program">
+<div class="community-slider__program community-program">
 	<div class="community-program__item _theory">
 		<p class="community-program__title h4 ttu">Теория</p>
-		<p class="community-program__text p1">Лекции и&nbsp;мастер-классы. Мы&nbsp;регулярно проводим их&nbsp;в&nbsp;Москве и&nbsp;других городах, а&nbsp;также на&nbsp;природе во&nbsp;время выездов в&nbsp;горы.</p>
+		<p class="community-program__text p1">Лекции и&nbsp;мастер-классы. <br>Мы&nbsp;регулярно проводим их&nbsp;в&nbsp;Москве и&nbsp;других городах, а&nbsp;также на&nbsp;природе во&nbsp;время выездов в&nbsp;горы.</p>
 	</div>
 	<div class="community-program__item _practice">
 		<p class="community-program__title h4 ttu">Практика</p>
@@ -27,6 +27,6 @@
 		ext: 'jpg',
 		width: 334,
 		height: 824,
-		attr: 'aria-hidden="true" loading="lazy"'
+		attr: 'aria-hidden="true"'
 	}) }}
 </div>
