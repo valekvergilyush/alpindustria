@@ -1,4 +1,5 @@
 {% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
 
 {% set authLinks = [
 	{ text: 'VK', href: '#', className: ' _vk ttu p1' },

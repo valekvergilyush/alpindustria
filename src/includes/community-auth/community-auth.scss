@@ -1,0 +1,13 @@
+.community-auth {
+	&__title {
+		margin-bottom: rem(24);
+	}
+	&__fields {
+		display: flex;
+		align-items: flex-end;
+		column-gap: rem(16);
+	}
+	&__input {
+		flex-grow: 1;
+	}
+}

@@ -1,0 +1,88 @@
+.community-tabs {
+	$this: &;
+	--container-max-width: #{rem(1920)};
+	--container-width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(124)};
+	--full-width: 1728;
+	--left-col: 692;
+	--right-col: 1036;
+	--left-col-width: calc(var(--container-width) * (var(--left-col) / var(--full-width)));
+	--right-col-width: calc(var(--container-width) * (var(--right-col) / var(--full-width)));
+
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr var(--left-col-width) var(--right-col-width) 1fr;
+	&::before {
+		content: '';
+		grid-column: 1/2;
+		grid-row: 1/-1;
+		background-color: var(--white);
+	}
+	@media (max-width: $laptop-sm) {
+		display: flex;
+		flex-direction: column;
+	}
+	&__tabs {
+		grid-column: 2/3;
+		display: flex;
+		flex-direction: column;
+		padding-block: var(--padding-y);
+		padding-left: var(--padding-x);
+		background-color: var(--white);
+		margin-left: calc(0px - var(--container-padding));
+		@media (max-width: $laptop-sm) {
+			margin-left: 0;
+		}
+	}
+	&__sections {
+		grid-column: 3/4;
+		padding-inline: var(--padding-x);
+		margin-right: calc(0px - var(--container-padding));
+		@media (max-width: $laptop-sm) {
+			margin-right: 0;
+		}
+	}
+	&__tabs-btn {
+		@include reset-btn;
+		@extend .animated;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		column-gap: rem(12);
+		padding-right: var(--padding-x);
+		text-align: left;
+		opacity: 0.4;
+		svg {
+			flex-shrink: 0;
+			width: rem(48);
+			height: rem(48);
+			margin-top: 0.1em;
+			opacity: 0;
+			pointer-events: none;
+		}
+		&._active {
+			opacity: 1;
+			pointer-events: none;
+			svg {
+				opacity: 1;
+			}
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&__section {
+		display: none;
+		&._active {
+			display: block;
+		}
+		&._application-form {
+			padding-top: rem(124);
+		}
+		&._contacts,
+		&._requisites {
+			padding-block: rem(64);
+		}
+	}
+}

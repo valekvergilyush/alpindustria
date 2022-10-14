@@ -31,6 +31,7 @@ class AlpIndustry {
 			InputDate: require('../../includes/components/input-date/input-date').default,
 			InputTime: require('../../includes/components/input-time/input-time').default,
 			Brands: require('../../includes/brands/brands').default,
+			CommunityTabs: require('../../includes/community-tabs/community-tabs').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

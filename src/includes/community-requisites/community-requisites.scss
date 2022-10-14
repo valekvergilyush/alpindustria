@@ -1,0 +1,13 @@
+.community-requisites {
+	&__title {
+		margin-bottom: rem(64);
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+		}
+	}
+}
