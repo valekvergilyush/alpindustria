@@ -1,0 +1,13 @@
+.community-contacts {
+	&__title {
+		margin-bottom: rem(32);
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+		}
+	}
+}
