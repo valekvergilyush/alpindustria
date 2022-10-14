@@ -1,0 +1,45 @@
+.application-form {
+	&__title {
+		margin-bottom: rem(24);
+	}
+	&__auth {
+		margin-bottom: rem(48);
+	}
+	&__fields {
+		display: flex;
+		column-gap: rem(16);
+		margin-bottom: rem(24);
+		& > * {
+			flex-grow: 1;
+		}
+	}
+	&__hobbies {
+		--gap: #{rem(8)};
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: var(--gap);
+		row-gap: var(--gap);
+		max-width: rem(870);
+		margin-bottom: rem(48);
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		column-gap: rem(16);
+		box-sizing: border-box;
+		min-height: rem(176);
+		padding: rem(40) var(--container-padding);
+		margin-inline: calc(0px - var(--container-padding));
+		color: var(--white);
+		background-color: var(--blue-dark);
+	}
+	&__bottom-text {
+		max-width: rem(300);
+	}
+	&__input {
+		&._file {
+			margin-bottom: rem(48);
+		}
+	}
+}
