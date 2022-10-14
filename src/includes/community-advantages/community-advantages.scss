@@ -24,6 +24,10 @@
 		margin-left: auto;
 		margin-top: auto;
 		margin-bottom: rem(120);
+		@media (max-width: $laptop-lg) {
+			padding-right: 50px;
+			margin-bottom: 88px;
+		}
 		@media (max-width: $laptop) {
 			margin-bottom: 68px;
 		}
@@ -207,6 +211,9 @@
 			margin-bottom: 11px;
 			padding-top: 0.1em;
 			font-size: 14px;
+		}
+		@media (max-width: ($mobile - 1px)) {
+			padding-left: var(--container-padding);
 		}
 	}
 	&__asterisk {
