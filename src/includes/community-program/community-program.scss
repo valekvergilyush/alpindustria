@@ -2,28 +2,27 @@
 	$this: &;
 	--padding: #{rem(24)};
 	display: grid;
-	grid-template-columns: 1fr min-content 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(6, min-content);
 	grid-template-areas:
-		'theory img trip'
-		'theory img trip'
-		'theory img collection'
-		'practice img collection'
-		'practice img meetings'
-		'practice img meetings';
+		'theory trip'
+		'theory trip'
+		'theory collection'
+		'practice collection'
+		'practice meetings'
+		'practice meetings';
 	box-sizing: border-box;
 	max-height: rem(824);
-	outline: 1px solid var(--blue-dark);
+	outline: 1px solid currentColor;
 	outline-offset: -1px;
 	@media (max-width: $laptop) {
 		grid-template-rows: repeat(6, calc(496px / 6));
 	}
 	@media (max-width: $tablet) {
 		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
 		grid-template-areas:
 			'theory theory theory practice practice practice'
-			'img img img img img img'
 			'trip trip collection collection meetings meetings';
 	}
 	@media (max-width: $mobile-lg) {
@@ -41,24 +40,26 @@
 		padding: var(--padding);
 		&._theory {
 			grid-area: theory;
-			border-bottom: 1px solid var(--blue-dark);
+			border-right: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
 			#{$this}__text {
 				max-width: rem(420);
 			}
 		}
 		&._practice {
 			grid-area: practice;
+			border-right: 1px solid currentColor;
 		}
 		&._trip {
 			grid-area: trip;
-			border-bottom: 1px solid var(--blue-dark);
+			border-bottom: 1px solid currentColor;
 			#{$this}__text {
 				max-width: rem(460);
 			}
 		}
 		&._collection {
 			grid-area: collection;
-			border-bottom: 1px solid var(--blue-dark);
+			border-bottom: 1px solid currentColor;
 			#{$this}__text {
 				max-width: rem(420);
 			}
@@ -99,9 +100,13 @@
 				border: 0;
 			}
 			&._theory,
+			&._practice {
+				border-bottom: 1px solid currentColor;
+			}
+			&._theory,
 			&._trip,
 			&._collection {
-				border-right: 1px solid var(--blue-dark);
+				border-right: 1px solid currentColor;
 			}
 		}
 		@media (max-width: $mobile-lg) {
@@ -116,7 +121,7 @@
 			&._trip,
 			&._collection {
 				row-gap: 16px;
-				border-bottom: 1px solid var(--blue-dark);
+				border-bottom: 1px solid currentColor;
 			}
 		}
 		@media (max-width: $mobile-md) {
@@ -124,10 +129,11 @@
 		}
 	}
 	&__img {
+		display: none;
 		grid-area: img;
 		pointer-events: none;
-		border-left: 1px solid var(--blue-dark);
-		border-right: 1px solid var(--blue-dark);
+		border-left: 1px solid currentColor;
+		border-right: 1px solid currentColor;
 		img {
 			width: rem(334);
 			max-width: none;
@@ -148,9 +154,10 @@
 			}
 		}
 		@media (max-width: $tablet) {
+			// display: block;
 			border: 0;
-			border-top: 1px solid var(--blue-dark);
-			border-bottom: 1px solid var(--blue-dark);
+			border-top: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
 		}
 	}
 	&__title {
