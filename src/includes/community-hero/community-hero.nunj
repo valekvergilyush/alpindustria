@@ -1,0 +1,15 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="community-hero page__community-hero">
+	<h1 class="community-hero__title h2 ttu">Горный клуб</h1>
+	<p class="community-hero__text p1">Горы требуют к&nbsp;себе серьезного и&nbsp;уважительного отношения, поэтому к&nbsp;каждому восхождению нужно подходить осознанно.<br> В&nbsp;Горном клубе мы&nbsp;делимся своими знаниями и&nbsp;опытом в&nbsp;альпинизме, чтобы сделать ваше знакомство с&nbsp;горами безопасным.</p>
+	{{ picture({
+		className: 'community-hero__img',
+		path: '/assets/images/community/hero/community-hero',
+		ext: 'jpg',
+		width: 703,
+		height: 836,
+		attr: 'aria-hidden="true"'
+	}) }}
+	<a class="community-hero__link h5 ttu" href="#">Стать<br> участником</a>
+</section>

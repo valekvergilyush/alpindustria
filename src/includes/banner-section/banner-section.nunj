@@ -1,7 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 <section class="banner-section">
-	<img src="assets/images/product/banner-bg.jpg" srcset="assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
+	<img src="/assets/images/product/banner-bg.jpg" srcset="/assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
 	<div class="banner-section__wrap container">
 		<div class="banner-section__top">
 			{{ icon({

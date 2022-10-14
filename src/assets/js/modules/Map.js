@@ -271,7 +271,7 @@ class Map {
 			position: pointData.position,
 		};
 		markerOptions.icon = {
-			url: 'assets/images/cart/marker.svg',
+			url: '/assets/images/cart/marker.svg',
 			// eslint-disable-next-line no-undef
 			scaledSize: new google.maps.Size(52, 80),
 			// eslint-disable-next-line no-undef

@@ -33,14 +33,14 @@
 	<div class="store-info__photos">
 		<img
 			class="store-info__img"
-			src="assets/images/contacts/store-1.jpg"
-			srcset="assets/images/contacts/store-1@2x.jpg 2x"
+			src="/assets/images/contacts/store-1.jpg"
+			srcset="/assets/images/contacts/store-1@2x.jpg 2x"
 			width="736" height="501"
 			alt="Магазин АльпИндустрия снаружи">
 		<img
 			class="store-info__img"
-			src="assets/images/contacts/store-2.jpg"
-			srcset="assets/images/contacts/store-2@2x.jpg 2x"
+			src="/assets/images/contacts/store-2.jpg"
+			srcset="/assets/images/contacts/store-2@2x.jpg 2x"
 			width="736" height="501"
 			alt="Магазин АльпИндустрия внутри">
 	</div>

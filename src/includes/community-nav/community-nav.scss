@@ -1,0 +1,18 @@
+.community-nav {
+	background-color: var(--white);
+	&__list {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__link {
+		@extend .animated;
+		display: flex;
+		align-items: center;
+		height: rem(55);
+		padding-top: 0.1em;
+		box-sizing: border-box;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

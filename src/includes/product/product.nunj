@@ -6,16 +6,16 @@
 {% from "../components/product-reviews/product-reviews.nunj" import productReviews %}
 
 {% set productSliderImgs = [
-	'assets/images/catalog/item-1',
-	'assets/images/catalog/item-2',
-	'assets/images/catalog/item-3',
-	'assets/images/catalog/item-4'
+	'/assets/images/catalog/item-1',
+	'/assets/images/catalog/item-2',
+	'/assets/images/catalog/item-3',
+	'/assets/images/catalog/item-4'
 ] %}
 {% set productSliderThumbs = [
-	'assets/images/catalog/item-1-mini',
-	'assets/images/catalog/item-2-mini',
-	'assets/images/catalog/item-3-mini',
-	'assets/images/catalog/item-4-mini'
+	'/assets/images/catalog/item-1-mini',
+	'/assets/images/catalog/item-2-mini',
+	'/assets/images/catalog/item-3-mini',
+	'/assets/images/catalog/item-4-mini'
 ] %}
 {% set colorButtons = [
 	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },

@@ -13,7 +13,7 @@
 		year: '2022',
 		number: '16 товаров',
 		imgs: [
-			'assets/images/catalog/item-3'
+			'/assets/images/catalog/item-3'
 		]
 	},
 	{
@@ -21,8 +21,8 @@
 		year: '2022',
 		number: '16 товаров',
 		imgs: [
-			'assets/images/catalog/item-3',
-			'assets/images/catalog/item-1'
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1'
 		]
 	},
 	{
@@ -30,9 +30,9 @@
 		year: '2022',
 		number: '16 товаров',
 		imgs: [
-			'assets/images/catalog/item-3',
-			'assets/images/catalog/item-1',
-			'assets/images/catalog/item-2'
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-2'
 		]
 	},
 	{
@@ -40,10 +40,10 @@
 		year: '2022',
 		number: '16 товаров',
 		imgs: [
-			'assets/images/catalog/item-3',
-			'assets/images/catalog/item-1',
-			'assets/images/catalog/item-2',
-			'assets/images/catalog/item-4'
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-2',
+			'/assets/images/catalog/item-4'
 		]
 	}
 ] %}
