@@ -1,0 +1,25 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="application-form__auth community-auth">
+	<p class="community-auth__title h5 ttu c-gray-dark">Уже есть аккаунт?</p>
+
+	<form class="community-auth__form">
+		<div class="community-auth__fields">
+			{{ input({
+				type: 'tel',
+				id: 'community-auth-tel',
+				className: 'community-auth__input',
+				name: 'Телефон'
+			}) }}
+			{{ button({
+				type: 'submit',
+				text: 'Авторизоваться',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16"',
+				className: 'community-auth__submit-btn _arrow-s _auth ttu p2',
+				attr: 'aria-label="Авторизоваться"'
+			}) }}
+		</div>
+	</form>
+</div>
