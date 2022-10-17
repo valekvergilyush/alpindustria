@@ -2,12 +2,12 @@
 
 {% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
 
-{% block title %}Восхождение на эльбрус | {{ super() }}{% endblock title %}
+{% block title %}Доставка и оплата | {{ super() }}{% endblock title %}
 
 {% set breadcrumbsData = {
 	list:	[
-		{ text: 'главная', href: '/'},
-		{ text: 'доставка и оплата'}
+		{ text: 'Главная', href: '/'},
+		{ text: 'Доставка и оплата'}
 	],
 	link: {
 		href: '/',

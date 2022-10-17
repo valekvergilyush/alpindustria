@@ -1,35 +1,37 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
-{% set navList = [
-	{
-		name: 'доставка',
-		active: true
-	},
-	{
-		name: 'оплата'
-	},
-	{
-		name: 'возврат товара'
-	},
-	{
-		name: 'контакты'
-	}
+{% set tabsList = [
+	{ id: 'delivery', text: 'Доставка', active: true },
+	{ id: 'payment', text: 'Оплата' },
+	{ id: 'returns', text: 'Возврат товара' },
+	{ id: 'contacts', text: 'Контакты' }
 ] %}
 
-<section class="delivery-payment">
-	<ul class="delivery-payment__nav">
-		{% for item in navList %}
-			<li class="delivery-payment__nav-item {% if item.active %}active{% endif %}">
-				<button class="delivery-payment__tab-btn h6 ttu" type="button">{{ item.name }}</button>
-				{{ icon({
-					iconName: 'double-arrow-left',
-					className: 'delivery-payment__tab-icon',
-					attr: props.iconData
-				}) }}
+
+<section class="community-tabs">
+	<ul class="community-tabs__tabs">
+		{% for tab in tabsList %}
+			<li class="community-tabs__tabs-item">
+				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h5 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+					{{ tab.text }}
+					{{ icon({
+						iconName: 'double-arrow-right',
+						attr: 'width="48" height="48"'
+					}) }}
+				</button>
 			</li>
 		{% endfor %}
 	</ul>
-	<div class="delivery-payment__content">
-		content
+
+	<div class="community-tabs__sections">
+		<section class="community-tabs__section _application-form _active" aria-labelledby="application-form" data-tab-section="application-form">
+			{% include "../application-form/application-form.nunj" %}
+		</section>
+		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
+			{% include "../community-contacts/community-contacts.nunj" %}
+		</section>
+		<section class="community-tabs__section _requisites" aria-labelledby="requisites" data-tab-section="requisites">
+			{% include "../community-requisites/community-requisites.nunj" %}
+		</section>
 	</div>
 </section>
