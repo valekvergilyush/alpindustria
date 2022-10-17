@@ -1,0 +1,81 @@
+.delivery-payment {
+	--nav-width: #{rem(384)};
+	display: flex;
+	@media (max-width: $laptop-lg) {
+		--nav-width: 312px;
+	}
+	@media (max-width: $laptop-md) {
+		--nav-width: 224px;
+	}
+	@media (max-width: $laptop-sm) {
+		--nav-width: 100%;
+		flex-direction: column;
+	}
+	&__nav {
+		flex-shrink: 0;
+		width: var(--nav-width);
+		padding: var(--container-padding);
+		border-right: 1px solid var(--blue-dark);
+		row-gap: rem(8);
+		box-sizing: border-box;
+		@media (max-width: $laptop-sm) {
+			display: flex;
+			width: 100%;
+			padding-bottom: 0;
+			overflow: auto;
+			border-bottom: 1px solid var(--blue-dark);
+			white-space: nowrap;
+			@include scrollbar {
+				display: none;
+			}
+		}
+	}
+	&__nav-item {
+		position: relative;
+	}
+	&__tab-icon {
+		--size: #{rem(32)};
+		position: absolute;
+		right: 0;
+		top: 50%;
+		width: var(--size);
+		height: var(--size);
+		transform: translate(#{rem(-50)}, -50%) rotate(180deg);
+		opacity: 0;
+		transition: transform $default-transition-duration $default-transition-function,
+			opacity $default-transition-duration $default-transition-function;
+		@media (max-width: $laptop-sm) {
+			display: none;
+		}
+		.active & {
+			opacity: 1;
+			transform: translate(0, -50%) rotate(180deg);
+		}
+	}
+	&__tab-btn {
+		@include reset-btn;
+		@extend .animated;
+		padding: rem(8) 0 4px;
+		opacity: 0.4;
+		text-align: left;
+		@media (max-width: $laptop-sm) {
+			min-width: 188px;
+			opacity: 1;
+		}
+		.active &,
+		&:hover {
+			opacity: 1;
+		}
+		.active & {
+			@media (max-width: $laptop-sm) {
+				background-color: var(--blue-dark);
+				color: var(--white);
+			}
+		}
+	}
+	&__content {
+		flex-grow: 1;
+		padding: var(--container-padding);
+		background-color: var(--gray-light);
+	}
+}

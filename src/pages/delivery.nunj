@@ -1,0 +1,23 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+
+{% block title %}Восхождение на эльбрус | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'главная', href: '/'},
+		{ text: 'доставка и оплата'}
+	],
+	link: {
+		href: '/',
+		text: 'Закрыть'
+	}
+} %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{% include "../includes/delivery-payment/delivery-payment.nunj" %}
+	</main>
+{% endblock %}
