@@ -24,14 +24,17 @@
 	</ul>
 
 	<div class="community-tabs__sections">
-		<section class="community-tabs__section _application-form _active" aria-labelledby="application-form" data-tab-section="application-form">
-			{% include "../application-form/application-form.nunj" %}
+		<section class="community-tabs__section _contacts _active" aria-labelledby="delivery" data-tab-section="delivery">
+			delivery
+		</section>
+		<section class="community-tabs__section _contacts" aria-labelledby="payment" data-tab-section="payment">
+			payment
+		</section>
+		<section class="community-tabs__section _contacts" aria-labelledby="returns" data-tab-section="returns">
+			returns
 		</section>
 		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
 			{% include "../community-contacts/community-contacts.nunj" %}
-		</section>
-		<section class="community-tabs__section _requisites" aria-labelledby="requisites" data-tab-section="requisites">
-			{% include "../community-requisites/community-requisites.nunj" %}
 		</section>
 	</div>
 </section>
