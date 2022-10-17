@@ -148,30 +148,51 @@
 	&._color {
 		@extend .animated;
 		--size: #{rem(32)};
+		--border-width: 3px;
+		--outline-width: 1px;
+		position: relative;
 		width: var(--size);
 		height: var(--size);
 		border: 3px solid var(--white);
-		outline: 1px solid rgba(76, 95, 168, 0.2);
-		outline-offset: -1px;
+		// outline: 1px solid rgba(76, 95, 168, 0.2);
+		// outline-offset: -1px;
 		border-radius: 50%;
+		&::before {
+			content: '';
+			position: absolute;
+			top: calc(var(--border-width) * -1);
+			left: calc(var(--border-width) * -1);
+			width: calc(100% + 2 * var(--border-width));
+			height: calc(100% + 2 * var(--border-width));
+			border: var(--outline-width) solid rgba(76, 95, 168, 0.2);
+			border-radius: 50%;
+			box-sizing: border-box;
+			transition: border-color $default-transition-duration $default-transition-function;
+		}
 		input + &,
 		&[href],
 		&[type='button'] {
 			&:hover {
-				outline: 2px solid var(--blue-dark);
-				outline-offset: -2px;
+				--outline-width: 2px;
+				&::before {
+					border-color: var(--blue-dark);
+				}
 			}
 		}
 		&._selected,
 		input:checked + & {
-			outline: 2px solid var(--blue-dark);
-			outline-offset: -2px;
+			--outline-width: 2px;
+			&::before {
+				border-color: var(--blue-dark);
+			}
 		}
 		input:disabled + & {
 			cursor: default;
-			outline: 1px solid var(--gray-dark);
-			outline-offset: -1px;
+			--outline-width: 1px;
 			&::before {
+				border-color: var(--gray-dark);
+			}
+			&::after {
 				content: '';
 				position: absolute;
 				top: 50%;

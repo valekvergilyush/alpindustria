@@ -3,6 +3,13 @@
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
+	height: rem(73);
+	padding-top: rem(38);
+	@media (max-width: $mobile-lg) {
+		padding-top: 26px;
+		height: 56px;
+		font-size: 14px;
+	}
 	* {
 		outline: none !important;
 	}
@@ -10,58 +17,13 @@
 		overflow: visible;
 	}
 	&._delivery {
-		height: rem(73);
-		padding-top: rem(38);
-		@media (max-width: $mobile-lg) {
-			padding-top: 26px;
-			height: 56px;
-		}
 		.custom-select-container,
 		.custom-select-opener,
 		.custom-select-panel {
 			background-color: var(--gray-light);
-			@media (max-width: $mobile-lg) {
-				font-size: 14px;
-			}
-		}
-		.custom-select-container {
-			&::before {
-				--size: #{rem(10)};
-				top: rem(3);
-				right: rem(18);
-				border-color: var(--blue-dark);
-				@media (max-width: $mobile-lg) {
-					top: 2px;
-					right: 20px;
-				}
-			}
-		}
-		.custom-select-opener {
-			padding-right: rem(30);
-			padding-left: rem(12);
-			padding-bottom: rem(4);
-			line-height: 1.5;
-			color: var(--gray-dark);
-			& > * {
-				display: inline-block;
-				width: 100%;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
-			@media (max-width: $laptop) {
-				padding-bottom: 3px;
-			}
 		}
 		.custom-select-panel {
 			color: var(--gray-dark);
-		}
-		.custom-select-option {
-			padding: rem(12);
-			&.has-focus {
-				color: var(--white);
-				background-color: var(--blue-light);
-			}
 		}
 	}
 	&__label {
@@ -100,17 +62,17 @@
 	.custom-select-container {
 		background-color: var(--white);
 		&::before {
-			--size: #{rem(14)};
+			--size: #{rem(10)};
 			content: '';
 			position: absolute;
-			right: 4px;
-			top: 10px;
+			top: rem(3);
+			right: rem(18);
 			transform-origin: 70% 70%;
 			transform: rotate(45deg);
 			width: var(--size);
 			height: var(--size);
-			border-bottom: 2px solid var(--gray-dark);
-			border-right: 2px solid var(--gray-dark);
+			border-bottom: 2px solid var(--blue-dark);
+			border-right: 2px solid var(--blue-dark);
 			transition: transform $fast-transition-duration $default-transition-function;
 			pointer-events: none;
 			@media (max-width: $desktop) {
@@ -120,6 +82,10 @@
 			@media (max-width: $laptop-md) {
 				right: 6px;
 				top: 4px;
+			}
+			@media (max-width: $mobile-lg) {
+				top: 2px;
+				right: 20px;
 			}
 		}
 		&.is-open {
@@ -134,7 +100,21 @@
 	.custom-select-opener {
 		background-color: var(--white);
 		padding: 0;
-		padding-bottom: 16px;
+		padding-right: rem(30);
+		padding-left: rem(12);
+		padding-bottom: rem(4);
+		line-height: 1.5;
+		color: var(--gray-dark);
+		& > * {
+			display: inline-block;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		@media (max-width: $laptop) {
+			padding-bottom: 3px;
+		}
 	}
 	.custom-select-panel {
 		top: calc(100% - 1px);
@@ -149,6 +129,7 @@
 	.custom-select-option {
 		@extend .animated;
 		cursor: pointer;
+		padding: rem(12);
 		&:first-child {
 			margin-top: 1px;
 		}
@@ -158,8 +139,8 @@
 			}
 		}
 		&.has-focus {
-			background-color: transparent;
-			color: var(--gray-dark);
+			color: var(--white);
+			background-color: var(--blue-light);
 		}
 	}
 }

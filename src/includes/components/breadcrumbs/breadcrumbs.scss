@@ -10,10 +10,18 @@
 	}
 	@media (max-width: $mobile-lg) {
 		padding: 12px 0 7px;
+		overflow: auto;
+		white-space: nowrap;
 	}
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: $mobile-lg) {
+			flex-wrap: nowrap;
+			@include scrollbar {
+				display: none;
+			}
+		}
 	}
 	&__item {
 		@media (max-width: $mobile-lg) {

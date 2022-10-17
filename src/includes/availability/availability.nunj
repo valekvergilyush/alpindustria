@@ -1,15 +1,21 @@
 {% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/select/select.nunj" import select %}
+
+{% set cityList = [
+	{ name: 'Москва', value: 'Москва' },
+	{ name: 'Санкт-Петербург', value: 'Санкт-Петербург' },
+	{ name: 'Новосибирск', value: 'Новосибирск' },
+	{ name: 'Екатеринбург', value: 'Екатеринбург' }
+] %}
 
 <div class="availability">
 	<h2 class="availability__title h5 ttu">Наличие в рознице</h2>
-	<div class="availability__select select h6 ttu">
-		<select data-select="availability">
-			<option value="Москва">Москва</option>
-			<option value="Санкт-Петербург">Санкт-Петербург</option>
-			<option value="Новосибирск">Новосибирск</option>
-			<option value="Екатеринбург">Екатеринбург</option>
-		</select>
-	</div>
+	{{ select({
+			id: 'availability',
+			options: cityList,
+			className: 'availability__select',
+			label: 'Магазин'
+		}) }}
 	<div class="availability__content">
 		<div data-availability="Москва" class="availability__city">
 			{% for i in range(0, 2) -%}
