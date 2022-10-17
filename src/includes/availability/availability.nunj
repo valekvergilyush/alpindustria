@@ -13,7 +13,7 @@
 	{{ select({
 			id: 'availability',
 			options: cityList,
-			className: 'availability__select',
+			className: 'availability__select _delivery _white',
 			label: 'Магазин'
 		}) }}
 	<div class="availability__content">
