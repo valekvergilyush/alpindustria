@@ -1,55 +1,189 @@
 .community-program {
+	$this: &;
 	--padding: #{rem(24)};
 	display: grid;
-	grid-template-columns: 1fr min-content 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(6, min-content);
 	grid-template-areas:
-		'theory img trip'
-		'theory img trip'
-		'theory img collection'
-		'practice img collection'
-		'practice img meetings'
-		'practice img meetings';
+		'theory trip'
+		'theory trip'
+		'theory collection'
+		'practice collection'
+		'practice meetings'
+		'practice meetings';
 	box-sizing: border-box;
 	max-height: rem(824);
-	outline: 1px solid var(--blue-dark);
+	outline: 1px solid currentColor;
+	outline-offset: -1px;
+	@media (max-width: $laptop) {
+		grid-template-rows: repeat(6, calc(496px / 6));
+	}
+	@media (max-width: $tablet) {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			'theory theory theory practice practice practice'
+			'trip trip collection collection meetings meetings';
+	}
+	@media (max-width: $mobile-lg) {
+		display: flex;
+		flex-direction: column;
+		max-height: none;
+	}
 	&__item {
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(19);
 		width: rem(640);
+		min-height: rem(275);
 		padding: var(--padding);
 		&._theory {
 			grid-area: theory;
-			border-bottom: 1px solid var(--blue-dark);
+			border-right: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
+			#{$this}__text {
+				max-width: rem(420);
+			}
 		}
 		&._practice {
 			grid-area: practice;
+			border-right: 1px solid currentColor;
 		}
 		&._trip {
 			grid-area: trip;
-			border-bottom: 1px solid var(--blue-dark);
+			border-bottom: 1px solid currentColor;
+			#{$this}__text {
+				max-width: rem(460);
+			}
 		}
 		&._collection {
 			grid-area: collection;
-			border-bottom: 1px solid var(--blue-dark);
+			border-bottom: 1px solid currentColor;
+			#{$this}__text {
+				max-width: rem(420);
+			}
 		}
 		&._meetings {
 			grid-area: meetings;
+			#{$this}__text {
+				max-width: rem(420);
+			}
+		}
+		@media (max-width: $laptop-lg) {
+			width: 560px;
+			min-height: 189px;
+			&._theory {
+				#{$this}__text {
+					max-width: 440px;
+				}
+			}
+			&._practice {
+				#{$this}__text {
+					max-width: 440px;
+				}
+			}
+		}
+		@media (max-width: $laptop) {
+			width: 360px;
+			min-height: 165px;
+			row-gap: 0;
+		}
+		@media (max-width: $tablet) {
+			width: auto;
+			min-height: 256px;
+			&._theory,
+			&._practice,
+			&._trip,
+			&._collection {
+				min-width: auto;
+				border: 0;
+			}
+			&._theory,
+			&._practice {
+				border-bottom: 1px solid currentColor;
+			}
+			&._theory,
+			&._trip,
+			&._collection {
+				border-right: 1px solid currentColor;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			order: 1;
+			min-height: 160px;
+			&._theory,
+			&._practice {
+				order: 0;
+				min-height: 200px;
+			}
+			&._theory,
+			&._trip,
+			&._collection {
+				row-gap: 16px;
+				border-bottom: 1px solid currentColor;
+			}
+		}
+		@media (max-width: $mobile-md) {
+			--padding: 16px;
 		}
 	}
 	&__img {
+		display: none;
 		grid-area: img;
 		pointer-events: none;
-		outline: 1px solid var(--blue-dark);
+		border-left: 1px solid currentColor;
+		border-right: 1px solid currentColor;
 		img {
 			width: rem(334);
 			max-width: none;
 			height: 100%;
+			@media (max-width: $laptop-lg) {
+				width: 320px;
+			}
+			@media (max-width: $laptop) {
+				width: 310px;
+			}
+			@media (max-width: $tablet) {
+				width: 100%;
+				height: 254px;
+			}
+			@media (max-width: $mobile-lg) {
+				height: 400px;
+				object-fit: cover;
+			}
+		}
+		@media (max-width: $tablet) {
+			// display: block;
+			border: 0;
+			border-top: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
 		}
 	}
 	&__title {
 		margin-bottom: auto;
+		padding-top: 0.05em;
+		@media (max-width: $laptop-lg) {
+			font-size: 44px;
+		}
+		@media (max-width: $laptop) {
+			font-size: 30px;
+		}
+		@media (max-width: $mobile-md) {
+			font-size: 22px;
+		}
+	}
+	&__text {
+		@media (max-width: $laptop-lg) {
+			font-size: 20px;
+			line-height: 1.4;
+		}
+		@media (max-width: $laptop) {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		@media (max-width: $mobile-md) {
+			font-size: 14px;
+		}
 	}
 }

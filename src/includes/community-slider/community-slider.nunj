@@ -14,11 +14,13 @@
 				width="1280"
 				height="824"
 				alt=""
-				aria-hidden="true" loading="lazy"
+				aria-hidden="true"
 			>
 		</picture>
 
-		<div class="community-slider__col">
+		<p class="community-slider__text _first _mobile p1 c-gray-dark">Наша задача&nbsp;&mdash; делиться знаниями и&nbsp;помогать тренироваться под руководством аттестованных инструкторов.<br> И, конечно, объединяться в&nbsp;комьюнити и&nbsp;вместе ходить в&nbsp;горы.</p>
+
+		<div class="community-slider__col _second">
 			<p class="community-slider__text _second p1 c-gray-dark">Мы&nbsp;проводим лекции, мастер-классы и&nbsp;практические занятия&nbsp;&mdash; где готовим участников к&nbsp;реальным выездам в&nbsp;горы.</p>
 			<picture>
 				<source srcset="/assets/images/community/slider/community-slider-2.webp, /assets/images/community/slider/community-slider-2@2x.webp 2x" type="image/webp">
@@ -29,12 +31,12 @@
 					width="548"
 					height="356"
 					alt=""
-					aria-hidden="true" loading="lazy"
+					aria-hidden="true"
 				>
 			</picture>
 		</div>
 
-		<div class="community-slider__col">
+		<div class="community-slider__col _third">
 			<p class="community-slider__text _third s1">В&nbsp;Горном клубе вы&nbsp;можете пройти путь от&nbsp;новичка до&nbsp;альпиниста, готового к&nbsp;самостоятельным восхождениям</p>
 			<picture>
 				<source srcset="/assets/images/community/slider/community-slider-3.webp, /assets/images/community/slider/community-slider-3@2x.webp 2x" type="image/webp">
@@ -45,7 +47,7 @@
 					width="529"
 					height="558"
 					alt=""
-					aria-hidden="true" loading="lazy"
+					aria-hidden="true"
 				>
 			</picture>
 		</div>
@@ -59,7 +61,7 @@
 				width="655"
 				height="824"
 				alt=""
-				aria-hidden="true" loading="lazy"
+				aria-hidden="true"
 			>
 		</picture>
 
@@ -68,5 +70,7 @@
 		</div>
 
 		{% include "../community-program/community-program.nunj" %}
+		<img class="community-slider__line-img" src="/assets/images/community/slider/community-slider-line.svg" width="3483" alt="" aria-hidden="true">
+		<img class="community-slider__line-img _tablet" src="/assets/images/community/slider/community-slider-line-tablet.svg" width="2438" alt="" aria-hidden="true">
 	</section>
 </div>

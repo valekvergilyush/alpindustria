@@ -1,0 +1,26 @@
+{% set list = [
+	'Участие в&nbsp;учебных и&nbsp;тренировочных сборах и&nbsp;выездах клуба',
+	'Спортивные разряды участникам сборов',
+	'Возможность пользоваться групповым снаряжением на&nbsp;тренировках',
+	'Возможность посещать московские клубные тренировки бесплатно или со&nbsp;скидкой'
+] %}
+
+<section class="community-advantages">
+	<div class="community-advantages__container container">
+		<h2 class="community-advantages__title h4 ttu">Что дает членство в&nbsp;Горном клубе</h2>
+		<div class="community-advantages__wrapper">
+			<ul class="community-advantages__list s2">
+				{% for item in list %}
+					<li class="community-advantages__item">
+						<p class="community-advantages__item-text">{{ item }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+			<p class="community-advantages__text p2">
+				<span class="community-advantages__asterisk h5 ttu">***</span><br>
+				Со&nbsp;своей стороны члены Горного клуба обязуются не&nbsp;приносить своими действиями (или бездействием) урона работе и&nbsp;репутации клуба, активно участвовать в&nbsp;клубной жизни и&nbsp;принятии решений в&nbsp;клубе, а&nbsp;также не&nbsp;лениться и&nbsp;расти в&nbsp;спортивном плане.
+			</p>
+			<a class="community-advantages__link ttu" href="">Список участников Горного клуба</a>
+		</div>
+	</div>
+</section>

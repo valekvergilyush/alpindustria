@@ -1,0 +1,23 @@
+<div class="community-contacts c-gray-dark">
+	<h3 class="community-contacts__title h6 ttu">МОО &laquo;Горный клуб Альпиндустрия&raquo;</h3>
+	<p class="community-contacts__text p2">
+		<span class="h7 ttu">Адрес</span>
+		105037, Россия, Москва, Первомайская, 18
+	</p>
+	<p class="community-contacts__text p2">
+		<span class="h7 ttu">Время работы</span>
+		11:00-20:00 пн-пт, сб-вс по&nbsp;почте <a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>
+	</p>
+	<p class="community-contacts__text p2">
+		<span class="h7 ttu">Телефон</span>
+		<a href="tel:+74952329779">+7 (495) 232-97-79</a>, доб.&nbsp;139
+	</p>
+	<p class="community-contacts__text p2">
+		<span class="h7 ttu">E-mail горного клуба</span>
+		<a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>
+	</p>
+	<p class="community-contacts__text p2">
+		<span class="h7 ttu">E-mail куратора горного клуба</span>
+		<a href="mailto:e.pankova@alpindustria.ru">e.pankova@alpindustria.ru</a>
+	</p>
+</div>

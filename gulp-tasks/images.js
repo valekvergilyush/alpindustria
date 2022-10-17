@@ -21,7 +21,7 @@ export default function images() {
 							progressive: true,
 						}),
 						imageminMozjpeg({
-							quality: 80,
+							quality: 95,
 						}),
 						imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
 					],
