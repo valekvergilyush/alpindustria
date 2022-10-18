@@ -1,9 +1,31 @@
 .application-form {
 	&__title {
-		margin-bottom: rem(24);
+		margin-bottom: rem(22);
+		@media (max-width: $laptop-lg) {
+			font-size: 28px;
+			letter-spacing: -0.04em;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 18px;
+			font-size: 24px;
+			letter-spacing: 0;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 13px;
+			font-size: 14px;
+		}
 	}
 	&__auth {
 		margin-bottom: rem(48);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 34px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 24px;
+		}
 	}
 	&__fields {
 		display: flex;
@@ -12,6 +34,9 @@
 		& > * {
 			flex-grow: 1;
 		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 22px;
+		}
 	}
 	&__hobbies {
 		--gap: #{rem(8)};
@@ -19,8 +44,19 @@
 		flex-wrap: wrap;
 		column-gap: var(--gap);
 		row-gap: var(--gap);
-		max-width: rem(870);
+		max-width: rem(850);
 		margin-bottom: rem(48);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			max-height: calc(32px * 5 + var(--gap) * 4);
+			margin-bottom: 17px;
+			overflow: hidden;
+		}
 	}
 	&__bottom {
 		display: flex;
@@ -33,13 +69,62 @@
 		margin-inline: calc(0px - var(--container-padding));
 		color: var(--white);
 		background-color: var(--blue-dark);
+		@media (max-width: $laptop-lg) {
+			min-height: 140px;
+			padding-block: 32px;
+		}
+		@media (max-width: $laptop) {
+			min-height: 120px;
+			padding: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			justify-content: flex-end;
+			min-height: 87px;
+		}
 	}
 	&__bottom-text {
 		max-width: rem(300);
+		@media (max-width: $mobile-lg) {
+			display: none;
+		}
 	}
 	&__input {
 		&._file {
-			margin-bottom: rem(48);
+			margin-top: rem(15);
+			margin-left: rem(11);
+			margin-bottom: rem(65);
+			@media (max-width: $laptop-lg) {
+				margin-top: 17px;
+				margin-bottom: 45px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._file {
+				margin-bottom: 36px;
+			}
+			&._comment {
+				--height: 74px;
+				padding-top: 24px;
+				.input__label {
+					top: 50%;
+					line-height: 1.15;
+				}
+				&._filled {
+					.input__label {
+						top: 35%;
+					}
+				}
+			}
+		}
+	}
+	&__show-more-btn._show-more {
+		--height: 80px;
+		--icon-size: #{rem(24)};
+		display: none;
+		border: 0;
+		border-top: 1px solid var(--blue-dark);
+		@media (max-width: $mobile-lg) {
+			display: inline-flex;
 		}
 	}
 }

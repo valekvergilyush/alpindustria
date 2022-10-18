@@ -1,13 +1,41 @@
 .community-auth {
 	&__title {
 		margin-bottom: rem(24);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 20px;
+			font-size: 28px;
+			letter-spacing: -0.04em;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 17px;
+			font-size: 24px;
+			letter-spacing: 0;
+		}
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 13px;
+			font-size: 14px;
+		}
 	}
 	&__fields {
 		display: flex;
 		align-items: flex-end;
 		column-gap: rem(16);
+		@media (max-width: $mobile-lg) {
+			column-gap: 8px;
+		}
 	}
 	&__input {
 		flex-grow: 1;
+	}
+	&__submit-btn {
+		column-gap: rem(8);
+		font-size: rem(18);
+		@media (max-width: $laptop) {
+			column-gap: 0;
+			font-size: 16px;
+		}
 	}
 }
