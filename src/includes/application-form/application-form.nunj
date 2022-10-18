@@ -1,6 +1,7 @@
 {% from "../components/input/input.nunj" import input %}
 {% from "../components/checkbox/checkbox-button.nunj" import checkboxButton %}
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/input-file/input-file.nunj" import inputFile %}
 
 {% set hobbyList = [
 	'Альпинизм',
@@ -95,7 +96,13 @@
 			}) }}
 		</div>
 
-		<input class="application-form__input _file" type="file" name="Прикрепите фото">
+		{{ inputFile({
+			className: 'application-form__input _file',
+			id: 'application-form-file',
+			name:'Прикрепите фото',
+			label:'Прикрепите фото',
+			accept: 'image/*'
+		}) }}
 
 		<p class="application-form__title h5 ttu c-gray-dark" id="hobby-list-label">Выберите Ваши увлечения</p>
 		<ul class="application-form__hobbies c-blue-dark" aria-labelledby="hobby-list-label">

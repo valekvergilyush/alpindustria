@@ -1,0 +1,38 @@
+.input-file {
+	$this: &;
+	display: inline-flex;
+	align-items: center;
+	&._filled {
+		#{$this}__remove-btn {
+			display: flex;
+		}
+	}
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		font-size: rem(12);
+		cursor: pointer;
+		&::before {
+			content: '';
+			width: rem(24);
+			height: rem(32);
+			margin-right: rem(16);
+			background-image: inline('file.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+	&__remove-btn {
+		--size: #{rem(24)};
+		@include reset-btn;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: var(--size);
+		height: var(--size);
+		margin-left: rem(8);
+		margin-top: 0.3em;
+	}
+}
