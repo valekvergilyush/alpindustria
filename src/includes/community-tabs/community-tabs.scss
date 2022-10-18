@@ -23,6 +23,103 @@
 		display: flex;
 		flex-direction: column;
 	}
+	&._delivery {
+		--padding-y: var(--container-padding);
+		--tabs-width: #{rem(384)};
+		grid-template-columns: var(--tabs-width) 1fr;
+		@media (max-width: $laptop-lg) {
+			--tabs-width: 312px;
+		}
+		@media (max-width: $laptop-md) {
+			--tabs-width: 224px;
+		}
+		&::before {
+			content: none;
+		}
+		#{$this}__tabs {
+			grid-column: auto;
+			border-right: 1px solid var(--blue-dark);
+			margin-left: 0;
+			row-gap: rem(4);
+			@media (max-width: $laptop-md) {
+				row-gap: 6px;
+			}
+			@media (max-width: $laptop-sm) {
+				flex-direction: row;
+				width: 100%;
+				padding: 32px 24px 0;
+				border-bottom: 1px solid var(--blue-dark);
+				border-right: none;
+				white-space: nowrap;
+				overflow: auto;
+			}
+			@media (max-width: $mobile-lg) {
+				padding: 24px 0 0;
+			}
+		}
+		#{$this}__tabs-item {
+			@media (max-width: $laptop-sm) {
+				flex-grow: 1;
+			}
+		}
+		#{$this}__sections {
+			grid-column: auto;
+			padding-right: rem(104);
+			margin-right: 0;
+			background-color: var(--gray-light);
+			@media (max-width: $laptop-lg) {
+				padding-right: var(--container-padding);
+			}
+		}
+		#{$this}__section {
+			padding-top: var(--container-padding);
+			padding-bottom: var(--container-padding);
+		}
+		#{$this}__tabs-btn {
+			align-items: center;
+			padding-top: rem(8);
+			padding-bottom: rem(4);
+			padding-right: rem(74);
+			@media (max-width: $laptop-lg) {
+				padding-right: 50px;
+			}
+			@media (max-width: $laptop-md) {
+				padding-right: 42px;
+				font-size: 16px;
+				line-height: 20px;
+			}
+			@media (max-width: $laptop-sm) {
+				justify-content: center;
+				min-width: 172px;
+				padding: 8px;
+				text-align: center;
+				font-size: 14px;
+				line-height: 16px;
+				opacity: 1;
+				box-sizing: border-box;
+				&._active {
+					background-color: var(--blue-dark);
+					color: var(--white);
+				}
+			}
+			@media (max-width: $mobile-lg) {
+				min-width: 155px;
+				padding: 16px;
+			}
+			svg {
+				width: rem(32);
+				height: rem(32);
+				margin-top: 0;
+				@media (max-width: $laptop-md) {
+					width: 16px;
+					height: 16px;
+				}
+				@media (max-width: $laptop-sm) {
+					display: none;
+				}
+			}
+		}
+	}
 	&__tabs {
 		grid-column: 2/3;
 		display: flex;
