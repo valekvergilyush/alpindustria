@@ -8,7 +8,7 @@ class CommunityTabs {
 	}
 
 	init() {
-		this.container = document.querySelector('.community-tabs');
+		this.container = document.querySelector('[data-community-tab]');
 
 		if (!this.container) {
 			return;

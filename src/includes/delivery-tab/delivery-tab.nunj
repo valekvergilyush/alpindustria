@@ -19,11 +19,11 @@
 ] %}
 
 <div class="delivery-tab">
-	<h1 class="visually-hidden">Доставка</h1>
+	<h1 class="visually-hidden">Доставка и оплата</h1>
 	{% for item in deliveryList %}
 		<div class="delivery-tab__accordion {% if item.active %}_opened{% endif %}" data-accordion-section>
 			<button class="delivery-tab__btn" data-accordion-title>
-				<h2 class="h6 ttu" data-accordion-title-text>{{ item.name }}</h2>
+				<span class="h6 ttu" data-accordion-title-text>{{ item.name }}</span>
 				{{ icon({
 					iconName: 'accordion-arrow',
 					className: 'delivery-tab__btn-icon',
@@ -34,15 +34,15 @@
 				<div class="delivery-tab__content-wrap">
 					<ul class="delivery-tab__list">
 						<li class="delivery-tab__item">
-							<h3 class=" h7 ttu">Срочная доставка</h3>
+							<p class="h7 ttu">Срочная доставка</p>
 							<p class="delivery-tab__text p3">Действует при доставке по всей России (кроме доставки Транспортными компаниями)</p>
 						</li>
 						<li class="delivery-tab__item">
-							<h3 class=" h7 ttu">По Москве и Московской области</h3>
+							<p class="h7 ttu">По Москве и Московской области</p>
 							<p class="delivery-tab__text p3">Действует при доставке по Москве и Московской области, Санкт-Петербургу и Ленинградской области</p>
 						</li>
 						<li class="delivery-tab__item">
-							<h3 class=" h7 ttu">СДЭК до пункта выдачи</h3>
+							<p class="h7 ttu">СДЭК до пункта выдачи</p>
 						</li>
 					</ul>
 				</div>
@@ -50,7 +50,7 @@
 		</div>
 	{% endfor %}
 	<div class="delivery-tab__descr">
-		<h3 class="delivery-tab__title-2 h5 ttu">***</h3>
+		<p class="delivery-tab__title-2 h5 ttu">***</p>
 		<div class="delivery-tab__text _descr p2">
 			<p>Стоимость и сроки доставки крупногабартиных грузов рассчитываются индивидуально,<br>звоните +7 495 645 57 73</p>
 			<p>Крупногабаритный груз — товар, сумма измерений которого по длине, ширине и высоте превышает 150 см или заказы, общий вес которых превышает 6 кг. Например, байдарки, велосипеды, бухты, веревки, лыжи, сноуборды и т.п.</p>

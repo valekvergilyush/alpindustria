@@ -44,7 +44,7 @@
 		height: 0;
 		padding-bottom: rem(12);
 		overflow: hidden;
-		transition: opacity 0.3s ease-out;
+		transition: opacity $default-transition-duration $default-transition-function;
 		@media (max-width: $mobile-lg) {
 			padding-bottom: 6px;
 		}
