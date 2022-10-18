@@ -1,0 +1,10 @@
+.page {
+	$this: &;
+	&._delivery {
+		.breadcrumbs {
+			@media (max-width: $laptop-sm) {
+				display: none;
+			}
+		}
+	}
+}

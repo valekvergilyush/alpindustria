@@ -64,6 +64,13 @@
 			}
 		}
 	}
+	&._white {
+		.custom-select-container,
+		.custom-select-opener,
+		.custom-select-panel {
+			background-color: var(--white);
+		}
+	}
 	&__label {
 		position: absolute;
 		top: 16%;
