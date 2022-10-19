@@ -1,7 +1,5 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const ClassName = {
 	ANIMATIONS: 'animations',
 	ANIMATED: 'is-animated',
