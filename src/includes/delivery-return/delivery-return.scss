@@ -24,7 +24,7 @@
 			display: block;
 			counter-increment: li;
 			content: counter(item, decimal-leading-zero);
-			margin-bottom: 8px;
+			margin-bottom: rem(8);
 			font-family: var(--font-family-suisse);
 			font-size: rem(18);
 			line-height: rem(24);
@@ -68,9 +68,9 @@
 		text-decoration: underline;
 	}
 	&__file-descr {
-		margin-top: 8px;
+		margin-top: rem(8);
 		font-size: rem(12);
 		line-height: rem(16);
-		color: #84919a;
+		color: var(--light-slate-grey);
 	}
 }
