@@ -5,7 +5,7 @@ const ClassName = {
 	ANIMATED: 'is-animated',
 };
 
-const TABLET_BREAKPOINT = 992;
+const TABLET_BREAKPOINT = 768;
 
 class ShowAnimations {
 	constructor() {
