@@ -1,27 +1,34 @@
 <div class="community-slider" data-drag-scroll>
 	<section class="community-slider__section _from-zero">
 		<div class="community-slider__col">
-			<h2 class="community-slider__title h5 ttu">От новичка<br> до&nbsp;профессионала</h2>
-			<p class="community-slider__text _first p1 c-gray-dark">Наша задача&nbsp;&mdash; делиться знаниями и&nbsp;помогать тренироваться под руководством аттестованных инструкторов. И, конечно, объединяться в&nbsp;комьюнити и&nbsp;вместе ходить в&nbsp;горы.</p>
+			<h2 class="community-slider__title h5 ttu" data-animation>
+				<span class="words-row"><span>От новичка</span></span>
+				<span class="words-row"><span>до&nbsp;профессионала</span></span>
+			</h2>
+			<p class="community-slider__text _first p1 c-gray-dark" data-animation="fade-right">Наша задача&nbsp;&mdash; делиться знаниями и&nbsp;помогать тренироваться под руководством аттестованных инструкторов. И, конечно, объединяться в&nbsp;комьюнити и&nbsp;вместе ходить в&nbsp;горы.</p>
 		</div>
 
-		<picture>
-			<source srcset="/assets/images/community/slider/community-slider-1.webp, /assets/images/community/slider/community-slider-1@2x.webp 2x" type="image/webp">
-			<img
-				class="community-slider__img _first"
-				src="/assets/images/community/slider/community-slider-1.jpg"
-				srcset="/assets/images/community/slider/community-slider-1@2x.jpg 2x"
-				width="1280"
-				height="824"
-				alt=""
-				aria-hidden="true"
-			>
-		</picture>
+		<div class="img-wrapper" data-animation="height">
+			<div class="img-wrapper__img">
+				<picture>
+					<source srcset="/assets/images/community/slider/community-slider-1.webp, /assets/images/community/slider/community-slider-1@2x.webp 2x" type="image/webp">
+					<img
+						class="community-slider__img _first"
+						src="/assets/images/community/slider/community-slider-1.jpg"
+						srcset="/assets/images/community/slider/community-slider-1@2x.jpg 2x"
+						width="1280"
+						height="824"
+						alt=""
+						aria-hidden="true"
+					>
+				</picture>
+			</div>
+		</div>
 
 		<p class="community-slider__text _first _mobile p1 c-gray-dark">Наша задача&nbsp;&mdash; делиться знаниями и&nbsp;помогать тренироваться под руководством аттестованных инструкторов.<br> И, конечно, объединяться в&nbsp;комьюнити и&nbsp;вместе ходить в&nbsp;горы.</p>
 
 		<div class="community-slider__col _second">
-			<p class="community-slider__text _second p1 c-gray-dark">Мы&nbsp;проводим лекции, мастер-классы и&nbsp;практические занятия&nbsp;&mdash; где готовим участников к&nbsp;реальным выездам в&nbsp;горы.</p>
+			<p class="community-slider__text _second p1 c-gray-dark" data-animation="fade-right">Мы&nbsp;проводим лекции, мастер-классы и&nbsp;практические занятия&nbsp;&mdash; где готовим участников к&nbsp;реальным выездам в&nbsp;горы.</p>
 			<picture>
 				<source srcset="/assets/images/community/slider/community-slider-2.webp, /assets/images/community/slider/community-slider-2@2x.webp 2x" type="image/webp">
 				<img
@@ -37,7 +44,7 @@
 		</div>
 
 		<div class="community-slider__col _third">
-			<p class="community-slider__text _third s1">В&nbsp;Горном клубе вы&nbsp;можете пройти путь от&nbsp;новичка до&nbsp;альпиниста, готового к&nbsp;самостоятельным восхождениям</p>
+			<p class="community-slider__text _third s1" data-animation="fade-right">В&nbsp;Горном клубе вы&nbsp;можете пройти путь от&nbsp;новичка до&nbsp;альпиниста, готового к&nbsp;самостоятельным восхождениям</p>
 			<picture>
 				<source srcset="/assets/images/community/slider/community-slider-3.webp, /assets/images/community/slider/community-slider-3@2x.webp 2x" type="image/webp">
 				<img
@@ -66,7 +73,7 @@
 		</picture>
 
 		<div class="community-slider__col">
-			<p class="community-slider__text _fourth s2">Мы&nbsp;составили программу подготовки, которая опирается на&nbsp;нормативы Федерации альпинизма</p>
+			<p class="community-slider__text _fourth s2" data-animation="fade-right">Мы&nbsp;составили программу подготовки, которая опирается на&nbsp;нормативы Федерации альпинизма</p>
 		</div>
 
 		{% include "../community-program/community-program.nunj" %}

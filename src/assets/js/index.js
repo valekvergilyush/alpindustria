@@ -53,6 +53,7 @@ class AlpIndustry {
 			Map: require('./modules/Map').default,
 			FormValidate: require('./modules/FormValidate').default,
 			Notification: require('./modules/Notification').default,
+			ShowAnimations: require('./modules/ShowAnimations').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
