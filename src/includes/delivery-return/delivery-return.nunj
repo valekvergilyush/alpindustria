@@ -1,0 +1,24 @@
+<ul class="delivery-return">
+	<li class="delivery-return__item">
+		<p class="delivery-return__title h6 ttu">Заполните заявление на возврат</p>
+		<a href="https://alpindustria.ru/i/files/531_1593094301.jpg" download class="delivery-return__file c-gray-dark">
+			{{ icon({
+				iconName: 'file-icon',
+				className: 'delivery-return__file-icon',
+				attr: 'width="30" height="40" viewBox="0 0 30 40"'
+			}) }}
+			<div class="delivery-return__file-info">
+				<p class="delivery-return__file-title">заявление.pdf</p>
+				<p class="delivery-return__file-descr p4">165.7 KB</p>
+			</div>
+		</a>
+	</li>
+	<li class="delivery-return__item">
+		<p class="delivery-return__title h6 ttu">Отправьте посылку почтой без наложенного платежа</p>
+		<p class="delivery-return__text c-gray-dark p2">105037, Москва, ул. Первомайская, 18. Получатель: ООО «Эдельвейс»</p>
+	</li>
+	<li class="delivery-return__item">
+		<p class="delivery-return__title h6 ttu">Получите возврат средств на карту или на банковские реквизиты</p>
+		<p class="delivery-return__text c-gray-dark p2">Москва, ул. Первомайская, 18, outdoor-центр АльпИндустрия, ежедневно с 10:00 до 21:00.</p>
+	</li>
+</ul>

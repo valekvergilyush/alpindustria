@@ -1,0 +1,13 @@
+<div class="payment-tab">
+	<div class="payment-tab__block">
+		<p class="h6 ttu">Наличными при получении</p>
+		<p class="p2 c-gray-dark">Действует при доставке по всей России (кроме доставки Транспортными компаниями)</p>
+	</div>
+	<div class="payment-tab__block">
+		<p class="h6 ttu">Картой курьеру</p>
+		<p class="p2 c-gray-dark">Действует при доставке по Москве и Московской области, Санкт-Петербургу и&nbsp;Ленинградской области</p>
+	</div>
+	<div class="payment-tab__block">
+		<p class="h6 ttu">По счету для юрлиц</p>
+	</div>
+</div>
