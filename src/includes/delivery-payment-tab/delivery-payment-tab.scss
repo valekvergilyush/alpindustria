@@ -1,0 +1,30 @@
+.payment-tab {
+	display: flex;
+	flex-direction: column;
+	max-width: rem(736);
+	row-gap: rem(32);
+	@media (max-width: $laptop-lg) {
+		max-width: 926px;
+	}
+	@media (max-width: $laptop-md) {
+		max-width: none;
+		row-gap: 21px;
+	}
+	@media (max-width: $mobile-lg) {
+		row-gap: 23px;
+	}
+	&__block {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+		@media (max-width: $laptop-md) {
+			row-gap: 17px;
+		}
+		@media (max-width: $laptop-sm) {
+			row-gap: 33px;
+		}
+		@media (max-width: $mobile-lg) {
+			row-gap: 8px;
+		}
+	}
+}

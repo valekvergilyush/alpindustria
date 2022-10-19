@@ -1,6 +1,11 @@
 .community-contacts {
 	&__title {
-		margin-bottom: rem(32);
+		&:not(:first-child) {
+			margin-top: rem(56);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+		}
 	}
 	&__text {
 		display: flex;

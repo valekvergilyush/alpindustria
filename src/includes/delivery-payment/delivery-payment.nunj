@@ -7,37 +7,6 @@
 	{ id: 'contacts', text: 'Контакты' }
 ] %}
 
-
-{# <section class="community-tabs _delivery">
-	<ul class="community-tabs__tabs">
-		{% for tab in tabsList %}
-			<li class="community-tabs__tabs-item">
-				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h6 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
-					{{ tab.text }}
-					{{ icon({
-						iconName: 'double-arrow-right',
-						attr: 'width="48" height="48"'
-					}) }}
-				</button>
-			</li>
-		{% endfor %}
-	</ul>
-
-	<div class="community-tabs__sections">
-		<section class="community-tabs__section _active" aria-labelledby="delivery" data-tab-section="delivery">
-			{% include "../delivery-tab/delivery-tab.nunj" %}
-		</section>
-		<section class="community-tabs__section" aria-labelledby="payment" data-tab-section="payment">
-			payment
-		</section>
-		<section class="community-tabs__section" aria-labelledby="returns" data-tab-section="returns">
-			returns
-		</section>
-		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
-			{% include "../community-contacts/community-contacts.nunj" %}
-		</section>
-	</div>
-</section> #}
 <section class="delivery-payment" data-community-tab>
 	<ul class="delivery-payment__tabs">
 		{% for tab in tabsList %}
@@ -58,13 +27,13 @@
 			{% include "../delivery-tab/delivery-tab.nunj" %}
 		</section>
 		<section class="delivery-payment__section" aria-labelledby="payment" data-tab-section="payment">
-			payment
+			{% include "../delivery-payment-tab/delivery-payment-tab.nunj" %}
 		</section>
 		<section class="delivery-payment__section" aria-labelledby="returns" data-tab-section="returns">
-			returns
+			{% include "../delivery-return/delivery-return.nunj" %}
 		</section>
 		<section class="delivery-payment__section" aria-labelledby="contacts" data-tab-section="contacts">
-			{% include "../community-contacts/community-contacts.nunj" %}
+			{% include "../delivery-contacts/delivery-contacts.nunj" %}
 		</section>
 	</div>
 </section>

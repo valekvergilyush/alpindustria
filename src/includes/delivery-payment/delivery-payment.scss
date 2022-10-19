@@ -54,6 +54,15 @@
 	&__section {
 		padding-top: var(--container-padding);
 		padding-bottom: var(--container-padding);
+		& > .community-contacts {
+			max-width: rem(826);
+			@media (max-width: $laptop-lg) {
+				max-width: 784px;
+			}
+			@media (max-width: $laptop-md) {
+				max-width: none;
+			}
+		}
 	}
 	&__tabs-btn {
 		@include reset-btn;

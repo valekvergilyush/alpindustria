@@ -6,5 +6,12 @@
 				display: none;
 			}
 		}
+		#{$this}__main {
+			display: flex;
+			flex-direction: column;
+		}
+		.delivery-payment {
+			flex-grow: 1;
+		}
 	}
 }
