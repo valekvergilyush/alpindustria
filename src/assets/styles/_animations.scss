@@ -23,8 +23,9 @@
 	}
 
 	[data-animation='words'] {
+		display: flex;
+		flex-wrap: wrap;
 		.word-wrapper {
-			display: inline-block;
 			overflow: hidden;
 		}
 		.word {
