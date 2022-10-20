@@ -7,7 +7,7 @@
 		position: relative;
 		display: flex;
 		column-gap: rem(64);
-		padding-block: rem(124);
+		padding-block: rem(100);
 		padding-inline: var(--container-padding);
 		display: flex;
 		column-gap: rem(64);
@@ -67,6 +67,12 @@
 	&__col {
 		display: flex;
 		flex-direction: column;
+		&._first {
+			min-width: rem(530);
+			@media (max-width: $tablet) {
+				min-width: auto;
+			}
+		}
 		&._second {
 			@media (max-width: $tablet) {
 				flex-direction: row-reverse;
