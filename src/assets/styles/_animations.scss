@@ -22,16 +22,17 @@
 		}
 	}
 
-	.words-row {
-		overflow: hidden;
-		& > span {
+	[data-animation='words'] {
+		.word-wrapper {
+			display: inline-block;
+			overflow: hidden;
+		}
+		.word {
 			display: inline-block;
 			transform: translateY(100%);
 		}
-	}
-	.is-animated {
-		.words-row {
-			& > span {
+		&.is-animated {
+			.word {
 				animation: wordsTop 1s cubic-bezier(0.55, 0, 0.1, 1);
 				animation-fill-mode: forwards;
 			}

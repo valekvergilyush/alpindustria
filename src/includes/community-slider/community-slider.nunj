@@ -1,11 +1,8 @@
 <div class="community-slider" data-community-slider>
 	<div class="community-slider__section-wrapper">
 		<section class="community-slider__section _from-zero" data-community-slide>
-			<div class="community-slider__col">
-				<h2 class="community-slider__title h5 ttu" data-animation>
-					<span class="words-row"><span>От новичка</span></span>
-					<span class="words-row"><span>до&nbsp;профессионала</span></span>
-				</h2>
+			<div class="community-slider__col _first">
+				<h2 class="community-slider__title h5 ttu" data-animation="words">От новичка<br>до&nbsp;профессионала</h2>
 				<p class="community-slider__text _first p1 c-gray-dark" data-animation="fade-right">Наша задача&nbsp;&mdash; делиться знаниями и&nbsp;помогать тренироваться под руководством аттестованных инструкторов. И, конечно, объединяться в&nbsp;комьюнити и&nbsp;вместе ходить в&nbsp;горы.</p>
 			</div>
 			<div class="img-wrapper" data-animation="height">

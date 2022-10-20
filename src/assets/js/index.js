@@ -40,6 +40,7 @@ class AlpIndustry {
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
+			TextSplitter: require('./helpers/TextSplitter').default,
 		};
 		this.modules = {
 			RangeSlider: require('./modules/RangeSlider').default,
@@ -67,6 +68,10 @@ class AlpIndustry {
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 			document.querySelectorAll('[data-tabs]').forEach(tabs => new this.components.Tabs(tabs));
+
+			document
+				.querySelectorAll('[data-animation="words"]')
+				.forEach(item => this.helpers.TextSplitter.split(item).words);
 		});
 	}
 }
