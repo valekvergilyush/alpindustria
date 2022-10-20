@@ -48,9 +48,11 @@
 		}
 	}
 	&__search {
-		--size: #{rem(32)};
-		width: var(--size);
-		height: var(--size);
+		.button__icon {
+			--size: #{rem(32)};
+			width: var(--size);
+			height: var(--size);
+		}
 	}
 	&__sort {
 		.button__icon {
