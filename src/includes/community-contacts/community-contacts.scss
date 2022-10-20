@@ -1,20 +1,48 @@
 .community-contacts {
 	$this: &;
 	&__title {
-		&:not(:first-child) {
-			margin-top: rem(56);
+		max-width: rem(850);
+		margin-bottom: rem(32);
+		@media (max-width: $laptop) {
+			margin-bottom: 24px;
 		}
-		&:not(:last-child) {
-			margin-bottom: rem(32);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 22px;
 		}
 	}
 	&__text {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		flex-wrap: wrap;
 		row-gap: rem(16);
+		column-gap: 0.5ch;
+		& > span:first-child {
+			width: 100%;
+		}
 		&:not(:last-child) {
-			margin-bottom: rem(32);
+			margin-bottom: rem(33);
+		}
+		a:not([class]) {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		@media (max-width: $laptop) {
+			row-gap: 8px;
+			&:not(:last-child) {
+				margin-bottom: 25px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			row-gap: 0;
+			& > span:first-child {
+				margin-bottom: 6px;
+			}
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
 		}
 		a {
 			text-decoration: none;

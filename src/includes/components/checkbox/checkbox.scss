@@ -11,6 +11,7 @@
 		#{$this}__label {
 			padding-top: 0.2em;
 			color: inherit;
+			font-family: var(--default-font-family);
 			font-size: rem(16);
 			&::before {
 				display: none;
@@ -23,6 +24,13 @@
 			border-color: var(--blue-dark);
 			color: var(--white);
 			background-color: var(--blue-dark);
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}__label {
+				height: 32px;
+				padding: 0 17px;
+				font-size: 14px;
+			}
 		}
 	}
 	&__label {

@@ -1,12 +1,18 @@
 .community-slider {
 	$this: &;
-	overflow: auto;
+	&__section-wrapper {
+		overflow: hidden;
+	}
 	&__section {
 		position: relative;
+		display: flex;
+		column-gap: rem(64);
 		padding-block: rem(124);
 		padding-inline: var(--container-padding);
 		display: flex;
 		column-gap: rem(64);
+		height: 100vh;
+		box-sizing: border-box;
 		&::after {
 			content: '';
 			display: block;
@@ -23,6 +29,7 @@
 		}
 		@media (max-width: $tablet) {
 			flex-direction: column;
+			height: auto;
 			&::after {
 				display: none;
 			}
@@ -102,6 +109,7 @@
 		}
 		&._fourth {
 			width: rem(655);
+			height: 100%;
 		}
 		@media (max-width: $laptop-lg) {
 			&._first {
@@ -116,7 +124,6 @@
 			}
 			&._fourth {
 				width: 472px;
-				height: 568px;
 			}
 		}
 		@media (max-width: $laptop) {
@@ -131,7 +138,6 @@
 			}
 			&._fourth {
 				width: 414px;
-				height: 496px;
 			}
 		}
 		@media (max-width: $tablet) {

@@ -90,7 +90,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-exp',
-				className: 'application-form__input',
+				className: 'application-form__input _comment',
 				name: 'Уже проходили занятия?',
 				label: 'Уже проходили занятия в нашем Горном клубе? Напишите об этом'
 			}) }}
@@ -117,8 +117,15 @@
 			{% endfor %}
 		</ul>
 
+		{{ button({
+			className: 'application-form__show-more-btn _show-more',
+			text: 'Показать еще',
+			icon: 'plus-circle',
+			iconData: 'width="24" height="24"'
+		}) }}
+
 		<div class="application-form__bottom">
-			<p class="application-form__bottom-text p3">Нажимая &laquo;Зарегестрироваться&raquo;, вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
+			<p class="application-form__bottom-text p3">Нажимая "Зарегестрироваться", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
 			{{ button({
 				type: 'submit',
 				text: 'Зарегистрироваться',

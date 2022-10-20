@@ -1,6 +1,8 @@
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollToPlugin);
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 global.gsap = gsap;
 
@@ -33,6 +35,8 @@ class AlpIndustry {
 			Brands: require('../../includes/brands/brands').default,
 			CommunityTabs: require('../../includes/community-tabs/community-tabs').default,
 			InputFile: require('../../includes/components/input-file/input-file').default,
+			ApplicationForm: require('../../includes/application-form/application-form').default,
+			CommunitySlider: require('../../includes/community-slider/community-slider').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
@@ -52,6 +56,7 @@ class AlpIndustry {
 			Map: require('./modules/Map').default,
 			FormValidate: require('./modules/FormValidate').default,
 			Notification: require('./modules/Notification').default,
+			ShowAnimations: require('./modules/ShowAnimations').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

@@ -80,7 +80,7 @@
 		box-sizing: border-box;
 		&::before {
 			counter-increment: num;
-			content: '0' counter(num);
+			content: counter(num, decimal-leading-zero);
 			@extend .h6;
 			margin-bottom: rem(16);
 		}

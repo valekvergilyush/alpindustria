@@ -1,8 +1,8 @@
 <div class="community-requisites c-gray-dark">
-	<h3 class="community-requisites__title h6 ttu">Межрегиональная общественная организация содействия развитию экстремальных видов спорта &laquo;МОО Горный клуб Альпиндустрия&raquo;</h3>
+	<h3 class="community-requisites__title h6 ttu">Межрегиональная общественная организация содействия развитию экстремальных видов спорта &laquo;МОО&nbsp;Горный клуб Альпиндустрия&raquo;</h3>
 	<p class="community-requisites__text p2">
 		<span class="h7 ttu">Сокращенное наименование</span>
-		МОО &laquo;Горный клуб Альпиндустрия&raquo;
+		МОО "Горный клуб Альпиндустрия";
 	</p>
 	<p class="community-requisites__text p2">
 		<span class="h7 ttu">Дата внесения в&nbsp;ЕГРЮЛ</span>
@@ -24,7 +24,7 @@
 		<span class="h7 ttu">Факс</span>
 		<a href="tel:+74952329779">+7 (495) 232-97-79</a>
 	</p>
-	<p class="community-requisites__text p2">
+	<p class="community-requisites__text _requisites p2">
 		<span class="h7 ttu">Остальное</span>
 		ИНН: 7719468714<br>
 		КПП: 771901001<br>

@@ -3,7 +3,7 @@
 	--padding: #{rem(24)};
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(6, min-content);
+	grid-template-rows: repeat(6, 1fr);
 	grid-template-areas:
 		'theory trip'
 		'theory trip'
@@ -15,9 +15,6 @@
 	max-height: rem(824);
 	outline: 1px solid currentColor;
 	outline-offset: -1px;
-	@media (max-width: $laptop) {
-		grid-template-rows: repeat(6, calc(496px / 6));
-	}
 	@media (max-width: $tablet) {
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: repeat(2, 1fr);
@@ -36,7 +33,6 @@
 		flex-direction: column;
 		row-gap: rem(19);
 		width: rem(640);
-		min-height: rem(275);
 		padding: var(--padding);
 		&._theory {
 			grid-area: theory;
@@ -72,7 +68,6 @@
 		}
 		@media (max-width: $laptop-lg) {
 			width: 560px;
-			min-height: 189px;
 			&._theory {
 				#{$this}__text {
 					max-width: 440px;
@@ -86,7 +81,6 @@
 		}
 		@media (max-width: $laptop) {
 			width: 360px;
-			min-height: 165px;
 			row-gap: 0;
 		}
 		@media (max-width: $tablet) {
@@ -154,7 +148,6 @@
 			}
 		}
 		@media (max-width: $tablet) {
-			// display: block;
 			border: 0;
 			border-top: 1px solid currentColor;
 			border-bottom: 1px solid currentColor;
