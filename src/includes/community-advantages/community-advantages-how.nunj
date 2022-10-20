@@ -1,0 +1,26 @@
+{% set list = [
+	'Заполнить форму ниже',
+	'После одобрения заявки оплатить членский взнос'
+] %}
+
+<section class="community-advantages _how" data-community-advantages>
+	<div class="community-advantages__container container">
+		<h2 class="community-advantages__title h4 ttu">Как стать участником</h2>
+		<div class="community-advantages__wrapper">
+			<ul class="community-advantages__list s2">
+				{% for item in list %}
+					<li class="community-advantages__item">
+						<p class="community-advantages__item-text">{{ item }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="community-advantages__text p2">
+				<p>Членский взнос Горного клуба&nbsp;&mdash; 1500&nbsp;рублей.<br>
+				Эти деньги мы&nbsp;тратим на&nbsp;развитие клуба, покупку снаряжения, аптечки, связь. И&nbsp;оплачиваем работу преподавателей и&nbsp;тренеров.</p>
+				<p>Также вы&nbsp;можете вступить в&nbsp;Федерацию альпинизма России и&nbsp;оформить карточку участника&nbsp;&mdash; для этого напишите на&nbsp;почту <a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>.</p>
+				<p>Подробности о&nbsp;членстве на&nbsp;сайте <a href="https://alpfederation.ru" target="_blank" rel="nofollow noopener">alpfederation.ru</a>.</p>
+			</div>
+			<a class="community-advantages__link ttu" href="#">Перейти на форму</a>
+		</div>
+	</div>
+</section>

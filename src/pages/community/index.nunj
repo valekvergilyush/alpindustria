@@ -9,6 +9,7 @@
 		{% include "../../includes/community-hero/community-hero.nunj" %}
 		{% include "../../includes/community-slider/community-slider.nunj" %}
 		{% include "../../includes/community-advantages/community-advantages.nunj" %}
+		{% include "../../includes/community-advantages/community-advantages-how.nunj" %}
 		{% include "../../includes/community-tabs/community-tabs.nunj" %}
 	</main>
 {% endblock %}

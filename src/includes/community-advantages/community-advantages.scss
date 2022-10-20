@@ -4,6 +4,9 @@
 	background-color: var(--blue-light);
 	height: 100vh;
 	overflow: hidden;
+	&._how {
+		background-color: var(--violet-light);
+	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 98px;
 	}
@@ -166,17 +169,46 @@
 		max-width: rem(576);
 		margin-left: var(--container-padding);
 		margin-bottom: rem(32);
+		p {
+			font: inherit;
+			&:not(:last-child) {
+				margin-bottom: rem(32);
+			}
+		}
+		a[href] {
+			text-decoration: none;
+			&:hover {
+				color: inherit;
+			}
+		}
+		@media (max-width: $laptop-lg) {
+			p {
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+		}
 		@media (max-width: $laptop) {
 			margin-bottom: 18px;
 			line-height: 1.5;
+			p {
+				&:not(:last-child) {
+					margin-bottom: 22px;
+				}
+			}
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			max-width: none;
 			margin-right: var(--container-padding);
 			margin-bottom: 14px;
 		}
 		@media (max-width: $mobile-lg) {
 			line-height: 1.71;
+			p {
+				&:not(:last-child) {
+					margin-bottom: 23px;
+				}
+			}
 		}
 	}
 	&__link {
