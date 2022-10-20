@@ -1,0 +1,60 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set newsFilters = [
+	{
+		name: 'Все материалы'
+	},
+	{
+		name: 'Как выбрать...'
+	},
+	{
+		name: 'Обзоры снаряжения',
+		active: true
+	},
+	{
+		name: 'Материалы  и технологии'
+	},
+	{
+		name: 'Новости outdoor'
+	},
+	{
+		name: 'Советы и инструкции'
+	},
+	{
+		name: 'История'
+	},
+	{
+		name: 'Тесты и отзывы'
+	},
+	{
+		name: 'Восхождения и путешествия'
+	}
+] %}
+
+<section class="news">
+	<h1 class="news__title h4 ttu">Новости и&nbsp;статьи</h1>
+	<ul class="news__filter-btns h4">
+		{% for item in newsFilters %}
+			<li class="news__filter-item">
+				{{ button({
+					className: 'news__filter _quick-filter',
+					text: item.name
+				}) }}
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="news__filters-line container">
+		{{ button({
+			className: 'news__search',
+			icon: 'search',
+			iconData: 'width="32" height="32" viewBox="0 0 32 32"'
+		}) }}
+		<p class="news__number p2">242 товара</p>
+		{{ button({
+			className: 'news__sort h7 ttu',
+			text: 'сортировка',
+			icon: 'sort-asc',
+			iconData: 'width="24" height="24" viewBox="0 0 24 24"'
+		}) }}
+	</div>
+</section>
