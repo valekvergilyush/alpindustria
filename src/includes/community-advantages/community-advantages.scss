@@ -2,6 +2,7 @@
 	--padding-y: #{rem(124)};
 	color: var(--white);
 	background-color: var(--blue-light);
+	height: 100vh;
 	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--padding-y: 98px;
@@ -9,9 +10,12 @@
 	@media (max-width: $laptop) {
 		--padding-y: 62px;
 	}
+	@media (max-width: $tablet) {
+		height: auto;
+	}
 	&__container {
 		display: flex;
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			flex-direction: column;
 			padding-block: 76px;
 		}
@@ -20,22 +24,24 @@
 		}
 	}
 	&__title {
+		position: sticky;
+		bottom: 0;
 		max-width: rem(960);
 		margin-left: auto;
 		margin-top: auto;
-		margin-bottom: rem(120);
+		padding-bottom: rem(120);
 		@media (max-width: $laptop-lg) {
 			padding-right: 50px;
-			margin-bottom: 88px;
+			padding-bottom: 88px;
 		}
 		@media (max-width: $laptop) {
-			margin-bottom: 68px;
+			padding-bottom: 68px;
 		}
-		@media (max-width: $laptop-sm) {
-			margin-bottom: 29px;
+		@media (max-width: $tablet) {
+			padding-bottom: 29px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 21px;
+			padding-bottom: 21px;
 		}
 	}
 	&__wrapper {
@@ -43,12 +49,11 @@
 		flex-direction: column;
 		padding-block: var(--padding-y);
 		border-left: 1px solid currentColor;
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			border: 0;
 			margin-inline: calc(0px - var(--container-padding));
 			padding-top: 0;
 			padding-bottom: 0;
-			border-bottom: 1px solid currentColor;
 		}
 	}
 	&__list {
@@ -57,7 +62,7 @@
 		@media (max-width: $laptop) {
 			margin-bottom: 46px;
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			display: flex;
 			flex-wrap: wrap;
 			margin-bottom: 21px;
@@ -112,7 +117,7 @@
 				min-height: 210px;
 			}
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			width: 50%;
 			min-height: 160px;
 			padding-inline: 24px;
@@ -149,7 +154,7 @@
 			font-size: 18px;
 			letter-spacing: 0;
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			width: auto;
 		}
 		@media (max-width: $mobile-lg) {
@@ -203,7 +208,7 @@
 			font-family: var(--font-family-suisse);
 			font-size: 16px;
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			margin-right: var(--container-padding);
 			margin-bottom: 16px;
 		}

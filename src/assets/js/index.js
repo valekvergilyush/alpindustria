@@ -37,6 +37,8 @@ class AlpIndustry {
 			InputFile: require('../../includes/components/input-file/input-file').default,
 			ApplicationForm: require('../../includes/application-form/application-form').default,
 			CommunitySlider: require('../../includes/community-slider/community-slider').default,
+			CommunityAdvantages: require('../../includes/community-advantages/community-advantages')
+				.default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
