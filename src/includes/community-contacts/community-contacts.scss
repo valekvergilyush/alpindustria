@@ -1,4 +1,5 @@
 .community-contacts {
+	$this: &;
 	&__title {
 		max-width: rem(850);
 		margin-bottom: rem(32);
@@ -11,6 +12,8 @@
 	}
 	&__text {
 		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 		flex-wrap: wrap;
 		row-gap: rem(16);
 		column-gap: 0.5ch;
@@ -39,6 +42,12 @@
 			}
 			&:not(:last-child) {
 				margin-bottom: 24px;
+			}
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}

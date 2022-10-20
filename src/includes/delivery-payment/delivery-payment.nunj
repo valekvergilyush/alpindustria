@@ -23,7 +23,7 @@
 	</ul>
 
 	<div class="delivery-payment__sections">
-		<section class="delivery-payment__section _active" aria-labelledby="delivery" data-tab-section="delivery">
+		<section class="delivery-payment__section" aria-labelledby="delivery" data-tab-section="delivery">
 			{% include "../delivery-tab/delivery-tab.nunj" %}
 		</section>
 		<section class="delivery-payment__section" aria-labelledby="payment" data-tab-section="payment">
@@ -32,7 +32,7 @@
 		<section class="delivery-payment__section" aria-labelledby="returns" data-tab-section="returns">
 			{% include "../delivery-return/delivery-return.nunj" %}
 		</section>
-		<section class="delivery-payment__section" aria-labelledby="contacts" data-tab-section="contacts">
+		<section class="delivery-payment__section _active" aria-labelledby="contacts" data-tab-section="contacts">
 			{% include "../delivery-contacts/delivery-contacts.nunj" %}
 		</section>
 	</div>
