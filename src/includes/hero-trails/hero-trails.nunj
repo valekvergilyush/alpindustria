@@ -1,0 +1,26 @@
+{% set trails = [
+	{
+		title: 'Alpindustria Elbrus Race',
+		dates: '05.08.2022 – 07.08.2022',
+		img: '/assets/images/community/trails/hero-trails',
+		className: '_active'
+	},
+	{ title: 'Elbrus<br> Race', dates: '05.08.2022 – 07.08.2022' },
+	{ title: 'Elbrus<br> Race', dates: '05.08.2022 – 07.08.2022' }
+] %}
+
+<section class="hero-trails">
+	<ul class="hero-trails__list">
+		{% for trail in trails %}
+			<li class="hero-trails__item{% if trail.className %} {{ trail.className }}{% endif %}">
+				<div class="hero-trails__info">
+					<h2 class="hero-trails__title h3 ttu">{{ trail.title }}</h2>
+					<p class="hero-trails__dates s2">{{ trail.dates }}</p>
+				</div>
+				{% if trail.img %}
+					<img class="hero-trails__bg-img" src="{{ trail.img }}.jpg" srcset="{{ trail.img }}@2x.jpg" width="1289" height="900" alt="">
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

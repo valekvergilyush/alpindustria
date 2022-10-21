@@ -1,0 +1,123 @@
+.hero-trails {
+	$this: &;
+	&__list {
+		display: flex;
+		overflow: hidden;
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			border-bottom: 1px solid var(--gray-dark);
+		}
+	}
+	&__item {
+		--arrow-size: #{rem(88)};
+		position: relative;
+		z-index: 0;
+		flex-shrink: 0;
+		box-sizing: border-box;
+		width: 35vw;
+		margin-left: -21vw;
+		min-height: rem(900);
+		padding: var(--container-padding);
+		color: var(--gray-dark);
+		background-color: var(--gray-light);
+		outline: 1px solid var(--gray-dark);
+		outline-offset: -1px;
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			bottom: var(--container-padding);
+			right: var(--container-padding);
+			width: var(--arrow-size);
+			height: var(--arrow-size);
+			background-image: inline('promo-arrow.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function;
+			opacity: 0;
+		}
+		&:hover {
+			&::before {
+				background-image: inline('promo-arrow-white.svg');
+			}
+		}
+		&._active {
+			width: 73vw;
+			margin-left: 0;
+			outline: none;
+			color: var(--white);
+			&::before {
+				opacity: 1;
+			}
+			#{$this}__info {
+				max-width: rem(535);
+			}
+		}
+		&._active + & {
+			margin-left: 0;
+		}
+		@media (max-width: $laptop-lg) {
+			min-height: 640px;
+		}
+		@media (max-width: $laptop) {
+			min-height: 540px;
+		}
+		@media (max-width: $tablet) {
+			width: 100%;
+			min-height: auto;
+			margin-left: 0;
+			margin-top: -120px;
+			&._active {
+				width: 100%;
+				min-height: 483px;
+				margin-top: 0;
+			}
+			&._active + & {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: -120px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: -90px;
+			&._active {
+				min-height: 497px;
+				margin-top: 0;
+			}
+			&._active + & {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: -90px;
+			}
+		}
+	}
+	&__info {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		max-width: rem(370);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__title {
+		margin-bottom: rem(24);
+		word-break: break-all;
+		@media (max-width: $tablet) {
+			word-break: normal;
+		}
+	}
+	&__bg-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		pointer-events: none;
+	}
+}
