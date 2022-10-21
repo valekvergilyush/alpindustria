@@ -1,0 +1,33 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<section class="cta-news">
+	<div class="container cta-news__wrap">
+		{{ icon({
+			iconName: 'logo-short',
+			className: 'cta-news__logo',
+			attr: 'viewBox="0 0 71 36"'
+		}) }}
+		<div class="cta-news__row">
+			<h2 class="cta-news__title h4">ПОДПИШИТЕСЬ НА&nbsp;НАШИ НОВОСТИ</h2>
+			<div class="cta-news__right">
+				<p class="cta-news__text p1">Только полезные новости и не чаще 2 раз в неделю — статьи экспертов, обзоры снаряжения, спецпредложения.</p>
+				<form class="cta-news__form">
+					{{ input({
+						type: 'email',
+						id: 'email-form',
+						name: 'Ваш E-MAIL',
+						className: 'cta-news__input'
+					}) }}
+					{{ button({
+						text: 'подписаться',
+						icon: 'promo-arrow',
+						type: 'submit',
+						className: 'cta-news__submit h6 ttu'
+					}) }}
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
