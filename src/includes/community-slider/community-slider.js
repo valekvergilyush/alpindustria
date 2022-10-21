@@ -27,7 +27,7 @@ class CommunitySlider {
 			scrub: true,
 		});
 
-		gsap.to(this.slide, {
+		gsap.set(this.slide, {
 			x: 0 - getToValue(),
 			scrollTrigger: {
 				trigger: this.container,
@@ -36,7 +36,7 @@ class CommunitySlider {
 				invalidateOnRefresh: true,
 				scrub: true,
 				onUpdate: self => {
-					gsap.to(this.slide, {
+					gsap.set(this.slide, {
 						x: 0 - getToValue() * self.progress,
 					});
 				},
