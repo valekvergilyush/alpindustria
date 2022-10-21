@@ -1,7 +1,7 @@
 {% set navList = [
-	{ text: 'О горном клубе', url: '#' },
+	{ text: 'О горном клубе', url: '/community/' },
 	{ text: 'Занятия', url: '#' },
-	{ text: 'Трейлы', url: '#' },
+	{ text: 'Трейлы', url: '/community/trails.html' },
 	{ text: 'Фрирайд', url: '#' }
 ] %}
 
