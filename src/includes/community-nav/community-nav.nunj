@@ -2,7 +2,7 @@
 	{ text: 'О горном клубе', url: '/community/' },
 	{ text: 'Занятия', url: '#' },
 	{ text: 'Трейлы', url: '/community/trails.html' },
-	{ text: 'Фрирайд', url: '#' }
+	{ text: 'Фрирайд', url: '/community/freerides.html' }
 ] %}
 
 <div class="page__community-nav community-nav">
