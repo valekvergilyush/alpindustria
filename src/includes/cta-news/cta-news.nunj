@@ -7,21 +7,21 @@
 		{{ icon({
 			iconName: 'logo-short',
 			className: 'cta-news__logo',
-			attr: 'viewBox="0 0 71 36"'
+			attr: 'viewBox="0 0 71 36" width="76" height="40"'
 		}) }}
 		<div class="cta-news__row">
-			<h2 class="cta-news__title h4">ПОДПИШИТЕСЬ НА&nbsp;НАШИ НОВОСТИ</h2>
+			<h2 class="cta-news__title h4">Подпишитесь на&nbsp;наши новости</h2>
 			<div class="cta-news__right">
 				<p class="cta-news__text p1">Только полезные новости и не чаще 2 раз в неделю — статьи экспертов, обзоры снаряжения, спецпредложения.</p>
 				<form class="cta-news__form">
 					{{ input({
 						type: 'email',
 						id: 'email-form',
-						name: 'Ваш E-MAIL',
+						name: 'Ваш e-mail',
 						className: 'cta-news__input'
 					}) }}
 					{{ button({
-						text: 'подписаться',
+						text: 'Подписаться',
 						icon: 'promo-arrow',
 						type: 'submit',
 						className: 'cta-news__submit h6 ttu'

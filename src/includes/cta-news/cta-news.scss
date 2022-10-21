@@ -105,7 +105,6 @@
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 6px;
 			font-size: 14px;
-			line-height: 24px;
 		}
 	}
 	&__form {
@@ -148,15 +147,17 @@
 			height: var(--size);
 			margin-left: rem(12);
 			fill: currentColor;
-			transition: transform $default-transition-duration $default-transition-function;
 			@media (max-width: $laptop-lg) {
 				--size: 16px;
 				margin-left: 8px;
 			}
 		}
+		.button__text {
+			transition: transform $default-transition-duration $default-transition-function;
+		}
 		&:hover {
-			.button__icon {
-				transform: translateX(#{rem(-4)});
+			.button__text {
+				transform: translateX(#{rem(4)});
 			}
 		}
 	}
