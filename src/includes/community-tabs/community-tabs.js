@@ -4,6 +4,7 @@ const ClassName = {
 };
 
 const TABLET_BREAKPOINT = 992;
+const SECTIONS_WITHOUT_MOBILE = ['delivery'];
 
 class CommunityTabs {
 	constructor() {
@@ -21,13 +22,15 @@ class CommunityTabs {
 		this.sections = this.container.querySelectorAll('[data-tab-section]');
 		this.activeButton = this.container.querySelector('[data-tab-btn]._active');
 		this.activeSection = this.container.querySelector('[data-tab-section]._active');
+		this.containerName = this.container.dataset.communityTab;
+		this.mobileMode = !SECTIONS_WITHOUT_MOBILE.includes(this.containerName);
 
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
 
 		this._onButtonClick = this._onButtonClick.bind(this);
 
 		const onWindowWidthChange = evt => {
-			if (evt.matches) {
+			if (evt.matches && this.mobileMode) {
 				this._initMobileTabs();
 			} else {
 				this._initDesktopTabs();
@@ -67,7 +70,7 @@ class CommunityTabs {
 
 		const id = evt.target.id;
 
-		if (window.innerWidth < TABLET_BREAKPOINT) {
+		if (window.innerWidth < TABLET_BREAKPOINT && this.mobileMode) {
 			if (this.container.classList.contains(ClassName.ACTIVE)) {
 				this._closeActiveSection();
 			} else {
