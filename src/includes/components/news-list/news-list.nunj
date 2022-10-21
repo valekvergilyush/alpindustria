@@ -1,0 +1,11 @@
+{% from "../news-item/news-item.nunj" import newsItem %}
+
+{% macro newsList(props) %}
+	<ul class="news-list {% if props.className %}{{ props.className }} {% endif %}">
+		{% for item in props.list %}
+			<li class="news-list__item">
+				{{ newsItem(item) }}
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

@@ -44,6 +44,8 @@
 @import '../../includes/components/brand-main/brand-main';
 @import '../../includes/components/brand-block/brand-block';
 @import '../../includes/components/input-file/input-file';
+@import '../../includes/components/news-list/news-list';
+@import '../../includes/components/news-item/news-item';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -101,6 +103,7 @@
 @import '../../includes/delivery-payment-tab/delivery-payment-tab';
 @import '../../includes/delivery-return/delivery-return';
 @import '../../includes/news/news';
+@import '../../includes/cta-news/cta-news';
 
 // ======= PAGES =======
 @import 'pages/index';
