@@ -1,7 +1,7 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/news-list/news-list.nunj" import newsList %}
 
-{% set newsFilters = [
+{% set newsFilters1 = [
 	{
 		name: 'Все материалы'
 	},
@@ -17,7 +17,9 @@
 	},
 	{
 		name: 'Новости outdoor'
-	},
+	}
+] %}
+{% set newsFilters2 = [
 	{
 		name: 'Советы и инструкции'
 	},
@@ -148,16 +150,24 @@
 
 <section class="news">
 	<h1 class="news__title h4 ttu">Новости и&nbsp;статьи</h1>
-	<ul class="news__filter-btns h4">
-		{% for item in newsFilters %}
-			<li class="news__filter-item">
+	<div class="news__filter-btns h4">
+		<div class="news__filter-btns-wrap">
+			{% for item in newsFilters1 %}
 				{{ button({
 					className: 'news__filter _quick-filter',
 					text: item.name
 				}) }}
-			</li>
-		{% endfor %}
-	</ul>
+			{% endfor %}
+		</div>
+		<div class="news__filter-btns-wrap">
+			{% for item in newsFilters2 %}
+				{{ button({
+					className: 'news__filter _quick-filter',
+					text: item.name
+				}) }}
+			{% endfor %}
+		</div>
+	</div>
 	<div class="news__filters-line container">
 		{{ button({
 			className: 'news__search',
