@@ -20,13 +20,13 @@
 
 {% macro buttonInner(props) %}
 	{% if props.text %}
-			<span class="button__text">{{ props.text }}</span>
-		{% endif %}
-		{% if props.icon %}
-			{{ icon({
-				iconName: props.icon,
-				className: 'button__icon',
-				attr: props.iconData
-			}) }}
-		{% endif %}
+		<span class="button__text">{{ props.text }}</span>
+	{% endif %}
+	{% if props.icon %}
+		{{ icon({
+			iconName: props.icon,
+			className: 'button__icon',
+			attr: props.iconData
+		}) }}
+	{% endif %}
 {% endmacro %}

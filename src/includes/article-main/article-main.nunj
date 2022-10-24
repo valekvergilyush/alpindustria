@@ -1,0 +1,37 @@
+{% from "../components/button/button.nunj" import button %}
+
+<section class="article-main">
+	<div class="article-main__wrap container">
+		<p class="article-main__date p1 c-gray-dark">26 / 06 / 2022</p>
+		<h1 class="article-main__title h5 ttu">Снаряжение для восхождения на&nbsp;Ама&#8209;Даблам</h1>
+		<p class="article-main__time p3 c-gray-dark">10 минут на чтение</p>
+		<a href="#" class="article-main__author p3">Ковалёв Сергей</a>
+		<div class="article-main__links">
+			{{ button({
+				className: 'article-main__link _blue-border _social ttu',
+				text: 'VK',
+				href: '#',
+				attr: 'aria-label="Поделиться в VK"'
+			}) }}
+			{{ button({
+				className: 'article-main__link _blue-border _social ttu',
+				text: 'TG',
+				href: '#',
+				attr: 'aria-label="Поделиться в Telegram"'
+			}) }}
+			{{ button({
+				className: 'article-main__link _icon',
+				icon: 'link',
+				iconData: 'width="36" height="37" viewBox="0 0 36 37"',
+				href: '#',
+				attr: 'aria-label="Поделиться"'
+			}) }}
+		</div>
+		<div class="article-main__img-wrap">
+			<div class="article-main__img">
+				<img src="assets/images/article/article-img-1.jpg" srcset="assets/images/article/article-img-1@2x.jpg 2x" alt="Снаряжение для восхождения на Ама-Даблам">
+			</div>
+			<p class="article-main__img-text p3 c-gray-dark">Ковалёв Сергей на восхождении на Ама-даблам</p>
+		</div>
+	</div>
+</section>

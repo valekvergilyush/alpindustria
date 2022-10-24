@@ -1,0 +1,26 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+
+{% block title %}Снаряжение для восхождения на Ама-Даблам | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'статьи', href: '#'},
+		{ text: 'обзоры снаряжений', href: '#'}
+	],
+	link: {
+		href: '/',
+		text: 'В каталог'
+	}
+} %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		<article class="article">
+			{% include "../includes/article-main/article-main.nunj" %}
+		</article>
+		{# {% include "../includes/news/news.nunj" %} #}
+	</main>
+{% endblock %}
