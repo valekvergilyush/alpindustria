@@ -21,6 +21,5 @@
 		<article class="article">
 			{% include "../includes/article-main/article-main.nunj" %}
 		</article>
-		{# {% include "../includes/news/news.nunj" %} #}
 	</main>
 {% endblock %}
