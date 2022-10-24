@@ -1,0 +1,23 @@
+{% macro trailCard(props) %}
+	{% if props.empty %}
+		<div class="trail-card _empty{% if props.className %} {{ props.className }}{% endif %}">
+		</div>
+	{% else %}
+		<div class="trail-card{% if props.className %} {{ props.className }}{% endif %}">
+			<div class="trail-card__content">
+				<p class="trail-card__title h5 ttu">{{ props.title }}</p>
+				<div class="trail-card__bottom">
+					<div class="trail-card__info">
+						<p class="trail-card__dates s2">{{ props.dates }}</p>
+						<p class="trail-card__text p3">{{ props.text }}</p>
+					</div>
+					<a class="trail-card__link h5 ttu" href="{{ props.linkURL }}">{{ props.linkText }}</a>
+				</div>
+				<a class="trail-card__card-link" href="{{ props.linkURL }}"><span class="visually-hidden">{{ props.linkText }}</span></a>
+			</div>
+			{% if props.img %}
+				<img class="trail-card__bg-img" src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg" alt="">
+			{% endif %}
+		</div>
+	{% endif %}
+{% endmacro %}

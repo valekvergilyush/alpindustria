@@ -37,10 +37,10 @@
 			<li class="catalog__item _promo-1">
 				{% include "../catalog-promo/promo-1.nunj" %}
 			</li>
-			<li class="catalog__item catalog-promo _empty _promo-2">
+			<li class="catalog__item catalog-promo _promo-2">
 				{% include "../catalog-promo/promo-2.nunj" %}
 			</li>
-			<li class="catalog__item catalog-promo _empty _promo-3">
+			<li class="catalog__item catalog-promo _promo-3">
 				{% include "../catalog-promo/promo-3.nunj" %}
 			</li>
 		</ul>
