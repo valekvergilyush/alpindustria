@@ -1,4 +1,4 @@
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Utils from '../utils/utils';
 
 const ClassName = {
 	ANIMATIONS: 'animations',
@@ -22,12 +22,14 @@ class ShowAnimations {
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			document.documentElement.classList.add(ClassName.ANIMATIONS);
 
-			this.animatedBlocks.forEach(block => {
-				ScrollTrigger.create({
-					trigger: block,
-					start: 'center bottom',
-					toggleClass: ClassName.ANIMATED,
-					once: true,
+			window.addEventListener('scroll', () => {
+				this.animatedBlocks.forEach(block => {
+					const isAnimated = block.classList.contains(ClassName.ANIMATED);
+					if (!isAnimated) {
+						const isInViewport = Utils.isElementInViewport(block, 1.2);
+
+						isInViewport && block.classList.add(ClassName.ANIMATED);
+					}
 				});
 			});
 		}

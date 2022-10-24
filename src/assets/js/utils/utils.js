@@ -103,16 +103,18 @@ const utils = {
 			document.body.scrollTop
 		);
 	},
-	isElementInViewport(el) {
+	isElementInViewport(el, k = 1) {
 		const rect = el.getBoundingClientRect();
 
 		return (
 			rect.top >= 0 &&
 			rect.left >= 0 &&
 			rect.bottom <=
-				(window.innerHeight || document.documentElement.clientHeight) /* or $(window).height() */ &&
+				(window.innerHeight * k ||
+					document.documentElement.clientHeight * k) /* or $(window).height() */ &&
 			rect.right <=
-				(window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+				(window.innerWidth * k ||
+					document.documentElement.clientWidth * k) /* or $(window).width() */
 		);
 	},
 };
