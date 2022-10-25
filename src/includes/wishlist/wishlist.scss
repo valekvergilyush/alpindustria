@@ -19,7 +19,8 @@
 		}
 	}
 	&__input {
-		margin-bottom: rem(16);
+		flex-direction: column;
+		margin-bottom: rem(40);
 	}
 	&__form {
 		@media (max-width: $laptop-md) {

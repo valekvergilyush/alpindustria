@@ -243,8 +243,8 @@
 			width: var(--size);
 			height: var(--size);
 			background-color: transparent;
-			background-image: inline('cart.svg');
-			background-size: 38px;
+			background-image: inline('cart-2.svg');
+			background-size: 28px;
 			background-position: center;
 			background-repeat: no-repeat;
 			#{$this}__text {
@@ -253,7 +253,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			--size: 40px;
-			background-size: 28px;
+			background-size: 24px;
 		}
 	}
 	&._wishlist {

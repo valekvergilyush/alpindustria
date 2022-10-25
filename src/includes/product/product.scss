@@ -141,18 +141,16 @@
 		}
 	}
 	&__rating-icon {
-		--size: #{rem(32)};
-		margin-right: rem(12);
+		--size: #{rem(28)};
+		margin-right: rem(15);
 		width: var(--size);
 		height: var(--size);
 		@media (max-width: $laptop-md) {
-			--size: 29px;
-		}
-		@media (max-width: $laptop-sm) {
-			--size: 32px;
+			--size: 27px;
+			margin-right: 10px;
 		}
 		@media (max-width: $mobile-lg) {
-			--size: 29px;
+			--size: 24px;
 		}
 	}
 	&__price-wrap {
