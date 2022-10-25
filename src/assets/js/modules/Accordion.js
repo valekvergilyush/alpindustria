@@ -1,5 +1,5 @@
 const OPTIONS = {
-	multiple: true,
+	multiple: false,
 };
 
 const ClassName = {
