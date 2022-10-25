@@ -17,6 +17,40 @@
 			margin-bottom: 32px;
 		}
 	}
+	&__slider {
+		.flickity-page-dots {
+			--size: #{rem(10)};
+			position: absolute;
+			top: 0;
+			right: var(--container-padding);
+			bottom: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: var(--size);
+			width: auto;
+			height: 100%;
+			pointer-events: none;
+		}
+		.flickity-page-dot {
+			@include reset-btn;
+			width: var(--size);
+			height: var(--size);
+			border-radius: 50%;
+			color: transparent;
+			background-color: var(--white);
+			overflow: hidden;
+			opacity: 0.8;
+			transition: all $default-transition-duration $default-transition-function;
+			pointer-events: all;
+			&.is-selected {
+				height: rem(43);
+				border: 1px solid var(--white);
+				border-radius: 100vmax;
+				background: 0;
+			}
+		}
+	}
 	&__video-wrapper {
 		width: 100%;
 	}
