@@ -9,10 +9,10 @@
 	{ title: 'Elbrus<br> Race', dates: '05.08.2022 – 07.08.2022' }
 ] %}
 
-<section class="hero-trails">
-	<ul class="hero-trails__list">
+{# <section class="hero-trails">
+	<ul class="hero-trails__list" style="--total:{{ loop.length }}">
 		{% for trail in trails %}
-			<li class="hero-trails__item{% if trail.className %} {{ trail.className }}{% endif %}">
+			<li class="hero-trails__item{% if trail.className %} {{ trail.className }}{% endif %}" style="--i:{{ loop.index0 }}" tabindex="{{ loop.index }}">
 				<div class="hero-trails__info">
 					<h2 class="hero-trails__title h3 ttu">{{ trail.title }}</h2>
 					<p class="hero-trails__dates s2">{{ trail.dates }}</p>
@@ -22,5 +22,13 @@
 				{% endif %}
 			</li>
 		{% endfor %}
+	</ul>
+</section> #}
+
+<section class="hero-trails">
+	<ul class="hero-trails__list" style="--total: 3;" data-vaccordion>
+		<li class="hero-trails__item _active" style="--i:0; --color: var(--color-green)" data-vaccordion-item></li>
+		<li class="hero-trails__item" style="--i:1; --color: var(--color-gold)" data-vaccordion-item></li>
+		<li class="hero-trails__item" style="--i:2; --color: var(--color-purple)" data-vaccordion-item></li>
 	</ul>
 </section>
