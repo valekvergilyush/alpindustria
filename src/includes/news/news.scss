@@ -35,9 +35,7 @@
 	}
 	&__filter-btns {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
+		flex-direction: column;
 		max-width: rem(1217);
 		padding: var(--filter-gap);
 		margin-inline: auto;
@@ -54,8 +52,19 @@
 			white-space: nowrap;
 		}
 		@media (max-width: $mobile-lg) {
+			flex-direction: row;
 			padding-block: 0;
 			margin-bottom: 40px;
+		}
+	}
+	&__filter-btns-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--filter-gap);
+		@media (max-width: $laptop-sm) {
+			flex-wrap: nowrap;
+			justify-content: flex-start;
 			white-space: nowrap;
 		}
 	}

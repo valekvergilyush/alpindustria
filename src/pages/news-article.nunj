@@ -1,0 +1,75 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+{% from "../includes/components/product-card/product-card.nunj" import productCard %}
+
+{% block title %}Снаряжение для восхождения на Ама-Даблам | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Статьи', href: '#'},
+		{ text: 'Обзоры снаряжений', href: '#'}
+	],
+	link: {
+		href: '/',
+		text: 'В каталог'
+	}
+} %}
+
+{% set productList = [
+	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
+	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+] %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		<article class="article p2">
+			{% include "../includes/article-main/article-main.nunj" %}
+			<div class="container">
+				<div class="article__content">
+					{% include "../includes/article-content/article-content.nunj" %}
+				</div>
+			</div>
+			<ul class="article__products-list">
+				{% for product in productList %}
+					<li class="article__product">
+						{{ productCard(product) }}
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="container">
+				<div class="article__content">
+					{% include "../includes/article-content/article-content-2.nunj" %}
+				</div>
+			</div>
+			<ul class="article__products-list">
+				{% for product in productList %}
+					<li class="article__product">
+						{{ productCard(product) }}
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="container">
+				<div class="article__content">
+					{% include "../includes/article-content/article-content-3.nunj" %}
+				</div>
+			</div>
+			<ul class="article__products-list">
+				{% for product in productList %}
+					<li class="article__product">
+						{{ productCard(product) }}
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="container">
+				<div class="article__content">
+					{% include "../includes/article-content/article-content-4.nunj" %}
+				</div>
+			</div>
+		</article>
+		{% include "../includes/catalog-accordion/catalog-accordion-article.nunj" %}
+	</main>
+{% endblock %}

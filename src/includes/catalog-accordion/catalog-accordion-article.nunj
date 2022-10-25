@@ -1,0 +1,61 @@
+{% from "../components/news-item/news-item.nunj" import newsItem %}
+
+{% set newsListData = [
+	{
+		className: '_border',
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и приемущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-1'
+	},
+	{
+		className: '_border',
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и приемущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-2'
+	},
+	{
+		className: '_border',
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и приемущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-3'
+	},
+	{
+		className: '_border',
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и приемущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-4'
+	}
+] %}
+{% set articleAccordions = [
+	'Ковалёв Сергей',
+	'Как выбрать...',
+	'Материалы и технологии',
+	'История',
+	'Тесты и отзывы',
+	'Обзоры снаряжения'
+] %}
+
+<div class="catalog-accordion">
+	{% for accordion in articleAccordions %}
+		<section class="catalog-accordion__section" data-accordion-section>
+			<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>{{ accordion }}</span></h2>
+			{% if newsListData %}
+				<ul class="catalog-accordion__list" data-accordion-content>
+					{% for product in newsListData %}
+						<li class="catalog-accordion__item">
+							{{ newsItem(product) }}
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</section>
+	{% endfor %}
+</div>
