@@ -7,8 +7,8 @@
 
 {% set breadcrumbsData = {
 	list:	[
-		{ text: 'статьи', href: '#'},
-		{ text: 'обзоры снаряжений', href: '#'}
+		{ text: 'Статьи', href: '#'},
+		{ text: 'Обзоры снаряжений', href: '#'}
 	],
 	link: {
 		href: '/',

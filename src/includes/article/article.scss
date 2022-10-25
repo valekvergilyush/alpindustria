@@ -1,7 +1,7 @@
 .article {
 	--block-width: #{rem(960)};
 	background-color: var(--gray-light);
-	padding-bottom: 56px;
+	padding-bottom: rem(56);
 	@media (max-width: $laptop-lg) {
 		--block-width: 816px;
 	}

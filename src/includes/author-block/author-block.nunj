@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<a href="#" class="author-block__link h7 ttu c-blue-dark">
-		все обзоры
+		Все обзоры
 		{{ icon({
 			iconName: 'promo-arrow',
 			className: 'author-block__link-icon',
