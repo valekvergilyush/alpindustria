@@ -1,0 +1,18 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<section class="trail-video">
+	<h2 class="trail-video__title h4 ttu c-green-dark container">Предыдущие выезды</h2>
+	<div class="trail-video__video">
+		<div class="trail-video__info">
+			<p class="trail-video__name h3 ttu">Alpindustria Arkhyz Race 2021</p>
+			<p class="trail-video__desc s2">Full movie</p>
+		</div>
+		<button class="trail-video__play-button" type="button" aria-label="Play">
+			{{ icon({
+				iconName: 'play',
+				attr: 'width="152" height="152"'
+			}) }}
+		</button>
+		<img class="trail-video__preview" src="/assets/images/community/trails/trail-video-preview.jpg" srcset="/assets/images/community/trails/trail-video-preview@2x.jpg 2x" alt="">
+	</div>
+</section>

@@ -1,0 +1,15 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% block title %}Фрирайды | {{ super() }}{% endblock title %}
+
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../../includes/community-nav/community-nav.nunj" %}
+		{% include "../../includes/hero-trails/hero-trails.nunj" %}
+		{% include "../../includes/trails-text/trails-text-freerides.nunj" %}
+		{% include "../../includes/trail-list/trail-list-freerides.nunj" %}
+		{% include "../../includes/trail-merch/trail-merch-freerides.nunj" %}
+		{% include "../../includes/trail-video/trail-video-freerides.nunj" %}
+	</main>
+{% endblock %}

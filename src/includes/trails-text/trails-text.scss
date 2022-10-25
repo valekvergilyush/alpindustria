@@ -1,0 +1,19 @@
+.trails-text {
+	padding-block: rem(176);
+	color: var(--gray-dark);
+	font-family: var(--font-family-suisse);
+	font-size: rem(44);
+	line-height: 1.3;
+	p {
+		max-width: rem(1410);
+	}
+	@media (max-width: $laptop) {
+		padding-block: 124px;
+		font-size: 30px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-block: 64px;
+		font-size: 22px;
+		line-height: 1.32;
+	}
+}

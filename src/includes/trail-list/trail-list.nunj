@@ -1,0 +1,56 @@
+{% from "../components/trail-card/trail-card.nunj" import trailCard %}
+
+{% set trailsList = [
+	{
+		title: 'Spas-Kamenka Alpindustria Trail&nbsp;2022',
+		dates: '29.09.2022 – 05.10.2022',
+		text: 'Регистрация открыта',
+		linkText: 'VK',
+		linkURL: '#',
+		img: '/assets/images/community/trails/trail-1'
+	},
+	{
+		title: 'Spas-Kamenka Alpindustria Trail&nbsp;2022',
+		dates: '29.09.2022 – 05.10.2022',
+		text: 'Регистрация открыта',
+		linkText: 'VK',
+		linkURL: '#',
+		img: '/assets/images/community/trails/trail-2'
+	},
+	{
+		title: 'Spas-Kamenka Alpindustria Trail&nbsp;2022',
+		dates: '29.09.2022 – 05.10.2022',
+		text: 'Регистрация открыта',
+		linkText: 'VK',
+		linkURL: '#',
+		img: '/assets/images/community/trails/trail-3'
+	},
+	{
+		title: 'Spas-Kamenka Alpindustria Trail&nbsp;2022',
+		dates: '29.09.2022 – 05.10.2022',
+		text: 'Регистрация открыта',
+		linkText: 'VK',
+		linkURL: '#',
+		img: '/assets/images/community/trails/trail-2'
+	},
+	{
+		title: 'Spas-Kamenka Alpindustria Trail&nbsp;2022',
+		dates: '29.09.2022 – 05.10.2022',
+		text: 'Регистрация открыта',
+		linkText: 'VK',
+		linkURL: '#',
+		img: '/assets/images/community/trails/trail-1'
+	},
+	{ empty: true }
+] %}
+
+<section class="trail-list">
+	<h2 class="trail-list__title h4 ttu c-green-dark container">Наши трейлы</h2>
+	<ul class="trail-list__list">
+		{% for trail in trailsList %}
+			<li class="trail-list__item">
+				{{ trailCard(trail) }}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

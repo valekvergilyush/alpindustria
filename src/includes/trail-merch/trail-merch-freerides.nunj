@@ -1,0 +1,24 @@
+{% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
+
+{% set productList = [
+	{ url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
+	{ url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+] %}
+
+<section class="trail-merch _freerides">
+	<h2 class="trail-merch__title h4 ttu c-violet-light container">Мерч</h2>
+	<ul class="trail-merch__list" data-accordion-content>
+		{% for product in productList %}
+			<li class="trail-merch__item">{{ productCard(product) }}</li>
+		{% endfor %}
+	</ul>
+	{{ button({
+		className: 'catalog__show-more-btn _show-more',
+		text: 'Смотреть больше',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"'
+	}) }}
+</section>

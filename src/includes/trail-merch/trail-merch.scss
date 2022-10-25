@@ -1,0 +1,40 @@
+.trail-merch {
+	padding-top: rem(176);
+	@media (max-width: $laptop-lg) {
+		padding-top: 184px;
+	}
+	@media (max-width: $laptop) {
+		padding-top: 124px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-top: 64px;
+	}
+	&__title {
+		margin-bottom: rem(56);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 48px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 32px;
+		}
+	}
+	&__list {
+		display: flex;
+	}
+	&__item {
+		flex-shrink: 0;
+		width: calc(100% / 4);
+		@media (max-width: $tablet) {
+			width: calc(100% / 3);
+			&:nth-child(4) {
+				display: none;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			width: calc(100% / 2);
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+	}
+}
