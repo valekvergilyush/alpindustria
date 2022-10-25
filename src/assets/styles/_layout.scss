@@ -34,18 +34,17 @@
 	}
 	&__menu {
 		position: fixed !important;
-		z-index: 20;
+		z-index: 21;
 		top: 0;
 		left: 0;
 		width: 100%;
-		opacity: 0;
 		transform: translateY(-100%);
-		transition: opacity $fast-transition-duration $default-transition-function,
-			transform $fast-transition-duration $default-transition-function;
+		transition: transform $default-transition-duration $default-transition-function;
 		will-change: transform;
 	}
 	&._menu-opened {
 		#{$this}__menu {
+			z-index: 20;
 			opacity: 1;
 			transform: translateY(0);
 		}
@@ -53,6 +52,7 @@
 			color: var(--white);
 			background-color: var(--blue-dark);
 			border-bottom: 1px solid currentColor;
+			transition: none;
 		}
 	}
 	&__community-nav {
