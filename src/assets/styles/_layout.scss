@@ -41,12 +41,14 @@
 		transform: translateY(-100%);
 		transition: transform $default-transition-duration $default-transition-function;
 		will-change: transform;
+		pointer-events: none;
 	}
 	&._menu-opened {
 		#{$this}__menu {
 			z-index: 20;
 			opacity: 1;
 			transform: translateY(0);
+			pointer-events: all;
 		}
 		#{$this}__header {
 			color: var(--white);
