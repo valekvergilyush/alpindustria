@@ -8,7 +8,7 @@ class Input {
 	}
 
 	init() {
-		this.fields = document.querySelectorAll('.input, .textarea');
+		this.fields = document.querySelectorAll('.input, .input-search, .textarea');
 
 		if (!this.fields.length) {
 			return;

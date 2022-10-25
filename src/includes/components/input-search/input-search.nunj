@@ -3,14 +3,13 @@
 {% macro inputSearch(props) %}
 	<div class="{% if props.className %}{{ props.className }} {% endif %}input-search">
 		<label class="input-search__label">
-			<span class="input-search__label-text visually-hidden">{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}</span>
+			<span class="input-search__label-text">{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}</span>
 			<input
 				class="input-search__input"
 				id="{{ props.id }}"
 				type="search"
 				name="{{ props.name }}"
 				{% if props.value %}value="{{ props.value }}"{% endif %}
-				{% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}
 				{% if props.inputAttr %}{{ props.inputAttr }}{% endif %}
 			>
 			{{ icon({
