@@ -65,6 +65,14 @@ export default class Accordion {
 		this.parentElement.style.setProperty('--height', `${this.sumHeight}px`);
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
+		if (this.trigger.classList.contains('menu__nav-link')) {
+			this.onDocumentClick = evt => {
+				if (!this.parentElement.contains(evt.target)) {
+					this.close();
+				}
+			};
+			document.addEventListener('click', this.onDocumentClick);
+		}
 	}
 	close() {
 		this.parentElement.classList.remove(ClassName.OPENED);
@@ -75,6 +83,7 @@ export default class Accordion {
 		this.parentElement.style.setProperty('--height', `${this.triggerHeight}px`);
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
+		this.onDocumentClick && document.removeEventListener('click', this.onDocumentClick);
 	}
 	_getHeighValues() {
 		const triggerBorderWidth = getComputedStyle(this.trigger)
