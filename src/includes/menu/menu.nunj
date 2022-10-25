@@ -21,12 +21,12 @@
 	{
 		text: 'Сообщество',
 		img: { src: '/assets/images/menu/menu-community.jpg', srcset: '/assets/images/menu/menu-community@2x.jpg 2x' },
-		url: '/community/',
+		url: '#',
 		list: [
-			{ text: 'Горный клуб', url: '#', img: { src: '/assets/images/menu/menu-club.jpg', srcset: '/assets/images/menu/menu-club@2x.jpg 2x' } },
+			{ text: 'Горный клуб', url: '/community/', img: { src: '/assets/images/menu/menu-club.jpg', srcset: '/assets/images/menu/menu-club@2x.jpg 2x' } },
 			{ text: 'Занятие', url: '#' },
-			{ text: 'Трейлы', url: '#' },
-			{ text: 'Фрирайд', url: '#' }
+			{ text: 'Трейлы', url: '/community/trails.html' },
+			{ text: 'Фрирайд', url: '/community/freerides.html' }
 		]
 	},
 	{ text: 'Прокат', url: '#', img: { src: '/assets/images/menu/menu-rent.jpg', srcset: '/assets/images/menu/menu-rent@2x.jpg 2x' } },
