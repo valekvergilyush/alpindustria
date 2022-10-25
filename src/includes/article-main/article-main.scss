@@ -2,18 +2,18 @@
 	padding-top: var(--container-padding);
 	padding-bottom: rem(60);
 	@media (max-width: $laptop-lg) {
-		padding-bottom: 24px;
+		padding-bottom: 56px;
 	}
 	@media (max-width: $laptop-md) {
-		padding-bottom: 16px;
+		padding-bottom: 40px;
 	}
 	@media (max-width: $mobile-lg) {
-		padding-bottom: 8px;
+		padding-bottom: 30px;
 	}
 	&__wrap {
 		display: grid;
 		align-items: flex-end;
-		grid-template-columns: 560fr 460fr 460fr;
+		grid-template-columns: 600fr 460fr 460fr;
 		column-gap: rem(40);
 		grid-template-areas:
 			'date title title'
@@ -40,22 +40,23 @@
 		}
 		@media (max-width: $mobile-lg) {
 			margin-top: 24px;
+			font-size: 18px;
+			line-height: 23px;
 		}
 	}
 	&__time {
 		grid-area: time;
 		opacity: 0.4;
-		margin-top: rem(68);
 	}
 	&__author {
 		grid-area: author;
 		justify-self: flex-start;
-		margin-top: rem(68);
 		@extend .animated;
 		&:hover {
 			opacity: 0.7;
 		}
 		@media (max-width: $laptop-sm) {
+			justify-self: flex-end;
 			margin-top: 0;
 		}
 	}
@@ -64,13 +65,23 @@
 		display: flex;
 		justify-self: flex-end;
 		column-gap: rem(16);
-		margin-top: rem(68);
+		margin-top: rem(56);
+		@media (max-width: $laptop-lg) {
+			margin-top: 40px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-top: 80px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-top: 32px;
+		}
 		@media (max-width: $mobile-lg) {
+			margin-top: 24px;
 			column-gap: rem(8);
 		}
 	}
 	&__link {
-		padding: 3px rem(19);
+		padding: 2px rem(18);
 		border-radius: rem(100);
 		@extend .animated;
 		&:hover {

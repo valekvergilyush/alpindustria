@@ -1,0 +1,23 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="author-block">
+	<div class="author-block__img-wrap">
+		<div class="author-block__img">
+			<img src="assets/images/article/article-img-2.jpg" srcset="assets/images/article/article-img-2@2x.jpg 2x" alt="Ковалёв Сергей">
+		</div>
+	</div>
+	<div class="author-block__content">
+		<p class="author-block__title h6 ttu c-blue-dark">Ковалёв Сергей</p>
+		<div class="author-block__bottom">
+			<p class="author-block__text p3">Старший инструктор по альпинизму Горного клуба АльпИндустрия. Инструктор альпинизма ФАР II категории. Тренер Центральной школы инструкторов. Тренер УТС «Спасение в горах». КМС по альпинизму.</p>
+		</div>
+	</div>
+	<a href="#" class="author-block__link h7 ttu c-blue-dark">
+		все обзоры
+		{{ icon({
+			iconName: 'promo-arrow',
+			className: 'author-block__link-icon',
+			attr: 'width="24" height="24" viewBox="0 0 72 72"'
+		}) }}
+	</a>
+</div>

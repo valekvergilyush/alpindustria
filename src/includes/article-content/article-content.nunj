@@ -1,0 +1,20 @@
+<div class="article-content c-gray-dark">
+	<p class="s1">Восхождение на&nbsp;Ама-Даблам потребовало не&nbsp;только интенсивных тренировок, но&nbsp;и&nbsp;очень качественного подбора снаряжения. В&nbsp;этой статье я&nbsp;постараюсь поделиться своим опытом. Возможно, эти советы пригодятся будущим восходителям на&nbsp;самую красивую вершину планеты.</p>
+	<div class="article-content__author-block">
+		{% include "../author-block/author-block.nunj" %}
+	</div>
+	<p>Итак, приступим. Маршрут восхождения на&nbsp;Ама-Даблам (6814&nbsp;м) по&nbsp;Юго-Западному ребру 5-й категории сложности. На&nbsp;маршруте есть крутые (до&nbsp;90&nbsp;градусов) скалы, местами залитые льдом, снег крутизной до&nbsp;70&nbsp;градусов, и, в&nbsp;зависимости от&nbsp;количества снега на&nbsp;маршруте, могут быть ледовые трещины, требующие передвижения по&nbsp;висящей в&nbsp;воздухе перильной веревке. На&nbsp;маршруте имеется три лагеря. Л1&nbsp;на высоте 5500&nbsp;м, Л2&nbsp;на высоте 5900&nbsp;м и&nbsp;Л3&nbsp;на высоте 6300&nbsp;м. Погода в&nbsp;ноябре характеризуется низкими, до &minus;30 &deg;С, температурами, сильным ветром, но, обычно ясной солнечной погодой. Все эти особенности определили выбор снаряжения.</p>
+	<div class="article-content__img-block">
+		<div class="article-content__img">
+			<img src="assets/images/article/article-img-3.jpg" srcset="assets/images/article/article-img-3@2x.jpg 2x" alt="Ковалёв Сергей на восхождении на Ама-даблам">
+		</div>
+		<p class="article-content__img-text p3">Ковалёв Сергей на восхождении на Ама-даблам</p>
+	</div>
+	<div class="article-content__text-block">
+		<p class="h6 c-blue-dark ttu">Обувь</p>
+		<div class="article-content__text">
+			<p>На&nbsp;треккинге я&nbsp;использовал кроссовки Hoka Speedgoat&nbsp;4. Очень легкие, с&nbsp;прочной подошвой Vibram<sup class="reg">&reg;</sup> с&nbsp;протектором Megagrip, отлично зарекомендовали себя и&nbsp;на&nbsp;тропе, и&nbsp;на&nbsp;камнях в&nbsp;любую погоду.</p>
+			<p>На&nbsp;восхождении использовал, как и&nbsp;последние пять лет, ботинки LaSportiva Olympus. Абсолютно доволен, но&nbsp;уже пришла пора менять. Думаю, возьму на&nbsp;следующий сезон Ботинки LaSportiva Olympus Mons Cube.</p>
+		</div>
+	</div>
+</div>
