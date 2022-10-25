@@ -267,7 +267,7 @@
 		&:hover,
 		&._active {
 			background-image: inline('heart-full.svg');
-			background-size: rem(28);
+			background-size: rem(30);
 		}
 		@media (max-width: $laptop) {
 			&:not(._active):hover {

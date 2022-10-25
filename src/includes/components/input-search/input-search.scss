@@ -10,6 +10,12 @@
 	&:focus-within {
 		opacity: 1;
 	}
+	&._filled {
+		#{$this}__label-text {
+			top: 0;
+			font-size: rem(12);
+		}
+	}
 	@media (max-width: $laptop-lg) {
 		column-gap: 32px;
 	}
@@ -19,6 +25,15 @@
 	&__label {
 		position: relative;
 		flex-grow: 1;
+		padding-top: rem(16);
+	}
+	&__label-text {
+		position: absolute;
+		top: rem(22);
+		left: 0;
+		pointer-events: none;
+		transition: top $fast-transition-duration $default-transition-function,
+			font-size $fast-transition-duration $default-transition-function;
 	}
 	&__input {
 		box-sizing: border-box;

@@ -107,8 +107,10 @@ class Select {
 
 		select.customSelect.container.parentElement.classList.add(ClassName.OPENED);
 		select.customSelect.panel.scrollTo(0, 0);
-		select.onScroll = () => {
-			select.customSelect.open = false;
+		select.onScroll = evt => {
+			if (!evt.target.parentElement.classList.contains('customSelect')) {
+				select.customSelect.open = false;
+			}
 		};
 		setTimeout(() => {
 			document.addEventListener('scroll', select.onScroll, true);
