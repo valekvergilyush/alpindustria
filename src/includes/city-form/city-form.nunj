@@ -32,7 +32,6 @@
 		{{ inputSearch({
 			className: 'city-form__search _city',
 			id: 'city-search',
-			placeholder: 'Поиск по городам',
 			name: 'Поиск по городам',
 			inputAttr: 'data-popup-focus'
 		}) }}
