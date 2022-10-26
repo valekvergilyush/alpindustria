@@ -16,7 +16,7 @@ $gray-dark: #342c25;
 $gray-light: #f5f1ee;
 $white: #fefefe;
 $black: #333;
-$black-2: #000;
+$default-black: #000;
 $light-slate-grey: #84919a;
 
 // ======= BREAKPOINTS =======
@@ -65,7 +65,7 @@ $mobile-sm: 320px;
 	--gray-light: #{$gray-light};
 	--white: #{$white};
 	--black: #{$black};
-	--black-2: #{$black-2};
+	--default-black: #{$default-black};
 	--light-slate-grey: #{$light-slate-grey};
 
 	// ======= SPACING VARIANTS =======
