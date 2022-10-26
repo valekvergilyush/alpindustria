@@ -113,14 +113,14 @@
 					}
 				}
 			}
-			&:first-child {
-				border-top: 0;
-			}
 		}
 		@media (max-width: $mobile-lg) {
 			--arrow-size: 40px;
 			min-height: 497px;
 			margin-bottom: calc(0px - var(--item-height) * 0.88);
+			&:first-child {
+				border-top: 0;
+			}
 		}
 	}
 	&__info {

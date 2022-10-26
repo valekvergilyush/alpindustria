@@ -1,4 +1,4 @@
-import Flickity from 'flickity';
+import { tns } from 'tiny-slider';
 
 const ClassName = {
 	ACTIVE: '_active',
@@ -20,10 +20,12 @@ class TrailVideo {
 
 		this.slider = this.container.querySelector('[data-video-slider]');
 
-		this.slider.flickity = new Flickity(this.slider, {
-			verticalCells: true,
-			pageDots: true,
-			prevNextButtons: false,
+		this.slider.tns = tns({
+			container: '[data-video-slider]',
+			items: 1,
+			axis: 'vertical',
+			mouseDrag: true,
+			controls: false,
 		});
 
 		this.videos.forEach(video => this._initVideo(video));
