@@ -1,0 +1,16 @@
+{% from "../components/class-item/class-item.nunj" import classItem %}
+
+<ul class="community-classes-list">
+	<li class="community-classes-list__item">
+		{{ classItem() }}
+	</li>
+	<li class="community-classes-list__item">
+		{{ classItem() }}
+	</li>
+	<li class="community-classes-list__item">
+		{{ classItem() }}
+	</li>
+	<li class="community-classes-list__item">
+		{{ classItem() }}
+	</li>
+</ul>

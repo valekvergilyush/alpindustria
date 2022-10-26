@@ -24,7 +24,7 @@
 		url: '#',
 		list: [
 			{ text: 'Горный клуб', url: '/community/', img: { src: '/assets/images/menu/menu-club.jpg', srcset: '/assets/images/menu/menu-club@2x.jpg 2x' } },
-			{ text: 'Занятие', url: '#' },
+			{ text: 'Занятие', url: '/community/classes.html' },
 			{ text: 'Трейлы', url: '/community/trails.html' },
 			{ text: 'Фрирайд', url: '/community/freerides.html' }
 		]
