@@ -315,6 +315,7 @@
 		font-size: var(--font-size-h7);
 		line-height: 1.3;
 		font-weight: var(--default-font-weight);
+		letter-spacing: 0.02em;
 		&:hover {
 			#{$this}__text {
 				transform: translateX(-0.2em);

@@ -9,12 +9,13 @@
 		padding-top: 64px;
 	}
 	&__title {
-		margin-bottom: rem(56);
+		margin-bottom: rem(53);
+		padding-top: 0.1em;
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 48px;
+			margin-bottom: 42px;
 		}
 		@media (max-width: $laptop) {
-			margin-bottom: 32px;
+			margin-bottom: 28px;
 		}
 	}
 	&__video-wrapper {
@@ -64,6 +65,15 @@
 	&__name {
 		max-width: rem(725);
 		margin-bottom: rem(24);
+		@media (max-width: $laptop-lg) {
+			padding-top: 0.06em;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 18px;
+		}
 	}
 	&__desc {
 		max-width: rem(725);
@@ -141,6 +151,15 @@
 				border-radius: 100vmax;
 				background: 0;
 			}
+		}
+		@media (max-width: $laptop) {
+			right: 40px;
+		}
+		@media (max-width: $tablet) {
+			right: 22px;
+		}
+		@media (max-width: $mobile-lg) {
+			right: 15px;
 		}
 	}
 }

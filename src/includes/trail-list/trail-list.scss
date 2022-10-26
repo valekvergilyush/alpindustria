@@ -5,7 +5,10 @@
 			margin-bottom: 48px;
 		}
 		@media (max-width: $laptop) {
-			margin-bottom: 32px;
+			margin-bottom: 24px;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 29px;
 		}
 	}
 	&__list {
