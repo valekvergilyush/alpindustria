@@ -1,35 +1,35 @@
-<div class="community-contact c-gray-dark">
-	<h3 class="community-contacts__title h6 ttu">ООО &laquo;Эталон&raquo;</h3>
-	<p class="community-contacts__text p2">
+<div class="delivery-contacts _delivery c-gray-dark">
+	<h3 class="delivery-contacts__title h6 ttu">ООО &laquo;Эталон&raquo;</h3>
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Адрес</span>
 		105037, Россия, Москва, Первомайская, 18
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Время работы</span>
 		10:00-19:00 пн-пт, сб-вс выходные
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Телефон</span>
 		<a href="tel:+74952329779">+7 (495) 232-97-79</a>
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Почта</span>
 		<a href="mailto:sale@alpindustria.ru">sale@alpindustria.ru</a>
 	</p>
-	<h3 class="community-contacts__title h6 ttu">Общество с&nbsp;ограниченной ответственностью Эдельвейс Сокращенное наименование: ООО Эдельвейс</h3>
-	<p class="community-contacts__text p2">
+	<h3 class="delivery-contacts__title h6 ttu">Общество с&nbsp;ограниченной ответственностью Эдельвейс Сокращенное наименование: ООО&nbsp;Эдельвейс</h3>
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Сокращенное наименование</span>
 		ООО Эдельвейс
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Фактический адрес</span>
 		105037, г. Москва, ул. Первомайская,д.18, подвал пом&nbsp;2, комн.9,10
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Юридический адрес</span>
 		105037, г. Москва, ул. Первомайская,д.18, подвал пом&nbsp;2, комн.9,10
 	</p>
-	<div class="community-contacts__text p2">
+	<div class="delivery-contacts__text p2">
 		<p class="h7 ttu">Остальное</p>
 		<div>
 			<p>ИНН: 9719000616</p>
@@ -44,11 +44,11 @@
 			<p>БИК: 044525593</p>
 		</div>
 	</div>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Генеральный директор</span>
 		Потапова Екатерина Васильевна
 	</p>
-	<p class="community-contacts__text p2">
+	<p class="delivery-contacts__text p2">
 		<span class="h7 ttu">Главный бухгалтер</span>
 		Наливкина Ирина Владимировна
 	</p>

@@ -60,12 +60,17 @@
 			@extend .animated;
 			&:hover {
 				color: var(--blue-light);
+				opacity: 1;
 			}
 		}
 		&._side {
 			@media (max-width: $mobile-lg) {
 				display: none;
 			}
+		}
+		&._gray {
+			color: var(--black-2);
+			opacity: 0.5;
 		}
 	}
 }
