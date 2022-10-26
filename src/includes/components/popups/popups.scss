@@ -110,6 +110,15 @@
 		background-color: var(--white);
 		overflow: auto;
 		box-sizing: border-box;
+		@media (max-width: $tablet) {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			min-height: 100%;
+			& > * {
+				flex-grow: 1;
+			}
+		}
 
 		&[data-popup='city-form'] {
 			width: rem(704);
