@@ -1,143 +1,22 @@
 .hero-trails {
 	$this: &;
-	/*
-	&__list {
-		display: flex;
-		overflow: hidden;
-		@media (max-width: $tablet) {
-			flex-direction: column;
-			border-bottom: 1px solid var(--gray-dark);
-		}
-	}
-	&__item {
-		--arrow-size: #{rem(88)};
-		position: relative;
-		z-index: 0;
-		flex-shrink: 0;
-		box-sizing: border-box;
-		width: 35vw;
-		margin-left: -21vw;
-		min-height: rem(900);
-		padding: var(--container-padding);
-		color: var(--gray-dark);
-		background-color: var(--gray-light);
-		outline: 1px solid var(--gray-dark);
-		outline-offset: -1px;
-		&::before {
-			content: '';
-			position: absolute;
-			z-index: 1;
-			bottom: var(--container-padding);
-			right: var(--container-padding);
-			width: var(--arrow-size);
-			height: var(--arrow-size);
-			background-image: inline('promo-arrow.svg');
-			background-size: contain;
-			background-position: center;
-			background-repeat: no-repeat;
-			transition: background $default-transition-duration $default-transition-function;
-			opacity: 0;
-		}
-		&:hover {
-			&::before {
-				background-image: inline('promo-arrow-white.svg');
-			}
-		}
-		&._active {
-			width: 73vw;
-			margin-left: 0;
-			outline: none;
-			color: var(--white);
-			&::before {
-				opacity: 1;
-			}
-			#{$this}__info {
-				max-width: rem(535);
-			}
-		}
-		&._active + & {
-			margin-left: 0;
-		}
-		@media (max-width: $laptop-lg) {
-			min-height: 640px;
-		}
-		@media (max-width: $laptop) {
-			min-height: 540px;
-		}
-		@media (max-width: $tablet) {
-			width: 100%;
-			min-height: auto;
-			margin-left: 0;
-			margin-top: -120px;
-			&._active {
-				width: 100%;
-				min-height: 483px;
-				margin-top: 0;
-			}
-			&._active + & {
-				margin-top: 0;
-			}
-			&:last-child {
-				margin-bottom: -120px;
-			}
-		}
-		@media (max-width: $mobile-lg) {
-			margin-top: -90px;
-			&._active {
-				min-height: 497px;
-				margin-top: 0;
-			}
-			&._active + & {
-				margin-top: 0;
-			}
-			&:last-child {
-				margin-bottom: -90px;
-			}
-		}
-	}
-	&__info {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		max-width: rem(370);
-		@media (max-width: $tablet) {
-			max-width: none;
-		}
-	}
-	&__title {
-		margin-bottom: rem(24);
-		word-break: break-all;
-		@media (max-width: $tablet) {
-			word-break: normal;
-		}
-	}
-	&__bg-img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		pointer-events: none;
-	}*/
-
-	--color-tan: #c1b9a8;
-	--color-green: #4f735b;
-	--color-gold: #ac8b12;
-	--color-purple: #8d7576;
-	--color-red: #a63c30;
-	--nav-item-offset: 10vw;
-	--nav-item-hover-offset: 2%;
-	--easing: cubic-bezier(0.8, 0, 0.2, 1);
-	--duration: 0.6s;
-
 	min-height: rem(900);
 	width: 100%;
 	background-color: var(--color-tan);
 	display: grid;
 	grid-template-rows: 100%;
 	overflow: hidden;
+	@media (max-width: $laptop-lg) {
+		min-height: 640px;
+	}
+	@media (max-width: $laptop) {
+		min-height: 540px;
+	}
+	@media (max-width: $tablet) {
+		flex-direction: column;
+		min-height: auto;
+		border-bottom: 1px solid var(--gray-dark);
+	}
 	&__list {
 		position: relative;
 		grid-row: 1 / -1;
@@ -146,82 +25,131 @@
 		counter-reset: list;
 	}
 	&__item {
+		--item-width: #{vw(1289, 1728)};
+		--nav-item-offset: calc((100vw - var(--item-width)) / var(--closed));
+		--nav-item-hover-offset: 2%;
+		--easing: cubic-bezier(0.8, 0, 0.2, 1);
+		--duration: 0.6s;
+		--arrow-size: #{rem(88)};
 		--tx: calc(-100% + var(--nav-item-offset));
 		display: grid;
-		grid-template-columns: 1fr 20% auto;
 		position: absolute;
+		box-sizing: border-box;
 		height: 100%;
-		width: 79vw;
+		width: var(--item-width);
 		transition: transform var(--duration) var(--easing);
 		margin-left: calc(var(--i) * var(--nav-item-offset));
-
 		overflow: hidden;
-
 		transform: translateX(var(--tx));
-
 		z-index: calc(var(--total) - var(--i));
-
-		&:hover:not(:focus):after {
-			transform: none;
+		padding: var(--container-padding);
+		background-color: var(--gray-light);
+		border: 1px solid var(--gray-dark);
+		outline-offset: -1px;
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			bottom: var(--container-padding);
+			right: var(--container-padding);
+			width: var(--arrow-size);
+			height: var(--arrow-size);
+			background-image: inline('promo-arrow.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function,
+				opacity $default-transition-duration $default-transition-function var(--duration);
+			opacity: 0;
 		}
-
 		&._active {
 			transform: translateX(0vw);
-
+			border-left: 0;
+			#{$this}__info {
+				color: var(--white);
+			}
+			#{$this}__bg-img {
+				opacity: 1;
+				transform: scale(1);
+			}
+			&::before {
+				opacity: 1;
+			}
 			~ #{$this}__item {
 				transform: none;
 			}
-		}
 
-		&:before {
-			counter-increment: list;
-			content: counter(list) '.';
-			display: block;
-			grid-column: 3 / 4;
-			text-align: right;
-			font-size: 8vmin;
-			padding: 1vw;
-			padding-top: 10vh;
-			mix-blend-mode: soft-light;
-			z-index: 1;
-			animation: inherit;
-			animation-name: slide-up;
-
-			@keyframes slide-up {
-				from {
-					transform: translateY(130%);
-				}
-				to {
-					transform: translateY(0);
+			&:hover {
+				&::before {
+					background-image: inline('promo-arrow-white.svg');
 				}
 			}
 		}
-
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 1vw;
+		@media (max-width: $laptop) {
+			--arrow-size: 64px;
+		}
+		@media (max-width: $tablet) {
+			--item-height: 483px;
+			position: relative;
+			z-index: var(--i);
+			flex-direction: column;
 			width: 100%;
-			height: 100%;
-			background-color: var(--color);
-			transition: transform var(--easing) var(--duration);
-		}
-
-		animation: slide-down 1s cubic-bezier(0.5, 0, 0.3, 1);
-		animation-delay: calc(var(--i) * 0.15s);
-		animation-fill-mode: backwards;
-
-		@keyframes slide-down {
-			from {
-				transform: translateY(-100%) translateX(var(--tx));
-				pointer-events: none;
+			min-height: 483px;
+			margin-left: 0;
+			transform: none;
+			margin-bottom: calc(0px - var(--item-height) * 0.77);
+			transition: margin var(--duration) var(--easing);
+			&::before {
+				bottom: 50%;
+				right: 50%;
+				transform: translate(50%, 50%);
 			}
-			to {
-				transform: translateY(0) translateX(var(--tx));
-				pointer-events: none;
+			&._active {
+				border-left: 1px solid var(--gray-dark);
+				margin-bottom: 0;
+				&:hover {
+					&::before {
+						background-image: inline('promo-arrow.svg');
+					}
+				}
+			}
+			&:first-child {
+				border-top: 0;
 			}
 		}
+		@media (max-width: $mobile-lg) {
+			--arrow-size: 40px;
+			min-height: 497px;
+			margin-bottom: calc(0px - var(--item-height) * 0.88);
+		}
+	}
+	&__info {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		max-width: rem(535);
+		color: var(--gray-dark);
+		transition: color $default-transition-duration $default-transition-function var(--duration);
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__title {
+		margin-bottom: rem(24);
+	}
+	&__bg-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		pointer-events: none;
+		opacity: 0;
+		transform: scale(1.05);
+		transition: transform $default-transition-duration $default-transition-function var(--duration),
+			opacity $default-transition-duration $default-transition-function var(--duration);
 	}
 }

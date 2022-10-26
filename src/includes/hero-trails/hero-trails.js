@@ -23,7 +23,7 @@ class HeroTrails {
 
 				this.activeTrigger.classList.remove(ClassName.ACTIVE);
 
-				this.activeTrigger = evt.target;
+				this.activeTrigger = evt.currentTarget;
 				this.activeTrigger.classList.add(ClassName.ACTIVE);
 			});
 		});
