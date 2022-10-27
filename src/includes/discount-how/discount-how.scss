@@ -1,0 +1,61 @@
+.discount-how {
+	display: flex;
+	flex-direction: column;
+	&__title {
+		margin-top: rem(176);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop) {
+			margin-top: 124px;
+			margin-bottom: 32px;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile) {
+			margin-top: 64px;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__item {
+		box-sizing: border-box;
+		width: 50%;
+		padding: var(--container-padding);
+		padding-bottom: rem(284);
+		border: 1px solid var(--blue-dark);
+		border-left: 0;
+		background-size: rem(140);
+		background-position: right var(--container-padding) bottom var(--container-padding);
+		background-repeat: no-repeat;
+		&:last-child {
+			border-right: 0;
+		}
+		&._buy {
+			background-image: url('/assets/images/discount/buy-card.svg');
+		}
+		&._swap {
+			background-image: url('/assets/images/discount/swap-card.svg');
+		}
+		@media (max-width: $laptop) {
+			background-size: 96px;
+		}
+		@media (max-width: $mobile-lg) {
+			width: 100%;
+			border-right: 0;
+			&:last-child {
+				border-top: 0;
+			}
+		}
+	}
+	&__item-title {
+		margin-bottom: rem(32);
+	}
+	&__item-text {
+		max-width: rem(550);
+	}
+}
