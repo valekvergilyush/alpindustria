@@ -72,16 +72,6 @@
 	}
 	&__category-btn {
 		flex-shrink: 0;
-		padding: rem(7) rem(15);
-		border-radius: rem(500);
-		border: 1px solid var(--white);
-		@extend .animated;
-		&:hover,
-		&._active {
-			border-color: var(--blue-dark);
-			background-color: var(--blue-dark);
-			color: var(--white);
-		}
 	}
 	&__bottom {
 		display: grid;

@@ -17,6 +17,8 @@
 		grid-template-areas:
 			'title img'
 			'content img';
+		grid-template-rows: auto 1fr;
+		grid-template-columns: repeat(2, auto);
 		@media (max-width: $laptop-md) {
 			grid-template-areas:
 				'title'

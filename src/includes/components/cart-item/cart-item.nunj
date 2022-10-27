@@ -54,7 +54,7 @@
 			<div class="cart-item__btns">
 				{{ button({
 					className: 'cart-item__btn',
-					icon: 'cart-2',
+					icon: 'cart',
 					iconData: 'width="32" height="32" viewBox="0 0 36 36"',
 					attr: 'aria-label="Добавить в корзину"'
 				}) }}

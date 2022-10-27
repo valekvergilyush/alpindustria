@@ -21,12 +21,12 @@
 		<p class="classes-main__category-name container ttu">Категории</p>
 		<div class="classes-main__category-list">
 			{{ button({
-				className: 'classes-main__category-btn _active h7 ttu',
+				className: 'classes-main__category-btn _quick-filter _active h7 ttu',
 				text: 'Все занятия'
 			}) }}
 			{% for btn in categoriesList %}
 				{{ button({
-					className: 'classes-main__category-btn h7 ttu',
+					className: 'classes-main__category-btn _quick-filter h7 ttu',
 					text: btn
 				}) }}
 			{% endfor %}
@@ -37,7 +37,7 @@
 		<div class="classes-main__category-list">
 			{% for btn in categoriesList2 %}
 				{{ button({
-					className: 'classes-main__category-btn h7 ttu',
+					className: 'classes-main__category-btn _quick-filter h7 ttu',
 					text: btn
 				}) }}
 			{% endfor %}

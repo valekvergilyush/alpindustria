@@ -36,7 +36,7 @@
 					</div>
 					{{ button({
 						className: 'wishlist-lists__add h7 ttu',
-						icon: 'cart-2',
+						icon: 'cart',
 						text: 'добавить все<span class="desktop"> в корзину</span>',
 						iconData: 'width="36" height="36" viewBox="0 0 36 36"'
 					}) }}
