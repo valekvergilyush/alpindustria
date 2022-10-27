@@ -1,0 +1,16 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="hero-discount">
+	<h1 class="hero-discount__title h2 ttu">Дисконтная программа</h1>
+	<p class="hero-discount__text p1">Получайте кэшбэк с&nbsp;покупок в&nbsp;АльпИндустрии и&nbsp;оплачивайте им&nbsp;до&nbsp;30% стоимости следующих покупок</p>
+	<div class="hero-discount__img-wrapper" data-lottie-animation="/assets/jsons/cards-animation.json">
+		{{ picture({
+			className: 'hero-discount__img',
+			path: '/assets/images/hero-discount/hero-discount',
+			ext: 'jpg',
+			width: 703,
+			height: 836,
+			attr: 'aria-hidden="true"'
+		}) }}
+	</div>
+</section>
