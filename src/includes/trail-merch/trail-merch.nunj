@@ -16,8 +16,8 @@
 		{% endfor %}
 	</ul>
 	{{ button({
-		className: 'catalog__show-more-btn _show-more',
-		text: 'Смотреть больше',
+		className: 'trail-merch__show-more-btn _show-more',
+		text: 'Показать ещё',
 		icon: 'plus-circle',
 		iconData: 'width="32" height="32"'
 	}) }}
