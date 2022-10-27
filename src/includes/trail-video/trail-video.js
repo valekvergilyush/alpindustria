@@ -19,6 +19,7 @@ class TrailVideo {
 		this.videos = this.container.querySelectorAll('[data-video]');
 
 		this.slider = this.container.querySelector('[data-video-slider]');
+		this.slides = this.slider.querySelectorAll('[data-video-slide]');
 
 		this.slider.tns = tns({
 			container: '[data-video-slider]',
@@ -26,6 +27,18 @@ class TrailVideo {
 			axis: 'vertical',
 			mouseDrag: true,
 			controls: false,
+		});
+
+		this.slider.tns.events.on('indexChanged', slider => {
+			const prevIndex = slider.indexCached - 1;
+			const ytIframe = this.slides[prevIndex].querySelector('iframe');
+
+			if (ytIframe) {
+				ytIframe.contentWindow.postMessage(
+					'{"event":"command","func":"pauseVideo","args":""}',
+					'*'
+				);
+			}
 		});
 
 		this.videos.forEach(video => this._initVideo(video));
@@ -44,7 +57,7 @@ class TrailVideo {
 	}
 	_getYouTubeIframe(videoId) {
 		const iframe = document.createElement('iframe');
-		const url = `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autoplay=1`;
+		const url = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&rel=0&showinfo=0&autoplay=1`;
 
 		iframe.setAttribute('allowfullscreen', '');
 		iframe.setAttribute('allow', 'autoplay');
