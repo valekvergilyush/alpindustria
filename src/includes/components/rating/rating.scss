@@ -8,6 +8,8 @@
 	&__star {
 		width: var(--size);
 		height: var(--size);
+		padding: 1px;
+		box-sizing: border-box;
 		@media (max-width: $mobile-lg) {
 			--size: 16px;
 		}

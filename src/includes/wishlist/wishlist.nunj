@@ -57,7 +57,7 @@
 				id: 'wishlist-name',
 				className: 'whishlist-popup__input',
 				name: 'Название',
-				inputAttr: 'data-wishlist-input maxlength="25',
+				inputAttr: 'data-wishlist-input maxlength="25"',
 				attr: 'data-validate-type="text" ',
 				wordCounter: 25
 			}) }}

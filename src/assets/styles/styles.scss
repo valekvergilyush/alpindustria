@@ -48,6 +48,7 @@
 @import '../../includes/components/news-list/news-list';
 @import '../../includes/components/news-item/news-item';
 @import '../../includes/components/trail-card/trail-card';
+@import '../../includes/components/class-item/class-item';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -102,6 +103,7 @@
 @import '../../includes/community-tabs/community-tabs';
 @import '../../includes/delivery-tab/delivery-tab';
 @import '../../includes/delivery-payment/delivery-payment';
+@import '../../includes/delivery-contacts/delivery-contacts';
 @import '../../includes/delivery-payment-tab/delivery-payment-tab';
 @import '../../includes/delivery-return/delivery-return';
 @import '../../includes/news/news';
@@ -118,7 +120,10 @@
 @import '../../includes/hero-discount/hero-discount';
 @import '../../includes/discount-how/discount-how';
 @import '../../includes/discount-status/discount-status';
+@import '../../includes/community-classes-list/community-classes-list';
+@import '../../includes/classes-main/classes-main';
 
 // ======= PAGES =======
 @import 'pages/index';
 @import 'pages/delivery';
+@import 'pages/classes';
