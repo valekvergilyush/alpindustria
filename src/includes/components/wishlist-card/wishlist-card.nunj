@@ -18,7 +18,7 @@
 			{{ button({
 				className: 'h7 ttu wishlist-card__add',
 				text: 'Добавить все в корзину',
-				icon: 'cart-2',
+				icon: 'cart',
 				iconData: 'width="36" height="36" viewBox="0 0 36 36"'
 			}) }}
 			{{ button({

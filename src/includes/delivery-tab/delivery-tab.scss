@@ -29,6 +29,7 @@
 		text-align: left;
 	}
 	&__btn-icon {
+		flex-shrink: 0;
 		width: rem(40);
 		height: rem(40);
 		transition: transform $default-transition-duration $default-transition-function;
@@ -64,6 +65,9 @@
 			row-gap: 16px;
 		}
 		@media (max-width: $laptop-md) {
+			row-gap: 14px;
+		}
+		@media (max-width: $mobile-lg) {
 			row-gap: 8px;
 		}
 	}

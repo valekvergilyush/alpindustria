@@ -1,0 +1,33 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro classItem(props) %}
+	<div class="class-item">
+		<div class="class-item__content">
+			<a href="#" class="class-item__title h6 ttu">{{ props.title }}</a>
+			<div class="class-item__img">
+				<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="318" height="508" alt="">
+			</div>
+			<div class="class-item__content-inner">
+				<p class="class-item__place">
+					<span class="p3">Место проведения:</span>
+					<span class="class-item__place-name p3 c-blue-dark">
+						{{ icon({
+							iconName: 'pin',
+							className: 'class-item__place-icon',
+							attr: 'width="25" height="25" viewBox="0 0 25 25"'
+						}) }}
+						{{ props.place }}
+					</span>
+				</p>
+				<p class="class-item__text p3">{{ props.text }}</p>
+			</div>
+		</div>
+		<div class="class-item__info">
+			<p class="class-item__date ttu">
+				<span class="h6">{{ props.date[0] }}</span>
+				<span class="h7">{{ props.date[1] }}</span>
+			</p>
+			<p class="class-item__date h6 ttu">{{ props.price }}</p>
+		</div>
+	</div>
+{% endmacro %}

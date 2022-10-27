@@ -55,7 +55,7 @@
 							{{ icon({
 								iconName: 'star',
 								className: 'product__rating-icon',
-								attr: 'width="32" height="32"'
+								attr: 'width="32" height="32" viewBox="0 0 26.3 24.5"'
 							}) }}
 							4.9
 						</span>

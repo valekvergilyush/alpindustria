@@ -12,7 +12,8 @@
 	],
 	link: {
 		href: '/',
-		text: 'Закрыть'
+		text: 'Закрыть',
+		className: '_gray'
 	}
 } %}
 

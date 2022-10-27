@@ -1,0 +1,16 @@
+.page {
+	$this: &;
+	&._classes {
+		.header__actions {
+			color: var(--blue-dark);
+			@media (max-width: $laptop-lg) {
+				color: inherit;
+			}
+		}
+		&._menu-opened {
+			.header__actions {
+				color: inherit;
+			}
+		}
+	}
+}

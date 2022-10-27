@@ -28,10 +28,6 @@
 	&__subtitle {
 		margin-bottom: var(--sizes-margin);
 		@media (max-width: $laptop-md) {
-			font-size: 18px;
-			line-height: 24px;
-		}
-		@media (max-width: $laptop-sm) {
 			font-size: 16px;
 			line-height: 20px;
 		}

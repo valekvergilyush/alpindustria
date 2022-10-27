@@ -66,6 +66,7 @@
 	}
 	&__img-text {
 		margin-top: rem(16);
+		opacity: 0.6;
 		@media (max-width: $mobile-lg) {
 			margin-top: 8px;
 		}
