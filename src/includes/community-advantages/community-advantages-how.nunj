@@ -15,6 +15,7 @@
 				{% endfor %}
 			</ul>
 			<div class="community-advantages__text p2" data-animation="fade-right">
+				<span class="community-advantages__asterisk h5 ttu">***</span><br>
 				<p>Членский взнос Горного клуба&nbsp;&mdash; 1500&nbsp;рублей.<br>
 				Эти деньги мы&nbsp;тратим на&nbsp;развитие клуба, покупку снаряжения, аптечки, связь. И&nbsp;оплачиваем работу преподавателей и&nbsp;тренеров.</p>
 				<p>Также вы&nbsp;можете вступить в&nbsp;Федерацию альпинизма России и&nbsp;оформить карточку участника&nbsp;&mdash; для этого напишите на&nbsp;почту <a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>.</p>

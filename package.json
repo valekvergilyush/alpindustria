@@ -87,6 +87,7 @@
     "global": "^4.4.0",
     "gsap": "^3.7.0",
     "gulp-dart-sass": "^1.0.2",
+    "lottie-web": "^5.9.6",
     "nouislider": "^15.6.1",
     "pickerjs": "^1.2.1",
     "regenerator-runtime": "^0.13.5",

@@ -227,6 +227,7 @@
 		min-width: rem(235);
 		padding: rem(15);
 		border-left: 1px solid currentColor;
+		text-align: center;
 		&:hover {
 			color: var(--blue-dark);
 			background-color: var(--white);

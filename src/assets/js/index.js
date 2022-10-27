@@ -2,6 +2,8 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+const TABLET_BREAKPOINT = 768;
+
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 global.gsap = gsap;
@@ -62,6 +64,7 @@ class AlpIndustry {
 			FormValidate: require('./modules/FormValidate').default,
 			Notification: require('./modules/Notification').default,
 			ShowAnimations: require('./modules/ShowAnimations').default,
+			LottieAnimations: require('./modules/LottieAnimations').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
@@ -73,9 +76,11 @@ class AlpIndustry {
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 			document.querySelectorAll('[data-tabs]').forEach(tabs => new this.components.Tabs(tabs));
 
-			document
-				.querySelectorAll('[data-animation="words"]')
-				.forEach(item => this.helpers.TextSplitter.split(item).words);
+			if (window.innerWidth > TABLET_BREAKPOINT) {
+				document
+					.querySelectorAll('[data-animation="words"]')
+					.forEach(item => this.helpers.TextSplitter.split(item).words);
+			}
 		});
 	}
 }

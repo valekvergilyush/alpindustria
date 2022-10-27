@@ -31,7 +31,7 @@
 	<h2 class="trail-video__title h4 ttu c-violet-light container">Предыдущие выезды</h2>
 	<div class="trail-video__slider" data-video-slider>
 		{% for video in videoList %}
-			<div class="trail-video__video-wrapper">
+			<div class="trail-video__video-wrapper" data-video-slide>
 				<div class="trail-video__video" data-video="{{ video.id }}">
 					<div class="trail-video__info">
 						{% if video.title %}<p class="trail-video__name h3 ttu">{{ video.title }}</p>{% endif %}

@@ -1,0 +1,107 @@
+.hero-discount {
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(96)};
+	--img-width: #{vw(704, 1728)};
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr var(--img-width);
+	grid-template-rows: repeat(2, min-content);
+	gap: rem(48);
+	color: var(--white);
+	background-color: var(--blue-light);
+	padding-left: var(--padding-x);
+	@media (max-width: $laptop-lg) {
+		--padding-y: 72px;
+		--img-width: 584px;
+	}
+	@media (max-width: $laptop-md) {
+		--padding-y: 56px;
+		--img-width: 416px;
+	}
+	@media (max-width: $laptop-sm) {
+		display: flex;
+		flex-direction: column;
+		padding-right: var(--padding-x);
+		gap: 20px;
+	}
+	@media (max-width: $mobile-lg) {
+		--padding-y: 40px;
+		gap: 38px;
+	}
+	&__title {
+		margin-top: var(--padding-y);
+		padding-top: 0.07em;
+		max-width: rem(860);
+		@media (max-width: $desktop-2) {
+			font-size: 92px;
+		}
+		@media (max-width: $laptop-lg-3) {
+			font-size: 64px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 38px;
+		}
+	}
+	&__text {
+		align-self: end;
+		max-width: rem(650);
+		margin-bottom: var(--padding-y);
+		br {
+			display: none;
+		}
+		@media (max-width: $laptop-md) {
+			max-width: 410px;
+			font-size: 18px;
+		}
+		@media (max-width: $laptop-sm) {
+			max-width: 590px;
+			margin-bottom: 35px;
+			margin-right: auto;
+			br {
+				display: block;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 0;
+			br {
+				display: none;
+			}
+		}
+	}
+	&__img-wrapper {
+		position: relative;
+		grid-column: 2/3;
+		grid-row: 1/-1;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		svg {
+			position: absolute;
+			top: -25%;
+			left: -25%;
+			width: 150% !important;
+			height: 150% !important;
+		}
+		@media (max-width: $laptop-sm) {
+			grid-column: 1/-1;
+			grid-row: -2/-1;
+			margin-inline: calc(0px - var(--padding-x));
+			img {
+				margin-inline: 0;
+				height: 480px;
+				object-fit: cover;
+				object-position: bottom;
+			}
+		}
+		@media (max-width: $tablet) {
+			img {
+				height: auto;
+				object-fit: contain;
+				object-position: initial;
+			}
+		}
+	}
+}

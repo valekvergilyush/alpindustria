@@ -1,0 +1,26 @@
+{% set list = [
+	{
+		className: '_buy',
+		title: 'Совершите<br> покупку',
+		text: 'Совершите покупку в&nbsp;любом магазине сети АльпИндустрия или интернет-магазине alpindustria.ru'
+	},
+	{
+		className: '_swap',
+		title: 'Обменяйте<br> карту',
+		text: 'Обменяйте карту старого образца на&nbsp;новую. При обмене учитывается история покупок по&nbsp;старой карте. История покупок по&nbsp;нескольким старым картам не&nbsp;суммируется.'
+	}
+] %}
+
+<section class="discount-how">
+	<div class="container">
+		<h2 class="discount-how__title ttu h4">Как получить карту</h2>
+	</div>
+	<ul class="discount-how__list">
+		{% for item in list %}
+			<li class="discount-how__item{% if item.className %} {{ item.className }}{% endif %}">
+				<p class="discount-how__item-title ttu h5">{{ item.title }}</p>
+				<p class="discount-how__item-text p2">{{ item.text }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

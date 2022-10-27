@@ -1,14 +1,19 @@
 .trail-list {
 	&__title {
+		margin-top: rem(176);
 		margin-bottom: rem(56);
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 48px;
 		}
 		@media (max-width: $laptop) {
+			margin-top: 124px;
 			margin-bottom: 24px;
 		}
 		@media (max-width: $tablet) {
 			margin-bottom: 29px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 64px;
 		}
 	}
 	&__list {
