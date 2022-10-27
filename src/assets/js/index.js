@@ -64,6 +64,7 @@ class AlpIndustry {
 			FormValidate: require('./modules/FormValidate').default,
 			Notification: require('./modules/Notification').default,
 			ShowAnimations: require('./modules/ShowAnimations').default,
+			LottieAnimations: require('./modules/LottieAnimations').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
