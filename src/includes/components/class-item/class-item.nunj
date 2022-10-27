@@ -3,29 +3,31 @@
 {% macro classItem(props) %}
 	<div class="class-item">
 		<div class="class-item__content">
-			<a href="#" class="class-item__title h6 ttu">Мастер-класс по вязанию узлов #2</a>
-			<p class="class-item__place">
-				<span class="p3">Место проведения:</span>
-				<span class="class-item__place-name p3">
-					{{ icon({
-						iconName: 'pin',
-						className: 'class-item__place-icon',
-						attr: 'width="25" height="25" viewBox="0 0 25 25"'
-					}) }}
-					Скалодром «Big Wall», Москва
-				</span>
-			</p>
-			<p class="class-item__text p3">Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы. Занятия начнутся 20.06.22&nbsp;г.&nbsp;и&nbsp;будут проходить по&nbsp;понедельникам и&nbsp;средам в&nbsp;19:30.</p>
-		</div>
-		<div class="class-item__img">
-			<img src="/assets/images/article/article-img-3.jpg" srcset="/assets/images/article/article-img-3@2x.jpg 2x" width="318" height="508" alt="Мастер-класс по вязанию узлов #2">
+			<a href="#" class="class-item__title h6 ttu">{{ props.title }}</a>
+			<div class="class-item__img">
+				<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="318" height="508" alt="Мастер-класс по вязанию узлов #2">
+			</div>
+			<div class="class-item__content-inner">
+				<p class="class-item__place">
+					<span class="p3">Место проведения:</span>
+					<span class="class-item__place-name p3 c-blue-dark">
+						{{ icon({
+							iconName: 'pin',
+							className: 'class-item__place-icon',
+							attr: 'width="25" height="25" viewBox="0 0 25 25"'
+						}) }}
+						{{ props.place }}
+					</span>
+				</p>
+				<p class="class-item__text p3">{{ props.text }}</p>
+			</div>
 		</div>
 		<div class="class-item__info">
 			<p class="class-item__date ttu">
-				<span class="h6">21-25</span>
-				<span class="h7">августа</span>
+				<span class="h6">{{ props.date[0] }}</span>
+				<span class="h7">{{ props.date[1] }}</span>
 			</p>
-			<p class="class-item__date h6 ttu">100 ₽</p>
+			<p class="class-item__date h6 ttu">{{ props.price }}</p>
 		</div>
 	</div>
 {% endmacro %}

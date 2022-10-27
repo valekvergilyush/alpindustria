@@ -1,3 +1,132 @@
 .class-item {
 	display: flex;
+	padding: rem(24);
+	min-height: rem(556);
+	@media (max-width: $laptop-md) {
+		flex-direction: column;
+		row-gap: 16px;
+		padding: 20px;
+	}
+	@media (max-width: $mobile-lg) {
+		row-gap: 8px;
+		padding: 16px;
+	}
+	&__content {
+		flex-grow: 1;
+		display: grid;
+		grid-template-areas:
+			'title img'
+			'content img';
+		@media (max-width: $laptop-md) {
+			grid-template-areas:
+				'title'
+				'img'
+				'content';
+		}
+	}
+	&__content-inner {
+		grid-area: content;
+	}
+	&__title {
+		display: block;
+		margin-bottom: rem(32);
+		grid-area: title;
+		@extend .animated;
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 72px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
+		}
+		&[href] {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+	&__place {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: rem(8);
+		margin-bottom: rem(32);
+		color: rgba($default-black, 0.4);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
+		}
+	}
+	&__place-name {
+		display: flex;
+		align-items: center;
+		column-gap: 4px;
+	}
+	&__place-icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+		fill: none;
+		@media (max-width: $mobile-lg) {
+			--size: 16px;
+		}
+	}
+	&__text {
+		color: var(--gray-dark);
+		opacity: 0.7;
+	}
+	&__img {
+		flex-shrink: 0;
+		width: rem(318);
+		margin-left: rem(24);
+		grid-area: img;
+		@media (max-width: $laptop-lg) {
+			width: 210px;
+		}
+		@media (max-width: $laptop-md) {
+			width: 100%;
+			height: 196px;
+			margin-left: 0;
+			margin-bottom: 16px;
+		}
+		@media (max-width: $laptop-sm) {
+			height: 240px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__info {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-width: rem(116);
+		margin-left: rem(15);
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			flex-direction: row;
+			margin-left: 0;
+		}
+	}
+	&__date {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+		@media (max-width: $laptop-md) {
+			flex-direction: row;
+			text-align: left;
+			column-gap: 8px;
+		}
+	}
 }

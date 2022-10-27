@@ -1,0 +1,63 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set categoriesList = [
+	'Лекции и мастер-классы',
+	'Практика',
+	'Выезды'
+] %}
+
+{% set categoriesList2 = [
+	'Альпинизм',
+	'Ски-тур/фрирайд',
+	'Первая помощь',
+	'Трейлраннинг',
+	'Лавинная безопасность'
+] %}
+
+<section class="classes-main">
+	{% include "../../includes/community-nav/community-nav.nunj" %}
+	<h1 class="classes-main__title container h2 ttu">Занятия</h1>
+	<div class="classes-main__category">
+		<p class="classes-main__category-name container ttu">Категории</p>
+		<div class="classes-main__category-list">
+			{{ button({
+				className: 'classes-main__category-btn _active h7 ttu',
+				text: 'Все занятия'
+			}) }}
+			{% for btn in categoriesList %}
+				{{ button({
+					className: 'classes-main__category-btn h7 ttu',
+					text: btn
+				}) }}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="classes-main__category">
+		<p class="classes-main__category-name container ttu">Направления</p>
+		<div class="classes-main__category-list">
+			{% for btn in categoriesList2 %}
+				{{ button({
+					className: 'classes-main__category-btn h7 ttu',
+					text: btn
+				}) }}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="classes-main__bottom container">
+		{{ button({
+			className: 'classes-main__date p2',
+			text: 'Выберите дату',
+			icon: 'calendar',
+			iconData: 'width="24" height="24" viewBox="0 0 24 24"'
+		}) }}
+		<p class="classes-main__number p2">24 занятия</p>
+		{{ button({
+			className: 'classes-main__search',
+			icon: 'search',
+			iconData: 'viewBox="0 0 32 32" width="36" height="36"'
+		}) }}
+	</div>
+	<div class="classes-main__bg">
+		<img src="/assets/images/classes/classes-bg.jpg" srcset="/assets/images/classes/classes-bg@2x.jpg 2x" width="1728" height="725" alt="Занятия">
+	</div>
+</section>

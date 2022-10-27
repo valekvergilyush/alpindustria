@@ -1,11 +1,11 @@
-{% extends "../../templates/inner-page.nunj" %}
+{% extends "../../templates/index-page.nunj" %}
 
 {% block title %}Занятия | {{ super() }}{% endblock title %}
-
+{% set htmlClassMods = '_classes' %}
 
 {% block mainContent %}
-	<main class="page__main _pt">
-		{% include "../../includes/community-nav/community-nav.nunj" %}
+	<main class="page__main">
+		{% include "../../includes/classes-main/classes-main.nunj" %}
 		{% include "../../includes/community-classes-list/community-classes-list.nunj" %}
 	</main>
 {% endblock %}
