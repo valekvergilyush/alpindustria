@@ -1,0 +1,58 @@
+{% set list = [
+	{
+		title: 'Как мы дарим дисконтные карты',
+		text: 'При любой покупке на&nbsp;кассе в&nbsp;розничном магазине. А&nbsp;при покупке онлайн&nbsp;&mdash; высылаем вместе с&nbsp;заказом'
+	},
+	{
+		title: 'Дополнительные условия',
+		text: 'Скидка по&nbsp;карте не&nbsp;суммируется с&nbsp;другими скидками. Баллы не&nbsp;имеют ограничения срока действия. Баллы не&nbsp;начисляются при покупке товаров с&nbsp;распродажи (полный список условий)'
+	},
+	{
+		title: 'Как узнать количество баллов на&nbsp;карте',
+		list: [
+			'В&nbsp;личном кабинете на&nbsp;нашем сайте. Войдите или зарегистрируйтесь через кнопку Войти в&nbsp;правом верхнем углу сайта',
+			'На&nbsp;кассе любого магазина сети АльпИндустрия',
+			'По&nbsp;телефону 8&nbsp;800&nbsp;775 16 30&nbsp;с 10:00 до&nbsp;21:00. Звонок по&nbsp;России бесплатный'
+		]
+	}
+] %}
+
+<section class="community-advantages _discount" data-community-advantages>
+	<div class="community-advantages__container container">
+		<h2 class="community-advantages__title h4 ttu" data-animation="words">Условия участия в&nbsp;дисконтной программе</h2>
+		<div class="community-advantages__wrapper">
+			<ul class="community-advantages__list s2">
+				{% for item in list %}
+					<li class="community-advantages__item">
+						<p class="community-advantages__item-text" data-animation="fade-right">{{ item.title }}</p>
+						{% if item.text %}
+							<p data-animation="fade-right">{{ item.text }}</p>
+						{% endif %}
+						{% if item.list %}
+							<ul data-animation="fade-right">
+								{% for text in item.list %}
+									<li>{{ text }}</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="community-advantages__text p2" data-animation="fade-right">
+				<span class="community-advantages__asterisk h5 ttu">***</span><br>
+				<p>Маркетинговые цены в&nbsp;курортных магазинах: Красная Поляна, Архыз, Терскол, Азау могут отличаться от&nbsp;действующих цен в&nbsp;интернет-магазине.</p>
+				<p>Скидка по&nbsp;кэшбэку, промокоду, карте Эверест или любая другая скидка не&nbsp;может превышать:</p>
+				<ul>
+					<li>5%&nbsp;на&nbsp;бренд Garmin</li>
+					<li>10% на&nbsp;лавинные датчики, лавинные комплекты, лавинные рюкзаки, баллоны для лавинных рюкзаков</li>
+					<li>10% на&nbsp;товары из&nbsp;категории часы и&nbsp;приборы, веревку Канат и&nbsp;АзотХимФортис</li>
+					<li>10% на&nbsp;бренды Ice Rock, Flow, Венто, Школа ИТО Красноярск, Мастерская 19/50</li>
+					<li>10% на&nbsp;печатную продукцию</li>
+					<li>10% на&nbsp;спортивное и&nbsp;туристическое питание</li>
+					<li>не&nbsp;распространяются на&nbsp;товары бренда Кронидов</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
