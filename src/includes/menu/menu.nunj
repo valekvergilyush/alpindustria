@@ -37,7 +37,7 @@
 
 {% set menuLinks = [
 	{ text: 'Бренды', url: '/brands.html', img: { src: '/assets/images/menu/menu-brand.jpg', srcset: '/assets/images/menu/menu-brand@2x.jpg 2x' } },
-	{ text: 'Дисконтная<br> программа', url: '/delivery.html', img: { src: '/assets/images/menu/menu-delivery.jpg', srcset: '/assets/images/menu/menu-delivery@2x.jpg 2x' } },
+	{ text: 'Дисконтная<br> программа', url: '/discount.html', img: { src: '/assets/images/menu/menu-delivery.jpg', srcset: '/assets/images/menu/menu-delivery@2x.jpg 2x' } },
 	{ text: 'Экология', url: '#', img: { src: '/assets/images/menu/menu-eco.jpg', srcset: '/assets/images/menu/menu-eco@2x.jpg 2x' } }
 ] %}
 
