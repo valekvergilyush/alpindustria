@@ -1,0 +1,44 @@
+{% set list = [
+	{
+		name: 'Matterhorn',
+		text: 'Выдается при истории покупок<br> от&nbsp;0&nbsp;до&nbsp;30&nbsp;000 рублей',
+		cashback: 'Кэшбэк 5%',
+		image: '/assets/images/discount/matterhorn'
+	},
+	{
+		name: 'Mont Blanc',
+		text: 'Выдается при истории покупок<br> от&nbsp;100&nbsp;000 до&nbsp;300&nbsp;000 рублей',
+		cashback: 'Кэшбэк 15%',
+		image: '/assets/images/discount/mont-blanc'
+	},
+	{
+		name: 'Elbrus',
+		text: 'Выдается при истории покупок<br> от&nbsp;0&nbsp;до&nbsp;30&nbsp;000 рублей',
+		cashback: 'Кэшбэк 5%',
+		image: '/assets/images/discount/elbrus'
+	},
+	{
+		name: 'Everest',
+		text: 'Выдается при истории покупок<br> более&nbsp;300&nbsp;000 рублей',
+		cashback: 'Кэшбэк 25%',
+		image: '/assets/images/discount/everest'
+	}
+] %}
+
+<section class="discount-status">
+	<div class="container">
+		<h2 class="discount-status__title ttu h4">Статусы карт</h2>
+	</div>
+	<ul class="discount-status__list">
+		{% for item in list %}
+		<li class="discount-status__item">
+			<p class="discount-status__name ttu h5">{{ item.name }}</p>
+			<p class="discount-status__text p1">{{ item.text }}</p>
+			<p class="discount-status__cashback ttu h6">{{ item.cashback }}</p>
+			{% if item.image %}
+				<img class="discount-status__img" src="{{ item.image }}.jpg" srcset="{{ item.image }}@2x.jpg 2x" width="354" height="232" alt="">
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</section>
