@@ -58,6 +58,6 @@
 		}) }}
 	</div>
 	<div class="classes-main__bg">
-		<img src="/assets/images/classes/classes-bg.jpg" srcset="/assets/images/classes/classes-bg@2x.jpg 2x" width="1728" height="725" alt="Занятия">
+		<img src="/assets/images/classes/classes-bg.jpg" srcset="/assets/images/classes/classes-bg@2x.jpg 2x" width="1728" height="725" alt="">
 	</div>
 </section>

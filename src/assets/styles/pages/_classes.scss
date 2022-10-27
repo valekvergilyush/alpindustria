@@ -4,12 +4,12 @@
 		.header__actions {
 			color: var(--blue-dark);
 			@media (max-width: $laptop-lg) {
-				color: var(--white);
+				color: inherit;
 			}
 		}
 		&._menu-opened {
 			.header__actions {
-				color: var(--white);
+				color: inherit;
 			}
 		}
 	}

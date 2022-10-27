@@ -5,7 +5,7 @@
 		<div class="class-item__content">
 			<a href="#" class="class-item__title h6 ttu">{{ props.title }}</a>
 			<div class="class-item__img">
-				<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="318" height="508" alt="Мастер-класс по вязанию узлов #2">
+				<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="318" height="508" alt="">
 			</div>
 			<div class="class-item__content-inner">
 				<p class="class-item__place">
