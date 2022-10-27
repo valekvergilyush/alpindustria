@@ -1,4 +1,5 @@
 .community-advantages {
+	$this: &;
 	--padding-y: #{rem(124)};
 	color: var(--white);
 	background-color: var(--blue-light);
@@ -6,6 +7,12 @@
 	overflow: hidden;
 	&._how {
 		background-color: var(--violet-light);
+		#{$this}__title {
+			padding-right: rem(150);
+			@media (max-width: $laptop-md) {
+				padding-right: 0;
+			}
+		}
 	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 98px;
@@ -34,13 +41,17 @@
 		margin-top: auto;
 		padding-bottom: rem(120);
 		@media (max-width: $laptop-lg) {
-			padding-right: 50px;
+			padding-right: 0;
 			padding-bottom: 88px;
+		}
+		@media (max-width: $laptop-md) and (min-width: ($laptop + 1px)) {
+			font-size: 54px;
 		}
 		@media (max-width: $laptop) {
 			padding-bottom: 68px;
 		}
 		@media (max-width: $tablet) {
+			margin-left: 0;
 			padding-bottom: 29px;
 		}
 		@media (max-width: $mobile-lg) {
