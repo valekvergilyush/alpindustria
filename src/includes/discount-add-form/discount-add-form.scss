@@ -1,0 +1,21 @@
+.discount-add-form {
+	display: flex;
+	flex-direction: column;
+	&__input {
+		& + & {
+			margin-top: rem(16);
+		}
+	}
+	&__submit {
+		margin-left: auto;
+		margin-top: rem(48);
+		margin-bottom: rem(48);
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+		color: var(--gray-dark);
+		opacity: 0.5;
+	}
+}
