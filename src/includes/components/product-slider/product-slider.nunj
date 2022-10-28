@@ -2,7 +2,7 @@
 	<div class="product-slider {% if props.className %}{{ props.className }} {% endif %}">
 		<div class="product-slider__main" data-product-slider>
 			{% for sliderImg in props.imgsList %}
-				<div class="product-slider__img-wrap">
+				<div class="product-slider__img-wrap {% if loop.index === 1 %}is-selected{% endif %}">
 					<img class="product-slider__img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="704" height="737" alt="slider-img">
 				</div>
 			{% endfor %}

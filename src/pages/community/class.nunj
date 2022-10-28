@@ -1,0 +1,24 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% from "../../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+
+{% block title %}Выезд | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Занятия', href: '#'},
+		{ text: 'Выезды', href: '#'}
+	],
+	link: {
+		href: '/',
+		text: 'Закрыть',
+		className: '_gray'
+	}
+} %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{% include "../../includes/class/class.nunj" %}
+	</main>
+{% endblock %}

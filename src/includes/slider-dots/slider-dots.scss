@@ -1,0 +1,23 @@
+.slider-dots {
+	.flickity-page-dots {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: rem(10);
+	}
+	.flickity-page-dot {
+		width: rem(10);
+		height: rem(10);
+		background-color: var(--white);
+		border: 1px solid var(--white);
+		font-size: 0;
+		box-sizing: border-box;
+		border-radius: rem(500);
+		transition: width $default-transition-duration $default-transition-function,
+			background-color $default-transition-duration $default-transition-function;
+		&.is-selected {
+			width: rem(43);
+			background-color: transparent;
+		}
+	}
+}

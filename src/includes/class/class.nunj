@@ -1,0 +1,43 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+
+<section class="class">
+	<div class="class__main">
+		<div class="class__main-wrap">
+			<h1 class="class__title h5 ttu">Учебно-тренировочный выезд в альплагерь Безенги горного клуба альпиндустрия</h1>
+			<div class="class__details">
+				<p class="class__place p3">
+					<span class="class__place-title">Место проведения:</span>
+					<span class="class__place-name">
+						{{ icon({
+							iconName: 'pin',
+							className: 'class-item__place-icon',
+							attr: 'width="25" height="25" viewBox="0 0 25 25"'
+						}) }}
+						Скалодром «Big Wall», Москва
+					</span>
+				</p>
+				<p class="class__date h6"><span class="h5">21-25</span> <span class="ttu">августа</span></p>
+			</div>
+			<p class="class__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
+		</div>
+		{{ addToCart({
+			className: 'class__price',
+			list: [
+				{
+					text: 'Стоимость участия:',
+					price: '145 000 ₽'
+				}
+			],
+			link: {
+				text: 'записаться',
+				url: '#'
+			}
+		}) }}
+	</div>
+	<div class="class__content">
+		<div class="class__slider">
+			{% include "../class-slider/class-slider.nunj" %}
+		</div>
+	</div>
+</section>
