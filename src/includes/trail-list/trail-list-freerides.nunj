@@ -50,7 +50,7 @@
 ] %}
 
 <section class="trail-list _freerides">
-	<h2 class="trail-list__title h4 ttu c-violet-light container">Наши трейлы</h2>
+	<h2 class="trail-list__title h4 ttu c-violet-light container">Наши фрирайды</h2>
 	<ul class="trail-list__list">
 		{% for trail in trailsList %}
 			<li class="trail-list__item">

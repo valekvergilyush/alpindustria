@@ -1,0 +1,12 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Дисконтная программа | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/hero-discount/hero-discount.nunj" %}
+		{% include "../includes/discount-how/discount-how.nunj" %}
+		{% include "../includes/discount-status/discount-status.nunj" %}
+		{% include "../includes/community-advantages/community-advantages-discount.nunj" %}
+	</main>
+{% endblock %}

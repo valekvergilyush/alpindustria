@@ -22,6 +22,18 @@ https://flickity.metafizzy.co
 	height: 100%;
 }
 
+/* ---- flickity-cell ---- */
+
+.flickity-cell {
+	position: absolute;
+	left: 0;
+}
+
+.flickity-rtl .flickity-cell {
+	left: unset;
+	right: 0;
+}
+
 /* draggable */
 
 .flickity-enabled.is-draggable {

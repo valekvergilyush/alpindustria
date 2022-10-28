@@ -1,18 +1,51 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
+{% set videoList = [
+	{
+		title: 'Alpindustria Arkhyz Race 2021',
+		desc: 'Full movie',
+		coverImg: '/assets/images/community/trails/trail-video-preview',
+		id: 'XzX6TmITa5I'
+	},
+	{
+		title: 'Alpindustria Arkhyz Race 2022',
+		desc: 'Full movie',
+		coverImg: '/assets/images/community/trails/trail-video-preview',
+		id: 'XzX6TmITa5I'
+	},
+	{
+		title: 'Alpindustria Arkhyz Race 2023',
+		desc: 'Full movie',
+		coverImg: '/assets/images/community/trails/trail-video-preview',
+		id: 'XzX6TmITa5I'
+	},
+	{
+		title: 'Alpindustria Arkhyz Race 2024',
+		desc: 'Full movie',
+		coverImg: '/assets/images/community/trails/trail-video-preview',
+		id: 'XzX6TmITa5I'
+	}
+] %}
+
 <section class="trail-video">
 	<h2 class="trail-video__title h4 ttu c-green-dark container">Предыдущие выезды</h2>
-	<div class="trail-video__video">
-		<div class="trail-video__info">
-			<p class="trail-video__name h3 ttu">Alpindustria Arkhyz Race 2021</p>
-			<p class="trail-video__desc s2">Full movie</p>
-		</div>
-		<button class="trail-video__play-button" type="button" aria-label="Play">
-			{{ icon({
-				iconName: 'play',
-				attr: 'width="152" height="152"'
-			}) }}
-		</button>
-		<img class="trail-video__preview" src="/assets/images/community/trails/trail-video-preview.jpg" srcset="/assets/images/community/trails/trail-video-preview@2x.jpg 2x" alt="">
+	<div class="trail-video__slider" data-video-slider>
+		{% for video in videoList %}
+			<div class="trail-video__video-wrapper" data-video-slide>
+				<div class="trail-video__video" data-video="{{ video.id }}">
+					<div class="trail-video__info">
+						{% if video.title %}<p class="trail-video__name h3 ttu">{{ video.title }}</p>{% endif %}
+						{% if video.desc %}<p class="trail-video__desc s2">{{ video.desc }}</p>{% endif %}
+					</div>
+					<button class="trail-video__play-button" type="button" aria-label="Play" data-video-play>
+						{{ icon({
+							iconName: 'play',
+							attr: 'width="152" height="152"'
+						}) }}
+					</button>
+					<img class="trail-video__preview" src="{{ video.coverImg }}.jpg" srcset="{{ video.coverImg }}@2x.jpg 2x" alt="">
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 </section>

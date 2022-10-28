@@ -1,11 +1,7 @@
 {
-  "name": "sp.starter",
+  "name": "starter",
   "version": "2.0.2",
-  "description": "Boilerplate for html+js+css apps by Sborka Project",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sborkaproject/SP.Starter"
-  },
+  "description": "Boilerplate for html+js+css apps",
   "scripts": {
     "start": "gulp",
     "build": "cross-env NODE_ENV=production gulp production",
@@ -91,10 +87,12 @@
     "global": "^4.4.0",
     "gsap": "^3.7.0",
     "gulp-dart-sass": "^1.0.2",
+    "lottie-web": "^5.9.6",
     "nouislider": "^15.6.1",
     "pickerjs": "^1.2.1",
     "regenerator-runtime": "^0.13.5",
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "tiny-slider": "^2.9.4"
   },
   "lint-staged": {
     "src/assets/js/**/*.js": [

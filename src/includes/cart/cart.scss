@@ -99,6 +99,9 @@
 		background-color: var(--gray-light);
 		overflow-x: hidden;
 		overflow-y: auto;
+		@media (max-width: $tablet) {
+			height: auto;
+		}
 	}
 	&__delivery-content {
 		flex-grow: 1;

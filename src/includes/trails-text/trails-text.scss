@@ -1,5 +1,6 @@
 .trails-text {
-	padding-block: rem(176);
+	padding-block: rem(124);
+	border-bottom: 1px solid var(--blue-dark);
 	color: var(--gray-dark);
 	font-family: var(--font-family-suisse);
 	font-size: rem(44);
@@ -8,7 +9,7 @@
 		max-width: rem(1410);
 	}
 	@media (max-width: $laptop) {
-		padding-block: 124px;
+		padding-block: 96px;
 		font-size: 30px;
 	}
 	@media (max-width: $mobile-lg) {
