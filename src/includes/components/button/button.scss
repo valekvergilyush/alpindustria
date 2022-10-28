@@ -486,6 +486,24 @@
 			}
 		}
 	}
+	&._arrow-xs {
+		#{$this}__text {
+			padding-top: 0.2em;
+		}
+		&:hover {
+			#{$this}__text {
+				transform: translateX(0.2em);
+			}
+		}
+		#{$this}__icon {
+			--size: #{rem(8)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: var(--size);
+			transition: transform $default-transition-duration $default-transition-function;
+			fill: currentColor;
+		}
+	}
 	&._auth {
 		#{$this}__text {
 			line-height: 1;
