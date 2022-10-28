@@ -1,0 +1,15 @@
+{% set classSliderImgs = [
+	'/assets/images/classes/class-slide',
+	'/assets/images/brand/brand-2',
+	'/assets/images/brand/brand-1',
+	'/assets/images/brand/brand-3',
+	'/assets/images/brand/brand-2'
+] %}
+
+<div class="class-slider slider-dots" data-class-slider>
+	{% for item in classSliderImgs %}
+		<div class="class-slider__img {% if loop.index === 1 %}is-selected{% endif %}">
+			<img src="{{ item }}.jpg" srcset="{{ item }}@2x.jpg 2x" width="864" height="920" alt="">
+		</div>
+	{% endfor %}
+</div>

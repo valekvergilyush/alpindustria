@@ -94,6 +94,9 @@
 			</ul>
 			<ul class="footer__links">
 				<li class="footer__link-item">
+					<a href="/delivery.html" class="footer__arrow-link ttu h7">Доставка</a>
+				</li>
+				<li class="footer__link-item">
 					<a href="#" class="footer__arrow-link ttu h7">Стать партнером</a>
 				</li>
 				<li class="footer__link-item">

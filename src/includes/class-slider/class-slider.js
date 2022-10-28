@@ -1,9 +1,8 @@
 import Flickity from 'flickity';
-import 'flickity-fade';
-class ProductSlider {
+
+class ClassSlider {
 	constructor() {
-		this.sliderBlock = document.querySelector('[data-product-slider]');
-		this.sliderBtns = document.querySelectorAll('[data-slider-btn]');
+		this.sliderBlock = document.querySelector('[data-class-slider]');
 		this.init();
 	}
 
@@ -16,12 +15,10 @@ class ProductSlider {
 
 	initSlider() {
 		this.slider = new Flickity(this.sliderBlock, {
-			fade: true,
-			pageDots: false,
+			pageDots: true,
 			prevNextButtons: false,
-			draggable: false,
+			draggable: true,
 			imagesLoaded: true,
-			wrapAround: true,
 		});
 		this.sliderBtns.forEach(btn => {
 			btn.addEventListener('click', () => {
@@ -36,4 +33,4 @@ class ProductSlider {
 	}
 }
 
-export default new ProductSlider();
+export default new ClassSlider();

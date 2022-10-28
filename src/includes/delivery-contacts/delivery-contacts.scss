@@ -13,7 +13,7 @@
 			margin-bottom: 32px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 23px;
+			margin-bottom: 22px;
 		}
 		&:not(:first-child) {
 			margin-top: rem(56);
@@ -21,7 +21,7 @@
 				margin-top: 48px;
 			}
 			@media (max-width: $laptop-md) {
-				margin-top: 37px;
+				margin-top: 35px;
 			}
 		}
 	}
@@ -44,7 +44,7 @@
 				margin-bottom: 20px;
 			}
 			@media (max-width: $mobile-lg) {
-				margin-bottom: 17px;
+				margin-bottom: 18px;
 			}
 		}
 		a:not([class]) {

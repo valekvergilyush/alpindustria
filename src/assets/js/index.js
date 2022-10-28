@@ -41,6 +41,7 @@ class AlpIndustry {
 			CommunitySlider: require('../../includes/community-slider/community-slider').default,
 			CommunityAdvantages: require('../../includes/community-advantages/community-advantages')
 				.default,
+			ClassSlider: require('../../includes/class-slider/class-slider').default,
 			HeroTrails: require('../../includes/hero-trails/hero-trails').default,
 			TrailVideo: require('../../includes/trail-video/trail-video').default,
 		};

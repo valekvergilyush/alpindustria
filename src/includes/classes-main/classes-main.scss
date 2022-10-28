@@ -4,16 +4,22 @@
 	position: relative;
 	color: var(--white);
 	padding-top: rem(258);
+	@media (max-width: $laptop-lg) {
+		padding-top: 255px;
+	}
 	@media (max-width: $laptop-md) {
 		--category-margin: 20px;
+		padding-top: 204px;
 	}
 	@media (max-width: $laptop-sm) {
 		--category-gap: 8px;
 		--category-margin: 40px;
+		padding-top: 577px;
 	}
 	@media (max-width: $mobile-lg) {
 		--category-gap: 8px;
 		--category-margin: 16px;
+		padding-top: 293px;
 	}
 	&__bg {
 		position: absolute;
@@ -32,16 +38,16 @@
 	&__title {
 		margin-bottom: rem(50);
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 61px;
+			margin-bottom: 52px;
 		}
 		@media (max-width: $laptop-md) {
-			margin-bottom: 78px;
+			margin-bottom: 85px;
 		}
 		@media (max-width: $laptop-sm) {
-			margin-bottom: 72px;
+			margin-bottom: 80px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 64px;
+			margin-bottom: 62px;
 		}
 	}
 	&__category {
@@ -49,15 +55,25 @@
 		flex-direction: column;
 		gap: var(--category-gap);
 		margin-bottom: var(--category-margin);
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+		}
 	}
 	&__category-name {
 		font-size: rem(14);
 		line-height: 95%;
 		letter-spacing: -0.04em;
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $laptop-md) {
 			font-size: 16px;
 			line-height: 20px;
 			letter-spacing: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 16px;
 		}
 	}
 	&__category-list {
@@ -81,6 +97,7 @@
 		padding-block: rem(30);
 		@media (max-width: $mobile-lg) {
 			padding-block: 16px;
+			margin-top: 30px;
 		}
 	}
 	&__number {
@@ -118,6 +135,9 @@
 			fill: none;
 			@media (max-width: $laptop-md) {
 				--size: 16px;
+			}
+			@media (max-width: $mobile-lg) {
+				--size: 24px;
 			}
 		}
 		.button__text {
