@@ -1,5 +1,5 @@
 import Flickity from 'flickity';
-import 'flickity-fade';
+
 class ClassSlider {
 	constructor() {
 		this.sliderBlock = document.querySelector('[data-class-slider]');

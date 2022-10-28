@@ -77,7 +77,8 @@
 		}
 	}
 	&__date {
-		width: 130px;
+		display: flex;
+		flex-direction: column;
 	}
 	&__descr {
 		margin-top: auto;

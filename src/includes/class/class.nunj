@@ -17,7 +17,7 @@
 						Скалодром «Big Wall», Москва
 					</span>
 				</p>
-				<p class="class__date h6"><span class="h5">21-25</span> <span class="ttu">августа</span></p>
+				<p class="class__date h6 ttu"><span class="h5">21-25</span> <span>авгу</span><span>ста</span></p>
 			</div>
 			<p class="class__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
 		</div>
@@ -30,7 +30,7 @@
 				}
 			],
 			link: {
-				text: 'записаться',
+				text: 'Записаться',
 				url: '#'
 			}
 		}) }}

@@ -9,7 +9,7 @@
 <div class="class-slider slider-dots" data-class-slider>
 	{% for item in classSliderImgs %}
 		<div class="class-slider__img {% if loop.index === 1 %}is-selected{% endif %}">
-			<img src="{{ item }}.jpg" srcset="{{ item }}@2x.jpg 2x" width="864" height="920" alt="slide">
+			<img src="{{ item }}.jpg" srcset="{{ item }}@2x.jpg 2x" width="864" height="920" alt="">
 		</div>
 	{% endfor %}
 </div>
