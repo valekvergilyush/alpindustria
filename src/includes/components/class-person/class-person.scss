@@ -1,0 +1,29 @@
+.class-person {
+	display: grid;
+	grid-template-areas:
+		'img name'
+		'img text';
+	grid-template-rows: 1fr auto;
+	gap: rem(24);
+	@media (max-width: $laptop-md) {
+		gap: 20px;
+	}
+	@media (max-width: $mobile-lg) {
+		gap: 8px 16px;
+	}
+	&__img {
+		--size: #{rem(280)};
+		width: var(--size);
+		height: var(--size);
+		grid-area: img;
+		@media (max-width: $laptop-md) {
+			--size: 120px;
+		}
+	}
+	&__name {
+		grid-area: img;
+	}
+	&__text {
+		grid-area: text;
+	}
+}

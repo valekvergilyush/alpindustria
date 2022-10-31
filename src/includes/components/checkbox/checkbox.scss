@@ -37,7 +37,6 @@
 		position: relative;
 		padding-left: calc(var(--size) + rem(16));
 		color: var(--gray-dark);
-		cursor: pointer;
 		&::before {
 			content: '';
 			position: absolute;
@@ -55,8 +54,14 @@
 				top: 0;
 			}
 		}
+		@at-root {
+			label#{&} {
+				cursor: pointer;
+			}
+		}
 	}
-	input:checked + &__label::before {
+	input:checked + &__label::before,
+	&._checked &__label::before {
 		background-color: var(--blue-dark);
 		background-image: inline('tick.svg');
 	}
