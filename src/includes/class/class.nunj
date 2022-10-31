@@ -1,28 +1,274 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+{% from "../components/class-person/class-person.nunj" import classPerson %}
+{% from "../components/checkbox/checkbox-p.nunj" import checkboxP %}
+{% from "../components/file-download/file-download.nunj" import fileDownload %}
+
+{% set classCheckboxList = [
+	{
+		text: 'Каска (должна надеваться на шапку)',
+		checked: true
+	},
+	{
+		text: 'Система (должна регулироваться на штаны штормовые)',
+		checked: true
+	},
+	{
+		text: 'Страховочное устройство Реверсо',
+		checked: true
+	},
+	{
+		text: 'Карабины с муфтой, лучше грушевидные (тип HMS), как этот — 8 шт.',
+		checked: false
+	},
+	{
+		text: 'Самостраховка — 2 уса из динамической верёвки',
+		checked: false
+	},
+	{
+		text: 'Репшнур 7 мм (6 м) — 2 шт.',
+		checked: false
+	},
+	{
+		text: 'Репшнур 7 мм (1,5 м)',
+		checked: false
+	},
+	{
+		text: 'Кошки, подходящие под ботинки, с чехлом',
+		checked: false
+	},
+	{
+		text: 'Ледоруб прямой классический',
+		checked: false
+	},
+	{
+		text: 'Палки треккинговые',
+		checked: false
+	},
+	{
+		text: 'Очки солнцезащитные для альпинизма',
+		checked: false
+	},
+	{
+		text: 'Крем солнцезащитный с высоким фактором',
+		checked: false
+	},
+	{
+		text: 'Фонарь налобный с батарейками (2-3 комплекта)',
+		checked: true
+	},
+	{
+		text: 'Рюкзак основной 70-100 л',
+		checked: false
+	},
+	{
+		text: 'Аптечка с личными препаратами + бинты, пластырь и активированный уголь',
+		checked: false
+	}
+] %}
+{% set classCheckboxList2 = [
+	{
+		text: 'Толстый туристический коврик (пенка/каремат)',
+		checked: true
+	},
+	{
+		text: 'Спальник тёплый с температурой комфорта -10°C',
+		checked: false
+	},
+	{
+		text: 'Кружка, миска, ложка',
+		checked: false
+	}
+] %}
+{% set classCheckboxList3 = [
+	{
+		text: 'Альпинистские ботинки под кошки, высокие однослойные',
+		checked: false
+	},
+	{
+		text: 'Куртка штормовая, мембранная',
+		checked: false
+	},
+	{
+		text: 'Штаны штормовые, мембранные',
+		checked: false
+	},
+	{
+		text: 'Штаны тонкие полар',
+		checked: false
+	},
+	{
+		text: 'Шапка тёплая',
+		checked: false
+	},
+	{
+		text: 'Футболки',
+		checked: false
+	},
+	{
+		text: 'Пуховка лёгкая',
+		checked: true
+	},
+	{
+		text: 'Перчатки полар или виндблок — 2-3 пары',
+		checked: false
+	},
+	{
+		text: 'Перчатки для работы с верёвкой',
+		checked: false
+	},
+	{
+		text: 'Верхонки из водостойкой ткани (перчатки или рукавицы)',
+		checked: false
+	},
+	{
+		text: 'Носки тонкие треккинг высокие — 3 пары',
+		checked: false
+	},
+	{
+		text: 'Носки толстые треккинг высокие — 1-2 пары',
+		checked: false
+	},
+	{
+		text: 'Носки шерстяные — 1 пара',
+		checked: true
+	},
+	{
+		text: 'Пара кроссовок для бега (каждое утро мы начинаем с зарядки и пробежки) и лагеря',
+		checked: false
+	},
+	{
+		text: 'Сандалии или шлепанцы для лагеря',
+		checked: false
+	},
+	{
+		text: 'Лёгкие брюки для треккинга и лазания',
+		checked: false
+	},
+	{
+		text: 'Термобелье (на верх и на низ)',
+		checked: false
+	},
+	{
+		text: 'Гамаши',
+		checked: false
+	}
+] %}
+{% set classCheckboxList4 = [
+	{
+		text: 'Рюкзак штурмовой 30-50 л',
+		checked: false
+	},
+	{
+		text: 'Наручные водостойкие часы',
+		checked: true
+	},
+	{
+		text: 'Накидка на рюкзак от дождя',
+		checked: false
+	},
+	{
+		text: 'Блокнот с ручкой',
+		checked: false
+	},
+	{
+		text: 'Термос',
+		checked: true
+	},
+	{
+		text: 'Скальные туфли и мешочек с магнезией, если есть желание побольше полазить',
+		checked: false
+	},
+	{
+		text: 'Складной нож',
+		checked: false
+	},
+	{
+		text: 'Зажигалка (кремний) — 1-2 шт.',
+		checked: false
+	},
+	{
+		text: 'Дождевик',
+		checked: false
+	},
+	{
+		text: 'Бафф',
+		checked: false
+	},
+	{
+		text: 'Шапку под каску (подшлемник)',
+		checked: false
+	},
+	{
+		text: 'Перчатки или рукавицы из водостойкого материала',
+		checked: false
+	},
+	{
+		text: 'Запасная пара шерстяных носков',
+		checked: true
+	},
+	{
+		text: 'Пожалуйста, не забудьте взять с собой аптечку с медикаментами, которыми вы пользуетесь, подходящим вам обезболивающим и перевязочными средствами',
+		checked: false
+	}
+] %}
+{% set classAccordions = [
+	{
+		name: 'Паспорт и пропуск',
+		opened: false
+	},
+	{
+		name: 'Заверенная медицинская справка',
+		opened: true
+	},
+	{
+		name: 'Страховка на весь срок сборов',
+		opened: false
+	}
+] %}
+{% set classAccordions2 = [
+	{
+		name: 'Когда нужно оплатить?',
+		opened: false
+	},
+	{
+		name: 'Какой должен быть уровень подготовки?',
+		opened: false
+	},
+	{
+		name: 'Если я не участник горного клуба?',
+		opened: false
+	},
+	{
+		name: 'Будет ли скидля для компании?',
+		opened: false
+	}
+] %}
 
 <section class="class">
 	<div class="class__main">
 		<div class="class__main-wrap">
-			<h1 class="class__title h5 ttu">Учебно-тренировочный выезд в альплагерь Безенги горного клуба альпиндустрия</h1>
-			<div class="class__details">
-				<p class="class__place p3">
-					<span class="class__place-title">Место проведения:</span>
-					<span class="class__place-name">
-						{{ icon({
-							iconName: 'pin',
-							className: 'class-item__place-icon',
-							attr: 'width="25" height="25" viewBox="0 0 25 25"'
-						}) }}
-						Скалодром «Big Wall», Москва
-					</span>
-				</p>
-				<p class="class__date h6 ttu"><span class="h5">21-25</span> <span>авгу</span><span>ста</span></p>
+			<div class="class__main-inner">
+				<h1 class="class__main-title h5 ttu">Учебно-тренировочный выезд в альплагерь Безенги горного клуба альпиндустрия</h1>
+				<div class="class__details">
+					<p class="class__place p3">
+						<span class="class__place-title">Место проведения:</span>
+						<span class="class__place-name">
+							{{ icon({
+								iconName: 'pin',
+								className: 'class-item__place-icon',
+								attr: 'width="25" height="25" viewBox="0 0 25 25"'
+							}) }}
+							Скалодром «Big Wall», Москва
+						</span>
+					</p>
+					<p class="class__date h6 ttu"><span class="h5">21-25</span> <span>авгу</span><span>ста</span></p>
+				</div>
+				<p class="class__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
 			</div>
-			<p class="class__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
 		</div>
 		{{ addToCart({
-			className: 'class__price',
+			className: 'class__price-block',
 			list: [
 				{
 					text: 'Стоимость участия:',
@@ -38,6 +284,223 @@
 	<div class="class__content">
 		<div class="class__slider">
 			{% include "../class-slider/class-slider.nunj" %}
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">О выезде</p>
+			<div class="class__text p2 c-gray-dark">
+				<p>В России гор много, но для того, чтобы познакомиться с альпинизмом, нет места лучше, чем Безенги. Культовый район, куда раньше пускали только избранных, сейчас открыт для всех. Здесь всё по-настоящему: настоящие высокие горы, настоящие люди, настоящий альпинизм! И если вы хотите понять, что это такое, надо ехать в Безенги.</p>
+				<p>Безенги — район для самых сложных альпинистских восхождений на территории России, но в то же время здесь есть всё, что нужно новичку. Благодаря дирекции и персоналу альплагеря в Безенги удалось не только сохранить дух и лучшие традиции советского альпинизма, но и создать все условия для комфортного размещения в течение смены. Ну а что касается опыта, который вы получите, здесь можно вспомнить фразу, которую любят повторять многие инструкторы: «Есть значок "Альпинист России", а есть значок "Альпинист России", полученный в Безенги».</p>
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Для кого этот выезд</p>
+			<div class="class__text p2 c-gray-dark">
+				<p>УТС в альплагере Безенги — это продолжение программы обучения в Горном клубе. УТС предназначены участникам, прошедшим начальную подготовку на базе клуба в городе (пройден минимум один из перечисленных ниже вариантов):</p>
+			</div>
+			<a href="#" class="class__link h7 ttu">
+				Курс «Введение в альпинизм» в Москве
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'class__link-icon',
+					attr: 'width="16" height="16" viewBox="0 0 72 72"'
+				}) }}
+			</a>
+			<a href="#" class="class__link h7 ttu">
+				Курс «Введение в альпинизм Плюс» в Москве
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'class__link-icon',
+					attr: 'width="16" height="16" viewBox="0 0 72 72"'
+				}) }}
+			</a>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Как записаться на выезд</p>
+			<ol class="class__list h6">
+				<li class="class__list-item">
+					<p class="p2 c-gray-dark">Жмите на кнопку «записаться», обязательно укажите, какие именно занятия и курсы были пройдены</p>
+				</li>
+				<li class="class__list-item">
+					<p class="p2 c-gray-dark">Далее если вы уверены, что поедете с нами на выезд, то можете вносить предоплату</p>
+				</li>
+			</ol>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Стоимость</p>
+			<div class="class__price">
+				<div class="class__price-item">
+					<p class="p2">Наличными</p>
+					<p class="h7">28 000 ₽</p>
+				</div>
+				<div class="class__price-item">
+					<p class="p2">Наличными</p>
+					<p class="h7">28 000 ₽</p>
+				</div>
+				<div class="class__price-item _total">
+					<p class="p2">Наличными</p>
+					<p class="h6">28 000 ₽</p>
+				</div>
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Наши инструкторы</p>
+			<div class="class__text p2 c-gray-dark">
+				<p>Альпсборы в Безенги проходят под руководством инструкторов Федерации альпинизма России. Это значит, что инструкторы прошли аттестацию, обладают необходимым опытом в альпинизме и инструкторской работе и точно имеют право вас обучать. Ну а знания и навыки, которые они вам передают, современные и соответствуют российским и международным стандартам.</p>
+				<p>Иван Аленцев не только аттестованный инструктор альпинизма, но и тренер Центральной школы инструкторов, а значит тот человек, который обучает будущих инструкторов. Кроме того Иван — старший методист Всероссийских специализированных учебно-тренировочных сборов по подготовке альпинистов-спасателей Жетон «Спасение в горах».</p>
+				<p>Андриян Спичка — инструктор UIAA (ENEQ), инструктор альпинизма II категории ФАР, преподаватель Центральной школы инструкторов альпинизма и УТС Жетон «Спасение в горах», участник и руководитель ряда сложных восхождений и походов на Кавказе, Памире и Фанских горах.</p>
+				<p>Наши инструкторы уже не в первый раз будут вместе руководить альпинистскими сборами, а значит участников ждёт сработанная команда наставников :)</p>
+			</div>
+			<div class="class__persons">
+				{{ classPerson({
+					className: 'class__person',
+					img: '/assets/images/article/article-img-2',
+					name: 'Иван Аленцев',
+					text: 'Старший инструктор по альпинизму Горного клуба АльпИндустрия. Инструктор альпинизма ФАР II категории. Тренер Центральной школы инструкторов. Тренер УТС «Спасение в горах». КМС по альпинизму.'
+				}) }}
+				{{ classPerson({
+					className: 'class__person',
+					img: '/assets/images/article/article-img-2',
+					name: 'Андриян Спичка',
+					text: 'Инструктор альпинизма ФАР II категории. Тренер Центральной школы инструкторов. Тренер УТС «Спасение в горах». КМС по альпинизму.'
+				}) }}
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title">
+				<span class="h5 ttu">Приблизительный список необходимого снаряжения</span>
+				<span class="p3">(будет обговариваться на собрании перед выездом)</span>
+			</p>
+			<p class="p3">Будет всё необходимое клубное общественное скальное снаряжение (верёвки, петли, оттяжки, камалоты и закладки и прочее).</p>
+			<p class="h6 ttu">Ниже вы можете отметить имеющееся оборудование и скачать список</p>
+			<div>
+				<div class="class__checkboxes">
+					<p class="class__checkboxes-title h7 ttu">Каждому участнику нужно иметь обязательное личное сертифицированное снаряжение:</p>
+					<ul class="class__checkboxes-list">
+						{% for item in classCheckboxList %}
+							<li>
+								{{ checkboxP({
+									text: item.text,
+									checked: item.checked
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="class__checkboxes">
+					<p class="class__checkboxes-title h7 ttu">Бивачное снаряжение:</p>
+					<ul class="class__checkboxes-list">
+						{% for item in classCheckboxList2 %}
+							<li>
+								{{ checkboxP({
+									text: item.text,
+									checked: item.checked
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="class__checkboxes">
+					<p class="class__checkboxes-title h7 ttu">Одежда:</p>
+					<ul class="class__checkboxes-list">
+						{% for item in classCheckboxList3 %}
+							<li>
+								{{ checkboxP({
+									text: item.text,
+									checked: item.checked
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="class__checkboxes">
+					<p class="class__checkboxes-title h7 ttu">Дополнительно рекомендуем взять с собой:</p>
+					<ul class="class__checkboxes-list">
+						{% for item in classCheckboxList4 %}
+							<li>
+								{{ checkboxP({
+									text: item.text,
+									checked: item.checked
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div class="class__file">
+				<p class="p3 c-gray-dark">Скачать список оборудования</p>
+				{{ fileDownload({
+					url: 'https://alpindustria.ru/i/files/531_1593094301.jpg',
+					name: 'file_namea_goes_here.pdf',
+					size: '165.7 KB'
+				}) }}
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Необходимые документы</p>
+			<ul class="class__accordions">
+				{% for item in classAccordions %}
+					<li class="class__accordion-item  c-gray-dark" data-accordion-section>
+						<button class="class__accordion-btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+							<span class="class__accordion-name p1" data-accordion-title-text>{{ item.name }}</span>
+							{{ icon({
+								iconName: 'accordion-arrow',
+								className: 'class__accordion-btn-icon',
+								attr: 'viewBox="0 0 16 16" width="16" height="16"'
+							}) }}
+						</button>
+						<div class="class__accordion-content" data-accordion-content>
+							<div class="class__accordion-inner">
+								<p class="p3">Справка должна подтверждать, что вы не имеете противопоказаний для занятий альпинизмом, быть заверена врачом и печатью поликлиники или диспансера. В справке должно быть указано: «Допущен(-а) к занятиям альпинизмом. Противопоказаний к нахождению в условиях высокогорья (среднегорья) не выявлено». Справка обязательна.</p>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="class__file">
+				<p class="p3 c-gray-dark">Скачать список документов</p>
+				{{ fileDownload({
+					url: 'https://alpindustria.ru/i/files/531_1593094301.jpg',
+					name: 'file_namea_goes_here.pdf',
+					size: '165.7 KB'
+				}) }}
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Организация сборов</p>
+			<div class="class__text p3 c-gray-dark">
+				<p>Проживание в альплагере Безенги В альплагере предусмотрены разные варианты проживания, на любой уровень комфорта и бюджет (стоимость с человека в день):</p>
+				<p>Подробно о проживании и питании смотрите на сайте альплагеря.</p>
+			</div>
+		</div>
+		<div class="class__block">
+			<p class="class__title h5 ttu">Частые вопросы</p>
+			<ul class="class__accordions">
+				{% for item in classAccordions2 %}
+					<li class="class__accordion-item  c-gray-dark" data-accordion-section>
+						<button class="class__accordion-btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+							<span class="class__accordion-name p1 ttu" data-accordion-title-text>{{ item.name }}</span>
+							{{ icon({
+								iconName: 'accordion-arrow',
+								className: 'class__accordion-btn-icon',
+								attr: 'viewBox="0 0 16 16" width="16" height="16"'
+							}) }}
+						</button>
+						<div class="class__accordion-content" data-accordion-content>
+							<div class="class__accordion-inner">
+								<p class="p3">Справка должна подтверждать, что вы не имеете противопоказаний для занятий альпинизмом, быть заверена врачом и печатью поликлиники или диспансера. В справке должно быть указано: «Допущен(-а) к занятиям альпинизмом. Противопоказаний к нахождению в условиях высокогорья (среднегорья) не выявлено». Справка обязательна.</p>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+			<a href="#" class="class__link ttu">
+				Задать вопрос
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'class__link-icon',
+					attr: 'width="16" height="16" viewBox="0 0 72 72"'
+				}) }}
+			</a>
 		</div>
 	</div>
 </section>

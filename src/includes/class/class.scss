@@ -1,16 +1,35 @@
 .class {
+	--margin-1: #{rem(48)};
+	--margin-2: #{rem(32)};
+	--margin-3: #{rem(24)};
+	--margin-4: #{rem(16)};
+	$this: &;
 	display: flex;
+	@media (max-width: $laptop-lg) {
+		--margin-1: 32px;
+	}
+	@media (max-width: $laptop-md) {
+		--margin-1: 24px;
+	}
+	@media (max-width: $mobile-lg) {
+		--margin-1: 16px;
+	}
 	@media (max-width: $laptop-sm) {
 		flex-direction: column-reverse;
 	}
 	&__main {
 		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
 		width: 50%;
 		@media (max-width: $laptop-sm) {
 			width: 100%;
 		}
 	}
 	&__main-wrap {
+		flex-grow: 1;
+	}
+	&__main-inner {
 		display: flex;
 		flex-direction: column;
 		min-height: calc(
@@ -19,28 +38,26 @@
 		padding: var(--container-padding);
 		box-sizing: border-box;
 		@media (max-width: $laptop-sm) {
-			min-height: auto; // 463px
+			min-height: auto;
 		}
 	}
-	&__price {
+	&__price-block {
+		flex-shrink: 0;
 		position: sticky;
 		bottom: 0;
 		left: 0;
 	}
 	&__content {
 		flex-grow: 1;
+		border-left: 1px solid var(--blue-dark);
+	}
+	&__main-title {
+		margin-bottom: var(--margin-1);
 	}
 	&__title {
-		margin-bottom: rem(48);
-		@media (max-width: $laptop-lg) {
-			margin-bottom: 32px;
-		}
-		@media (max-width: $laptop-md) {
-			margin-bottom: 24px;
-		}
-		@media (max-width: $mobile-lg) {
-			margin-bottom: 16px;
-		}
+		display: flex;
+		flex-direction: column;
+		gap: var(--margin-4);
 	}
 	&__details {
 		display: flex;
@@ -85,6 +102,7 @@
 	}
 	&__slider {
 		height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
+		border-bottom: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-sm) {
 			height: 60.29vw; // 463px
 		}
@@ -96,5 +114,136 @@
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+	&__block {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--margin-2);
+		padding: var(--container-padding);
+		border-bottom: 1px solid var(--blue-dark);
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--font-size-p2) * 1.4);
+	}
+	&__link {
+		display: inline-block;
+		&:hover {
+			#{$this}__link-icon {
+				transform: translateX(#{rem(-8)});
+			}
+		}
+	}
+	&__link-icon {
+		margin-left: rem(16);
+		transition: transform $default-transition-duration $default-transition-function;
+		fill: currentColor;
+		@media (max-width: $laptop-md) {
+			margin-left: 8px;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--margin-3);
+		counter-reset: li;
+	}
+	&__list-item {
+		&:before {
+			counter-increment: li;
+			content: counter(li, decimal-leading-zero);
+			display: block;
+			margin-bottom: rem(16);
+		}
+	}
+	&__price {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: var(--margin-3);
+	}
+	&__price-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(8);
+		&._total {
+			padding-top: var(--margin-3);
+			border-top: 1px solid var(--blue-dark);
+		}
+	}
+	&__persons {
+		display: flex;
+		flex-direction: column;
+		gap: var(--margin-3);
+	}
+	&__person {
+		&:not(:last-child) {
+			padding-bottom: var(--margin-3);
+			border-bottom: 1px solid rgba($gray-dark, 0.2);
+		}
+	}
+	&__checkboxes {
+		display: flex;
+		flex-direction: column;
+		gap: var(--margin-3);
+		& + & {
+			margin-top: var(--margin-2);
+		}
+	}
+	&__checkboxes-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--margin-4);
+	}
+	&__file {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		gap: rem(16);
+		padding: rem(32) rem(24);
+		background-color: var(--gray-light);
+		box-sizing: border-box;
+	}
+	&__accordion-item {
+		padding-bottom: rem(24);
+		border-bottom: 1px solid var(--gray-dark);
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__accordion-btn {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		gap: rem(24);
+	}
+	&__accordion-name {
+		flex-grow: 1;
+		text-align: left;
+	}
+	&__accordion-btn-icon {
+		--size: #{rem(16)};
+		flex-shrink: 0;
+		width: var(--size);
+		height: var(--size);
+		#{$this}__accordion-item._opened & {
+			transform: rotate(180deg);
+		}
+	}
+	&__accordion-content {
+		height: 0;
+		overflow: hidden;
+		transition: opacity $default-transition-duration $default-transition-function;
+		#{$this}__accordion-item._opened & {
+			height: auto;
+		}
+	}
+	&__accordion-inner {
+		padding-top: rem(8);
 	}
 }

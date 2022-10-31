@@ -1,0 +1,26 @@
+.file-download {
+	$this: &;
+	display: inline-flex;
+	&[href] {
+		&:hover {
+			#{$this}__title {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__icon {
+		width: rem(30);
+		height: rem(40);
+		margin-right: 12px;
+	}
+	&__title {
+		font-size: rem(12);
+		line-height: rem(16);
+	}
+	&__descr {
+		margin-top: rem(8);
+		font-size: rem(12);
+		line-height: rem(16);
+		color: var(--light-slate-grey);
+	}
+}

@@ -20,16 +20,6 @@ class ClassSlider {
 			draggable: true,
 			imagesLoaded: true,
 		});
-		this.sliderBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				this.sliderBtnHandler(btn);
-			});
-		});
-	}
-
-	sliderBtnHandler(btn) {
-		const index = btn.dataset.sliderBtn;
-		this.slider.select(index);
 	}
 }
 

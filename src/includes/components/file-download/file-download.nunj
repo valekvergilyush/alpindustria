@@ -1,0 +1,15 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro fileDownload(props) %}
+	<a href="{{ props.url }}" download class="file-download p4 c-gray-dark">
+		{{ icon({
+			iconName: 'file-icon',
+			className: 'file-download__icon',
+			attr: 'width="30" height="40" viewBox="0 0 30 40"'
+		}) }}
+		<div class="file-download__info">
+			<p class="file-download__title">{{ props.name }}</p>
+			<p class="file-download__descr">{{ props.size }}</p>
+		</div>
+	</a>
+{% endmacro %}
