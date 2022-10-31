@@ -72,6 +72,9 @@
 	&__submit {
 		margin-top: rem(48);
 		margin-left: auto;
+		@media (max-width: $mobile-lg) {
+			margin-top: 22px;
+		}
 	}
 	&__sms-code {
 		position: relative;
