@@ -1,0 +1,35 @@
+.ecology-hero {
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(94)};
+	--img-width: #{vw(704, 1728)};
+	--section-height: calc(var(--100vh) - var(--header-height));
+	position: sticky;
+	top: 0;
+	display: grid;
+	grid-template-columns: 1fr var(--img-width);
+	grid-template-rows: repeat(2, min-content);
+	gap: rem(48);
+	box-sizing: border-box;
+	height: var(--section-height);
+	padding-left: var(--padding-x);
+	color: var(--white);
+	background-color: var(--green-dark);
+	&__title {
+		margin-top: var(--padding-y);
+		max-width: rem(860);
+	}
+	&__text {
+		align-self: end;
+		max-width: rem(650);
+		margin-bottom: var(--padding-y);
+	}
+	&__img {
+		grid-column: 2/3;
+		grid-row: 1/-1;
+		img {
+			width: 100%;
+			height: var(--section-height);
+			object-fit: cover;
+		}
+	}
+}
