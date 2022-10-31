@@ -1,0 +1,8 @@
+.page {
+	$this: &;
+	&._sticky-sections {
+		#{$this}__wrapper {
+			padding-top: var(--header-height);
+		}
+	}
+}
