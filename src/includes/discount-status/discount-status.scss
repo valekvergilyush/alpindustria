@@ -47,6 +47,7 @@
 			padding-block: 19px;
 		}
 		@media (max-width: $tablet) {
+			padding-block: 22px;
 			&:hover {
 				color: inherit;
 				background: 0;
@@ -62,8 +63,9 @@
 		@media (max-width: $mobile-lg) {
 			display: grid;
 			grid-template-columns: 1fr max-content;
-			row-gap: 8px;
+			row-gap: 5px;
 			padding-block: 15px;
+			padding-bottom: 11px;
 		}
 	}
 	&__name {
@@ -84,8 +86,20 @@
 		display: flex;
 		justify-content: center;
 		width: 45%;
+		padding-right: 3%;
 		color: var(--gray-dark);
+		@media (max-width: $laptop-lg) {
+			padding-right: 0;
+		}
+		@media (max-width: $laptop) {
+			padding-left: 2%;
+		}
+		@media (max-width: $laptop) {
+			width: 40%;
+			padding-left: 0;
+		}
 		@media (max-width: $tablet) {
+			padding-right: 5%;
 			font-size: 16px;
 		}
 		@media (max-width: $mobile-lg) {
@@ -115,7 +129,7 @@
 		position: absolute;
 		z-index: 1;
 		top: 50%;
-		left: rem(160);
+		left: rem(224);
 		transform: translateX(-15px) translateY(-50%);
 		width: rem(460);
 		height: rem(302);
@@ -126,10 +140,12 @@
 		transition: transform $default-transition-duration $default-transition-function,
 			opacity $fast-transition-duration $default-transition-function;
 		@media (max-width: $laptop-lg) {
+			left: 200px;
 			width: 360px;
 			height: 236px;
 		}
 		@media (max-width: $laptop) {
+			left: 115px;
 			width: 284px;
 			height: 186px;
 		}

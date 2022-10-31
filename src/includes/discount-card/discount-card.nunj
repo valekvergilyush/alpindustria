@@ -1,7 +1,7 @@
 <section class="discount-card">
 	<div class="container">
 		<h2 class="discount-card__title ttu h4">Ваша карта</h2>
-		<p class="discount-card__text s2">На&nbsp;данный момент Ваш аккаунт не&nbsp;имеет привязанных накопительных карт. Вы&nbsp;можете привязать уже существующую карту или заполнить анкету и&nbsp;оформить карту впервые:</p>
+		<p class="discount-card__text s2">На&nbsp;данный момент Ваш аккаунт не&nbsp;имеет привязанных накопительных карт.<br> Вы&nbsp;можете привязать уже существующую карту или заполнить анкету и&nbsp;оформить карту впервые:</p>
 
 		<div class="discount-card__tabs tabs" data-tabs>
 			<ul class="tabs__tab-list" role="tablist">

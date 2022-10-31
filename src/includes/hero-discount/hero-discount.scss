@@ -38,8 +38,14 @@
 		@media (max-width: $laptop-lg-3) {
 			font-size: 64px;
 		}
+		@media (max-width: $tablet) {
+			margin-bottom: 130px;
+		}
 		@media (max-width: $mobile-lg) {
+			padding-top: 0;
+			margin-bottom: 152px;
 			font-size: 38px;
+			line-height: 1.15;
 		}
 	}
 	&__text {
@@ -50,7 +56,7 @@
 			display: none;
 		}
 		@media (max-width: $laptop-md) {
-			max-width: 410px;
+			max-width: 480px;
 			font-size: 18px;
 		}
 		@media (max-width: $laptop-sm) {
@@ -61,8 +67,12 @@
 				display: block;
 			}
 		}
+		@media (max-width: $tablet) {
+			max-width: 510px;
+		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 0;
+			font-size: 16px;
 			br {
 				display: none;
 			}
@@ -80,10 +90,26 @@
 		}
 		svg {
 			position: absolute;
-			top: -25%;
-			left: -25%;
-			width: 150% !important;
-			height: 150% !important;
+			top: -26%;
+			left: -23.5%;
+			width: 152% !important;
+			height: 152% !important;
+		}
+		@media (max-width: $laptop-lg) {
+			svg {
+				top: -32.5%;
+				left: -23.9%;
+				width: 149% !important;
+				height: 165% !important;
+			}
+		}
+		@media (max-width: $laptop) {
+			svg {
+				top: -22%;
+				left: -24.9%;
+				width: 149% !important;
+				height: 144% !important;
+			}
 		}
 		@media (max-width: $laptop-sm) {
 			grid-column: 1/-1;
@@ -101,6 +127,12 @@
 				height: auto;
 				object-fit: contain;
 				object-position: initial;
+			}
+			svg {
+				top: -35.2%;
+				left: -24.6%;
+				width: 149% !important;
+				height: 169% !important;
 			}
 		}
 	}
