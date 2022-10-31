@@ -8,5 +8,6 @@
 		{% include "../includes/discount-how/discount-how.nunj" %}
 		{% include "../includes/discount-status/discount-status.nunj" %}
 		{% include "../includes/community-advantages/community-advantages-discount.nunj" %}
+		{% include "../includes/discount-card/discount-card.nunj" %}
 	</main>
 {% endblock %}

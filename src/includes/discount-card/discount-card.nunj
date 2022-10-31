@@ -1,0 +1,33 @@
+<section class="discount-card">
+	<div class="container">
+		<h2 class="discount-card__title ttu h4">Ваша карта</h2>
+		<p class="discount-card__text s2">На&nbsp;данный момент Ваш аккаунт не&nbsp;имеет привязанных накопительных карт. Вы&nbsp;можете привязать уже существующую карту или заполнить анкету и&nbsp;оформить карту впервые:</p>
+
+		<div class="discount-card__tabs tabs" data-tabs>
+			<ul class="tabs__tab-list" role="tablist">
+				<li class="tabs__tab-item">
+					<button class="tabs__trigger _selected" id="create" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">Создать карту</button>
+				</li>
+				<li class="tabs__tab-item">
+					<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">Добавить карту</button>
+				</li>
+			</ul>
+			<img class="discount-card__img" src="/assets/images/discount/discount-card.png" srcset="/assets/images/discount/discount-card@2x.png 2x" width="576" height="280" alt="" loading="lazy">
+			<section class="discount-card__section _create tabs__panel" aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
+				{% include "../discount-create-form/discount-create-form.nunj" %}
+			</section>
+			<section class="discount-card__section _add tabs__panel" aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
+				{% include "../discount-add-form/discount-add-form.nunj" %}
+			</section>
+		</div>
+
+	</div>
+	<div class="discount-card__bottom">
+		<div class="container">
+			<span class="discount-card__asterisk h5 ttu">***</span>
+			<p class="p3">На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.<br>
+				Получить новую карту просто (и&nbsp;приятно!):<br>
+				Обменяем карту в&nbsp;любом магазине АльпИндустрии за&nbsp;5&nbsp;минут или с&nbsp;ближайшим интернет-заказом. У&nbsp;новых карт крутой дизайн со&nbsp;знаковыми вершинами мира.</p>
+		</div>
+	</div>
+</section>

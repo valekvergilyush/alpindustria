@@ -44,6 +44,8 @@ class AlpIndustry {
 			ClassSlider: require('../../includes/class-slider/class-slider').default,
 			HeroTrails: require('../../includes/hero-trails/hero-trails').default,
 			TrailVideo: require('../../includes/trail-video/trail-video').default,
+			DiscountCreateForm: require('../../includes/discount-create-form/discount-create-form')
+				.default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

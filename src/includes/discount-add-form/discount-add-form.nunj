@@ -1,0 +1,31 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<form class="discount-add-form">
+	{{ input({
+		type: 'number',
+		id: 'discount-add-form-number',
+		className: 'discount-add-form__input',
+		name: 'Номер карты',
+		inputAttr: 'required'
+	}) }}
+	{{ input({
+		type: 'number',
+		id: 'discount-add-form-code',
+		className: 'discount-add-form__input',
+		name: 'Проверочный код',
+		inputAttr: 'required'
+	}) }}
+	{{ button({
+		type: 'submit',
+		text: 'Привязать',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16"',
+		className: 'discount-add-form__submit _arrow-s h7 ttu'
+	}) }}
+	<div class="discount-add-form__info p4">
+		<p>На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.</p>
+		<p>Получить новую карту просто (и&nbsp;приятно!):<br>
+		Обменяем карту в&nbsp;любом магазине АльпИндустрии за&nbsp;5&nbsp;минут или с&nbsp;ближайшим интернет-заказом. У&nbsp;новых карт крутой дизайн со&nbsp;знаковыми вершинами мира.</p>
+	</div>
+</form>
