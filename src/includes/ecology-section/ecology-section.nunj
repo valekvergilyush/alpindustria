@@ -1,0 +1,100 @@
+{% from "../components/picture/picture.nunj" import picture %}
+{% from "../components/button/button.nunj" import button %}
+
+<section class="ecology-section _first _white-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Экологические акции &laquo;Сохраним горы в&nbsp;чистоте&raquo;</a></h2>
+	<p class="ecology-section__text p1">Любить природу&nbsp;&mdash; значит, не&nbsp;только наслаждаться ее&nbsp;красотой, но&nbsp;и&nbsp;думать, какой след оставляешь после себя. Такой подход разделяет наша команда, поэтому мы&nbsp;регулярно проводим проекты по&nbsp;сбору мусора в&nbsp;горах.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/eco-promo/eco-promo',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _second _white-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Пакет —<br>спасибо, нет!</a></h2>
+	<p class="ecology-section__text p1">В&nbsp;наших магазинах вместо одноразовых пластиковых пакетов вы&nbsp;можете приобрести многоразовые сумки из&nbsp;нетканного материала спанбонда. Мы&nbsp;просим покупателей использовать ее&nbsp;повторно, а&nbsp;после&nbsp;&mdash; сдавать на&nbsp;переработку.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/plastic/plastic',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _third _blue-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Спасаем<br> популяцию скопы</a></h2>
+	<p class="ecology-section__text p1">Ремонт снаряжения вместо покупки нового&nbsp;&mdash; важный вклад в&nbsp;осознанное потребление. У&nbsp;нас вы&nbsp;можете починить коврик, горелку, спальник или ремешок на&nbsp;спортивных часах.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/forest/forest',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _fourth _blue-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Ремонтируем<br> снаряжение</a></h2>
+	<p class="ecology-section__text p1">Ремонт снаряжения вместо покупки нового&nbsp;&mdash; важный вклад в&nbsp;осознанное потребление. У&nbsp;нас вы&nbsp;можете починить коврик, горелку, спальник или ремешок на&nbsp;спортивных часах.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/equipment/equipment',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _fifth _white-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Меняем пустые газовые баллоны на баллы</a></h2>
+	<p class="ecology-section__text p1">Мы&nbsp;принимаем любые баллоны, которые подходят к&nbsp;туристическим горелкам. За&nbsp;каждый принесенный баллон мы&nbsp;начисляем 100 баллов на&nbsp;дисконтную карту (если карты у&nbsp;вас еще нет, вы&nbsp;можете ее&nbsp;оформить).</p>
+	{{ button({
+		className: 'ecology-section__link ttu _arrow-m',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16"',
+		href: '/discount.html',
+		text: 'Дисконтная карта'
+	}) }}
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/gas-cylinders/gas-cylinders',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _sixth _white-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Принимаем<br> батарейки</a></h2>
+	<p class="ecology-section__text p1">Бытовые батарейки и&nbsp;аккумуляторы нужно утилизировать специальным образом, просто выбрасывать их&nbsp;в&nbsp;мусор нельзя. Вы&nbsp;можете отправить использованные батарейки в&nbsp;специальные боксы в&nbsp;наших магазинах &mdash; а&nbsp;мы&nbsp;отвезем все в&nbsp;утилизацию.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/batteries/batteries',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>
+
+<section class="ecology-section _seventh _blue-arrow">
+	<h2 class="ecology-section__title h4 ttu"><a href="#">Принимаем<br> ненужную одежду</a></h2>
+	<p class="ecology-section__text p1">Вы&nbsp;можете оставить ненужную одежду, обувь и&nbsp;текстиль в&nbsp;наших магазинах. Мы&nbsp;передаем одежду в&nbsp;благотворительный фонд &laquo;Второе дыхание&raquo; &mdash; вещи отправятся не&nbsp;на&nbsp;свалку, а&nbsp;обретут вторую жизнь.</p>
+	{{ picture({
+		className: 'ecology-section__bg-img',
+		path: '/assets/images/ecology/second-hand/second-hand',
+		ext: 'jpg',
+		width: 1728,
+		height: 760,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>

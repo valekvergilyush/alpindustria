@@ -1,0 +1,117 @@
+.ecology-section {
+	$this: &;
+	--arrow-size: #{rem(88)};
+	position: sticky;
+	top: 0;
+	box-sizing: border-box;
+	height: var(--100vh);
+	padding: var(--container-padding);
+	padding-right: calc(var(--container-padding) * 2 + var(--arrow-size));
+	border-top: 1px solid var(--blue-dark);
+	&._first {
+		top: calc(2 * var(--vh, 1vh));
+		background-color: #526e7e;
+	}
+	&._second {
+		top: calc(4 * var(--vh, 1vh));
+		background-color: #757571;
+	}
+	&._third {
+		top: calc(6 * var(--vh, 1vh));
+		background-color: var(--white);
+	}
+	&._fourth {
+		top: calc(8 * var(--vh, 1vh));
+		background-color: #d9eaf5;
+	}
+	&._fifth {
+		top: calc(10 * var(--vh, 1vh));
+		background-color: #bfbfbf;
+	}
+	&._sixth {
+		top: calc(12 * var(--vh, 1vh));
+		border-top: 0;
+		background-color: #8d8d8d;
+	}
+	&._seventh {
+		top: calc(14 * var(--vh, 1vh));
+		background-color: #dcdbdf;
+	}
+	&._white-arrow {
+		color: var(--white);
+		#{$this}__title {
+			a {
+				&::before {
+					background-image: inline('promo-arrow.svg');
+				}
+				&:hover {
+					&::before {
+						background-image: inline('promo-arrow-white.svg');
+					}
+				}
+			}
+		}
+	}
+	&._blue-arrow {
+		color: var(--gray-dark);
+		#{$this}__title {
+			a {
+				&::before {
+					background-image: inline('promo-arrow-blue.svg');
+				}
+				&:hover {
+					&::before {
+						background-image: inline('promo-arrow-blue-filled.svg');
+					}
+				}
+			}
+		}
+	}
+	&__title {
+		display: flex;
+		max-width: rem(1150);
+		margin-bottom: rem(48);
+		a {
+			text-decoration: none;
+			&::before {
+				position: absolute;
+				z-index: 1;
+				top: var(--container-padding);
+				right: var(--container-padding);
+				content: '';
+				width: rem(72);
+				width: var(--arrow-size);
+				height: var(--arrow-size);
+				background-image: inline('promo-arrow.svg');
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				transition: background $default-transition-duration $default-transition-function;
+			}
+			&:hover {
+				color: inherit;
+				&::before {
+					background-image: inline('promo-arrow-white.svg');
+				}
+			}
+		}
+	}
+	&__text {
+		max-width: rem(700);
+		margin-bottom: rem(32);
+	}
+	&__bg-img {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
