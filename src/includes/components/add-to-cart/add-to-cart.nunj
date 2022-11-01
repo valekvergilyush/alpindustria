@@ -26,11 +26,21 @@
 				className: 'add-to-cart__counter'
 			}) }}
 		{% endif %}
-		<a href="{{ props.link.href }}" class="add-to-cart__link h7 ttu">{{props.link.text}}
-			{{ icon({
-				iconName: 'promo-arrow',
-				className: 'add-to-cart__link-icon'
-			}) }}
-		</a>
+		{% if props.link.url %}
+			<a href="{{ props.link.url }}" class="add-to-cart__link h7 ttu">{{props.link.text}}
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'add-to-cart__link-icon'
+				}) }}
+			</a>
+		{% else %}
+			<button {% if props.link.attributes %}{{ props.link.attributes }} {% endif %} class="add-to-cart__link h7 ttu">{{props.link.text}}
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'add-to-cart__link-icon'
+				}) }}
+			</a>
+		{% endif %}
+
 	</div>
 {% endmacro %}

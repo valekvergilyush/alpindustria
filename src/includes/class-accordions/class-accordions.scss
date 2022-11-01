@@ -1,0 +1,51 @@
+.class-accordions {
+	$this: &;
+	&._ordered {
+		counter-reset: li;
+		#{$this}__btn {
+			&:before {
+				counter-increment: li;
+				content: counter(li, decimal-leading-zero);
+				display: block;
+			}
+		}
+	}
+	&__item {
+		padding-bottom: rem(23);
+		border-bottom: 1px solid var(--gray-dark);
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__btn {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		gap: rem(24);
+	}
+	&__name {
+		flex-grow: 1;
+		text-align: left;
+	}
+	&__btn-icon {
+		--size: #{rem(20)};
+		flex-shrink: 0;
+		width: var(--size);
+		height: var(--size);
+		#{$this}__item._opened & {
+			transform: rotate(180deg);
+		}
+	}
+	&__content {
+		height: 0;
+		overflow: hidden;
+		transition: opacity $default-transition-duration $default-transition-function;
+		#{$this}__item._opened & {
+			height: auto;
+		}
+	}
+	&__inner {
+		padding-top: rem(8);
+	}
+}

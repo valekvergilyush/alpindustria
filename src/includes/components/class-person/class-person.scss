@@ -21,7 +21,15 @@
 		}
 	}
 	&__name {
-		grid-area: img;
+		grid-area: name;
+		@media (max-width: $laptop-lg) {
+			font-size: 16px;
+			line-height: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 18px;
+			line-height: 23px;
+		}
 	}
 	&__text {
 		grid-area: text;

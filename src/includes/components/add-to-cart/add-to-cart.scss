@@ -87,6 +87,7 @@
 	&__link {
 		display: flex;
 		margin-left: auto;
+		@include reset-btn;
 		&:hover {
 			#{$this}__link-icon {
 				margin-left: rem(20);

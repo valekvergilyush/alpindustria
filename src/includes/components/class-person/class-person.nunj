@@ -3,7 +3,7 @@
 		<div class="class-person__img">
 			<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="280" height="280" alt="{{ props.name }}">
 		</div>
-		<p class="h6 ttu">{{ props.name }}</p>
-		<p class="p3 c-gray-dark">{{ props.text }}</p>
+		<p class="class-person__name h6 ttu">{{ props.name }}</p>
+		<p class="class-person__text p3 c-gray-dark">{{ props.text }}</p>
 	</div>
 {% endmacro %}
