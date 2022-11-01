@@ -246,10 +246,10 @@
 		}
 		@media (max-width: $mobile-lg) {
 			min-height: 96px;
+			font-size: 14px;
 		}
 		@media (max-width: ($mobile - 1px)) {
 			padding: 5px;
-			font-size: 14px;
 		}
 	}
 	&__info {
