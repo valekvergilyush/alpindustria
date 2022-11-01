@@ -2,7 +2,10 @@ import { tns } from 'tiny-slider';
 
 const ClassName = {
 	ACTIVE: '_active',
+	HORIZONTAL: '_horizontal',
 };
+
+const TABLET_BREAKPOINT = 768;
 
 class TrailVideo {
 	constructor() {
@@ -21,10 +24,40 @@ class TrailVideo {
 		this.slider = this.container.querySelector('[data-video-slider]');
 		this.slides = this.slider.querySelectorAll('[data-video-slide]');
 
+		this.videos.forEach(video => this._initVideo(video));
+
+		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
+
+		const onWindowWidthChange = evt => {
+			if (evt.matches) {
+				if (this.slider.tns) {
+					this.slider.tns.destroy();
+					this.slider.tns = null;
+				}
+				this._initSlider();
+			} else {
+				if (this.slider.tns) {
+					this.slider.tns.destroy();
+					this.slider.tns = null;
+				}
+				this._initSlider('vertical');
+			}
+		};
+
+		this.mqTablet.addEventListener('change', onWindowWidthChange);
+		onWindowWidthChange(this.mqTablet);
+	}
+	_initSlider(axisValue = 'horizontal') {
+		this.container.classList.remove(ClassName.HORIZONTAL);
+
+		if (axisValue === 'horizontal') {
+			this.container.classList.add(ClassName.HORIZONTAL);
+		}
+
 		this.slider.tns = tns({
 			container: '[data-video-slider]',
 			items: 1,
-			axis: 'vertical',
+			axis: axisValue,
 			mouseDrag: true,
 			controls: false,
 		});
@@ -40,8 +73,6 @@ class TrailVideo {
 				);
 			}
 		});
-
-		this.videos.forEach(video => this._initVideo(video));
 	}
 	_initVideo(container) {
 		const playButton = container.querySelector('[data-video-play]');
