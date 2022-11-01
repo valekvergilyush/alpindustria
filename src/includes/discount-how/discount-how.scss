@@ -15,7 +15,8 @@
 			margin-bottom: 24px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-top: 64px;
+			margin-top: 68px;
+			margin-bottom: 20px;
 		}
 	}
 	&__list {
@@ -23,14 +24,15 @@
 		flex-wrap: wrap;
 	}
 	&__item {
+		--img-bottom: #{rem(72)};
 		box-sizing: border-box;
 		width: 50%;
 		padding: var(--container-padding);
-		padding-bottom: rem(284);
+		padding-bottom: rem(285);
 		border: 1px solid var(--blue-dark);
 		border-left: 0;
 		background-size: rem(140);
-		background-position: right var(--container-padding) bottom var(--container-padding);
+		background-position: right var(--container-padding) bottom var(--img-bottom);
 		background-repeat: no-repeat;
 		&:last-child {
 			border-right: 0;
@@ -41,11 +43,24 @@
 		&._swap {
 			background-image: url('/assets/images/discount/swap-card.svg');
 		}
+		@media (max-width: $laptop-lg) {
+			--img-bottom: 95px;
+			padding-bottom: 365px;
+		}
 		@media (max-width: $laptop) {
+			--img-bottom: 32px;
+			padding-bottom: 215px;
 			background-size: 96px;
 		}
+		@media (max-width: $tablet) {
+			--img-bottom: 22px;
+			padding-bottom: 178px;
+		}
 		@media (max-width: $mobile-lg) {
+			--img-bottom: 16px;
 			width: 100%;
+			min-height: 360px;
+			padding-bottom: 186px;
 			border-right: 0;
 			&:last-child {
 				border-top: 0;
@@ -53,7 +68,15 @@
 		}
 	}
 	&__item-title {
-		margin-bottom: rem(32);
+		margin-bottom: rem(30);
+		@media (max-width: $laptop) {
+			margin-bottom: 22px;
+			font-size: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+			font-size: 18px;
+		}
 	}
 	&__item-text {
 		max-width: rem(550);

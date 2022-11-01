@@ -3,6 +3,7 @@
 	--footer-spacing-1: #{rem(17)};
 	--footer-spacing-2: #{rem(32)};
 	--footer-hover: #{darken($white, 15%)};
+	position: relative;
 	background-color: var(--blue-dark);
 	color: var(--white);
 	background-image: url('../images/footer/footer-bg.jpg');

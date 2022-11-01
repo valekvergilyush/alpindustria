@@ -1,0 +1,10 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Экология | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_sticky-sections' %}
+
+{% block mainContent %}
+	{% include "../includes/ecology-hero/ecology-hero.nunj" %}
+	{% include "../includes/ecology-section/ecology-section.nunj" %}
+{% endblock %}

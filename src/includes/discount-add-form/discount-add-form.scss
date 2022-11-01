@@ -4,12 +4,28 @@
 	&__input {
 		& + & {
 			margin-top: rem(16);
+			@media (max-width: $laptop-lg) {
+				margin-top: 24px;
+			}
 		}
 	}
 	&__submit {
 		margin-left: auto;
 		margin-top: rem(48);
-		margin-bottom: rem(48);
+		margin-bottom: rem(72);
+		@media (max-width: $laptop-lg) {
+			margin-top: 32px;
+			margin-bottom: 55px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 22px;
+		}
 	}
 	&__info {
 		display: flex;
@@ -17,5 +33,8 @@
 		row-gap: rem(16);
 		color: var(--gray-dark);
 		opacity: 0.5;
+		@media (max-width: $tablet) {
+			max-width: 400px;
+		}
 	}
 }

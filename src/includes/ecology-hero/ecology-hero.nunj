@@ -1,0 +1,14 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="ecology-hero">
+	<h1 class="ecology-hero__title h2 ttu">Экология</h1>
+	<p class="ecology-hero__text p1">Для нас забота о&nbsp;природе&nbsp;&mdash; важная и&nbsp;безусловная ценность. Сотрудники АльпИндустрии постоянно предлагают новые проекты, направленные на&nbsp;сохранность окружающей среды&nbsp;&mdash; и&nbsp;мы&nbsp;вместе их&nbsp;развиваем. Ниже поделимся некоторыми из&nbsp;них.</p>
+	{{ picture({
+		className: 'ecology-hero__img',
+		path: '/assets/images/ecology/hero/ecology-hero',
+		ext: 'jpg',
+		width: 704,
+		height: 836,
+		attr: 'aria-hidden="true"'
+	}) }}
+</section>
