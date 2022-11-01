@@ -33,7 +33,6 @@
 		grid-area: main;
 		display: flex;
 		flex-direction: column;
-		// width: 50%;
 		@media (max-width: $laptop-sm) {
 			width: 100%;
 		}
