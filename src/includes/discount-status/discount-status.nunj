@@ -7,7 +7,7 @@
 	},
 	{
 		name: 'Mont Blanc',
-		text: 'Выдается при истории покупок<br> от&nbsp;30&nbsp;000до&nbsp;100&nbsp;000 рублей',
+		text: 'Выдается при истории покупок<br> от&nbsp;30&nbsp;000 до&nbsp;100&nbsp;000 рублей',
 		cashback: 'Кэшбэк 10%',
 		image: '/assets/images/discount/mont-blanc'
 	},
