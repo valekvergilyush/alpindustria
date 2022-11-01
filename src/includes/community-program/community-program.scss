@@ -25,6 +25,7 @@
 		display: flex;
 		flex-direction: column;
 		max-height: none;
+		outline: none;
 	}
 	&__item {
 		box-sizing: border-box;
@@ -103,6 +104,7 @@
 			}
 		}
 		@media (max-width: $mobile-lg) {
+			border-right: 0;
 			order: 1;
 			min-height: 160px;
 			&._theory,
@@ -114,6 +116,13 @@
 			&._trip,
 			&._collection {
 				row-gap: 16px;
+				border-right: 0;
+				border-bottom: 1px solid currentColor;
+			}
+			&:first-child {
+				border-top: 1px solid currentColor;
+			}
+			&:last-child {
 				border-bottom: 1px solid currentColor;
 			}
 		}

@@ -306,6 +306,9 @@
 		@media (max-width: $mobile-lg) {
 			width: 100%;
 			padding-inline: 16px;
+			&:nth-child(odd) {
+				border-right: 0;
+			}
 			&::before {
 				margin-bottom: 6px;
 			}
