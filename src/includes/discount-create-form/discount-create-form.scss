@@ -1,0 +1,95 @@
+.discount-create-form {
+	$this: &;
+	display: flex;
+	flex-direction: column;
+	&._tel_confirmed {
+		#{$this}__sms-code,
+		#{$this}__send-sms {
+			display: none;
+		}
+		#{$this}__input {
+			&._tel {
+				position: relative;
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__radios {
+		display: flex;
+		column-gap: rem(50);
+		margin-block: rem(24);
+		.radio__label {
+			padding-left: calc(var(--size) + rem(8));
+			justify-content: center;
+		}
+		@media (max-width: $mobile-lg) {
+			.radio__text {
+				font-size: 12px;
+			}
+		}
+	}
+	&__checkbox {
+		margin-top: rem(16);
+		.checkbox__label {
+			font-family: var(--default-font-family);
+		}
+		&._privacy {
+			.checkbox__label {
+				color: var(--blue-light);
+				font-size: rem(12);
+				&::before {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+	&__input {
+		&._tel {
+			position: relative;
+			&::after {
+				--size: #{rem(22)};
+				content: '';
+				position: absolute;
+				bottom: rem(12);
+				right: rem(12);
+				width: var(--size);
+				height: var(--size);
+				background-image: inline('success-checkbox.svg');
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				opacity: 0;
+				pointer-events: none;
+				@media (max-width: $mobile-lg) {
+					--size: 16px;
+				}
+			}
+		}
+	}
+	&__submit {
+		margin-top: rem(48);
+		margin-left: auto;
+	}
+	&__sms-code {
+		position: relative;
+	}
+	&__send-sms,
+	&__resend-sms {
+		margin-top: rem(16);
+		margin-right: auto;
+	}
+	&__submit-code {
+		position: absolute;
+		top: rem(40);
+		right: 0;
+		@media (max-width: $mobile-lg) {
+			top: 35px;
+			.button__icon {
+				--size: 12px !important;
+			}
+		}
+	}
+}
