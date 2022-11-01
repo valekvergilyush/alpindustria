@@ -248,24 +248,7 @@
 <section class="class">
 	<div class="class__main">
 		<div class="class__main-wrap">
-			<div class="class__main-inner">
-				<h1 class="class__main-title h5 ttu">Учебно-тренировочный выезд в альплагерь Безенги горного клуба альпиндустрия</h1>
-				<div class="class__details">
-					<p class="class__place p3">
-						<span class="class__place-title">Место проведения:</span>
-						<span class="class__place-name">
-							{{ icon({
-								iconName: 'pin',
-								className: 'class-item__place-icon',
-								attr: 'width="25" height="25" viewBox="0 0 25 25"'
-							}) }}
-							Скалодром «Big Wall», Москва
-						</span>
-					</p>
-					<p class="class__date h6 ttu"><span class="h5">21-25</span> <span>авгу</span><span>ста</span></p>
-				</div>
-				<p class="class__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
-			</div>
+			{% include "../class-main/class-main.nunj" %}
 		</div>
 		{{ addToCart({
 			className: 'class__price-block',
@@ -281,87 +264,89 @@
 			}
 		}) }}
 	</div>
+	<div class="class__slider">
+		{% include "../class-slider/class-slider.nunj" %}
+	</div>
 	<div class="class__content">
-		<div class="class__slider">
-			{% include "../class-slider/class-slider.nunj" %}
-		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">О выезде</p>
 			<div class="class__text p2 c-gray-dark">
-				<p>В России гор много, но для того, чтобы познакомиться с альпинизмом, нет места лучше, чем Безенги. Культовый район, куда раньше пускали только избранных, сейчас открыт для всех. Здесь всё по-настоящему: настоящие высокие горы, настоящие люди, настоящий альпинизм! И если вы хотите понять, что это такое, надо ехать в Безенги.</p>
-				<p>Безенги — район для самых сложных альпинистских восхождений на территории России, но в то же время здесь есть всё, что нужно новичку. Благодаря дирекции и персоналу альплагеря в Безенги удалось не только сохранить дух и лучшие традиции советского альпинизма, но и создать все условия для комфортного размещения в течение смены. Ну а что касается опыта, который вы получите, здесь можно вспомнить фразу, которую любят повторять многие инструкторы: «Есть значок "Альпинист России", а есть значок "Альпинист России", полученный в Безенги».</p>
+				<p>В&nbsp;России гор много, но&nbsp;для того, чтобы познакомиться с&nbsp;альпинизмом, нет места лучше, чем Безенги. Культовый район, куда раньше пускали только избранных, сейчас открыт для всех. Здесь всё по-настоящему: настоящие высокие горы, настоящие люди, настоящий альпинизм! И&nbsp;если вы&nbsp;хотите понять, что это такое, надо ехать в&nbsp;Безенги.</p>
+				<p>Безенги&nbsp;&mdash; район для самых сложных альпинистских восхождений на&nbsp;территории России, но&nbsp;в&nbsp;то&nbsp;же время здесь есть всё, что нужно новичку. Благодаря дирекции и&nbsp;персоналу альплагеря в&nbsp;Безенги удалось не&nbsp;только сохранить дух и&nbsp;лучшие традиции советского альпинизма, но&nbsp;и&nbsp;создать все условия для комфортного размещения в&nbsp;течение смены. Ну&nbsp;а&nbsp;что касается опыта, который вы&nbsp;получите, здесь можно вспомнить фразу, которую любят повторять многие инструкторы: &laquo;Есть значок &bdquo;Альпинист России&ldquo;, а&nbsp;есть значок &bdquo;Альпинист России&ldquo;, полученный в&nbsp;Безенги&raquo;.</p>
 			</div>
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Для кого этот выезд</p>
-			<div class="class__text p2 c-gray-dark">
-				<p>УТС в альплагере Безенги — это продолжение программы обучения в Горном клубе. УТС предназначены участникам, прошедшим начальную подготовку на базе клуба в городе (пройден минимум один из перечисленных ниже вариантов):</p>
+			<div class="class__inner">
+				<div class="class__text p2 c-gray-dark">
+					<p>УТС в&nbsp;альплагере Безенги&nbsp;&mdash; это продолжение программы обучения в&nbsp;Горном клубе. УТС предназначены участникам, прошедшим начальную подготовку на&nbsp;базе клуба в&nbsp;городе (пройден минимум один из&nbsp;перечисленных ниже вариантов):</p>
+				</div>
+				<a href="#" class="class__link h7 ttu">
+					Курс «Введение в альпинизм» в Москве
+					{{ icon({
+						iconName: 'promo-arrow',
+						className: 'class__link-icon',
+						attr: 'width="16" height="16" viewBox="0 0 72 72"'
+					}) }}
+				</a>
+				<a href="#" class="class__link h7 ttu">
+					Курс «Введение в альпинизм Плюс» в Москве
+					{{ icon({
+						iconName: 'promo-arrow',
+						className: 'class__link-icon',
+						attr: 'width="16" height="16" viewBox="0 0 72 72"'
+					}) }}
+				</a>
 			</div>
-			<a href="#" class="class__link h7 ttu">
-				Курс «Введение в альпинизм» в Москве
-				{{ icon({
-					iconName: 'promo-arrow',
-					className: 'class__link-icon',
-					attr: 'width="16" height="16" viewBox="0 0 72 72"'
-				}) }}
-			</a>
-			<a href="#" class="class__link h7 ttu">
-				Курс «Введение в альпинизм Плюс» в Москве
-				{{ icon({
-					iconName: 'promo-arrow',
-					className: 'class__link-icon',
-					attr: 'width="16" height="16" viewBox="0 0 72 72"'
-				}) }}
-			</a>
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Как записаться на выезд</p>
 			<ol class="class__list h6">
 				<li class="class__list-item">
-					<p class="p2 c-gray-dark">Жмите на кнопку «записаться», обязательно укажите, какие именно занятия и курсы были пройдены</p>
+					<p class="p2 c-gray-dark">Жмите на&nbsp;кнопку &laquo;записаться&raquo;, обязательно укажите, какие именно занятия и&nbsp;курсы были пройдены</p>
 				</li>
 				<li class="class__list-item">
-					<p class="p2 c-gray-dark">Далее если вы уверены, что поедете с нами на выезд, то можете вносить предоплату</p>
+					<p class="p2 c-gray-dark">Далее если вы&nbsp;уверены, что поедете с&nbsp;нами на&nbsp;выезд, то&nbsp;можете вносить предоплату</p>
 				</li>
 			</ol>
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Стоимость</p>
-			<div class="class__price">
+			<div class="class__price c-gray-dark">
 				<div class="class__price-item">
 					<p class="p2">Наличными</p>
 					<p class="h7">28 000 ₽</p>
 				</div>
 				<div class="class__price-item">
-					<p class="p2">Наличными</p>
-					<p class="h7">28 000 ₽</p>
+					<p class="p2">Предоплата на сайте</p>
+					<p class="h7">2 000 ₽</p>
 				</div>
 				<div class="class__price-item _total">
-					<p class="p2">Наличными</p>
-					<p class="h6">28 000 ₽</p>
+					<p class="p2">Общая стоимость</p>
+					<p class="h6 c-blue-dark">30 000 ₽</p>
 				</div>
 			</div>
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Наши инструкторы</p>
 			<div class="class__text p2 c-gray-dark">
-				<p>Альпсборы в Безенги проходят под руководством инструкторов Федерации альпинизма России. Это значит, что инструкторы прошли аттестацию, обладают необходимым опытом в альпинизме и инструкторской работе и точно имеют право вас обучать. Ну а знания и навыки, которые они вам передают, современные и соответствуют российским и международным стандартам.</p>
-				<p>Иван Аленцев не только аттестованный инструктор альпинизма, но и тренер Центральной школы инструкторов, а значит тот человек, который обучает будущих инструкторов. Кроме того Иван — старший методист Всероссийских специализированных учебно-тренировочных сборов по подготовке альпинистов-спасателей Жетон «Спасение в горах».</p>
-				<p>Андриян Спичка — инструктор UIAA (ENEQ), инструктор альпинизма II категории ФАР, преподаватель Центральной школы инструкторов альпинизма и УТС Жетон «Спасение в горах», участник и руководитель ряда сложных восхождений и походов на Кавказе, Памире и Фанских горах.</p>
-				<p>Наши инструкторы уже не в первый раз будут вместе руководить альпинистскими сборами, а значит участников ждёт сработанная команда наставников :)</p>
+				<p>Альпсборы в&nbsp;Безенги проходят под руководством инструкторов Федерации альпинизма России. Это значит, что инструкторы прошли аттестацию, обладают необходимым опытом в&nbsp;альпинизме и&nbsp;инструкторской работе и&nbsp;точно имеют право вас обучать. Ну&nbsp;а&nbsp;знания и&nbsp;навыки, которые они вам передают, современные и&nbsp;соответствуют российским и&nbsp;международным стандартам.</p>
+				<p>Иван Аленцев не&nbsp;только аттестованный инструктор альпинизма, но&nbsp;и&nbsp;тренер Центральной школы инструкторов, а&nbsp;значит тот человек, который обучает будущих инструкторов. Кроме того Иван&nbsp;&mdash; старший методист Всероссийских специализированных учебно-тренировочных сборов по&nbsp;подготовке альпинистов-спасателей Жетон &laquo;Спасение в&nbsp;горах&raquo;.</p>
+				<p>Андриян Спичка&nbsp;&mdash; инструктор UIAA (ENEQ), инструктор альпинизма&nbsp;II категории ФАР, преподаватель Центральной школы инструкторов альпинизма и&nbsp;УТС Жетон &laquo;Спасение в&nbsp;горах&raquo;, участник и&nbsp;руководитель ряда сложных восхождений и&nbsp;походов на&nbsp;Кавказе, Памире и&nbsp;Фанских горах.</p>
+				<p>Наши инструкторы уже не&nbsp;в&nbsp;первый раз будут вместе руководить альпинистскими сборами, а&nbsp;значит участников ждёт сработанная команда наставников :)</p>
 			</div>
 			<div class="class__persons">
 				{{ classPerson({
 					className: 'class__person',
 					img: '/assets/images/article/article-img-2',
 					name: 'Иван Аленцев',
-					text: 'Старший инструктор по альпинизму Горного клуба АльпИндустрия. Инструктор альпинизма ФАР II категории. Тренер Центральной школы инструкторов. Тренер УТС «Спасение в горах». КМС по альпинизму.'
+					text: 'Старший инструктор по&nbsp;альпинизму Горного&nbsp;клуба АльпИндустрия. Инструктор альпинизма ФАР II&nbsp;категории. Тренер Центральной школы инструкторов. Тренер УТС &laquo;Спасение в&nbsp;горах&raquo;. КМС по&nbsp;альпинизму.'
 				}) }}
 				{{ classPerson({
 					className: 'class__person',
 					img: '/assets/images/article/article-img-2',
 					name: 'Андриян Спичка',
-					text: 'Инструктор альпинизма ФАР II категории. Тренер Центральной школы инструкторов. Тренер УТС «Спасение в горах». КМС по альпинизму.'
+					text: 'Инструктор альпинизма ФАР II&nbsp;категории. Тренер Центральной школы инструкторов. Тренер УТС &laquo;Спасение в&nbsp;горах&raquo;. КМС по&nbsp;альпинизму.'
 				}) }}
 			</div>
 		</div>
@@ -370,8 +355,8 @@
 				<span class="h5 ttu">Приблизительный список необходимого снаряжения</span>
 				<span class="p3">(будет обговариваться на собрании перед выездом)</span>
 			</p>
-			<p class="p3">Будет всё необходимое клубное общественное скальное снаряжение (верёвки, петли, оттяжки, камалоты и закладки и прочее).</p>
-			<p class="h6 ttu">Ниже вы можете отметить имеющееся оборудование и скачать список</p>
+			<p class="p3">Будет всё необходимое клубное общественное скальное снаряжение (верёвки, петли, оттяжки, камалоты и&nbsp;закладки и&nbsp;прочее).</p>
+			<p class="h6 ttu">Ниже вы&nbsp;можете отметить имеющееся оборудование и&nbsp;скачать список</p>
 			<div>
 				<div class="class__checkboxes">
 					<p class="class__checkboxes-title h7 ttu">Каждому участнику нужно иметь обязательное личное сертифицированное снаряжение:</p>
@@ -437,20 +422,20 @@
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Необходимые документы</p>
-			<ul class="class__accordions">
+			<ul class="class-accordions _ordered">
 				{% for item in classAccordions %}
-					<li class="class__accordion-item  c-gray-dark" data-accordion-section>
-						<button class="class__accordion-btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
-							<span class="class__accordion-name p1" data-accordion-title-text>{{ item.name }}</span>
+					<li class="class-accordions__item" data-accordion-section>
+						<button class="class-accordions__btn h6 {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+							<span class="class-accordions__name p1 c-gray-dark" data-accordion-title-text>{{ item.name }}</span>
 							{{ icon({
 								iconName: 'accordion-arrow',
-								className: 'class__accordion-btn-icon',
+								className: 'class-accordions__btn-icon',
 								attr: 'viewBox="0 0 16 16" width="16" height="16"'
 							}) }}
 						</button>
-						<div class="class__accordion-content" data-accordion-content>
-							<div class="class__accordion-inner">
-								<p class="p3">Справка должна подтверждать, что вы не имеете противопоказаний для занятий альпинизмом, быть заверена врачом и печатью поликлиники или диспансера. В справке должно быть указано: «Допущен(-а) к занятиям альпинизмом. Противопоказаний к нахождению в условиях высокогорья (среднегорья) не выявлено». Справка обязательна.</p>
+						<div class="class-accordions__content" data-accordion-content>
+							<div class="class-accordions__inner">
+								<p class="p3 c-gray-dark">Справка должна подтверждать, что вы&nbsp;не&nbsp;имеете противопоказаний для занятий альпинизмом, быть заверена врачом и&nbsp;печатью поликлиники или диспансера. В&nbsp;справке должно быть указано: &laquo;Допущен(-а) к&nbsp;занятиям альпинизмом. Противопоказаний к&nbsp;нахождению в&nbsp;условиях высокогорья (среднегорья) не&nbsp;выявлено&raquo;. Справка обязательна.</p>
 							</div>
 						</div>
 					</li>
@@ -468,32 +453,32 @@
 		<div class="class__block">
 			<p class="class__title h5 ttu">Организация сборов</p>
 			<div class="class__text p3 c-gray-dark">
-				<p>Проживание в альплагере Безенги В альплагере предусмотрены разные варианты проживания, на любой уровень комфорта и бюджет (стоимость с человека в день):</p>
-				<p>Подробно о проживании и питании смотрите на сайте альплагеря.</p>
+				<p>Проживание в&nbsp;альплагере Безенги<br>В&nbsp;альплагере предусмотрены разные варианты проживания, на&nbsp;любой уровень комфорта и&nbsp;бюджет (стоимость с&nbsp;человека в&nbsp;день):</p>
+				<p>Подробно о&nbsp;проживании и&nbsp;питании смотрите на&nbsp;сайте альплагеря.</p>
 			</div>
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Частые вопросы</p>
-			<ul class="class__accordions">
+			<ul class="class-accordions">
 				{% for item in classAccordions2 %}
-					<li class="class__accordion-item  c-gray-dark" data-accordion-section>
-						<button class="class__accordion-btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
-							<span class="class__accordion-name p1 ttu" data-accordion-title-text>{{ item.name }}</span>
+					<li class="class-accordions__item c-gray-dark" data-accordion-section>
+						<button class="class-accordions__btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+							<span class="class-accordions__name p1 ttu" data-accordion-title-text>{{ item.name }}</span>
 							{{ icon({
 								iconName: 'accordion-arrow',
-								className: 'class__accordion-btn-icon',
+								className: 'class-accordions__btn-icon',
 								attr: 'viewBox="0 0 16 16" width="16" height="16"'
 							}) }}
 						</button>
-						<div class="class__accordion-content" data-accordion-content>
-							<div class="class__accordion-inner">
-								<p class="p3">Справка должна подтверждать, что вы не имеете противопоказаний для занятий альпинизмом, быть заверена врачом и печатью поликлиники или диспансера. В справке должно быть указано: «Допущен(-а) к занятиям альпинизмом. Противопоказаний к нахождению в условиях высокогорья (среднегорья) не выявлено». Справка обязательна.</p>
+						<div class="class-accordions__content" data-accordion-content>
+							<div class="class-accordions__inner">
+								<p class="p3 c-gray-dark">Справка должна подтверждать, что вы&nbsp;не&nbsp;имеете противопоказаний для занятий альпинизмом, быть заверена врачом и&nbsp;печатью поликлиники или диспансера. В&nbsp;справке должно быть указано: &laquo;Допущен(-а) к&nbsp;занятиям альпинизмом. Противопоказаний к&nbsp;нахождению в&nbsp;условиях высокогорья (среднегорья) не&nbsp;выявлено&raquo;. Справка обязательна.</p>
 							</div>
 						</div>
 					</li>
 				{% endfor %}
 			</ul>
-			<a href="#" class="class__link ttu">
+			<a href="#" class="class__link _question h7 c-gray-dark ttu">
 				Задать вопрос
 				{{ icon({
 					iconName: 'promo-arrow',
@@ -501,6 +486,21 @@
 					attr: 'width="16" height="16" viewBox="0 0 72 72"'
 				}) }}
 			</a>
+		</div>
+		<div data-validate>
+			<form action="/">
+				<div class="class__block">
+					<p class="class__title h5 ttu">Записаться</p>
+					{% include "../class-form/class-form.nunj" %}
+				</div>
+				{{ addToCart({
+					className: 'class__pay',
+					link: {
+						text: 'Записаться и оплатить',
+						attributes: 'type="submit"'
+					}
+				}) }}
+			</form>
 		</div>
 	</div>
 </section>

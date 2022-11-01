@@ -1,0 +1,20 @@
+<div class="class-main">
+	<div class="class-main__inner">
+		<h1 class="class-main__title h5 ttu">Учебно-тренировочный выезд в альплагерь Безенги горного клуба альпиндустрия</h1>
+		<div class="class-main__details">
+			<p class="class-main__place p3">
+				<span class="class-main__place-title">Место проведения:</span>
+				<span class="class-main__place-name">
+					{{ icon({
+						iconName: 'pin',
+						className: 'class-item__place-icon',
+						attr: 'width="25" height="25" viewBox="0 0 25 25"'
+					}) }}
+					Скалодром «Big Wall», Москва
+				</span>
+			</p>
+			<p class="class-main__date h6 ttu"><span class="h5">21-25</span> <span>авгу</span><span>ста</span></p>
+		</div>
+		<p class="class-main__descr p1 c-gray-dark">Альпсборы в&nbsp;Безенги для выпускников Московских курсов: &laquo;Введение в&nbsp;альпинизм&raquo; либо &laquo;Введение в&nbsp;альпинизм&raquo; и&nbsp;&laquo;Введение в&nbsp;альпинизм Плюс&raquo; и&nbsp;для членов Горного клуба АльпИндустрия.</p>
+	</div>
+</div>
