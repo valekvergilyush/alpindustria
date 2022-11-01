@@ -32,15 +32,12 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(19);
-		width: rem(640);
+		width: rem(807);
 		padding: var(--padding);
 		&._theory {
 			grid-area: theory;
 			border-right: 1px solid currentColor;
 			border-bottom: 1px solid currentColor;
-			#{$this}__text {
-				max-width: rem(420);
-			}
 		}
 		&._practice {
 			grid-area: practice;
@@ -49,38 +46,19 @@
 		&._trip {
 			grid-area: trip;
 			border-bottom: 1px solid currentColor;
-			#{$this}__text {
-				max-width: rem(460);
-			}
 		}
 		&._collection {
 			grid-area: collection;
 			border-bottom: 1px solid currentColor;
-			#{$this}__text {
-				max-width: rem(420);
-			}
 		}
 		&._meetings {
 			grid-area: meetings;
-			#{$this}__text {
-				max-width: rem(420);
-			}
 		}
 		@media (max-width: $laptop-lg) {
-			width: 560px;
-			&._theory {
-				#{$this}__text {
-					max-width: 440px;
-				}
-			}
-			&._practice {
-				#{$this}__text {
-					max-width: 440px;
-				}
-			}
+			width: 680px;
 		}
 		@media (max-width: $laptop) {
-			width: 360px;
+			width: 480px;
 			row-gap: 0;
 		}
 		@media (max-width: $tablet) {
@@ -175,7 +153,9 @@
 		}
 	}
 	&__text {
+		max-width: rem(700);
 		@media (max-width: $laptop-lg) {
+			max-width: 452px;
 			font-size: 20px;
 			line-height: 1.4;
 		}
