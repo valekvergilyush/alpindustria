@@ -1,0 +1,16 @@
+{% set linkList = [
+	{ text: 'Магазин', url: '/catalog/' },
+	{ text: 'Сообщество', url: '/community/' },
+	{ text: 'Адреса', url: '#' },
+	{ text: 'Услуги', url: '#' },
+	{ text: 'Новости', url: '/news.html' },
+	{ text: 'О нас', url: '#' }
+] %}
+
+<div class="catalog-accordion _index">
+	{% for item in linkList %}
+		<a class="catalog-accordion__section" href="{{ item.url }}"  data-accordion-section>
+			<span class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>{{ item.text }}</span></span>
+		</a>
+	{% endfor %}
+</div>
