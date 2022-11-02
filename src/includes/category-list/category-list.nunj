@@ -1,0 +1,53 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set categoryList = [
+	{
+		name: 'Горные лыжи',
+		src: '/assets/images/category-list/ski.jpg',
+		srcset: '/assets/images/category-list/ski@2x.jpg 2x'
+	},
+	{
+		name: 'Обувь',
+		src: '/assets/images/category-list/shoes.jpg',
+		srcset: '/assets/images/category-list/shoes@2x.jpg 2x'
+	},
+	{
+		name: 'Альпинистское снаряжение',
+		src: '/assets/images/category-list/climbing-equip.jpg',
+		srcset: '/assets/images/category-list/climbing-equip@2x.jpg 2x'
+	},
+	{
+		name: 'Туристическое снаряжение',
+		src: '/assets/images/category-list/tourist-equip.jpg',
+		srcset: '/assets/images/category-list/tourist-equip@2x.jpg 2x'
+	},
+	{
+		name: 'Сноуборды',
+		src: '/assets/images/category-list/snowboards.jpg',
+		srcset: '/assets/images/category-list/snowboards@2x.jpg 2x'
+	}
+] %}
+
+<section class="category-list">
+	<h2 class="category-list__title page__section-title h4 ttu">Каталог</h2>
+	<ul class="category-list__list">
+		{% for item in categoryList %}
+			<li class="category-list__item{% if item.className %} {{ item.className }}{% endif %}">
+				<a class="category-list__link" href="#">
+					<span class="category-list__link-name h5 ttu">{{ item.name }}</span>
+					<img class="category-list__link-img" src="{{ item.src }}"{% if item.srcset %} srcset="{{ item.srcset }}"{% endif %} alt="" aria-hidden="true">
+				</a>
+			</li>
+		{% endfor %}
+		<li class="category-list__item">
+			<a class="category-list__link _all h7 ttu" href="/catalog/">
+				Магазин
+				{{ icon({
+					iconName: 'promo-arrow-filled',
+					className: 'category-list__link-icon',
+					attr: 'width="16" height="16"'
+				}) }}
+			</a>
+		</li>
+	</ul>
+</section>
