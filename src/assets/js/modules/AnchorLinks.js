@@ -23,7 +23,7 @@ class AnchorLinks {
 	}
 
 	scrollTo(y, immediate = false) {
-		const header = document.querySelector('.header');
+		// const header = document.querySelector('.header');
 		if (typeof y !== 'number') {
 			let targetElement;
 			if (typeof y === 'string') {
@@ -33,8 +33,7 @@ class AnchorLinks {
 			}
 			y =
 				targetElement.getBoundingClientRect().top +
-				(window.pageYOffset || document.body.scrollTop) -
-				header.offsetHeight;
+				(window.pageYOffset || document.body.scrollTop) /* - header.offsetHeight*/;
 		}
 		y = y < 0 ? 0 : y;
 		this._updateMaxScroll();
@@ -72,12 +71,14 @@ class AnchorLinks {
 				// Do nothing in case on invalid selector
 			}
 		}
-		this.scrollTo(0);
 	}
 
 	anchorLinkClickHandler = e => {
 		e.preventDefault();
 		this.scrollToBlockByHash(e.currentTarget.hash);
+		if (e.currentTarget.getAttribute('href') === '#') {
+			this.scrollTo(0);
+		}
 	};
 }
 

@@ -7,7 +7,7 @@
 			top: auto;
 			left: 0;
 			right: 0;
-			bottom: 15px;
+			bottom: 32px;
 			flex-direction: row;
 			width: 100%;
 			height: auto;
@@ -50,6 +50,9 @@
 		@media (max-width: $tablet) {
 			min-height: 640px;
 		}
+		@media (max-width: $mobile-lg) {
+			min-height: var(--100vh);
+		}
 		iframe {
 			position: absolute;
 			top: 0;
@@ -59,13 +62,20 @@
 			border: 0;
 			opacity: 0;
 			transition: opacity $default-transition-duration $default-transition-function;
+			@media (max-width: $tablet) {
+				top: 50%;
+				transform: translateY(-50%);
+				height: calc(100% - 64px * 2);
+			}
 		}
 		&._active {
+			background-color: var(--default-black);
 			iframe {
 				opacity: 1;
 			}
 			#{$this}__info,
-			#{$this}__play-button {
+			#{$this}__play-button,
+			#{$this}__preview {
 				opacity: 0;
 				pointer-events: none;
 			}
