@@ -51,7 +51,7 @@
 <ul class="brands _logo" data-brand-block>
 	{% for letter in letters %}
 		<li class="brands__brand {% if loop.index === activeLetter %}_active{% endif %}" data-brand-item>
-			<div class="brands__brand-wrap container">
+			<div class="brands__brand-wrap">
 				<p class="brands__letter h1">{{ letter }}</p>
 				<ul class="brands__list">
 					{% for brand in brands %}
