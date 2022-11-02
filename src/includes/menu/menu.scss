@@ -240,16 +240,17 @@
 			min-height: 136px;
 			border: 0;
 			border-right: 1px solid currentColor;
+			font-size: 16px;
 		}
 		@media (max-width: $laptop-sm) {
 			min-width: auto;
 		}
 		@media (max-width: $mobile-lg) {
 			min-height: 96px;
+			font-size: 14px;
 		}
 		@media (max-width: ($mobile - 1px)) {
 			padding: 5px;
-			font-size: 14px;
 		}
 	}
 	&__info {
