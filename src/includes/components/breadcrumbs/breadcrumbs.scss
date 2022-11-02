@@ -10,7 +10,7 @@
 		padding: 8px var(--container-padding) 7px;
 	}
 	@media (max-width: $mobile-lg) {
-		padding: 12px 0 7px;
+		padding: 12px var(--container-padding) 7px;
 		overflow: auto;
 		white-space: nowrap;
 	}
@@ -61,11 +61,6 @@
 			&:hover {
 				color: var(--blue-light);
 				opacity: 1;
-			}
-		}
-		&._side {
-			@media (max-width: $mobile-lg) {
-				display: none;
 			}
 		}
 		&._gray {

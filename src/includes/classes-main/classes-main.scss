@@ -84,6 +84,9 @@
 		@media (max-width: $laptop-sm) {
 			flex-wrap: nowrap;
 			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
 		}
 	}
 	&__category-btn {

@@ -10,6 +10,12 @@
 			}
 		}
 	}
+	&._uppercase {
+		text-transform: uppercase;
+		@media (max-width: $laptop-lg) {
+			text-transform: none;
+		}
+	}
 	&__item {
 		padding-bottom: rem(23);
 		border-bottom: 1px solid var(--gray-dark);
