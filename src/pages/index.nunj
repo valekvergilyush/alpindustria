@@ -1,21 +1,15 @@
 {% extends "../templates/index-page.nunj" %}
 
-{% from "../includes/components/ticker/ticker.nunj" import ticker %}
+{% block title %}Главная | {{ super() }}{% endblock title %}
 
-{% block title %}Магазин | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_index' %}
 
 {% block mainContent %}
-	{% include "../includes/hero/hero.nunj" %}
-	{% include "../includes/filters/filters.nunj" %}
 	<main class="page__main">
-		{% include "../includes/catalog/catalog.nunj" %}
-		{% include "../includes/news-section/news-section.nunj" %}
-		{% include "../includes/advantages/advantages.nunj" %}
-		{{ ticker({
-			className: 'page__ticker',
-			text: 'Команда, влюбленная в горы'
-		}) }}
-		{% include "../includes/catalog-accordion/catalog-accordion.nunj" %}
+		{% include "../includes/hero-index/hero-index.nunj" %}
+		{% include "../includes/brand-list/brand-list.nunj" %}
+		{% include "../includes/category-list/category-list.nunj" %}
+		{% include "../includes/news-index/news-index.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion-index.nunj" %}
 	</main>
 {% endblock %}
