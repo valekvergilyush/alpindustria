@@ -11,9 +11,11 @@
 		}
 	}
 	&._uppercase {
-		text-transform: uppercase;
-		@media (max-width: $laptop-lg) {
-			text-transform: none;
+		#{$this}__btn {
+			text-transform: uppercase;
+			@media (max-width: $laptop-lg) {
+				text-transform: none;
+			}
 		}
 	}
 	&__item {
