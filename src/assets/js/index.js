@@ -46,6 +46,7 @@ class AlpIndustry {
 			TrailVideo: require('../../includes/trail-video/trail-video').default,
 			DiscountCreateForm: require('../../includes/discount-create-form/discount-create-form')
 				.default,
+			HeroIndex: require('../../includes/hero-index/hero-index').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
