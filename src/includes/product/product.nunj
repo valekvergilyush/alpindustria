@@ -72,6 +72,8 @@
 						<div class="product__badges-left">
 							{% include "../product-badge/new.nunj" %}
 							{% include "../product-badge/50%.nunj" %}
+							{% include "../product-badge/fast-delivery.nunj" %}
+							{% include "../product-badge/long-delivery.nunj" %}
 						</div>
 						{% include "../product-badge/dry-feature.nunj" %}
 					</div>

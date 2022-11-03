@@ -1,0 +1,64 @@
+.addresses {
+	$this: &;
+	--nav-width: #{rem(385)};
+	--tabs-min-width: #{rem(470)};
+	display: flex;
+	&__cities {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		width: var(--nav-width);
+		padding: var(--container-padding);
+		gap: rem(16);
+	}
+	&__city-btn {
+		@include reset-btn;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		gap: rem(8);
+		text-align: left;
+		&:hover,
+		&._active {
+			#{$this}__city-text {
+				opacity: 1;
+			}
+			#{$this}__city-icon {
+				opacity: 1;
+			}
+		}
+	}
+	&__city-text {
+		opacity: 0.4;
+		@extend .animated;
+	}
+	&__city-icon {
+		flex-shrink: 0;
+		opacity: 0;
+		@extend .animated;
+	}
+	&__content {
+		flex-grow: 1;
+		display: flex;
+		background-color: var(--gray-light);
+		overflow: auto;
+	}
+	&__map {
+		flex-shrink: 0;
+		width: calc(100% - var(--tabs-min-width));
+	}
+	&__tabs {
+		display: flex;
+		min-width: calc(100% - var(--tabs-min-width));
+	}
+	&__tab {
+		display: flex;
+		width: 100%;
+	}
+	&__shops {
+		display: flex;
+	}
+	&__shop {
+		border-left: 1px solid var(--blue-dark);
+	}
+}

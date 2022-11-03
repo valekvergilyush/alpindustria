@@ -1,0 +1,46 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set citiesList = [
+	'Москва',
+	'Санкт-петербург',
+	'Новосибирск',
+	'Пермь',
+	'Екатеринбург',
+	'Пятигорск',
+	'Воронеж',
+	'Пермь',
+	'Краснодар',
+	'Приэльбрусье',
+	'Красная поляна',
+	'Безенги',
+	'Нижний новгород',
+	'Пятигорск',
+	'Воронеж'
+] %}
+
+<section class="addresses">
+	<ul class="addresses__cities">
+		{% for city in citiesList %}
+			<li class="addresses__city">
+				<button class="addresses__city-btn h6 ttu {% if loop.index === 2 %}_active{% endif %}">
+					<span class="addresses__city-text">{{ city }}</span>
+					{{ icon({
+						iconName: 'double-arrow-right',
+						className: 'addresses__city-icon',
+						attr: 'width="32" height="32" viewBox="0 0 48 49"'
+					}) }}
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="addresses__content">
+		<div class="addresses__map map" data-map="cart"></div>
+		<div class="addresses__tabs">
+			<div class="addresses__tab">
+				<div class="addresses__shops">
+					{% include "../addresses-shop/addresses-shop.nunj" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

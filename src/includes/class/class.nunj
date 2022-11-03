@@ -1,7 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
 {% from "../components/class-person/class-person.nunj" import classPerson %}
-{% from "../components/checkbox/checkbox-p.nunj" import checkboxP %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
 {% from "../components/file-download/file-download.nunj" import fileDownload %}
 
 {% set classCheckboxList = [
@@ -240,7 +240,7 @@
 		opened: false
 	},
 	{
-		name: 'Будет ли скидля для компании?',
+		name: 'Будет ли скидка для компании?',
 		opened: false
 	}
 ] %}
@@ -344,27 +344,28 @@
 				}) }}
 				{{ classPerson({
 					className: 'class__person',
-					img: '/assets/images/article/article-img-2',
+					img: '/assets/images/classes/class-person',
 					name: 'Андриян Спичка',
 					text: 'Инструктор альпинизма ФАР II&nbsp;категории. Тренер Центральной школы инструкторов. Тренер УТС &laquo;Спасение в&nbsp;горах&raquo;. КМС по&nbsp;альпинизму.'
 				}) }}
 			</div>
 		</div>
 		<div class="class__block">
-			<p class="class__title">
-				<span class="h5 ttu">Приблизительный список необходимого снаряжения</span>
+			<p class="class__title-block">
+				<span class="class__title h5 ttu">Приблизительный список необходимого снаряжения</span>
 				<span class="p3">(будет обговариваться на собрании перед выездом)</span>
 			</p>
-			<p class="p3">Будет всё необходимое клубное общественное скальное снаряжение (верёвки, петли, оттяжки, камалоты и&nbsp;закладки и&nbsp;прочее).</p>
-			<p class="h6 ttu">Ниже вы&nbsp;можете отметить имеющееся оборудование и&nbsp;скачать список</p>
+			<p class="p3 c-gray-dark">Будет всё необходимое клубное общественное скальное снаряжение (верёвки, петли, оттяжки, камалоты и&nbsp;закладки и&nbsp;прочее).</p>
+			<p class="class__title-2 h6 ttu">Ниже вы&nbsp;можете отметить имеющееся оборудование и&nbsp;скачать список</p>
 			<div>
 				<div class="class__checkboxes">
 					<p class="class__checkboxes-title h7 ttu">Каждому участнику нужно иметь обязательное личное сертифицированное снаряжение:</p>
 					<ul class="class__checkboxes-list">
 						{% for item in classCheckboxList %}
 							<li>
-								{{ checkboxP({
+								{{ checkbox({
 									text: item.text,
+									id: 'class-check-1-' + loop.index,
 									checked: item.checked
 								}) }}
 							</li>
@@ -376,8 +377,9 @@
 					<ul class="class__checkboxes-list">
 						{% for item in classCheckboxList2 %}
 							<li>
-								{{ checkboxP({
+								{{ checkbox({
 									text: item.text,
+									id: 'class-check-2-' + loop.index,
 									checked: item.checked
 								}) }}
 							</li>
@@ -389,8 +391,9 @@
 					<ul class="class__checkboxes-list">
 						{% for item in classCheckboxList3 %}
 							<li>
-								{{ checkboxP({
+								{{ checkbox({
 									text: item.text,
+									id: 'class-check-3-' + loop.index,
 									checked: item.checked
 								}) }}
 							</li>
@@ -402,8 +405,9 @@
 					<ul class="class__checkboxes-list">
 						{% for item in classCheckboxList4 %}
 							<li>
-								{{ checkboxP({
+								{{ checkbox({
 									text: item.text,
+									id: 'class-check-4-' + loop.index,
 									checked: item.checked
 								}) }}
 							</li>
@@ -459,11 +463,11 @@
 		</div>
 		<div class="class__block">
 			<p class="class__title h5 ttu">Частые вопросы</p>
-			<ul class="class-accordions">
+			<ul class="class-accordions _uppercase">
 				{% for item in classAccordions2 %}
 					<li class="class-accordions__item c-gray-dark" data-accordion-section>
 						<button class="class-accordions__btn {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
-							<span class="class-accordions__name p1 ttu" data-accordion-title-text>{{ item.name }}</span>
+							<span class="class-accordions__name p1" data-accordion-title-text>{{ item.name }}</span>
 							{{ icon({
 								iconName: 'accordion-arrow',
 								className: 'class-accordions__btn-icon',

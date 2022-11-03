@@ -61,6 +61,7 @@
 		opacity: 0.2;
 		order: 2;
 	}
+	&:focus-within,
 	&._filled {
 		#{$this}__label {
 			top: 15%;

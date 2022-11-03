@@ -7,6 +7,7 @@
 	}
 	&:not(._logo) {
 		padding-top: rem(64);
+		padding-inline: var(--container-padding);
 		@media (max-width: $mobile-lg) {
 			padding-top: 0;
 		}
@@ -46,6 +47,7 @@
 			}
 		}
 		#{$this}:not(._logo) & {
+			max-height: none;
 			border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 			padding-bottom: rem(73);
 			padding-top: rem(40);
@@ -63,9 +65,13 @@
 	&__brand-wrap {
 		display: flex;
 		justify-content: space-between;
+		padding-inline: var(--container-padding);
 		gap: rem(40);
 		@media (max-width: $laptop-md) {
 			flex-direction: column;
+		}
+		#{$this}:not(._logo) & {
+			padding-inline: 0;
 		}
 	}
 	&__letter {

@@ -14,6 +14,9 @@
 		flex-direction: column;
 		width: 100%;
 		gap: var(--margin-1);
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
 	}
 	&__title {
 		@media (max-width: $laptop-lg) {
@@ -21,11 +24,8 @@
 			line-height: 36px;
 		}
 		@media (max-width: $laptop-md) {
-			font-size: 28px;
-			line-height: 31px;
-		}
-		@media (max-width: $laptop-sm) {
 			font-size: 24px;
+			line-height: 31px;
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 18px;
@@ -41,10 +41,10 @@
 		justify-content: space-between;
 		column-gap: rem(24);
 		@media (max-width: $laptop-sm) {
-			margin-bottom: 40px;
+			margin-bottom: 16px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 16px;
+			margin-bottom: 0;
 		}
 	}
 	&__place {
@@ -72,6 +72,9 @@
 	&__date {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: $laptop-md) {
+			text-align: right;
+		}
 	}
 	&__descr {
 		max-width: rem(575);

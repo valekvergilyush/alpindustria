@@ -1,0 +1,69 @@
+.article-slider {
+	--button-margin: #{rem(63)};
+	position: relative;
+	border-top: 1px solid var(--blue-dark);
+	@media (max-width: $laptop-lg) {
+		--button-margin: 40px;
+	}
+	@media (max-width: $laptop-md) {
+		--button-margin: 30px;
+	}
+	@media (max-width: $mobile-lg) {
+		--button-margin: 8px;
+	}
+	&__product {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 25%;
+		@media (max-width: $laptop-sm) {
+			width: 33.3%;
+		}
+		@media (max-width: $mobile-lg) {
+			width: 50%;
+		}
+	}
+	.flickity-button {
+		--size: #{rem(40)};
+		width: var(--size);
+		height: var(--size);
+		background-color: transparent;
+		border-radius: 0;
+		@extend .animated;
+		&:hover,
+		&:focus {
+			opacity: 0.7;
+		}
+		&:focus {
+			box-shadow: none;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-image: inline('promo-arrow-blue.svg');
+			background-size: contain;
+			background-position: center;
+		}
+	}
+	.flickity-prev-next-button {
+		&:before {
+			transform: rotate(-135deg);
+		}
+		&.previous {
+			left: var(--button-margin);
+		}
+		&.next {
+			right: var(--button-margin);
+			&:before {
+				transform: rotate(45deg);
+			}
+		}
+	}
+	.flickity-button-icon {
+		display: none;
+	}
+}

@@ -1,0 +1,9 @@
+.addresses-shop {
+	padding: var(--container-padding);
+	&__place {
+		margin-bottom: rem(68);
+	}
+	&__content {
+		opacity: 0;
+	}
+}

@@ -7,6 +7,7 @@
 	overflow: hidden;
 	padding-top: var(--offset);
 	margin-top: calc(0px - var(--offset));
+	background-color: var(--gray-light);
 	&._index {
 		#{$this}__section {
 			#{$this}__title {
