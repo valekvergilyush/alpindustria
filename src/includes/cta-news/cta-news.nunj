@@ -11,15 +11,15 @@
 		}) }}
 		<div class="cta-news__row">
 			<h2 class="cta-news__title h4">Подпишитесь на&nbsp;наши новости</h2>
-			<div class="cta-news__right" data-validate>
+			<div class="cta-news__right">
 				<p class="cta-news__text p1">Только полезные новости и не чаще 2 раз в неделю — статьи экспертов, обзоры снаряжения, спецпредложения.</p>
 				<form class="cta-news__form">
 					{{ input({
 						type: 'email',
 						id: 'email-form',
-						name: 'Ваш e-mail',
+						name: 'Ваш E-MAIL',
 						className: 'cta-news__input',
-						attr: 'data-validate-type="email"'
+						inputAttr: 'required'
 					}) }}
 					{{ button({
 						text: 'Подписаться',
