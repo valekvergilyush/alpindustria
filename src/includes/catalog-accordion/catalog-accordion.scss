@@ -9,6 +9,7 @@
 	margin-top: calc(0px - var(--offset));
 	background-color: var(--gray-light);
 	&._index {
+		background: 0;
 		#{$this}__section {
 			#{$this}__title {
 				color: var(--blue-dark);
