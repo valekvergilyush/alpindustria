@@ -47,6 +47,7 @@ class AlpIndustry {
 			DiscountCreateForm: require('../../includes/discount-create-form/discount-create-form')
 				.default,
 			HeroIndex: require('../../includes/hero-index/hero-index').default,
+			CommunityIndex: require('../../includes/community-index/community-index').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

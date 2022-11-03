@@ -1,7 +1,7 @@
 {% set linkList = [
 	{ text: 'Магазин', url: '/catalog/' },
 	{ text: 'Сообщество', url: '/community/' },
-	{ text: 'Адреса', url: '#' },
+	{ text: 'Адреса', url: '/addresses.html' },
 	{ text: 'Услуги', url: '#' },
 	{ text: 'Новости', url: '/news.html' },
 	{ text: 'О нас', url: '#' }

@@ -151,6 +151,9 @@
 		@media (max-width: $mobile-md) {
 			font-size: 22px;
 		}
+		@media (min-width: $laptop-lg) and (max-height: 840px) {
+			font-size: vh(52, 1040);
+		}
 	}
 	&__text {
 		max-width: rem(700);
@@ -165,6 +168,9 @@
 		}
 		@media (max-width: $mobile-md) {
 			font-size: 14px;
+		}
+		@media (min-width: $laptop-lg) and (max-height: 840px) {
+			font-size: max(16px, vh(24, 1040));
 		}
 	}
 }

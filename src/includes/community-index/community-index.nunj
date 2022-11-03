@@ -1,0 +1,54 @@
+{% from "../components/picture/picture.nunj" import picture %}
+{% from "../components/button/button.nunj" import button %}
+
+{% set sectionList = [
+	{
+		title: 'Горный клуб',
+		text: 'В&nbsp;Горном клубе мы&nbsp;ставим целью поделиться с&nbsp;вами нашими знаниями, опытом и&nbsp;отношением к&nbsp;альпинизму, чтобы сделать знакомство с&nbsp;горами как можно более осознанным и&nbsp;безопасным.',
+		linkText: 'Подробнее',
+		linkURL: '/community/',
+		className: '_community'
+	},
+	{
+		title: 'Фрирайд',
+		text: 'В&nbsp;Горном клубе мы&nbsp;ставим целью поделиться с&nbsp;вами нашими знаниями, опытом и&nbsp;отношением к&nbsp;альпинизму, чтобы сделать знакомство с&nbsp;горами как можно более осознанным и&nbsp;безопасным.',
+		linkText: 'Подробнее',
+		linkURL: '/community/freerides.html',
+		className: '_freerides'
+	},
+	{
+		title: 'Трейлы',
+		text: 'В&nbsp;Горном клубе мы&nbsp;ставим целью поделиться с&nbsp;вами нашими знаниями, опытом и&nbsp;отношением к&nbsp;альпинизму, чтобы сделать знакомство с&nbsp;горами как можно более осознанным и&nbsp;безопасным.',
+		linkText: 'Подробнее',
+		linkURL: '/community/trails.html',
+		className: '_trails'
+	}
+] %}
+
+<section class="community-index">
+	<h2 class="community-index__title page__section-title h4 ttu">Сообщество</h2>
+	<ul class="community-index__list" data-section-slider>
+		{% for section in sectionList %}
+			<li class="community-index__item{% if section.className %} {{ section.className }}{% endif %}" data-section-slide>
+				<p class="community-index__subtitle h3 ttu" data-slider-animation data-animation="words">{{ section.title }}</p>
+				<p class="community-index__text p2" data-slider-animation data-animation="fade-right">{{ section.text }}</p>
+				{{ button({
+					href: section.linkURL,
+					text: section.linkText,
+					icon: 'promo-arrow',
+					iconData: 'width="16" height="16"',
+					className: 'community-index__link ttu _arrow-s',
+					attr: 'data-slider-animation data-animation="fade-right"'
+				}) }}
+			</li>
+		{% endfor %}
+	</ul>
+	{{ picture({
+		className: 'community-index__bg-img',
+		path: '/assets/images/community-index/community-index',
+		ext: 'jpg',
+		width: 1728,
+		height: 1167,
+		attr: 'aria-hidden="true" loading="lazy"'
+	}) }}
+</section>

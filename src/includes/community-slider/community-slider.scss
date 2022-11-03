@@ -7,7 +7,7 @@
 		position: relative;
 		display: flex;
 		column-gap: rem(64);
-		padding-block: rem(100);
+		padding-block: vh(100, 1040);
 		padding-inline: var(--container-padding);
 		display: flex;
 		column-gap: rem(64);
@@ -21,11 +21,11 @@
 		}
 		@media (max-width: $laptop-lg) {
 			column-gap: 38px;
-			padding-block: 95px;
+			padding-block: vh(95, 760);
 		}
 		@media (max-width: $laptop) {
 			column-gap: 34px;
-			padding-block: 72px;
+			padding-block: vh(72, 640);
 		}
 		@media (max-width: $tablet) {
 			flex-direction: column;

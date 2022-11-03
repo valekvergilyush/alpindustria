@@ -1,0 +1,102 @@
+.address-index {
+	$this: &;
+	overflow: hidden;
+	&__title {
+		padding-inline: var(--container-padding);
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		column-gap: rem(64);
+		padding-block: rem(64);
+	}
+	&__col {
+		flex-grow: 1;
+		max-width: rem(960);
+	}
+	&__numbers {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		row-gap: rem(60);
+	}
+	&__numbers-item {
+		display: flex;
+		column-gap: rem(48);
+		align-items: baseline;
+	}
+	&__numbers-name {
+		writing-mode: vertical-lr;
+		transform: scale(-1, -1);
+	}
+	&__numbers-value {
+		padding-bottom: 0.1em;
+		font-size: rem(360);
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+	&__list {
+		margin-bottom: rem(64);
+		color: var(--gray-dark);
+	}
+	&__item {
+		@extend .animated;
+		position: relative;
+		display: flex;
+		align-items: center;
+		column-gap: rem(16);
+		padding: rem(14) rem(16);
+		cursor: pointer;
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--blue-dark);
+		}
+		&:hover {
+			color: var(--gray-light);
+			background-color: var(--blue-dark);
+			#{$this}__item-img {
+				opacity: 1;
+				transform: translateX(0) translateY(-50%) rotate(3deg);
+			}
+		}
+	}
+	&__item-name {
+		padding-top: 0.2em;
+	}
+	&__item-number {
+		--size: #{rem(62)};
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid currentColor;
+		border-radius: 50%;
+		min-width: var(--size);
+		height: var(--size);
+	}
+	&__item-img {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		right: 0;
+		width: rem(404);
+		height: auto;
+		max-height: none;
+		transform: translateX(50%) translateY(-50%) rotate(20deg);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s $default-transition-function,
+			transform 0.4s $default-transition-function;
+	}
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		column-gap: rem(40);
+		&:hover {
+			#{$this}__link-text {
+				transform: translateX(rem(5));
+			}
+		}
+	}
+	&__link-text {
+		transition: transform $default-transition-duration $default-transition-function;
+	}
+}
