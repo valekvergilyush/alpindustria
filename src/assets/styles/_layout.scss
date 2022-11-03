@@ -39,9 +39,11 @@
 		left: 0;
 		width: 100%;
 		transform: translateY(-100%);
-		transition: transform $default-transition-duration $default-transition-function;
 		will-change: transform;
 		pointer-events: none;
+		&._initialized {
+			transition: transform $default-transition-duration $default-transition-function;
+		}
 	}
 	&._menu-opened {
 		#{$this}__menu {

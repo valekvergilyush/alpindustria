@@ -39,6 +39,10 @@ class CatalogAccordion {
 	}
 	toggle(section) {
 		const content = section.querySelector('[data-accordion-content]');
+
+		if (!content) {
+			return;
+		}
 		const contentHeight = content.scrollHeight;
 
 		if (this.openedSection === section) {

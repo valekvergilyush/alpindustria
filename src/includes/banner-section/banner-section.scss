@@ -4,41 +4,11 @@
 	background-color: var(--blue-dark);
 	color: var(--white);
 	overflow: hidden;
-	&:hover,
-	&:focus-within {
-		#{$this}__wrap {
-			&::before {
-				background-image: inline('promo-arrow-white.svg');
-			}
-		}
-	}
 	&__wrap {
 		position: relative;
 		z-index: 1;
 		padding-top: var(--container-padding);
 		padding-bottom: var(--container-padding);
-		&::before {
-			--size: #{rem(121)};
-			content: '';
-			position: absolute;
-			right: 0;
-			bottom: var(--container-padding);
-			width: var(--size);
-			height: var(--size);
-			background-image: inline('promo-arrow.svg');
-			background-repeat: no-repeat;
-			background-size: contain;
-			transition: background $default-transition-duration $default-transition-function;
-			@media (max-width: $laptop-md) {
-				--size: 64px;
-			}
-			@media (max-width: $laptop-sm) {
-				--size: 96px;
-			}
-			@media (max-width: $mobile-lg) {
-				--size: 40px;
-			}
-		}
 	}
 	&__top {
 		display: flex;
@@ -126,13 +96,32 @@
 		object-fit: cover;
 	}
 	&__link {
-		&::after {
+		&::before {
+			--size: #{rem(121)};
 			content: '';
 			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100vw;
-			height: 100%;
+			right: 0;
+			bottom: var(--container-padding);
+			width: var(--size);
+			height: var(--size);
+			background-image: inline('promo-arrow.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			transition: background $default-transition-duration $default-transition-function;
+			@media (max-width: $laptop-md) {
+				--size: 64px;
+			}
+			@media (max-width: $laptop-sm) {
+				--size: 96px;
+			}
+			@media (max-width: $mobile-lg) {
+				--size: 40px;
+			}
+		}
+		&:hover {
+			&::before {
+				background-image: inline('promo-arrow-white.svg');
+			}
 		}
 	}
 }

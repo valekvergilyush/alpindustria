@@ -1,3 +1,5 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
 <section class="discount-card">
 	<div class="container">
 		<h2 class="discount-card__title ttu h4">Ваша карта</h2>
@@ -12,7 +14,15 @@
 					<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">Добавить карту</button>
 				</li>
 			</ul>
-			<img class="discount-card__img" src="/assets/images/discount/discount-card.png" srcset="/assets/images/discount/discount-card@2x.png 2x" width="576" height="280" alt="" loading="lazy">
+			{{ picture({
+				className: 'discount-card__img',
+				path: '/assets/images/discount/discount-card/discount-card',
+				ext: 'png',
+				width: 576,
+				height: 280,
+				alt: 'Проверочный код на карте',
+				attr: 'loading="lazy"'
+			}) }}
 			<section class="discount-card__section _create tabs__panel" aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 				{% include "../discount-create-form/discount-create-form.nunj" %}
 			</section>

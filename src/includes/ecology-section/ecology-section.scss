@@ -23,6 +23,9 @@
 	&._fourth {
 		top: calc(8 * var(--vh, 1vh));
 		background-color: #d9eaf5;
+		#{$this}__bg-img img {
+			object-position: top;
+		}
 	}
 	&._fifth {
 		top: calc(10 * var(--vh, 1vh));
@@ -67,6 +70,37 @@
 			}
 		}
 	}
+	@media (max-width: $laptop) {
+		--arrow-size: 72px;
+	}
+	@media (max-width: $laptop-sm) {
+		--arrow-size: 64px;
+		position: relative;
+		height: auto;
+		min-height: 800px;
+		padding-right: var(--container-padding);
+	}
+	@media (max-width: $mobile-lg) {
+		display: flex;
+		flex-direction: column;
+		min-height: 640px;
+		padding-bottom: calc(var(--container-padding) * 2 + var(--arrow-size));
+		&::before {
+			position: absolute;
+			z-index: 1;
+			bottom: var(--container-padding);
+			right: var(--container-padding);
+			content: '';
+			width: rem(72);
+			width: var(--arrow-size);
+			height: var(--arrow-size);
+			background-image: inline('promo-arrow.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function;
+		}
+	}
 	&__title {
 		display: flex;
 		max-width: rem(1150);
@@ -95,10 +129,57 @@
 				}
 			}
 		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			position: relative;
+			z-index: 1;
+			max-width: none;
+			padding-right: calc(var(--arrow-size) + var(--container-padding));
+			a {
+				&::before {
+					top: 0;
+					right: 0;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 14px;
+			padding-right: 0;
+			a {
+				&::before {
+					display: none;
+				}
+			}
+		}
 	}
 	&__text {
+		position: relative;
+		z-index: 1;
 		max-width: rem(700);
 		margin-bottom: rem(32);
+		@media (max-width: $laptop) {
+			max-width: 630px;
+			margin-bottom: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 14px;
+		}
+	}
+	&__link {
+		position: relative;
+		z-index: 1;
+		@media (max-width: $mobile-lg) {
+			margin-left: auto;
+			font-size: 14px;
+			.button__icon {
+				margin-left: 9px !important;
+			}
+		}
 	}
 	&__bg-img {
 		position: absolute;
@@ -112,6 +193,9 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+		@media (max-width: $laptop-sm) {
+			z-index: 0;
 		}
 	}
 }

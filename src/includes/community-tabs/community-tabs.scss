@@ -79,6 +79,7 @@
 		padding-left: var(--padding-x);
 		background-color: var(--white);
 		margin-left: calc(0px - var(--container-padding));
+		border-right: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-lg) {
 			padding-top: 95px;
 		}
@@ -86,6 +87,7 @@
 			row-gap: 24px;
 			min-height: var(--100vh);
 			margin-left: 0;
+			border-right: 0;
 		}
 		@media (max-width: $laptop) {
 			padding-top: 74px;
