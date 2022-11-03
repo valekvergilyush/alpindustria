@@ -1,0 +1,57 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set numbersList = [
+	{ name: 'Городов', value: 14 },
+	{ name: 'Магазинов', value: 25 }
+] %}
+{% set cityList = [
+	{ name: 'Санкт-Петербург', value: 2 },
+	{ name: 'Новосибирск', value: 1 },
+	{ name: 'Москва', value: 8 },
+	{ name: 'Приэльбрусье', value: 2 },
+	{ name: 'Пермь', value: 2 },
+	{ name: 'Екатеринбург', value: 1 },
+	{ name: 'Пятигорск', value: 4 },
+	{ name: 'Воронеж', value: 4 },
+	{ name: 'Саратов', value: 4 }
+] %}
+
+<section class="address-index">
+	<h2 class="address-index__title page__section-title h4 ttu">Адреса магазинов</h2>
+	<div class="address-index__container container">
+		<dl class="address-index__numbers">
+			{% for number in numbersList %}
+				<div class="address-index__numbers-item">
+					<dt class="address-index__numbers-name h6 ttu c-gray-dark">{{ number.name }}</dt>
+					<dd class="address-index__numbers-value">{{ number.value }}</dd>
+				</div>
+			{% endfor %}
+		</dl>
+		<div class="address-index__col">
+			<ul class="address-index__list">
+				{% for city in cityList %}
+					<li class="address-index__item">
+						<span class="address-index__item-name h5 ttu">{{ city.name }}</span>
+						<span class="address-index__item-number p1">{{ city.value }}</span>
+						<img
+							class="address-index__item-img"
+							src="/assets/images/address/shop-exterior.jpg"
+							srcset="/assets/images/address/shop-exterior@2x.jpg 2x"
+							width="404"
+							height="552"
+							alt="Здание магазина"
+						>
+					</li>
+				{% endfor %}
+			</ul>
+			<a class="address-index__link h5 ttu" href="/addresses.html">
+				<div class="address-index__link-text">Все адреса</div>
+				{{ icon({
+					iconName: 'promo-arrow-blue',
+					className: 'address-index__link-icon',
+					attr: 'width="64" height="64"'
+				}) }}
+			</a>
+		</div>
+	</div>
+</section>
