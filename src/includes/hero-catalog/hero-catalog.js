@@ -1,12 +1,12 @@
 import ScrollHelper from '../../assets/js/helpers/ScrollHelper';
 
-class Hero {
+class HeroCatalog {
 	constructor() {
 		this.init();
 	}
 
 	init() {
-		this.container = document.querySelector('.hero');
+		this.container = document.querySelector('.hero-catalog');
 
 		if (!this.container) {
 			return;
@@ -16,10 +16,10 @@ class Hero {
 		this.setBgImgHeight = this.setBgImgHeight.bind(this);
 
 		if (this.container.hasAttribute('data-parallax')) {
-			this.title = this.container.querySelector('.hero__title');
-			this.filter = this.container.querySelector('.hero__quick-filter');
-			this.bgImages = this.container.querySelectorAll('.hero__bg-img');
-			this.bgImageWrapper = this.container.querySelector('.hero__bg-img-wrapper');
+			this.title = this.container.querySelector('.hero-catalog__title');
+			this.filter = this.container.querySelector('.hero-catalog__quick-filter');
+			this.bgImages = this.container.querySelectorAll('.hero-catalog__bg-img');
+			this.bgImageWrapper = this.container.querySelector('.hero-catalog__bg-img-wrapper');
 
 			this.setBgImgHeight();
 
@@ -40,4 +40,4 @@ class Hero {
 		});
 	}
 }
-export default new Hero();
+export default new HeroCatalog();

@@ -22,17 +22,21 @@ class ShowAnimations {
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			document.documentElement.classList.add(ClassName.ANIMATIONS);
 
-			window.addEventListener('scroll', () => {
-				this.animatedBlocks.forEach(block => {
-					const isAnimated = block.classList.contains(ClassName.ANIMATED);
-					if (!isAnimated) {
-						const isInViewport = Utils.isElementInViewport(block, 1.2);
+			this._onWindowScroll = this._onWindowScroll.bind(this);
 
-						isInViewport && block.classList.add(ClassName.ANIMATED);
-					}
-				});
-			});
+			window.addEventListener('scroll', this._onWindowScroll);
+			this._onWindowScroll();
 		}
+	}
+	_onWindowScroll() {
+		this.animatedBlocks.forEach(block => {
+			const isAnimated = block.classList.contains(ClassName.ANIMATED);
+			if (!isAnimated) {
+				const isInViewport = Utils.isElementInViewport(block, 1.2);
+
+				isInViewport && block.classList.add(ClassName.ANIMATED);
+			}
+		});
 	}
 }
 

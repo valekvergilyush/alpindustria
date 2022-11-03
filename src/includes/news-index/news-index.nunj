@@ -1,0 +1,4 @@
+<section class="news-index">
+	<h2 class="news-index__title page__section-title h4 ttu">Новости</h2>
+	{% include "../banner-section/banner-section.nunj" %}
+</section>
