@@ -2,7 +2,7 @@
 
 {% set navList = [
 	{ text: 'Магазин', url: '/catalog/', id: 'catalog' },
-	{ text: 'Адреса', url: '#', id: 'address' },
+	{ text: 'Адреса', url: '/addresses.html', id: 'address' },
 	{ text: 'Сообщество', url: '/community/', id: 'community' },
 	{ text: 'Прокат', url: '#', id: 'rental' }
 ] %}
