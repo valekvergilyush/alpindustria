@@ -56,6 +56,9 @@
 			padding-block: 0;
 			margin-bottom: 40px;
 		}
+		@include scrollbar {
+			display: none;
+		}
 	}
 	&__filter-btns-wrap {
 		display: flex;
@@ -144,6 +147,8 @@
 			}
 			@media (max-width: $mobile-lg) {
 				--height: 128px;
+				border-right: none;
+				border-left: none;
 			}
 		}
 	}
