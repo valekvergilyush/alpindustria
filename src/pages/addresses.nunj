@@ -1,0 +1,12 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+{% from "../includes/components/product-card/product-card.nunj" import productCard %}
+
+{% block title %}Адреса | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{% include "../includes/addresses/addresses.nunj" %}
+	</main>
+{% endblock %}

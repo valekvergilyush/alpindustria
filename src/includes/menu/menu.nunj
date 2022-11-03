@@ -17,7 +17,7 @@
 			{ text: 'Горные лыжи', url: '#' }
 		]
 	},
-	{ text: 'Адреса', url: '#', img: { src: '/assets/images/menu/menu-address.jpg', srcset: '/assets/images/menu/menu-address@2x.jpg 2x' } },
+	{ text: 'Адреса', url: '/addresses.html', img: { src: '/assets/images/menu/menu-address.jpg', srcset: '/assets/images/menu/menu-address@2x.jpg 2x' } },
 	{
 		text: 'Сообщество',
 		img: { src: '/assets/images/menu/menu-community.jpg', srcset: '/assets/images/menu/menu-community@2x.jpg 2x' },
