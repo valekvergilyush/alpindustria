@@ -13,7 +13,9 @@ class ShowAnimations {
 	}
 
 	init() {
-		this.animatedBlocks = document.querySelectorAll('[data-animation]');
+		this.animatedBlocks = document.querySelectorAll(
+			'[data-animation]:not([data-slider-animation])'
+		);
 
 		if (!this.animatedBlocks.length) {
 			return;
