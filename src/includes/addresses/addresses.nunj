@@ -38,12 +38,7 @@
 		<div class="addresses__tabs">
 			<div class="addresses__tab">
 				<div class="addresses__shops">
-					<div class="addresses__shop addresses-shop">
-						<p class="addresses-shop__place h5 ttu">Черная речка</p>
-						<div class="addresses-shop__inner">
-							<p class="addresses-shop__title h6 ttu">Адрес</p>
-						</div>
-					</div>
+					{% include "../addresses-shop/addresses-shop.nunj" %}
 				</div>
 			</div>
 		</div>
