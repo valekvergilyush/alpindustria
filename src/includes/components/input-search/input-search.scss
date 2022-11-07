@@ -14,6 +14,9 @@
 		#{$this}__label-text {
 			top: 0;
 			font-size: rem(12);
+			@media (max-width: $tablet) {
+				top: 5px;
+			}
 		}
 	}
 	@media (max-width: $laptop-lg) {
@@ -34,6 +37,9 @@
 		pointer-events: none;
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
+		@media (max-width: $tablet) {
+			top: 28px;
+		}
 	}
 	&__input {
 		box-sizing: border-box;
@@ -50,20 +56,16 @@
 		font-size: rem(16);
 		line-height: 1.5;
 		color: var(--gray-dark);
-		@include placeholder {
-			font-family: var(--font-family-suisse);
-			font-size: rem(16);
-			line-height: 1;
-			letter-spacing: -0.04em;
-			color: var(--blue-light);
-		}
 	}
 	&__icon {
 		position: absolute;
-		top: 0;
+		top: rem(16);
 		right: 0;
 		width: var(--icon-size);
 		height: var(--icon-size);
+		@media (max-width: $tablet) {
+			top: 32px;
+		}
 	}
 	&__lang {
 		font-family: var(--font-family-suisse);
@@ -76,23 +78,15 @@
 	}
 	&._city {
 		--icon-size: #{rem(36)};
-		@media (max-width: $tablet) {
-			--icon-size: 24px;
-		}
 		#{$this}__input {
 			height: rem(48);
 			padding-bottom: rem(12);
 			border-color: var(--blue-dark);
-			@include placeholder {
-				position: absolute;
-				top: em(5, 16);
-				left: 0;
-				font-family: var(--default-font-family);
-				line-height: 1.5;
-				@media (max-width: $tablet) {
-					font-size: 12px;
-					line-height: 1.33;
-				}
+		}
+		@media (max-width: $tablet) {
+			--icon-size: 24px;
+			#{$this}__input {
+				padding-bottom: 0;
 			}
 		}
 	}

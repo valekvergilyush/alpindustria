@@ -30,7 +30,7 @@ class AlpIndustry {
 			Counter: require('../../includes/components/counter/counter').default,
 			Tabs: require('../../includes/components/tabs/tabs').default,
 			DeliveryAddress: require('../../includes/delivery-address/delivery-address').default,
-			Hero: require('../../includes/hero/hero').default,
+			HeroCatalog: require('../../includes/hero-catalog/hero-catalog').default,
 			Cart: require('../../includes/cart/cart').default,
 			InputDate: require('../../includes/components/input-date/input-date').default,
 			InputTime: require('../../includes/components/input-time/input-time').default,
@@ -47,6 +47,8 @@ class AlpIndustry {
 			DiscountCreateForm: require('../../includes/discount-create-form/discount-create-form')
 				.default,
 			Addresses: require('../../includes/addresses/addresses').default,
+			HeroIndex: require('../../includes/hero-index/hero-index').default,
+			CommunityIndex: require('../../includes/community-index/community-index').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

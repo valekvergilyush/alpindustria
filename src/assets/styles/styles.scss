@@ -58,7 +58,7 @@
 @import '../../includes/footer/footer';
 @import '../../includes/quick-filter/quick-filter';
 @import '../../includes/filters/filters';
-@import '../../includes/hero/hero';
+@import '../../includes/hero-catalog/hero-catalog';
 @import '../../includes/catalog-promo/catalog-promo';
 @import '../../includes/filters-form/filters-form';
 @import '../../includes/catalog/catalog';
@@ -138,9 +138,17 @@
 @import '../../includes/ecology-section/ecology-section';
 @import '../../includes/addresses-shop/addresses-shop';
 @import '../../includes/addresses/addresses';
+@import '../../includes/hero-index/hero-index';
+@import '../../includes/brand-list/brand-list';
+@import '../../includes/category-list/category-list';
+@import '../../includes/news-index/news-index';
+@import '../../includes/address-index/address-index';
+@import '../../includes/community-index/community-index';
+@import '../../includes/services-index/services-index';
 
 // ======= PAGES =======
 @import 'pages/index';
+@import 'pages/catalog';
 @import 'pages/delivery';
 @import 'pages/classes';
-@import 'pages/_sticky-sections';
+@import 'pages/sticky-sections';

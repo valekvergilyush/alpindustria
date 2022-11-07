@@ -17,9 +17,9 @@ class FilterSubcategory {
 
 		this.heroContainer = document.querySelector('.page__hero');
 		if (this.heroContainer) {
-			this.heroTitleCategory = this.heroContainer.querySelector('.hero__title-category');
+			this.heroTitleCategory = this.heroContainer.querySelector('.hero-catalog__title-category');
 			this.heroTitleText = this.heroTitleCategory.textContent;
-			this.heroBgImage = this.heroContainer.querySelector('.hero__bg-img._hero');
+			this.heroBgImage = this.heroContainer.querySelector('.hero-catalog__bg-img._hero');
 		}
 
 		this.subContainers.forEach(subContainer => {
@@ -75,7 +75,7 @@ class FilterSubcategory {
 	}
 	showSubcategoryBg(button) {
 		const classMod = button.getAttribute('data-subcategory-mod');
-		this.subcategoryBgImg = this.heroContainer.querySelector(`.hero__bg-img.${classMod}`);
+		this.subcategoryBgImg = this.heroContainer.querySelector(`.hero-catalog__bg-img.${classMod}`);
 
 		this.heroBgImage.style.display = 'none';
 		this.subcategoryBgImg.style.display = 'block';

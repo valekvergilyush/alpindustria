@@ -8,6 +8,27 @@
 	padding-top: var(--offset);
 	margin-top: calc(0px - var(--offset));
 	background-color: var(--gray-light);
+	&._index {
+		background: 0;
+		#{$this}__section {
+			#{$this}__title {
+				color: var(--blue-dark);
+				transition: all 0.4s $default-transition-function;
+			}
+			&:hover:not(._opened) {
+				transform: translateY(calc(1px - var(--offset) * 0.9));
+				#{$this}__title {
+					color: rgba($blue-dark, 0);
+					-webkit-text-stroke: 1px var(--blue-dark);
+					text-stroke: 1px var(--blue-dark);
+					transition: all 0.4s $default-transition-function;
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
 	@media (max-width: $laptop) {
 		--offset: 40px;
 		--size: 64px;
@@ -119,6 +140,7 @@
 	}
 	&__section {
 		position: relative;
+		display: block;
 		background-color: var(--default-bg-color);
 		overflow: hidden;
 		margin-bottom: calc(0px - var(--offset));

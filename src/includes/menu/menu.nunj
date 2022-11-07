@@ -6,7 +6,7 @@
 		img: { src: '/assets/images/menu/menu-shop.jpg', srcset: '/assets/images/menu/menu-shop@2x.jpg 2x' },
 		url: '#',
 		list: [
-			{ text: 'Все товары', url: '#' },
+			{ text: 'Все товары', url: '/catalog/' },
 			{ text: 'Одежда', url: '#' },
 			{ text: 'Лыжный туризм', url: '#' },
 			{ text: 'Туристическое снаряжение', url: '#' },

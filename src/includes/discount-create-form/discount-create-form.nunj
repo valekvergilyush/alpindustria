@@ -107,7 +107,7 @@
 	}) }}
 	{{ button({
 		type: 'submit',
-		text: 'Привязать',
+		text: 'Создать',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
 		className: 'discount-create-form__submit _arrow-s h7 ttu'

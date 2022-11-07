@@ -1,0 +1,53 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set navList = [
+	{ text: 'Магазин', url: '/catalog/', id: 'catalog' },
+	{ text: 'Адреса', url: '/addresses.html', id: 'address' },
+	{ text: 'Сообщество', url: '/community/', id: 'community' },
+	{ text: 'Прокат', url: '#', id: 'rental' }
+] %}
+
+<section class="hero-index">
+	<div class="hero-index__container container">
+		<ul class="hero-index__list">
+			{% for item in navList %}
+				<li class="hero-index__item">
+					<a
+						class="hero-index__link ttu"
+						href="{{ item.url }}"
+						data-hero-link="{{ item.id }}"
+						data-animation="words"
+					>
+						{{ item.text }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<p class="hero-index__text p2" data-animation="fade-right">Хотите подняться на&nbsp;вершину мечты? Мы&nbsp;сделаем ваш путь безопасным и&nbsp;позаботимся, чтобы от&nbsp;восхождения остались только теплые воспоминания.</p>
+		<a class="hero-index__next-link" href="#brands" aria-label="Далее" data-anchor-link>
+			{{ icon({
+				iconName: 'arrow-down-lg',
+				className: 'hero-index__next-icon',
+				attr: 'width="124" height="124"'
+			}) }}
+		</a>
+	</div>
+	<div class="hero-index__bg-wrapper">
+		<picture class="hero-index__bg-img _active" data-hero-bg="catalog">
+			<source srcset="/assets/images/hero-index/bg-catalog.webp, /assets/images/hero-index/bg-catalog@2x.webp 2x" type="image/webp">
+			<img src="/assets/images/hero-index/bg-catalog.jpg" srcset="/assets/images/hero-index/bg-catalog@2x.jpg 2x" width="1728" height="1040" alt="" aria-hidden="true">
+		</picture>
+		<picture class="hero-index__bg-img" data-hero-bg="address">
+			<source srcset="/assets/images/hero-index/bg-address.webp, /assets/images/hero-index/bg-address@2x.webp 2x" type="image/webp">
+			<img src="/assets/images/hero-index/bg-address.jpg" srcset="/assets/images/hero-index/bg-address@2x.jpg 2x" width="1728" height="1040" alt="" aria-hidden="true">
+		</picture>
+		<picture class="hero-index__bg-img" data-hero-bg="community">
+			<source srcset="/assets/images/hero-index/bg-community.webp, /assets/images/hero-index/bg-community@2x.webp 2x" type="image/webp">
+			<img src="/assets/images/hero-index/bg-community.jpg" srcset="/assets/images/hero-index/bg-community@2x.jpg 2x" width="1728" height="1040" alt="" aria-hidden="true">
+		</picture>
+		<picture class="hero-index__bg-img" data-hero-bg="rental">
+			<source srcset="/assets/images/hero-index/bg-rental.webp, /assets/images/hero-index/bg-rental@2x.webp 2x" type="image/webp">
+			<img src="/assets/images/hero-index/bg-rental.jpg" srcset="/assets/images/hero-index/bg-rental@2x.jpg 2x" width="1728" height="1040" alt="" aria-hidden="true">
+		</picture>
+	</div>
+</section>

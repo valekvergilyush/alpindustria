@@ -2,7 +2,6 @@
 
 {% block title %}Бренды | {{ super() }}{% endblock title %}
 
-
 {% block mainContent %}
 	<main class="page__main _pt _white-bg">
 		{% include "../includes/brands-title/brands-title.nunj" %}

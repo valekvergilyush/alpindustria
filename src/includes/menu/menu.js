@@ -3,6 +3,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 const HTML_CLASSLIST = document.documentElement.classList;
 
 const ClassName = {
+	INITIALIZED: '_initialized',
 	OPENED: '_opened',
 	MENU_OPENED: '_menu-opened',
 };
@@ -41,6 +42,7 @@ class Header {
 		window.addEventListener('keydown', this.onWindowKeydown);
 
 		this.menuOpener.addEventListener('click', this.onMenuOpenerClick);
+		this.menu.classList.add(ClassName.INITIALIZED);
 	}
 	openMenu() {
 		HTML_CLASSLIST.add(ClassName.MENU_OPENED);
