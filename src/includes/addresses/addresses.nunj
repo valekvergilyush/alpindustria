@@ -18,11 +18,11 @@
 	'Воронеж'
 ] %}
 
-<section class="addresses">
+<section class="addresses" data-addresses>
 	<ul class="addresses__cities">
 		{% for city in citiesList %}
 			<li class="addresses__city">
-				<button class="addresses__city-btn h6 ttu {% if loop.index === 2 %}_active{% endif %}">
+				<button class="addresses__city-btn h6 ttu {% if loop.index === 2 %}_active{% endif %}" data-city-btn>
 					<span class="addresses__city-text">{{ city }}</span>
 					{{ icon({
 						iconName: 'double-arrow-right',
@@ -39,6 +39,7 @@
 			<div class="addresses__tab">
 				<div class="addresses__shops">
 					{% include "../addresses-shop/addresses-shop.nunj" %}
+					{% include "../addresses-shop/addresses-shop-2.nunj" %}
 				</div>
 			</div>
 		</div>

@@ -10,7 +10,7 @@
 
 <div class="addresses__shop addresses-shop" data-shop-item>
 	<div class="addresses-shop__wrap">
-		<p class="addresses-shop__place h5 ttu">Черная речка</p>
+		<p class="addresses-shop__place h5 ttu">Заневский</p>
 		<div class="addresses-shop__inner">
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Адрес</p>
