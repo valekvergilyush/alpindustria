@@ -1,0 +1,48 @@
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const TABLET_BREAKPOINT = 768;
+
+class AboutSlider {
+	constructor() {
+		this.init();
+	}
+
+	init() {
+		this.container = document.querySelector('[data-about-slider]');
+
+		if (!this.container || window.innerWidth <= TABLET_BREAKPOINT) {
+			return;
+		}
+
+		this.slide = this.container.querySelector('[data-about-slide]');
+
+		const getToValue = () => this.slide.scrollWidth - window.innerWidth;
+
+		ScrollTrigger.create({
+			trigger: this.container,
+			start: 'top top',
+			end: `+=${getToValue() + 50}`,
+			pin: true,
+			invalidateOnRefresh: true,
+			scrub: true,
+		});
+
+		gsap.set(this.slide, {
+			x: 0 - getToValue(),
+			scrollTrigger: {
+				trigger: this.container,
+				start: 'top top',
+				end: `+=${getToValue()}`,
+				invalidateOnRefresh: true,
+				scrub: true,
+				onUpdate: self => {
+					gsap.set(this.slide, {
+						x: 0 - getToValue() * self.progress,
+					});
+				},
+			},
+		});
+	}
+}
+
+export default new AboutSlider();

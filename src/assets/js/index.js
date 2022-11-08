@@ -19,6 +19,25 @@ class AlpIndustry {
 		this.classes = {
 			Signal: require('./classes/Signal').default,
 		};
+		this.modules = {
+			LottieAnimations: require('./modules/LottieAnimations').default,
+			RangeSlider: require('./modules/RangeSlider').default,
+			Accordion: require('./modules/Accordion').default,
+			AnchorLinks: require('./modules/AnchorLinks').default,
+			FilterSubcategory: require('./modules/FilterSubcategory').default,
+			DragScroll: require('./modules/DragScroll').default,
+			Product: require('./modules/Product').default,
+			Popups: require('./modules/Popups').default,
+			Select: require('./modules/Select').default,
+			Availability: require('./modules/Availability').default,
+			Input: require('./modules/Input').default,
+			WishlistForm: require('./modules/WishlistForm').default,
+			Map: require('./modules/Map').default,
+			FormValidate: require('./modules/FormValidate').default,
+			Notification: require('./modules/Notification').default,
+			ShowAnimations: require('./modules/ShowAnimations').default,
+			ArticleSlider: require('./modules/ArticleSlider').default,
+		};
 		this.components = {
 			Header: require('../../includes/header/header').default,
 			Menu: require('../../includes/menu/menu').default,
@@ -50,29 +69,11 @@ class AlpIndustry {
 			HeroIndex: require('../../includes/hero-index/hero-index').default,
 			CommunityIndex: require('../../includes/community-index/community-index').default,
 			BannerSection: require('../../includes/banner-section/banner-section').default,
+			AboutSlider: require('../../includes/about-slider/about-slider').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
 			TextSplitter: require('./helpers/TextSplitter').default,
-		};
-		this.modules = {
-			RangeSlider: require('./modules/RangeSlider').default,
-			Accordion: require('./modules/Accordion').default,
-			AnchorLinks: require('./modules/AnchorLinks').default,
-			FilterSubcategory: require('./modules/FilterSubcategory').default,
-			DragScroll: require('./modules/DragScroll').default,
-			Product: require('./modules/Product').default,
-			Popups: require('./modules/Popups').default,
-			Select: require('./modules/Select').default,
-			Availability: require('./modules/Availability').default,
-			Input: require('./modules/Input').default,
-			WishlistForm: require('./modules/WishlistForm').default,
-			Map: require('./modules/Map').default,
-			FormValidate: require('./modules/FormValidate').default,
-			Notification: require('./modules/Notification').default,
-			ShowAnimations: require('./modules/ShowAnimations').default,
-			LottieAnimations: require('./modules/LottieAnimations').default,
-			ArticleSlider: require('./modules/ArticleSlider').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
