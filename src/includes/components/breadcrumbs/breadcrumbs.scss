@@ -13,6 +13,9 @@
 		padding: 12px var(--container-padding) 7px;
 		overflow: auto;
 		white-space: nowrap;
+		@include scrollbar {
+			display: none;
+		}
 	}
 	&__list {
 		display: flex;

@@ -8,6 +8,7 @@
 	padding-top: var(--offset);
 	margin-top: calc(0px - var(--offset));
 	background-color: var(--gray-light);
+	overflow: hidden;
 	&._index {
 		background: 0;
 		#{$this}__section {
@@ -121,6 +122,7 @@
 	&__list {
 		display: flex;
 		height: 0;
+		margin-right: -1px;
 		transition: opacity $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-sm) {
 			--item-width: calc(100% / 3);

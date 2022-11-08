@@ -2,6 +2,7 @@
 	--block-width: #{rem(960)};
 	background-color: var(--gray-light);
 	padding-bottom: rem(56);
+	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--block-width: 816px;
 	}
@@ -22,9 +23,13 @@
 	}
 	&__products-list {
 		display: flex;
-		width: 100%;
+		min-width: 100%;
 		overflow: auto;
 		padding-top: 1px;
+		margin-right: -1px;
+		@include scrollbar {
+			display: none;
+		}
 	}
 	&__product {
 		flex-shrink: 0;
@@ -35,5 +40,8 @@
 		@media (max-width: $mobile-lg) {
 			width: calc(100% / 2);
 		}
+	}
+	.article-slider {
+		margin-right: -1px;
 	}
 }
