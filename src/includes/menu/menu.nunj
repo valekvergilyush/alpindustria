@@ -7,14 +7,14 @@
 		url: '#',
 		list: [
 			{ text: 'Все товары', url: '/catalog/' },
-			{ text: 'Одежда', url: '#' },
-			{ text: 'Лыжный туризм', url: '#' },
-			{ text: 'Туристическое снаряжение', url: '#' },
-			{ text: 'Книги', url: '#' },
-			{ text: 'Обувь', url: '#' },
-			{ text: 'Альпинистское снаряжение', url: '#' },
-			{ text: 'Сноуборды', url: '#' },
-			{ text: 'Горные лыжи', url: '#' }
+			{ text: 'Одежда', url: '/catalog/' },
+			{ text: 'Лыжный туризм', url: '/catalog/' },
+			{ text: 'Туристическое снаряжение', url: '/catalog/' },
+			{ text: 'Книги', url: '/catalog/' },
+			{ text: 'Обувь', url: '/catalog/' },
+			{ text: 'Альпинистское снаряжение', url: '/catalog/' },
+			{ text: 'Сноуборды', url: '/catalog/' },
+			{ text: 'Горные лыжи', url: '/catalog/' }
 		]
 	},
 	{ text: 'Адреса', url: '/addresses.html', img: { src: '/assets/images/menu/menu-address.jpg', srcset: '/assets/images/menu/menu-address@2x.jpg 2x' } },
@@ -32,7 +32,7 @@
 	{ text: 'Прокат', url: '#', img: { src: '/assets/images/menu/menu-rent.jpg', srcset: '/assets/images/menu/menu-rent@2x.jpg 2x' } },
 	{ text: 'Сервисы', url: '#', img: { src: '/assets/images/menu/menu-service.jpg', srcset: '/assets/images/menu/menu-service@2x.jpg 2x' } },
 	{ text: 'Новости', url: '/news.html', img: { src: '/assets/images/menu/menu-news.jpg', srcset: '/assets/images/menu/menu-news@2x.jpg 2x' } },
-	{ text: 'О нас', url: '#', img: { src: '/assets/images/menu/menu-about.jpg', srcset: '/assets/images/menu/menu-about@2x.jpg 2x' } }
+	{ text: 'О нас', url: '/about.html', img: { src: '/assets/images/menu/menu-about.jpg', srcset: '/assets/images/menu/menu-about@2x.jpg 2x' } }
 ] %}
 
 {% set menuLinks = [

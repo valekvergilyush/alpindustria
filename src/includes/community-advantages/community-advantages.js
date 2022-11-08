@@ -49,6 +49,20 @@ class CommunityAdvantages {
 				},
 			},
 		});
+
+		if (container.hasAttribute('data-background')) {
+			const bgColor = container.getAttribute('data-background');
+
+			gsap.to('[data-community-advantages]', {
+				scrollTrigger: {
+					trigger: container,
+					start: 'top bottom',
+					end: 'bottom bottom',
+					scrub: true,
+				},
+				background: bgColor,
+			});
+		}
 	}
 }
 
