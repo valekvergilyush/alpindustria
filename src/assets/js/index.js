@@ -49,6 +49,7 @@ class AlpIndustry {
 			Addresses: require('../../includes/addresses/addresses').default,
 			HeroIndex: require('../../includes/hero-index/hero-index').default,
 			CommunityIndex: require('../../includes/community-index/community-index').default,
+			BannerSection: require('../../includes/banner-section/banner-section').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

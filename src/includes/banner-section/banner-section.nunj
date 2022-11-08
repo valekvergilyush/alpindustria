@@ -1,17 +1,50 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
+{% set list = [
+	{
+		title: 'Новое поступление',
+		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
+		tag: 'Статья',
+		url: '#',
+		bgSrc: 'assets/images/product/banner-bg.jpg',
+		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
+	},
+	{
+		title: 'Новое поступление',
+		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
+		tag: 'Статья',
+		url: '#',
+		bgSrc: 'assets/images/product/banner-bg.jpg',
+		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
+	},
+	{
+		title: 'Новое поступление',
+		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
+		tag: 'Статья',
+		url: '#',
+		bgSrc: 'assets/images/product/banner-bg.jpg',
+		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
+	}
+] %}
+
 <div class="banner-section">
-	<img src="/assets/images/product/banner-bg.jpg" srcset="/assets/images/product/banner-bg@2x.jpg 2x" alt="" class="banner-section__bg">
-	<div class="banner-section__wrap container">
-		<div class="banner-section__top">
-			{{ icon({
-				iconName: 'logo-short',
-				className: 'banner-section__logo',
-				attr: 'width="76" height="40"'
-			}) }}
-			<p class="banner-section__name ttu">статья</p>
-		</div>
-		<h2 class="banner-section__title ttu h3"><a class="banner-section__link" href="#">Новое поступление</a></h2>
-		<p class="banner-section__text p1">Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.</p>
+	<div class="banner-section__wrapper" data-banner-slider>
+		{% for item in list %}
+			<div class="banner-section__item" data-banner-slide>
+				<img src="{{ item.bgSrc }}" srcset="{{ item.bgSrcset }}" alt="" class="banner-section__bg">
+				<div class="banner-section__content container">
+					<div class="banner-section__top">
+						{{ icon({
+							iconName: 'logo-short',
+							className: 'banner-section__logo',
+							attr: 'width="76" height="40"'
+						}) }}
+						<p class="banner-section__name ttu">{{ item.tag }}</p>
+					</div>
+					<h2 class="banner-section__title ttu h3"><a class="banner-section__link" href="{{ item.url }}">{{ item.title }}</a></h2>
+					<p class="banner-section__text p1">{{ item.text }}</p>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 </div>

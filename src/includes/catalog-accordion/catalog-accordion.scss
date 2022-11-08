@@ -4,6 +4,7 @@
 	--title-min-height: #{rem(140)};
 	$this: &;
 	position: relative;
+	z-index: 1;
 	overflow: hidden;
 	padding-top: var(--offset);
 	margin-top: calc(0px - var(--offset));
