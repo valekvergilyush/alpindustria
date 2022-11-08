@@ -9,13 +9,16 @@
 			top: auto;
 			left: 0;
 			right: 0;
-			bottom: 32px;
+			bottom: 24px;
 			flex-direction: row;
 			width: 100%;
 			height: auto;
 			[data-nav].tns-nav-active {
 				width: 41px;
 				height: auto;
+			}
+			@media (max-width: $mobile-lg) {
+				bottom: 16px;
 			}
 		}
 	}
@@ -29,6 +32,18 @@
 		z-index: 1;
 		width: rem(702);
 		margin-left: auto;
+		@media (max-width: $laptop-lg) {
+			width: 582px;
+		}
+		@media (max-width: $laptop) {
+			width: 416px;
+		}
+		@media (max-width: $tablet) {
+			margin-top: 306px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 172px;
+		}
 	}
 	&__item {
 		display: flex;
@@ -47,13 +62,53 @@
 		&._trails {
 			background-color: var(--green-light);
 		}
+		@media (max-width: $laptop-lg) {
+			min-height: 630px;
+		}
+		@media (max-width: $laptop) {
+			min-height: 527px;
+			padding-bottom: 29px;
+		}
+		@media (max-width: $tablet) {
+			min-height: auto;
+			padding-bottom: 54px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-top: 30px;
+			padding-bottom: 47px;
+		}
 	}
 	&__subtitle {
 		margin-bottom: auto;
-		line-height: 1.25;
+		line-height: 1.2;
+		@media (max-width: $tablet) {
+			margin-bottom: 103px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 89px;
+			font-size: 54px;
+		}
 	}
 	&__text {
-		margin-bottom: rem(32);
+		margin-bottom: rem(28);
+		@media (max-width: $laptop) {
+			margin-bottom: 16px;
+			line-height: 1.5;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 12px;
+			font-size: 16px;
+		}
+	}
+	&__link {
+		font-size: rem(20);
+		letter-spacing: -0.04em;
+		@media (max-width: $laptop) {
+			.button__icon {
+				--size: 16px !important;
+				margin-left: 14px !important;
+			}
+		}
 	}
 	&__bg-img {
 		position: absolute;
@@ -104,7 +159,7 @@
 			}
 		}
 		@media (max-width: $laptop) {
-			right: 40px;
+			right: 32px;
 		}
 		@media (max-width: $tablet) {
 			right: 22px;

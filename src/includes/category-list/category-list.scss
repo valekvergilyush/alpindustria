@@ -25,6 +25,15 @@
 		&:last-child {
 			width: calc(382 / 1728 * 99%);
 		}
+		@media (max-width: $tablet) {
+			width: 49% !important;
+		}
+		@media (max-width: $mobile-lg) {
+			width: 100% !important;
+			&:nth-child(4) {
+				display: none;
+			}
+		}
 	}
 	&__link {
 		--cell-padding: #{rem(64)};
@@ -82,10 +91,51 @@
 				transform: scale(1.01);
 			}
 		}
+		@media (max-width: $desktop) {
+			@include smoothValue('--cell-height', 398px, 496px, $laptop-lg, $desktop);
+		}
+		@media (max-width: $laptop-lg) {
+			@include smoothValue('--cell-height', 304px, 398px, $laptop, $laptop-lg);
+			--cell-padding: 41px;
+		}
+		@media (max-width: $laptop) {
+			--cell-padding: 33px;
+			--arrow-size: 64px;
+			@include smoothValue('--cell-height', 280px, 304px, $tablet, $laptop);
+		}
+		@media (max-width: $tablet) {
+			--cell-padding: 23px;
+			&::before {
+				opacity: 1;
+			}
+			&:hover {
+				#{$this}__link-img {
+					transform: none;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			--arrow-size: 40px;
+			--cell-height: 240px;
+			padding: 26px 16px;
+			&._all {
+				column-gap: 8px;
+				height: 124px;
+				padding-right: 16px;
+				padding-bottom: 19px;
+				font-size: 14px !important;
+			}
+		}
 	}
 	&__link-name {
 		position: relative;
 		z-index: 1;
+		@media (max-width: $laptop-md) {
+			font-size: 30px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 22px;
+		}
 	}
 	&__link-img {
 		position: absolute;
@@ -95,12 +145,17 @@
 		height: 101%;
 		max-height: none;
 		object-fit: cover;
-		transition: transform $default-transition-duration $default-transition-function;
+		transition: transform 1s $default-transition-function;
+		will-change: transition;
+		pointer-events: none;
 	}
 	&__link-icon {
 		--size: #{rem(16)};
 		width: var(--size);
 		height: var(--size);
 		margin-bottom: 0.3em;
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 0.2em;
+		}
 	}
 }
