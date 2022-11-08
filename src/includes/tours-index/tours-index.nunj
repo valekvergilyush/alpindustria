@@ -1,0 +1,4 @@
+<section class="tours-index">
+	<h2 class="tours-index__title page__section-title h4 ttu">Туры</h2>
+	{% include "../hero-trails/hero-trails-tours.nunj" %}
+</section>

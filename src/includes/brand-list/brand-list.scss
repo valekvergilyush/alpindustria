@@ -9,12 +9,34 @@
 		background-color: var(--blue-dark);
 		border-top: 1px solid var(--blue-dark);
 		border-bottom: 1px solid var(--blue-dark);
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(6, 1fr);
+		}
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	&__item {
 		display: flex;
 		flex-grow: 1;
 		&._wide {
 			grid-column: span 2;
+		}
+		@media (max-width: $tablet) {
+			grid-column: span 2;
+			&._wide {
+				grid-column: span 3;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			grid-column: auto;
+			&._wide,
+			&:last-child {
+				grid-column: span 2;
+			}
+			&:nth-child(3) {
+				display: none;
+			}
 		}
 	}
 	&__link {
@@ -31,13 +53,14 @@
 			background-color $default-transition-duration $default-transition-function,
 			column-gap $default-transition-duration $default-transition-function;
 		&._all {
+			--padding: #{rem(64)};
 			display: flex;
 			justify-content: flex-end;
 			align-items: flex-end;
 			column-gap: rem(16);
 			padding: rem(20);
-			padding-right: rem(64);
-			padding-bottom: rem(64);
+			padding-right: var(--padding);
+			padding-bottom: var(--padding);
 			color: var(--white);
 			background-color: var(--blue-dark);
 			&:hover {
@@ -50,14 +73,44 @@
 			color: var(--blue-dark);
 			background-color: var(--white);
 		}
+		@media (max-width: $desktop) {
+			@include smoothValue('--cell-size', 291px, 344px, $laptop-lg, $desktop);
+		}
+		@media (max-width: $laptop-lg) {
+			@include smoothValue('--cell-size', 207px, 291px, $laptop, $laptop-lg);
+			padding: 38px;
+			&._all {
+				--padding: 38px;
+			}
+		}
+		@media (max-width: $tablet) {
+			@include smoothValue('--cell-size', 159px, 207px, $mobile, $tablet);
+			padding: 22px;
+			&._all {
+				--padding: 22px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._all {
+				column-gap: 8px;
+				height: 124px;
+				padding-right: 16px;
+				padding-bottom: 19px;
+				font-size: 14px !important;
+			}
+		}
 	}
 	&__link-img {
 		width: 100%;
+		object-fit: contain;
 	}
 	&__link-icon {
 		--size: #{rem(16)};
 		width: var(--size);
 		height: var(--size);
 		margin-bottom: 0.3em;
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 0.2em;
+		}
 	}
 }

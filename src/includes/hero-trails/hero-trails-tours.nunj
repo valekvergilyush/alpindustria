@@ -1,0 +1,56 @@
+{% set tours = [
+	{
+		title: 'Альпы',
+		tags: ['Туры', 'Россия'],
+		text: 'Познавательный, насыщенный и&nbsp;разнообразный тур, знакомящий вас с&nbsp;самыми яркими туристическими объектами Камчатки за&nbsp;короткий срок.',
+		img: '/assets/images/tours/tours-index',
+		className: '_active'
+	},
+	{
+		title: 'Эверест',
+		tags: ['Туры', 'Россия'],
+		text: 'Познавательный, насыщенный и&nbsp;разнообразный тур, знакомящий вас с&nbsp;самыми яркими туристическими объектами Камчатки за&nbsp;короткий срок.',
+		img: '/assets/images/tours/tours-index'
+	},
+	{
+		title: 'Камчатка',
+		tags: ['Туры', 'Россия'],
+		text: 'Познавательный, насыщенный и&nbsp;разнообразный тур, знакомящий вас с&nbsp;самыми яркими туристическими объектами Камчатки за&nbsp;короткий срок.',
+		img: '/assets/images/tours/tours-index'
+	},
+	{
+		title: 'Казбек',
+		tags: ['Туры', 'Россия'],
+		text: 'Познавательный, насыщенный и&nbsp;разнообразный тур, знакомящий вас с&nbsp;самыми яркими туристическими объектами Камчатки за&nbsp;короткий срок.',
+		img: '/assets/images/tours/tours-index'
+	},
+	{
+		title: 'Эльбрус',
+		tags: ['Туры', 'Россия'],
+		text: 'Познавательный, насыщенный и&nbsp;разнообразный тур, знакомящий вас с&nbsp;самыми яркими туристическими объектами Камчатки за&nbsp;короткий срок.',
+		img: '/assets/images/tours/tours-index'
+	}
+] %}
+
+<section class="hero-trails _tours">
+	<ul class="hero-trails__list" style="--total: {{ tours.length }};--closed: {{ tours.length - 1 }};" data-vaccordion>
+		{% for tour in tours %}
+			<li class="hero-trails__item{% if tour.className %} {{ tour.className }}{% endif %}" style="--i:{{ loop.index0 }}" data-vaccordion-item>
+				<div class="hero-trails__info">
+					<h2 class="hero-trails__title h5 ttu">{{ tour.title }}</h2>
+					{% if tour.tags %}
+						<ul class="hero-trails__tags">
+							{% for tag in tour.tags %}
+								<li class="hero-trails__tag button _quick-filter">{{ tag }}</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+					<p class="hero-trails__text p1">{{ tour.text }}</p>
+				</div>
+				{% if tour.img %}
+					<img class="hero-trails__bg-img" src="{{ tour.img }}.jpg" srcset="{{ tour.img }}@2x.jpg 2x" width="1289" height="900" alt="">
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

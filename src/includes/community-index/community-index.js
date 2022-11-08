@@ -1,6 +1,8 @@
 import { tns } from 'tiny-slider';
 import Utils from '../../assets/js/utils/utils';
 
+const HTML_CLASSLIST = document.documentElement.classList;
+
 const ClassName = {
 	ACTIVE: '_active',
 	HORIZONTAL: '_horizontal',
@@ -36,18 +38,20 @@ class CommunityIndex {
 					this.slider.tns = null;
 				}
 				this._initSlider();
+				HTML_CLASSLIST.remove(ClassName.ANIMATIONS);
 			} else {
 				if (this.slider.tns) {
 					this.slider.tns.destroy();
 					this.slider.tns = null;
 				}
 				this._initSlider('vertical');
+				HTML_CLASSLIST.add(ClassName.ANIMATIONS);
 			}
 		};
 
 		this.mqTablet.addEventListener('change', onWindowWidthChange);
 		onWindowWidthChange(this.mqTablet);
-		document.documentElement.classList.add(ClassName.ANIMATIONS);
+
 		window.addEventListener('scroll', this._onWindowScroll);
 		this._onWindowScroll();
 	}

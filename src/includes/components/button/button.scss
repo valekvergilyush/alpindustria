@@ -310,6 +310,8 @@
 		width: var(--width, 100%);
 		height: var(--height, #{rem(280)});
 		border: 1px solid currentColor;
+		border-left: 0;
+		border-right: 0;
 		text-transform: uppercase;
 
 		font-size: var(--font-size-h7);

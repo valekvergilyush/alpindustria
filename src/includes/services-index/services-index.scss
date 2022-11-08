@@ -2,6 +2,9 @@
 	display: flex;
 	gap: 1px;
 	background-color: var(--blue-dark);
+	@media (max-width: $laptop-sm) {
+		flex-direction: column;
+	}
 	&__item {
 		position: relative;
 		display: flex;
@@ -9,13 +12,22 @@
 		justify-content: center;
 		align-items: center;
 		width: 50%;
-		min-height: rem(820);
+		min-height: var(--100vh);
 		border-bottom: 1px solid var(--blue-dark);
 		background-color: var(--gray-light);
 		transition: width $default-transition-duration $default-transition-function;
+		@media (max-width: $laptop-sm) {
+			width: auto;
+			min-height: 480px;
+		}
+		@media (max-width: $mobile-lg) {
+			box-sizing: border-box;
+			min-height: 370px;
+			padding: 24px;
+		}
 	}
 	&__link {
-		margin-bottom: rem(32);
+		margin-bottom: rem(24);
 		transition: color $default-transition-duration $default-transition-function;
 		&::after {
 			content: '';
@@ -35,19 +47,62 @@
 				background-color: var(--green-dark);
 			}
 		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 16px;
+		}
+		@media (max-width: $laptop-sm) {
+			display: flex;
+			align-items: center;
+			column-gap: 32px;
+			margin-bottom: 26px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 13px;
+		}
+	}
+	&__link-icon {
+		display: none;
+		@media (max-width: $laptop-sm) {
+			position: relative;
+			z-index: 1;
+			display: block;
+		}
+		@media (max-width: $mobile-lg) {
+			width: 40px;
+			height: 40px;
+		}
 	}
 	&__link-text {
 		position: relative;
 		z-index: 1;
+		display: inline-block;
+		padding-top: 0.1em;
 	}
 	&__tags {
 		position: relative;
 		z-index: 1;
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(8);
+		gap: rem(4);
 		transition: color $default-transition-duration $default-transition-function;
 		pointer-events: none;
+		@media (max-width: $laptop-lg) {
+			gap: 8px;
+		}
+		@media (max-width: $mobile-lg) {
+			justify-content: center;
+		}
+	}
+	&__tags-item {
+		font-size: rem(16) !important;
+		padding-top: 0.2em !important;
+		@media (max-width: $laptop-lg) {
+			font-size: 18px !important;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-top: 0.1em !important;
+			font-size: 14px !important;
+		}
 	}
 	&__link:hover + &__tags {
 		color: var(--white);

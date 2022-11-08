@@ -12,6 +12,7 @@
 		{% include "../includes/address-index/address-index.nunj" %}
 		{% include "../includes/community-index/community-index.nunj" %}
 		{% include "../includes/services-index/services-index.nunj" %}
+		{% include "../includes/tours-index/tours-index.nunj" %}
 		{% include "../includes/news-index/news-index.nunj" %}
 		{% include "../includes/catalog-accordion/catalog-accordion-index.nunj" %}
 	</main>
