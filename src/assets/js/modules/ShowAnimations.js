@@ -14,7 +14,7 @@ class ShowAnimations {
 
 	init() {
 		this.animatedBlocks = document.querySelectorAll(
-			'[data-animation]:not([data-slider-animation])'
+			'[data-animation]:not([data-slider-animation]), [data-lottie-autoplay-trigger]'
 		);
 
 		if (!this.animatedBlocks.length) {
@@ -36,7 +36,14 @@ class ShowAnimations {
 			if (!isAnimated) {
 				const isInViewport = Utils.isElementInViewport(block, 1.2);
 
-				isInViewport && block.classList.add(ClassName.ANIMATED);
+				if (isInViewport) {
+					if (block.hasAttribute('data-lottie-autoplay-trigger')) {
+						const lottieBlock = block.nextElementSibling;
+
+						lottieBlock.lottieAnimation && lottieBlock.lottieAnimation.play();
+					}
+					block.classList.add(ClassName.ANIMATED);
+				}
 			}
 		});
 	}
