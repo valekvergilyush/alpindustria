@@ -6,7 +6,9 @@
 	height: 100vh;
 	overflow: hidden;
 	&._how {
-		background-color: var(--violet-light);
+		@media (max-width: $tablet) {
+			background-color: var(--violet-light);
+		}
 		#{$this}__title {
 			padding-right: rem(150);
 			@media (max-width: $laptop-md) {
@@ -210,15 +212,22 @@
 		}
 	}
 	&__wrapper {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		padding-block: var(--padding-y);
-		border-left: 1px solid currentColor;
 		@media (max-width: $tablet) {
 			border: 0;
 			margin-inline: calc(0px - var(--container-padding));
 			padding-top: 0;
 			padding-bottom: 0;
+		}
+	}
+	&__title-wrapper {
+		display: flex;
+		border-right: 1px solid currentColor;
+		@media (max-width: $tablet) {
+			border: 0;
 		}
 	}
 	&__list {
