@@ -44,7 +44,7 @@
 			display: none;
 		}
 	}
-	&__city-btn {
+	&__city {
 		@include reset-btn;
 		flex-shrink: 0;
 		display: flex;
@@ -60,6 +60,16 @@
 		@media (max-width: $laptop-sm) {
 			font-size: 30px;
 			line-height: 39px;
+			#{$this}._wrap-active & {
+				@media (max-width: $laptop-sm) {
+					display: none;
+				}
+			}
+			#{$this}._wrap-active &._active {
+				@media (max-width: $laptop-sm) {
+					display: flex;
+				}
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 22px;
@@ -100,9 +110,15 @@
 		background-color: var(--gray-light);
 		overflow: auto;
 		@media (max-width: $laptop-sm) {
+			display: none;
 			flex-direction: column;
 			border-top: 1px solid var(--blue-dark);
 			overflow: initial;
+		}
+		#{$this}._wrap-active & {
+			@media (max-width: $laptop-sm) {
+				display: flex;
+			}
 		}
 	}
 	&__map {
@@ -122,12 +138,16 @@
 		min-width: calc(var(--tabs-min-width));
 	}
 	&__tab {
-		display: flex;
+		display: none;
 		width: 100%;
+		&._active {
+			display: flex;
+		}
 	}
 	&__shops {
 		display: flex;
 		@media (max-width: $laptop-sm) {
+			width: 100%;
 			flex-direction: column;
 		}
 	}
@@ -137,6 +157,9 @@
 		@media (max-width: $laptop-sm) {
 			border-left: none;
 			border-top: 1px solid var(--blue-dark);
+			&:not(._active):not(:first-child) {
+				margin-top: -32px;
+			}
 		}
 	}
 }

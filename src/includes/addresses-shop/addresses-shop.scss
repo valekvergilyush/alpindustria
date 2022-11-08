@@ -10,6 +10,7 @@
 	display: flex;
 	justify-content: flex-start;
 	width: var(--close-width);
+	background-color: var(--gray-light);
 	position: relative;
 	overflow: hidden;
 	transition: width $default-transition-duration $default-transition-function,
@@ -50,6 +51,12 @@
 		@media (max-width: $laptop-md) {
 			padding: var(--container-padding);
 		}
+		@media (max-width: $laptop-sm) {
+			padding: 8px var(--container-padding);
+			#{$this}._active & {
+				padding: var(--container-padding);
+			}
+		}
 	}
 	&__btn {
 		@include reset-btn;
@@ -88,6 +95,16 @@
 		margin-top: rem(68);
 		#{$this}._active & {
 			display: flex;
+		}
+	}
+	&__place {
+		@media (max-width: $laptop-sm) {
+			font-size: 64px;
+			line-height: 64px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 38px;
+			line-height: 40px;
 		}
 	}
 	&__block {
