@@ -151,3 +151,13 @@
 .hidden {
 	display: none !important;
 }
+
+.text-stroke {
+	--stroke-color: var(--gray-dark);
+	color: transparent;
+	-webkit-text-stroke: 1px var(--stroke-color);
+	text-stroke: 1px var(--stroke-color);
+	&._blue-dark {
+		--stroke-color: var(--blue-dark);
+	}
+}
