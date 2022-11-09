@@ -20,13 +20,13 @@ class AddressesScroll {
 			if (evt.target.closest('.addresses-shop._active')) {
 				return;
 			}
-			const derection = this.wheelDirection(evt);
-			const documtentScrollTop = document.documentElement.scrollTop;
+			const direction = this.wheelDirection(evt);
+			const documentScrollTop = document.documentElement.scrollTop;
 			const scrollCondition =
-				(derection === 'up' &&
+				(direction === 'up' &&
 					this.addressContentScrollProgress !== 0 &&
-					documtentScrollTop === 0) ||
-				(derection === 'down' && this.addressContentScrollProgress !== 100);
+					documentScrollTop === 0) ||
+				(direction === 'down' && this.addressContentScrollProgress !== 100);
 			if (scrollCondition) {
 				evt.preventDefault();
 				this.addressContentBlock.scrollLeft += evt.deltaY;

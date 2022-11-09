@@ -58,9 +58,6 @@
 		padding: var(--container-padding);
 		overflow: auto;
 		box-sizing: border-box;
-		// @media (max-width: $laptop-md) {
-		// 	padding: var(--container-padding);
-		// }
 		@media (max-width: $laptop-sm) {
 			padding: 8px var(--container-padding);
 			#{$this}._active & {
