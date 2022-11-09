@@ -13,5 +13,6 @@
 		{% include "../includes/history/history-1994.nunj" %}
 		{% include "../includes/history/history-2000.nunj" %}
 		{% include "../includes/history/history-today.nunj" %}
+		{% include "../includes/team/team.nunj" %}
 	</main>
 {% endblock %}
