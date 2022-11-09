@@ -2,54 +2,144 @@
 	display: flex;
 	gap: 1px;
 	background-color: var(--blue-dark);
+	@media (max-width: $laptop-sm) {
+		flex-direction: column;
+	}
 	&__item {
+		--width: calc(100% / 2 - 1px / 2);
+		--hover-width: 59%;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 50%;
-		min-height: rem(820);
+		width: var(--width);
+		min-height: var(--100vh);
+		box-sizing: border-box;
+		margin: 0;
+		padding: rem(24);
 		border-bottom: 1px solid var(--blue-dark);
 		background-color: var(--gray-light);
-		transition: width $default-transition-duration $default-transition-function;
+		transition: all $default-transition-duration $default-transition-function;
+		@media (max-width: $laptop-sm) {
+			width: auto;
+			min-height: 480px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 370px;
+		}
+		@media (min-width: ($laptop-sm + 1px)) {
+			&:hover {
+				width: var(--hover-width);
+				color: var(--white);
+				&._violet {
+					background-color: var(--violet-dark);
+				}
+				&._green {
+					background-color: var(--green-dark);
+				}
+			}
+			&:nth-child(odd) {
+				animation: zIndexDown $default-transition-duration $default-transition-function forwards;
+			}
+			&:nth-child(odd):hover {
+				margin-right: calc(var(--width) - var(--hover-width));
+				animation: zIndexUp $default-transition-duration $default-transition-function forwards;
+			}
+			&:nth-child(even):hover {
+				margin-left: calc(var(--width) - var(--hover-width));
+			}
+		}
 	}
 	&__link {
-		margin-bottom: rem(32);
+		margin-bottom: rem(24);
 		transition: color $default-transition-duration $default-transition-function;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			transition: background-color $default-transition-duration $default-transition-function;
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 16px;
 		}
-		&:hover {
-			color: var(--white);
-			&._violet::after {
-				background-color: var(--violet-dark);
-			}
-			&._green::after {
-				background-color: var(--green-dark);
-			}
+		@media (max-width: $laptop-sm) {
+			display: flex;
+			align-items: center;
+			column-gap: 32px;
+			margin-bottom: 26px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 13px;
+		}
+	}
+	&__link-icon {
+		display: none;
+		@media (max-width: $laptop-sm) {
+			position: relative;
+			z-index: 1;
+			display: block;
+			flex-shrink: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			width: 40px;
+			height: 40px;
 		}
 	}
 	&__link-text {
 		position: relative;
 		z-index: 1;
+		display: inline-block;
+		padding-top: 0.1em;
+		@media (max-width: $laptop-md) {
+			font-size: 80px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 54px;
+		}
+		@media (max-width: ($mobile - 1px)) {
+			font-size: 42px;
+		}
 	}
 	&__tags {
 		position: relative;
 		z-index: 1;
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(8);
+		gap: rem(4);
 		transition: color $default-transition-duration $default-transition-function;
 		pointer-events: none;
+		@media (max-width: $laptop-lg) {
+			gap: 8px;
+		}
+		@media (max-width: $mobile-lg) {
+			justify-content: center;
+		}
 	}
-	&__link:hover + &__tags {
-		color: var(--white);
+	&__tags-item {
+		font-size: rem(16) !important;
+		padding-top: 0.2em !important;
+		@media (max-width: $laptop-lg) {
+			font-size: 18px !important;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-top: 0.1em !important;
+			font-size: 14px !important;
+		}
+		@media (max-width: ($mobile - 1px)) {
+			padding-top: 0.2em !important;
+			font-size: 12px !important;
+		}
+	}
+}
+
+@keyframes zIndexUp {
+	from {
+		z-index: 0;
+	}
+	to {
+		z-index: 2;
+	}
+}
+@keyframes zIndexDown {
+	from {
+		z-index: 2;
+	}
+	to {
+		z-index: 0;
 	}
 }

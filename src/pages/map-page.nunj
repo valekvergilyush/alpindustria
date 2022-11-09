@@ -2,7 +2,6 @@
 
 {% block title %}Карта | {{ super() }}{% endblock title %}
 
-
 {% block mainContent %}
 	<main class="page__main _pt _white-bg">
 		<div class="map" data-map="cart" style="height: 500px;"></div>

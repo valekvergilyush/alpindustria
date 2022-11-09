@@ -3,8 +3,29 @@
 	&._index {
 		background: 0;
 		#{$this}__section-title {
-			padding-top: rem(176);
-			padding-bottom: rem(64);
+			padding-top: rem(180);
+			padding-bottom: rem(57);
+		}
+		@media (max-width: $laptop-lg) {
+			#{$this}__section-title {
+				padding-bottom: 34px;
+			}
+		}
+		@media (max-width: $laptop) {
+			#{$this}__section-title {
+				padding-top: 128px;
+				padding-bottom: 28px;
+			}
+		}
+		@media (max-width: $tablet) {
+			#{$this}__section-title {
+				padding-bottom: 19px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}__section-title {
+				padding-top: 68px;
+			}
 		}
 	}
 }

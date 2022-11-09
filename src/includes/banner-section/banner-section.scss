@@ -1,10 +1,38 @@
 .banner-section {
 	$this: &;
 	position: relative;
-	background-color: var(--blue-dark);
-	color: var(--white);
-	overflow: hidden;
-	&__wrap {
+	&._horizontal {
+		--slider-dots-height: #{rem(42)};
+		#{$this}__content {
+			padding-bottom: calc(var(--container-padding) + var(--slider-dots-height));
+		}
+		.tns-nav {
+			top: auto;
+			left: 0;
+			right: 0;
+			bottom: 24px;
+			flex-direction: row;
+			width: 100%;
+			height: auto;
+			[data-nav].tns-nav-active {
+				width: 41px;
+				height: auto;
+			}
+			@media (max-width: $mobile-lg) {
+				bottom: 16px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			--slider-dots-height: 32px;
+		}
+	}
+	&__item {
+		position: relative;
+		background-color: var(--blue-dark);
+		color: var(--white);
+		overflow: hidden;
+	}
+	&__content {
 		position: relative;
 		z-index: 1;
 		padding-top: var(--container-padding);
@@ -82,7 +110,8 @@
 			max-width: 466px;
 		}
 		@media (max-width: $mobile-lg) {
-			max-width: 251px;
+			max-width: none;
+			padding-right: 64px;
 			font-size: 12px;
 			line-height: 16px;
 		}
@@ -94,6 +123,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		pointer-events: none;
 	}
 	&__link {
 		&::before {
@@ -122,6 +152,49 @@
 			&::before {
 				background-image: inline('promo-arrow-white.svg');
 			}
+		}
+	}
+
+	.tns-nav {
+		--size: #{rem(10)};
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: var(--container-padding);
+		bottom: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: var(--size);
+		width: auto;
+		height: 100%;
+		pointer-events: none;
+		[data-nav] {
+			@include reset-btn;
+			width: var(--size);
+			height: var(--size);
+			border-radius: 50%;
+			color: transparent;
+			background-color: var(--white);
+			overflow: hidden;
+			opacity: 0.8;
+			transition: all $default-transition-duration $default-transition-function;
+			pointer-events: all;
+			&.tns-nav-active {
+				height: rem(43);
+				border: 1px solid var(--white);
+				border-radius: 100vmax;
+				background: 0;
+			}
+		}
+		@media (max-width: $laptop) {
+			right: 32px;
+		}
+		@media (max-width: $tablet) {
+			right: 22px;
+		}
+		@media (max-width: $mobile-lg) {
+			right: 15px;
 		}
 	}
 }

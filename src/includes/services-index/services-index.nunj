@@ -1,3 +1,5 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
 {% set links = [
 	{
 		text: 'Прокат',
@@ -13,11 +15,16 @@
 	}
 ] %}
 
-<ul class="services-index">
+<ul class="services-index" data-services>
 	{% for link in links %}
-		<li class="services-index__item">
-			<a class="services-index__link h2 ttu{% if link.className %} {{ link.className }}{% endif %}" href="{{ link.url }}">
+		<li class="services-index__item{% if link.className %} {{ link.className }}{% endif %}" data-services-item>
+			<a class="services-index__link h2 ttu" href="{{ link.url }}">
 				<span class="services-index__link-text">{{ link.text }}</span>
+				{{ icon({
+					iconName: 'promo-arrow-filled',
+					className: 'services-index__link-icon',
+					attr: 'width="64" height="64"'
+				}) }}
 			</a>
 			{% if link.tags %}
 				<ul class="services-index__tags">

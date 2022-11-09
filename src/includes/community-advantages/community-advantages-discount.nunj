@@ -19,7 +19,9 @@
 
 <section class="community-advantages _discount" data-community-advantages>
 	<div class="community-advantages__container container">
-		<h2 class="community-advantages__title h4 ttu" data-animation="words">Условия участия в&nbsp;дисконтной программе</h2>
+		<div class="community-advantages__title-wrapper">
+			<h2 class="community-advantages__title h4 ttu" data-animation="words">Условия участия в&nbsp;дисконтной программе</h2>
+		</div>
 		<div class="community-advantages__wrapper">
 			<ul class="community-advantages__list s2">
 				{% for item in list %}

@@ -17,7 +17,7 @@
 ] %}
 
 <section class="address-index">
-	<h2 class="address-index__title page__section-title h4 ttu">Адреса магазинов</h2>
+	<h2 class="address-index__title page__section-title h4 ttu"><span>Адреса</span> <span>магазинов</span></h2>
 	<div class="address-index__container container">
 		<dl class="address-index__numbers">
 			{% for number in numbersList %}

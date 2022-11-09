@@ -134,6 +134,7 @@
 		transform: translateX(-15px) translateY(-50%);
 		width: rem(460);
 		height: rem(302);
+		max-height: none;
 		object-fit: cover;
 		border-radius: rem(15);
 		pointer-events: none;
