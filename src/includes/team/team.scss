@@ -1,0 +1,105 @@
+.team {
+	$this: &;
+	&__title {
+		margin-top: rem(176);
+		margin-bottom: rem(64);
+	}
+	&__list {
+		--gap: 1px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1px;
+		border-top: 1px solid var(--blue-dark);
+		background-color: var(--blue-dark);
+	}
+	&__item {
+		--cols-number: 4;
+		--gaps-number: calc(var(--cols-number) - 1);
+		--width: calc(
+			100% / var(--cols-number) - (var(--gap) * var(--gaps-number) / var(--cols-number))
+		);
+		--button-size: #{rem(32)};
+		--button-pos: #{rem(24)};
+		position: relative;
+		padding-bottom: var(--width);
+		height: 0;
+		width: var(--width);
+		overflow: hidden;
+		cursor: pointer;
+		&::after {
+			@extend .animated;
+			content: '';
+			position: absolute;
+			top: var(--button-pos);
+			right: var(--button-pos);
+			width: var(--button-size);
+			height: var(--button-size);
+			background-image: inline('plus-circle-button.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: 0;
+			transition: background $default-transition-duration $default-transition-function,
+				opacity $default-transition-duration $default-transition-function;
+		}
+		&:hover {
+			&::after {
+				opacity: 1;
+			}
+		}
+		&._active {
+			&::after {
+				z-index: 1;
+				opacity: 1;
+				background-image: inline('minus-circle-button.svg');
+			}
+			#{$this}__item-photo {
+				opacity: 0;
+				pointer-events: none;
+			}
+			#{$this}__item-details {
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+		@media (max-width: $laptop-sm) {
+			--cols-number: 3;
+		}
+		@media (max-width: $mobile-lg) {
+			--width: 100%;
+		}
+	}
+	&__item-details {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		height: 100%;
+		padding: rem(32);
+		color: var(--white);
+		background-color: var(--blue-dark);
+		opacity: 0;
+		pointer-events: none;
+	}
+	&__item-name {
+		margin-bottom: rem(8);
+	}
+	&__item-title {
+		opacity: 0.6;
+	}
+	&__item-info {
+		margin-top: auto;
+	}
+	&__item-photo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right;
+	}
+}
