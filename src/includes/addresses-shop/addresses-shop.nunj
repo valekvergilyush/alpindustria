@@ -14,13 +14,15 @@
 		<div class="addresses-shop__inner">
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Адрес</p>
-				<div class="addresses-shop__block _3">
-					<p class="p1">наб. Черной речки, д. 6</p>
-					<p class="addresses-shop__point p3">м.Черная речка</p>
+				<div class="addresses-shop__block _2">
+					<div class="addresses-shop__block _4">
+						<p class="p1">наб. Черной речки, д. 6</p>
+						<p class="addresses-shop__point p3">м.Черная речка</p>
+					</div>
+					<p class="addresses-shop__exclamation p4">
+						Будьте внимательны! Парковка на 1-й Парковой улице запрещена, в том числе в «карманах» рядом с магазином.
+					</p>
 				</div>
-				<p class="addresses-shop__exclamation p4">
-					Будьте внимательны! Парковка на 1-й Парковой улице запрещена, в том числе в «карманах» рядом с магазином.
-				</p>
 			</div>
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Время работы</p>
@@ -31,14 +33,14 @@
 			</div>
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Контакты</p>
-				<div class="addresses-shop__block">
+				<div class="addresses-shop__block _3">
 					<a href="tel:+7(812)242-11-95" class="h7">+7 (812) 242-11-95</a>
-					<a href="mailto:info.spb@alpindustria.ru" class="h7">info.spb@alpindustria.ru</a>
+					<a href="mailto:info.spb@alpindustria.ru" class="h7 ttu">info.spb@alpindustria.ru</a>
 				</div>
 			</div>
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Cервисы</p>
-				<div class="addresses-shop__block _2">
+				<div class="addresses-shop__block _3">
 					{% for item in addressLinks %}
 						<a href="#" class="addresses-shop__arrow h7 ttu">
 							{{ item }}
@@ -53,7 +55,7 @@
 			</div>
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Фото</p>
-				<div class="addresses-shop__block">
+				<div class="addresses-shop__block _2">
 					<img src="/assets/images/addresses/addresses-img-1.jpg" alt="Фото">
 					<img src="/assets/images/addresses/addresses-img-2.jpg" alt="Фото">
 				</div>

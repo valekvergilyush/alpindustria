@@ -72,6 +72,7 @@ class AlpIndustry {
 			ShowAnimations: require('./modules/ShowAnimations').default,
 			LottieAnimations: require('./modules/LottieAnimations').default,
 			ArticleSlider: require('./modules/ArticleSlider').default,
+			AddressesScroll: require('./modules/AddressesScroll').default,
 		};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');

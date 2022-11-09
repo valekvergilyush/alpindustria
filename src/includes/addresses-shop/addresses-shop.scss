@@ -1,9 +1,10 @@
 .addresses-shop {
 	$this: &;
 	--gap: #{rem(56)};
-	--gap-1: #{rem(24)};
-	--gap-2: #{rem(16)};
-	--gap-3: #{rem(8)};
+	--gap-1: #{rem(32)};
+	--gap-2: #{rem(24)};
+	--gap-3: #{rem(16)};
+	--gap-4: #{rem(8)};
 	--close-width: #{rem(320)};
 	--hover-width: #{rem(421)};
 	--open-width: #{rem(555)};
@@ -20,15 +21,24 @@
 		--close-width: 236px;
 		--hover-width: 402px;
 		--open-width: 415px;
+		--gap: 48px;
 	}
 	@media (max-width: $laptop-md) {
 		--close-width: 228px;
 		--hover-width: var(--close-width);
 		--open-width: 292px;
+		--gap: 32px;
+		--gap-1: 20px;
+		--gap-2: 20px;
 	}
 	@media (max-width: $laptop-sm) {
 		--close-width: 100%;
 		--open-width: 100%;
+	}
+	@media (max-width: $mobile-lg) {
+		--gap-1: 16px;
+		--gap-2: 16px;
+		--gap-3: 8px;
 	}
 	&:hover {
 		width: var(--hover-width);
@@ -45,12 +55,12 @@
 	&__wrap {
 		flex-shrink: 0;
 		width: var(--open-width);
-		padding: var(--container-padding) rem(40);
+		padding: var(--container-padding);
 		overflow: auto;
 		box-sizing: border-box;
-		@media (max-width: $laptop-md) {
-			padding: var(--container-padding);
-		}
+		// @media (max-width: $laptop-md) {
+		// 	padding: var(--container-padding);
+		// }
 		@media (max-width: $laptop-sm) {
 			padding: 8px var(--container-padding);
 			#{$this}._active & {
@@ -92,7 +102,13 @@
 		display: none;
 		flex-direction: column;
 		gap: var(--gap);
-		margin-top: rem(68);
+		margin-top: rem(60);
+		@media (max-width: $laptop-lg) {
+			margin-top: 48px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-top: 32px;
+		}
 		#{$this}._active & {
 			display: flex;
 		}
@@ -116,6 +132,9 @@
 		}
 		&._3 {
 			gap: var(--gap-3);
+		}
+		&._4 {
+			gap: var(--gap-4);
 		}
 	}
 	&__point {

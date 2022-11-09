@@ -209,6 +209,31 @@ const MAP_DATA_CART = {
 		},
 	],
 };
+const MAP_DATA_ADDRESSES = {
+	mapData: {
+		center: {
+			lat: 40.712784,
+			lng: -74.005941,
+		},
+		zoom: 11,
+	},
+	pointsData: [
+		{
+			position: {
+				lat: 40.712784,
+				lng: -73.994606,
+			},
+			content: CONTENT,
+		},
+		{
+			position: {
+				lat: 40.712784,
+				lng: -74.1,
+			},
+			content: CONTENT,
+		},
+	],
+};
 
 class Map {
 	constructor() {
@@ -227,8 +252,12 @@ class Map {
 		gmapApi.load().then(() => {
 			//cart map
 			const cartMapBlock = document.querySelector(`[data-map="cart"]`);
+			const addressMapBlock = document.querySelector(`[data-map="address"]`);
 			if (cartMapBlock) {
 				this.renderMap(cartMapBlock, MAP_DATA_CART);
+			}
+			if (addressMapBlock) {
+				this.adressesMap = this.renderMap(addressMapBlock, MAP_DATA_ADDRESSES);
 			}
 		});
 	}
@@ -259,10 +288,13 @@ class Map {
 		this.setControlOptions('zoom', true, 'LEFT_BOTTOM', '', null);
 		// eslint-disable-next-line no-undef
 		const googleMap = new google.maps.Map(mapBlock, this.opts);
+		googleMap.markers = [];
 
 		data.pointsData.forEach(point => {
 			this.setPoint(googleMap, point);
 		});
+
+		return googleMap;
 	}
 
 	setPoint(map, pointData) {
@@ -284,7 +316,7 @@ class Map {
 		};
 		// eslint-disable-next-line no-undef
 		const marker = new google.maps.Marker(markerOptions);
-
+		map.markers.push(marker);
 		// eslint-disable-next-line no-undef
 		const infowindow = new google.maps.InfoWindow({
 			content: pointData.content,
@@ -297,6 +329,13 @@ class Map {
 		google.maps.event.addListener(map, 'click', function () {
 			infowindow.close();
 		});
+	}
+
+	clearPoints(map) {
+		map.markers.forEach(marker => {
+			marker.setMap(null);
+		});
+		map.markers = [];
 	}
 
 	setControlOptions(key, enabled, position, style, mapTypeIds) {

@@ -31,15 +31,20 @@
 			</button>
 		{% endfor %}
 	</div>
-	<div class="addresses__content">
-		<div class="addresses__map map" data-map="addresses"></div>
+	<div class="addresses__content" data-addresses-content>
+		<div class="addresses__map map" data-map="address"></div>
 		<div class="addresses__tabs">
 			{% for city in citiesList %}
 				<div class="addresses__tab {% if loop.index === 2 %}_active{% endif %}" data-city-tab="{{ loop.index - 1 }}">
 					<div class="addresses__shops">
-						{% include "../addresses-shop/addresses-shop.nunj" %}
-						{% include "../addresses-shop/addresses-shop-2.nunj" %}
-						{% include "../addresses-shop/addresses-shop.nunj" %}
+						{% if (loop.index % 2 === 1) %}
+							{% include "../addresses-shop/addresses-shop-2.nunj" %}
+							{% include "../addresses-shop/addresses-shop.nunj" %}
+						{% else %}
+							{% include "../addresses-shop/addresses-shop.nunj" %}
+							{% include "../addresses-shop/addresses-shop-2.nunj" %}
+							{% include "../addresses-shop/addresses-shop.nunj" %}
+						{% endif %}
 					</div>
 				</div>
 			{% endfor %}
