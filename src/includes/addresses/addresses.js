@@ -1,7 +1,393 @@
+import Map from '../../assets/js/modules/Map';
+
 const CLASS_ACTIVE = '_active';
 const CLASS_WRAP_ACTIVE = '_wrap-active';
 const ACTIVE_CITY_INDEX = '1';
 const TABLET_BREAKPOINT = 992;
+const CONTENT = `
+	<div class="map-popup">
+		<h3>г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
+		<p>Ежедневно c 10:00 до 22:00</p>
+		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
+		<a href="#" class="choose ttu">Выбрать магазин</a>
+	</div>`;
+const MAP_DATA_ADDRESSES = [
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.812784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.812784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.812784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+	{
+		mapData: {
+			center: {
+				lat: 40.712784,
+				lng: -74.005941,
+			},
+			zoom: 11,
+		},
+		pointsData: [
+			{
+				position: {
+					lat: 40.712784,
+					lng: -73.994606,
+				},
+				content: CONTENT,
+			},
+			{
+				position: {
+					lat: 40.712784,
+					lng: -74.1,
+				},
+				content: CONTENT,
+			},
+		],
+	},
+];
 
 class Addresses {
 	constructor() {
@@ -33,9 +419,6 @@ class Addresses {
 		this.shopItems.forEach(shopItem => {
 			this.initShopItem(shopItem);
 		});
-
-		// horisontal scroll
-		this.initHorisontalScroll();
 	}
 
 	citiesMobileCheck() {
@@ -59,6 +442,7 @@ class Addresses {
 	changeActiveCity(index) {
 		this.closeActiveCityTab();
 		this.openCityTab(index);
+		this.setMapData(index);
 	}
 
 	openCityTab(index) {
@@ -92,6 +476,7 @@ class Addresses {
 			activeBtn.classList.remove(CLASS_ACTIVE);
 		}
 		this.addressesBlock.classList.remove(CLASS_WRAP_ACTIVE);
+		this.closeAllShops();
 	}
 
 	initShopItem(shopBlock) {
@@ -132,8 +517,25 @@ class Addresses {
 		item.classList.remove(CLASS_ACTIVE);
 	}
 
-	initHorisontalScroll() {
-		console.log('initHorisontalScroll');
+	closeAllShops() {
+		this.shopItems.forEach(item => {
+			this.closeShopItem(item);
+		});
+	}
+
+	setMapData(index) {
+		if (window.google) {
+			const data = MAP_DATA_ADDRESSES[index];
+			Map.adressesMap.setZoom(data.mapData.zoom);
+			Map.adressesMap.setCenter(
+				// eslint-disable-next-line no-undef
+				new google.maps.LatLng(data.mapData.center.lat, data.mapData.center.lng)
+			);
+			Map.clearPoints(Map.adressesMap);
+			MAP_DATA_ADDRESSES[index].pointsData.forEach(point => {
+				Map.setPoint(Map.adressesMap, point);
+			});
+		}
 	}
 }
 

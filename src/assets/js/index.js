@@ -37,6 +37,7 @@ class AlpIndustry {
 			Notification: require('./modules/Notification').default,
 			ShowAnimations: require('./modules/ShowAnimations').default,
 			ArticleSlider: require('./modules/ArticleSlider').default,
+			AddressesScroll: require('./modules/AddressesScroll').default,
 		};
 		this.components = {
 			Header: require('../../includes/header/header').default,
