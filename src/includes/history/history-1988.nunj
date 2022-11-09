@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _history-1988">
+	<div class="history__row container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<p class="history__year h2 ttu text-stroke _blue-dark">1988</p>
+				<h2 class="history__subtitle h5 ttu">Первые шаги</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Альпиндустрия появилась как предприятие в&nbsp;формате кооператива&nbsp;&mdash; несколько энтузиастов сначала состояли в&nbsp;спортивном клубе &laquo;Измайлово&raquo;, а&nbsp;затем решили отделиться. Сделали спортивный клуб, который мог и&nbsp;научную экспедицию провести, и&nbsp;ремонтные работы на&nbsp;большой высоте сделать.</p>
+					<p>Председателем клуба стал Сергей Зон-Зам, заместителем&nbsp;&mdash; Александр Ельков. Важную роль в&nbsp;развитии Альпиндустрии сыграл директор Дома культуры строителей Сергей Михайлович Сапунов&nbsp;&mdash; он&nbsp;принял Альпиндустрию на&nbsp;своей территории и&nbsp;долго поддерживал все начинания молодых людей.</p>
+					<p>Первый шаг Альпиндустрии&nbsp;&mdash; реклама в&nbsp;&laquo;Вечерней Москве&raquo;. Да, мы&nbsp;все еще храним вырезку из&nbsp;той газеты!</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+			{{ picture({
+				className: 'history__img',
+				path: '/assets/images/about/history/1988/journal',
+				ext: 'png',
+				width: 928,
+				height: 1550
+			}) }}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _history-1992">
+	<div class="history__row _reverse container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<p class="history__year h2 ttu text-stroke _blue-dark">1992</p>
+				<h2 class="history__subtitle h5 ttu">Подъем магазина</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Мы&nbsp;собрали деньги с&nbsp;тура с&nbsp;иностранными туристами и&nbsp;закупили большую партию снаряжения у&nbsp;немецкой фирмы Salewa. Товар продали неожиданно быстро &mdash; и&nbsp;сразу поняли, в&nbsp;каком направлении двигаться. </p>
+					<p>Создали отдел, который занялся оптовыми поставками снаряжения из-за границы. Постепенно сложилась система импорта и&nbsp;появились партнеры, которые закупали продукцию внутри страны.</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<img
+				class="history__img"
+				src="/assets/images/about/history/1992/photo-1.jpg"
+				srcset="/assets/images/about/history/1992/photo-1@2x.jpg 2x"
+				width="928"
+				height="688"
+				alt=""
+			>
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+		</div>
+	</div>
+</section>

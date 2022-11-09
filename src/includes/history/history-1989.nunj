@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _history-1989">
+	<div class="history__row _reverse container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<p class="history__year h2 ttu text-stroke _blue-dark">1989</p>
+				<h2 class="history__subtitle h5 ttu">Поиск вектора</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Альпиндустрия развивалась в&nbsp;нескольких направлениях. Мы&nbsp;оказывали услуги по&nbsp;ремонту и&nbsp;строительству методом промышленного альпинизма &mdash; но&nbsp;также нам всегда был интересен спортивный мир и&nbsp;общественная жизнь. </p>
+					<p>На&nbsp;заработанные деньги мы&nbsp;оплачивали спортзалы и&nbsp;тренировались, участвовали в&nbsp;соревнованиях и&nbsp;сборах. Нам с&nbsp;самого начала было интересно объединять единомышленников и&nbsp;придумывать новые активности.</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<img
+				class="history__img"
+				src="/assets/images/about/history/1989/photo-1.jpg"
+				srcset="/assets/images/about/history/1989/photo-1@2x.jpg 2x"
+				width="928"
+				height="688"
+				alt=""
+			>
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+		</div>
+	</div>
+</section>

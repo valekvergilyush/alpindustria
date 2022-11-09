@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _today">
+	<div class="history__row container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<h2 class="history__subtitle h5 ttu">Энтузиазм и&nbsp;жажда развития &mdash; ключевые ценности, которые нам помогают</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Мы&nbsp;начинали как небольшой клуб промышленного альпинизма&nbsp;&mdash; чинили фасады и&nbsp;водосточные трубы. И&nbsp;продолжаем существовать сейчас как крупнейшее сообщество, которое помогает тысячам людей найти себя в&nbsp;спорте и&nbsp;туризме.</p>
+					<p>За&nbsp;25&nbsp;лет мы&nbsp;много раз меняли вектор развития. Но&nbsp;никогда не&nbsp;меняли главную цель &mdash; улучшать культуру спорта в&nbsp;России и&nbsp;собирать вокруг энтузиастов, готовых на&nbsp;любую авантюру.</p>
+					<p class="s2 c-blue-dark">Историю творим&nbsp;мы...</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<img
+				class="history__img"
+				src="/assets/images/about/history/today/photo-1.jpg"
+				srcset="/assets/images/about/history/today/photo-1@2x.jpg 2x"
+				width="928"
+				height="1164"
+				alt=""
+			>
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+		</div>
+	</div>
+</section>
