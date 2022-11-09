@@ -8,17 +8,9 @@
 		--gap: 1px;
 		display: flex;
 		flex-wrap: wrap;
-		grid-template-columns: repeat(4, 1fr);
 		gap: 1px;
 		border-top: 1px solid var(--blue-dark);
 		background-color: var(--blue-dark);
-		@media (max-width: $laptop-sm) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-		@media (max-width: $mobile-lg) {
-			display: flex;
-			flex-direction: column;
-		}
 	}
 	&__item {
 		--cols-number: 4;
