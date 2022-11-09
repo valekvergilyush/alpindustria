@@ -32,9 +32,6 @@ class AddressesScroll {
 				this.addressContentBlock.scrollLeft += evt.deltaY;
 			}
 		});
-		this.addressContentBlock.onscroll = () => {
-			this.addressContentProgressUpdate();
-		};
 	}
 
 	addressContentProgressUpdate = () => {
