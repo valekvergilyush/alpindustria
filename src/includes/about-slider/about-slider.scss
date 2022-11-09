@@ -1,17 +1,16 @@
 .about-slider {
 	$this: &;
 	background-color: var(--white);
+	border-bottom: 1px solid var(--blue-dark);
 	&__section-wrapper {
 		overflow: hidden;
 	}
 	&__section {
+		--padding-y: #{vh(100, 1040)};
 		position: relative;
 		display: flex;
-		column-gap: rem(64);
-		padding-block: vh(100, 1040);
-		padding-inline: var(--container-padding);
+		padding: var(--padding-y) var(--container-padding);
 		display: flex;
-		column-gap: rem(64);
 		height: 100vh;
 		box-sizing: border-box;
 		&::after {
@@ -21,12 +20,10 @@
 			width: 1px;
 		}
 		@media (max-width: $laptop-lg) {
-			column-gap: 38px;
-			padding-block: vh(95, 760);
+			--padding-y: #{vh(95, 760)};
 		}
 		@media (max-width: $laptop) {
-			column-gap: 34px;
-			padding-block: vh(72, 640);
+			--padding-y: #{vh(72, 640)};
 		}
 		@media (max-width: $tablet) {
 			flex-direction: column;
@@ -36,24 +33,31 @@
 			}
 		}
 		@media (max-width: $mobile-lg) {
-			padding-block: 48px;
+			--padding-y: 48px;
 		}
 	}
 	&__col {
 		position: relative;
 		display: flex;
+		flex-shrink: 0;
 		flex-direction: column;
 		justify-content: space-between;
+		&._full-height {
+			padding: var(--padding-y) var(--container-padding);
+			margin-block: calc(0px - var(--padding-y));
+		}
+		&._full-screen-width {
+			padding-inline: var(--container-padding);
+			width: 100%;
+			flex-shrink: 0;
+		}
 		&._first {
-			min-width: rem(677);
-			@media (max-width: $tablet) {
-				min-width: auto;
-			}
+			margin-right: rem(283);
 		}
 		&._second {
 			flex-direction: row;
-			column-gap: rem(56);
-			padding: rem(32);
+			align-items: flex-end;
+			padding-right: rem(248);
 			color: var(--white);
 			background-color: var(--blue-dark);
 		}
@@ -65,7 +69,6 @@
 		object-fit: cover;
 		&._first {
 			width: rem(1360);
-			height: 100%;
 		}
 	}
 	&__logo-placeholder {
@@ -76,16 +79,26 @@
 	}
 	&__logo-img {
 		margin-top: auto;
-		width: rem(1629);
-		height: auto;
+		flex-shrink: 0;
+		margin-right: rem(96);
 	}
 	&__title {
 		margin-bottom: rem(180);
 	}
 	&__text {
+		&._first {
+			max-width: rem(677);
+		}
 		&._second {
 			max-width: rem(520);
+			margin-right: rem(275);
 			font-size: rem(30);
 		}
+	}
+	&__quote-text {
+		margin-bottom: rem(16);
+	}
+	&__quote-author {
+		margin-bottom: rem(48);
 	}
 }
