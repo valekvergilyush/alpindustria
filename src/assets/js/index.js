@@ -71,6 +71,7 @@ class AlpIndustry {
 			CommunityIndex: require('../../includes/community-index/community-index').default,
 			BannerSection: require('../../includes/banner-section/banner-section').default,
 			AboutSlider: require('../../includes/about-slider/about-slider').default,
+			Team: require('../../includes/team/team').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

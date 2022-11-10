@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _history-1990">
+	<div class="history__row container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<p class="history__year h2 ttu text-stroke _blue-dark">1990</p>
+				<h2 class="history__subtitle h5 ttu">Открытие магазина</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Через пару лет после открытия клуба мы&nbsp;уже активно развивали культуру альпинизма в&nbsp;России. Приглашали иностранных спортсменов, сотрудничали с&nbsp;мировыми альпинистскими компаниями, стали лидерами по&nbsp;приему иностранцев на&nbsp;Кавказе, активно посылали туристов в&nbsp;Среднюю Азию, на&nbsp;Алтай, на&nbsp;Камчатку</p>
+					<p>Следующим шагом к&nbsp;развитию стала еще одна идея, которая тогда казалась сумасшедшей&nbsp;&mdash; открыть магазин альпинистского снаряжения. Торговать в&nbsp;те&nbsp;годы было нечем, но&nbsp;мы&nbsp;искали разные пути и&nbsp;в&nbsp;итоге стали одним из&nbsp;самых известных магазинов снаряжения в&nbsp;России.</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<img
+				class="history__img"
+				src="/assets/images/about/history/1990/photo-1.jpg"
+				srcset="/assets/images/about/history/1990/photo-1@2x.jpg 2x"
+				width="928"
+				height="688"
+				alt=""
+			>
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+		</div>
+	</div>
+</section>

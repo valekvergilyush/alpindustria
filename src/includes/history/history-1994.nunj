@@ -1,0 +1,27 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="history _history-1994">
+	<div class="history__row container">
+		<div class="history__col">
+			<div class="history__col-inner">
+				<p class="history__year h2 ttu text-stroke _blue-dark">1994</p>
+				<h2 class="history__subtitle h5 ttu">Туры и экспедиции</h2>
+				<div class="history__text p3 c-gray-dark">
+					<p>Мы&nbsp;взяли хороший темп и&nbsp;стали прокачивать сферу туризма &mdash; отправляли в&nbsp;Европу российских горнолыжников и&nbsp;принимали иностранцев.</p>
+					<p>Со&nbsp;временем мы&nbsp;выбрали свою нишу и&nbsp;стали проводить эксклюзивные программы и&nbsp;экспедиции в&nbsp;разнные горные районы мира. Главной гордостью тогда стала серия экспедиций на&nbsp;Эверест.</p>
+				</div>
+			</div>
+		</div>
+		<div class="history__col">
+			<img
+				class="history__img"
+				src="/assets/images/about/history/1994/photo-1.jpg"
+				srcset="/assets/images/about/history/1994/photo-1@2x.jpg 2x"
+				width="928"
+				height="688"
+				alt=""
+			>
+			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+		</div>
+	</div>
+</section>

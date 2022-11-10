@@ -8,6 +8,9 @@
 	}
 
 	.img-wrapper {
+		&._full-height {
+			height: 100%;
+		}
 		&[data-animation='height'] {
 			.img-wrapper__img {
 				overflow: hidden;
