@@ -11,8 +11,6 @@
 		<p class="h5 ttu">Адреса</p>
 		<div class="services-content__accordions">
 			<div class="services-content__accordion">
-				.services-content__accordion-btn
-				.services-content__accordion-content
 			</div>
 		</div>
 	</div>
