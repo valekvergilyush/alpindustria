@@ -1,0 +1,10 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Прокат | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main">
+		{% include "../includes/hero-catalog/hero-catalog-services.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion-services.nunj" %}
+	</main>
+{% endblock %}

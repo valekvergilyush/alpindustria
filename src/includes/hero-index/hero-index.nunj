@@ -4,7 +4,7 @@
 	{ text: 'Магазин', url: '/catalog/', id: 'catalog' },
 	{ text: 'Адреса', url: '/addresses.html', id: 'address' },
 	{ text: 'Сообщество', url: '/community/', id: 'community' },
-	{ text: 'Прокат', url: '#', id: 'rental' }
+	{ text: 'Прокат', url: '/rent.html', id: 'rental' }
 ] %}
 
 <section class="hero-index">

@@ -29,8 +29,8 @@
 			{ text: 'Фрирайд', url: '/community/freerides.html' }
 		]
 	},
-	{ text: 'Прокат', url: '#', img: { src: '/assets/images/menu/menu-rent.jpg', srcset: '/assets/images/menu/menu-rent@2x.jpg 2x' } },
-	{ text: 'Сервисы', url: '#', img: { src: '/assets/images/menu/menu-service.jpg', srcset: '/assets/images/menu/menu-service@2x.jpg 2x' } },
+	{ text: 'Прокат', url: '/rent.html', img: { src: '/assets/images/menu/menu-rent.jpg', srcset: '/assets/images/menu/menu-rent@2x.jpg 2x' } },
+	{ text: 'Сервисы', url: '/services.html', img: { src: '/assets/images/menu/menu-service.jpg', srcset: '/assets/images/menu/menu-service@2x.jpg 2x' } },
 	{ text: 'Новости', url: '/news.html', img: { src: '/assets/images/menu/menu-news.jpg', srcset: '/assets/images/menu/menu-news@2x.jpg 2x' } },
 	{ text: 'О нас', url: '/about.html', img: { src: '/assets/images/menu/menu-about.jpg', srcset: '/assets/images/menu/menu-about@2x.jpg 2x' } }
 ] %}

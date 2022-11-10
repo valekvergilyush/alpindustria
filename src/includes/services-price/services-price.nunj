@@ -1,0 +1,17 @@
+<div class="services-price">
+	<div class="services-price__row">
+		<p class="services-price__name h7 ttu">Заточка ледоруба</p>
+		<p class="services-price__price p1 c-gray-dark">от 300 ₽</p>
+		<p class="services-price__qty p3 c-gray-dark">1 шт.</p>
+	</div>
+	<div class="services-price__row">
+		<p class="services-price__name h7 ttu">Заточка ледового инструмента</p>
+		<p class="services-price__price p1 c-gray-dark">от 500 ₽</p>
+		<p class="services-price__qty p3 c-gray-dark">1 шт.</p>
+	</div>
+	<div class="services-price__row">
+		<p class="services-price__name h7 ttu">Заточка альпинистских кошек</p>
+		<p class="services-price__price p1 c-gray-dark">от 1 000 ₽</p>
+		<p class="services-price__qty p3 c-gray-dark">1 шт.</p>
+	</div>
+</div>

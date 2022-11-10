@@ -40,6 +40,11 @@
 		&._hero {
 			display: block;
 		}
+		&._services-equipment {
+			img {
+				object-position: bottom center;
+			}
+		}
 		img {
 			width: 100%;
 			height: 100%;
@@ -114,6 +119,32 @@
 	&._subcategory {
 		#{$this}__title-root {
 			display: flex;
+		}
+	}
+	&._services {
+		min-height: rem(732);
+		padding-bottom: 0;
+		@media (max-width: $laptop-lg) {
+			min-height: 632px;
+		}
+		@media (max-width: $laptop-md) {
+			min-height: 464px;
+		}
+		@media (max-width: $laptop-sm) {
+			min-height: 384px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 400px;
+			padding-bottom: var(--header-height);
+		}
+		#{$this}__title {
+			margin-top: rem(259);
+			@media (max-width: $laptop-lg) {
+				margin-top: auto;
+			}
+			@media (max-width: $laptop-sm) {
+				margin-bottom: auto;
+			}
 		}
 	}
 }
