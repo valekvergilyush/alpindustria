@@ -1,0 +1,17 @@
+<div class="services-content container" data-accordion-content>
+	<p class="p1">В&nbsp;магазине АльпИндустрия на&nbsp;Первомайской можно заточить альпинистские кошки, ледорубы и&nbsp;ледовые инструменты. Мы&nbsp;принимаем в&nbsp;работу практически все модели кошек, ледорубов и&nbsp;ледовых инструментов. Главное, чтобы они были в&nbsp;чистом состоянии. По&nbsp;срокам работа выполняется до&nbsp;семи календарных дней.</p>
+	<div class="services-content__block">
+		<p class="h5 ttu">Стоимость услуг</p>
+		<div class="services-content__block _1">
+			{% include "../services-price/services-price.nunj" %}
+			<p class="services-content__price-text p4 c-gray-dark">*Мастер оставляет за&nbsp;собой право увеличить стоимость в&nbsp;зависимости от&nbsp;состояния кошек.<br>Перед заточкой стоимость согласовывается с&nbsp;клиентом.</p>
+		</div>
+	</div>
+	<div class="services-content__block">
+		<p class="h5 ttu">Адреса</p>
+		<div class="services-content__accordions">
+			<div class="services-content__accordion">
+			</div>
+		</div>
+	</div>
+</div>

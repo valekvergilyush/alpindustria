@@ -1,0 +1,14 @@
+.services-content {
+	display: flex;
+	flex-direction: column;
+	gap: rem(96);
+	padding-bottom: var(--container-padding);
+	&__block {
+		display: flex;
+		flex-direction: column;
+		gap: rem(56);
+		&._1 {
+			gap: rem(24);
+		}
+	}
+}

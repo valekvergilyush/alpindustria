@@ -1,0 +1,17 @@
+.services-price {
+	&__row {
+		display: flex;
+		padding-block: rem(16);
+		border-bottom: 1px solid rgba($blue-dark, 0.2);
+		gap: rem(24);
+	}
+	&__name {
+		width: rem(616);
+	}
+	&__price {
+		width: rem(296);
+	}
+	&__qty {
+		opacity: 0.5;
+	}
+}

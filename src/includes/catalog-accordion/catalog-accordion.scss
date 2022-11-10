@@ -8,10 +8,8 @@
 	overflow: hidden;
 	padding-top: var(--offset);
 	margin-top: calc(0px - var(--offset));
-	background-color: var(--gray-light);
 	overflow: hidden;
 	&._index {
-		background: 0;
 		#{$this}__section {
 			#{$this}__title {
 				color: var(--blue-dark);
@@ -30,6 +28,9 @@
 				}
 			}
 		}
+	}
+	&._bg {
+		background-color: var(--gray-light);
 	}
 	@media (max-width: $laptop) {
 		--offset: 40px;
@@ -120,6 +121,9 @@
 	&__title:not(._opened) + &__list {
 		opacity: 0;
 	}
+	&__inner {
+		height: 0;
+	}
 	&__list {
 		display: flex;
 		height: 0;
@@ -156,7 +160,8 @@
 		}
 		&._opened {
 			margin-bottom: -1px;
-			#{$this}__list {
+			#{$this}__list,
+			#{$this}__inner {
 				height: auto;
 			}
 		}

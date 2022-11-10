@@ -1,0 +1,55 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set categories = [
+	{ name: 'Тест-центр часов' },
+	{ name: 'Прокат снаряжения',
+		modifier: 'equipment',
+		subcategories: [
+			{ name: 'Все снаряжение' },
+			{ name: 'Лавинное' },
+			{ name: 'Ледовое' },
+			{ name: 'Одежда' },
+			{ name: 'Обувь' },
+			{ name: 'Туристическое' },
+			{ name: 'Альпинистское' }
+		]
+	},
+	{ name: 'Тест-прокат лыж' }
+] %}
+
+<ul class="quick-filter__quick-filter quick-filter" data-subcategory>
+	{% for category in categories %}
+	{% if category.subcategories %}
+		{% set mod = ' data-subcategory-mod="_' + category.modifier + '"' %}
+	{% else %}
+		{% set mod = '' %}
+	{% endif %}
+		<li class="quick-filter__item"{% if category.subcategories %}data-drag-scroll data-subcategory-item{% endif %}>
+			{{ button({
+				className: 'quick-filter__button _quick-filter',
+				text: category.name,
+				attr: 'data-subcategory-opener' + mod
+			}) }}
+			{% if category.subcategories %}
+				<div class="quick-filter__subcategories-wrapper">
+					{{ button({
+						className: 'quick-filter__button _back',
+						attr: 'aria-label="Назад" data-subcategory-back',
+						icon: 'arrow-left',
+						iconData: 'width="24" height="24"'
+					}) }}
+					<ul class="quick-filter__subcategories" data-subcategory-list>
+						{% for subcategory in category.subcategories %}
+							<li>
+								{{ button({
+									className: 'quick-filter__button _quick-filter',
+									text: subcategory.name
+								}) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

@@ -43,7 +43,7 @@
 	'Обзоры снаряжения'
 ] %}
 
-<div class="catalog-accordion">
+<div class="catalog-accordion _bg">
 	{% for accordion in articleAccordions %}
 		<section class="catalog-accordion__section" data-accordion-section>
 			<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>{{ accordion }}</span></h2>

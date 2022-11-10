@@ -25,7 +25,7 @@
 	{ url: 'product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
 ] %}
 
-<div class="catalog-accordion">
+<div class="catalog-accordion _bg">
 	<section class="catalog-accordion__section" data-accordion-section>
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Технический альпинизм</span></h2>
 		{% if productList1 %}
