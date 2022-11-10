@@ -10,7 +10,13 @@ class AboutSlider {
 	init() {
 		this.container = document.querySelector('[data-about-slider]');
 
-		if (!this.container || window.innerWidth <= TABLET_BREAKPOINT) {
+		if (!this.container) {
+			return;
+		}
+
+		if (window.innerWidth <= TABLET_BREAKPOINT) {
+			this.startLogoAnimation();
+
 			return;
 		}
 
@@ -40,6 +46,22 @@ class AboutSlider {
 						x: 0 - getToValue() * self.progress,
 					});
 				},
+			},
+		});
+	}
+	startLogoAnimation() {
+		const logo = document.querySelector('[data-lottie-animation]');
+		const placeholder = document.querySelector('[data-lottie-autoplay-trigger]');
+		const x = logo.offsetWidth - placeholder.offsetWidth * 1.1;
+
+		gsap.to(logo, {
+			x: -x,
+			duration: 10,
+			ease: 'linear',
+			scrollTrigger: {
+				trigger: logo,
+				start: 'top center',
+				onToggle: () => logo.lottieAnimation.play(),
 			},
 		});
 	}

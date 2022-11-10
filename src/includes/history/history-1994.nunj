@@ -13,14 +13,13 @@
 			</div>
 		</div>
 		<div class="history__col">
-			<img
-				class="history__img"
-				src="/assets/images/about/history/1994/photo-1.jpg"
-				srcset="/assets/images/about/history/1994/photo-1@2x.jpg 2x"
-				width="928"
-				height="688"
-				alt=""
-			>
+			{{ picture({
+				className: 'history__img',
+				path: '/assets/images/about/history/1994/photo-1',
+				ext: 'jpg',
+				width: 928,
+				height: 688
+			}) }}
 			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
 		</div>
 	</div>
