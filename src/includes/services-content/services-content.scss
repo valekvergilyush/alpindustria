@@ -1,14 +1,68 @@
 .services-content {
 	display: flex;
 	flex-direction: column;
-	gap: rem(96);
+	gap: rem(124);
 	padding-bottom: var(--container-padding);
+	@media (max-width: $laptop-lg) {
+		gap: 96px;
+	}
+	@media (max-width: $laptop-md) {
+		gap: 72px;
+	}
+	@media (max-width: $mobile-lg) {
+		gap: 48px;
+	}
 	&__block {
 		display: flex;
 		flex-direction: column;
 		gap: rem(56);
+		@media (max-width: $laptop-lg) {
+			gap: 48px;
+		}
+		@media (max-width: $laptop-md) {
+			gap: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 24px;
+		}
 		&._1 {
 			gap: rem(24);
+		}
+	}
+	&__text {
+		max-width: rem(960);
+		@media (max-width: $laptop-lg) {
+			max-width: 1024px;
+		}
+		@media (max-width: $laptop-md) {
+			max-width: 794px;
+		}
+		@media (max-width: $laptop-sm) {
+			max-width: none;
+		}
+	}
+	&__accordions {
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			gap: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
+	}
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		width: 100%;
+		gap: rem(16);
+		padding-bottom: rem(16);
+		@media (max-width: $laptop-md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 }

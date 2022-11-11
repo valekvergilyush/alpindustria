@@ -1,0 +1,36 @@
+.services-accordion {
+	$this: &;
+	--padding: #{rem(24)};
+	border-bottom: 1px solid var(--blue-dark);
+	&__btn {
+		@include reset-btn();
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(8);
+		width: 100%;
+		padding-bottom: rem(24);
+		@media (max-width: $laptop-md) {
+			padding-bottom: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 16px;
+		}
+	}
+	&__btn-icon {
+		--size: #{rem(20)};
+		width: var(--size);
+		height: var(--size);
+		#{$this}._opened & {
+			transform: rotate(180deg);
+		}
+	}
+	&__content {
+		height: 0;
+		overflow: hidden;
+		box-sizing: border-box;
+		#{$this}._opened & {
+			height: auto;
+		}
+	}
+}
