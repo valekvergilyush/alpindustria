@@ -22,7 +22,7 @@
 		--min-height: 343px;
 	}
 	&__title {
-		margin-bottom: 8px;
+		margin-bottom: rem(8);
 		@media (max-width: $laptop-md) {
 			font-size: 24px;
 		}
@@ -50,7 +50,7 @@
 	&__metro {
 		display: flex;
 		align-items: center;
-		margin-bottom: 8px;
+		margin-bottom: rem(8);
 		@media (max-width: $laptop-md) {
 			font-size: 16px;
 		}
