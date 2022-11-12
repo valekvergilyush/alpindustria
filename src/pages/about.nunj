@@ -2,17 +2,22 @@
 
 {% block title %}О нас | {{ super() }}{% endblock title %}
 
+{% set htmlClassMods = '_about' %}
+
 {% block mainContent %}
 	<main class="page__main _pt">
 		{% include "../includes/about-slider/about-slider.nunj" %}
-		{% include "../includes/history/history-1988.nunj" %}
-		{% include "../includes/history/history-quote.nunj" %}
-		{% include "../includes/history/history-1989.nunj" %}
-		{% include "../includes/history/history-1990.nunj" %}
-		{% include "../includes/history/history-1992.nunj" %}
-		{% include "../includes/history/history-1994.nunj" %}
-		{% include "../includes/history/history-2000.nunj" %}
-		{% include "../includes/history/history-today.nunj" %}
+		<div class="page__history-wrapper">
+			{% include "../includes/timeline/timeline.nunj" %}
+			{% include "../includes/history/history-1988.nunj" %}
+			{% include "../includes/history/history-quote.nunj" %}
+			{% include "../includes/history/history-1989.nunj" %}
+			{% include "../includes/history/history-1990.nunj" %}
+			{% include "../includes/history/history-1992.nunj" %}
+			{% include "../includes/history/history-1994.nunj" %}
+			{% include "../includes/history/history-2000.nunj" %}
+			{% include "../includes/history/history-today.nunj" %}
+		</div>
 		{% include "../includes/team/team.nunj" %}
 	</main>
 {% endblock %}
