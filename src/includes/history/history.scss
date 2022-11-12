@@ -1,6 +1,9 @@
 .history {
 	$this: &;
+	--scroll-offset: calc(var(--timeline-height) + var(--header-height) - 1px);
 	border-bottom: 1px solid var(--blue-dark);
+	margin-top: calc(0px - var(--scroll-offset));
+	padding-top: var(--scroll-offset);
 	&._quote {
 		padding-block: rem(124);
 		@media (max-width: $laptop-lg) {
@@ -59,12 +62,13 @@
 	}
 	&__col {
 		--width: calc(692 / 1728 * 100%);
+		--padding-y: var(--container-padding);
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
 		box-sizing: border-box;
 		min-height: var(--100vh);
-		padding-block: var(--container-padding);
+		padding-block: var(--padding-y);
 		background-color: var(--gray-light);
 		&:nth-child(1) {
 			width: var(--width);
