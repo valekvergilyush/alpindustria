@@ -28,6 +28,7 @@
 	[data-animation='words'] {
 		display: flex;
 		flex-wrap: wrap;
+		align-content: flex-start;
 		.word-wrapper {
 			overflow: hidden;
 		}
