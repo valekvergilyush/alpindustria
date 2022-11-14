@@ -4,6 +4,7 @@ const HTML_CLASSLIST = document.documentElement.classList;
 
 const ClassName = {
 	FIXED: '_fixed',
+	HEADER_OPENED: '_header-opened',
 	FILTERS_OPENED: '_filters-opened',
 };
 
@@ -88,6 +89,12 @@ class Header {
 				duration: 0.1,
 				ease: 'linear',
 			});
+			gsap.to('[data-timeline]', {
+				top: this.headerElement.offsetHeight,
+				duration: 0.1,
+				ease: 'linear',
+			});
+			HTML_CLASSLIST.add(ClassName.HEADER_OPENED);
 		}
 	}
 	hideHeader() {
@@ -98,7 +105,13 @@ class Header {
 			ease: 'linear',
 			onComplete: () => {
 				this.headerElement.classList.remove(ClassName.FIXED);
+				HTML_CLASSLIST.remove(ClassName.HEADER_OPENED);
 			},
+		});
+		gsap.to('[data-timeline]', {
+			top: 0,
+			duration: 0.1,
+			ease: 'linear',
 		});
 	}
 }
