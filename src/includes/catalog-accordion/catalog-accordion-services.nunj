@@ -1,4 +1,4 @@
-<div class="catalog-accordion">
+<div class="catalog-accordion _services">
 	<section class="catalog-accordion__section" data-accordion-section>
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Замена газовых балонов</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>

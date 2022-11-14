@@ -1,0 +1,30 @@
+.rent-table {
+	width: 100%;
+	&__row {
+		flex-shrink: 0;
+		display: flex;
+		align-items: flex-end;
+		gap: rem(16);
+		padding-block: rem(16);
+		border-bottom: 1px solid rgba($blue-dark, 0.2);
+	}
+	&__duration {
+		width: rem(220);
+	}
+	&__price {
+		flex-grow: 1;
+	}
+	&__btn-cell {
+		flex-shrink: 0;
+	}
+	&__btn {
+		padding: rem(7) rem(15);
+		border-radius: rem(100);
+		border: 1px solid var(--blue-dark);
+		&._active,
+		&:hover {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+}

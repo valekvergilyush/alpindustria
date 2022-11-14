@@ -32,6 +32,32 @@
 	&._bg {
 		background-color: var(--gray-light);
 	}
+	&._services {
+		#{$this}__section._opened {
+			--default-bg-color: var(--white);
+		}
+		#{$this}__title {
+			&::after,
+			&::before {
+				content: none;
+			}
+			&._opened {
+				min-height: rem(220);
+				@media (max-width: $laptop-lg) {
+					min-height: 172px;
+				}
+				@media (max-width: $laptop-md) {
+					min-height: 128px;
+				}
+				@media (max-width: $laptop-sm) {
+					min-height: 120px;
+				}
+				@media (max-width: $mobile-lg) {
+					min-height: 80px;
+				}
+			}
+		}
+	}
 	@media (max-width: $laptop) {
 		--offset: 40px;
 		--size: 64px;
@@ -61,6 +87,7 @@
 		cursor: pointer;
 		white-space: nowrap;
 		transition: min-height $default-transition-duration $default-transition-function,
+			background-color $default-transition-duration $default-transition-function,
 			color $default-transition-duration $default-transition-function;
 		&::before {
 			content: '';
@@ -72,6 +99,7 @@
 			height: calc(100% - 1px);
 			background-color: var(--default-bg-color);
 			opacity: 0;
+			transition: background-color $default-transition-duration $default-transition-function;
 		}
 		&::after {
 			content: '';
@@ -151,7 +179,8 @@
 		background-color: var(--default-bg-color);
 		overflow: hidden;
 		margin-bottom: calc(0px - var(--offset));
-		transition: height 1s ease-out, transform 0.4s ease-in;
+		transition: height 1s ease-out, transform 0.4s ease-in,
+			background-color $default-transition-duration $default-transition-function;
 		&:hover {
 			&:not(._opened) {
 				transform: translateY(calc(1px - var(--offset) * 0.7));

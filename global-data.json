@@ -28,6 +28,10 @@
 		{
 			"name": "wishlist",
 			"animation": "RTL"
+		},
+		{
+			"name": "wishlist-services",
+			"animation": "RTL"
 		}
 	]
 }

@@ -1,0 +1,59 @@
+{% from "../components/button/button.nunj" import button %}
+
+<table class="rent-table">
+	<tr class="rent-table__row">
+		<td class="rent-table__duration p3">до 7 дней</td>
+		<td class="rent-table__price h7">4 500 ₽</td>
+		<td class="rent-table__btn-cell">
+			{{ button({
+				className: 'rent-table__btn _active h7 ttu',
+				text: 'Выбрано',
+				href: '#'
+			}) }}
+		</td>
+	</tr>
+	<tr class="rent-table__row">
+		<td class="rent-table__duration p3">от 8 до 15 дней</td>
+		<td class="rent-table__price h7">7 000 ₽</td>
+		<td class="rent-table__btn-cell">
+			{{ button({
+				className: 'rent-table__btn h7 ttu',
+				text: 'Выбрано',
+				href: '#'
+			}) }}
+		</td>
+	</tr>
+	<tr class="rent-table__row">
+		<td class="rent-table__duration p3">до 16 до 23 дней</td>
+		<td class="rent-table__price h7">9 000 ₽</td>
+		<td class="rent-table__btn-cell">
+			{{ button({
+				className: 'rent-table__btn h7 ttu',
+				text: 'Выбрано',
+				href: '#'
+			}) }}
+		</td>
+	</tr>
+	<tr class="rent-table__row">
+		<td class="rent-table__duration p3">до 16 до 23 дней</td>
+		<td class="rent-table__price h7">9 000 ₽</td>
+		<td class="rent-table__btn-cell">
+			{{ button({
+				className: 'rent-table__btn h7 ttu',
+				text: 'Выбрано',
+				href: '#'
+			}) }}
+		</td>
+	</tr>
+	<tr class="rent-table__row">
+		<td class="rent-table__duration p3">до 24 до 31 дней</td>
+		<td class="rent-table__price h7">9 000 ₽</td>
+		<td class="rent-table__btn-cell">
+			{{ button({
+				className: 'rent-table__btn h7 ttu',
+				text: 'Выбрано',
+				href: '#'
+			}) }}
+		</td>
+	</tr>
+</table>
