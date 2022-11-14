@@ -26,11 +26,6 @@
 				right: 50%;
 				transform: translate(50%, 50%);
 			}
-			@media (max-width: $mobile-lg) {
-				&:first-child {
-					border-top: 1px solid var(--gray-dark);
-				}
-			}
 			@media (max-width: $laptop-lg) {
 				--item-width: #{vw(857, 1440)};
 			}
@@ -57,6 +52,9 @@
 				margin-bottom: calc(0px - var(--item-height) * 0.836);
 				&._active {
 					margin-bottom: 0;
+				}
+				&:first-child {
+					border-top: 1px solid var(--gray-dark);
 				}
 				&:last-child {
 					margin-bottom: calc(0px - var(--item-height) * 0.787);
@@ -114,7 +112,6 @@
 	&__item {
 		--item-width: #{vw(1289, 1728)};
 		--nav-item-offset: calc((100vw - var(--item-width)) / var(--closed));
-		--nav-item-hover-offset: 2%;
 		--easing: cubic-bezier(0.8, 0, 0.2, 1);
 		--duration: 0.6s;
 		--arrow-size: #{rem(88)};
@@ -124,7 +121,6 @@
 		box-sizing: border-box;
 		height: 100%;
 		width: var(--item-width);
-		transition: transform var(--duration) var(--easing);
 		margin-left: calc(var(--i) * var(--nav-item-offset));
 		overflow: hidden;
 		transform: translateX(var(--tx));
@@ -133,6 +129,7 @@
 		background-color: var(--gray-light);
 		border: 1px solid var(--gray-dark);
 		outline-offset: -1px;
+		transition: transform var(--duration) var(--easing);
 		&::before {
 			content: '';
 			position: absolute;
@@ -165,11 +162,18 @@
 			~ #{$this}__item {
 				transform: none;
 			}
-
 			&:hover {
 				&::before {
 					background-image: inline('promo-arrow-white.svg');
 				}
+			}
+			#{$this}__info {
+				& > * {
+					opacity: 1;
+				}
+			}
+			#{$this}__title {
+				transform: translateX(0);
 			}
 		}
 		@media (max-width: $laptop-lg) {
@@ -228,12 +232,23 @@
 		max-width: rem(535);
 		color: var(--gray-dark);
 		transition: color $default-transition-duration $default-transition-function var(--duration);
+		& > * {
+			opacity: 0;
+			transition: opacity $default-transition-duration $default-transition-function var(--duration);
+		}
 		@media (max-width: $tablet) {
 			max-width: none;
 		}
 	}
 	&__title {
+		--offset-x: calc(var(--item-width) - var(--nav-item-offset) - var(--container-padding) / 2);
 		margin-bottom: rem(24);
+		opacity: 1;
+		transform: translateX(var(--offset-x));
+		transition: transform var(--duration) var(--easing);
+		@media (max-width: $tablet) {
+			transform: none;
+		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 14px;
 		}

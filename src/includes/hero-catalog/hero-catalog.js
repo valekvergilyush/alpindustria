@@ -17,7 +17,7 @@ class HeroCatalog {
 
 		if (this.container.hasAttribute('data-parallax')) {
 			this.title = this.container.querySelector('.hero-catalog__title');
-			this.filter = this.container.querySelector('.hero-catalog__quick-filter');
+			this.filter = this.container.querySelector('[data-quick-filter]');
 			this.bgImages = this.container.querySelectorAll('.hero-catalog__bg-img');
 			this.bgImageWrapper = this.container.querySelector('.hero-catalog__bg-img-wrapper');
 

@@ -39,6 +39,7 @@
 			width: 416px;
 		}
 		@media (max-width: $tablet) {
+			display: flex;
 			margin-top: 306px;
 		}
 		@media (max-width: $mobile-lg) {
