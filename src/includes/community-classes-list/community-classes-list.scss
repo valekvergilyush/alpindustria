@@ -7,11 +7,7 @@
 		grid-template-columns: repeat(1, 1fr);
 	}
 	&__item {
-		box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
-			-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
-		@media (max-width: $laptop-sm) {
-			box-shadow: inset 0 -1px 0 0 var(--blue-dark), -1px -1px 0 0 var(--blue-dark),
-				0 -1px 0 0 var(--blue-dark);
-		}
+		box-shadow: inset 0 -1px 0 0 var(--blue-dark), -1px -1px 0 0 var(--blue-dark),
+			0 -1px 0 0 var(--blue-dark);
 	}
 }
