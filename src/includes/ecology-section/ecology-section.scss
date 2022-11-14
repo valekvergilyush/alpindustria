@@ -30,6 +30,7 @@
 	&._fifth {
 		top: calc(10 * var(--vh, 1vh));
 		background-color: #bfbfbf;
+		border-bottom: 1px solid var(--blue-dark);
 	}
 	&._sixth {
 		top: calc(12 * var(--vh, 1vh));
@@ -76,6 +77,7 @@
 	@media (max-width: $laptop-sm) {
 		--arrow-size: 64px;
 		position: relative;
+		top: auto !important;
 		height: auto;
 		min-height: 800px;
 		padding-right: var(--container-padding);
