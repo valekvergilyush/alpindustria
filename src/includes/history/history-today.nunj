@@ -1,6 +1,6 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<section class="history _today">
+<section class="history _today" id="year-2002" data-history-section>
 	<div class="history__row container">
 		<div class="history__col">
 			<div class="history__col-inner">
@@ -13,14 +13,16 @@
 			</div>
 		</div>
 		<div class="history__col">
-			{{ picture({
-				className: 'history__img',
-				path: '/assets/images/about/history/today/photo-1',
-				ext: 'jpg',
-				width: 928,
-				height: 1164
-			}) }}
-			<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+			<div class="history__img-wrapper">
+				{{ picture({
+					className: 'history__img',
+					path: '/assets/images/about/history/today/photo-1',
+					ext: 'jpg',
+					width: 928,
+					height: 1164
+				}) }}
+				<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
+			</div>
 		</div>
 	</div>
 </section>

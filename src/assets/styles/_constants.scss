@@ -99,7 +99,8 @@ $mobile-sm: 320px;
 	--header-height: 4.5rem; // 72px
 	--filters-height: var(--header-height); // 96px
 	--breadcrumbs-height: 3.5rem; // 56px
-	--add-block-height: 10.8125rem; //173px
+	--add-block-height: 10.8125rem; // 173px
+	--timeline-height: 5.5rem; // 88px
 	--container-padding: 5rem; // 80px
 	@media (max-width: $desktop) {
 		--container-padding: 64px;

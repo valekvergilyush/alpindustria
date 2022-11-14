@@ -1,0 +1,66 @@
+.timeline {
+	$this: &;
+	--c-base: #{rgba($blue-light, 0.4)};
+	--c-active: var(--blue-dark);
+	display: flex;
+	box-sizing: border-box;
+	height: var(--timeline-height);
+	padding-top: rem(32);
+	padding-bottom: rem(24);
+	border-bottom: 1px solid currentColor;
+	color: var(--c-base);
+	background-color: var(--white);
+	&__container,
+	&__progress {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: rem(8);
+			background-size: contain;
+		}
+	}
+	&__container {
+		position: relative;
+		display: flex;
+		&::before {
+			background-image: inline('timeline.svg');
+		}
+	}
+	&__progress {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		transform-origin: left;
+		transition: width 1s ease;
+		will-change: width;
+		&::before {
+			background-image: inline('timeline-active.svg');
+		}
+	}
+	&__list {
+		position: relative;
+		display: flex;
+		width: 100%;
+	}
+	&__item {
+		display: flex;
+		flex-grow: 1;
+	}
+	&__link {
+		position: relative;
+		display: flex;
+		flex-grow: 1;
+		align-items: flex-end;
+		padding-left: rem(4);
+		line-height: 1;
+		border-left: 1px solid currentColor;
+		transition: color $fast-transition-duration $default-transition-function;
+		&._active {
+			color: var(--c-active);
+		}
+	}
+}
