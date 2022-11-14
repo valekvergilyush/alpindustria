@@ -1,17 +1,60 @@
 .services-price {
 	&__row {
 		display: flex;
+		align-items: flex-end;
 		padding-block: rem(16);
 		border-bottom: 1px solid rgba($blue-dark, 0.2);
 		gap: rem(24);
+		@media (max-width: $mobile-lg) {
+			display: grid;
+			grid-template-areas:
+				'name name'
+				'price qty';
+			grid-template-columns: repeat(2, 1fr);
+			padding-top: 0;
+			padding-bottom: 15px;
+			gap: 16px;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
 	}
 	&__name {
 		width: rem(616);
+		grid-area: name;
+		@media (max-width: $laptop-lg) {
+			width: 520px;
+		}
+		@media (max-width: $laptop-md) {
+			width: 360px;
+		}
+		@media (max-width: $laptop-sm) {
+			width: 336px;
+		}
 	}
 	&__price {
 		width: rem(296);
+		grid-area: price;
+		color: var(--gray-dark);
+		@media (max-width: $laptop-lg) {
+			width: 248px;
+		}
+		@media (max-width: $laptop-md) {
+			width: 360px;
+		}
+		@media (max-width: $laptop-sm) {
+			width: 173px;
+			color: var(--blue-dark);
+			font-family: var(--font-family-suisse);
+			font-size: 18px;
+			line-height: 23px;
+		}
 	}
 	&__qty {
 		opacity: 0.5;
+		grid-area: qty;
+		@media (max-width: $mobile-lg) {
+			text-align: right;
+		}
 	}
 }

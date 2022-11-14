@@ -1,0 +1,296 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/select/select.nunj" import select %}
+
+{% set cityList = [
+	{ name: 'Москва', value: 'Москва' },
+	{ name: 'Санкт-Петербург', value: 'Санкт-Петербург' },
+	{ name: 'Новосибирск', value: 'Новосибирск' },
+	{ name: 'Екатеринбург', value: 'Екатеринбург' }
+] %}
+
+<div class="availability">
+	{{ select({
+			id: 'availability',
+			options: cityList,
+			className: 'availability__select _delivery _white',
+			label: 'Магазин'
+		}) }}
+	<div class="availability__content">
+		<div data-availability="Москва" class="availability__city">
+			{% for i in range(0, 2) -%}
+				<div class="availability__shop">
+					<div class="availability__shop-header">
+						<a href="#" class="availability__address">
+							<p class="availability__street p1">ул. Первомайская, 18</p>
+							<p class="availability__subway p3">м.Первомайская</p>
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'availability__shop-icon',
+								attr: 'width="18" height="18" viewBox="0 0 72 72"'
+							}) }}
+						</a>
+						<div class="availability__contacts-info p3">
+							<p class="availability__info">Ежедневно c 10:00 до 22:00</p>
+							<p class="availability__info">Телефон:
+								<a href="tel:+78122421195" class="availability__info-link">+7 (812) 242-11-95</a>
+							</p>
+							<p class="availability__info">
+								<a href="mailto:info.spb@alpindustria.ru" class="availability__info-link">info.spb@alpindustria.ru</a>
+							</p>
+						</div>
+					</div>
+					<div class="availability__shop-content">
+						<table class="availability__table availability-table">
+							<tr class="availability-table__row _header">
+								<th class="availability-table__cell _code p4">Код</th>
+								<th class="availability-table__cell _color p4">Цвет</th>
+								<th class="availability-table__cell _size p4">Размер</th>
+								<th class="availability-table__cell _amount p4">Количество</th>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">42</span>
+								</td>
+								<td class="availability-table__cell _amount p3">1 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">43</span>
+								</td>
+								<td class="availability-table__cell _amount p3">2 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#C9364C" aria-label="Красный"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">45</span>
+								</td>
+								<td class="availability-table__cell _amount p3">5 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#8B4192" aria-label="Светло-фиолетовый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">38</span>
+								</td>
+								<td class="availability-table__cell _amount p3">1 шт.</td>
+							</tr>
+						</table>
+						<div class="availability__small p4">
+							<p>*Мастер оставляет за собой право увеличить стоимость в зависимости от состояния кошек.</p>
+							<p>Перед заточкой стоимость согласовывается с клиентом.</p>
+						</div>
+					</div>
+				</div>
+			{%- endfor %}
+		</div>
+		<div data-availability="Санкт-Петербург" class="availability__city">
+			<div class="availability__shop">
+				<div class="availability__shop-header">
+					<a href="#" class="availability__address">
+						<p class="availability__street p1">Заневский проспект, 30</p>
+						<p class="availability__subway p3">м.Чёрная речка</p>
+						{{ icon({
+							iconName: 'promo-arrow',
+							className: 'availability__shop-icon',
+							attr: 'width="18" height="18" viewBox="0 0 72 72"'
+						}) }}
+					</a>
+					<div class="availability__contacts-info p3">
+						<p class="availability__info">Ежедневно c 10:00 до 22:00</p>
+						<p class="availability__info">Телефон:
+							<a href="tel:+78122421195" class="availability__info-link">+7 (812) 242-11-95</a>
+						</p>
+						<p class="availability__info">
+							<a href="mailto:info.spb@alpindustria.ru" class="availability__info-link">info.spb@alpindustria.ru</a>
+						</p>
+					</div>
+				</div>
+				<div class="availability__shop-content">
+					<table class="availability__table availability-table">
+						<tr class="availability-table__row _header">
+							<th class="availability-table__cell _code p4">Код</th>
+							<th class="availability-table__cell _color p4">Цвет</th>
+							<th class="availability-table__cell _size p4">Размер</th>
+							<th class="availability-table__cell _amount p4">Количество</th>
+						</tr>
+						<tr class="availability-table__row">
+							<td class="availability-table__cell _code p3">402317</td>
+							<td class="availability-table__cell _color">
+								<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+							</td>
+							<td class="availability-table__cell _size">
+								<span class="availability-table__size button _size">42</span>
+							</td>
+							<td class="availability-table__cell _amount p3">1 шт.</td>
+						</tr>
+						<tr class="availability-table__row">
+							<td class="availability-table__cell _code p3">402317</td>
+							<td class="availability-table__cell _color">
+								<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+							</td>
+							<td class="availability-table__cell _size">
+								<span class="availability-table__size button _size">43</span>
+							</td>
+							<td class="availability-table__cell _amount p3">2 шт.</td>
+						</tr>
+					</table>
+					<div class="availability__small p4">
+						<p>*Мастер оставляет за собой право увеличить стоимость в зависимости от состояния кошек.</p>
+						<p>Перед заточкой стоимость согласовывается с клиентом.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-availability="Новосибирск" class="availability__city">
+			{% for i in range(0, 2) -%}
+				<div class="availability__shop">
+					<div class="availability__shop-header">
+						<a href="#" class="availability__address">
+							<p class="availability__street p1">ул. Первомайская, 18</p>
+							<p class="availability__subway p3">м.Первомайская</p>
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'availability__shop-icon',
+								attr: 'width="18" height="18" viewBox="0 0 72 72"'
+							}) }}
+						</a>
+						<div class="availability__contacts-info p3">
+							<p class="availability__info">Ежедневно c 10:00 до 22:00</p>
+							<p class="availability__info">Телефон:
+								<a href="tel:+78122421195" class="availability__info-link">+7 (812) 242-11-95</a>
+							</p>
+							<p class="availability__info">
+								<a href="mailto:info.spb@alpindustria.ru" class="availability__info-link">info.spb@alpindustria.ru</a>
+							</p>
+						</div>
+					</div>
+					<div class="availability__shop-content">
+						<table class="availability__table availability-table">
+							<tr class="availability-table__row _header">
+								<th class="availability-table__cell _code p4">Код</th>
+								<th class="availability-table__cell _color p4">Цвет</th>
+								<th class="availability-table__cell _size p4">Размер</th>
+								<th class="availability-table__cell _amount p4">Количество</th>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">42</span>
+								</td>
+								<td class="availability-table__cell _amount p3">1 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">43</span>
+								</td>
+								<td class="availability-table__cell _amount p3">2 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#C9364C" aria-label="Красный"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">45</span>
+								</td>
+								<td class="availability-table__cell _amount p3">5 шт.</td>
+							</tr>
+							<tr class="availability-table__row">
+								<td class="availability-table__cell _code p3">402317</td>
+								<td class="availability-table__cell _color">
+									<span class="availability-table__color button _color" style="background:#8B4192" aria-label="Светло-фиолетовый"></span>
+								</td>
+								<td class="availability-table__cell _size">
+									<span class="availability-table__size button _size">38</span>
+								</td>
+								<td class="availability-table__cell _amount p3">1 шт.</td>
+							</tr>
+						</table>
+						<div class="availability__small p4">
+							<p>*Мастер оставляет за собой право увеличить стоимость в зависимости от состояния кошек.</p>
+							<p>Перед заточкой стоимость согласовывается с клиентом.</p>
+						</div>
+					</div>
+				</div>
+			{%- endfor %}
+		</div>
+		<div data-availability="Екатеринбург" class="availability__city">
+			<div class="availability__shop">
+				<div class="availability__shop-header">
+					<a href="#" class="availability__address">
+						<p class="availability__street p1">Заневский проспект, 30</p>
+						<p class="availability__subway p3">м.Чёрная речка</p>
+						{{ icon({
+							iconName: 'promo-arrow',
+							className: 'availability__shop-icon',
+							attr: 'width="18" height="18" viewBox="0 0 72 72"'
+						}) }}
+					</a>
+					<div class="availability__contacts-info p3">
+						<p class="availability__info">Ежедневно c 10:00 до 22:00</p>
+						<p class="availability__info">Телефон:
+							<a href="tel:+78122421195" class="availability__info-link">+7 (812) 242-11-95</a>
+						</p>
+						<p class="availability__info">
+							<a href="mailto:info.spb@alpindustria.ru" class="availability__info-link">info.spb@alpindustria.ru</a>
+						</p>
+					</div>
+				</div>
+				<div class="availability__shop-content">
+					<table class="availability__table availability-table">
+						<tr class="availability-table__row _header">
+							<th class="availability-table__cell _code p4">Код</th>
+							<th class="availability-table__cell _color p4">Цвет</th>
+							<th class="availability-table__cell _size p4">Размер</th>
+							<th class="availability-table__cell _amount p4">Количество</th>
+						</tr>
+						<tr class="availability-table__row">
+							<td class="availability-table__cell _code p3">402317</td>
+							<td class="availability-table__cell _color">
+								<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+							</td>
+							<td class="availability-table__cell _size">
+								<span class="availability-table__size button _size">42</span>
+							</td>
+							<td class="availability-table__cell _amount p3">1 шт.</td>
+						</tr>
+						<tr class="availability-table__row">
+							<td class="availability-table__cell _code p3">402317</td>
+							<td class="availability-table__cell _color">
+								<span class="availability-table__color button _color" style="background:#342C25" aria-label="Тёмно-серый"></span>
+							</td>
+							<td class="availability-table__cell _size">
+								<span class="availability-table__size button _size">43</span>
+							</td>
+							<td class="availability-table__cell _amount p3">2 шт.</td>
+						</tr>
+					</table>
+					<div class="availability__small p4">
+						<p>*Мастер оставляет за собой право увеличить стоимость в зависимости от состояния кошек.</p>
+						<p>Перед заточкой стоимость согласовывается с клиентом.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

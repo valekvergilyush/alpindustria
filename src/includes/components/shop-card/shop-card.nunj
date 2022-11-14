@@ -1,0 +1,11 @@
+{% macro shopCard(props) %}
+	<div class="shop-card">
+		<a href="#" class="shop-card__title p1">{{ props.address }}</a>
+		<p class="shop-card__metro p3 c-gray-dark">{{ props.metro }}</p>
+		<div class="shop-card__bottom p3">
+			<p>{{ props.schedule }}</p>
+			<p>Телефон: <a class="shop-card__link" href="tel:{{ props.phone }}">{{ props.phone }}</a></p>
+			<a class="shop-card__link" href="mailto:{{ props.email }}">{{ props.email }}</a>
+		</div>
+	</div>
+{% endmacro %}
