@@ -54,8 +54,8 @@
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Фото</p>
 				<div class="addresses-shop__block">
-					<img src="/assets/images/addresses/addresses-img-1.jpg" alt="Фото">
 					<img src="/assets/images/addresses/addresses-img-2.jpg" alt="Фото">
+					<img src="/assets/images/addresses/addresses-img-1.jpg" alt="Фото">
 				</div>
 			</div>
 		</div>
