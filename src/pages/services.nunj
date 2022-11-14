@@ -1,6 +1,6 @@
 {% extends "../templates/inner-services.nunj" %}
 
-{% block title %}Прокат | {{ super() }}{% endblock title %}
+{% block title %}Сервисы | {{ super() }}{% endblock title %}
 
 {% block mainContent %}
 	<main class="page__main">
