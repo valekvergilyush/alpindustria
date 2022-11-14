@@ -1,4 +1,4 @@
-{% extends "../templates/inner-page.nunj" %}
+{% extends "../templates/inner-services.nunj" %}
 
 {% block title %}Прокат | {{ super() }}{% endblock title %}
 
