@@ -2,9 +2,10 @@
 	$this: &;
 	position: relative;
 	&._horizontal {
-		--slider-dots-height: #{rem(42)};
+		--slider-dots-height: #{rem(38)};
+		--padding-bottom: calc(var(--container-padding) + var(--slider-dots-height));
 		#{$this}__content {
-			padding-bottom: calc(var(--container-padding) + var(--slider-dots-height));
+			padding-bottom: var(--padding-bottom);
 		}
 		.tns-nav {
 			top: auto;
@@ -55,7 +56,7 @@
 			margin-bottom: 78px;
 		}
 		@media (max-width: $laptop-sm) {
-			margin-bottom: 160px;
+			margin-bottom: 125px;
 		}
 		@media (max-width: $mobile-lg) {
 			padding-top: 8px;
@@ -79,6 +80,10 @@
 		line-height: 120%;
 		text-align: right;
 		letter-spacing: -0.04em;
+		@media (max-width: $laptop-sm) {
+			line-height: 1.5;
+			letter-spacing: 0;
+		}
 		@media (max-width: $mobile-lg) {
 			font-size: 14px;
 			line-height: 16px;
@@ -87,6 +92,7 @@
 	&__title {
 		max-width: rem(700);
 		margin-bottom: rem(32);
+		line-height: 1;
 		@media (max-width: $laptop-md) {
 			max-width: 600px;
 			margin-bottom: 24px;
@@ -143,6 +149,7 @@
 			}
 			@media (max-width: $laptop-sm) {
 				--size: 96px;
+				bottom: var(--padding-bottom);
 			}
 			@media (max-width: $mobile-lg) {
 				--size: 40px;

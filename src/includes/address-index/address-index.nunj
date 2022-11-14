@@ -9,7 +9,7 @@
 	{ name: 'Новосибирск', value: 1 },
 	{ name: 'Москва', value: 8 },
 	{ name: 'Приэльбрусье', value: 2 },
-	{ name: 'Пермь', value: 2 },
+	{ name: 'Пермь', value: 1 },
 	{ name: 'Екатеринбург', value: 1 },
 	{ name: 'Пятигорск', value: 4 },
 	{ name: 'Воронеж', value: 4 },

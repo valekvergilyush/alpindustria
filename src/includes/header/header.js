@@ -26,9 +26,12 @@ class Header {
 
 		this.isHeaderHidden = false;
 		this.filtersElement = document.querySelector('.page__filters');
+		this.timeline = document.querySelector('[data-timeline]');
+
 		if (this.filtersElement) {
 			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 		}
+
 		this.headerElementHeight = this.headerElement.offsetHeight;
 		ScrollHelper.onScroll.add(y => this.onWindowScroll(y));
 		ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
@@ -89,11 +92,12 @@ class Header {
 				duration: 0.1,
 				ease: 'linear',
 			});
-			gsap.to('[data-timeline]', {
-				top: this.headerElement.offsetHeight,
-				duration: 0.1,
-				ease: 'linear',
-			});
+			this.timeline &&
+				gsap.to(this.timeline, {
+					top: this.headerElement.offsetHeight,
+					duration: 0.1,
+					ease: 'linear',
+				});
 			HTML_CLASSLIST.add(ClassName.HEADER_OPENED);
 		}
 	}
@@ -108,11 +112,12 @@ class Header {
 				HTML_CLASSLIST.remove(ClassName.HEADER_OPENED);
 			},
 		});
-		gsap.to('[data-timeline]', {
-			top: 0,
-			duration: 0.1,
-			ease: 'linear',
-		});
+		this.timeline &&
+			gsap.to(this.timeline, {
+				top: 0,
+				duration: 0.1,
+				ease: 'linear',
+			});
 	}
 }
 
