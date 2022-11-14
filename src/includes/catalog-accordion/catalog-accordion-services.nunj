@@ -23,8 +23,8 @@
 			{% include "../services-content/services-content.nunj" %}
 		</div>
 	</section>
-	<section class="catalog-accordion__section _opened" data-accordion-section>
-		<h2 class="catalog-accordion__title _opened h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Заточка</span></h2>
+	<section class="catalog-accordion__section" data-accordion-section>
+		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Заточка</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
 		</div>

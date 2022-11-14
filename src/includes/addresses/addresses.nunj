@@ -44,6 +44,9 @@
 							{% include "../addresses-shop/addresses-shop.nunj" %}
 							{% include "../addresses-shop/addresses-shop-2.nunj" %}
 							{% include "../addresses-shop/addresses-shop.nunj" %}
+							{% include "../addresses-shop/addresses-shop-2.nunj" %}
+							{% include "../addresses-shop/addresses-shop.nunj" %}
+							{% include "../addresses-shop/addresses-shop-2.nunj" %}
 						{% endif %}
 					</div>
 				</div>

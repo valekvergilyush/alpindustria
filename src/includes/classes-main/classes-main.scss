@@ -127,26 +127,27 @@
 	&__date {
 		margin-right: auto;
 		gap: rem(16);
+		cursor: pointer;
 		@extend .animated;
 		&:hover {
 			opacity: 0.5;
 		}
-		.button__icon {
-			--size: #{rem(24)};
-			width: var(--size);
-			height: var(--size);
-			fill: none;
-			@media (max-width: $laptop-md) {
-				--size: 16px;
-			}
-			@media (max-width: $mobile-lg) {
-				--size: 24px;
-			}
+	}
+	&__date-text {
+		@media (max-width: $mobile-lg) {
+			display: none;
 		}
-		.button__text {
-			@media (max-width: $mobile-lg) {
-				display: none;
-			}
+	}
+	&__date-icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+		fill: none;
+		@media (max-width: $laptop-md) {
+			--size: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 24px;
 		}
 	}
 	.community-nav {

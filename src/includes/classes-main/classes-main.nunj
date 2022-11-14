@@ -1,4 +1,5 @@
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
 
 {% set categoriesList = [
 	'Лекции и мастер-классы',
@@ -44,12 +45,22 @@
 		</div>
 	</div>
 	<div class="classes-main__bottom container">
-		{{ button({
-			className: 'classes-main__date p2',
-			text: 'Выберите дату',
-			icon: 'calendar',
-			iconData: 'width="24" height="24" viewBox="0 0 24 24"'
-		}) }}
+		<label class="classes-main__date p2">
+			<span class="classes-main__date-text">Выберите дату</span>
+			{{ icon({
+				iconName: 'calendar',
+				className: 'classes-main__date-icon',
+				attr: 'width="24" height="24" viewBox="0 0 24 24"'
+			}) }}
+			<input
+				class="visually-hidden"
+				type="text"
+				id="date"
+				name="date"
+				readonly
+				data-datepicker
+			>
+		</label>
 		<p class="classes-main__number p2">24 занятия</p>
 		{{ button({
 			className: 'classes-main__search',

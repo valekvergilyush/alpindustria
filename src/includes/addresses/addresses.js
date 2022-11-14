@@ -1,4 +1,5 @@
 import Map from '../../assets/js/modules/Map';
+import AddressesScroll from '../../assets/js/modules/AddressesScroll';
 
 const CLASS_ACTIVE = '_active';
 const CLASS_WRAP_ACTIVE = '_wrap-active';
@@ -442,6 +443,7 @@ class Addresses {
 	changeActiveCity(index) {
 		this.closeActiveCityTab();
 		this.openCityTab(index);
+		AddressesScroll.addressContentProgressUpdate();
 		this.setMapData(index);
 	}
 
