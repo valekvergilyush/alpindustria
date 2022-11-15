@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import env from '../utils/env';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
@@ -33,6 +34,7 @@ class Popups {
 
 		this.activePopup = null;
 		this.activePopupName = '';
+		this.popupsRoot = document.querySelector('[data-popups]');
 		this.popups = document.querySelectorAll('[data-popup-wrapper]');
 		this.closeButton = document.querySelector('.popups__close-button.close-button');
 
@@ -88,10 +90,9 @@ class Popups {
 
 		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
 		const popupAnimation = popup.getAttribute('data-popup-animation');
-		const popupsRoot = document.querySelector('[data-popups]');
 
-		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-			disableBodyScroll(popupsRoot);
+		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) && !env.isIOS) {
+			disableBodyScroll(this.popupsRoot);
 		}
 
 		if (!popup) {
@@ -239,10 +240,8 @@ class Popups {
 				});
 			}
 
-			const popupsRoot = document.querySelector('[data-popups]');
-
-			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-				enableBodyScroll(popupsRoot);
+			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) && !env.isIOS) {
+				enableBodyScroll(this.popupsRoot);
 			}
 
 			documentClassList.remove('_popup-opened');
