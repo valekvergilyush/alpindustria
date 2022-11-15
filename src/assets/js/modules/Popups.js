@@ -1,4 +1,4 @@
-// import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
@@ -88,9 +88,10 @@ class Popups {
 
 		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
 		const popupAnimation = popup.getAttribute('data-popup-animation');
+		const popupsRoot = document.querySelector('[data-popups]');
 
 		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-			// disableBodyScroll(popup);
+			disableBodyScroll(popupsRoot);
 		}
 
 		if (!popup) {
@@ -238,8 +239,10 @@ class Popups {
 				});
 			}
 
+			const popupsRoot = document.querySelector('[data-popups]');
+
 			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-				// enableBodyScroll(this.activePopup);
+				enableBodyScroll(popupsRoot);
 			}
 
 			documentClassList.remove('_popup-opened');
