@@ -2,8 +2,6 @@
 	--padding-x: var(--container-padding);
 	--padding-y: #{rem(96)};
 	--img-width: #{vw(704, 1728)};
-	// position: sticky;
-	// top: 0;
 	display: grid;
 	grid-template-columns: 1fr var(--img-width);
 	grid-template-rows: repeat(2, min-content);
@@ -12,6 +10,7 @@
 	padding-left: var(--padding-x);
 	color: var(--white);
 	background-color: var(--green-dark);
+	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--padding-y: 72px;
 	}
@@ -36,14 +35,18 @@
 			font-size: 92px;
 		}
 		@media (max-width: $laptop) {
+			--padding-y: 57px;
 			font-size: 80px;
+			line-height: 104px;
 		}
 		@media (max-width: $laptop-sm) {
-			margin-bottom: 136px;
+			margin-bottom: 24px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 109px;
+			--padding-y: 42px;
 			font-size: 54px;
+			line-height: 70px;
+			margin-bottom: 63px;
 		}
 	}
 	&__text {
@@ -51,15 +54,16 @@
 		max-width: rem(650);
 		margin-bottom: var(--padding-y);
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 72px;
+			margin-bottom: 81px;
 		}
 		@media (max-width: $laptop) {
 			max-width: 390px;
-			margin-bottom: 55px;
+			margin-bottom: 79px;
 		}
 		@media (max-width: $laptop-sm) {
 			max-width: 550px;
 			align-self: flex-start;
+			margin-bottom: 55px;
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 38px;
@@ -93,6 +97,9 @@
 		margin-right: var(--padding-x);
 		margin-bottom: var(--padding-y);
 		padding-right: calc(var(--arrow-size) + var(--gap));
+		&._br {
+			display: none;
+		}
 		&::before {
 			content: '';
 			position: absolute;
@@ -115,6 +122,11 @@
 			--arrow-size: 40px;
 			--gap: 32px;
 			font-size: 30px;
+		}
+		@media (max-width: $laptop) {
+			&._br {
+				display: block;
+			}
 		}
 		@media (max-width: $laptop-sm) {
 			position: absolute;

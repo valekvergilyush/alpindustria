@@ -18,6 +18,10 @@
 						<p class="partner-advantages__item-text" data-animation="fade-right">{{ item }}</p>
 					</li>
 				{% endfor %}
+				<p class="partner-advantages__text p2 _tablet" data-animation="fade-right">
+					<span class="partner-advantages__asterisk h5 ttu">***</span><br>
+					Остальное мы&nbsp;берем на&nbsp;себя!
+				</p>
 			</ul>
 			<p class="partner-advantages__text p2" data-animation="fade-right">
 				<span class="partner-advantages__asterisk h5 ttu">***</span><br>

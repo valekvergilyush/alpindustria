@@ -1,1 +1,20 @@
-<section class="partner-part"></section>
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="partner-part">
+	<div class="partner-part__text-box">
+		<p class="partner-part__text s2">
+			Хотите стать частью АльпИндустрии в вашем регионе?
+		</p>
+		<p class="partner-part__text s2">
+			Предлагаем формат партнерского магазина.
+		</p>
+	</div>
+	{{ picture({
+		className: 'partner-part__img',
+		path: '/assets/images/partner/part/partner-part',
+		ext: 'jpg',
+		width: 1151,
+		height: 750,
+		attr: 'aria-hidden="true"'
+	}) }}
+</section>

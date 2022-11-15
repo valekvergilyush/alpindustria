@@ -12,5 +12,5 @@
 		height: 836,
 		attr: 'aria-hidden="true"'
 	}) }}
-	<a class="partner-hero__link h5 ttu" href="#">Подать заявку</a>
+	<a class="partner-hero__link h5 ttu" href="#">Подать <br class="partner-hero__link _br"> заявку</a>
 </section>
