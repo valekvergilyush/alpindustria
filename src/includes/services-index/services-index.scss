@@ -5,6 +5,7 @@
 	background-color: var(--blue-dark);
 	@media (max-width: $laptop-sm) {
 		flex-direction: column;
+		gap: 0;
 	}
 	&__item {
 		--width: calc(100% / 2 - 1px / 2);
