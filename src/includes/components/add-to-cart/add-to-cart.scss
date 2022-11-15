@@ -65,7 +65,7 @@
 		}
 	}
 	&__price {
-		@media (max-width: $desktop) {
+		@media (max-width: $laptop-lg) {
 			font-size: 28px;
 			line-height: 36px;
 			letter-spacing: -0.04em;

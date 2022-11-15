@@ -5,22 +5,41 @@
 		display: flex;
 		align-items: flex-end;
 		gap: rem(16);
-		padding-block: rem(16);
+		padding-block: rem(15);
 		border-bottom: 1px solid rgba($blue-dark, 0.2);
+		@media (max-width: $laptop-md) {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-areas:
+				'duration btn'
+				'price btn';
+			gap: 8px;
+		}
 	}
 	&__duration {
+		grid-area: duration;
 		width: rem(220);
 	}
 	&__price {
+		grid-area: price;
 		flex-grow: 1;
+		@media (max-width: $mobile-lg) {
+			font-size: 18px;
+			line-height: 23px;
+		}
 	}
 	&__btn-cell {
+		grid-area: btn;
 		flex-shrink: 0;
 	}
 	&__btn {
 		padding: rem(7) rem(15);
 		border-radius: rem(100);
 		border: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-md) {
+			font-size: 14px;
+			line-height: 16px;
+		}
 		&._active,
 		&:hover {
 			background-color: var(--blue-dark);

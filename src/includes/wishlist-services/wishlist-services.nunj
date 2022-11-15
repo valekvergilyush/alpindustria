@@ -1,5 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/select/select.nunj" import select %}
+{% from "../components/counter/counter.nunj" import counter %}
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
 
 {% set colorButtons = [
 	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
@@ -30,12 +32,12 @@
 
 <div class="wishlist-services">
 	<div class="wishlist-services__header">
-		<h2 class="wishlist-services__title h5 ttu">Палки телескопические</h2>
-		<a href="/brand.html" class="wishlist-services__brand p2">
+		<h2 class="wishlist-services__title h5 ttu">Палки<br>телескопические</h2>
+		<a href="/brand.html" class="wishlist-services__arrow _brand p2">
 			The North Face
 			{{ icon({
 				iconName: 'promo-arrow',
-				className: 'wishlist-services__brand-arrow',
+				className: 'wishlist-services__arrow-icon',
 				attr: 'width="16" height="16" viewBox="0 0 72 72"'
 			}) }}
 		</a>
@@ -43,43 +45,37 @@
 			<div class="wishlist-services__rating-star">
 				{{ icon({
 					iconName: 'star',
-					className: 'wishlist-services__rating-star',
 					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-star">
 				{{ icon({
 					iconName: 'star',
-					className: 'wishlist-services__rating-star',
 					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-star">
 				{{ icon({
 					iconName: 'star',
-					className: 'wishlist-services__rating-star',
 					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-star">
 				{{ icon({
 					iconName: 'star',
-					className: 'wishlist-services__rating-star',
 					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-star">
 				{{ icon({
 					iconName: 'star-empty',
-					className: 'wishlist-services__rating-star',
 					attr: 'width="26" height="26" viewBox="0 0 26 26"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-mobile">
-				<div class="wishlist-services__rating-star">
+				<div class="wishlist-services__rating-star _mobile">
 					{{ icon({
 						iconName: 'star',
-						className: 'wishlist-services__rating-star',
 						attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 					}) }}
 				</div>
@@ -101,24 +97,24 @@
 	<div class="wishlist-services__block">
 		<div class="wishlist-services__params">
 			<div class="wishlist-services__params-title">
-				<p class="h7 ttu">Цвет</p>
-				<div class="wishlist-services__params-wrap">
-					<ul class="wishlist-services__params-list">
-						{% for btn in colorButtons %}
-							<li class="wishlist-services__param">
-								<label class="wishlist-services__color">
-									<input class="wishlist-services__radio-input" type="radio" name="color" value="{{btn.name}}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
-									<span class="button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
-								</label>
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
+				<p class="ttu">Цвет</p>
+			</div>
+			<div class="wishlist-services__params-wrap">
+				<ul class="wishlist-services__params-list">
+					{% for btn in colorButtons %}
+						<li class="wishlist-services__param">
+							<label class="wishlist-services__color">
+								<input class="wishlist-services__radio-input" type="radio" name="color" value="{{btn.name}}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+								<span class="button _color" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
+							</label>
+						</li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
 		<div class="wishlist-services__params">
 			<div class="wishlist-services__params-title">
-				<p class="h7 ttu">Размер</p>
+				<p class="ttu">Размер</p>
 				<p class="wishlist-services__params-link p4">Таблица размеров</p>
 			</div>
 			<div class="wishlist-services__params-wrap">
@@ -141,6 +137,45 @@
 				</button>
 			</div>
 		</div>
+		<div class="wishlist-services__params">
+			<div class="wishlist-services__params-title">
+				<p class="ttu">Количество</p>
+			</div>
+			{{ counter({
+				number: 1,
+				className: 'wishlist-services__counter'
+			}) }}
+		</div>
 	</div>
-	{% include "../availability/availability-services.nunj" %}
+	<div class="wishlist-services__block">
+		<p class="h7 ttu">Описание</p>
+		<div class="wishlist-services__text">
+			<p class="p3 c-gray-dark">Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ.</p>
+			<a href="#" class="wishlist-services__arrow _product h7 ttu">
+				Cтраница товара
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'wishlist-services__arrow-icon',
+					attr: 'width="16" height="16" viewBox="0 0 72 72"'
+				}) }}
+			</a>
+		</div>
+	</div>
+	<div class="wishlist-services__block">
+		<p class="h7 ttu">Наличие</p>
+		{% include "../availability/availability-services.nunj" %}
+	</div>
+	{{ addToCart({
+		className: 'wishlist-services__add',
+		list: [
+			{
+				text: 'Стоимость:',
+				price: '9 000 ₽'
+			}
+		],
+		link: {
+			text: 'в корзину',
+			url: '#'
+		}
+	}) }}
 </div>

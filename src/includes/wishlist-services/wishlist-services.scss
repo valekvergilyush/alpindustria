@@ -3,14 +3,26 @@
 	--padding: var(--container-padding);
 	display: flex;
 	flex-direction: column;
-	gap: rem(96);
+	gap: rem(94);
+	@media (max-width: $laptop-lg) {
+		gap: 72px;
+	}
+	@media (max-width: $laptop-md) {
+		gap: 56px;
+	}
+	@media (max-width: $mobile-lg) {
+		gap: 40px;
+	}
 	&__header {
 		display: grid;
 		grid-template-columns: 1fr auto;
 		grid-template-areas:
 			'title title'
 			'brand rating';
-		gap: rem(16);
+		gap: rem(10);
+		@media (max-width: $laptop-md) {
+			gap: 16px;
+		}
 		@media (max-width: $mobile-lg) {
 			gap: 8px;
 		}
@@ -18,61 +30,119 @@
 	&__title {
 		grid-area: title;
 		padding-right: rem(56);
+		max-width: rem(620);
+		@media (max-width: $laptop-sm) {
+			padding-right: 0;
+			max-width: none;
+		}
 	}
-	&__brand {
-		grid-area: brand;
-		justify-self: flex-start;
+	&__arrow {
 		display: flex;
 		align-items: center;
 		gap: rem(8);
 		&[href] {
 			&:hover {
-				#{$this}__brand-arrow {
+				#{$this}__arrow-icon {
 					transform: translateX(#{rem(-8)});
 				}
 			}
 		}
+		&._brand {
+			grid-area: brand;
+			justify-self: flex-start;
+		}
+		&._product {
+			display: inline-flex;
+			margin-left: auto;
+			margin-top: rem(24);
+			@media (max-width: $laptop-md) {
+				margin-top: 20px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-top: 16px;
+			}
+		}
 	}
-	&__brand-arrow {
+	&__arrow-icon {
 		--size: #{rem(16)};
 		width: var(--size);
 		height: var(--size);
 		fill: currentColor;
 		transition: transform $default-transition-duration $default-transition-function;
+		@media (max-width: $mobile-lg) {
+			--size: 12px;
+		}
 	}
 	&__rating {
 		grid-area: rating;
+		align-self: center;
 		display: flex;
-		gap: rem(8);
+		gap: 1px;
+		@media (max-width: $laptop-md) {
+			gap: 13px;
+		}
 	}
 	&__rating-star {
 		--size: rem(32);
 		width: var(--size);
 		height: var(--size);
+		padding: 3px;
+		box-sizing: border-box;
+		@media (max-width: $laptop-md) {
+			--size: 20px;
+			padding: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			&:not(._mobile) {
+				display: none;
+			}
+		}
 		&._filled {
 			fill: currentColor;
+		}
+		svg {
+			width: 100%;
+			height: 100%;
 		}
 	}
 	&__rating-mobile {
 		display: none;
 		@media (max-width: $mobile-lg) {
 			display: flex;
+			align-items: center;
+			gap: 8px;
 		}
 	}
 	&__block {
 		display: flex;
 		flex-direction: column;
 		gap: rem(48);
+		@media (max-width: $laptop-lg) {
+			gap: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 24px;
+		}
 	}
 	&__pledge {
 		display: flex;
 		gap: rem(24);
-		padding-block: rem(16);
+		padding-block: rem(15);
 		border-top: 1px solid var(--blue-dark);
 		border-bottom: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-md) {
+			flex-direction: column;
+			gap: 8px;
+		}
 	}
 	&__pledge-title {
 		width: rem(211);
+		@media (max-width: $mobile-lg) {
+			.h7 {
+				font-size: 18px;
+				line-height: 23px;
+			}
+		}
 	}
 	&__params-wrap {
 		display: flex;
@@ -81,6 +151,24 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem(8);
+		@media (max-width: $laptop-md) {
+			width: 380px;
+			flex-wrap: nowrap;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			width: auto;
+			gap: 15px;
+		}
+	}
+	&__color {
+		display: block;
+		.button {
+			display: block;
+		}
 	}
 	&__radio-input {
 		display: none;
@@ -99,11 +187,53 @@
 		margin-left: rem(8);
 		border-radius: 50%;
 		color: var(--white);
-		@media (max-width: $laptop-lg) {
+		@media (max-width: $laptop-md) {
 			display: flex;
 		}
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $mobile-lg) {
 			display: none;
 		}
+	}
+	&__params {
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+		padding-top: rem(16);
+		border-top: 1px solid rgba($blue-dark, 0.2);
+	}
+	&__params-title {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(16);
+		font-size: rem(16);
+		line-height: rem(20);
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+	&__params-link {
+		padding-block: 1px;
+		border-bottom: 1px solid var(--blue-dark);
+		&[href] {
+			&:hover {
+				border-bottom: none;
+			}
+		}
+	}
+	&__counter {
+		--width: #{rem(111)};
+		--font-size: #{rem(24)};
+		min-width: var(--width);
+		width: var(--width);
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+	}
+	&__add {
+		position: sticky;
+		bottom: 0;
+		margin: 0 calc(var(--container-padding) * -1);
 	}
 }
