@@ -80,8 +80,9 @@
 				<p class="community-slider__text _fourth s2" data-animation="fade-right">Мы&nbsp;составили программу подготовки, которая опирается на&nbsp;нормативы Федерации альпинизма</p>
 			</div>
 			{% include "../community-program/community-program.nunj" %}
-			<img class="community-slider__line-img" src="/assets/images/community/slider/community-slider-line.svg" width="3483" alt="" aria-hidden="true">
-			<img class="community-slider__line-img _tablet" src="/assets/images/community/slider/community-slider-line-tablet.svg" width="2438" alt="" aria-hidden="true">
+			<div class="community-slider__line-img" data-community-slider-line-img>
+				{% include "../../assets/images/community/slider/community-slider-line.svg" %}
+			</div>
 		</section>
 	</div>
 </div>

@@ -15,6 +15,10 @@ class CommunitySlider {
 		}
 
 		this.slide = this.container.querySelector('[data-community-slide]');
+		this.linePath = this.container.querySelector('[data-community-slider-line-img] path');
+		this.pathLength = this.linePath.getTotalLength();
+
+		this.linePath.style.setProperty('--path-length', this.pathLength);
 
 		const getToValue = () => this.slide.scrollWidth - window.innerWidth;
 
@@ -36,6 +40,8 @@ class CommunitySlider {
 				invalidateOnRefresh: true,
 				scrub: true,
 				onUpdate: self => {
+					const strokeDashoffset = this.pathLength - this.pathLength * self.progress * 2;
+					this.linePath.style.strokeDashoffset = strokeDashoffset <= 0 ? 0 : strokeDashoffset;
 					gsap.set(this.slide, {
 						x: 0 - getToValue() * self.progress,
 					});

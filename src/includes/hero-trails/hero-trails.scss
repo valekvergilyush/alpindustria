@@ -127,9 +127,8 @@
 		z-index: calc(var(--total) - var(--i));
 		padding: var(--container-padding);
 		background-color: var(--gray-light);
-		border: 1px solid var(--gray-dark);
-		outline-offset: -1px;
 		transition: transform var(--duration) var(--easing);
+		will-change: transition;
 		&::before {
 			content: '';
 			position: absolute;
@@ -146,8 +145,18 @@
 				opacity $default-transition-duration $default-transition-function var(--duration);
 			opacity: 0;
 		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border: 1px solid var(--gray-dark);
+			pointer-events: none;
+		}
 		&._active {
-			transform: translateX(0vw);
+			transform: translateX(-1px);
 			border-left: 0;
 			#{$this}__info {
 				color: var(--white);
@@ -193,13 +202,17 @@
 			margin-left: 0;
 			border-left: 0;
 			border-right: 0;
-			transform: none;
+			transform: none !important;
 			margin-bottom: calc(0px - var(--item-height) * 0.76);
 			transition: padding-top var(--duration) var(--easing), margin var(--duration) var(--easing);
 			&::before {
 				bottom: 50%;
 				right: 50%;
 				transform: translate(50%, 50%);
+			}
+			&::after {
+				border-left: 0;
+				border-right: 0;
 			}
 			&._active {
 				padding-top: 56px;

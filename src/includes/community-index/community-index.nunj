@@ -30,16 +30,18 @@
 	<ul class="community-index__list" data-section-slider>
 		{% for section in sectionList %}
 			<li class="community-index__item{% if section.className %} {{ section.className }}{% endif %}" data-section-slide>
-				<p class="community-index__subtitle h3 ttu" data-slider-animation data-animation="words">{{ section.title }}</p>
-				<p class="community-index__text p2" data-slider-animation data-animation="fade-right">{{ section.text }}</p>
-				{{ button({
-					href: section.linkURL,
-					text: section.linkText,
-					icon: 'promo-arrow',
-					iconData: 'width="16" height="16"',
-					className: 'community-index__link ttu _arrow-s',
-					attr: 'data-slider-animation data-animation="fade-right"'
-				}) }}
+				<div class="community-index__item-inner">
+					<p class="community-index__subtitle h3 ttu" data-slider-animation data-animation="words">{{ section.title }}</p>
+					<p class="community-index__text p2" data-slider-animation data-animation="fade-right">{{ section.text }}</p>
+					{{ button({
+						href: section.linkURL,
+						text: section.linkText,
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16"',
+						className: 'community-index__link ttu _arrow-s',
+						attr: 'data-slider-animation data-animation="fade-right"'
+					}) }}
+				</div>
 			</li>
 		{% endfor %}
 	</ul>

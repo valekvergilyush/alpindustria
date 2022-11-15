@@ -27,6 +27,9 @@
 	&__popup-wrapper {
 		position: relative;
 		display: none;
+		&[data-popup-wrapper='filters-form'] {
+			overflow: auto;
+		}
 		&[data-popup-wrapper='availability'],
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='review-form'],
