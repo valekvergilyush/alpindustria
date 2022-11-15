@@ -31,6 +31,7 @@
 	}
 	&._bg {
 		background-color: var(--gray-light);
+		background-clip: content-box;
 	}
 	&._services {
 		#{$this}__section._opened {
