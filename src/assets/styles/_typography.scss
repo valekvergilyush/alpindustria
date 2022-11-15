@@ -1,14 +1,14 @@
 .h1 {
 	font-family: var(--font-family-suisse);
 	font-size: var(--font-size-h1);
-	line-height: 1;
+	line-height: 1.2;
 	font-weight: var(--default-font-weight);
 }
 
 .h2 {
 	font-family: var(--font-family-suisse);
 	font-size: var(--font-size-h2);
-	line-height: 1;
+	line-height: 1.2;
 	font-weight: var(--default-font-weight);
 	@media (max-width: $laptop) {
 		--font-size-h2: 80px;
@@ -22,7 +22,7 @@
 .h3 {
 	font-family: var(--font-family-suisse);
 	font-size: var(--font-size-h3);
-	line-height: 1;
+	line-height: 1.2;
 	font-weight: var(--default-font-weight);
 	@media (max-width: $laptop) {
 		--font-size-h3: 64px;

@@ -36,7 +36,7 @@
 	{ name: 'Горные лыжи' }
 ] %}
 
-<ul class="quick-filter__quick-filter quick-filter" data-subcategory>
+<ul class="hero-catalog__quick-filter quick-filter" data-quick-filter data-subcategory>
 	{% for category in categories %}
 	{% if category.subcategories %}
 		{% set mod = ' data-subcategory-mod="_' + category.modifier + '"' %}
