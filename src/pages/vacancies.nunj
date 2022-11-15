@@ -1,0 +1,12 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Карьера у нас | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_vacancies' %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/vacancies-hero/vacancies-hero.nunj" %}
+		{% include "../includes/community-tabs/community-tabs.nunj" %}
+	</main>
+{% endblock %}

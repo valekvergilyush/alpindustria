@@ -1,4 +1,4 @@
-.partner-hero {
+.vacancies-hero {
 	--padding-x: var(--container-padding);
 	--padding-y: #{rem(96)};
 	--img-width: #{vw(704, 1728)};
@@ -9,7 +9,7 @@
 	box-sizing: border-box;
 	padding-left: var(--padding-x);
 	color: var(--white);
-	background-color: var(--green-dark);
+	background-color: var(--blue-light);
 	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--padding-y: 72px;
