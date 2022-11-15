@@ -11,6 +11,10 @@
 		}
 		#{$this}__title {
 			padding-right: rem(150);
+			margin-top: 0;
+			margin-bottom: auto;
+			padding-bottom: 0;
+			padding-top: var(--padding);
 			@media (max-width: $laptop-md) {
 				padding-right: 0;
 			}
@@ -186,29 +190,30 @@
 		}
 	}
 	&__title {
+		--padding: #{rem(120)};
 		position: sticky;
 		bottom: 0;
 		max-width: rem(960);
 		margin-left: auto;
 		margin-top: auto;
-		padding-bottom: rem(120);
+		padding-bottom: var(--padding);
 		@media (max-width: $laptop-lg) {
 			padding-right: 0;
-			padding-bottom: 88px;
+			--padding: 88px;
 		}
 		@media (max-width: $laptop-md) and (min-width: ($laptop + 1px)) {
 			font-size: 54px;
 		}
 		@media (max-width: $laptop) {
-			padding-bottom: 68px;
+			--padding: 68px;
 		}
 		@media (max-width: $tablet) {
 			max-width: 680px;
 			margin-left: 0;
-			padding-bottom: 29px;
+			--padding: 29px;
 		}
 		@media (max-width: $mobile-lg) {
-			padding-bottom: 21px;
+			--padding: 21px;
 		}
 	}
 	&__wrapper {
