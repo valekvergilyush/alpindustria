@@ -1,4 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+// import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
@@ -90,18 +90,7 @@ class Popups {
 		const popupAnimation = popup.getAttribute('data-popup-animation');
 
 		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-			disableBodyScroll(popup, {
-				allowTouchMove: el => {
-					while (el && el !== document.body) {
-						if (el.getAttribute('body-scroll-lock-ignore') !== null) {
-							return true;
-						}
-
-						el = el.parentElement;
-					}
-					return false;
-				},
-			});
+			// disableBodyScroll(popup);
 		}
 
 		if (!popup) {
@@ -250,7 +239,7 @@ class Popups {
 			}
 
 			if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU)) {
-				enableBodyScroll(this.activePopup);
+				// enableBodyScroll(this.activePopup);
 			}
 
 			documentClassList.remove('_popup-opened');
