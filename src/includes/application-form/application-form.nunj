@@ -3,6 +3,14 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/input-file/input-file.nunj" import inputFile %}
 
+{% set page %}
+	{% if htmlClassMods === "_community" %}
+		Зарегистрироваться
+	{% else %}
+		Подать заявку
+	{% endif %}
+{% endset %}
+
 {% set hobbyList = [
 	'Альпинизм',
 	'Скалолазание',
@@ -32,7 +40,9 @@
 
 
 <div class="application-form">
-	{% include "../community-auth/community-auth.nunj" %}
+	{% if htmlClassMods === "_community" %}
+		{% include "../community-auth/community-auth.nunj" %}
+	{% endif %}
 
 	<p class="application-form__title h5 ttu c-gray-dark">Заполните анкету</p>
 	<form class="application-form__form">
@@ -125,10 +135,10 @@
 		}) }}
 
 		<div class="application-form__bottom">
-			<p class="application-form__bottom-text p3">Нажимая "Зарегистрироваться", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
+			<p class="application-form__bottom-text p3">Нажимая "{{page}}", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
 			{{ button({
 				type: 'submit',
-				text: 'Зарегистрироваться',
+				text: page,
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
 				className: 'application-form__submit _arrow'

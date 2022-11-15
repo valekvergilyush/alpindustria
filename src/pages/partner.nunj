@@ -1,0 +1,14 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Станьте партнером | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_partner' %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/partner-hero/partner-hero.nunj" %}
+		{% include "../includes/partner-part/partner-part.nunj" %}
+		{% include "../includes/partner-advantages/partner-advantages.nunj" %}
+		{% include "../includes/community-tabs/community-tabs.nunj" %}
+	</main>
+{% endblock %}

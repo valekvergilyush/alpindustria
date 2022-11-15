@@ -1,11 +1,19 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
-{% set tabsList = [
-	{ id: 'application-form', text: 'Стать участником горного клуба', active: true },
-	{ id: 'contacts', text: 'Контакты' },
-	{ id: 'requisites', text: 'Реквизиты' }
-] %}
-
+{# Расширить под другие страницы #}
+{% if htmlClassMods !== "_partner" %}
+	{% set tabsList = [
+		{ id: 'application-form', text: 'Стать участником горного клуба', active: true },
+		{ id: 'contacts', text: 'Контакты' },
+		{ id: 'requisites', text: 'Реквизиты' }
+	] %}
+	{% else %}
+	{% set tabsList = [
+		{ id: 'application-form', text: 'стать партнером', active: true },
+		{ id: 'contacts', text: 'Контакты' },
+		{ id: 'requisites', text: 'Реквизиты' }
+	] %}
+{% endif %}
 
 <section class="community-tabs" data-community-tab>
 	<ul class="community-tabs__tabs">
