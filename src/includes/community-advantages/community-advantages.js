@@ -103,9 +103,6 @@ class CommunityAdvantages {
 			});
 		}
 	}
-	_initTopWrapperScrollTrigger() {
-
-	}
 }
 
 export default new CommunityAdvantages();
