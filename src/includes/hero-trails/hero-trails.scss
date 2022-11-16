@@ -26,6 +26,9 @@
 				right: 50%;
 				transform: translate(50%, 50%);
 			}
+			&::after {
+				border-color: var(--blue-dark);
+			}
 			@media (max-width: $laptop-lg) {
 				--item-width: #{vw(857, 1440)};
 			}
@@ -217,6 +220,9 @@
 			&._active {
 				padding-top: 56px;
 				margin-bottom: 0;
+				&::after {
+					border-bottom: 0;
+				}
 				&:hover {
 					&::before {
 						background-image: inline('promo-arrow.svg');
