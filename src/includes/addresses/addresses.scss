@@ -28,6 +28,7 @@
 		border-right: 1px solid var(--blue-dark);
 		overflow: auto;
 		box-sizing: border-box;
+		scrollbar-width: none;
 		@media (max-width: $laptop-md) {
 			gap: 17px;
 		}
@@ -123,6 +124,7 @@
 		display: flex;
 		background-color: var(--gray-light);
 		overflow: auto;
+		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
 		}
