@@ -1,7 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set tabsList = [
-	{ id: 'application-form', text: 'Стать участником горного клуба', active: true },
+	{ id: 'application-form', text: 'Стать партнером', active: true },
 	{ id: 'contacts', text: 'Контакты' },
 	{ id: 'requisites', text: 'Реквизиты' }
 ] %}
@@ -23,7 +23,7 @@
 
 	<div class="community-tabs__sections">
 		<section class="community-tabs__section _application-form _active" aria-labelledby="application-form" data-tab-section="application-form">
-			{% include "../application-form/application-form.nunj" %}
+			{% include "../application-form/application-form-partner.nunj" %}
 		</section>
 		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
 			{% include "../community-contacts/community-contacts.nunj" %}
