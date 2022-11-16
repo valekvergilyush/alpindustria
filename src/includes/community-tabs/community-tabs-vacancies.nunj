@@ -7,7 +7,7 @@
 ] %}
 
 <section class="community-tabs" data-community-tab>
-	<ul class="community-tabs__tabs"> 
+	<ul class="community-tabs__tabs">
 		{% for tab in tabsList %}
 			<li class="community-tabs__tabs-item">
 				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h5 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
@@ -23,7 +23,7 @@
 
 	<div class="community-tabs__sections">
 		<section class="community-tabs__section _application-form _active" aria-labelledby="application-form" data-tab-section="application-form">
-			{% include "../application-form/application-form-partner.nunj" %}
+			{% include "../application-form/application-form-vacancies.nunj" %}
 		</section>
 		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
 			{% include "../community-contacts/community-contacts.nunj" %}

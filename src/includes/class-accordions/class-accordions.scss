@@ -21,6 +21,25 @@
 	&._vacancies {
 		#{$this}__btn {
 			margin-bottom: rem(16);
+			cursor: pointer;
+		}
+		#{$this}__inner {
+			ul {
+				padding-left: 20px;
+			}
+			li {
+				list-style-type: disc;
+			}
+		}
+		#{$this}__title {
+			margin-bottom: rem(8);
+		}
+		#{$this}__inner {
+			margin-bottom: rem(24);
+			&:last-child {
+				padding-top: 0;
+				margin-bottom: 0;
+			}
 		}
 	}
 	&__item {

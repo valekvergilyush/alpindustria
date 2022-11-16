@@ -20,8 +20,8 @@
 	<div class="vacancies-open__accordion">
 		<ul class="class-accordions _ordered _vacancies">
 			{% for item in classAccordions %}
-				<li class="class-accordions__item" data-accordion-section>
-					<button class="class-accordions__btn h6 {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+				<li class="class-accordions__item {% if item.opened %} _opened{% endif %}" data-accordion-section>
+					<button class="class-accordions__btn h6 " type="button" data-accordion-title>
 						<span class="class-accordions__name s2 c-gray-dark" data-accordion-title-text>{{ item.name }}</span>
 						{{ icon({
 							iconName: 'accordion-arrow',
@@ -30,11 +30,35 @@
 						}) }}
 					</button>
 					<div class="class-accordions__content" data-accordion-content>
-						<div class="class-accordions__inner">
-							<p class="h7 c-gray-dark ttu">
-								Что предстоит делать:
-							</p>
+						<div class="class-accordions__inner c-gray-dark">
+							<p class="class-accordions__title h7 ttu">Что предстоит делать:</p>
+							<ul>
+								<li>вести телефонные переговоры с разными сегментами бизнеса (малый и средний) по всей России</li>
+								<li>продавать клиентам стратегии работы с сервисом и платные услуги</li>
+								<li>развивать навыки продаж, зарабатывать и помогать бизнесу клиентов расти вместе с тобой</li>
+								<li>выполнять роль стратегического консультанта для клиентов и эксперта рынка рекламных площадок</li>
+								<li>общаться и обмениваться опытом с коллегами, взаимодействовать с командой</li>
+							</ul>
 						</div>
+						<div class="class-accordions__inner c-gray-dark">
+							<p class="class-accordions__title h7 ttu">Мы ожидаем от вас:</p>
+							<ul>
+								<li>опыт В2В продаж от 1 года</li>
+								<li>опыт в телефонных продажах и холодных звонках</li>
+								<li>желание развиваться в сфере продаж</li>
+								<li>умение сохранять баланс интересов клиента и интересов компании</li>
+								<li>умение анализировать компании, оценивать потенциал клиентов</li>
+								<li>настойчивость и умение аргументировать свою позицию</li>
+							</ul>
+						</div>
+						<a href="#" class="class__link h7 c-gray-dark ttu">
+							Откликнуться
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'class__link-icon',
+								attr: 'width="16" height="16" viewBox="0 0 72 72"'
+							}) }}
+						</a>
 					</div>
 				</li>
 			{% endfor %}
