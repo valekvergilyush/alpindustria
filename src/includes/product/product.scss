@@ -340,6 +340,7 @@
 			&._sizes {
 				width: 312px;
 			}
+			scrollbar-width: none;
 			@include scrollbar {
 				display: none;
 			}
