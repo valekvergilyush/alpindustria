@@ -1,5 +1,6 @@
 .news-index {
 	&__title {
 		padding-inline: var(--container-padding);
+		border-bottom: 1px solid var(--blue-dark);
 	}
 }
