@@ -37,10 +37,11 @@
 	}) }}
 	<div class="discount-create-form__sms-code">
 		{{ input({
-			type: 'number',
+			type: 'text',
 			id: 'discount-create-form-tel-code',
 			className: 'discount-create-form__input',
-			name: 'Код из СМС'
+			name: 'Код из СМС',
+			inputAttr: 'inputmode="numeric"'
 		}) }}
 		{{ button({
 			type: 'button',
