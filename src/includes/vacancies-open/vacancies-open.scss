@@ -28,12 +28,32 @@
 	@media (max-width: $laptop-sm) {
 		display: flex;
 		flex-direction: column;
+		padding: 0 24px;
 	}
 	&__title {
 		padding-top: rem(124);
 		border-right: 1px solid var(--blue-dark);
+		@media (max-width: $laptop) {
+			padding-top: 71px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 32px;
+			border-right: none;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 52px;
+		}
 	}
 	&__accordion {
 		padding: rem(140) 0 0 rem(64);
+		@media (max-width: $laptop-lg) {
+			padding: 136px 0 0 40px;
+		}
+		@media (max-width: $laptop) {
+			padding: 72px 0 0 32px;
+		}
+		@media (max-width: $laptop-sm) {
+			padding: 0;
+		}
 	}
 }

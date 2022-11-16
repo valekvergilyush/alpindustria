@@ -32,7 +32,7 @@
 					<div class="class-accordions__content" data-accordion-content>
 						<div class="class-accordions__inner c-gray-dark">
 							<p class="class-accordions__title h7 ttu">Что предстоит делать:</p>
-							<ul>
+							<ul class="p3">
 								<li>вести телефонные переговоры с разными сегментами бизнеса (малый и средний) по всей России</li>
 								<li>продавать клиентам стратегии работы с сервисом и платные услуги</li>
 								<li>развивать навыки продаж, зарабатывать и помогать бизнесу клиентов расти вместе с тобой</li>
@@ -42,7 +42,7 @@
 						</div>
 						<div class="class-accordions__inner c-gray-dark">
 							<p class="class-accordions__title h7 ttu">Мы ожидаем от вас:</p>
-							<ul>
+							<ul class="p3">
 								<li>опыт В2В продаж от 1 года</li>
 								<li>опыт в телефонных продажах и холодных звонках</li>
 								<li>желание развиваться в сфере продаж</li>
