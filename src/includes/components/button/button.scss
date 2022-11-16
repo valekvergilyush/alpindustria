@@ -15,12 +15,17 @@
 		font-weight: var(--default-font-weight);
 	}
 	&._white-border {
+		@extend .animated;
 		color: var(--white);
 		border: 2px solid currentColor;
-		@extend .animated;
 		&:hover {
 			background-color: var(--white);
 			color: var(--blue-dark);
+			._ff & {
+				border: 2px solid transparent;
+				outline: 2px solid currentColor;
+				outline-style: -2px;
+			}
 		}
 	}
 	&._blue-border {
