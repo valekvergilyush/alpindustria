@@ -9,8 +9,6 @@
 	}
 	@media (max-width: $laptop-md) {
 		--section-padding: 24px;
-		border-left: 1px solid var(--blue-dark);
-		border-right: 1px solid var(--blue-dark);
 	}
 	@media (max-width: $laptop-sm) {
 		flex-direction: column;
