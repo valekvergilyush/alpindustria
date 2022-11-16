@@ -18,6 +18,11 @@
 			}
 		}
 	}
+	&._vacancies {
+		#{$this}__btn {
+			margin-bottom: rem(16);
+		}
+	}
 	&__item {
 		padding-bottom: rem(23);
 		border-bottom: 1px solid var(--gray-dark);

@@ -1,0 +1,39 @@
+.vacancies-open {
+	min-height: 1038px;
+	$this: &;
+	--container-max-width: #{rem(1920)};
+	--container-width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(124)};
+	--full-width: 1728;
+	--left-col: 692;
+	--right-col: 1036;
+	--left-col-width: calc(var(--container-width) * (var(--left-col) / var(--full-width)));
+	--right-col-width: calc(var(--container-width) * (var(--right-col) / var(--full-width)));
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr var(--left-col-width) var(--right-col-width) 1fr;
+	&::before {
+		content: '';
+		grid-column: 1/2;
+		grid-row: 1/-1;
+		background-color: var(--white);
+	}
+	@media (max-width: $laptop-lg) {
+		--padding-y: 96px;
+	}
+	@media (max-width: $laptop) {
+		--padding-y: 75px;
+	}
+	@media (max-width: $laptop-sm) {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		padding-top: rem(124);
+		border-right: 1px solid var(--blue-dark);
+	}
+	&__accordion {
+		padding: rem(124) rem(64);
+	}
+}

@@ -9,7 +9,6 @@
 	--right-col: 1036;
 	--left-col-width: calc(var(--container-width) * (var(--left-col) / var(--full-width)));
 	--right-col-width: calc(var(--container-width) * (var(--right-col) / var(--full-width)));
-
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr var(--left-col-width) var(--right-col-width) 1fr;

@@ -1,0 +1,43 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set classAccordions = [
+	{
+		name: 'Менеджер по маркетингу и рекламе',
+		opened: false
+	},
+	{
+		name: 'Менеджер по работе с клиентами B2B',
+		opened: true
+	},
+	{
+		name: 'Продавец-консультант',
+		opened: false
+	}
+] %}
+
+<section class="vacancies-open">
+	<h2 class="vacancies-open__title h4 ttu is-animated">Открытые вакансии</h2>
+	<div class="vacancies-open__accordion">
+		<ul class="class-accordions _ordered _vacancies">
+			{% for item in classAccordions %}
+				<li class="class-accordions__item" data-accordion-section>
+					<button class="class-accordions__btn h6 {% if item.opened %} _opened{% endif %}" type="button" data-accordion-title>
+						<span class="class-accordions__name s2 c-gray-dark" data-accordion-title-text>{{ item.name }}</span>
+						{{ icon({
+							iconName: 'accordion-arrow',
+							className: 'class-accordions__btn-icon',
+							attr: 'viewBox="0 0 16 16" width="16" height="16"'
+						}) }}
+					</button>
+					<div class="class-accordions__content" data-accordion-content>
+						<div class="class-accordions__inner">
+							<p class="h7 c-gray-dark ttu">
+								Что предстоит делать:
+							</p>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
