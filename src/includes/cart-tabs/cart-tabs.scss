@@ -8,8 +8,19 @@
 		flex-grow: 1;
 	}
 	&__price {
+		width: rem(240);
 		color: var(--gray-light);
+		@media (max-width: $laptop-lg) {
+			width: 200px;
+		}
+		@media (max-width: $laptop-md) {
+			width: 140px;
+		}
+		@media (max-width: $laptop-sm) {
+			width: 200px;
+		}
 		@media (max-width: $mobile-lg) {
+			width: 96px;
 			font-size: 10px;
 			line-height: 1.6;
 		}

@@ -16,9 +16,13 @@
 	@media (max-width: $desktop-lg) {
 		padding-top: 0.1em;
 	}
-	@media (max-width: $mobile-lg) {
+	@media (max-width: $laptop-md) {
 		--badge-size: 32px;
-		--fs-badge: 10px;
+		--fs-badge: 12px;
+	}
+	@media (max-width: $mobile-lg) {
+		--badge-size: 24px;
+		--fs-badge: 8px;
 	}
 	&._new {
 		border-radius: 50%;

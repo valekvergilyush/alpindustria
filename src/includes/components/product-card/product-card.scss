@@ -19,8 +19,8 @@
 	position: relative;
 	padding: var(--card-padding);
 	background-color: var(--gray-light);
-	box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
-		-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
+	box-shadow: inset 0 -1px 0 0 var(--blue-dark), -1px -1px 0 0 var(--blue-dark),
+		0 -1px 0 0 var(--blue-dark);
 	box-sizing: border-box;
 	overflow: hidden;
 	transition: padding $card-button-transition-duration $card-button-transition-function;

@@ -29,4 +29,19 @@
 		min-height: 64px;
 		padding: 13px var(--popup-padding) 12px var(--popup-padding);
 	}
+	&__price {
+		min-width: rem(240);
+		@media (max-width: $laptop-lg) {
+			min-width: 200px;
+		}
+		@media (max-width: $laptop-md) {
+			min-width: 140px;
+		}
+		@media (max-width: $laptop-sm) {
+			min-width: 200px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-width: 96px;
+		}
+	}
 }

@@ -30,7 +30,14 @@
 		}
 	}
 	&._bg {
-		background-color: var(--gray-light);
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: calc(var(--offset) * 0.7);
+			background-color: var(--gray-light);
+		}
 	}
 	&._services {
 		#{$this}__section._opened {
@@ -96,7 +103,7 @@
 			top: 0;
 			right: 0;
 			width: calc(var(--size) + var(--container-padding) + rem(16));
-			height: calc(100% - 1px);
+			height: calc(100% - 2px);
 			background-color: var(--default-bg-color);
 			opacity: 0;
 			transition: background-color $default-transition-duration $default-transition-function;
