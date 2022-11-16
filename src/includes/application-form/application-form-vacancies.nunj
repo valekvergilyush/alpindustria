@@ -86,15 +86,6 @@
 				name: 'Расскажите о себе'
 			}) }}
 		</div>
-		<div class="application-form__fields">
-			{{ input({
-				type: 'text',
-				id: 'application-form-exp',
-				className: 'application-form__input _comment',
-				name: 'Уже проходили занятия?',
-				label: 'Уже проходили занятия в нашем Горном клубе? Напишите об этом'
-			}) }}
-		</div>
 		{{ inputFile({
 			className: 'application-form__input _file',
 			id: 'application-form-file',

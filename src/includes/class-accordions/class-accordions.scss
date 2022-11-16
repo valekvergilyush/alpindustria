@@ -20,10 +20,19 @@
 	}
 	&._vacancies {
 		#{$this}__btn {
-			margin-bottom: rem(16);
+			margin-bottom: rem(10);
 			cursor: pointer;
 		}
+		#{$this}__title {
+			margin-bottom: rem(8);
+		}
 		#{$this}__inner {
+			padding-top: rem(23);
+			margin-bottom: rem(24);
+			&:last-child {
+				padding-top: 0;
+				margin-bottom: 0;
+			}
 			ul {
 				padding-left: 20px;
 			}
@@ -31,14 +40,9 @@
 				list-style-type: disc;
 			}
 		}
-		#{$this}__title {
-			margin-bottom: rem(8);
-		}
-		#{$this}__inner {
-			margin-bottom: rem(24);
-			&:last-child {
-				padding-top: 0;
-				margin-bottom: 0;
+		#{$this}__item {
+			&:not(&:last-child) {
+				margin-bottom: rem(52);
 			}
 		}
 	}
