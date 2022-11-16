@@ -1,0 +1,19 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="vacancies-hero">
+	<h1 class="vacancies-hero__title h2 ttu" data-animation="words">
+		Карьера у&nbsp;нас
+	</h1>
+	<p class="vacancies-hero__text p1" data-animation="fade-right">
+		Здесь вы можете найти открытые вакансии
+	</p>
+	{{ picture({
+		className: 'vacancies-hero__img',
+		path: '/assets/images/vacancies/hero/vacancies-hero',
+		ext: 'jpg',
+		width: 704,
+		height: 836,
+		attr: 'aria-hidden="true"'
+	}) }}
+	<a class="vacancies-hero__link h5 ttu" href="#" data-animation="fade-right">Подать <br class="vacancies-hero__link _br"> заявку</a>
+</section>

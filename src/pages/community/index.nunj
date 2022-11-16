@@ -2,6 +2,8 @@
 
 {% block title %}Сообщество | {{ super() }}{% endblock title %}
 
+{% set htmlClassMods = '_community' %}
+
 {% block mainContent %}
 	<main class="page__main _pt">
 		{% include "../../includes/community-nav/community-nav.nunj" %}

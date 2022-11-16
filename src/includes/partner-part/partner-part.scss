@@ -1,0 +1,133 @@
+.partner-part {
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(124)};
+	--img-width: #{vw(1151, 1728)};
+	display: grid;
+	grid-template-columns: 1fr var(--img-width);
+	gap: rem(48);
+	box-sizing: border-box;
+	padding: var(--padding-y) 0;
+	align-items: flex-end;
+	padding-left: var(--padding-x);
+	color: var(--gray-dark);
+	background-color: var(--white);
+	@media (max-width: $laptop-lg) {
+		--padding-y: 92px;
+		--img-width: #{vw(824, 1440)};
+		gap: rem(32);
+	}
+	@media (max-width: $laptop) {
+		--padding-y: 72px;
+		--img-width: #{vw(576, 1024)};
+	}
+	@media (max-width: $laptop-sm) {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		row-gap: 0;
+		height: auto;
+		padding-right: var(--padding-x);
+	}
+	@media (max-width: $mobile-lg) {
+		--padding-y: 50px;
+	}
+	&__text {
+		align-self: end;
+		max-width: rem(650);
+		margin-bottom: 40px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@media (max-width: $laptop) {
+			max-width: 390px;
+		}
+		@media (max-width: $laptop-sm) {
+			max-width: 100%;
+			align-self: flex-start;
+			&:last-child {
+				margin-bottom: 62px;
+			}
+		}
+		@media (max-width: $tablet) {
+			font-size: 30px;
+			&:last-child {
+				margin-bottom: 32px;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: 22px;
+			line-height: 29px;
+			margin-bottom: 29px;
+			&:last-child {
+				margin-bottom: 24px;
+			}
+		}
+	}
+	&__img {
+		grid-column: 2/3;
+		grid-row: 1/-1;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width: $laptop-sm) {
+			width: 100%;
+			img {
+				height: auto;
+				max-height: var(--section-height);
+				object-position: bottom;
+			}
+		}
+		@media (max-width: $mobile) {
+			width: initial;
+			margin-inline: calc(0px - var(--container-padding));
+		}
+	}
+	&__link {
+		--arrow-size: #{rem(64)};
+		--gap: #{rem(41)};
+		position: relative;
+		grid-column: 2/3;
+		grid-row: 2/3;
+		align-self: end;
+		justify-self: end;
+		margin-right: var(--padding-x);
+		margin-bottom: var(--padding-y);
+		padding-right: calc(var(--arrow-size) + var(--gap));
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: var(--arrow-size);
+			height: var(--arrow-size);
+			background-image: inline('promo-arrow.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: background $default-transition-duration $default-transition-function;
+		}
+		&:hover {
+			&::before {
+				background-image: inline('promo-arrow-white.svg');
+			}
+		}
+		@media (max-width: $laptop-md) {
+			--arrow-size: 40px;
+			--gap: 32px;
+			font-size: 30px;
+		}
+		@media (max-width: $laptop-sm) {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			--arrow-size: 32px;
+			--gap: 24px;
+			font-size: 22px;
+		}
+	}
+}
