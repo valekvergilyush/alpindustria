@@ -30,7 +30,7 @@
 			</div>
 			<div class="about-slider__col _full-screen-width _third">
 				<figure class="about-slider__quote">
-					<blockquote class="about-slider__quote-text h4 ttu">Мы&nbsp;болеем горами и&nbsp;надеемся заразить ими вас</blockquote>
+					<blockquote class="about-slider__quote-text h4 ttu">Мы&nbsp;болеем горами и&nbsp;надеемся заразить ими&nbsp;вас</blockquote>
 					<figcaption class="about-slider__quote-author h6 ttu">Сергей Зон-Зам</figcaption>
 				</figure>
 				<div class="img-wrapper" data-animation="height">

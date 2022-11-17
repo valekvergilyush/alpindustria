@@ -5,6 +5,7 @@
 	margin-top: calc(0px - var(--scroll-offset));
 	padding-top: var(--scroll-offset);
 	&._quote {
+		margin-top: 0;
 		padding-block: rem(124);
 		@media (max-width: $laptop-lg) {
 			padding-block: 96px;
@@ -16,7 +17,22 @@
 			padding-block: 32px;
 		}
 	}
+	&._history-1988 {
+		@media (max-width: $tablet) {
+			#{$this}__col-inner {
+				min-height: 561px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}__col-inner {
+				min-height: 506px;
+			}
+		}
+	}
 	&._today {
+		#{$this}__subtitle {
+			margin-top: 0;
+		}
 		#{$this}__col-inner {
 			@media (max-width: $tablet) {
 				min-height: calc(386px - 24px * 2);
@@ -55,9 +71,15 @@
 		}
 		@media (max-width: $tablet) {
 			flex-direction: column;
-			gap: 24px;
-			padding-block: var(--container-padding);
+			gap: 46px;
+			padding-block: 36px;
+			padding-bottom: 22px;
 			background-color: var(--gray-light);
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 35px;
+			padding-block: 25px;
+			padding-bottom: 15px;
 		}
 	}
 	&__col {
@@ -98,9 +120,9 @@
 	&__col-inner {
 		display: flex;
 		flex-direction: column;
-		min-height: calc(var(--100vh) - var(--container-padding) * 2);
+		min-height: calc(var(--100vh) - var(--container-padding) * 2 - var(--timeline-height));
 		@media (max-width: $tablet) {
-			min-height: calc(460px - 24px * 2);
+			min-height: 396px;
 		}
 		@media (max-width: $mobile-lg) {
 			min-height: calc(380px - 16px * 2);
@@ -124,21 +146,35 @@
 		@media (max-width: $laptop-lg) {
 			margin-block: 21px;
 		}
+		@media (max-width: $laptop) {
+			margin-block: 16px;
+		}
 	}
 	&__text {
 		max-width: rem(599);
 		* + p {
 			margin-top: rem(24);
 		}
+		#{$this}__lg-text {
+			margin-top: 1em;
+		}
+		@media (max-width: $tablet) {
+			max-width: none;
+		}
+	}
+	&__img-wrapper {
+		display: flex;
+		flex-direction: column;
 	}
 	&__img {
 		width: 100%;
+		margin-bottom: rem(24);
 		img {
 			width: 100%;
 		}
-	}
-	&__img {
-		margin-bottom: rem(24);
+		@media (max-width: $laptop) {
+			margin-bottom: 16px;
+		}
 	}
 	&__quote-text {
 		margin-bottom: rem(16);

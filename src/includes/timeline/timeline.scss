@@ -10,6 +10,15 @@
 	border-bottom: 1px solid currentColor;
 	color: var(--c-base);
 	background-color: var(--white);
+	@media (max-width: $laptop) {
+		padding-top: 19px;
+		padding-bottom: 21px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-top: 15px;
+		padding-bottom: 13px;
+		overflow: auto;
+	}
 	&__container,
 	&__progress {
 		&::before {
@@ -28,6 +37,11 @@
 		&::before {
 			background-image: inline('timeline.svg');
 		}
+		@media (max-width: $mobile-lg) {
+			flex-shrink: 0;
+			width: 724px;
+			margin-inline: 16px;
+		}
 	}
 	&__progress {
 		position: absolute;
@@ -45,6 +59,9 @@
 		position: relative;
 		display: flex;
 		width: 100%;
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+		}
 	}
 	&__item {
 		display: flex;

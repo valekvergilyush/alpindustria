@@ -13,6 +13,7 @@
 		padding: 12px var(--container-padding) 7px;
 		overflow: auto;
 		white-space: nowrap;
+		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
 		}
@@ -22,6 +23,7 @@
 		flex-wrap: wrap;
 		@media (max-width: $mobile-lg) {
 			flex-wrap: nowrap;
+			scrollbar-width: none;
 			@include scrollbar {
 				display: none;
 			}

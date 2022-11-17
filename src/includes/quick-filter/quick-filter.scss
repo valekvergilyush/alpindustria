@@ -23,6 +23,7 @@
 		padding-right: var(--container-padding);
 		box-sizing: border-box;
 		overflow: auto;
+		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
 		}

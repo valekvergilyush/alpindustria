@@ -13,6 +13,7 @@
 		--width-first-cell: 94px;
 		padding-bottom: 24px;
 	}
+	scrollbar-width: none;
 	@include scrollbar {
 		height: 4px;
 		background-color: rgba($blue-dark, 0.2);
