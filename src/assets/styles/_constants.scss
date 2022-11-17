@@ -116,6 +116,7 @@ $mobile-sm: 320px;
 	@media (max-width: $laptop) {
 		--container-padding: 32px;
 		--header-height: 64px;
+		--timeline-height: 68px;
 	}
 	@media (max-width: $tablet) {
 		--container-padding: 24px;
@@ -123,6 +124,7 @@ $mobile-sm: 320px;
 	@media (max-width: $mobile-lg) {
 		--container-padding: 16px;
 		--add-block-height: 64px;
+		--timeline-height: 56px;
 	}
 	@media (max-width: $mobile) {
 		--header-height: 56px;

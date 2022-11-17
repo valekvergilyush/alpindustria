@@ -52,7 +52,7 @@ class AboutSlider {
 	startLogoAnimation() {
 		const logo = document.querySelector('[data-lottie-animation]');
 		const placeholder = document.querySelector('[data-lottie-autoplay-trigger]');
-		const x = logo.offsetWidth - placeholder.offsetWidth * 1.1;
+		const x = logo.offsetWidth - placeholder.offsetWidth;
 
 		gsap.to(logo, {
 			x: -x,
