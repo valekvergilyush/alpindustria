@@ -43,7 +43,7 @@
 
 <div class="page__menu menu" data-menu>
 	<div class="menu__top">
-		<a href="#" class="menu__user-link ttu">
+		<a href="/profile.html" class="menu__user-link ttu">
 			{{ icon({
 				iconName: 'user',
 				className: 'menu__user-icon',

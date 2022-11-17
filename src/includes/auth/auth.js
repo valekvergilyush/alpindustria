@@ -15,23 +15,22 @@ class Auth {
 		if (!this.authBlock) {
 			return;
 		}
-		const emailAuthBth = this.authBlock.querySelector('[data-auth-email]');
-		const phoneAuthBth = this.authBlock.querySelector('[data-auth-phone]');
-		const subbmitCodeBth = this.authBlock.querySelector('[data-auth-code]');
-		const forgotPassBth = this.authBlock.querySelector('[data-auth-pass]');
-		emailAuthBth.addEventListener('click', () => {
+		const emailAuthBtn = this.authBlock.querySelector('[data-auth-email]');
+		const phoneAuthBtn = this.authBlock.querySelector('[data-auth-phone]');
+		const subbmitCodeBtn = this.authBlock.querySelector('[data-auth-code]');
+		const forgotPassBtn = this.authBlock.querySelector('[data-auth-pass]');
+		emailAuthBtn.addEventListener('click', () => {
 			this.setState('email');
 		});
-		phoneAuthBth.addEventListener('click', () => {
+		phoneAuthBtn.addEventListener('click', () => {
 			this.setState('phone');
 		});
-		subbmitCodeBth.addEventListener('click', () => {
+		subbmitCodeBtn.addEventListener('click', () => {
 			this.setState('code');
 		});
-		forgotPassBth.addEventListener('click', () => {
+		forgotPassBtn.addEventListener('click', () => {
 			this.setState('pass');
 		});
-		// this.clearStates();
 	}
 
 	setState(state) {

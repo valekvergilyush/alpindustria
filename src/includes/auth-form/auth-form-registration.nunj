@@ -1,0 +1,31 @@
+<from class="auth-form">
+	{{ input({
+		type: 'email',
+		id: 'auth-reg-emaul',
+		className: 'auth-form__input _reg',
+		name: 'Почта'
+	}) }}
+	{{ input({
+		type: 'password',
+		id: 'auth-reg-pass',
+		className: 'auth-form__input _reg',
+		name: 'Пароль'
+	}) }}
+	<div class="auth-form__socials">
+		<p class="h7 ttu">Через соц.сети:</p>
+		<div class="auth-form__socials-list">
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >VK</a>
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >Yandex</a>
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >Google</a>
+		</div>
+	</div>
+	<div class="auth-form__bottom">
+		{{ button({
+			text: 'Регистрация',
+			icon: 'promo-arrow',
+			type: 'submit',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__bottom-btn _arrow-s _reg h7 ttu'
+		}) }}
+	</div>
+</from>

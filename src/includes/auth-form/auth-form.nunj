@@ -1,0 +1,80 @@
+<from class="auth-form">
+	{{ input({
+		type: 'email',
+		id: 'auth-login-email',
+		className: 'auth-form__input _email _pass',
+		name: 'Почта'
+	}) }}
+	{{ input({
+		type: 'phone',
+		id: 'auth-login-tel',
+		className: 'auth-form__input _phone _code',
+		name: 'Телефон'
+	}) }}
+	{{ input({
+		type: 'number',
+		id: 'auth-login-pass',
+		className: 'auth-form__input _code',
+		name: 'Код'
+	}) }}
+	{{ input({
+		type: 'password',
+		id: 'auth-login-pass',
+		className: 'auth-form__input _email',
+		name: 'Пароль'
+	}) }}
+	{{ button({
+		text: 'Отправить код',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+		className: 'auth-form__code-btn _arrow-m h7 ttu _phone',
+		attr: 'data-auth-code'
+	}) }}
+	<div class="auth-form__input-btns">
+		{{ button({
+			text: 'Войти по номеру телефона',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__input-btn _arrow-s p4 _email _pass',
+			attr: 'data-auth-phone'
+		}) }}
+		{{ button({
+			text: 'Войти через почту',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__input-btn _arrow-s p4 _code _pass',
+			attr: 'data-auth-email'
+		}) }}
+		{{ button({
+			text: 'Забыли пароль',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__input-btn _arrow-s p4 _forgot-pass _email _code',
+			attr: 'data-auth-pass'
+		}) }}
+	</div>
+	<div class="auth-form__socials">
+		<p class="h7 ttu">Через соц.сети:</p>
+		<div class="auth-form__socials-list">
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >VK</a>
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >Yandex</a>
+			<a href="#" target="_blank" rel="nofollow noopener" class="auth-form__social h5 ttu" >Google</a>
+		</div>
+	</div>
+	<div class="auth-form__bottom">
+		{{ button({
+			text: 'Отправить',
+			icon: 'promo-arrow',
+			type: 'submit',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__bottom-btn _arrow-s _pass h7 ttu'
+		}) }}
+		{{ button({
+			text: 'Войти',
+			type: 'submit',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'auth-form__bottom-btn _arrow-s _email _code _phone h7 ttu'
+		}) }}
+	</div>
+</from>

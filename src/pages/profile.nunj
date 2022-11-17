@@ -6,6 +6,6 @@
 
 {% block mainContent %}
 	<main class="page__main _pt _white-bg">
-		{% include "../includes/profile-tabs/profile-tabs.nunj" %}
+		{% include "../includes/community-tabs/community-tabs-profile.nunj" %}
 	</main>
 {% endblock %}

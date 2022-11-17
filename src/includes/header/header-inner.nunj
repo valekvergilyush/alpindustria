@@ -3,7 +3,7 @@
 {% from "../components/button/button-burger.nunj" import buttonBurger %}
 
 {% set userActions = [
-	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"', href: 'profile.html'},
+	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"', href: '/profile.html'},
 	{ name: 'Вишлист', className: '_wishlist', icon: 'heart', iconData: 'width="32" height="32"', href: '/wishlists.html' },
   { name: 'Корзина', className: '_cart', icon: 'cart', iconData: 'width="32" height="32"', attr: 'data-popup-opener="cart"' }
 ] %}
