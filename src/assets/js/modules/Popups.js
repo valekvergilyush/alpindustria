@@ -128,7 +128,7 @@ class Popups {
 			if (evt.matches) {
 				this.openAnimation = gsap.fromTo(
 					this.activePopup,
-					{ yPercent: 100, display: 'block' },
+					{ yPercent: 100, display: 'flex' },
 					{
 						yPercent: 0,
 						duration: 0.35,
@@ -145,7 +145,7 @@ class Popups {
 			} else {
 				this.openAnimation = gsap.fromTo(
 					this.activePopup,
-					{ xPercent: 100, display: 'block' },
+					{ xPercent: 100, display: 'flex' },
 					{
 						xPercent: 0,
 						duration: 0.35,
@@ -169,7 +169,7 @@ class Popups {
 		} else {
 			gsap.fromTo(
 				this.activePopup,
-				{ autoAlpha: 0, scale: 0.98, display: 'block' },
+				{ autoAlpha: 0, scale: 0.98, display: 'flex' },
 				{
 					duration: 0.35,
 					autoAlpha: 1,

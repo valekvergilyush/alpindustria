@@ -1,0 +1,11 @@
+{% extends "../templates/inner-profile.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+
+{% block title %}Доставка и оплата | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{% include "../includes/profile-tabs/profile-tabs.nunj" %}
+	</main>
+{% endblock %}

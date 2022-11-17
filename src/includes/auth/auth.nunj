@@ -1,0 +1,124 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="auth _email" data-auth="email">
+	<div class="auth__wrap">
+		<p class="auth__title h5 ttu">Авторизация</p>
+		<div class="auth__tabs" data-tabs>
+			<div class="auth__tabs-btns">
+				<button class="auth__tabs-btn h7 ttu _selected" id="login" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="-1">Вход</button>
+				<button class="auth__tabs-btn h7 ttu" id="registration" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">Регистрация</button>
+			</div>
+			<section class="auth__tab-section" aria-labelledby="login" role="tabpanel" data-tab-panel aria-hidden="false">
+				{{ input({
+					type: 'email',
+					id: 'auth-login-email',
+					className: 'auth__input _email _pass',
+					name: 'Почта'
+				}) }}
+				{{ input({
+					type: 'phone',
+					id: 'auth-login-tel',
+					className: 'auth__input _phone _code',
+					name: 'Телефон'
+				}) }}
+				{{ input({
+					type: 'number',
+					id: 'auth-login-pass',
+					className: 'auth__input _code',
+					name: 'Код'
+				}) }}
+				{{ input({
+					type: 'password',
+					id: 'auth-login-pass',
+					className: 'auth__input _email',
+					name: 'Пароль'
+				}) }}
+				{{ button({
+					text: 'Отправить код',
+					icon: 'promo-arrow',
+					iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+					className: 'auth__code-btn _arrow-m h7 ttu _phone',
+					attr: 'data-auth-code'
+				}) }}
+				<div class="auth__input-btns">
+					{{ button({
+						text: 'Войти по номеру телефона',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__input-btn _arrow-s p4 _email _pass',
+						attr: 'data-auth-phone'
+					}) }}
+					{{ button({
+						text: 'Войти через почту',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__input-btn _arrow-s p4 _code _pass',
+						attr: 'data-auth-email'
+					}) }}
+					{{ button({
+						text: 'Забыли пароль',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__input-btn _arrow-s p4 _forgot-pass _email _code',
+						attr: 'data-auth-pass'
+					}) }}
+				</div>
+
+				<div class="auth__socials">
+					<p class="h7 ttu">Через соц.сети:</p>
+					<div class="auth__socials-list">
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >VK</a>
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >Yandex</a>
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >Google</a>
+					</div>
+				</div>
+				<div class="auth__bottom">
+					{{ button({
+						text: 'Отправить',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__bottom-btn _arrow-s _pass h7 ttu'
+					}) }}
+					{{ button({
+						text: 'Войти',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__bottom-btn _arrow-s _email _code _phone h7 ttu'
+					}) }}
+				</div>
+			</section>
+			<section class="auth__tab-section _hidden" aria-labelledby="registration" role="tabpanel" data-tab-panel aria-hidden="false">
+				{{ input({
+					type: 'email',
+					id: 'auth-reg-emaul',
+					className: 'auth__input _reg',
+					name: 'Почта'
+				}) }}
+				{{ input({
+					type: 'password',
+					id: 'auth-reg-pass',
+					className: 'auth__input _reg',
+					name: 'Пароль'
+				}) }}
+				<div class="auth__socials">
+					<p class="h7 ttu">Через соц.сети:</p>
+					<div class="auth__socials-list">
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >VK</a>
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >Yandex</a>
+						<a href="#" target="_blank" rel="nofollow noopener" class="auth__social h5 ttu" >Google</a>
+					</div>
+				</div>
+				<div class="auth__bottom">
+					{{ button({
+						text: 'Регистрация',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+						className: 'auth__bottom-btn _arrow-s _reg h7 ttu'
+					}) }}
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
