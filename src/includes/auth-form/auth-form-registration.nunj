@@ -1,7 +1,7 @@
 <from class="auth-form">
 	{{ input({
 		type: 'email',
-		id: 'auth-reg-emaul',
+		id: 'auth-reg-email',
 		className: 'auth-form__input _reg',
 		name: 'Почта'
 	}) }}
