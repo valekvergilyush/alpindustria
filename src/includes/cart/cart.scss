@@ -117,8 +117,19 @@
 	}
 	&__price {
 		color: var(--blue-light);
-
+		min-width: rem(240);
+		margin-top: auto;
+		@media (max-width: $laptop-lg) {
+			min-width: 200px;
+		}
+		@media (max-width: $laptop-md) {
+			min-width: 140px;
+		}
+		@media (max-width: $laptop-sm) {
+			min-width: 200px;
+		}
 		@media (max-width: $mobile-lg) {
+			min-width: 96px;
 			font-size: 10px;
 			line-height: 1.6;
 		}

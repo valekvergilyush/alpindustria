@@ -251,10 +251,12 @@ class Map {
 
 		gmapApi.load().then(() => {
 			//cart map
-			const cartMapBlock = document.querySelector(`[data-map="cart"]`);
+			const cartMapBlocks = document.querySelectorAll(`[data-map="cart"]`);
 			const addressMapBlock = document.querySelector(`[data-map="address"]`);
-			if (cartMapBlock) {
-				this.renderMap(cartMapBlock, MAP_DATA_CART);
+			if (cartMapBlocks.length) {
+				cartMapBlocks.forEach(cartMapBlock => {
+					this.renderMap(cartMapBlock, MAP_DATA_CART);
+				});
 			}
 			if (addressMapBlock) {
 				this.adressesMap = this.renderMap(addressMapBlock, MAP_DATA_ADDRESSES);

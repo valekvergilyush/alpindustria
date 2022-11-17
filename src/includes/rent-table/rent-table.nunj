@@ -18,7 +18,7 @@
 		<td class="rent-table__btn-cell">
 			{{ button({
 				className: 'rent-table__btn h7 ttu',
-				text: 'Выбрано',
+				text: 'Выбрать',
 				href: '#'
 			}) }}
 		</td>
@@ -29,7 +29,7 @@
 		<td class="rent-table__btn-cell">
 			{{ button({
 				className: 'rent-table__btn h7 ttu',
-				text: 'Выбрано',
+				text: 'Выбрать',
 				href: '#'
 			}) }}
 		</td>
@@ -40,7 +40,7 @@
 		<td class="rent-table__btn-cell">
 			{{ button({
 				className: 'rent-table__btn h7 ttu',
-				text: 'Выбрано',
+				text: 'Выбрать',
 				href: '#'
 			}) }}
 		</td>
@@ -51,7 +51,7 @@
 		<td class="rent-table__btn-cell">
 			{{ button({
 				className: 'rent-table__btn h7 ttu',
-				text: 'Выбрано',
+				text: 'Выбрать',
 				href: '#'
 			}) }}
 		</td>

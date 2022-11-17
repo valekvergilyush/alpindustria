@@ -1,0 +1,19 @@
+{% from "../components/input-date/input-date.nunj" import inputDate %}
+
+<form class="cart-delivery__register-form delivery-register">
+	<p class="delivery-register__title h7 ttu">Даты бронирования:</p>
+	<div class="delivery-register__fields">
+		{{ inputDate({
+			name: 'Дата',
+			label: 'Начало',
+			id: 'delivery-date-start',
+			className: 'delivery-register__input'
+		}) }}
+		{{ inputDate({
+			name: 'Дата',
+			label: 'Конец',
+			id: 'delivery-date-end',
+			className: 'delivery-register__input'
+		}) }}
+	</div>
+</form>

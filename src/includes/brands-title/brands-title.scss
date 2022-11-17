@@ -29,10 +29,10 @@
 	&__scroll {
 		display: flex;
 		padding-left: var(--container-padding);
-		// padding-right: var(--container-padding);
 		max-width: var(--container-max-width);
 		margin: 0 auto;
 		overflow: auto;
+		scrollbar-width: none;
 		&::after {
 			content: '';
 			flex-shrink: 0;

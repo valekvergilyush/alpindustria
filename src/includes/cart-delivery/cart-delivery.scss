@@ -117,4 +117,16 @@
 			letter-spacing: -0.04em;
 		}
 	}
+	&__text {
+		margin-bottom: rem(47);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 48px;
+		}
+	}
 }

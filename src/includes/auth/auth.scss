@@ -1,0 +1,66 @@
+.auth {
+	$this: &;
+	--padding: #{rem(16)};
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	@media (max-width: $mobile-lg) {
+		--padding: 8px;
+	}
+	&__wrap {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		padding: var(--container-padding);
+		padding-bottom: 0;
+	}
+	&__title {
+		margin-bottom: rem(96);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 72px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 56px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 24px;
+		}
+	}
+	&__tabs-btns {
+		display: flex;
+		margin-bottom: var(--container-padding);
+	}
+	&__tabs-btn {
+		@include reset-btn;
+		flex-grow: 1;
+		width: 50%;
+		padding: rem(16);
+		border-bottom: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-md) {
+			padding: 10px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 8px;
+		}
+		&._selected {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+	&__tabs {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	&__tab-section {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		&._hidden {
+			display: none;
+		}
+	}
+}

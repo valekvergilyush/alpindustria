@@ -1,0 +1,31 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set tabsList = [
+	{ id: 'data', text: 'Мои данные', active: true },
+	{ id: 'payments', text: 'Мои покупки' }
+] %}
+
+<section class="delivery-payment" data-community-tab="delivery">
+	<ul class="delivery-payment__tabs">
+		{% for tab in tabsList %}
+			<li class="delivery-payment__tabs-item">
+				<button class="delivery-payment__tabs-btn{% if tab.active %} _active{% endif %} h6 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+					{{ tab.text }}
+					{{ icon({
+						iconName: 'double-arrow-right',
+						attr: 'width="48" height="48"'
+					}) }}
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="delivery-payment__sections">
+		<section class="delivery-payment__section _active" aria-labelledby="data" data-tab-section="data">
+			data
+		</section>
+		<section class="delivery-payment__section _payment" aria-labelledby="payments" data-tab-section="payments">
+			payments
+		</section>
+	</div>
+</section>

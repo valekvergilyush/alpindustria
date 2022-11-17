@@ -32,6 +32,10 @@
 		{
 			"name": "wishlist-services",
 			"animation": "RTL"
+		},
+		{
+			"name": "auth",
+			"animation": "RTL"
 		}
 	]
 }

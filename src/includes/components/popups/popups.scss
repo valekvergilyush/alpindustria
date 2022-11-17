@@ -34,14 +34,23 @@
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='review-form'],
 		&[data-popup-wrapper='wishlist'],
+		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
+		}
+		&[data-popup-wrapper='wishlist-services'] {
+			width: 52.8%;
+			@media (max-width: $laptop-lg) {
+				width: 50%;
+			}
 		}
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='city-form'],
 		&[data-popup-wrapper='review-form'],
 		&[data-popup-wrapper='wishlist'],
+		&[data-popup-wrapper='wishlist-services'],
+		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
@@ -167,6 +176,7 @@
 			}
 		}
 		&[data-popup='cart'],
+		&[data-popup='cart-services'],
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
 		}
@@ -188,6 +198,15 @@
 				.popups__close-icon {
 					--size: 24px;
 				}
+			}
+		}
+		&[data-popup='wishlist-services'] {
+			padding-bottom: 0;
+		}
+		&[data-popup='auth'] {
+			padding: 0;
+			@media (max-width: $tablet) {
+				min-height: auto;
 			}
 		}
 	}

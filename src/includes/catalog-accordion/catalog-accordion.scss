@@ -97,7 +97,7 @@
 			top: 0;
 			right: 0;
 			width: calc(var(--size) + var(--container-padding) + rem(16));
-			height: calc(100% - 1px);
+			height: calc(100% - 2px);
 			background-color: var(--default-bg-color);
 			opacity: 0;
 			transition: background-color $default-transition-duration $default-transition-function;

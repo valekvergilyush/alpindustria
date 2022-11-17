@@ -1,0 +1,21 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="auth _email" data-auth="email">
+	<div class="auth__wrap">
+		<p class="auth__title h5 ttu">Авторизация</p>
+		<div class="auth__tabs" data-tabs>
+			<div class="auth__tabs-btns">
+				<button class="auth__tabs-btn h7 ttu _selected" id="login" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="-1">Вход</button>
+				<button class="auth__tabs-btn h7 ttu" id="registration" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">Регистрация</button>
+			</div>
+			<section class="auth__tab-section" aria-labelledby="login" role="tabpanel" data-tab-panel aria-hidden="false">
+				{% include "../auth-form/auth-form.nunj" %}
+			</section>
+			<section class="auth__tab-section _hidden" aria-labelledby="registration" role="tabpanel" data-tab-panel aria-hidden="false">
+				{% include "../auth-form/auth-form-registration.nunj" %}
+			</section>
+		</div>
+	</div>
+</div>
