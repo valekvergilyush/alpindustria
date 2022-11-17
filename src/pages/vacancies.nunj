@@ -7,6 +7,9 @@
 {% block mainContent %}
 	<main class="page__main _pt">
 		{% include "../includes/vacancies-hero/vacancies-hero.nunj" %}
-		{% include "../includes/community-tabs/community-tabs.nunj" %}
+		{% include "../includes/vacancies-open/vacancies-open.nunj" %}
+		{% include "../includes/community-advantages/community-advantages-vacancies-suit.nunj" %}
+		{% include "../includes/community-advantages/community-advantages-vacancies-offer.nunj" %}
+		{% include "../includes/community-tabs/community-tabs-vacancies.nunj" %}
 	</main>
 {% endblock %}

@@ -1,0 +1,6 @@
+<section class="vacancies-open">
+	<h2 class="vacancies-open__title h4 ttu is-animated">Открытые вакансии</h2>
+	<div class="vacancies-open__accordion">
+		{% include "../class-accordions/class-accordions-vacancies.nunj" %}
+	</div>
+</section>
