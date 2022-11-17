@@ -30,14 +30,8 @@
 		}
 	}
 	&._bg {
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: calc(var(--offset) * 0.7);
-			background-color: var(--gray-light);
-		}
+		background-color: var(--gray-light);
+		background-clip: content-box;
 	}
 	&._services {
 		#{$this}__section._opened {

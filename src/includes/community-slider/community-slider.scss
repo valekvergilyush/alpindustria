@@ -39,29 +39,24 @@
 		}
 	}
 	&__line-img {
-		--offset: #{rem(124)};
 		position: absolute;
-		left: calc(var(--offset) + var(--container-padding));
-		bottom: var(--offset);
-		width: rem(3483);
+		left: var(--container-padding);
+		bottom: 0;
+		width: rem(3595);
 		max-width: none;
 		pointer-events: none;
 		&._tablet {
 			display: none;
 		}
 		@media (max-width: $laptop-lg) {
-			display: none;
-			&._tablet {
-				display: block;
-				width: rem(2438);
-				bottom: 62px;
-				left: 274px;
-			}
+			width: 2438px;
 		}
-		@media (max-width: $laptop) {
-			&._tablet {
-				display: none;
-			}
+		@media (max-width: $tablet) {
+			display: none;
+		}
+		path {
+			stroke-dasharray: var(--path-length);
+			stroke-dashoffset: var(--path-length);
 		}
 	}
 	&__col {

@@ -1,0 +1,17 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="partner-hero">
+	<h1 class="partner-hero__title h2 ttu" data-animation="words">Станьте партнером</h1>
+	<p class="partner-hero__text p1" data-animation="fade-right">
+		Наша миссия&nbsp;&mdash; вовлечь в&nbsp;outdoor-активность максимальное количество людей. А&nbsp;еще&nbsp;&mdash; чтобы этим людям не&nbsp;мешала плохая погода или неудобная экипировка. Поэтому мы&nbsp;всегда в&nbsp;поиске талантливых партнеров.
+	</p>
+	{{ picture({
+		className: 'partner-hero__img',
+		path: '/assets/images/partner/hero/partner-hero',
+		ext: 'jpg',
+		width: 704,
+		height: 836,
+		attr: 'aria-hidden="true"'
+	}) }}
+	<a class="partner-hero__link h5 ttu" href="#" data-animation="fade-right">Подать <br class="partner-hero__link _br"> заявку</a>
+</section>

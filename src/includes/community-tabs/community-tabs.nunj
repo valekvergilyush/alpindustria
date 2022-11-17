@@ -6,7 +6,6 @@
 	{ id: 'requisites', text: 'Реквизиты' }
 ] %}
 
-
 <section class="community-tabs" data-community-tab>
 	<ul class="community-tabs__tabs">
 		{% for tab in tabsList %}
