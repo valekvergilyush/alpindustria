@@ -157,20 +157,22 @@
 		flex-shrink: 0;
 		margin-right: rem(82);
 		margin-bottom: rem(-24);
+		width: 2750px;
 		@media (max-width: $laptop-lg) {
-			height: 296px;
+			width: 2400px;
+			min-height: 296px;
 			margin-right: 58px;
 			margin-bottom: -16px;
 		}
 		@media (max-width: $tablet) {
 			width: 3440px;
-			height: 412px;
+			min-height: 412px;
 			margin: 0;
 			margin-bottom: 91px;
 		}
 		@media (max-width: $mobile-lg) {
 			width: 1600px;
-			height: 197px;
+			min-height: 197px;
 			margin-bottom: 74px;
 		}
 	}
