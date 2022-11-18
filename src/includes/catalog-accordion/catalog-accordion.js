@@ -30,7 +30,9 @@ class CatalogAccordion {
 					this.offset = parseFloat(getComputedStyle(section).marginBottom);
 				}
 
-				section.addEventListener('click', () => {
+				const btnOpen = section.querySelector('[data-accordion-title]');
+
+				btnOpen.addEventListener('click', () => {
 					this.toggle(section);
 				});
 

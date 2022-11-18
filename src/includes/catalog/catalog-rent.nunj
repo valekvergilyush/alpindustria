@@ -1,0 +1,54 @@
+{% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
+
+{% set productList = [
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, new: true, discount: '50%', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, discount: '50%' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-5-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, new: true, discount: '50%', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom' }
+] %}
+
+<section class="page__catalog catalog">
+	<div class="catalog__wrapper">
+		<div class="catalog__filters-wrapper">
+			{% include "../filters-form/filters-form.nunj" %}
+		</div>
+		<ul class="page__catalog-list catalog__list">
+			{% for product in productList %}
+				<li class="catalog__item">
+					{{ productCard(product) }}
+				</li>
+			{% endfor %}
+			<li class="catalog__item _promo-1">
+				{% include "../catalog-promo/promo-1.nunj" %}
+			</li>
+			<li class="catalog__item catalog-promo _promo-2">
+				{% include "../catalog-promo/promo-2.nunj" %}
+			</li>
+			<li class="catalog__item catalog-promo _promo-3">
+				{% include "../catalog-promo/promo-3.nunj" %}
+			</li>
+		</ul>
+	</div>
+	{{ button({
+		className: 'catalog__show-more-btn _show-more',
+		text: 'Показать еще',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"'
+	}) }}
+</section>

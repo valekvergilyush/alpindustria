@@ -44,32 +44,62 @@
 		<div class="wishlist-services__rating">
 			<div class="wishlist-services__rating-star">
 				{{ icon({
+					className: 'filled',
 					iconName: 'star',
 					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
-			</div>
-			<div class="wishlist-services__rating-star">
 				{{ icon({
-					iconName: 'star',
-					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
-				}) }}
-			</div>
-			<div class="wishlist-services__rating-star">
-				{{ icon({
-					iconName: 'star',
-					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
-				}) }}
-			</div>
-			<div class="wishlist-services__rating-star">
-				{{ icon({
-					iconName: 'star',
-					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
-				}) }}
-			</div>
-			<div class="wishlist-services__rating-star">
-				{{ icon({
+					className: 'empty',
 					iconName: 'star-empty',
-					attr: 'width="26" height="26" viewBox="0 0 26 26"'
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+			</div>
+			<div class="wishlist-services__rating-star">
+				{{ icon({
+					className: 'filled',
+					iconName: 'star',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+				{{ icon({
+					className: 'empty',
+					iconName: 'star-empty',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+			</div>
+			<div class="wishlist-services__rating-star">
+				{{ icon({
+					className: 'filled',
+					iconName: 'star',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+				{{ icon({
+					className: 'empty',
+					iconName: 'star-empty',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+			</div>
+			<div class="wishlist-services__rating-star">
+				{{ icon({
+					className: 'filled',
+					iconName: 'star',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+				{{ icon({
+					className: 'empty',
+					iconName: 'star-empty',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+			</div>
+			<div class="wishlist-services__rating-star _empty">
+				{{ icon({
+					className: 'filled',
+					iconName: 'star',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
+				}) }}
+				{{ icon({
+					className: 'empty',
+					iconName: 'star-empty',
+					attr: 'width="26" height="26" viewBox="0 0 26.3 24.5"'
 				}) }}
 			</div>
 			<div class="wishlist-services__rating-mobile">
