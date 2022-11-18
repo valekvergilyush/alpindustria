@@ -23,7 +23,6 @@ export default class Accordion {
 		this.parentElement = this.trigger.parentElement;
 
 		this._getHeighValues();
-		console.log(toggle);
 		this.trigger.setAttribute('aria-expanded', false);
 		this.parentElement.parentElement.style.setProperty(
 			'--item-height',
