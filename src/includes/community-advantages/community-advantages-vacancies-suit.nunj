@@ -1,0 +1,24 @@
+{% set list = [
+	'Активно проводите время, любите спорт и&nbsp;путешествия',
+	'Влюблены в&nbsp;горы, туризм и&nbsp;природу',
+	'Вовлечены в&nbsp;мир туризма и&nbsp;хотите привлекать неравнодушных к&nbsp;активному отдыху людей'
+] %}
+
+<section class="community-advantages _partner _vacancies-suit" data-community-advantages>
+	<div class="community-advantages__container container">
+		<div class="community-advantages__title-wrapper">
+			<h2 class="community-advantages__title h4 ttu" data-animation="words">
+				Вы&nbsp;нам подходите, если:
+			</h2>
+		</div>
+		<div class="community-advantages__wrapper">
+			<ul class="community-advantages__list s2">
+				{% for item in list %}
+					<li class="community-advantages__item">
+						<p class="community-advantages__item-text" data-animation="fade-right">{{ item }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

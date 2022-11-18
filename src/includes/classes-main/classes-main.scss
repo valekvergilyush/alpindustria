@@ -84,6 +84,7 @@
 		@media (max-width: $laptop-sm) {
 			flex-wrap: nowrap;
 			overflow: auto;
+			scrollbar-width: none;
 			@include scrollbar {
 				display: none;
 			}

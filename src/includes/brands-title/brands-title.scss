@@ -38,6 +38,7 @@
 			flex-shrink: 0;
 			width: var(--container-padding);
 		}
+		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
 		}

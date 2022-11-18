@@ -3,18 +3,18 @@
 
 <form class="discount-add-form">
 	{{ input({
-		type: 'number',
+		type: 'text',
 		id: 'discount-add-form-number',
 		className: 'discount-add-form__input',
 		name: 'Номер карты',
-		inputAttr: 'required'
+		inputAttr: 'inputmode="numeric" required'
 	}) }}
 	{{ input({
-		type: 'number',
+		type: 'text',
 		id: 'discount-add-form-code',
 		className: 'discount-add-form__input',
 		name: 'Проверочный код',
-		inputAttr: 'required'
+		inputAttr: 'inputmode="numeric" required'
 	}) }}
 	{{ button({
 		type: 'submit',

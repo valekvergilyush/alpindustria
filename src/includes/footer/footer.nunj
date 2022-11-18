@@ -94,13 +94,13 @@
 			</ul>
 			<ul class="footer__links">
 				<li class="footer__link-item">
-					<a href="#" class="footer__arrow-link ttu h7">Стать партнером</a>
+					<a href="/partner.html" class="footer__arrow-link ttu h7">Стать партнером</a>
 				</li>
 				<li class="footer__link-item">
 					<a href="#" class="footer__arrow-link ttu h7">Дистрибьюция</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="#" class="footer__arrow-link ttu h7">Карьера у нас</a>
+					<a href="/vacancies.html" class="footer__arrow-link ttu h7">Карьера у нас</a>
 				</li>
 				<li class="footer__link-item">
 					<a href="/delivery.html" class="footer__arrow-link ttu h7">Доставка</a>

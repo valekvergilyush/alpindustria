@@ -233,6 +233,34 @@
 			}
 		}
 	}
+	&._vacancies {
+		&-offer,
+		&-suit {
+			#{$this}__title-wrapper {
+				width: calc(1055 / 1728 * 100%);
+			}
+			#{$this}__wrapper {
+				width: calc(704 / 1728 * 100%);
+			}
+			#{$this}__item-text {
+				width: 100%;
+			}
+			#{$this}__title {
+				margin-left: 0;
+			}
+			@media (max-width: $tablet) {
+				#{$this}__title-wrapper {
+					width: initial;
+				}
+				#{$this}__wrapper {
+					width: initial;
+				}
+			}
+		}
+		&-suit {
+			background-color: var(--blue-dark);
+		}
+	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 98px;
 	}

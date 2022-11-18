@@ -11,6 +11,7 @@
 	overflow: auto;
 	padding-top: var(--padding);
 	padding-bottom: var(--padding);
+	scrollbar-width: none;
 	@include scrollbar {
 		display: none;
 	}

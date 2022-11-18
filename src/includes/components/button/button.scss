@@ -15,12 +15,17 @@
 		font-weight: var(--default-font-weight);
 	}
 	&._white-border {
+		@extend .animated;
 		color: var(--white);
 		border: 2px solid currentColor;
-		@extend .animated;
 		&:hover {
 			background-color: var(--white);
 			color: var(--blue-dark);
+			._ff & {
+				border: 2px solid transparent;
+				outline: 2px solid currentColor;
+				outline-style: -2px;
+			}
 		}
 	}
 	&._blue-border {
@@ -391,7 +396,9 @@
 		}
 	}
 	&._social-l {
-		padding: rem(14) rem(30);
+		padding-inline: rem(30);
+		padding-top: rem(19);
+		padding-bottom: rem(9);
 		border-radius: rem(100);
 		line-height: 1;
 		@media (max-width: $laptop) {
@@ -400,7 +407,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			padding: 2px 17px;
-			padding-top: 10px;
+			padding-top: 9px;
 		}
 	}
 	&._social-m {

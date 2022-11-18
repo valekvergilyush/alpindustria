@@ -149,6 +149,7 @@
 		border: 1px solid var(--blue-light);
 		border-top: none;
 		box-shadow: 0px 1px 0px 0px var(--blue-light) inset;
+		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
 		}
