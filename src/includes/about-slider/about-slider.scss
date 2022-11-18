@@ -128,15 +128,21 @@
 			}
 		}
 		&._second {
-			width: rem(768);
-			@media (max-width: $laptop-lg) {
-				width: 622px;
-			}
-			@media (max-width: $laptop) {
-				width: 454px;
-			}
-			@media (max-width: $tablet) {
-				width: 100%;
+			img {
+				width: rem(768);
+				height: vh(490, 968);
+				@media (max-width: $laptop-lg) {
+					width: 622px;
+					height: 321px;
+				}
+				@media (max-width: $laptop) {
+					width: 454px;
+					height: 262px;
+				}
+				@media (max-width: $tablet) {
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 	}
