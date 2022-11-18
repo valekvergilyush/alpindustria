@@ -1,0 +1,71 @@
+.personal-data {
+	$this: &;
+	--gap: #{rem(16)};
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--container-padding);
+	@media (max-width: $laptop-sm) {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 32px;
+	}
+	@media (max-width: $mobile-lg) {
+		--gap: 8px;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 24px;
+	}
+	&__title {
+		border-top: 1px solid var(--blue-dark);
+		padding-top: rem(8);
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+			@media (max-width: $laptop-md) {
+				margin-bottom: 24px;
+			}
+			@media (max-width: $laptop-sm) {
+				margin-bottom: 20px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+	&__data {
+		display: flex;
+		align-items: flex-start;
+		gap: calc(var(--gap) * 2);
+	}
+	&__data-inner {
+		flex-grow: 1;
+		display: grid;
+		gap: var(--gap);
+	}
+	&__edit {
+		@include reset-btn;
+		flex-shrink: 0;
+		color: var(--dark-blue);
+		&:hover {
+			#{$this}__edit-icon {
+				fill: currentColor;
+			}
+		}
+	}
+	&__edit-icon {
+		fill: none;
+		transition: fill $default-transition-duration $default-transition-function;
+	}
+	&__add {
+		display: flex;
+		min-width: rem(234);
+		padding: rem(24);
+		margin-top: rem(48);
+		margin-left: auto;
+		border: 1px solid var(--blue-dark);
+		background-color: var(--blue-dark);
+		color: var(--white);
+		@extend .animated;
+		&:hover {
+			background-color: var(--white);
+			color: var(--blue-dark);
+		}
+	}
+}

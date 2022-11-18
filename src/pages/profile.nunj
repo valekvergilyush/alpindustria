@@ -2,10 +2,10 @@
 
 {% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
 
-{% block title %}Доставка и оплата | {{ super() }}{% endblock title %}
+{% block title %}Личный кабинет | {{ super() }}{% endblock title %}
 
 {% block mainContent %}
-	<main class="page__main _pt _white-bg">
+	<main class="page__main _pt">
 		{% include "../includes/community-tabs/community-tabs-profile.nunj" %}
 	</main>
 {% endblock %}

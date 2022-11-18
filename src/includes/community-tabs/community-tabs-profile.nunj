@@ -2,14 +2,18 @@
 
 {% set tabsList = [
 	{ id: 'data', text: 'Мои данные', active: true },
-	{ id: 'payments', text: 'Мои покупки' }
+	{ id: 'payments', text: 'Мои покупки' },
+	{ id: 'discount', text: 'Дисконтная карта' },
+	{ id: 'subscription', text: 'Рассылка' },
+	{ id: 'messages', text: 'Сообщения' },
+	{ id: 'logout', text: 'Выйти' }
 ] %}
 
-<section class="delivery-payment" data-community-tab="delivery">
-	<ul class="delivery-payment__tabs">
+<section class="community-tabs" data-community-tab>
+	<ul class="community-tabs__tabs">
 		{% for tab in tabsList %}
-			<li class="delivery-payment__tabs-item">
-				<button class="delivery-payment__tabs-btn{% if tab.active %} _active{% endif %} h6 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+			<li class="community-tabs__tabs-item">
+				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h5 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
 					{{ tab.text }}
 					{{ icon({
 						iconName: 'double-arrow-right',
@@ -20,12 +24,12 @@
 		{% endfor %}
 	</ul>
 
-	<div class="delivery-payment__sections">
-		<section class="delivery-payment__section _active" aria-labelledby="data" data-tab-section="data">
-			data
+	<div class="community-tabs__sections">
+		<section class="community-tabs__section _profile _active" aria-labelledby="data" data-tab-section="data">
+			{% include "../personal-data/personal-data.nunj" %}
 		</section>
-		<section class="delivery-payment__section _payment" aria-labelledby="payments" data-tab-section="payments">
-			payments
+		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
+			{% include "../community-contacts/community-contacts.nunj" %}
 		</section>
 	</div>
 </section>

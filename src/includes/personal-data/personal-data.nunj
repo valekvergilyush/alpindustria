@@ -1,0 +1,43 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="personal-data">
+	<div class="personal-data__col">
+		<p class="personal-data__title h7 ttu">Информация</p>
+		<div class="personal-data__data">
+			<div class="personal-data__data-inner p3 c-gray-dark">
+				<p>+7 (999) 000 00 00</p>
+				<p>hello.aplindustria@gmai.com</p>
+				<p>Иван Федорович Крузенштерн</p>
+				<p>19.10.1922</p>
+			</div>
+			<button class="personal-data__edit" type="button" aria-label="Изменить">
+				{{ icon({
+					iconName: 'pencil',
+					className: 'personal-data__edit-icon',
+					attr: 'width="24" height="24" viewBox="0 0 36 36"'
+				}) }}
+			</button>
+		</div>
+	</div>
+	<div class="personal-data__col">
+		<p class="personal-data__title h7 ttu">Адреса</p>
+		<div class="personal-data__data">
+			<div class="personal-data__data-inner p3 c-gray-dark">
+				<p>Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв</p>
+				<p>644505</p>
+			</div>
+			<button class="personal-data__edit" type="button" aria-label="Изменить">
+				{{ icon({
+					iconName: 'pencil',
+					className: 'personal-data__edit-icon',
+					attr: 'width="24" height="24" viewBox="0 0 36 36"'
+				}) }}
+			</button>
+		</div>
+		{{ button({
+			className: 'personal-data__add p4 ttu',
+			text: 'Добавить'
+		}) }}
+	</div>
+</div>
