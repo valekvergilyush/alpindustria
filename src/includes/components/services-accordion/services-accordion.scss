@@ -1,7 +1,10 @@
 .services-accordion {
 	$this: &;
 	--padding: #{rem(24)};
+	height: var(--height, auto);
 	border-bottom: 1px solid var(--blue-dark);
+	overflow: hidden;
+	transition: height $default-transition-duration $default-transition-function;
 	&__btn {
 		@include reset-btn();
 		display: flex;
@@ -26,11 +29,7 @@
 		}
 	}
 	&__content {
-		height: 0;
 		overflow: hidden;
 		box-sizing: border-box;
-		#{$this}._opened & {
-			height: auto;
-		}
 	}
 }

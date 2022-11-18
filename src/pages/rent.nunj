@@ -9,7 +9,7 @@
 	{% include "../includes/hero-catalog/hero-catalog-rent.nunj" %}
 	{% include "../includes/filters/filters.nunj" %}
 	<main class="page__main">
-		{% include "../includes/catalog/catalog.nunj" %}
+		{% include "../includes/catalog/catalog-rent.nunj" %}
 		{% include "../includes/news-section/news-section.nunj" %}
 		{% include "../includes/catalog-accordion/catalog-accordion-rent.nunj" %}
 	</main>

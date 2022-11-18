@@ -188,5 +188,8 @@
 		&._requisites {
 			padding-block: rem(64);
 		}
+		&._profile {
+			padding-block: var(--container-padding);
+		}
 	}
 }
