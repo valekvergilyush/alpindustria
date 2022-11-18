@@ -21,7 +21,7 @@ class Timeline {
 		this.links = this.container.querySelectorAll('[data-timeline-link]');
 		this.sections = document.querySelectorAll('[data-history-section]');
 
-		this.itemWidth = 100 / this.links.length;
+		this.itemWidth = 100 / (this.links.length - 1);
 
 		this._onLinkClick = this._onLinkClick.bind(this);
 
@@ -37,11 +37,15 @@ class Timeline {
 		this.setActiveLink(evt.currentTarget);
 	}
 	setActiveLink(link) {
-		this.activeLink && this.activeLink.classList.remove(ClassName.ACTIVE);
+		if (this.activeLink) {
+			this.activeLink.classList.remove(ClassName.ACTIVE);
+			this.activeLink.parentElement.classList.remove(ClassName.ACTIVE);
+		}
 		this.activeLink = link;
 		this.activeLink.classList.add(ClassName.ACTIVE);
-		this.activeIndex = Array.from(this.links).indexOf(link) + 1;
-		this.progress = this.activeIndex * this.itemWidth;
+		this.activeLink.parentElement.classList.add(ClassName.ACTIVE);
+		this.activeIndex = Array.from(this.links).indexOf(link);
+		this.progress = this.activeIndex === 0 ? 0 : this.activeIndex * this.itemWidth;
 		this.progressBar.style.width = `${this.progress}%`;
 		this.progressBar.style.height = `100%`;
 	}
