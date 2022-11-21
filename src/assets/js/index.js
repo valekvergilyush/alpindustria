@@ -75,6 +75,7 @@ class AlpIndustry {
 			Timeline: require('../../includes/timeline/timeline').default,
 			Auth: require('../../includes/auth/auth').default,
 			PersonalDataForm: require('../../includes/personal-data-form/personal-data-form').default,
+			ProductCard: require('../../includes/components/product-card/product-card').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

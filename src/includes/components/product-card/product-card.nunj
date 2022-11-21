@@ -1,11 +1,32 @@
 {% from "../button/button.nunj" import button %}
+{% from "../icon/icon.nunj" import icon %}
+
+{% set colorButtons = [
+	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
+	{ name: 'Красный', color: '#C9364C' },
+	{ name: 'Тёмно-фиолетовый', color: '#6F2876', disabled: true },
+	{ name: 'Белый', color: '#FEFEFE' },
+	{ name: 'Тёмно-синий', color: '#324481' },
+	{ name: 'Тёмно-серый', color: '#342C25' }
+] %}
+{% set sizeButtons = [
+	{ value: '37' },
+	{ value: '38', disabled: true },
+	{ value: '39', selected: true },
+	{ value: '40' },
+	{ value: '41' },
+	{ value: '42' },
+	{ value: '43' },
+	{ value: '44' },
+	{ value: '45' }
+] %}
 
 {% macro productCard(props) %}
 	{% set activeClassName = '' %}
 	{% if props.inWishlist %}
 		{% set activeClassName = ' _active' %}
 	{% endif %}
-	<article class="{% if props.className %}{{ props.className }} {% endif %}product-card">
+	<article class="{% if props.className %}{{ props.className }} {% endif %}product-card" data-product-card>
 		<a class="product-card__title ttu" href="{{ props.url }}" {% if props.linkAttr %}{{props.linkAttr}}{% endif %}>{{ props.title }}</a>
 		<p class="product-card__brand p3">{{ props.brand }}</p>
 		<p class="product-card__price p3">{{ props.price }}</p>
@@ -20,7 +41,7 @@
 		{{ button({
 			text: 'В корзину',
 			className: 'product-card__button _product-card',
-			attr: 'aria-label="В корзину"'
+			attr: 'aria-label="В корзину" data-product-card-props-opener'
 		}) }}
 		<div class="product-card__badges">
 			{% if props.new %}
@@ -33,5 +54,48 @@
 				{% include "../../product-badge/dry-feature.nunj" %}
 			{% endif %}
 		</div>
+		<div class="product-card__props" data-product-card-props>
+			<div class="product-card__colors">
+				<p class="h7 ttu">Цвет</p>
+				<ul class="product-card__inputs-list _colors">
+					{% for btn in colorButtons %}
+						<li class="product-card__inputs-item">
+							<label class="product-card__color">
+								<input class="product-card__radio-input" type="radio" name="color" value="{{btn.name}}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+								<span class="button _color _white product-card__input-span" style="background:{{ btn.color }}" aria-label="{{btn.name}}"></span>
+							</label>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="product-card__sizes">
+				<p class="h7 ttu">Размер</p>
+				<div class="product-card__inputs-wrap">
+					<ul class="product-card__inputs-list _sizes" data-product-sizes  data-slider-group="3">
+						{% for btn in sizeButtons %}
+							<li class="product-card__inputs-item">
+								<label class="product-card__size">
+									<input class="product-card__radio-input" type="radio" name="size" value="{{ btn.value }}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+									<span class="button _size _bd-white product-card__input-span" aria-label="Размер {{ btn.value }}">{{ btn.value }}</span>
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+					<button type="button" aria-label="Следующие цвета" class="product-card__inputs-next" data-product-sizes-next>
+						{{ icon({
+							iconName: 'arrow-left',
+							className: 'product-card__inputs-next-icon',
+							attr: 'width="24" height="24"'
+						}) }}
+					</button>
+				</div>
+			</div>
+			{{ icon({
+				iconName: 'double-arrow-down',
+				className: 'product-card__arrow-icon',
+				attr: 'width="32" height="32"'
+			}) }}
+		</div>
+		<button class="product-card__close-btn" type="button" aria-label="Закрыть" data-product-card-props-closer></button>
 	</article>
 {% endmacro %}
