@@ -1,0 +1,44 @@
+.personal-data-form {
+	--margin: #{rem(32)};
+	@media (max-width: $laptop-md) {
+		--margin: 22px;
+	}
+	&__input {
+		margin-bottom: rem(24);
+	}
+	&__inputs {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(16);
+		@media (max-width: $laptop-md) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 24px;
+		}
+	}
+	&__checkbox {
+		margin-top: var(--margin);
+	}
+	&__btns {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(16);
+		margin-top: var(--margin);
+	}
+	&__btn {
+		&._del {
+			color: rgba($gray-dark, 0.4);
+			@extend .animated;
+			&:hover {
+				color: $gray-dark;
+			}
+		}
+		&._add {
+			.button__icon {
+				@media (max-width: $laptop-md) {
+					--size: 16px;
+					margin-left: var(--size);
+				}
+			}
+		}
+	}
+}

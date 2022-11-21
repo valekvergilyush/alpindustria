@@ -1,3 +1,5 @@
+{% from "../components/input/input.nunj" import input %}
+
 <from class="auth-form">
 	{{ input({
 		type: 'email',
