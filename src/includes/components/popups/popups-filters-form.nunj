@@ -1,1 +1,1 @@
-{% include "../../filters-form/filters-form.nunj" %}
+{% include "../../filters-form/filters-form-popup.nunj" %}
