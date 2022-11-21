@@ -25,5 +25,7 @@
 				<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
 			</div>
 		</div>
+		<div class="history__line _y" data-animation-line></div>
 	</div>
+	<div class="history__line _x" data-animation-line></div>
 </section>

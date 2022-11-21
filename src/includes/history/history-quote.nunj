@@ -3,4 +3,5 @@
 		<blockquote class="history__quote-text s1">Мы&nbsp;начали свой бизнес, как только в&nbsp;Советском Союзе<br> разрешили это делать</blockquote>
 		<figcaption class="history__quote-author p1 c-gray-dark">&mdash;&nbsp;так говорила о&nbsp;себе Альпиндустрия в&nbsp;начале 90-х.</figcaption>
 	</div>
+	<div class="history__line _x" data-animation-line></div>
 </figure>
