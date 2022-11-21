@@ -48,7 +48,7 @@
 						<li>настойчивость и умение аргументировать свою позицию</li>
 					</ul>
 				</div>
-				<a href="#" class="class__link h7 c-gray-dark ttu">
+				<a href="#" class="class__link h7 c-blue-dark ttu">
 					Откликнуться
 					{{ icon({
 						iconName: 'promo-arrow',
