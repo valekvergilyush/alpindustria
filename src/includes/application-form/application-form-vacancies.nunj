@@ -113,8 +113,7 @@
 			text: 'Я хочу получать информационную рассылку о новых вакансиях',
 			checked: true
 		}) }}
-		<a class="cart-pay__offer-link" href="#">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
-
+		<a class="application-form__bottom-text p3 _vacancies" href="#">Нажимая "подать заявку", вы соглашаетесь с условиями оферты</a>
 		{{ button({
 			className: 'application-form__show-more-btn _show-more',
 			text: 'Показать еще',

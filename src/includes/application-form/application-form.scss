@@ -84,6 +84,13 @@
 	}
 	&__bottom-text {
 		max-width: rem(300);
+		&._vacancies {
+			max-width: 100%;
+			display: inline-block;
+			margin-bottom: rem(32);
+			color: rgba($color: #342c25, $alpha: 0.4);
+			text-decoration: underline;
+		}
 		@media (max-width: $mobile-lg) {
 			display: none;
 		}
