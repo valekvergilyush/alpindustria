@@ -29,15 +29,19 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-content: flex-start;
+		opacity: 0;
 		.word-wrapper {
 			overflow: hidden;
 		}
 		.word {
+			opacity: 0;
 			display: inline-block;
 			transform: translateY(100%);
 		}
 		&.is-animated {
+			opacity: 1;
 			.word {
+				opacity: 1;
 				animation: wordsTop 1s cubic-bezier(0.55, 0, 0.1, 1);
 				animation-fill-mode: forwards;
 			}

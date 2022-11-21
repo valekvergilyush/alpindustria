@@ -66,15 +66,34 @@
 	&__item {
 		display: flex;
 		flex-grow: 1;
+		justify-content: flex-end;
+		&:has(~ .timeline__item._active) {
+			#{$this}__link {
+				color: var(--c-active);
+			}
+		}
+		&:first-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			height: 100%;
+			#{$this}__link {
+				justify-content: flex-start;
+				padding-right: 0;
+				padding-left: rem(4);
+				border-right: 0;
+				border-left: 1px solid currentColor;
+			}
+		}
 	}
 	&__link {
 		position: relative;
 		display: flex;
-		flex-grow: 1;
 		align-items: flex-end;
-		padding-left: rem(4);
+		padding-right: rem(4);
 		line-height: 1;
-		border-left: 1px solid currentColor;
+		border-right: 1px solid currentColor;
 		transition: color $fast-transition-duration $default-transition-function;
 		&._active {
 			color: var(--c-active);

@@ -39,6 +39,7 @@
 		left: 0;
 		width: 100%;
 		transform: translateY(-100%);
+		opacity: 0;
 		will-change: transform;
 		pointer-events: none;
 		&._initialized {
