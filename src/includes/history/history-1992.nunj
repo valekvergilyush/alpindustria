@@ -4,7 +4,7 @@
 	<div class="history__row _reverse container">
 		<div class="history__col">
 			<div class="history__col-inner">
-				<p class="history__year h2 ttu text-stroke _blue-dark">1992</p>
+				<p class="history__year h2 ttu text-stroke _blue-dark" data-animation-line-trigger>1992</p>
 				<h2 class="history__subtitle h5 ttu">Подъем магазина</h2>
 				<div class="history__text p3 c-gray-dark">
 					<p>Мы&nbsp;собрали деньги с&nbsp;тура с&nbsp;иностранными туристами и&nbsp;закупили большую партию снаряжения у&nbsp;немецкой фирмы Salewa. Товар продали неожиданно быстро &mdash; и&nbsp;сразу поняли, в&nbsp;каком направлении двигаться. </p>

@@ -4,7 +4,7 @@
 	<div class="history__row container">
 		<div class="history__col">
 			<div class="history__col-inner">
-				<p class="history__year h2 ttu text-stroke _blue-dark">1994</p>
+				<p class="history__year h2 ttu text-stroke _blue-dark" data-animation-line-trigger>1994</p>
 				<h2 class="history__subtitle h5 ttu">Туры и экспедиции</h2>
 				<div class="history__text p3 c-gray-dark">
 					<p>Мы&nbsp;взяли хороший темп и&nbsp;стали прокачивать сферу туризма &mdash; отправляли в&nbsp;Европу российских горнолыжников и&nbsp;принимали иностранцев.</p>

@@ -4,7 +4,7 @@
 	<div class="history__row _reverse container">
 		<div class="history__col">
 			<div class="history__col-inner">
-				<p class="history__year h2 ttu text-stroke _blue-dark">2000</p>
+				<p class="history__year h2 ttu text-stroke _blue-dark" data-animation-line-trigger>2000</p>
 				<h2 class="history__subtitle h5 ttu">Экстремальные игры</h2>
 				<div class="history__text p3 c-gray-dark">
 					<p>Во&nbsp;второй половине 90-х мы&nbsp;увлеклись экстремальным спортом и&nbsp;решили проводить в&nbsp;России соревнования. За&nbsp;несколько лет добились немалых успехов и&nbsp;проводили игры на&nbsp;хорошем уровне.</p>

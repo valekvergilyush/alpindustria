@@ -198,7 +198,18 @@
 				width: 50%;
 				height: 100%;
 				background-color: var(--gray-light);
-				transition: width 1s $default-transition-function 0.5s;
+				transition: width 1s $default-transition-function 1.5s;
+			}
+			&._only-x {
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					width: 50%;
+					height: 100%;
+					background-color: var(--gray-light);
+					transition: width 1s $default-transition-function;
+				}
 			}
 			&::before {
 				left: 0;
@@ -206,7 +217,7 @@
 			&::after {
 				right: 0;
 			}
-			&.is-animated {
+			.is-animated & {
 				&::before,
 				&::after {
 					width: 0;
@@ -228,7 +239,7 @@
 				background-color: var(--gray-light);
 				transition: height 1.5s $default-transition-function;
 			}
-			&.is-animated {
+			.is-animated & {
 				&::before {
 					height: 0;
 				}

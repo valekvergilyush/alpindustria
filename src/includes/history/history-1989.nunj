@@ -4,7 +4,7 @@
 	<div class="history__row _reverse container">
 		<div class="history__col">
 			<div class="history__col-inner">
-				<p class="history__year h2 ttu text-stroke _blue-dark">1989</p>
+				<p class="history__year h2 ttu text-stroke _blue-dark" data-animation-line-trigger>1989</p>
 				<h2 class="history__subtitle h5 ttu">Поиск вектора</h2>
 				<div class="history__text p3 c-gray-dark">
 					<p>Альпиндустрия развивалась в&nbsp;нескольких направлениях. Мы&nbsp;оказывали услуги по&nbsp;ремонту и&nbsp;строительству методом промышленного альпинизма &mdash; но&nbsp;также нам всегда был интересен спортивный мир и&nbsp;общественная жизнь. </p>
