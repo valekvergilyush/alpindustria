@@ -17,6 +17,10 @@ class Input {
 		this.fields.forEach(field => {
 			const input = field.querySelector('input, textarea');
 
+			if (input.value) {
+				field.classList.add(ClassName.FILLED);
+			}
+
 			input.addEventListener('input', () => {
 				if (input.value) {
 					field.classList.add(ClassName.FILLED);

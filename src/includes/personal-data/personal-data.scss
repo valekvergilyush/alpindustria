@@ -57,15 +57,49 @@
 		display: flex;
 		min-width: rem(234);
 		padding: rem(24);
-		margin-top: rem(48);
 		margin-left: auto;
 		border: 1px solid var(--blue-dark);
 		background-color: var(--blue-dark);
 		color: var(--white);
 		@extend .animated;
+		box-sizing: border-box;
 		&:hover {
 			background-color: var(--white);
 			color: var(--blue-dark);
+		}
+		@media (max-width: $laptop-lg) {
+			min-width: 360px;
+			padding: 16px;
+		}
+		@media (max-width: $laptop-md) {
+			width: 100%;
+			min-width: auto;
+		}
+	}
+	&__form {
+		margin-top: rem(48);
+		@media (max-width: $laptop-lg) {
+			margin-top: 32px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-top: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-top: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 24px;
+		}
+		.personal-data-form {
+			display: none;
+		}
+		&._active {
+			.personal-data-form {
+				display: block;
+			}
+			#{$this}__add {
+				display: none;
+			}
 		}
 	}
 }

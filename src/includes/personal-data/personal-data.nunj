@@ -11,13 +11,16 @@
 				<p>Иван Федорович Крузенштерн</p>
 				<p>19.10.1922</p>
 			</div>
-			<button class="personal-data__edit" type="button" aria-label="Изменить">
+			<button class="personal-data__edit" type="button" aria-label="Изменить" data-data-form-open="info">
 				{{ icon({
 					iconName: 'pencil',
 					className: 'personal-data__edit-icon',
 					attr: 'width="24" height="24" viewBox="0 0 36 36"'
 				}) }}
 			</button>
+		</div>
+		<div class="personal-data__form" data-data-form="info">
+			{% include "../personal-data-form/personal-data-form-info.nunj" %}
 		</div>
 	</div>
 	<div class="personal-data__col">
@@ -27,7 +30,7 @@
 				<p>Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв</p>
 				<p>644505</p>
 			</div>
-			<button class="personal-data__edit" type="button" aria-label="Изменить">
+			<button class="personal-data__edit" type="button" aria-label="Изменить" data-data-form-open="address">
 				{{ icon({
 					iconName: 'pencil',
 					className: 'personal-data__edit-icon',
@@ -35,9 +38,13 @@
 				}) }}
 			</button>
 		</div>
-		{{ button({
-			className: 'personal-data__add p4 ttu',
-			text: 'Добавить'
-		}) }}
+		<div class="personal-data__form" data-data-form="address">
+			{% include "../personal-data-form/personal-data-form.nunj" %}
+			{{ button({
+				className: 'personal-data__add p4 ttu',
+				text: 'Добавить',
+				attr: 'data-data-form-open="address"'
+			}) }}
+		</div>
 	</div>
 </div>

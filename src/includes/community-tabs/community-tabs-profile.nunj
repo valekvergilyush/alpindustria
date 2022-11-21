@@ -5,15 +5,14 @@
 	{ id: 'payments', text: 'Мои покупки' },
 	{ id: 'discount', text: 'Дисконтная карта' },
 	{ id: 'subscription', text: 'Рассылка' },
-	{ id: 'messages', text: 'Сообщения' },
-	{ id: 'logout', text: 'Выйти' }
+	{ id: 'messages', text: 'Сообщения' }
 ] %}
 
-<section class="community-tabs" data-community-tab>
+<section class="community-tabs _profile" data-community-tab>
 	<ul class="community-tabs__tabs">
 		{% for tab in tabsList %}
 			<li class="community-tabs__tabs-item">
-				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h5 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+				<button class="community-tabs__tabs-btn{% if tab.className %} {{tab.className}}{% endif %} {% if tab.active %}_active{% endif %} h6 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
 					{{ tab.text }}
 					{{ icon({
 						iconName: 'double-arrow-right',
@@ -22,6 +21,9 @@
 				</button>
 			</li>
 		{% endfor %}
+		<li class="community-tabs__tabs-item">
+			<a class="community-tabs__tabs-btn _logout h6 ttu" href="#">Выйти</a>
+		</li>
 	</ul>
 
 	<div class="community-tabs__sections">
