@@ -84,7 +84,7 @@
 	}
 	&__bottom-text {
 		max-width: rem(300);
-		&._vacancies {
+		&._link {
 			text-decoration: underline;
 		}
 		@media (max-width: $mobile-lg) {
