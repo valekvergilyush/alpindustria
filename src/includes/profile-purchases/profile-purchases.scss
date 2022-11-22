@@ -15,6 +15,7 @@
 	}
 	&__title {
 		&:not(:last-child) {
+			margin-bottom: rem(32);
 			@media (max-width: $laptop-md) {
 				margin-bottom: 18px;
 			}

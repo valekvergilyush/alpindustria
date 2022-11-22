@@ -1,16 +1,4 @@
 .profile-title {
 	border-top: 1px solid var(--blue-dark);
 	padding-top: rem(8);
-	&:not(:last-child) {
-		margin-bottom: rem(32);
-		@media (max-width: $laptop-md) {
-			margin-bottom: 24px;
-		}
-		@media (max-width: $laptop-sm) {
-			margin-bottom: 20px;
-		}
-		@media (max-width: $mobile-lg) {
-			margin-bottom: 16px;
-		}
-	}
 }
