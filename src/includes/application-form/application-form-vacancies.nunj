@@ -113,7 +113,6 @@
 			text: 'Я хочу получать информационную рассылку о новых вакансиях',
 			checked: true
 		}) }}
-		<a class="application-form__bottom-text p3 _vacancies" href="#">Нажимая "подать заявку", вы соглашаетесь с условиями оферты</a>
 		{{ button({
 			className: 'application-form__show-more-btn _show-more',
 			text: 'Показать еще',
@@ -122,7 +121,7 @@
 		}) }}
 
 		<div class="application-form__bottom">
-			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
+			<a class="application-form__bottom-text p3 _vacancies" href="#">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</a>
 			{{ button({
 				type: 'submit',
 				text: 'Подать заявку',
