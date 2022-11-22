@@ -11,6 +11,8 @@
 	--fs-desc: #{rem(16)};
 	--badge-size: #{rem(48)};
 	--fs-badge: #{rem(14)};
+	--sizes-width: #{rem(392)};
+	--days-width: #{rem(320)};
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -108,6 +110,20 @@
 		}
 		#{$this}__arrow-icon {
 			opacity: 1;
+		}
+	}
+	&._props-checked {
+		#{$this}__total {
+			display: flex;
+		}
+		#{$this}__props {
+			padding-bottom: rem(16);
+		}
+		#{$this}__colors,
+		#{$this}__sizes,
+		#{$this}__days,
+		#{$this}__arrow-icon {
+			display: none;
 		}
 	}
 	&__title {
@@ -224,6 +240,21 @@
 				bottom: 0;
 			}
 		}
+		&._add-cart {
+			margin-left: auto;
+			@media (max-width: $laptop-lg) {
+				font-size: 16px;
+			}
+		}
+		&._back-props {
+			--size: #{rem(32)};
+			width: var(--size);
+			height: var(--size);
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
 	}
 	&__inputs-list {
 		display: flex;
@@ -232,6 +263,7 @@
 		flex-wrap: nowrap;
 		overflow: auto;
 		scrollbar-width: none;
+		scroll-behavior: smooth;
 		@include scrollbar {
 			display: none;
 		}
@@ -247,13 +279,15 @@
 		box-sizing: border-box;
 		width: 100%;
 		padding: var(--card-padding);
+		padding-bottom: rem(48);
 		color: var(--white);
 		background-color: var(--blue-dark);
 		transform: translateY(100%);
 		transition: transform $card-button-transition-duration $card-button-transition-function;
 	}
 	&__colors,
-	&__sizes {
+	&__sizes,
+	&__days {
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(16);
@@ -264,11 +298,17 @@
 	}
 	&__inputs-item {
 		&:last-child {
-			margin-right: 8px;
+			margin-right: rem(8);
 		}
 	}
 	&__inputs-wrap {
 		display: flex;
+		&._sizes {
+			max-width: var(--sizes-width);
+		}
+		&._days {
+			max-width: var(--days-width);
+		}
 	}
 	&__radio-input {
 		display: none;
@@ -279,10 +319,13 @@
 	}
 	&__input-span {
 		&._size {
-			width: 56px;
+			width: rem(56);
 			padding-left: 0;
 			padding-right: 0;
 			text-align: center;
+		}
+		&._days {
+			width: rem(80);
 		}
 	}
 	&__inputs-next {
@@ -323,5 +366,28 @@
 		opacity: 0;
 		transition: opacity $default-transition-duration $card-button-transition-function;
 		pointer-events: none;
+	}
+	&__total {
+		display: none;
+		column-gap: rem(8);
+		row-gap: rem(24);
+		& > * {
+			flex-shrink: 0;
+		}
+		#{$this}__input-span {
+			&._size {
+				background-color: var(--white);
+				color: var(--blue-dark);
+			}
+		}
+		@media (max-width: $laptop-lg) {
+			column-gap: 4px;
+		}
+		@media (max-width: $laptop-lg-3) {
+			flex-wrap: wrap;
+			.product-card__button._add-cart {
+				width: 100%;
+			}
+		}
 	}
 }
