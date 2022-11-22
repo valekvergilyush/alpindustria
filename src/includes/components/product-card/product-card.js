@@ -68,12 +68,6 @@ class ProductCard {
 		const daysOutput = card.querySelector('[data-product-card-days]');
 		const backButton = card.querySelector('[data-product-card-back]');
 
-		card.colorData = card
-			.querySelector('.product-card__colors input[checked]')
-			.getAttribute('data-value');
-		card.sizeValue = form.elements.size.value;
-		card.daysValue = form.elements.days.value;
-
 		const isCheckedAll = () =>
 			Boolean(form.elements.color.value && form.elements.size.value && form.elements.days.value);
 		const showTotalState = () => {
@@ -84,7 +78,15 @@ class ProductCard {
 				daysOutput.textContent = card.daysValue;
 			}
 		};
+		const setInitValue = () => {
+			card.colorData = card
+				.querySelector('.product-card__colors input[checked]')
+				.getAttribute('data-value');
+			card.sizeValue = form.elements.size.value;
+			card.daysValue = form.elements.days.value;
+		};
 
+		setInitValue();
 		showTotalState();
 
 		colorInputs.forEach(input =>
@@ -139,6 +141,7 @@ class ProductCard {
 
 			card.classList.remove(ClassName.PROPS_CHECKED);
 			form.reset();
+			setInitValue();
 		});
 	}
 	destroy() {
