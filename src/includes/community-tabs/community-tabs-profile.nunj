@@ -1,8 +1,8 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set tabsList = [
-	{ id: 'data', text: 'Мои данные', active: true },
-	{ id: 'payments', text: 'Мои покупки' },
+	{ id: 'data', text: 'Мои данные' },
+	{ id: 'payments', text: 'Мои покупки', active: true },
 	{ id: 'discount', text: 'Дисконтная карта' },
 	{ id: 'subscription', text: 'Рассылка' },
 	{ id: 'messages', text: 'Сообщения' }
@@ -27,11 +27,11 @@
 	</ul>
 
 	<div class="community-tabs__sections">
-		<section class="community-tabs__section _profile _active" aria-labelledby="data" data-tab-section="data">
+		<section class="community-tabs__section _profile" aria-labelledby="data" data-tab-section="data">
 			{% include "../personal-data/personal-data.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
-			{% include "../community-contacts/community-contacts.nunj" %}
+		<section class="community-tabs__section _profile _active" aria-labelledby="payments" data-tab-section="payments">
+			{% include "../profile-purchases/profile-purchases.nunj" %}
 		</section>
 	</div>
 </section>
