@@ -13,7 +13,7 @@
 			{% for item in navList %}
 				<li class="hero-index__item">
 					<a
-						class="hero-index__link ttu"
+						class="hero-index__link ttu _anim-first"
 						href="{{ item.url }}"
 						data-hero-link="{{ item.id }}"
 						data-animation="words"
@@ -23,7 +23,7 @@
 				</li>
 			{% endfor %}
 		</ul>
-		<p class="hero-index__text p2" data-animation="fade-right">Хотите подняться на&nbsp;вершину мечты? Мы&nbsp;сделаем ваш путь безопасным и&nbsp;позаботимся, чтобы от&nbsp;восхождения остались только теплые воспоминания.</p>
+		<p class="hero-index__text p2 _anim-first" data-animation="fade-right">Хотите подняться на&nbsp;вершину мечты? Мы&nbsp;сделаем ваш путь безопасным и&nbsp;позаботимся, чтобы от&nbsp;восхождения остались только теплые воспоминания.</p>
 		<a class="hero-index__next-link" href="#brands" aria-label="Далее" data-anchor-link>
 			{{ icon({
 				iconName: 'arrow-down-lg',

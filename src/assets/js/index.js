@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { listen } from 'quicklink';
 
 const TABLET_BREAKPOINT = 768;
 
@@ -81,6 +82,10 @@ class AlpIndustry {
 			ScrollHelper: require('./helpers/ScrollHelper'),
 			TextSplitter: require('./helpers/TextSplitter').default,
 		};
+		window.addEventListener('load', () => {
+			console.log(123);
+			listen();
+		});
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
 
