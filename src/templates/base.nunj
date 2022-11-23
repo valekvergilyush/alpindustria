@@ -26,7 +26,6 @@
 
 		{{ popups({ list: popupsList }) }}
 		{% include "../includes/notification/notification.nunj" %}
-		<script>setTimeout(() => document.documentElement.classList.remove('_loading'), 3000)</script>
 		{% block scripts %}
 			<script src="/assets/js/bundle.js?hash"></script>
 		{% endblock %}
