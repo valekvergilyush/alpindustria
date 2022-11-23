@@ -2,7 +2,7 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% set colorButtons = [
-	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
+	{ name: 'Тёмно-зелёный', color: '#03836E' },
 	{ name: 'Красный', color: '#C9364C' },
 	{ name: 'Тёмно-фиолетовый', color: '#6F2876', disabled: true },
 	{ name: 'Белый', color: '#FEFEFE' },
@@ -12,7 +12,7 @@
 {% set sizeButtons = [
 	{ value: '37' },
 	{ value: '38', disabled: true },
-	{ value: '39', selected: true },
+	{ value: '39' },
 	{ value: '40' },
 	{ value: '41' },
 	{ value: '42' },
