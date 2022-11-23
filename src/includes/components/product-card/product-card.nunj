@@ -101,28 +101,30 @@
 					</button>
 				</div>
 			</div>
-			<div class="product-card__days">
-				<p class="h7 ttu">Количество дней</p>
-				<div class="product-card__inputs-wrap _days">
-					<ul class="product-card__inputs-list _days" data-product-days  data-slider-group="3">
-						{% for btn in daysButtons %}
-							<li class="product-card__inputs-item">
-								<label class="product-card__size">
-									<input class="product-card__radio-input" type="radio" name="days" value="{{ btn.value }}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
-									<span class="button _size _days _bd-white product-card__input-span" aria-label="{{ btn.value }}">{{ btn.value }}</span>
-								</label>
-							</li>
-						{% endfor %}
-					</ul>
-					<button type="button" aria-label="Далее" class="product-card__inputs-next" data-product-days-next>
-						{{ icon({
-							iconName: 'arrow-left',
-							className: 'product-card__inputs-next-icon',
-							attr: 'width="24" height="24"'
-						}) }}
-					</button>
+			{% if props.days %}
+				<div class="product-card__days">
+					<p class="h7 ttu">Количество дней</p>
+					<div class="product-card__inputs-wrap _days">
+						<ul class="product-card__inputs-list _days" data-product-days  data-slider-group="3">
+							{% for btn in daysButtons %}
+								<li class="product-card__inputs-item">
+									<label class="product-card__size">
+										<input class="product-card__radio-input" type="radio" name="days" value="{{ btn.value }}" {% if btn.selected %}checked{% endif %} {% if btn.disabled %}disabled{% endif %}>
+										<span class="button _size _days _bd-white product-card__input-span" aria-label="{{ btn.value }}">{{ btn.value }}</span>
+									</label>
+								</li>
+							{% endfor %}
+						</ul>
+						<button type="button" aria-label="Далее" class="product-card__inputs-next" data-product-days-next>
+							{{ icon({
+								iconName: 'arrow-left',
+								className: 'product-card__inputs-next-icon',
+								attr: 'width="24" height="24"'
+							}) }}
+						</button>
+					</div>
 				</div>
-			</div>
+			{% endif %}
 			{{ icon({
 				iconName: 'double-arrow-down',
 				className: 'product-card__arrow-icon',
@@ -137,8 +139,10 @@
 					attr: 'aria-label="Назад" data-product-card-back'
 				}) }}
 				<span class="button _color _white product-card__input-span no-pe" data-product-card-color></span>
-				<span class="button _size _bd-white product-card__input-span no-pe" data-product-card-size>39</span>
-				<span class="button _size _days _bd-white product-card__input-span no-pe" data-product-card-days>8 - 15</span>
+				<span class="button _size _bd-white product-card__input-span no-pe" data-product-card-size></span>
+				{% if props.days %}
+					<span class="button _size _days _bd-white product-card__input-span no-pe" data-product-card-days></span>
+				{% endif %}
 				{{ button({
 					text: 'В корзину',
 					className: 'product-card__button _add-cart h7 ttu',
