@@ -87,7 +87,10 @@
 
 			xhr.send('');
 
-			setTimeout(function() { document.documentElement.classList.remove('_loading') }, 3000);
+			setTimeout(function() {
+				document.documentElement.classList.remove('_loading');
+				document.documentElement.classList.add('animations');
+			}, 3000);
 
 			const calculateVh = function(){
 				const vh = window.innerHeight * 0.01;
