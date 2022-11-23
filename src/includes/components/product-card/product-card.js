@@ -68,52 +68,54 @@ class ProductCard {
 		const daysOutput = card.querySelector('[data-product-card-days]');
 		const backButton = card.querySelector('[data-product-card-back]');
 
-		const isCheckedAll = () =>
-			Boolean(form.elements.color.value && form.elements.size.value && form.elements.days.value);
+		const isCheckedAll = () => {
+			if (daysInputs.length) {
+				return Boolean(
+					form.elements.color.value && form.elements.size.value && form.elements.days.value
+				);
+			}
+
+			return Boolean(form.elements.color.value && form.elements.size.value);
+		};
 		const showTotalState = () => {
 			if (isCheckedAll()) {
 				card.classList.add(ClassName.PROPS_CHECKED);
-				colorOutput.style.background = card.colorData;
-				sizeOutput.textContent = card.sizeValue;
-				daysOutput.textContent = card.daysValue;
+				colorOutput && (colorOutput.style.background = card.colorData);
+				sizeOutput && (sizeOutput.textContent = card.sizeValue);
+				daysOutput && (daysOutput.textContent = card.daysValue);
 			}
 		};
-		const setInitValue = () => {
-			card.colorData = card
-				.querySelector('.product-card__colors input[checked]')
-				.getAttribute('data-value');
-			card.sizeValue = form.elements.size.value;
-			card.daysValue = form.elements.days.value;
-		};
 
-		setInitValue();
 		showTotalState();
 
-		colorInputs.forEach(input =>
-			input.addEventListener('change', evt => {
-				card.colorValue = form.elements.color.value;
-				card.colorData = evt.target.getAttribute('data-value');
-				colorOutput.style.background = card.colorData;
+		colorInputs.length &&
+			colorInputs.forEach(input =>
+				input.addEventListener('change', evt => {
+					card.colorValue = form.elements.color.value;
+					card.colorData = evt.target.getAttribute('data-value');
+					colorOutput.style.background = card.colorData;
 
-				showTotalState();
-			})
-		);
-		sizeInputs.forEach(input =>
-			input.addEventListener('change', () => {
-				card.sizeValue = form.elements.size.value;
-				sizeOutput.textContent = card.sizeValue;
+					showTotalState();
+				})
+			);
+		sizeInputs.length &&
+			sizeInputs.forEach(input =>
+				input.addEventListener('change', () => {
+					card.sizeValue = form.elements.size.value;
+					sizeOutput.textContent = card.sizeValue;
 
-				showTotalState();
-			})
-		);
-		daysInputs.forEach(input =>
-			input.addEventListener('change', () => {
-				card.daysValue = form.elements.days.value;
-				daysOutput.textContent = card.daysValue;
+					showTotalState();
+				})
+			);
+		daysInputs.length &&
+			daysInputs.forEach(input =>
+				input.addEventListener('change', () => {
+					card.daysValue = form.elements.days.value;
+					daysOutput.textContent = card.daysValue;
 
-				showTotalState();
-			})
-		);
+					showTotalState();
+				})
+			);
 
 		card.classList.add(ClassName.PROPS_OPENED);
 
@@ -128,8 +130,8 @@ class ProductCard {
 			step: 96,
 		};
 
-		this.initInputSlider(card.sizes);
-		this.initInputSlider(card.days);
+		sizeInputs.length && this.initInputSlider(card.sizes);
+		daysInputs.length && this.initInputSlider(card.days);
 
 		closer.addEventListener('click', e => {
 			e.preventDefault();
@@ -141,7 +143,6 @@ class ProductCard {
 
 			card.classList.remove(ClassName.PROPS_CHECKED);
 			form.reset();
-			setInitValue();
 		});
 	}
 	destroy() {

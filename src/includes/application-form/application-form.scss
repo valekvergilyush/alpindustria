@@ -81,6 +81,13 @@
 			justify-content: flex-end;
 			min-height: 87px;
 		}
+		a {
+			text-decoration: none;
+			&:hover {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
 	}
 	&__bottom-text {
 		max-width: rem(300);
