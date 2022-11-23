@@ -82,10 +82,11 @@ class AlpIndustry {
 			ScrollHelper: require('./helpers/ScrollHelper'),
 			TextSplitter: require('./helpers/TextSplitter').default,
 		};
+
 		window.addEventListener('load', () => {
-			console.log(123);
 			listen();
 		});
+
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
 
@@ -101,7 +102,7 @@ class AlpIndustry {
 
 			if (window.innerWidth > TABLET_BREAKPOINT) {
 				document
-					.querySelectorAll('[data-animation="words"]')
+					.querySelectorAll('[data-animation="words"]:not(._anim-first)')
 					.forEach(item => this.helpers.TextSplitter.split(item).words);
 			}
 		});

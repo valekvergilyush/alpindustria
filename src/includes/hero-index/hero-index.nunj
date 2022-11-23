@@ -18,7 +18,7 @@
 						data-hero-link="{{ item.id }}"
 						data-animation="words"
 					>
-						{{ item.text }}
+						<span class="word-wrapper"><span class="word">{{ item.text }}</span></span>
 					</a>
 				</li>
 			{% endfor %}
