@@ -1,5 +1,4 @@
 .vacancies-open {
-	min-height: 1038px;
 	$this: &;
 	--container-max-width: #{rem(1920)};
 	--container-width: min(var(--container-max-width), 100% - (var(--container-padding) * 2));
@@ -13,11 +12,12 @@
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr var(--left-col-width) var(--right-col-width) 1fr;
+	min-height: 1038px;
 	&::before {
 		content: '';
 		grid-column: 1/2;
 		grid-row: 1/-1;
-		background-color: var(--white);
+		background-color: var(--gray-light);
 	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 96px;

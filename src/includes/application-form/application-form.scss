@@ -84,6 +84,9 @@
 	}
 	&__bottom-text {
 		max-width: rem(300);
+		&._link {
+			text-decoration: underline;
+		}
 		@media (max-width: $mobile-lg) {
 			display: none;
 		}

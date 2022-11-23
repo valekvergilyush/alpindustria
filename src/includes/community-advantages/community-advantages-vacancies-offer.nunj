@@ -6,7 +6,7 @@
 	'Корпоративы, совместные выезды за&nbsp;счет компании'
 ] %}
 
-<section class="community-advantages _partner _vacancies-offer" data-community-advantages>
+<section class="community-advantages _partner _vacancies-offer" data-community-advantages data-background="#03836e">
 	<div class="community-advantages__container container">
 		<div class="community-advantages__title-wrapper">
 			<h2 class="community-advantages__title h4 ttu" data-animation="words">
@@ -27,10 +27,10 @@
 			</ul>
 			<p class="community-advantages__text p2" data-animation="fade-right">
 				<span class="community-advantages__asterisk h5 ttu">***</span><br>
-				Остальное мы&nbsp;берем на&nbsp;себя!
+				Не забудьте написать пару слов о себе, когда будете заполнять форму
 			</p>
 			<a class="community-advantages__link ttu" href="#" data-animation="fade-right">
-				Подать заявку
+				Хочу работать
 			</a>
 		</div>
 	</div>

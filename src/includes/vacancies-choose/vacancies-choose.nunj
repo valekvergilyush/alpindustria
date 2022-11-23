@@ -16,7 +16,7 @@
 	{{ select({
 		id: 'availability',
 		options: cityList,
-		className: 'availability__select _delivery _white',
+		className: 'availability__select _delivery',
 		label: 'Вакансия'
 	}) }}
 </div>
