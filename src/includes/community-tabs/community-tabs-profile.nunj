@@ -4,8 +4,8 @@
 	{ id: 'data', text: 'Мои данные' },
 	{ id: 'payments', text: 'Мои покупки' },
 	{ id: 'discount', text: 'Дисконтная карта' },
-	{ id: 'subscription', text: 'Рассылка', active: true },
-	{ id: 'messages', text: 'Сообщения' }
+	{ id: 'subscription', text: 'Рассылка' },
+	{ id: 'messages', text: 'Сообщения', active: true }
 ] %}
 
 <section class="community-tabs _profile" data-community-tab>
@@ -33,8 +33,11 @@
 		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
 			{% include "../profile-purchases/profile-purchases.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile _active" aria-labelledby="subscription" data-tab-section="subscription">
+		<section class="community-tabs__section _profile" aria-labelledby="subscription" data-tab-section="subscription">
 			{% include "../profile-subscribtion/profile-subscribtion.nunj" %}
+		</section>
+		<section class="community-tabs__section _profile _active" aria-labelledby="messages" data-tab-section="messages">
+			{% include "../profile-messages/profile-messages.nunj" %}
 		</section>
 	</div>
 </section>

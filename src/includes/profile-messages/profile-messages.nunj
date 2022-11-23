@@ -1,0 +1,57 @@
+{% from "../components/select/select.nunj" import select %}
+{% from "../components/textarea/textarea.nunj" import textarea %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/message-item/message-item.nunj" import messageItem %}
+
+{% set messageSelectOptions = [
+	{ name: 'Задать вопрос', value: 'Задать вопрос' },
+	{ name: 'Задать вопрос', value: 'Задать вопрос' },
+	{ name: 'Задать вопрос', value: 'Задать вопрос' },
+	{ name: 'Задать вопрос', value: 'Задать вопрос' }
+] %}
+{% set messages = [
+	{
+		date: '09.05.2021',
+		title: 'Есть ли у вас в наличии куртка Куртка The North Face M Dryzzle All Weather Jkt?',
+		text: 'Добрый день! Сейчас в наличии нет, как только появится мы отправим вам на почту уведомление'
+	},
+	{
+		date: '09.05.2021',
+		title: 'Есть ли у вас в наличии куртка Куртка The North Face M Dryzzle All Weather Jkt?',
+		text: 'Добрый день! Сейчас в наличии нет, как только появится мы отправим вам на почту уведомление'
+	}
+] %}
+
+<div class="profile-messages">
+	<div class="profile-messages__col">
+		<p class="profile-title profile-messages__title _new h7 ttu">Новое</p>
+		<form class="profile-messages__form">
+			{{ select({
+				options: messageSelectOptions,
+				className: 'profile-messages__select _delivery',
+				label: 'Категория сообщения'
+			}) }}
+			{{ textarea({
+				id: 'profile-message',
+				className: 'profile-messages__textarea _message',
+				name: 'Ваше сообщение',
+				value: 'Привет!'
+			}) }}
+			{{ button({
+				type: 'submit',
+				text: 'Отправить',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16"',
+				className: 'profile-messages__submit h7 ttu _arrow-m'
+			}) }}
+		</form>
+	</div>
+	<div class="profile-messages__col">
+		<p class="profile-title profile-messages__title h7 ttu">История</p>
+		<div class="profile-messages__messages">
+			{% for item in messages %}
+				{{ messageItem(item) }}
+			{% endfor %}
+		</div>
+	</div>
+</div>
