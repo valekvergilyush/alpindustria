@@ -11,6 +11,8 @@
 	--fs-desc: #{rem(16)};
 	--badge-size: #{rem(48)};
 	--fs-badge: #{rem(14)};
+	--sizes-width: #{rem(392)};
+	--days-width: #{rem(320)};
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -87,6 +89,42 @@
 	}
 	&._no-bd {
 		box-shadow: none;
+	}
+	&._props-opened {
+		#{$this}__props {
+			transform: translateY(0%);
+		}
+		#{$this}__button {
+			&._product-card {
+				transform: translateY(100%);
+			}
+		}
+		#{$this}__photo {
+			opacity: 0;
+			&._zoom {
+				opacity: 1;
+			}
+		}
+		#{$this}__close-btn {
+			pointer-events: all;
+		}
+		#{$this}__arrow-icon {
+			opacity: 1;
+		}
+	}
+	&._props-checked {
+		#{$this}__total {
+			display: flex;
+		}
+		#{$this}__props {
+			padding-bottom: rem(16);
+		}
+		#{$this}__colors,
+		#{$this}__sizes,
+		#{$this}__days,
+		#{$this}__arrow-icon {
+			display: none;
+		}
 	}
 	&__title {
 		position: relative;
@@ -200,6 +238,155 @@
 			@media (max-width: $mobile-lg) {
 				left: 0;
 				bottom: 0;
+			}
+		}
+		&._add-cart {
+			margin-left: auto;
+			@media (max-width: $laptop-lg) {
+				font-size: 16px;
+			}
+		}
+		&._back-props {
+			--size: #{rem(32)};
+			width: var(--size);
+			height: var(--size);
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	&__inputs-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(16);
+		flex-wrap: nowrap;
+		overflow: auto;
+		scrollbar-width: none;
+		scroll-behavior: smooth;
+		@include scrollbar {
+			display: none;
+		}
+	}
+	&__props {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(32);
+		box-sizing: border-box;
+		width: 100%;
+		padding: var(--card-padding);
+		padding-bottom: rem(48);
+		color: var(--white);
+		background-color: var(--blue-dark);
+		transform: translateY(100%);
+		transition: transform $card-button-transition-duration $card-button-transition-function;
+	}
+	&__colors,
+	&__sizes,
+	&__days {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+	}
+	&__color,
+	&__size {
+		display: block;
+	}
+	&__inputs-item {
+		&:last-child {
+			margin-right: rem(8);
+		}
+	}
+	&__inputs-wrap {
+		display: flex;
+		&._sizes {
+			max-width: var(--sizes-width);
+		}
+		&._days {
+			max-width: var(--days-width);
+		}
+	}
+	&__radio-input {
+		display: none;
+	}
+	&__input-label,
+	&__input-span {
+		display: block;
+	}
+	&__input-span {
+		&._size {
+			width: rem(56);
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
+		}
+		&._days {
+			width: rem(80);
+		}
+	}
+	&__inputs-next {
+		--size: #{rem(32)};
+		@include reset-btn;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--white);
+		width: var(--size);
+		height: var(--size);
+		padding: rem(4);
+		margin-left: rem(16);
+		border-radius: 50%;
+		color: var(--blue-dark);
+	}
+	&__inputs-next-icon {
+		width: 100%;
+		height: 100%;
+		transform: rotate(180deg);
+	}
+	&__close-btn {
+		@include reset-btn;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+	&__arrow-icon {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, calc(-100% - rem(8)));
+		color: var(--blue-dark);
+		opacity: 0;
+		transition: opacity $default-transition-duration $card-button-transition-function;
+		pointer-events: none;
+	}
+	&__total {
+		display: none;
+		column-gap: rem(8);
+		row-gap: rem(24);
+		& > * {
+			flex-shrink: 0;
+		}
+		#{$this}__input-span {
+			&._size {
+				background-color: var(--white);
+				color: var(--blue-dark);
+			}
+		}
+		@media (max-width: $laptop-lg) {
+			column-gap: 4px;
+		}
+		@media (max-width: $laptop-lg-3) {
+			flex-wrap: wrap;
+			.product-card__button._add-cart {
+				width: 100%;
 			}
 		}
 	}

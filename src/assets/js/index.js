@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { listen } from 'quicklink';
 
 const TABLET_BREAKPOINT = 768;
 
@@ -75,11 +76,17 @@ class AlpIndustry {
 			Timeline: require('../../includes/timeline/timeline').default,
 			Auth: require('../../includes/auth/auth').default,
 			PersonalDataForm: require('../../includes/personal-data-form/personal-data-form').default,
+			ProductCard: require('../../includes/components/product-card/product-card').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
 			TextSplitter: require('./helpers/TextSplitter').default,
 		};
+
+		window.addEventListener('load', () => {
+			listen();
+		});
+
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
 
@@ -95,7 +102,7 @@ class AlpIndustry {
 
 			if (window.innerWidth > TABLET_BREAKPOINT) {
 				document
-					.querySelectorAll('[data-animation="words"]')
+					.querySelectorAll('[data-animation="words"]:not(._anim-first)')
 					.forEach(item => this.helpers.TextSplitter.split(item).words);
 			}
 		});

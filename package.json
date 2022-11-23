@@ -90,6 +90,7 @@
     "lottie-web": "^5.9.6",
     "nouislider": "^15.6.1",
     "pickerjs": "^1.2.1",
+    "quicklink": "^2.3.0",
     "regenerator-runtime": "^0.13.5",
     "sass": "^1.35.1",
     "tiny-slider": "^2.9.4"

@@ -17,7 +17,9 @@ class ShowAnimations {
 			'[data-animation]:not([data-slider-animation]), [data-lottie-autoplay-trigger]'
 		);
 
-		if (!this.animatedBlocks.length) {
+		this.animatedLines = document.querySelectorAll('[data-animation-line]');
+
+		if (!this.animatedBlocks.length && !this.animatedLines.length) {
 			return;
 		}
 
@@ -31,6 +33,17 @@ class ShowAnimations {
 		}
 	}
 	_onWindowScroll() {
+		this.animatedLines.forEach(line => {
+			const isAnimated = line.classList.contains(ClassName.ANIMATED);
+			if (!isAnimated) {
+				const isInViewport = Utils.isElementInViewport(line);
+
+				if (isInViewport) {
+					line.classList.add(ClassName.ANIMATED);
+				}
+			}
+		});
+
 		this.animatedBlocks.forEach(block => {
 			const isAnimated = block.classList.contains(ClassName.ANIMATED);
 			if (!isAnimated) {
