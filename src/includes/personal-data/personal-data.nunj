@@ -3,7 +3,7 @@
 
 <div class="personal-data">
 	<div class="personal-data__col">
-		<p class="personal-data__title h7 ttu">Информация</p>
+		<p class="personal-data__title profile-title h7 ttu">Информация</p>
 		<div class="personal-data__data">
 			<div class="personal-data__data-inner p3 c-gray-dark">
 				<p>+7 (999) 000 00 00</p>
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div class="personal-data__col">
-		<p class="personal-data__title h7 ttu">Адреса</p>
+		<p class="personal-data__title profile-title h7 ttu">Адреса</p>
 		<div class="personal-data__data">
 			<div class="personal-data__data-inner p3 c-gray-dark">
 				<p>Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв</p>

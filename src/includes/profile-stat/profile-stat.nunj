@@ -1,0 +1,18 @@
+<table class="profile-stat p3">
+	<tr class="profile-stat__tr">
+		<td class="profile-stat__td _first c-gray-dark">Ваш статус</td>
+		<td class="profile-stat__td">Новый клиент</td>
+	</tr>
+	<tr class="profile-stat__tr">
+		<td class="profile-stat__td _first c-gray-dark">Количество покупок</td>
+		<td class="profile-stat__td">2</td>
+	</tr>
+	<tr class="profile-stat__tr">
+		<td class="profile-stat__td _first c-gray-dark">Отзывы</td>
+		<td class="profile-stat__td">1</td>
+	</tr>
+	<tr class="profile-stat__tr">
+		<td class="profile-stat__td _first c-gray-dark">В корзине</td>
+		<td class="profile-stat__td">1</td>
+	</tr>
+</table>

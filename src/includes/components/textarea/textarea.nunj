@@ -8,7 +8,7 @@
 			{% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}
 			{% if props.inputAttr %}{{ props.inputAttr }}{% endif %}
 			{% if props.wordCounter %}maxlength="{{ props.wordCounter }}"{% endif %}
-		></textarea>
+		>{% if props.value %}{{ props.value }}{% endif %}</textarea>
 		<label class="textarea__label{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}" for="{{ props.id }}">
 			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}
 		</label>

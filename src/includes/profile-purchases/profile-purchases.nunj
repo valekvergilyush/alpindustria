@@ -1,0 +1,82 @@
+{% from "../components/profile-product/profile-product.nunj" import profileProduct %}
+{% from "../components/profile-review/profile-review.nunj" import profileReview %}
+
+{% set productList = [
+	{
+		img: '/assets/images/catalog/item-1',
+		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		color: '#C9364C',
+		colorName: 'Красный',
+		size: '39',
+		amount: '3 шт.'
+	},
+	{
+		img: '/assets/images/cart/item-2',
+		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		color: '#C9364C',
+		colorName: 'Красный',
+		size: '39',
+		amount: '3 шт.'
+	},
+	{
+		img: '/assets/images/catalog/item-2',
+		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		color: '#C9364C',
+		colorName: 'Красный',
+		size: '39',
+		amount: '3 шт.'
+	}
+] %}
+{% set reviewList = [
+	{
+		img: '/assets/images/cart/item-2',
+		date: '09.05.2021',
+		rating: '5',
+		author: 'Наталья',
+		title: 'Отличный продукт'
+	},
+	{
+		img: '/assets/images/cart/item-2',
+		date: '09.05.2021',
+		rating: '5',
+		author: 'Наталья',
+		title: 'Отличный продукт'
+	},
+	{
+		img: '/assets/images/cart/item-2',
+		date: '09.05.2021',
+		rating: '5',
+		author: 'Наталья',
+		title: 'Отличный продукт'
+	}
+] %}
+
+<div class="profile-purchases">
+	<div>
+		<p class="profile-title profile-purchases__title h7 ttu">Cтатистика</p>
+		{% include "../profile-stat/profile-stat.nunj" %}
+	</div>
+	<div>
+		<p class="profile-title profile-purchases__title h7 ttu">История покупок</p>
+		<ul class="profile-purchases__list">
+			{% for product in productList %}
+				<li class="profile-purchases__product">
+					{{ profileProduct(product) }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div>
+		<p class="profile-title profile-purchases__title h7 ttu">История отзывов</p>
+			<ul class="profile-purchases__reviews">
+				{% for review in reviewList %}
+					<li>
+						{{ profileReview(review) }}
+					</li>
+				{% endfor %}
+			</ul>
+	</div>
+</div>

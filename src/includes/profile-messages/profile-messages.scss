@@ -1,0 +1,56 @@
+.profile-messages {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--container-padding);
+	@media (max-width: $laptop-sm) {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 48px;
+	}
+	&__title {
+		margin-bottom: rem(32);
+		@media (max-width: $laptop-md) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+		}
+		&._new {
+			@media (max-width: $mobile-lg) {
+				border: none;
+			}
+		}
+	}
+	&__textarea {
+		margin-bottom: rem(32);
+		@media (max-width: $laptop-md) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+		}
+		.textarea__input {
+			height: rem(143);
+			@media (max-width: $mobile-lg) {
+				height: 121px;
+			}
+		}
+		.textarea__label {
+			@media (max-width: $mobile-lg) {
+				padding-top: 24px;
+			}
+		}
+	}
+	&__messages {
+		display: grid;
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			gap: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
+	}
+}
