@@ -2,7 +2,7 @@
 
 <div class="about-slider" data-about-slider>
 	<div class="about-slider__section-wrapper">
-		<section class="about-slider__section" data-about-slide>
+		<section class="about-slider__section" data-slide>
 			<div class="about-slider__col _first">
 				<h1 class="about-slider__title h2 ttu _anim-first" data-animation="words">
 					<span class="word-wrapper"><span class="word">О нас</span></span>

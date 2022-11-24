@@ -45,10 +45,7 @@ class CommunityAdvantages {
 					end: `+=${scrollWrapper.scrollHeight - window.innerHeight}`,
 					invalidateOnRefresh: true,
 					scrub: true,
-					onEnter: () => console.log('Enter'),
 					onUpdate: self => {
-						console.log(self);
-						console.log(scrollWrapper.scrollHeight - window.innerHeight);
 						gsap.set(scrollWrapper, {
 							y: -(scrollWrapper.scrollHeight - window.innerHeight) * self.progress,
 						});

@@ -16,38 +16,7 @@ class AboutSlider {
 
 		if (window.innerWidth <= TABLET_BREAKPOINT) {
 			this.startLogoAnimation();
-
-			return;
 		}
-
-		this.slide = this.container.querySelector('[data-about-slide]');
-
-		const getToValue = () => this.slide.scrollWidth - window.innerWidth;
-
-		ScrollTrigger.create({
-			trigger: this.container,
-			start: 'top top',
-			end: `+=${getToValue() + 50}`,
-			pin: true,
-			invalidateOnRefresh: true,
-			scrub: true,
-		});
-
-		gsap.set(this.slide, {
-			x: 0 - getToValue(),
-			scrollTrigger: {
-				trigger: this.container,
-				start: 'top top',
-				end: `+=${getToValue()}`,
-				invalidateOnRefresh: true,
-				scrub: true,
-				onUpdate: self => {
-					gsap.set(this.slide, {
-						x: 0 - getToValue() * self.progress,
-					});
-				},
-			},
-		});
 	}
 	startLogoAnimation() {
 		const logo = document.querySelector('[data-lottie-animation]');
