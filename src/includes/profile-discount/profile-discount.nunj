@@ -1,0 +1,21 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/picture/picture.nunj" import picture %}
+
+{% set discountTabs = [
+	{ id: 'create-card', name: 'Создать карту', isSelected: true, tabindex: '0' },
+	{ id: 'add-card', name: 'Добавить карту', tabindex: '-1' }
+	]
+%}
+
+<div class="profile-discount tabs" data-tabs>
+	<p class="profile-title profile-discount__title h7 ttu">Дисконтная карта</p>
+	<p class="profile-discount__text p2 c-gray-dark">На данный момент Ваш аккаунт не имеет привязанных накопительных карт.<br>Вы можете привязать уже существующую карту или заполнить анкету и оформить карту впервые.</p>
+	{{ button({
+		href: '#',
+		text: 'Ознакомьтесь с условиями программы лояльности',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16"',
+		className: 'profile-discount__loyalty _arrow-s p3'
+	}) }}
+	{% include "../discount-card/discount-card-profile.nunj" %}
+</div>
