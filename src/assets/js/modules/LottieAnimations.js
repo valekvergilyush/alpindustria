@@ -1,4 +1,5 @@
 import lottie from 'lottie-web';
+import env from '../utils/env';
 
 class LottieAnimations {
 	constructor() {
