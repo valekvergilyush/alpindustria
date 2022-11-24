@@ -16,7 +16,6 @@
 			.img-wrapper__img {
 				overflow: hidden;
 				height: 0;
-				will-change: height;
 			}
 			&.is-animated,
 			.animations &._anim-first {
