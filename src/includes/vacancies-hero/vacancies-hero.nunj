@@ -15,5 +15,4 @@
 		height: 836,
 		attr: 'aria-hidden="true"'
 	}) }}
-	<a class="vacancies-hero__link h5 ttu" href="#" data-animation="fade-right">Подать <br class="vacancies-hero__link _br"> заявку</a>
 </section>

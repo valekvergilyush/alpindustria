@@ -4,7 +4,7 @@
 	<div class="history__row container">
 		<div class="history__col">
 			<div class="history__col-inner">
-				<p class="history__year h2 ttu text-stroke _blue-dark">1990</p>
+				<p class="history__year h2 ttu text-stroke _blue-dark" data-animation-line-trigger>1990</p>
 				<h2 class="history__subtitle h5 ttu">Открытие магазина</h2>
 				<div class="history__text p3 c-gray-dark">
 					<p>Через пару лет после открытия клуба мы&nbsp;уже активно развивали культуру альпинизма в&nbsp;России. Приглашали иностранных спортсменов, сотрудничали с&nbsp;мировыми альпинистскими компаниями, стали лидерами по&nbsp;приему иностранцев на&nbsp;Кавказе, активно посылали туристов в&nbsp;Среднюю Азию, на&nbsp;Алтай, на&nbsp;Камчатку</p>
@@ -24,5 +24,7 @@
 				<p class="history__img-title p3 c-gray-dark">1983. Рекламное приложение к газете Вечерняя Москва</p>
 			</div>
 		</div>
+		<div class="history__line _y" data-animation-line></div>
 	</div>
+	<div class="history__line _x" data-animation-line></div>
 </section>

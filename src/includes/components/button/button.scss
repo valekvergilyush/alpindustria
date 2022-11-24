@@ -215,6 +215,35 @@
 				background-color: var(--gray-dark);
 			}
 		}
+		&._white {
+			border-color: var(--blue-dark);
+			&::before {
+				border: var(--outline-width) solid rgba(#fff, 0.2);
+			}
+			input + &,
+			&[href],
+			&[type='button'] {
+				&:hover {
+					&::before {
+						border-color: var(--white);
+					}
+				}
+			}
+			&._selected,
+			input:checked + & {
+				&::before {
+					border-color: var(--white);
+				}
+			}
+			input:disabled + & {
+				&::before {
+					border-color: var(--white);
+				}
+				&::after {
+					background-color: var(--white);
+				}
+			}
+		}
 	}
 	&._layout {
 		--size: #{rem(32)};
@@ -564,6 +593,26 @@
 			&:hover {
 				background-color: transparent;
 				color: var(--blue-dark);
+			}
+		}
+		&._bd-white {
+			border-color: var(--white);
+			input:checked + & {
+				background-color: var(--white);
+				color: var(--blue-dark);
+			}
+			input + &,
+			&[href],
+			&[button] {
+				&:hover {
+					background-color: var(--white);
+					color: var(--blue-dark);
+				}
+			}
+			input:disabled + & {
+				opacity: 0.3;
+				cursor: default;
+				pointer-events: none;
 			}
 		}
 	}

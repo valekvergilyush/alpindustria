@@ -85,6 +85,10 @@
 		#{$this}__item._opened & {
 			transform: rotate(180deg);
 		}
+		&._big {
+			--size: #{rem(40)};
+			fill: none;
+		}
 	}
 	&__content {
 		height: 0;

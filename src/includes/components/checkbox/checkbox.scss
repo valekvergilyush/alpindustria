@@ -65,4 +65,7 @@
 		background-color: var(--blue-dark);
 		background-image: inline('tick.svg');
 	}
+	&._vacancies {
+		margin-bottom: rem(48);
+	}
 }

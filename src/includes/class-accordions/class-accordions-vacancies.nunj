@@ -21,9 +21,9 @@
 			<button class="class-accordions__btn h6 " type="button" data-accordion-title>
 				<span class="class-accordions__name s2 c-gray-dark" data-accordion-title-text>{{ item.name }}</span>
 				{{ icon({
-					iconName: 'accordion-arrow',
-					className: 'class-accordions__btn-icon',
-					attr: 'viewBox="0 0 16 16" width="16" height="16"'
+					iconName: 'accordion-arrow-big',
+					className: 'class-accordions__btn-icon _big',
+					attr: 'viewBox="0 0 40 40" width="40" height="40"'
 				}) }}
 			</button>
 			<div class="class-accordions__content" data-accordion-content>
@@ -48,7 +48,7 @@
 						<li>настойчивость и умение аргументировать свою позицию</li>
 					</ul>
 				</div>
-				<a href="#" class="class__link h7 c-gray-dark ttu">
+				<a href="#" class="class__link h7 c-blue-dark ttu">
 					Откликнуться
 					{{ icon({
 						iconName: 'promo-arrow',
