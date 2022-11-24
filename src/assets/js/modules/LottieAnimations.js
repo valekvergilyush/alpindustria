@@ -16,6 +16,8 @@ class LottieAnimations {
 			isAutoplay = false;
 		}
 
+		lottie.setQuality(qualityValue);
+
 		this.player = lottie.loadAnimation({
 			container: container,
 			renderer: 'svg',
@@ -25,7 +27,6 @@ class LottieAnimations {
 		});
 
 		this.player.setSubframe(!env.isSafari);
-		this.player.setQuality(qualityValue);
 
 		isAutoplay && this.player.play();
 	}
