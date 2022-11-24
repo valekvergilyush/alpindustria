@@ -1,0 +1,56 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/picture/picture.nunj" import picture %}
+
+{% set discountTabs = [
+	{ id: 'create-card', name: 'Создать карту', isSelected: true, tabindex: '0' },
+	{ id: 'add-card', name: 'Добавить карту', tabindex: '-1' }
+	]
+%}
+
+<div class="profile-discount tabs" data-tabs>
+	<p class="profile-title profile-discount__title h7 ttu">Дисконтная карта</p>
+	<p class="profile-discount__text p2 c-gray-dark">На данный момент Ваш аккаунт не имеет привязанных накопительных карт.<br>Вы можете привязать уже существующую карту или заполнить анкету и оформить карту впервые.</p>
+	{{ button({
+		href: '#',
+		text: 'Ознакомьтесь с условиями программы лояльности',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16"',
+		className: 'profile-discount__loyalty _arrow-s p3'
+	}) }}
+
+<section class="discount-card _profile">
+	<div class="discount-card__tabs tabs" data-tabs>
+		<ul class="tabs__tab-list" role="tablist">
+			<li class="tabs__tab-item">
+				<button class="tabs__trigger _selected" id="create" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">Создать карту</button>
+			</li>
+			<li class="tabs__tab-item">
+				<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">Добавить карту</button>
+			</li>
+		</ul>
+		{{ picture({
+			className: 'discount-card__img',
+			path: '/assets/images/discount/discount-card/discount-card',
+			ext: 'png',
+			width: 576,
+			height: 280,
+			alt: 'Проверочный код на карте',
+			attr: 'loading="lazy"'
+		}) }}
+		<section class="discount-card__section _create tabs__panel" aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
+			{% include "../discount-create-form/discount-create-form.nunj" %}
+		</section>
+		<section class="discount-card__section _add tabs__panel" aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
+			{% include "../discount-add-form/discount-add-form.nunj" %}
+		</section>
+	</div>
+	<div class="discount-card__bottom">
+		<div class="container">
+			<span class="discount-card__asterisk h5 ttu">***</span>
+			<p class="p3">На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.<br>
+				Получить новую карту просто (и&nbsp;приятно!):<br>
+				Обменяем карту в&nbsp;любом магазине АльпИндустрии за&nbsp;5&nbsp;минут или с&nbsp;ближайшим интернет-заказом. У&nbsp;новых карт крутой дизайн со&nbsp;знаковыми вершинами мира.</p>
+		</div>
+	</div>
+</section>
+</div>
