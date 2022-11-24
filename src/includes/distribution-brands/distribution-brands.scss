@@ -1,0 +1,35 @@
+.distribution-brands {
+	padding-top: rem(176);
+	@media (max-width: $laptop) {
+		padding-top: 124px;
+	}
+	@media (max-width: $tablet) {
+		padding-top: 57px;
+	}
+	@media (max-width: $mobile-lg) {
+		padding-top: 48px;
+	}
+	&__title {
+		padding-inline: var(--container-padding);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 39px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 32px;
+		}
+	}
+	&__item-logo {
+		--padding: #{rem(60)};
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100% - 2 * var(--padding));
+		object-fit: contain;
+		@media (max-width: $laptop-lg) {
+			--padding: 38px;
+		}
+		@media (max-width: $tablet) {
+			--padding: 22px;
+		}
+	}
+}
