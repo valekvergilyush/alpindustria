@@ -164,6 +164,18 @@
 		margin-right: rem(82);
 		margin-bottom: rem(-24);
 		width: 2750px;
+		will-change: transform;
+		&._static-logo {
+			display: none;
+		}
+		._safari & {
+			&._lottie-logo {
+				display: none;
+			}
+			&._static-logo {
+				display: block;
+			}
+		}
 		@media (max-width: $laptop-lg) {
 			width: 2400px;
 			min-height: 296px;

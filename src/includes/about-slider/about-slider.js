@@ -1,4 +1,5 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import env from '../../assets/js/utils/env';
 
 const TABLET_BREAKPOINT = 768;
 
@@ -50,20 +51,36 @@ class AboutSlider {
 		});
 	}
 	startLogoAnimation() {
-		const logo = document.querySelector('[data-lottie-animation]');
 		const placeholder = document.querySelector('[data-lottie-autoplay-trigger]');
-		const x = logo.offsetWidth - placeholder.offsetWidth;
 
-		gsap.to(logo, {
-			x: -x,
-			duration: 10,
-			ease: 'linear',
-			scrollTrigger: {
-				trigger: logo,
-				start: 'top center',
-				onToggle: () => logo.lottieAnimation.play(),
-			},
-		});
+		if (env.isSafari) {
+			const staticLogo = document.querySelector('.about-slider__logo-img._static-logo');
+			const x = placeholder.offsetWidth - staticLogo.offsetWidth;
+
+			gsap.to(staticLogo, {
+				x: x,
+				duration: 10,
+				ease: 'linear',
+				scrollTrigger: {
+					trigger: staticLogo,
+					start: 'top center',
+				},
+			});
+		} else {
+			const logo = document.querySelector('[data-lottie-animation]');
+			const x = logo.offsetWidth - placeholder.offsetWidth;
+
+			gsap.to(logo, {
+				x: -x,
+				duration: 10,
+				ease: 'linear',
+				scrollTrigger: {
+					trigger: logo,
+					start: 'top center',
+					onToggle: () => logo.lottieAnimation.play(),
+				},
+			});
+		}
 	}
 }
 
