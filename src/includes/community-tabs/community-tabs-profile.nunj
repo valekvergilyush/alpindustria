@@ -3,9 +3,9 @@
 {% set tabsList = [
 	{ id: 'data', text: 'Мои данные' },
 	{ id: 'payments', text: 'Мои покупки' },
-	{ id: 'discount', text: 'Дисконтная карта' },
+	{ id: 'discount', text: 'Дисконтная карта', active: true  },
 	{ id: 'subscription', text: 'Рассылка' },
-	{ id: 'messages', text: 'Сообщения', active: true }
+	{ id: 'messages', text: 'Сообщения'}
 ] %}
 
 <section class="community-tabs _profile" data-community-tab>
@@ -36,8 +36,11 @@
 		<section class="community-tabs__section _profile" aria-labelledby="subscription" data-tab-section="subscription">
 			{% include "../profile-subscribtion/profile-subscribtion.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile _active" aria-labelledby="messages" data-tab-section="messages">
+		<section class="community-tabs__section _profile" aria-labelledby="messages" data-tab-section="messages">
 			{% include "../profile-messages/profile-messages.nunj" %}
+		</section>
+		<section class="community-tabs__section _profile _active" aria-labelledby="discount" data-tab-section="discount">
+			{% include "../profile-discount/profile-discount.nunj" %}
 		</section>
 	</div>
 </section>

@@ -1,0 +1,30 @@
+.profile-discount {
+	&__title {
+		margin-bottom: rem(32);
+		@media (max-width: $laptop-md) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+			border: none;
+		}
+	}
+	&__text {
+		margin-bottom: rem(24);
+	}
+	&__loyalty {
+		margin-bottom: rem(124);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 96px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 72px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 48px;
+		}
+	}
+}
