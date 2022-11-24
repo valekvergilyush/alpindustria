@@ -1,4 +1,5 @@
 import Utils from '../utils/utils';
+import env from '../utils/env';
 
 const ClassName = {
 	ANIMATIONS: 'animations',
@@ -20,6 +21,19 @@ class ShowAnimations {
 		this.animatedLines = document.querySelectorAll('[data-animation-line]');
 
 		if (!this.animatedBlocks.length && !this.animatedLines.length) {
+			return;
+		}
+
+		if (env.isSafari) {
+			this.animatedBlocks.forEach(block => {
+				if (block.hasAttribute('data-lottie-autoplay-trigger')) {
+					const lottieBlock = block.nextElementSibling;
+
+					lottieBlock.lottieAnimation && lottieBlock.lottieAnimation.play();
+				}
+				block.classList.add(ClassName.ANIMATED);
+			});
+
 			return;
 		}
 
