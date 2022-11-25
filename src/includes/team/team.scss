@@ -23,6 +23,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		background-color: var(--blue-dark);
+		&._distribution {
+			#{$this}__item {
+				box-sizing: border-box;
+				height: rem(500);
+				&._active {
+					height: auto;
+					#{$this}__item-photo {
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
 	}
 	&__item {
 		--cols-number: 4;
