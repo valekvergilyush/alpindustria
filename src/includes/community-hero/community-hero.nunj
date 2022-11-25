@@ -1,8 +1,11 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
 <section class="community-hero page__community-hero">
-	<h1 class="community-hero__title h2 ttu" data-animation='words'>Горный клуб</h1>
-	<p class="community-hero__text p1" data-animation='fade-right'>Горы требуют к&nbsp;себе серьезного и&nbsp;уважительного отношения, поэтому к&nbsp;каждому восхождению нужно подходить осознанно.<br> В&nbsp;Горном клубе мы&nbsp;делимся своими знаниями и&nbsp;опытом в&nbsp;альпинизме, чтобы сделать ваше знакомство с&nbsp;горами безопасным.</p>
+	<h1 class="community-hero__title h2 ttu _anim-first" data-animation='words'>
+		<span class="word-wrapper"><span class="word">Горный</span><span class="space">&nbsp;</span></span>
+		<span class="word-wrapper"><span class="word">клуб</span></span>
+	</h1>
+	<p class="community-hero__text p1 _anim-first" data-animation='fade-right'>Горы требуют к&nbsp;себе серьезного и&nbsp;уважительного отношения, поэтому к&nbsp;каждому восхождению нужно подходить осознанно.<br> В&nbsp;Горном клубе мы&nbsp;делимся своими знаниями и&nbsp;опытом в&nbsp;альпинизме, чтобы сделать ваше знакомство с&nbsp;горами безопасным.</p>
 	{{ picture({
 		className: 'community-hero__img',
 		path: '/assets/images/community/hero/community-hero',
@@ -11,5 +14,5 @@
 		height: 836,
 		attr: 'aria-hidden="true"'
 	}) }}
-	<a class="community-hero__link h5 ttu" href="#" data-animation='fade-right'>Стать<br> участником</a>
+	<a class="community-hero__link h5 ttu _anim-first" href="#" data-animation='fade-right'>Стать<br> участником</a>
 </section>

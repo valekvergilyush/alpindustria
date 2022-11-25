@@ -1,6 +1,7 @@
 .history {
 	$this: &;
 	--scroll-offset: calc(var(--timeline-height) + var(--header-height) - 1px);
+	position: relative;
 	border-bottom: 1px solid var(--blue-dark);
 	margin-top: calc(0px - var(--scroll-offset));
 	padding-top: var(--scroll-offset);
@@ -43,6 +44,7 @@
 		}
 	}
 	&__row {
+		position: relative;
 		display: flex;
 		column-gap: 1px;
 		background-color: var(--blue-dark);
@@ -85,6 +87,8 @@
 	&__col {
 		--width: calc(692 / 1728 * 100%);
 		--padding-y: var(--container-padding);
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
@@ -178,5 +182,57 @@
 	}
 	&__quote-text {
 		margin-bottom: rem(16);
+	}
+	&__line {
+		position: absolute;
+		z-index: 0;
+		&._x {
+			bottom: -1px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				background-color: var(--gray-light);
+				transition: width 1s $default-transition-function;
+			}
+			&::before {
+				left: 0;
+			}
+			&::after {
+				right: 0;
+			}
+			&.is-animated {
+				&::before,
+				&::after {
+					width: 0;
+				}
+			}
+		}
+		&._y {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 20%;
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: -400%;
+				left: 0;
+				width: 100%;
+				height: 500%;
+				background-color: var(--gray-light);
+				transition: height 1.5s $default-transition-function;
+			}
+			&.is-animated {
+				&::before {
+					height: 0;
+				}
+			}
+		}
 	}
 }

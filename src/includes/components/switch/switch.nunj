@@ -1,0 +1,9 @@
+{% macro switch(props) %}
+	<label class="switch p3 {% if props.className %} {{ props.className }}{% endif %}">
+		<input class="switch__input" type="checkbox" name="{{ props.name }}" value="{{ props.value }}" {% if props.checked %}checked{% endif %}>
+		<span class="switch__inner">
+			<span class="switch__label-left">вкл.</span>
+			<span class="switch__label-right">выкл.</span>
+		</span>
+	</label>
+{% endmacro %}

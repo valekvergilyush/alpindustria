@@ -1,0 +1,52 @@
+{% from "../components/switch/switch.nunj" import switch %}
+
+{% set subscribtion = [
+	{
+		inputValue: 'main',
+		name: 'Основная рассылка АльпИндустрии',
+		descr: 'Не чаще раза в неделю мы присылаем самые свежие новости'
+	},
+	{
+		inputValue: 'main',
+		name: 'Рассылка туроператора',
+		descr: 'Еженедельные подборки приключений'
+	},
+	{
+		inputValue: 'main',
+		checked: true,
+		name: 'Рассылка Горной Школы',
+		descr: 'Позволит получать напоминания и новости о лекциях и мероприятиях Горной Школы'
+	},
+	{
+		inputValue: 'main',
+		checked: true,
+		name: 'SMS рассылка',
+		descr: 'SMS информирование об операциях по заказам'
+	},
+	{
+		inputValue: 'main',
+		checked: true,
+		name: 'Получать чеки на email (тестовый режим)',
+		descr: 'SMS информирование об операциях по заказам'
+	}
+] %}
+
+<div class="profile-subscribtion">
+	<p class="profile-title profile-subscribtion__title h7 ttu">Управление рассылкой</p>
+	<ul class="profile-subscribtion__list">
+		{% for item in subscribtion %}
+			<li class="profile-subscribtion__item">
+				{{ switch({
+					className: 'profile-subscribtion__switch',
+					name: 'subscribtion',
+					value: item.inputValue,
+					checked: item.checked
+				}) }}
+				<div class="profile-subscribtion__item-inner c-gray-dark">
+					<p class="profile-subscribtion__name p1">{{ item.name }}</p>
+					<p class="profile-subscribtion__descr p3">{{ item.descr }}</p>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

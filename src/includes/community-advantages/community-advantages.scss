@@ -282,11 +282,6 @@
 		}
 		&-suit {
 			background-color: var(--blue-dark);
-			#{$this}__title {
-				@-moz-document url-prefix() {
-					margin-bottom: var(--padding);
-				}
-			}
 		}
 		&-offer {
 			#{$this}__title {
@@ -359,11 +354,16 @@
 	&__title-wrapper {
 		display: flex;
 		flex-grow: 1;
+		height: var(--100vh);
 		padding-right: var(--col-padding);
 		border-right: 1px solid currentColor;
 		@media (max-width: $tablet) {
+			height: auto;
 			border: 0;
 		}
+	}
+	&__inner {
+		display: flex;
 	}
 	&__wrapper {
 		--width: #{rem(704)};

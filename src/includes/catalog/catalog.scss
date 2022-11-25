@@ -54,6 +54,8 @@
 				--photo-top: auto;
 				--photo-bottom: #{rem(56)};
 				--button-height: #{rem(56)};
+				--sizes-width: #{rem(464)};
+				--days-width: #{rem(512)};
 				.product-card__photo._zoom {
 					transform: scale(1.07);
 				}
@@ -63,6 +65,8 @@
 					--photo-height: 440px;
 					--photo-bottom: 72px;
 					--button-height: 72px;
+					--sizes-width: 392px;
+					--days-width: 416px;
 					.product-card__photo._zoom {
 						transform: none;
 					}
@@ -137,6 +141,8 @@
 				--fs-desc: #{rem(24)};
 				--fs-badge: #{rem(16)};
 				--badge-size: #{rem(56)};
+				--sizes-width: #{rem(752)};
+				--days-width: #{rem(608)};
 				.product-card__photo._zoom {
 					transform: scale(1.07);
 				}
@@ -146,6 +152,8 @@
 					--photo-height: 552px;
 					--photo-top: auto;
 					--photo-bottom: 72px;
+					--sizes-width: 608px;
+					--days-width: 607px;
 				}
 				@media (max-width: $laptop) {
 					--card-padding: 20px;

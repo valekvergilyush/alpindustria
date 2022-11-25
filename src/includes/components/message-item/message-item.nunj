@@ -1,0 +1,7 @@
+{% macro messageItem(props) %}
+	<div class="message-item">
+		<p class="message-item__date">{{ props.date }}</p>
+		<p class="message-item__title p2">{{ props.title }}</p>
+		<p class="message-item__text p3 c-gray-dark">{{ props.text }}</p>
+	</div>
+{% endmacro %}

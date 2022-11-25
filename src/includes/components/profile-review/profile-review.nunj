@@ -1,0 +1,27 @@
+{% from "../rating/rating.nunj" import rating %}
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro profileReview(props) %}
+	<div class="profile-review">
+		<div class="profile-review__main">
+			<div class="profile-review__img">
+				<img src="{{ props.img }}.png" srcset="{{ props.img }}@2x.png 2x" width="126" height="160" alt="">
+			</div>
+			<div class="profile-review__main-inner">
+				<p class="profile-review__date">{{ props.date }}</p>
+				{{ rating({
+					className: 'profile-review__rating',
+					rating: props.rating
+				}) }}
+				<p class="profile-review__author p2">{{ props.author }}</p>
+				<p class="profile-review__title p1 c-gray-dark">{{ props.title }}</p>
+			</div>
+		</div>
+		<div class="profile-review__text p3 c-gray-dark">
+			<p>Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы. Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+			<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!Всегда в&nbsp;этом магазине покупаю и&nbsp;обувь, и&nbsp;одежду, в&nbsp;этот раз купила треккинговые бахилы. Пришел нужный размер! По&nbsp;срокам, как и&nbsp;сказали))</p>
+			<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!</p>
+		</div>
+		<p class="profile-review__interests p3 c-gray-dark"><span class="c-blue-light">Увлечения:</span> Альпинизм, Горный туризм</p>
+	</div>
+{% endmacro %}

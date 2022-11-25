@@ -53,6 +53,10 @@
 @import '../../includes/components/file-download/file-download';
 @import '../../includes/components/shop-card/shop-card';
 @import '../../includes/components/services-accordion/services-accordion';
+@import '../../includes/components/profile-product/profile-product';
+@import '../../includes/components/profile-review/profile-review';
+@import '../../includes/components/switch/switch';
+@import '../../includes/components/message-item/message-item';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -163,7 +167,13 @@
 @import '../../includes/vacancies-hero/vacancies-hero';
 @import '../../includes/personal-data/personal-data';
 @import '../../includes/vacancies-open/vacancies-open';
+@import '../../includes/profile-title/profile-title';
 @import '../../includes/personal-data-form/personal-data-form';
+@import '../../includes/profile-stat/profile-stat';
+@import '../../includes/profile-purchases/profile-purchases';
+@import '../../includes/profile-subscribtion/profile-subscribtion';
+@import '../../includes/profile-messages/profile-messages';
+@import '../../includes/profile-discount/profile-discount';
 
 // ======= PAGES =======
 @import 'pages/index';

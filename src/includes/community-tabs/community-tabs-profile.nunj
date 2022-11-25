@@ -1,11 +1,11 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set tabsList = [
-	{ id: 'data', text: 'Мои данные', active: true },
+	{ id: 'data', text: 'Мои данные' },
 	{ id: 'payments', text: 'Мои покупки' },
-	{ id: 'discount', text: 'Дисконтная карта' },
+	{ id: 'discount', text: 'Дисконтная карта', active: true  },
 	{ id: 'subscription', text: 'Рассылка' },
-	{ id: 'messages', text: 'Сообщения' }
+	{ id: 'messages', text: 'Сообщения'}
 ] %}
 
 <section class="community-tabs _profile" data-community-tab>
@@ -27,11 +27,20 @@
 	</ul>
 
 	<div class="community-tabs__sections">
-		<section class="community-tabs__section _profile _active" aria-labelledby="data" data-tab-section="data">
+		<section class="community-tabs__section _profile" aria-labelledby="data" data-tab-section="data">
 			{% include "../personal-data/personal-data.nunj" %}
 		</section>
 		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
-			{% include "../community-contacts/community-contacts.nunj" %}
+			{% include "../profile-purchases/profile-purchases.nunj" %}
+		</section>
+		<section class="community-tabs__section _profile" aria-labelledby="subscription" data-tab-section="subscription">
+			{% include "../profile-subscribtion/profile-subscribtion.nunj" %}
+		</section>
+		<section class="community-tabs__section _profile" aria-labelledby="messages" data-tab-section="messages">
+			{% include "../profile-messages/profile-messages.nunj" %}
+		</section>
+		<section class="community-tabs__section _profile _active" aria-labelledby="discount" data-tab-section="discount">
+			{% include "../profile-discount/profile-discount.nunj" %}
 		</section>
 	</div>
 </section>

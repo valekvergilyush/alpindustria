@@ -125,7 +125,7 @@
 		}) }}
 
 		<div class="application-form__bottom">
-			<p class="application-form__bottom-text p3">Нажимая "Зарегистрироваться", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</p>
+			<p class="application-form__bottom-text p3">Нажимая "Зарегистрироваться", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 			{{ button({
 				type: 'submit',
 				text: 'Зарегистрироваться',

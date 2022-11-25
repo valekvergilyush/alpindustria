@@ -1,0 +1,55 @@
+.profile-purchases {
+	display: grid;
+	gap: rem(56);
+	@media (max-width: $laptop-lg) {
+		gap: 48px;
+	}
+	@media (max-width: $laptop-md) {
+		gap: 32px;
+	}
+	@media (max-width: $laptop-sm) {
+		gap: 96px;
+	}
+	@media (max-width: $mobile-lg) {
+		gap: 80px;
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+			@media (max-width: $laptop-md) {
+				margin-bottom: 18px;
+			}
+			@media (max-width: $laptop-sm) {
+				padding-top: 16px;
+				margin-bottom: 48px;
+			}
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 27px;
+			}
+		}
+	}
+	&__list {
+		display: grid;
+		gap: rem(24);
+		@media (max-width: $laptop-sm) {
+			gap: 20px;
+		}
+	}
+	&__product {
+		padding-bottom: rem(24);
+		border-bottom: 1px solid rgba($gray-dark, 0.1);
+		@media (max-width: $laptop-md) {
+			padding-bottom: 21px;
+		}
+		@media (max-width: $laptop-sm) {
+			padding-bottom: 16px;
+		}
+	}
+	&__reviews {
+		display: grid;
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			gap: 32px;
+		}
+	}
+}

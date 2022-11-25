@@ -1,7 +1,8 @@
-.animations {
+@media (min-width: ($tablet + 1)) {
 	[data-animation='fade-right'] {
 		opacity: 0;
-		&.is-animated {
+		&.is-animated,
+		.animations &._anim-first {
 			animation: fadeRight 2s cubic-bezier(0.55, 0, 0.1, 1);
 			animation-fill-mode: forwards;
 		}
@@ -16,7 +17,8 @@
 				overflow: hidden;
 				height: 0;
 			}
-			&.is-animated {
+			&.is-animated,
+			.animations &._anim-first {
 				.img-wrapper__img {
 					animation: height 1s cubic-bezier(0.58, 0.3, 0.06, 1);
 					animation-fill-mode: forwards;
@@ -34,50 +36,56 @@
 			overflow: hidden;
 		}
 		.word {
-			opacity: 0;
 			display: inline-block;
-			transform: translateY(100%);
 		}
-		&.is-animated {
+		&.is-animated,
+		.animations &._anim-first {
 			opacity: 1;
 			.word {
-				opacity: 1;
 				animation: wordsTop 1s cubic-bezier(0.55, 0, 0.1, 1);
 				animation-fill-mode: forwards;
 			}
 		}
 	}
-}
 
-.words-row {
-	display: block;
-}
+	.words-row {
+		display: block;
+	}
 
-@keyframes fadeRight {
-	from {
-		transform: translateX(-50px);
-		opacity: 0;
+	._loading {
+		[data-animation='fade-right'],
+		[data-animation='height'],
+		[data-animation='words'] {
+			opacity: 0;
+		}
 	}
-	to {
-		transform: translateX(0px);
-		opacity: 1;
-	}
-}
 
-@keyframes height {
-	from {
-		height: 0%;
+	@keyframes fadeRight {
+		from {
+			transform: translateX(-50px);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(0px);
+			opacity: 1;
+		}
 	}
-	to {
-		height: 100%;
-	}
-}
 
-@keyframes wordsTop {
-	from {
-		transform: translateY(100%) scaleY(1.5);
+	@keyframes height {
+		from {
+			height: 0%;
+		}
+		to {
+			height: 100%;
+		}
 	}
-	to {
-		transform: translateY(0%) scaleY(1);
+
+	@keyframes wordsTop {
+		from {
+			transform: translateY(100%) scaleY(1.5);
+		}
+		to {
+			transform: translateY(0%) scaleY(1);
+		}
 	}
 }

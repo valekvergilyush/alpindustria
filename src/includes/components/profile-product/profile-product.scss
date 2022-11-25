@@ -1,0 +1,67 @@
+.profile-product {
+	display: flex;
+	gap: rem(48);
+	@media (max-width: $laptop-sm) {
+		flex-direction: column;
+		gap: 12px;
+	}
+	&__main {
+		flex-grow: 1;
+		display: flex;
+		gap: rem(16);
+		@media (max-width: $laptop-sm) {
+			gap: 12px;
+		}
+	}
+	&__main-inner {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+	}
+	&__price {
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+			line-height: 21px;
+		}
+	}
+	&__img {
+		flex-shrink: 0;
+		width: rem(126);
+		height: rem(160);
+		@media (max-width: $laptop-sm) {
+			width: 100px;
+			height: 127px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__info {
+		flex-shrink: 0;
+		align-self: flex-start;
+		display: flex;
+		align-items: center;
+		gap: rem(24);
+		@media (max-width: $laptop-sm) {
+			gap: 16px;
+		}
+	}
+	&__color {
+		cursor: default;
+	}
+	&__size {
+		padding: rem(5.5) rem(22);
+		background-color: var(--blue-dark);
+		border-radius: rem(100);
+		font-size: rem(16);
+		line-height: rem(21);
+		color: var(--white);
+	}
+	&__amount {
+		font-family: var(--font-family-suisse);
+		font-size: rem(24);
+		line-height: rem(24);
+	}
+}

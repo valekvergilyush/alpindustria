@@ -165,4 +165,40 @@
 		display: inline-block;
 		margin-bottom: rem(16);
 	}
+	&._profile {
+		border-top: none;
+		#{$this}__tabs {
+			@media (max-width: $laptop-lg) {
+				--img-width: 468px;
+				column-gap: var(--container-padding);
+			}
+			@media (max-width: $laptop-md) {
+				grid-template-columns: 1fr;
+			}
+			.tabs__tab-list {
+				@media (max-width: $laptop-md) {
+					max-width: none;
+				}
+			}
+		}
+		#{$this}__section {
+			@media (max-width: $laptop-md) {
+				grid-column: initial;
+				grid-row: initial;
+			}
+		}
+		#{$this}__img {
+			@media (max-width: $laptop-md) {
+				grid-column: initial;
+				grid-row: initial;
+				max-width: 335px;
+			}
+			@media (max-width: $laptop-sm) {
+				max-width: 324px;
+			}
+			@media (max-width: $mobile-lg) {
+				max-width: none;
+			}
+		}
+	}
 }
