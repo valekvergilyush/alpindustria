@@ -67,8 +67,15 @@
 		--size: #{rem(16)};
 		width: var(--size);
 		height: var(--size);
+		margin-bottom: 3px;
 		fill: currentColor;
 		transition: transform $default-transition-duration $default-transition-function;
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 4px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 3px;
+		}
 		@media (max-width: $mobile-lg) {
 			--size: 12px;
 		}
@@ -233,12 +240,12 @@
 		}
 	}
 	&__params-link {
+		@include reset-btn;
 		padding-block: 1px;
 		border-bottom: 1px solid var(--blue-dark);
-		&[href] {
-			&:hover {
-				border-bottom: none;
-			}
+		transition: border-color $default-transition-duration $default-transition-function;
+		&:hover {
+			border-color: transparent;
 		}
 	}
 	&__counter {
@@ -250,10 +257,21 @@
 	&__text {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: $laptop-md) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+		}
 	}
 	&__add {
 		position: sticky;
 		bottom: 0;
+		z-index: 1;
 		margin: 0 calc(var(--container-padding) * -1);
+		.add-to-cart__link-icon {
+			top: 0;
+		}
 	}
 }

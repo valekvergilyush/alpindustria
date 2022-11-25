@@ -145,7 +145,7 @@
 		<div class="wishlist-services__params">
 			<div class="wishlist-services__params-title">
 				<p class="ttu">Размер</p>
-				<p class="wishlist-services__params-link p4">Таблица размеров</p>
+				<button type="button" class="wishlist-services__params-link p4" data-popup-opener="sizes">Таблица размеров</button>
 			</div>
 			<div class="wishlist-services__params-wrap">
 				<ul class="wishlist-services__params-list" data-product-sizes data-slider-group="4">
@@ -179,10 +179,10 @@
 	</div>
 	<div class="wishlist-services__block">
 		<p class="h7 ttu">Описание</p>
-		<div class="wishlist-services__text">
-			<p class="p3 c-gray-dark">Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ.</p>
-			<a href="#" class="wishlist-services__arrow _product h7 ttu">
-				Cтраница товара
+		<div class="wishlist-services__text p3 c-gray-dark">
+			<p>Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ.</p>
+			<a href="#" class="wishlist-services__arrow _product h7 ttu c-blue-dark">
+				<span>Cтраница товара</span>
 				{{ icon({
 					iconName: 'promo-arrow',
 					className: 'wishlist-services__arrow-icon',

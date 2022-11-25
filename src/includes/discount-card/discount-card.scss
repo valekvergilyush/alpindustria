@@ -178,6 +178,13 @@
 			.tabs__tab-list {
 				@media (max-width: $laptop-md) {
 					max-width: none;
+					margin-bottom: 24px;
+				}
+				@media (max-width: $laptop-sm) {
+					margin-bottom: 32px;
+				}
+				@media (max-width: $mobile-lg) {
+					margin-bottom: 24px;
 				}
 			}
 		}
@@ -192,12 +199,25 @@
 				grid-column: initial;
 				grid-row: initial;
 				max-width: 335px;
+				margin-bottom: 32px;
 			}
 			@media (max-width: $laptop-sm) {
 				max-width: 324px;
 			}
 			@media (max-width: $mobile-lg) {
 				max-width: none;
+				margin-bottom: 24px;
+			}
+		}
+		.discount-create-form__input {
+			&:not(:first-child) {
+				margin-top: rem(24);
+			}
+		}
+		.discount-create-form__submit {
+			margin-top: rem(32);
+			@media (max-width: $mobile-lg) {
+				margin-top: 24px;
 			}
 		}
 	}

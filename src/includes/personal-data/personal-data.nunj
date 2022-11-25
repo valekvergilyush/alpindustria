@@ -41,8 +41,10 @@
 		<div class="personal-data__form" data-data-form="address">
 			{% include "../personal-data-form/personal-data-form.nunj" %}
 			{{ button({
-				className: 'personal-data__add p4 ttu',
+				className: 'personal-data__add ttu',
 				text: 'Добавить',
+				icon: 'plus-circle-blue',
+				iconData: 'width="24" height="24" viewBox="0 0 32 33"',
 				attr: 'data-data-form-open="address"'
 			}) }}
 		</div>

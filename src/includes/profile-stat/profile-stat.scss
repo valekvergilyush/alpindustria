@@ -3,7 +3,7 @@
 	&__tr {
 		display: flex;
 		gap: rem(64);
-		padding: rem(16) 0;
+		padding: rem(16) 0 rem(15);
 		border-bottom: 1px solid rgba($blue-dark, 0.4);
 		@media (max-width: $laptop-lg) {
 			gap: 40px;
@@ -19,8 +19,14 @@
 	&__td {
 		&._first {
 			width: 41.86%; // 509/1216
+			@media (max-width: $laptop-lg) {
+				width: 48%;
+			}
 			@media (max-width: $laptop-md) {
 				width: 47.4%;
+			}
+			@media (max-width: $laptop-sm) {
+				width: 29.1%;
 			}
 			@media (max-width: $mobile-lg) {
 				width: 40.6%;

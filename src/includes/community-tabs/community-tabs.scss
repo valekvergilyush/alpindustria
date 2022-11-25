@@ -220,9 +220,10 @@
 			--right-col: 1206;
 		}
 		#{$this}__tabs {
+			row-gap: 20px;
 			padding-top: var(--container-padding);
 			@media (max-width: $laptop-md) {
-				gap: 12px;
+				gap: 16px;
 			}
 			@media (max-width: $laptop-sm) {
 				gap: 0;
@@ -230,8 +231,12 @@
 		}
 		#{$this}__tabs-btn {
 			--arrow-size: #{rem(36)};
+			gap: 0;
 			@media (max-width: $mobile-lg) {
 				--arrow-size: 24px;
+			}
+			svg {
+				margin-top: 0;
 			}
 		}
 	}
