@@ -9,6 +9,7 @@ class CommunityAdvantages {
 
 	init() {
 		this.containers = document.querySelectorAll('[data-community-advantages]');
+		console.log(this.containers);
 
 		if (!this.containers.length || window.innerWidth <= TABLET_BREAKPOINT) {
 			return;

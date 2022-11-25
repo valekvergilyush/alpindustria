@@ -153,7 +153,9 @@
 		}
 	}
 	&._partner {
-		background-color: var(--green-dark);
+		&._bg {
+			background-color: var(--green-dark);
+		}
 		@media (max-width: $laptop-lg) {
 			--padding-y: 98px;
 		}
@@ -281,7 +283,7 @@
 			}
 		}
 		&-suit {
-			background-color: var(--blue-dark);
+			background-color: var(--blue-light);
 		}
 		&-offer {
 			#{$this}__title {
