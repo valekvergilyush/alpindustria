@@ -283,7 +283,9 @@
 		&-suit {
 			background-color: var(--blue-dark);
 			#{$this}__title {
-				margin-bottom: var(--padding);
+				@-moz-document url-prefix() {
+					margin-bottom: var(--padding);
+				}
 			}
 		}
 		&-offer {
