@@ -13,12 +13,13 @@ class ApplicationForm {
 		this.hobbyList = this.containter.querySelector('.application-form__hobbies');
 		this.showMoreButton = this.containter.querySelector('.application-form__show-more-btn');
 
-		this.showMoreButton.addEventListener('click', evt => {
-			evt.preventDefault();
+		this.showMoreButton &&
+			this.showMoreButton.addEventListener('click', evt => {
+				evt.preventDefault();
 
-			this.hobbyList.style.maxHeight = 'none';
-			this.showMoreButton.remove();
-		});
+				this.hobbyList.style.maxHeight = 'none';
+				this.showMoreButton.remove();
+			});
 	}
 }
 
