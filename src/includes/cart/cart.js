@@ -92,7 +92,9 @@ class Cart {
 	openPay() {
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
 		this.popupWrapper.classList.add(ClassName.OPENED_PAY);
-		this.popupWrapper.classList.remove(ClassName.ANIMATION);
+
+		clearTimeout(this.animTO);
+		this.animTO = setTimeout(() => this.popupWrapper.classList.remove(ClassName.ANIMATION), 300);
 	}
 }
 
