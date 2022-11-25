@@ -283,6 +283,12 @@
 		&-suit {
 			background-color: var(--blue-dark);
 		}
+		&-offer {
+			#{$this}__title {
+				padding-top: var(--padding);
+				margin-top: 0;
+			}
+		}
 	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 98px;
