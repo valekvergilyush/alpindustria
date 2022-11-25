@@ -282,6 +282,9 @@
 		}
 		&-suit {
 			background-color: var(--blue-dark);
+			#{$this}__wrapper {
+				padding-bottom: var(--padding);
+			}
 		}
 		&-offer {
 			#{$this}__title {
