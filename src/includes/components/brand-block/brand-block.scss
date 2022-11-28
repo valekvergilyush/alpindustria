@@ -33,6 +33,7 @@
 			min-height: 430px;
 			padding: var(--container-padding);
 			padding-bottom: 16px;
+			border-right: 0;
 		}
 		@media (max-width: $mobile-lg) {
 			min-height: 380px;
@@ -236,6 +237,9 @@
 					height: 0%;
 				}
 			}
+		}
+		@media (max-width: $laptop-sm) {
+			display: none;
 		}
 	}
 }
