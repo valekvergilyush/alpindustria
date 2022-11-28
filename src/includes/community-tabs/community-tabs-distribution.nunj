@@ -1,7 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set tabsList = [
-	{ id: 'application-form', text: 'Стать дистрибьютором', active: true },
+	{ id: 'application-form', text: 'Стать<br> дистрибьютором', active: true },
 	{ id: 'contacts', text: 'Контакты' },
 	{ id: 'requisites', text: 'Реквизиты' },
 	{ id: 'faq', text: 'FAQ' }

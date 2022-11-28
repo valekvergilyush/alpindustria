@@ -9,13 +9,15 @@
 		padding-block: 96px;
 	}
 	@media (max-width: $laptop) {
-		padding-block: 72px;
+		padding-block: 74px;
 	}
 	@media (max-width: $tablet) {
+		border-bottom: 0;
+		padding-bottom: 16px;
 	}
 	@media (max-width: $mobile-lg) {
 		row-gap: 24px;
-		padding-top: 48px;
+		padding-top: 51px;
 		padding-bottom: 0;
 	}
 	&__text {
@@ -33,6 +35,8 @@
 			}
 		}
 		@media (max-width: $laptop) {
+			margin: 0;
+			margin-left: auto;
 			img {
 				width: 608px;
 			}
