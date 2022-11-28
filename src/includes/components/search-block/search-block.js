@@ -11,8 +11,6 @@ class SearchBlock {
 			return;
 		}
 		this.searchBlocks.forEach(searchBlock => {
-			console.log('search');
-			console.log(searchBlock);
 			this.initSearchBlock(searchBlock);
 		});
 	}
