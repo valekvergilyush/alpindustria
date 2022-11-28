@@ -1,0 +1,18 @@
+{% from "../button/button.nunj" import button %}
+{% from "../input/input.nunj" import input %}
+
+{% macro searchBlock(props) %}
+	<form class="search-block {% if props.className %}{{ props.className }}{% endif %}" data-search>
+		{{ button({
+			className: 'search-block__btn _search',
+			attr: 'aria-label="Поиск", data-search-open',
+			icon: 'search',
+			iconData: 'width="32" height="32", viewBox="0 0 32 32"'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'search-input',
+			className: 'search-block__input'
+		}) }}
+	</form>
+{% endmacro %}

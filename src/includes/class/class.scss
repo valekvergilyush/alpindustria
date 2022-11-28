@@ -3,6 +3,7 @@
 	--margin-2: #{rem(32)};
 	--margin-3: #{rem(24)};
 	--margin-4: #{rem(16)};
+	--price-block-height: #{rem(173)};
 	$this: &;
 	display: grid;
 	grid-template-areas:
@@ -12,16 +13,13 @@
 	border-bottom: 1px solid var(--white);
 	@media (max-width: $laptop-lg) {
 		--margin-1: 32px;
+		--price-block-height: 134px;
 	}
 	@media (max-width: $laptop-md) {
 		--margin-1: 24px;
 		--margin-3: 20px;
 		--margin-2: var(--margin-1);
-	}
-	@media (max-width: $mobile-lg) {
-		--margin-1: 24px;
-		--margin-3: 16px;
-		--margin-4: 8px;
+		--price-block-height: 120px;
 	}
 	@media (max-width: $laptop-sm) {
 		grid-template-columns: repeat(1, 1fr);
@@ -29,6 +27,12 @@
 			'slider'
 			'main'
 			'content';
+	}
+	@media (max-width: $mobile-lg) {
+		--margin-1: 24px;
+		--margin-3: 16px;
+		--margin-4: 8px;
+		--price-block-height: 64px;
 	}
 	&__main {
 		flex-shrink: 0;
@@ -40,7 +44,13 @@
 		}
 	}
 	&__main-wrap {
-		flex-grow: 1;
+		position: sticky;
+		bottom: var(--price-block-height);
+		margin-top: auto;
+	}
+	&__main-inner {
+		position: sticky;
+		bottom: 0;
 	}
 	&__price-block {
 		flex-shrink: 0;
@@ -48,6 +58,7 @@
 		bottom: -1px;
 		left: 0;
 		padding-block: rem(34);
+		min-height: var(--price-block-height);
 		@media (max-width: $laptop-lg) {
 			padding-top: 30px;
 			padding-bottom: 39px;
@@ -276,6 +287,7 @@
 		box-sizing: border-box;
 	}
 	&__pay {
+		min-height: var(--price-block-height);
 		padding-block: rem(34);
 		@media (max-width: $laptop-lg) {
 			padding-top: 30px;

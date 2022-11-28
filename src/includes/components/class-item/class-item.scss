@@ -1,4 +1,5 @@
 .class-item {
+	$this: &;
 	display: flex;
 	height: 100%;
 	padding: rem(24);
@@ -19,6 +20,15 @@
 	@media (max-width: $mobile-lg) {
 		padding: 16px;
 		row-gap: 8px;
+	}
+	&[href] {
+		&:hover {
+			#{$this}__img {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
 	}
 	&__content {
 		flex-grow: 1;
@@ -57,11 +67,6 @@
 		@media (max-width: $mobile-lg) {
 			min-height: 46px;
 			margin-bottom: 6px;
-		}
-		&[href] {
-			&:hover {
-				opacity: 0.7;
-			}
 		}
 	}
 	&__place {
@@ -122,6 +127,7 @@
 		width: rem(318);
 		margin-left: rem(24);
 		grid-area: img;
+		overflow: hidden;
 		@media (max-width: $laptop-lg) {
 			width: 210px;
 		}
@@ -141,6 +147,7 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			transition: transform $default-transition-duration $default-transition-function;
 		}
 	}
 	&__info {

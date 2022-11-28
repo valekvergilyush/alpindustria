@@ -1,9 +1,9 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro classItem(props) %}
-	<div class="class-item">
+	<a href="/community/class.html" class="class-item">
 		<div class="class-item__content">
-			<a href="/community/class.html" class="class-item__title h6 ttu">{{ props.title }}</a>
+			<p class="class-item__title h6 ttu">{{ props.title }}</p>
 			<div class="class-item__img">
 				<img src="{{ props.img }}.jpg" srcset="{{ props.img }}@2x.jpg 2x" width="318" height="508" alt="">
 			</div>
@@ -29,5 +29,5 @@
 			</p>
 			<p class="class-item__date h6 ttu">{{ props.price }}</p>
 		</div>
-	</div>
+	</a>
 {% endmacro %}
