@@ -1,0 +1,12 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Дистрибьюция | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/distribution-hero/distribution-hero.nunj" %}
+		{% include "../includes/distribution-info/distribution-info.nunj" %}
+		{% include "../includes/distribution-brands/distribution-brands.nunj" %}
+		{% include "../includes/community-tabs/community-tabs-distribution.nunj" %}
+	</main>
+{% endblock %}

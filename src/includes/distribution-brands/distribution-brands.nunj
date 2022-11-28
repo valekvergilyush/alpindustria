@@ -1,0 +1,60 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set brandList = [
+	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/snow-peak.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/thermarest.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/msr.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/berghaus.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/arcteryx.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/the-north-face.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/snow-peak.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/thermarest.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/msr.svg' }
+] %}
+
+<section class="distribution-brands">
+	<h2 class="distribution-brands__title h4 ttu">Наши бренды</h2>
+
+	<ul class="team__list _distribution" data-team-list>
+		{% for item in brandList %}
+			<li class="team__item _white-bg" data-team-item>
+				<div class="team__item-details distribution-brands__item-details">
+					<div class="distribution-brands__item-col">
+						<p class="distribution-brands__item-title h6 ttu">Berghaus &mdash; одежда, обувь и&nbsp;снаряжение для активного отдыха</p>
+						<div class="distribution-brands__row">
+							<p class="distribution-brands__item-country">Великобритания</p>
+							<a class="distribution-brands__item-site" href="berghaus.com" target="_blank" rel="nofollow noopener">berghaus.com</a>
+						</div>
+						<p class="distribution-brands__item-text p3">Бренд, который начал производить одежду еще в&nbsp;60-е &mdash; сначала для британских экстремалов, а&nbsp;потом и&nbsp;для всего мира. Сегодня Berghaus позиционирует себя как бренд одежды для самых сложных условий на&nbsp;Земле.<br> Гамаши &laquo;Йети&raquo;, пуховики Ramche и&nbsp;одежда с&nbsp;мембраной Gore-Tex &mdash; настоящие бестселлеры бренда, которые выбирают туристы и&nbsp;альпинисты по&nbsp;всему миру.</p>
+					</div>
+					<div class="distribution-brands__manager">
+						<div class="distribution-brands__manager-info">
+							<p class="distribution-brands__manager-name h7 ttu">Гульба Дмитрий</p>
+							<p class="distribution-brands__manager-title p3">Бренд-менеджер</p>
+							<a class="distribution-brands__manager-tel p2" href="tel:+74952257343">+7(495)225-73-43 доб.&nbsp;157</a>
+							<a class="distribution-brands__manager-email p2" href="mailto:d.gulba@alpine-trade.ru">d.gulba@alpine-trade.ru</a>
+						</div>
+						<img class="distribution-brands__manager-photo" src="/assets/images/distribution/brands/dmitry.jpg" srcset="/assets/images/distribution/brands/dmitry@2x.jpg 2x" width="280" height="280" alt="">
+					</div>
+				</div>
+				<img
+					class="team__item-photo distribution-brands__item-logo"
+					src="{{ item.logoSrc }}"
+					width="432"
+					height="432"
+					alt=""
+				>
+			</li>
+		{% endfor %}
+	</ul>
+
+	{{ button({
+		className: 'distribution-brands__show-more-btn _show-more',
+		text: 'Показать еще',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"'
+	}) }}
+</section>

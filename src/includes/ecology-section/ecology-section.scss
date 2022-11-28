@@ -122,6 +122,10 @@
 				background-position: center;
 				background-repeat: no-repeat;
 				transition: background $default-transition-duration $default-transition-function;
+				will-change: background;
+				._safari & {
+					transition: none;
+				}
 			}
 			&:hover {
 				color: inherit;

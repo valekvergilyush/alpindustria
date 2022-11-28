@@ -4,26 +4,27 @@ const TABLET_BREAKPOINT = 768;
 
 class CommunitySlider {
 	constructor() {
-		this.init();
+		this.containers = document.querySelectorAll('[data-community-slider], [data-about-slider]');
+		this.containers.forEach(container => this.init(container));
 	}
 
-	init() {
-		this.container = document.querySelector('[data-community-slider]');
-
-		if (!this.container || window.innerWidth <= TABLET_BREAKPOINT) {
+	init(container) {
+		if (!container || window.innerWidth <= TABLET_BREAKPOINT) {
 			return;
 		}
 
-		this.slide = this.container.querySelector('[data-community-slide]');
-		this.linePath = this.container.querySelector('[data-community-slider-line-img] path');
-		this.pathLength = this.linePath.getTotalLength();
+		const slide = container.querySelector('[data-slide]');
+		this.linePath = container.querySelector('[data-community-slider-line-img] path');
 
-		this.linePath.style.setProperty('--path-length', this.pathLength);
+		if (this.linePath) {
+			this.pathLength = this.linePath.getTotalLength();
+			this.linePath.style.setProperty('--path-length', this.pathLength);
+		}
 
-		const getToValue = () => this.slide.scrollWidth - window.innerWidth;
+		const getToValue = () => slide.scrollWidth - window.innerWidth;
 
 		ScrollTrigger.create({
-			trigger: this.container,
+			trigger: container,
 			start: 'top top',
 			end: `+=${getToValue() + 50}`,
 			pin: true,
@@ -31,20 +32,24 @@ class CommunitySlider {
 			scrub: true,
 		});
 
-		gsap.set(this.slide, {
+		gsap.set(slide, {
 			x: 0 - getToValue(),
 			scrollTrigger: {
-				trigger: this.container,
+				trigger: container,
 				start: 'top top',
 				end: `+=${getToValue()}`,
 				invalidateOnRefresh: true,
 				scrub: true,
 				onUpdate: self => {
-					const strokeDashoffset = this.pathLength - this.pathLength * self.progress * 2;
-					this.linePath.style.strokeDashoffset = strokeDashoffset <= 0 ? 0 : strokeDashoffset;
-					gsap.set(this.slide, {
+					gsap.set(slide, {
 						x: 0 - getToValue() * self.progress,
 					});
+
+					if (this.linePath) {
+						const strokeDashoffset = this.pathLength - this.pathLength * self.progress * 2;
+
+						this.linePath.style.strokeDashoffset = strokeDashoffset <= 0 ? 0 : strokeDashoffset;
+					}
 				},
 			},
 		});
