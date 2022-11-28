@@ -1,5 +1,6 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/search-block/search-block.nunj" import searchBlock %}
 
 <div class="page__filters filters">
 	<div class="filters__container container">
@@ -17,11 +18,8 @@
 					attr: 'width="32" height="32"'
 				}) }}
 			</button>
-			{{ button({
-				className: 'filters__button _search',
-				attr: 'aria-label="Поиск"',
-				icon: 'search',
-				iconData: 'width="32" height="32"'
+			{{ searchBlock({
+				className: '_white filters__search'
 			}) }}
 		</div>
 		<p class="filters__items-number p2">242 товара</p>

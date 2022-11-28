@@ -49,6 +49,7 @@
 	&__date {
 		font-size: rem(15);
 		line-height: rem(19);
+		opacity: 0.5;
 		@media (max-width: $laptop-lg) {
 			font-size: 20px;
 			line-height: 28px;

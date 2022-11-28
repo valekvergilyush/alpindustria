@@ -1,0 +1,11 @@
+.page {
+	$this: &;
+	&._profile {
+		#{$this}__main {
+			display: flex;
+			& > * {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -33,7 +33,7 @@
 		flex-shrink: 0;
 	}
 	&__btn {
-		padding: rem(7) rem(15);
+		padding: rem(8) rem(15) rem(4);
 		border-radius: rem(100);
 		border: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-md) {

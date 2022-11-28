@@ -194,23 +194,14 @@
 	}
 	&__search {
 		@include reset-btn;
-		--size: #{rem(36)};
-		width: var(--size);
-		height: var(--size);
+		--size-btn: #{rem(36)};
 		fill: none;
 		@media (max-width: $laptop-md) {
-			--size: 28px;
+			--size-btn: 28px;
 		}
 		@media (max-width: $mobile-lg) {
-			--size: 26px;
+			--size-btn: 26px;
 			grid-area: search;
-		}
-		&[href],
-		&[type='button'] {
-			@extend .animated;
-			&:hover {
-				opacity: 0.7;
-			}
 		}
 	}
 	&__search-icon {

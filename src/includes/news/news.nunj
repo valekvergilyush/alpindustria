@@ -1,5 +1,6 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/news-list/news-list.nunj" import newsList %}
+{% from "../components/search-block/search-block.nunj" import searchBlock %}
 
 {% set newsFilters1 = [
 	{
@@ -169,10 +170,8 @@
 		</div>
 	</div>
 	<div class="news__filters-line container">
-		{{ button({
-			className: 'news__search',
-			icon: 'search',
-			iconData: 'width="32" height="32" viewBox="0 0 32 32"'
+		{{ searchBlock({
+			className: 'news__search'
 		}) }}
 		<p class="news__number p2">242 товара</p>
 		{{ button({

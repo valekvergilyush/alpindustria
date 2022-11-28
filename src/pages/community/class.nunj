@@ -10,7 +10,7 @@
 		{ text: 'Выезды', href: '#'}
 	],
 	link: {
-		href: '/',
+		href: '/community/classes.html',
 		text: 'Закрыть',
 		className: '_gray'
 	}

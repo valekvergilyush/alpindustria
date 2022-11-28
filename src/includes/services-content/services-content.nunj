@@ -61,7 +61,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="services-accordion _opened">
+			<div class="services-accordion">
 				<button class="services-accordion__btn h6 ttu" type="button" data-accordion-toggle>
 					Москва
 					{{ icon({

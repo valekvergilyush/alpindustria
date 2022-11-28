@@ -104,10 +104,8 @@
 	}
 	&__search {
 		@extend .animated;
-		--size: #{rem(32)};
+		--size-btn: #{rem(32)};
 		margin-right: auto;
-		width: var(--size);
-		height: var(--size);
 		@media (max-width: $mobile-lg) {
 			--size: 24px;
 		}

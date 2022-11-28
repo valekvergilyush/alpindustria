@@ -36,16 +36,16 @@
 	<ul class="profile-subscribtion__list">
 		{% for item in subscribtion %}
 			<li class="profile-subscribtion__item">
+				<div class="profile-subscribtion__item-inner c-gray-dark">
+					<p class="profile-subscribtion__name p1">{{ item.name }}</p>
+					<p class="profile-subscribtion__descr p3">{{ item.descr }}</p>
+				</div>
 				{{ switch({
 					className: 'profile-subscribtion__switch',
 					name: 'subscribtion',
 					value: item.inputValue,
 					checked: item.checked
 				}) }}
-				<div class="profile-subscribtion__item-inner c-gray-dark">
-					<p class="profile-subscribtion__name p1">{{ item.name }}</p>
-					<p class="profile-subscribtion__descr p3">{{ item.descr }}</p>
-				</div>
 			</li>
 		{% endfor %}
 	</ul>

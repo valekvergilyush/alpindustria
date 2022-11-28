@@ -1,5 +1,6 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/search-block/search-block.nunj" import searchBlock %}
 
 {% set brandsLetters = [
 {letter: 'A', active: true}, {letter: 'B', active: true}, {letter: 'C', active: true}, {letter: 'D', active: true}, {letter: 'E'}, {letter: 'F'}, {letter: 'G'}, {letter: 'H'}, {letter: 'I'}, {letter: 'J'}, {letter: 'K'}, {letter: 'L', active: true}, {letter: 'M', active: true}, {letter: 'N'}, {letter: 'O', active: true}, {letter: 'P'}, {letter: 'Q'}, {letter: 'R'}, {letter: 'S'}, {letter: 'T'}, {letter: 'U'}, {letter: 'V'}, {letter: 'W'}, {letter: 'X'}, {letter: 'Y'}, {letter: 'Z'}
@@ -24,13 +25,9 @@
 		</div>
 	</div>
 	<div class="brands-title__bottom container">
-		<button class="brands-title__search" type="button" aria-label="Поиск">
-			{{ icon({
-				iconName: 'search',
-				className: 'brands-title__search-icon',
-				attr: 'width="32" height="32", viewBox="0 0 32 32"'
-			}) }}
-		</button>
+		{{ searchBlock({
+			className: 'brands-title__search'
+		}) }}
 		<p class="brands-title__number">242 бренда</p>
 		<div class="brands-title__grid">
 			<p class="brands-title__grid-text">Сетка</p>

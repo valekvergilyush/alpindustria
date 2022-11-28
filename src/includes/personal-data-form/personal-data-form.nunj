@@ -15,19 +15,19 @@
 		type: 'text',
 		id: 'personal-data-city',
 		value: 'Санкт-Петербург',
-		name: 'Город'
+		name: 'Город*'
 	}) }}
 	{{ input({
 		className: 'personal-data-form__input',
 		type: 'text',
 		id: 'personal-data-street',
-		name: 'Улица'
+		name: 'улица'
 	}) }}
 	{{ input({
 		className: 'personal-data-form__input',
 		type: 'number',
 		id: 'personal-data-index',
-		name: 'Индекс'
+		name: 'индекс'
 	}) }}
 	<div class="personal-data-form__inputs">
 		{{ input({
@@ -50,7 +50,7 @@
 		className: 'personal-data-form__checkbox',
 		id: 'personal-data-main-address',
 		name: 'main-address',
-		text: 'Сделать основным адрессом'
+		text: 'Сделать основным адресом'
 	}) }}
 	<div class="personal-data-form__btns">
 		{{ button({

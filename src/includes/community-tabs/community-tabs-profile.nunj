@@ -1,9 +1,9 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set tabsList = [
-	{ id: 'data', text: 'Мои данные' },
+	{ id: 'data', text: 'Мои данные', active: true },
 	{ id: 'payments', text: 'Мои покупки' },
-	{ id: 'discount', text: 'Дисконтная карта', active: true  },
+	{ id: 'discount', text: 'Дисконтная карта' },
 	{ id: 'subscription', text: 'Рассылка' },
 	{ id: 'messages', text: 'Сообщения'}
 ] %}

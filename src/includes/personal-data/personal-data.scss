@@ -53,25 +53,31 @@
 	}
 	&__add {
 		display: flex;
-		min-width: rem(234);
-		padding: rem(24);
 		margin-left: auto;
-		border: 1px solid var(--blue-dark);
-		background-color: var(--blue-dark);
-		color: var(--white);
-		@extend .animated;
-		box-sizing: border-box;
+		font-size: rem(16);
+		line-height: rem(20);
+		@media (max-width: $mobile-lg) {
+			margin-left: 0;
+			font-size: 14px;
+			line-height: 16px;
+		}
+		.button__icon {
+			--size: #{rem(24)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: rem(16);
+			@media (max-width: $mobile-lg) {
+				margin-left: 8px;
+			}
+		}
+		.button__text {
+			padding-top: 0.15em;
+		}
+
 		&:hover {
-			background-color: var(--white);
-			color: var(--blue-dark);
-		}
-		@media (max-width: $laptop-lg) {
-			min-width: 360px;
-			padding: 16px;
-		}
-		@media (max-width: $laptop-md) {
-			width: 100%;
-			min-width: auto;
+			.button__text {
+				transform: translateX(0.2em);
+			}
 		}
 	}
 	&__form {
