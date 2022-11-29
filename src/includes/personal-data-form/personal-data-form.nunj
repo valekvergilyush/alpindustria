@@ -15,6 +15,7 @@
 		type: 'text',
 		id: 'personal-data-city',
 		value: 'Санкт-Петербург',
+		inputAttr: 'required',
 		name: 'Город*'
 	}) }}
 	{{ input({

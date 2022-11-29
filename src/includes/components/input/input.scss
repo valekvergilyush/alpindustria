@@ -50,6 +50,12 @@
 		@media (max-width: $mobile-lg) {
 			font-size: 12px;
 		}
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			transition: background-color 600000s 0s, color 600000s 0s;
+		}
 	}
 	&__words-counter {
 		margin-top: rem(8);

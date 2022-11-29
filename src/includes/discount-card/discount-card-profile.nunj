@@ -24,12 +24,4 @@
 			{% include "../discount-add-form/discount-add-form.nunj" %}
 		</section>
 	</div>
-	<div class="discount-card__bottom">
-		<div class="container">
-			<span class="discount-card__asterisk h5 ttu">***</span>
-			<p class="p3">На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.<br>
-				Получить новую карту просто (и&nbsp;приятно!):<br>
-				Обменяем карту в&nbsp;любом магазине АльпИндустрии за&nbsp;5&nbsp;минут или с&nbsp;ближайшим интернет-заказом. У&nbsp;новых карт крутой дизайн со&nbsp;знаковыми вершинами мира.</p>
-		</div>
-	</div>
 </section>

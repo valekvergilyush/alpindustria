@@ -13,21 +13,19 @@ class PersonalDataForm {
 		this.openBtns = document.querySelectorAll('[data-data-form-open]');
 		this.closeBtns = document.querySelectorAll('[data-data-form-close]');
 		this.openBtns.forEach(btn => {
-			btn.addEventListener('click', e => {
+			btn.addEventListener('click', () => {
 				const formName = btn.dataset.dataFormOpen;
 				const form = document.querySelector(`[data-data-form="${formName}"]`);
 				if (form) {
-					e.preventDefault();
 					form.classList.add(CLASS_ACTIVE);
 				}
 			});
 		});
 		this.closeBtns.forEach(btn => {
-			btn.addEventListener('click', e => {
+			btn.addEventListener('click', () => {
 				const formName = btn.dataset.dataFormClose;
 				const form = document.querySelector(`[data-data-form="${formName}"]`);
 				if (form) {
-					e.preventDefault();
 					form.classList.remove(CLASS_ACTIVE);
 				}
 			});
