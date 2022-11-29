@@ -12,6 +12,13 @@ class PersonalDataForm {
 		}
 		this.openBtns = document.querySelectorAll('[data-data-form-open]');
 		this.closeBtns = document.querySelectorAll('[data-data-form-close]');
+		this.forms.forEach(formBlock => {
+			const form = formBlock.querySelector('form');
+			form.addEventListener('submit', e => {
+				e.preventDefault();
+				formBlock.classList.remove(CLASS_ACTIVE);
+			});
+		});
 		this.openBtns.forEach(btn => {
 			btn.addEventListener('click', () => {
 				const formName = btn.dataset.dataFormOpen;
