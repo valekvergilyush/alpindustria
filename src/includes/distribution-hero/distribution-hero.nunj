@@ -4,7 +4,7 @@
 	<h1 class="distribution-hero__title h2 ttu _anim-first" data-animation='words'>
 		<span class="word-wrapper"><span class="word">Брендам</span></span>
 	</h1>
-	<p class="distribution-hero__text p1 _anim-first" data-animation='fade-right'>Если вы&nbsp;создаете экипировку, снаряжение, одежду для спорта, туризма или активного отдыха &mdash; мы&nbsp;можем стать вашим дистрибьютером.</p>
+	<p class="distribution-hero__text p1 _anim-first" data-animation='fade-right'>Если вы&nbsp;создаете экипировку, снаряжение, одежду для спорта, туризма или активного отдыха &mdash; мы&nbsp;можем стать вашим дистрибьютором.</p>
 	{{ picture({
 		className: 'distribution-hero__img',
 		path: '/assets/images/distribution/hero/distribution-hero',

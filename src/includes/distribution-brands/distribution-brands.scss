@@ -173,7 +173,9 @@
 		}
 	}
 	&__show-more-btn {
-		border-top: 0 !important;
+		@media (max-width: $laptop-sm) {
+			border-top: 0 !important;
+		}
 		@media (max-width: $mobile-lg) {
 			--height: 87px !important;
 		}

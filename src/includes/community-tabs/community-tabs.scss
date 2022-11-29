@@ -18,13 +18,6 @@
 		grid-row: 1/-1;
 		background-color: var(--white);
 	}
-	&._distribution {
-		#{$this}__tabs-item {
-			&:first-child {
-				max-width: 800px;
-			}
-		}
-	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 96px;
 		&._distribution {
@@ -71,14 +64,16 @@
 				}
 			}
 		}
-	}
-	@media (max-width: $tablet) {
 		&._distribution {
 			#{$this}__tabs-btn {
 				br {
 					display: none;
 				}
 			}
+		}
+	}
+	@media (max-width: $tablet) {
+		&._distribution {
 			&._active #{$this}__tabs {
 				padding-top: 84px;
 			}
@@ -232,6 +227,17 @@
 		&._contacts,
 		&._requisites {
 			padding-block: rem(64);
+		}
+		._distribution & {
+			box-sizing: border-box;
+			min-height: var(--100vh);
+			&._contacts,
+			&._requisites {
+				padding-top: rem(143);
+				@media (max-width: $laptop-lg) {
+					padding-top: var(--padding-y);
+				}
+			}
 		}
 		&._profile {
 			padding-block: var(--container-padding);
