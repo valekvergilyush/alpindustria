@@ -59,6 +59,7 @@
 				name="date"
 				readonly
 				data-datepicker
+				data-max-date="today"
 			>
 		</label>
 		<p class="classes-main__number p2">24 занятия</p>
