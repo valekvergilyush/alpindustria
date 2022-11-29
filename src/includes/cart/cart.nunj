@@ -25,7 +25,7 @@
 		</p>
 	</div>
 
-	<div class="cart__delivery">
+	<div class="cart__delivery" data-flatpickr-scroll="close">
 		<div class="cart__title-wrapper _delivery">
 			{{ button({
 				icon: 'double-arrow-left',

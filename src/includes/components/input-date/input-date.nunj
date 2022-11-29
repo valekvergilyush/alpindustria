@@ -9,6 +9,7 @@
 			value="{{ props.value }}"
 			readonly
 			data-datepicker
+			{% if props.inputAttr %} {{ props.inputAttr }}{% endif %}
 		>
 	</div>
 {% endmacro %}

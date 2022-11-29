@@ -15,6 +15,7 @@
 		type: 'text',
 		id: 'personal-data-city',
 		value: 'Санкт-Петербург',
+		inputAttr: 'required',
 		name: 'Город*'
 	}) }}
 	{{ input({
@@ -64,8 +65,7 @@
 			text: 'Добавить',
 			icon: 'promo-arrow',
 			iconData: 'width="18" height="18" viewBox="0 0 72 72"',
-			className: 'personal-data-form__btn _add h7 ttu _arrow-s',
-			attr: 'data-data-form-close="address"'
+			className: 'personal-data-form__btn _add h7 ttu _arrow-s'
 		}) }}
 	</div>
 </form>

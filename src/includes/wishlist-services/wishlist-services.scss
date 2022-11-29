@@ -40,11 +40,10 @@
 		display: flex;
 		align-items: center;
 		gap: rem(8);
+		transition: gap $default-transition-duration $default-transition-function;
 		&[href] {
 			&:hover {
-				#{$this}__arrow-icon {
-					transform: translateX(#{rem(-8)});
-				}
+				gap: rem(4);
 			}
 		}
 		&._brand {
@@ -69,7 +68,6 @@
 		height: var(--size);
 		margin-bottom: rem(5);
 		fill: currentColor;
-		transition: transform $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 4px;
 		}
@@ -179,7 +177,7 @@
 		flex-wrap: wrap;
 		gap: rem(8);
 		@media (max-width: $laptop-md) {
-			width: 380px;
+			width: 376px;
 			flex-wrap: nowrap;
 			overflow: auto;
 			@include scrollbar {
@@ -246,6 +244,14 @@
 		transition: border-color $default-transition-duration $default-transition-function;
 		&:hover {
 			border-color: transparent;
+		}
+	}
+	&__size {
+		._size {
+			width: rem(56);
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
 		}
 	}
 	&__counter {

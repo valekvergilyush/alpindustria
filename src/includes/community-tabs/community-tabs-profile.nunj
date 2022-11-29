@@ -27,7 +27,7 @@
 	</ul>
 
 	<div class="community-tabs__sections">
-		<section class="community-tabs__section _profile" aria-labelledby="data" data-tab-section="data">
+		<section class="community-tabs__section _profile _active" aria-labelledby="data" data-tab-section="data">
 			{% include "../personal-data/personal-data.nunj" %}
 		</section>
 		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
@@ -39,7 +39,7 @@
 		<section class="community-tabs__section _profile" aria-labelledby="messages" data-tab-section="messages">
 			{% include "../profile-messages/profile-messages.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile _active" aria-labelledby="discount" data-tab-section="discount">
+		<section class="community-tabs__section _profile" aria-labelledby="discount" data-tab-section="discount">
 			{% include "../profile-discount/profile-discount.nunj" %}
 		</section>
 	</div>
