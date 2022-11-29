@@ -4,7 +4,7 @@
 	'Вы&nbsp;влюблены в&nbsp;горы и&nbsp;хотите популяризировать активный отдых'
 ] %}
 
-<section class="community-advantages _partner" data-community-advantages>
+<section class="community-advantages _partner _bg" data-community-advantages>
 	<div class="community-advantages__container container">
 		<div class="community-advantages__title-wrapper">
 			<h2 class="community-advantages__title h4 ttu" data-animation="words">

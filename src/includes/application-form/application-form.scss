@@ -196,8 +196,12 @@
 	}
 	&__bottom-text {
 		max-width: rem(300);
-		&._link {
-			text-decoration: underline;
+		a {
+			text-decoration: none;
+			&:hover {
+				color: var(--white);
+				text-decoration: underline;
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			display: none;

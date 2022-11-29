@@ -33,6 +33,9 @@
 	&__title {
 		padding-top: rem(124);
 		border-right: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-md) {
+			@include smoothValue('font-size', 56px, 72px, $laptop-sm, $laptop-md);
+		}
 		@media (max-width: $laptop) {
 			padding-top: 71px;
 		}
@@ -42,6 +45,9 @@
 		}
 		@media (max-width: $tablet) {
 			margin-bottom: 52px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 32px;
 		}
 	}
 	&__accordion {

@@ -149,7 +149,9 @@
 		}
 	}
 	&._partner {
-		background-color: var(--green-dark);
+		&._bg {
+			background-color: var(--green-dark);
+		}
 		@media (max-width: $laptop-lg) {
 			--padding-y: 98px;
 		}
@@ -277,7 +279,22 @@
 			}
 		}
 		&-suit {
-			background-color: var(--blue-dark);
+			background-color: var(--blue-light);
+		}
+		&-offer {
+			#{$this}__title {
+				padding-right: rem(150);
+				margin-top: 0;
+				margin-bottom: auto;
+				padding-bottom: 0;
+				padding-top: var(--padding);
+				@media (max-width: $laptop-md) {
+					padding-right: 0;
+				}
+				@media (max-width: $tablet) {
+					padding-bottom: 24px;
+				}
+			}
 		}
 	}
 	@media (max-width: $laptop-lg) {
