@@ -37,6 +37,10 @@ class Team {
 	onListClick(evt) {
 		const listItem = evt.target.closest('[data-team-item]');
 
+		if (evt.target.hasAttribute('href')) {
+			return;
+		}
+
 		if (listItem) {
 			evt.preventDefault();
 

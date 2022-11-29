@@ -158,8 +158,8 @@
 			checked: true
 		}) }}
 
-		<p class="application-form__bottom-text p3 c-gray-dark">Нажимая "подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 		<div class="application-form__bottom">
+		<p class="application-form__bottom-text p3">Нажимая "подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 			{{ button({
 				type: 'submit',
 				text: 'Подать заявку',
