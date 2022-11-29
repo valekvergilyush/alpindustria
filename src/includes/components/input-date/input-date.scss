@@ -71,22 +71,3 @@
 		}
 	}
 }
-
-.air-datepicker {
-	--adp-font-family: var(--default-font-family);
-	--adp-day-name-color: var(--blue-dark);
-	--adp-accent-color: var(--blue-dark);
-	--adp-cell-background-color-selected: var(--blue-dark);
-	--adp-cell-background-color-selected-hover: var(--blue-dark);
-	--adp-nav-arrow-color: var(--blue-dark);
-	--adp-cell-background-color-hover: #{rgba($blue-dark, 0.1)};
-	.air-datepicker-cell.-current- {
-		color: var(--adp-color-current-date);
-		background-color: rgba($blue-dark, 0.1);
-		border-radius: 100vmax;
-	}
-	&.-is-mobile-.-active-:not(.-custom-position-),
-	&.-is-mobile-:not(.-custom-position-) {
-		transform: translate(-50%, -50%);
-	}
-}

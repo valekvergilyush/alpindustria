@@ -1,15 +1,8 @@
-import AirDatepicker from 'air-datepicker';
-
-const TODAY = new Date();
+import flatpickr from 'flatpickr';
 
 const OPTIONS = {
-	dateFormat: 'dd/MM/yy',
-	isMobile: true,
-	autoClose: true,
-	selectedDates: [TODAY],
-	minDate: TODAY,
+	disableMobile: 'true',
 };
-
 class InputDate {
 	constructor() {
 		this.init();
@@ -23,7 +16,7 @@ class InputDate {
 		}
 
 		this.inputs.forEach(input => {
-			input.datepicker = new AirDatepicker(input, OPTIONS);
+			flatpickr(input, OPTIONS);
 		});
 	}
 }
