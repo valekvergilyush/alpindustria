@@ -40,11 +40,10 @@
 		display: flex;
 		align-items: center;
 		gap: rem(8);
+		transition: gap $default-transition-duration $default-transition-function;
 		&[href] {
 			&:hover {
-				#{$this}__arrow-icon {
-					transform: translateX(#{rem(-8)});
-				}
+				gap: rem(4);
 			}
 		}
 		&._brand {
@@ -69,7 +68,6 @@
 		height: var(--size);
 		margin-bottom: rem(5);
 		fill: currentColor;
-		transition: transform $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 4px;
 		}

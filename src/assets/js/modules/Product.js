@@ -44,7 +44,6 @@ class Product {
 		const scrollStep = element.step;
 		const nextBtn = block.parentElement.querySelector(element.nextBtn);
 		nextBtn.addEventListener('click', () => {
-			console.log('qwe');
 			if (maxScroll < scroll) {
 				block.scrollTo(0, 0);
 				scroll = 0;
