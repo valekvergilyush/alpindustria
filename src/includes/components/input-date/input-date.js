@@ -33,7 +33,6 @@ class InputDate {
 		const closeFlatpickrBlocks = document.querySelectorAll('[data-flatpickr-scroll="close"]');
 		closeFlatpickrBlocks.forEach(block => {
 			block.addEventListener('scroll', () => {
-				console.log('asdasd');
 				this.flatpickrs.forEach(f => {
 					if (f.isOpen) {
 						f.close();
