@@ -5,13 +5,13 @@ class Product {
 		this.img = document.querySelector('[data-product-img]');
 		this.info = document.querySelector('[data-product-info]');
 		this.colors = {
-			block: document.querySelector('[data-product-colors]'),
-			nextBtn: document.querySelector('[data-product-colors-next]'),
+			blocks: document.querySelectorAll('[data-product-colors]'),
+			nextBtn: '[data-product-colors-next]',
 			step: 160,
 		};
 		this.sizes = {
-			block: document.querySelector('[data-product-sizes]'),
-			nextBtn: document.querySelector('[data-product-sizes-next]'),
+			blocks: document.querySelectorAll('[data-product-sizes]'),
+			nextBtn: '[data-product-sizes-next]',
 			step: 192,
 		};
 		this.breakpointWidth = 992;
@@ -27,29 +27,30 @@ class Product {
 				this.checkAddBlockVisibility();
 			});
 		}
-		if (this.colors.block && this.sizes.block) {
-			this.initInputSliders();
+		if (this.sizes.blocks.length) {
+			this.sizes.blocks.forEach(block => {
+				this.initInputSlider(block, this.sizes);
+			});
+		}
+		if (this.colors.block) {
+			this.initInputSlider(this.colors);
 		}
 	}
 
-	initInputSliders() {
-		this.initInputSlider(this.colors);
-		this.initInputSlider(this.sizes);
-	}
-
-	initInputSlider(element) {
+	initInputSlider(block, element) {
 		let scroll = 0;
-		const elemWidth = element.block.offsetWidth;
-		const maxScroll = element.block.scrollWidth - elemWidth - this.sliderOffsetGap;
+		const elemWidth = block.offsetWidth;
+		const maxScroll = block.scrollWidth - elemWidth - this.sliderOffsetGap;
 		const scrollStep = element.step;
-
-		element.nextBtn.addEventListener('click', () => {
+		const nextBtn = block.parentElement.querySelector(element.nextBtn);
+		nextBtn.addEventListener('click', () => {
+			console.log('qwe');
 			if (maxScroll < scroll) {
-				element.block.scrollTo(0, 0);
+				block.scrollTo(0, 0);
 				scroll = 0;
 				return;
 			}
-			element.block.scrollBy(scrollStep, 0);
+			block.scrollBy(scrollStep, 0);
 			scroll += scrollStep;
 		});
 	}
