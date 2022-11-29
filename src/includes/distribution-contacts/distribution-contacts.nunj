@@ -1,0 +1,15 @@
+<div class="distribution-contacts c-gray-dark">
+	<h3 class="distribution-contacts__title h6 ttu">ООО "Эталон"</h3>
+	<p class="distribution-contacts__text p2">
+		<span class="h7 ttu">Адрес</span>
+		115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202
+	</p>
+	<p class="distribution-contacts__text p2">
+		<span class="h7 ttu">Время работы</span>
+		10:00-19:00 пн-пт, сб-вс выходные
+	</p>
+	<p class="distribution-contacts__text p2">
+		<span class="h7 ttu">Телефон</span>
+		<a href="tel:+74952329779">+7 (495) 232-97-79</a>
+	</p>
+</div>

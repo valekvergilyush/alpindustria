@@ -1,0 +1,39 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set tabsList = [
+	{ id: 'application-form', text: 'Стать дистрибьютором', active: true },
+	{ id: 'contacts', text: 'Контакты' },
+	{ id: 'requisites', text: 'Реквизиты' },
+	{ id: 'faq', text: 'FAQ' }
+] %}
+
+<section class="community-tabs _distribution" data-community-tab>
+	<ul class="community-tabs__tabs">
+		{% for tab in tabsList %}
+			<li class="community-tabs__tabs-item">
+				<button class="community-tabs__tabs-btn{% if tab.active %} _active{% endif %} h5 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+					{{ tab.text }}
+					{{ icon({
+						iconName: 'double-arrow-right',
+						attr: 'width="48" height="48"'
+					}) }}
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="community-tabs__sections">
+		<section class="community-tabs__section _application-form _active" aria-labelledby="application-form" data-tab-section="application-form">
+			{% include "../application-form/application-form-distribution.nunj" %}
+		</section>
+		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
+			{% include "../distribution-contacts/distribution-contacts.nunj" %}
+		</section>
+		<section class="community-tabs__section _requisites" aria-labelledby="requisites" data-tab-section="requisites">
+			{% include "../distribution-requisites/distribution-requisites.nunj" %}
+		</section>
+		<section class="community-tabs__section _faq" aria-labelledby="faq" data-tab-section="faq">
+			{% include "../distribution-faq/distribution-faq.nunj" %}
+		</section>
+	</div>
+</section>

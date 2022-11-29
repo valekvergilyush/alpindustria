@@ -10,14 +10,10 @@
 			background-color: var(--violet-light);
 		}
 		#{$this}__title {
-			padding-right: rem(150);
 			margin-top: 0;
 			margin-bottom: auto;
 			padding-bottom: 0;
 			padding-top: var(--padding);
-			@media (max-width: $laptop-md) {
-				padding-right: 0;
-			}
 		}
 	}
 	&._discount {
@@ -329,8 +325,10 @@
 			--padding: 68px;
 		}
 		@media (max-width: $tablet) {
-			margin-left: 0;
 			--padding: 29px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: 0;
 		}
 		@media (max-width: $mobile-lg) {
 			--padding: 21px;

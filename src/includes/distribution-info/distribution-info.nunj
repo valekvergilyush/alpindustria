@@ -1,0 +1,13 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="distribution-info">
+	<p class="distribution-info__text s1">Мы&nbsp;сотрудничаем с&nbsp;мировыми брендами &mdash; сейчас это 200 клиентов и&nbsp;400&nbsp;магазинов. А&nbsp;еще доставляем товары по&nbsp;всей России и&nbsp;берем всю логистику на&nbsp;себя</p>
+	{{ picture({
+		className: 'distribution-info__img',
+		path: '/assets/images/distribution/info-section/info-section',
+		ext: 'jpg',
+		width: 1024,
+		height: 704,
+		attr: 'aria-hidden="true"'
+	}) }}
+</section>

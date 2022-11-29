@@ -23,6 +23,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		background-color: var(--blue-dark);
+		&._distribution {
+			#{$this}__item {
+				box-sizing: border-box;
+				height: rem(500);
+				&._active {
+					height: auto;
+					#{$this}__item-photo {
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
 	}
 	&__item {
 		--cols-number: 4;
@@ -101,7 +113,6 @@
 				}
 			}
 		}
-
 		&._neighbor {
 			--cols-number: 8;
 			padding-bottom: 25%;
@@ -131,6 +142,9 @@
 			#{$this}__item-photo {
 				object-position: left;
 			}
+		}
+		&._white-bg {
+			background-color: var(--white);
 		}
 		@media (max-width: $laptop-sm) {
 			--cols-number: 3;

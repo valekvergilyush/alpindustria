@@ -9,7 +9,6 @@ class LottieAnimations {
 		});
 	}
 	initPlayer(container, path) {
-		const qualityValue = env.isSafari ? 'low' : 'hight';
 		let isAutoplay = true;
 
 		if (container.getAttribute('data-lottie-autoplay') === 'false') {
@@ -23,9 +22,6 @@ class LottieAnimations {
 			autoplay: isAutoplay,
 			path: path,
 		});
-
-		this.player.setSubframe(!env.isSafari);
-		this.player.setQuality(qualityValue);
 
 		isAutoplay && this.player.play();
 	}

@@ -1,4 +1,64 @@
 .application-form {
+	$this: &;
+	&._distribution {
+		#{$this}__title {
+			margin-bottom: rem(48);
+			&._brand {
+				margin-top: rem(48);
+				margin-bottom: rem(24);
+			}
+		}
+		#{$this}__bottom-text {
+			max-width: none;
+			margin-bottom: rem(56);
+			opacity: 0.4;
+		}
+		#{$this}__email-checkbox {
+			margin-bottom: rem(48);
+		}
+		#{$this}__bottom {
+			justify-content: flex-end;
+		}
+		#{$this}__show-more-btn {
+			margin-bottom: 24px;
+			border-bottom: 1px solid var(--blue-dark);
+		}
+		@media (max-width: $laptop-lg) {
+			#{$this}__title {
+				margin-bottom: 24px;
+			}
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}__title {
+				font-size: 24px;
+				&._brand {
+					margin-top: 32px;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}__title {
+				font-size: 18px;
+				&._brand {
+					margin-top: 24px;
+				}
+			}
+			#{$this}__fields {
+				flex-direction: column;
+				margin-bottom: 0;
+			}
+			#{$this}__hobbies {
+				margin-bottom: 24px;
+			}
+			#{$this}__email-checkbox {
+				margin-bottom: 24px;
+			}
+			#{$this}__bottom-text {
+				display: block;
+				margin-bottom: 16px;
+			}
+		}
+	}
 	&__title {
 		margin-bottom: rem(22);
 		@media (max-width: $laptop-lg) {
@@ -135,6 +195,18 @@
 		border-top: 1px solid var(--blue-dark);
 		@media (max-width: $mobile-lg) {
 			display: inline-flex;
+		}
+	}
+	&__form-title {
+		margin-bottom: rem(24);
+		#{$this}__fields + & {
+			margin-top: rem(48);
+		}
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
 		}
 	}
 }

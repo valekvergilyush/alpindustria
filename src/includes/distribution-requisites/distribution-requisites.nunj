@@ -1,0 +1,35 @@
+<div class="distribution-requisites c-gray-dark">
+	<h3 class="distribution-requisites__title h6 ttu">Общество с ограниченной ответственностью &laquo;Эталон&raquo;</h3>
+	<p class="distribution-requisites__text p2">
+		<span class="h7 ttu">Сокращенное наименование</span>
+		ООО "Эталон";
+	</p>
+	<p class="distribution-requisites__text p2">
+		<span class="h7 ttu">Фактический адрес</span>
+		115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202
+	</p>
+	<p class="distribution-requisites__text p2">
+		<span class="h7 ttu">Юридический адрес</span>
+		115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202
+	</p>
+	<p class="distribution-requisites__text p2">
+		<span class="h7 ttu">Телефон</span>
+		<a href="tel:+74952329779">+7 (495) 232-97-79</a>
+	</p>
+	<p class="distribution-requisites__text p2">
+		<span class="h7 ttu">Факс</span>
+		<a href="tel:+74952329779">+7 (495) 232-97-79</a>
+	</p>
+	<p class="distribution-requisites__text _requisites p2">
+		<span class="h7 ttu">Остальное</span>
+		ИНН: 7731457483<br>
+		КПП: 770501001<br>
+		ОГРН: 1137746953189<br>
+		ОКПО: 18779320<br>
+		ОКВЭД: 46.90<br>
+		Банк: ООО &laquo;АТБ&raquo; Банк г Москва<br>
+		Р/сч.&nbsp;в&nbsp;руб.: 40702810900000001563<br>
+		К/сч.: 30101810145250000097<br>
+		БИК: 044525097
+	</p>
+</div>

@@ -6,7 +6,7 @@
 <section class="community-advantages _how" data-community-advantages data-background="#8b4192">
 	<div class="community-advantages__container container">
 		<div class="community-advantages__title-wrapper">
-			<h2 class="community-advantages__title h4 ttu" data-animation="words">Как стать участником</h2>
+			<h2 class="community-advantages__title h4 ttu" data-animation="words">Как стать участни&shy;ком</h2>
 		</div>
 		<div class="community-advantages__wrapper" data-community-advantages-wrapper="top">
 			<ul class="community-advantages__list s2">

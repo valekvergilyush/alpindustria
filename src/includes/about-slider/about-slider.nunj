@@ -2,12 +2,12 @@
 
 <div class="about-slider" data-about-slider>
 	<div class="about-slider__section-wrapper">
-		<section class="about-slider__section" data-about-slide>
+		<section class="about-slider__section" data-slide>
 			<div class="about-slider__col _first">
 				<h1 class="about-slider__title h2 ttu _anim-first" data-animation="words">
 					<span class="word-wrapper"><span class="word">О нас</span></span>
 				</h1>
-				<p class="about-slider__text _first p1" data-animation="fade-right">Смысл нашей работы &mdash; сделать так, чтобы вы&nbsp;осмелились на&nbsp;вершину своей мечты.</p>
+				<p class="about-slider__text _first p1 _anim-first" data-animation="fade-right">Смысл нашей работы &mdash; сделать так, чтобы вы&nbsp;осмелились на&nbsp;вершину своей мечты.</p>
 			</div>
 			<div class="about-slider__col _full-height _second">
 				<div class="about-slider__logo-placeholder" data-lottie-autoplay-trigger></div>
