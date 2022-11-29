@@ -3,8 +3,7 @@
 {% set tabsList = [
 	{ id: 'application-form', text: 'Стать<br> дистрибьютором', active: true },
 	{ id: 'contacts', text: 'Контакты' },
-	{ id: 'requisites', text: 'Реквизиты' },
-	{ id: 'faq', text: 'FAQ' }
+	{ id: 'requisites', text: 'Реквизиты' }
 ] %}
 
 <section class="community-tabs _distribution" data-community-tab>
@@ -31,9 +30,6 @@
 		</section>
 		<section class="community-tabs__section _requisites" aria-labelledby="requisites" data-tab-section="requisites">
 			{% include "../distribution-requisites/distribution-requisites.nunj" %}
-		</section>
-		<section class="community-tabs__section _faq" aria-labelledby="faq" data-tab-section="faq">
-			{% include "../distribution-faq/distribution-faq.nunj" %}
 		</section>
 	</div>
 </section>
