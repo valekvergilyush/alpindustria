@@ -2,9 +2,9 @@
 	{ text: 'Магазин', url: '/catalog/' },
 	{ text: 'Сообщество', url: '/community/' },
 	{ text: 'Адреса', url: '/addresses.html' },
-	{ text: 'Услуги', url: '#' },
+	{ text: 'Услуги', url: '/services.html' },
 	{ text: 'Новости', url: '/news.html' },
-	{ text: 'О нас', url: '#' }
+	{ text: 'О нас', url: '/about.html' }
 ] %}
 
 <div class="catalog-accordion _index">

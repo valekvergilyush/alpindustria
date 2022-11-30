@@ -129,7 +129,8 @@
 		z-index: 1;
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(4);
+		gap: rem(8);
+		justify-content: center;
 		transition: color $default-transition-duration $default-transition-function;
 		pointer-events: none;
 		@media (max-width: $laptop-lg) {

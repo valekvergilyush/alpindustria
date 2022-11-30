@@ -33,7 +33,7 @@
 	<ul class="category-list__list">
 		{% for item in categoryList %}
 			<li class="category-list__item{% if item.className %} {{ item.className }}{% endif %}">
-				<a class="category-list__link" href="#">
+				<a class="category-list__link" href="/catalog/">
 					<span class="category-list__link-name h5 ttu">{{ item.name }}</span>
 					<img class="category-list__link-img" src="{{ item.src }}"{% if item.srcset %} srcset="{{ item.srcset }}"{% endif %} alt="" aria-hidden="true">
 				</a>
