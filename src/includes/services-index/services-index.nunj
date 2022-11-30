@@ -3,13 +3,13 @@
 {% set links = [
 	{
 		text: 'Прокат',
-		url: '#',
+		url: '/rent.html',
 		tags: ['Снаряжение', 'Сноуборды', 'Лыжи', 'Одежда'],
 		className: '_violet _rent'
 	},
 	{
 		text: 'Сервисы',
-		url: '#',
+		url: '/services.html',
 		tags: ['Бутфитинг', 'Ски-сервис', 'Ремонт', 'Заправка баллонов'],
 		className: '_green'
 	}
