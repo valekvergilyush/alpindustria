@@ -207,6 +207,9 @@
 			display: none;
 		}
 	}
+	&__submit {
+		margin-left: auto;
+	}
 	&__input {
 		&._file {
 			margin-top: rem(15);
@@ -263,6 +266,19 @@
 			#{$this}__fields + & {
 				margin-top: 9px;
 			}
+		}
+	}
+	&__terms {
+		display: none;
+		margin-bottom: rem(16);
+		font-family: var(--font-family-suisse);
+		font-size: rem(12);
+		line-height: rem(16);
+		text-decoration-line: underline;
+		color: var(--gray-dark);
+		opacity: 0.4;
+		@media (max-width: $mobile-lg) {
+			display: inline-block;
 		}
 	}
 }
