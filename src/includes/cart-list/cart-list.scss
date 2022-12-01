@@ -1,4 +1,12 @@
 .cart-list {
+	._empty & {
+		&__number {
+			margin-bottom: rem(128);
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 64px;
+			}
+		}
+	}
 	&__number {
 		margin-bottom: rem(48);
 		font-size: rem(16);
