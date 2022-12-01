@@ -8,25 +8,29 @@
 		type: 'phone',
 		id: 'personal-data-phone',
 		value: '+7 (999) 000 00 00',
-		name: 'Телефон'
+		name: 'Телефон',
+		className: '_gray'
 	}) }}
 	{{ input({
 		type: 'email',
 		id: 'personal-data-email',
 		value: 'hello.aplindustria@gmai.com',
-		name: 'Почта'
+		name: 'Почта',
+		className: '_gray'
 	}) }}
 	{{ input({
 		type: 'text',
 		id: 'personal-data-name',
 		name: 'Полное имя',
-		value: 'Иван Федорович Крузенштерн'
+		value: 'Иван Федорович Крузенштерн',
+		className: '_gray'
 	}) }}
 	{{ inputDate({
 		name: 'Дата',
 		label: 'Дата рождения',
 		id: 'personal-data-birthday',
-		value: '19/10/22'
+		value: '19/10/22',
+		className: '_gray'
 	}) }}
 	<div class="personal-data-form__btns">
 		{{ button({

@@ -7,25 +7,25 @@
 	{{ input({
 		type: 'text',
 		id: 'discount-create-form-name',
-		className: 'discount-create-form__input',
+		className: 'discount-create-form__input _gray',
 		name: 'Имя'
 	}) }}
 	{{ input({
 		type: 'text',
 		id: 'discount-create-form-surname',
-		className: 'discount-create-form__input',
+		className: 'discount-create-form__input _gray',
 		name: 'Фамилия'
 	}) }}
 	{{ input({
 		type: 'email',
 		id: 'discount-create-form-email',
-		className: 'discount-create-form__input',
+		className: 'discount-create-form__input _gray',
 		name: 'Почта'
 	}) }}
 	{{ input({
 		type: 'tel',
 		id: 'discount-create-form-tel',
-		className: 'discount-create-form__input _tel',
+		className: 'discount-create-form__input _gray _tel',
 		name: 'Телефон'
 	}) }}
 	{{ button({
@@ -33,13 +33,13 @@
 		text: 'Подтвердить по SMS',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
-		className: 'discount-create-form__send-sms _arrow-xs p4'
+		className: 'discount-create-form__send-sms _gray _arrow-xs p4'
 	}) }}
 	<div class="discount-create-form__sms-code">
 		{{ input({
 			type: 'text',
 			id: 'discount-create-form-tel-code',
-			className: 'discount-create-form__input',
+			className: 'discount-create-form__input _gray',
 			name: 'Код из СМС',
 			inputAttr: 'inputmode="numeric"'
 		}) }}
@@ -61,13 +61,13 @@
 	{{ input({
 		type: 'text',
 		id: 'discount-create-form-patronymic',
-		className: 'discount-create-form__input',
+		className: 'discount-create-form__input _gray',
 		name: 'Отчество'
 	}) }}
 	{{ input({
 		type: 'text',
 		id: 'discount-create-form-birthday',
-		className: 'discount-create-form__input',
+		className: 'discount-create-form__input _gray',
 		name: 'Дата рождения'
 	}) }}
 	<div class="discount-create-form__radios">

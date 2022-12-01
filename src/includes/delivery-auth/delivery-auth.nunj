@@ -13,7 +13,7 @@
 		{{ input({
 			type: 'tel',
 			id: 'delivery-auth-tel',
-			className: 'delivery-auth__input',
+			className: 'delivery-auth__input _gray',
 			name: 'Телефон'
 		}) }}
 		{{ button({

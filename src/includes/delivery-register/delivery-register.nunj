@@ -9,13 +9,13 @@
 			type: text,
 			id: 'delivery-register-name',
 			name: 'Имя',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
 			type: text,
 			id: 'delivery-register-surname',
 			name: 'Фамилия',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input _gray'
 		}) }}
 	</div>
 	<div class="delivery-register__fields">
@@ -23,13 +23,13 @@
 			type: email,
 			id: 'delivery-register-email',
 			name: 'Почта',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
 			type: tel,
 			id: 'delivery-register-tel',
 			name: 'Телефон',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input _gray'
 		}) }}
 	</div>
 	{{ checkbox({

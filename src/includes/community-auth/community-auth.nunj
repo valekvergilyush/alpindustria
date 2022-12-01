@@ -9,7 +9,7 @@
 			{{ input({
 				type: 'tel',
 				id: 'community-auth-tel',
-				className: 'community-auth__input',
+				className: 'community-auth__input _gray',
 				name: 'Телефон'
 			}) }}
 			{{ button({

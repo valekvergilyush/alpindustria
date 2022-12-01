@@ -38,13 +38,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-name',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Имя'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-surname',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Фамилия'
 			}) }}
 		</div>
@@ -52,13 +52,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-city',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Город'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-birthday',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Дата рождения'
 			}) }}
 		</div>
@@ -66,13 +66,13 @@
 			{{ input({
 				type: 'tel',
 				id: 'application-form-tel',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Телефон'
 			}) }}
 			{{ input({
 				type: 'email',
 				id: 'application-form-email',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Почта'
 			}) }}
 		</div>
@@ -80,7 +80,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-about',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Расскажите о себе'
 			}) }}
 		</div>
@@ -88,7 +88,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-exp',
-				className: 'application-form__input _comment',
+				className: 'application-form__input _comment _gray',
 				name: 'Уже проходили занятия?',
 				label: 'Уже проходили занятия в нашем Горном клубе? Напишите об этом'
 			}) }}
