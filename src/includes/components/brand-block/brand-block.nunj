@@ -1,10 +1,12 @@
 {% macro brandBlock(props) %}
 	<section class="brand-block {% if props.className %}{{ props.className }} {% endif %}">
+		<div class="brand-block__line _x" data-animation-line></div>
 		<div class="brand-block__content">
 			{% if props.title %}
 				<h2 class="brand-block__title h5 ttu">{{ props.title }}</h2>
 			{% endif %}
 			<p class="brand-block__text {% if props.textClass %}{{ props.textClass }} {% endif %}">{{ props.text }}</p>
+			<div class="brand-block__line _y" data-animation-line></div>
 		</div>
 		<div class="brand-block__img-wrap">
 			<div class="brand-block__img">

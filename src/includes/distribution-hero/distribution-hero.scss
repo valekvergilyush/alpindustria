@@ -31,18 +31,25 @@
 	&__title {
 		max-width: rem(800);
 		margin-top: var(--padding-y);
-		padding-top: 0.07em;
+		@media (max-width: $laptop-lg) {
+			font-size: 92px;
+		}
 		@media (max-width: $laptop-md) {
 			font-size: 80px;
 		}
 		@media (max-width: $laptop) {
-			line-height: 1.3;
+			font-size: 64px;
+			line-height: 1.15;
 		}
 		@media (max-width: $laptop-sm) {
 			max-width: 560px;
 		}
+		@media (max-width: $tablet) {
+			margin-bottom: 165px;
+		}
 		@media (max-width: $mobile-lg) {
-			font-size: 54px;
+			margin-bottom: 172px;
+			font-size: 38px;
 		}
 	}
 	&__text {
@@ -51,6 +58,9 @@
 		margin-bottom: var(--padding-y);
 		br {
 			display: none;
+		}
+		@media (max-width: $laptop-lg) {
+			max-width: 640px;
 		}
 		@media (max-width: $laptop-md) {
 			max-width: 410px;
@@ -66,6 +76,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 0;
+			font-size: 16px;
 			br {
 				display: none;
 			}

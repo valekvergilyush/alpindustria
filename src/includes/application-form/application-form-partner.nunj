@@ -123,7 +123,7 @@
 		}) }}
 
 		<div class="application-form__bottom">
-			<a class="application-form__bottom-text p3 _link" href="#">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;условиями оферты</a>
+			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 			{{ button({
 				type: 'submit',
 				text: 'Подать заявку',

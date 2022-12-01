@@ -3,15 +3,15 @@
 {% set brandList = [
 	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
 	{ logoSrc: '/assets/images/distribution/brands/snow-peak.svg' },
-	{ logoSrc: '/assets/images/distribution/brands/thermarest.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/thermarest.png', srcset: '/assets/images/distribution/brands/thermarest@2x.png 2x' },
 	{ logoSrc: '/assets/images/distribution/brands/msr.svg' },
 	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
 	{ logoSrc: '/assets/images/distribution/brands/berghaus.svg' },
-	{ logoSrc: '/assets/images/distribution/brands/arcteryx.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/arcteryx.png', srcset: '/assets/images/distribution/brands/arcteryx@2x.png 2x' },
 	{ logoSrc: '/assets/images/distribution/brands/the-north-face.svg' },
 	{ logoSrc: '/assets/images/distribution/brands/pack-towl.svg' },
 	{ logoSrc: '/assets/images/distribution/brands/snow-peak.svg' },
-	{ logoSrc: '/assets/images/distribution/brands/thermarest.svg' },
+	{ logoSrc: '/assets/images/distribution/brands/thermarest.png', srcset: '/assets/images/distribution/brands/thermarest@2x.png 2x' },
 	{ logoSrc: '/assets/images/distribution/brands/msr.svg' }
 ] %}
 
@@ -26,7 +26,7 @@
 						<p class="distribution-brands__item-title h6 ttu">Berghaus &mdash; одежда, обувь и&nbsp;снаряжение для активного отдыха</p>
 						<div class="distribution-brands__row">
 							<p class="distribution-brands__item-country">Великобритания</p>
-							<a class="distribution-brands__item-site" href="berghaus.com" target="_blank" rel="nofollow noopener">berghaus.com</a>
+							<a class="distribution-brands__item-site" href="https://www.berghaus.com" target="_blank" rel="nofollow noopener">berghaus.com</a>
 						</div>
 						<p class="distribution-brands__item-text p3">Бренд, который начал производить одежду еще в&nbsp;60-е &mdash; сначала для британских экстремалов, а&nbsp;потом и&nbsp;для всего мира. Сегодня Berghaus позиционирует себя как бренд одежды для самых сложных условий на&nbsp;Земле.<br> Гамаши &laquo;Йети&raquo;, пуховики Ramche и&nbsp;одежда с&nbsp;мембраной Gore-Tex &mdash; настоящие бестселлеры бренда, которые выбирают туристы и&nbsp;альпинисты по&nbsp;всему миру.</p>
 					</div>
@@ -40,13 +40,20 @@
 						<img class="distribution-brands__manager-photo" src="/assets/images/distribution/brands/dmitry.jpg" srcset="/assets/images/distribution/brands/dmitry@2x.jpg 2x" width="280" height="280" alt="">
 					</div>
 				</div>
-				<img
-					class="team__item-photo distribution-brands__item-logo"
-					src="{{ item.logoSrc }}"
-					width="432"
-					height="432"
-					alt=""
-				>
+				{% if item.scrset %}
+					<img
+						class="team__item-photo distribution-brands__item-logo"
+						src="{{ item.logoSrc }}"
+						srcset="{{ item.srcset }}"
+						alt=""
+					>
+				{% else %}
+					<img
+						class="team__item-photo distribution-brands__item-logo"
+						src="{{ item.logoSrc }}"
+						alt=""
+					>
+			{% endif %}
 			</li>
 		{% endfor %}
 	</ul>

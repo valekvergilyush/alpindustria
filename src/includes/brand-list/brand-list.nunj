@@ -38,7 +38,7 @@
 	<ul class="brand-list__list">
 		{% for item in brandList %}
 			<li class="brand-list__item{% if item.className %} {{ item.className }}{% endif %}">
-				<a class="brand-list__link" href="#">
+				<a class="brand-list__link" href="/brand.html">
 					<img class="brand-list__link-img" src="{{ item.src }}"{% if item.srcset %} srcset="{{ item.srcset }}"{% endif %} width="200" alt="{{ item.name }}">
 				</a>
 			</li>

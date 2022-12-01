@@ -20,9 +20,24 @@
 	}
 	@media (max-width: $laptop-lg) {
 		--padding-y: 96px;
+		&._distribution {
+			#{$this}__tabs {
+				padding-top: 108px;
+				row-gap: 36px;
+			}
+			#{$this}__tabs-btn {
+				letter-spacing: 0;
+			}
+		}
 	}
 	@media (max-width: $laptop) {
 		--padding-y: 75px;
+		&._distribution {
+			#{$this}__tabs {
+				padding-top: 73px;
+				row-gap: 31px;
+			}
+		}
 	}
 	@media (max-width: $laptop-sm) {
 		display: flex;
@@ -49,6 +64,20 @@
 				}
 			}
 		}
+		&._distribution {
+			#{$this}__tabs-btn {
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+	@media (max-width: $tablet) {
+		&._distribution {
+			&._active #{$this}__tabs {
+				padding-top: 84px;
+			}
+		}
 	}
 	@media (max-width: $mobile-lg) {
 		&._mobile {
@@ -65,6 +94,11 @@
 					padding: 0;
 					font-size: 22px;
 				}
+			}
+		}
+		&._distribution {
+			&._active #{$this}__tabs {
+				padding-top: 50px;
 			}
 		}
 	}
@@ -120,7 +154,6 @@
 			flex-shrink: 0;
 			width: var(--arrow-size);
 			height: var(--arrow-size);
-			margin-top: 0.1em;
 			opacity: 0;
 			pointer-events: none;
 		}
@@ -194,6 +227,17 @@
 		&._contacts,
 		&._requisites {
 			padding-block: rem(64);
+		}
+		._distribution & {
+			box-sizing: border-box;
+			min-height: var(--100vh);
+			&._contacts,
+			&._requisites {
+				padding-top: rem(143);
+				@media (max-width: $laptop-lg) {
+					padding-top: var(--padding-y);
+				}
+			}
 		}
 		&._profile {
 			padding-block: var(--container-padding);

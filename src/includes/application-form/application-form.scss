@@ -5,19 +5,11 @@
 			margin-bottom: rem(48);
 			&._brand {
 				margin-top: rem(48);
-				margin-bottom: rem(24);
+				margin-bottom: rem(20);
 			}
-		}
-		#{$this}__bottom-text {
-			max-width: none;
-			margin-bottom: rem(56);
-			opacity: 0.4;
 		}
 		#{$this}__email-checkbox {
 			margin-bottom: rem(48);
-		}
-		#{$this}__bottom {
-			justify-content: flex-end;
 		}
 		#{$this}__show-more-btn {
 			margin-bottom: 24px;
@@ -26,6 +18,35 @@
 		@media (max-width: $laptop-lg) {
 			#{$this}__title {
 				margin-bottom: 24px;
+				font-size: 44px;
+				letter-spacing: 0;
+				&._brand {
+					margin-bottom: 24px;
+				}
+			}
+			#{$this}__fields {
+				margin-bottom: 16px;
+			}
+			#{$this}__input._file {
+				margin-top: 24px;
+				margin-bottom: 36px;
+			}
+			#{$this}__hobbies {
+				margin-bottom: 49px;
+			}
+		}
+		@media (max-width: $laptop) {
+			#{$this}__title {
+				font-size: 24px;
+				&._brand {
+					margin-top: 50px;
+				}
+			}
+			#{$this}__form-title {
+				margin-bottom: 13px;
+			}
+			#{$this}__input._file {
+				margin-top: 18px;
 			}
 		}
 		@media (max-width: $laptop-sm) {
@@ -36,16 +57,37 @@
 				}
 			}
 		}
+		@media (max-width: $tablet) {
+			#{$this}__title {
+				&._brand {
+					font-size: 16px;
+				}
+			}
+			#{$this}__hobbies {
+				margin-bottom: 32px;
+			}
+			#{$this}__email-checkbox {
+				margin-bottom: 32px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			#{$this}__title {
 				font-size: 18px;
 				&._brand {
-					margin-top: 24px;
+					margin-top: 10px;
+					margin-bottom: 21px;
+					font-size: 14px;
 				}
+			}
+			#{$this}__form-title {
+				margin-bottom: 4px;
 			}
 			#{$this}__fields {
 				flex-direction: column;
 				margin-bottom: 0;
+				> * {
+					margin-bottom: 14px;
+				}
 			}
 			#{$this}__hobbies {
 				margin-bottom: 24px;
@@ -53,9 +95,12 @@
 			#{$this}__email-checkbox {
 				margin-bottom: 24px;
 			}
-			#{$this}__bottom-text {
-				display: block;
-				margin-bottom: 16px;
+			#{$this}__show-more-btn._show-more {
+				--height: 88px;
+				margin-bottom: 24px;
+			}
+			#{$this}__input._file {
+				margin-top: 10px;
 			}
 		}
 	}
@@ -151,8 +196,12 @@
 	}
 	&__bottom-text {
 		max-width: rem(300);
-		&._link {
-			text-decoration: underline;
+		a {
+			text-decoration: none;
+			&:hover {
+				color: var(--white);
+				text-decoration: underline;
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			display: none;
@@ -204,9 +253,16 @@
 		}
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 16px;
+			#{$this}__fields + & {
+				margin-top: 24px;
+				margin-bottom: 24px;
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 8px;
+			#{$this}__fields + & {
+				margin-top: 9px;
+			}
 		}
 	}
 }

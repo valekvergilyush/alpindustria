@@ -5,7 +5,7 @@
 		title: 'Новое поступление',
 		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
 		tag: 'Статья',
-		url: '#',
+		url: '/news.html',
 		bgSrc: '/assets/images/product/banner-bg.jpg',
 		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
 	},
@@ -13,7 +13,7 @@
 		title: 'Новое поступление',
 		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
 		tag: 'Статья',
-		url: '#',
+		url: '/news.html',
 		bgSrc: '/assets/images/product/banner-bg.jpg',
 		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
 	},
@@ -21,7 +21,7 @@
 		title: 'Новое поступление',
 		text: 'Восхождение на Ама-Даблам потребовало не только интенсивных тренировок, но и очень качественного подбора снаряжения.',
 		tag: 'Статья',
-		url: '#',
+		url: '/news.html',
 		bgSrc: '/assets/images/product/banner-bg.jpg',
 		bgSrcset: '/assets/images/product/banner-bg@2x.jpg 2x'
 	}

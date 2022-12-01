@@ -3,6 +3,7 @@
 	padding-top: var(--padding);
 	padding-bottom: var(--padding);
 	background-color: var(--gray-light);
+	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--padding: 120px;
 	}
