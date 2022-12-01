@@ -1,29 +1,29 @@
-<div class="catalog-accordion _services">
-	<section class="catalog-accordion__section" data-accordion-section>
+<div class="catalog-accordion _services" data-services>
+	<section class="catalog-accordion__section" data-accordion-section="replacement">
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Замена газовых баллонов</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
 		</div>
 	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
+	<section class="catalog-accordion__section" data-accordion-section="battery">
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Прием батареек</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
 		</div>
 	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
+	<section class="catalog-accordion__section" data-accordion-section="filling">
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Заправка баллонов</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
 		</div>
 	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
+	<section class="catalog-accordion__section" data-accordion-section="kinesiotaping">
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Кинезиотейпирование</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
 		</div>
 	</section>
-	<section class="catalog-accordion__section" data-accordion-section>
+	<section class="catalog-accordion__section" data-accordion-section="sharpening">
 		<h2 class="catalog-accordion__title h3 ttu" data-accordion-title><span class="catalog-accordion__title-text" data-accordion-title-text>Заточка</span></h2>
 		<div class="catalog-accordion__inner" data-accordion-content>
 			{% include "../services-content/services-content.nunj" %}
