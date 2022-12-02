@@ -58,15 +58,17 @@ class CommunityAdvantages {
 
 					this.startMarginBottom = parseFloat(getComputedStyle(title).marginBottom);
 					this.lastScrollY = window.scrollY;
-					this._onWindowScroll = () => {
-						const deltaY = window.scrollY - this.lastScrollY;
-						let currentMarginBottom = this.startMarginBottom - deltaY;
-						currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
+					if (!this._onWindowScroll) {
+						this._onWindowScroll = () => {
+							const deltaY = window.scrollY - this.lastScrollY;
+							let currentMarginBottom = this.startMarginBottom - deltaY;
+							currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
 
-						title.style.marginBottom = `${currentMarginBottom}px`;
-					};
-					this._onWindowScroll = this._onWindowScroll.bind(this);
-					window.addEventListener('scroll', this._onWindowScroll);
+							title.style.marginBottom = `${currentMarginBottom}px`;
+						};
+						this._onWindowScroll = this._onWindowScroll.bind(this);
+						window.addEventListener('scroll', this._onWindowScroll);
+					}
 				},
 			});
 			container.scrollWrapper = gsap.set(scrollWrapper, {
