@@ -13,19 +13,21 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		width: var(--width);
 		min-height: var(--100vh);
 		box-sizing: border-box;
 		margin: 0;
 		padding: rem(24);
+		padding-top: 30vh;
 		border-bottom: 1px solid var(--blue-dark);
 		background-color: var(--gray-light);
 		transition: all $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop-sm) {
+			justify-content: center;
 			width: auto;
 			min-height: 480px;
+			padding-top: rem(24);
 		}
 		@media (max-width: $mobile-lg) {
 			min-height: 370px;
