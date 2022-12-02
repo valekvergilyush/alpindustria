@@ -190,6 +190,11 @@
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
 		}
+		&[data-popup='cart-empty'] {
+			@media (max-width: $tablet) {
+				min-height: auto;
+			}
+		}
 		&[data-popup='cart'] {
 			@media (max-width: $laptop-sm) {
 				--popup-padding: 32px;
