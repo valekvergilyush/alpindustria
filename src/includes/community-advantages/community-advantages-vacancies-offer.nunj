@@ -9,7 +9,7 @@
 <section class="community-advantages _partner _vacancies-offer" data-community-advantages data-background="#03836E">
 	<div class="community-advantages__container container">
 		<div class="community-advantages__title-wrapper">
-			<h2 class="community-advantages__title h4 ttu" data-animation="words">
+			<h2 class="community-advantages__title h4 ttu" data-community-advantages-title="top" data-animation="words">
 				Мы предлагаем
 			</h2>
 		</div>
