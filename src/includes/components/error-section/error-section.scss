@@ -63,6 +63,7 @@
 	&__title {
 		grid-area: title;
 		max-width: var(--title-width);
+		line-height: rem(120);
 		@media (max-width: $laptop-lg) {
 			font-size: 92px;
 			line-height: 92px;
