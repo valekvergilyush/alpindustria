@@ -25,7 +25,6 @@ class Cart {
 		this.payButton = this.container.querySelector('[data-cart-pay]');
 		this.shopButton = this.container.querySelector('[data-cart-shop]');
 		this.rentButton = this.container.querySelector('[data-cart-rent]');
-		console.log(this.shopButton);
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -62,12 +61,10 @@ class Cart {
 		this.openPay();
 	}
 	onShopButtonClick() {
-		console.log('shop');
 		this.container.classList.remove('_rent');
 		this.container.classList.add('_shop');
 	}
 	onRentButtonClick() {
-		console.log('rent');
 		this.container.classList.remove('_shop');
 		this.container.classList.add('_rent');
 	}
