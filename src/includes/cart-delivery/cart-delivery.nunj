@@ -1,4 +1,4 @@
-<div class="cart__delivery-content cart-delivery">
+<div class="cart__delivery-content cart-delivery _shop">
 	{% include "../delivery-auth/delivery-auth.nunj" %}
 	{% include "../delivery-register/delivery-register.nunj" %}
 	{% include "../delivery-address/delivery-address.nunj" %}

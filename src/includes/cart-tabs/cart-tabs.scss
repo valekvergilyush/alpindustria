@@ -24,6 +24,15 @@
 			font-size: 10px;
 			line-height: 1.6;
 		}
+		.cart._shop &._rent {
+			display: none;
+		}
+		.cart._rent &._shop {
+			display: none;
+		}
+		.cart._rent &._rent {
+			display: block;
+		}
 	}
 	&__price-value {
 		display: inline-block;

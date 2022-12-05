@@ -1,4 +1,4 @@
-<div class="cart__delivery-content cart-delivery _total">
+<div class="cart__delivery-content cart-delivery _total _shop">
 	<table class="cart-delivery__table">
 		<tr>
 			<th>ФИО</th>
