@@ -1,0 +1,19 @@
+{% extends "../templates/index-page-empty-cart.nunj" %}
+
+{% block title %}Главная | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_index' %}
+
+{% block mainContent %}
+	<main class="page__main">
+		{% include "../includes/hero-index/hero-index.nunj" %}
+		{% include "../includes/brand-list/brand-list.nunj" %}
+		{% include "../includes/category-list/category-list.nunj" %}
+		{% include "../includes/address-index/address-index.nunj" %}
+		{% include "../includes/community-index/community-index.nunj" %}
+		{% include "../includes/services-index/services-index.nunj" %}
+		{% include "../includes/tours-index/tours-index.nunj" %}
+		{% include "../includes/news-index/news-index.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion-index.nunj" %}
+	</main>
+{% endblock %}

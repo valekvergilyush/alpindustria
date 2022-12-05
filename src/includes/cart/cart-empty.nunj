@@ -1,0 +1,7 @@
+{% from "../components/button/button.nunj" import button %}
+
+<section class="cart _empty">
+	<h2 class="cart__title h5 ttu">Корзина</h2>
+
+	{% include '../cart-tabs/cart-tabs-empty.nunj' %}
+</section>

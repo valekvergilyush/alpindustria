@@ -45,6 +45,7 @@
 			}
 		}
 		&[data-popup-wrapper='cart'],
+		&[data-popup-wrapper='cart-empty'],
 		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='city-form'],
 		&[data-popup-wrapper='review-form'],
@@ -105,6 +106,12 @@
 				#{$this}__close-button {
 					display: inline-flex;
 				}
+			}
+		}
+		&[data-popup-wrapper='cart-empty'] {
+			min-width: 50%;
+			@media (max-width: $tablet) {
+				min-width: auto;
 			}
 		}
 	}
@@ -178,9 +185,15 @@
 			}
 		}
 		&[data-popup='cart'],
+		&[data-popup='cart-empty'],
 		&[data-popup='cart-services'],
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
+		}
+		&[data-popup='cart-empty'] {
+			@media (max-width: $tablet) {
+				min-height: auto;
+			}
 		}
 		&[data-popup='cart'] {
 			@media (max-width: $laptop-sm) {

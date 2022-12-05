@@ -3,10 +3,14 @@
 	display: flex;
 	height: var(--header-height);
 	color: var(--white);
-	transition: height $fast-transition-duration $default-transition-function,
-		color $fast-transition-duration $default-transition-function,
-		background-color $fast-transition-duration $default-transition-function;
 	box-sizing: border-box;
+	opacity: 0;
+	.is-header-inited & {
+		transition: height $fast-transition-duration $default-transition-function,
+			color $fast-transition-duration $default-transition-function,
+			background-color $fast-transition-duration $default-transition-function;
+		opacity: initial;
+	}
 	&__container {
 		display: flex;
 		align-items: center;

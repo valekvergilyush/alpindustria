@@ -25,6 +25,10 @@
 			"name": "cart",
 			"animation": "RTL"
 		},
+    {
+			"name": "cart-empty",
+			"animation": "RTL"
+		},
 		{
 			"name": "wishlist",
 			"animation": "RTL"
