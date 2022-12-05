@@ -28,6 +28,9 @@ class Header {
 		this.filtersElement = document.querySelector('.page__filters');
 		this.timeline = document.querySelector('[data-timeline]');
 
+		this.onWindowScroll = this.onWindowScroll.bind(this);
+		this.onWindowResize = this.onWindowResize.bind(this);
+
 		if (this.filtersElement) {
 			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
 		}
@@ -36,10 +39,12 @@ class Header {
 		ScrollHelper.onScroll.add(y => this.onWindowScroll(y));
 		ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
 
-		this.onWindowScroll = this.onWindowScroll.bind(this);
-		this.onWindowResize = this.onWindowResize.bind(this);
-
 		window.addEventListener('resize', this.onWindowResize);
+
+		clearTimeout(this.TO);
+		this.TO = setTimeout(() => {
+			HTML_CLASSLIST.add('is-header-inited');
+		}, 200);
 	}
 	_directionChangeController(direction) {
 		this.direction = direction;
@@ -72,6 +77,7 @@ class Header {
 				this.filtersElement.classList.remove(ClassName.FIXED);
 			}
 		}
+		HTML_CLASSLIST.add('is-header-inited');
 	}
 	onWindowResize() {
 		this.headerElementHeight = this.headerElement.offsetHeight;

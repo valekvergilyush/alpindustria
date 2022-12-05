@@ -495,11 +495,16 @@
 		}
 		#{$this}__icon {
 			--size: #{rem(16)};
+			position: relative;
+			top: -0.1em;
 			width: var(--size);
 			height: var(--size);
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+			@media (max-width: $mobile-lg) {
+				margin-left: 8px;
+			}
 		}
 	}
 	&._arrow-s {

@@ -172,7 +172,7 @@
 			--font-size-h4: 44px;
 			padding-top: 0.3em;
 		}
-		@media (max-width: $laptop) {
+		@media (max-width: $laptop-md) {
 			--font-size-h4: 56px;
 			min-height: 97px;
 		}

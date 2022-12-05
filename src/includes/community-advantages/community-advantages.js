@@ -74,6 +74,29 @@ class CommunityAdvantages {
 				pin: true,
 				invalidateOnRefresh: true,
 				scrub: true,
+				onLeave: () => {
+					if (!this._onWindowScroll) {
+						const title = document.querySelector('[data-community-advantages-title="top"]');
+
+						this.lastScrollY = window.scrollY + title.offsetHeight;
+						this.startMarginBottom = parseFloat(getComputedStyle(title).marginBottom);
+
+						this._onWindowScroll = () => {
+							const deltaY = this.lastScrollY - window.scrollY;
+
+							title.style.marginBottom = getComputedStyle(title).marginBottom;
+							title.style.marginTop = 'auto';
+
+							let currentMarginBottom = this.startMarginBottom + deltaY;
+							currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
+
+							title.style.marginBottom = `${currentMarginBottom}px`;
+						};
+
+						this._onWindowScroll = this._onWindowScroll.bind(this);
+						window.addEventListener('scroll', this._onWindowScroll);
+					}
+				},
 			});
 			container.scrollWrapper = gsap.set(scrollWrapper, {
 				y: 0,
@@ -125,8 +148,11 @@ class CommunityAdvantages {
 			container.bgColor.scrollTrigger && container.bgColor.scrollTrigger.kill();
 		}
 
+		window.removeEventListener('scroll', this._onWindowScroll);
+
 		gsap.set(container, { clearProps: true });
 		gsap.set(container.scrollWrapperElement, { clearProps: true });
+		gsap.set('.community-advantages__title', { clearProps: true });
 	}
 }
 

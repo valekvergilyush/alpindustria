@@ -1,0 +1,9 @@
+.page {
+	$this: &;
+	&._vacancies {
+		scrollbar-width: none;
+		@include scrollbar {
+			display: none;
+		}
+	}
+}

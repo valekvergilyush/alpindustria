@@ -3,9 +3,13 @@
 	display: flex;
 	height: var(--filters-height);
 	color: var(--white);
-	transition: height $fast-transition-duration $default-transition-function,
-		color $fast-transition-duration $default-transition-function,
-		background-color $fast-transition-duration $default-transition-function;
+	opacity: 0;
+	.is-header-inited & {
+		opacity: initial;
+		transition: height $fast-transition-duration $default-transition-function,
+			color $fast-transition-duration $default-transition-function,
+			background-color $fast-transition-duration $default-transition-function;
+	}
 	@media (max-width: $mobile-lg) {
 		--offset-height: 34px;
 		position: relative;
@@ -162,6 +166,9 @@
 			width: 100%;
 			height: 1px;
 			background-color: var(--blue-dark);
+		}
+		#{$this}__button {
+			color: var(--blue-dark);
 		}
 		@media (max-width: $mobile-lg) {
 			padding-bottom: 0;

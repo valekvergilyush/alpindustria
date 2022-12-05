@@ -1,0 +1,49 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/button/button-burger.nunj" import buttonBurger %}
+
+{% set userActions = [
+	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"', href: '/profile.html' },
+	{ name: 'Вишлист', className: '_wishlist', icon: 'heart', iconData: 'width="32" height="32"', href: '/wishlists.html' },
+  { name: 'Корзина', className: '_cart', icon: 'cart', iconData: 'width="32" height="32"', attr: 'data-popup-opener="cart-empty"' }
+] %}
+
+<header class="page__header header">
+	<div class="header__container container">
+		<div class="header__left">
+			{{ buttonBurger({ className: 'header__button' }) }}
+		</div>
+		<a href="/" class="header__logo-link" aria-label="На главную">
+			{{ icon({
+				iconName: 'logo-full',
+				className: 'header__logo-icon _full',
+				attr: 'width="244" height="27"'
+			}) }}
+			{{ icon({
+				iconName: 'logo-short',
+				className: 'header__logo-icon _short',
+				attr: 'width="71" height="36"'
+			}) }}
+		</a>
+		<ul class="header__actions">
+			{% for action in userActions %}
+				<li class="header__actions-item {{ action.className }}">
+					<a
+            href="{% if action.href %}{{ action.href }}{% else %}#{% endif  %}"
+            class="header__actions-link {{ action.className }}"
+            aria-label="{{ action.name }}"
+            {% if action.attr %} {{ action.attr }}{% endif %}
+          >
+						{{ icon({
+							iconName: action.icon,
+							attr: action.iconData
+						}) }}
+						{% if action.icon === 'cart' %}
+							<span class="header__cart-number p4">4</span>
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</header>

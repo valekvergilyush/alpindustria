@@ -48,4 +48,13 @@
 		margin-top: auto;
 		margin-left: auto;
 	}
+	&__placeholder {
+		text-align: center;
+	}
+	&__section-text {
+		margin-bottom: rem(20);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 12px;
+		}
+	}
 }

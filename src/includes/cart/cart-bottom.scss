@@ -11,6 +11,10 @@
 	color: var(--white);
 	background-color: var(--blue-dark);
 	min-height: rem(176);
+	._empty & {
+		pointer-events: none;
+		background: rgba($blue-light, 0.6);
+	}
 	@media (max-width: $laptop-lg) {
 		min-height: 134px;
 		padding-top: 38px;
