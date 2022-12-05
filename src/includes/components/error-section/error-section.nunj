@@ -1,0 +1,27 @@
+{% from "../button/button.nunj" import button %}
+{% from "../picture/picture.nunj" import picture %}
+
+{% macro errorSection(props) %}
+	<section class="error-section">
+		<div class="error-section__wrap container">
+			<h1 class="error-section__title h2 ttu">{{ props.title }}</h1>
+			<div class="error-section__text p1">
+				<p>{{ props.text }}</p>
+			</div>
+			{{ button({
+				className: 'error-section__link _arrow-l h5 ttu',
+				text: props.linkName,
+				href: props.linkUrl,
+				icon: 'promo-arrow'
+			}) }}
+		</div>
+		{{ picture({
+			className: 'error-section__img',
+			path: props.img,
+			ext: 'jpg',
+			width: 1728,
+			height: 908,
+			alt: props.title
+		}) }}
+	</section>
+{% endmacro %}

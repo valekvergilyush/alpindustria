@@ -40,13 +40,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-company',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Компания'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-city',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Город'
 			}) }}
 		</div>
@@ -54,7 +54,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-activity',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Сфера деятельности'
 			}) }}
 		</div>
@@ -62,7 +62,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-store-address',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Адрес магазина'
 			}) }}
 		</div>
@@ -72,7 +72,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-name',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Юридическое название компании'
 			}) }}
 		</div>
@@ -80,7 +80,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-address',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Юридический адрес'
 			}) }}
 		</div>
@@ -88,13 +88,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-inn',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'ИНН'
 			}) }}
 		</div>
 
 		{{ inputFile({
-			className: 'application-form__input _file',
+			className: 'application-form__input _file _gray',
 			id: 'application-form-file',
 			name:'Загрузите карточку компании',
 			label:'Загрузите карточку компании',
@@ -106,13 +106,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-fio',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'ФИО'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-job-title',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Должность'
 			}) }}
 		</div>
@@ -120,13 +120,13 @@
 			{{ input({
 				type: 'tel',
 				id: 'application-form-tel',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Телефон'
 			}) }}
 			{{ input({
 				type: 'email',
 				id: 'application-form-email',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Почта'
 			}) }}
 		</div>

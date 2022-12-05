@@ -39,11 +39,11 @@ class Product {
 
 	initInputSlider(block, element) {
 		let scroll = 0;
-		const elemWidth = block.offsetWidth;
-		const maxScroll = block.scrollWidth - elemWidth - this.sliderOffsetGap;
 		const scrollStep = element.step;
 		const nextBtn = block.parentElement.querySelector(element.nextBtn);
 		nextBtn.addEventListener('click', () => {
+			const elemWidth = block.offsetWidth;
+			const maxScroll = block.scrollWidth - elemWidth - this.sliderOffsetGap;
 			if (maxScroll < scroll) {
 				block.scrollTo(0, 0);
 				scroll = 0;

@@ -1,0 +1,122 @@
+.error-section {
+	--text-width: #{rem(694)};
+	--title-width: #{rem(1145)};
+	--min-height: #{rem(908)};
+	position: relative;
+	display: flex;
+	min-height: max(var(--min-height), var(--100vh));
+	background-color: var(--blue-dark);
+	color: var(--white);
+	@media (max-width: $laptop-lg) {
+		--min-height: 760px;
+		--text-width: 636px;
+	}
+	@media (max-width: $laptop-md) {
+		--min-height: 640px;
+		--text-width: 409px;
+	}
+	@media (max-width: $laptop-sm) {
+		--min-height: 996px;
+		--text-width: 533px;
+	}
+	@media (max-width: $mobile-lg) {
+		--min-height: 640px;
+	}
+	&__wrap {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-areas:
+			'title title'
+			'text link';
+		grid-template-columns: 1fr 1fr;
+		align-content: space-between;
+		row-gap: rem(120);
+		column-gap: rem(64);
+		padding-top: rem(143);
+		padding-bottom: rem(89);
+		@media (max-width: $laptop-lg) {
+			padding-top: 150px;
+			padding-bottom: 72px;
+		}
+		@media (max-width: $laptop-md) {
+			row-gap: 64px;
+			padding-top: 120px;
+			padding-bottom: 62px;
+		}
+		@media (max-width: $laptop-sm) {
+			row-gap: 48px;
+			padding-bottom: 56px;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto 1fr;
+			grid-template-areas:
+				'title'
+				'text'
+				'link';
+		}
+		@media (max-width: $mobile-lg) {
+			row-gap: 32px;
+			padding-top: 96px;
+			padding-bottom: 40px;
+		}
+	}
+	&__title {
+		grid-area: title;
+		max-width: var(--title-width);
+		line-height: rem(120);
+		@media (max-width: $laptop-lg) {
+			font-size: 92px;
+			line-height: 92px;
+		}
+		@media (max-width: $laptop-md) {
+			font-size: 80px;
+			line-height: 104px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 38px;
+			line-height: 40px;
+		}
+	}
+	&__text {
+		grid-area: text;
+		align-self: flex-end;
+		max-width: var(--text-width);
+	}
+	&__link {
+		grid-area: link;
+		align-self: flex-end;
+		justify-self: flex-end;
+		&._arrow-l .button__icon {
+			--size: #{rem(64)};
+			margin-left: rem(40);
+			fill: transparent;
+			@media (max-width: $laptop-md) {
+				--size: 40px;
+				margin-left: 32px;
+			}
+			@media (max-width: $mobile-lg) {
+				--size: 32px;
+				margin-left: 24px;
+				fill: currentColor;
+			}
+		}
+		& .button__text {
+			@media (max-width: $laptop-lg) {
+				align-items: flex-end;
+			}
+			@media (max-width: $laptop-md) {
+				margin-bottom: -8px;
+			}
+		}
+	}
+	&__img {
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

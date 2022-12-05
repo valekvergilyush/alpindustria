@@ -1,11 +1,26 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set addressLinks = [
-	'Ски-сервис',
-	'Заточка ледорубов и кошек',
-	'Прокат снаряжения',
-	'Тест-центр часов',
-	'Приём батареек'
+	{
+		name: 'Ски-сервис',
+		url: '/services.html'
+	},
+	{
+		name: 'Заточка ледорубов и кошек',
+		url: '/services.html#sharpening'
+	},
+	{
+		name: 'Прокат снаряжения',
+		url: '/rent.html'
+	},
+	{
+		name: 'Тест-центр часов',
+		url: '/rent.html'
+	},
+	{
+		name: 'Приём батареек',
+		url: '/services.html#battery'
+	}
 ] %}
 
 <div class="addresses__shop addresses-shop" data-shop-item>
@@ -42,8 +57,8 @@
 				<p class="h6 ttu">Cервисы</p>
 				<div class="addresses-shop__block _3">
 					{% for item in addressLinks %}
-						<a href="#" class="addresses-shop__arrow h7 ttu">
-							{{ item }}
+						<a href="{{ item.url }}" class="addresses-shop__arrow h7 ttu">
+							{{ item.name }}
 							{{ icon({
 								iconName: 'promo-arrow',
 								className: 'addresses-shop__arrow-icon',

@@ -41,13 +41,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-name',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Имя'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-surname',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Фамилия'
 			}) }}
 		</div>
@@ -55,13 +55,13 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-city',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Город'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-birthday',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Дата рождения'
 			}) }}
 		</div>
@@ -69,13 +69,13 @@
 			{{ input({
 				type: 'tel',
 				id: 'application-form-tel',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Телефон'
 			}) }}
 			{{ input({
 				type: 'email',
 				id: 'application-form-email',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Почта'
 			}) }}
 		</div>
@@ -83,7 +83,7 @@
 			{{ input({
 				type: 'text',
 				id: 'application-form-about',
-				className: 'application-form__input',
+				className: 'application-form__input _gray',
 				name: 'Расскажите о себе'
 			}) }}
 		</div>
@@ -113,13 +113,13 @@
 			text: 'Я хочу получать информационную рассылку о новых вакансиях',
 			checked: true
 		}) }}
+		<a href="#" class="application-form__terms">Нажимая "оформить заказ", вы соглашаетесь с&nbsp;условиями&nbsp;оферты</a>
 		{{ button({
 			className: 'application-form__show-more-btn _show-more',
 			text: 'Показать еще',
 			icon: 'plus-circle',
 			iconData: 'width="24" height="24"'
 		}) }}
-
 		<div class="application-form__bottom">
 			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 			{{ button({

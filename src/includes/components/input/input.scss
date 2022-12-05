@@ -56,6 +56,12 @@
 		&:-webkit-autofill:active {
 			transition: background-color 600000s 0s, color 600000s 0s;
 		}
+		&:autofill {
+			box-shadow: 0 0 0 40px var(--white) inset !important;
+			#{$this}._gray & {
+				box-shadow: 0 0 0 40px var(--gray-light) inset !important;
+			}
+		}
 	}
 	&__words-counter {
 		margin-top: rem(8);

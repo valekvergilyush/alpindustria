@@ -23,14 +23,20 @@ class Cart {
 		this.deliveryOpener = this.container.querySelector('[data-cart-delivery-opener]');
 		this.backButtons = this.container.querySelectorAll('[data-cart-back]');
 		this.payButton = this.container.querySelector('[data-cart-pay]');
+		this.shopButton = this.container.querySelector('[data-cart-shop]');
+		this.rentButton = this.container.querySelector('[data-cart-rent]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
 		this.onPayButtonClick = this.onPayButtonClick.bind(this);
+		this.onShopButtonClick = this.onShopButtonClick.bind(this);
+		this.onRentButtonClick = this.onRentButtonClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
 		this.backButtons.forEach(button => button.addEventListener('click', this.onBackButtonClick));
+		this.shopButton.addEventListener('click', this.onShopButtonClick);
+		this.rentButton.addEventListener('click', this.onRentButtonClick);
 	}
 	onSubmitButtonClick(evt) {
 		evt.preventDefault();
@@ -53,6 +59,14 @@ class Cart {
 		evt.preventDefault();
 
 		this.openPay();
+	}
+	onShopButtonClick() {
+		this.container.classList.remove('_rent');
+		this.container.classList.add('_shop');
+	}
+	onRentButtonClick() {
+		this.container.classList.remove('_shop');
+		this.container.classList.add('_rent');
 	}
 	openDelivery() {
 		this.popupWrapper.classList.add(ClassName.ANIMATION);

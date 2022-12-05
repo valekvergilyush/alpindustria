@@ -1,6 +1,6 @@
 {% set cartTabs = [
-	{ id: 'shop', name: 'Магазин', isSelected: true, tabindex: '0' },
-	{ id: 'rental', name: 'Прокат', tabindex: '-1' }
+	{ id: 'shop', name: 'Магазин', isSelected: true, tabindex: '0', attr: 'data-cart-shop' },
+	{ id: 'rental', name: 'Прокат', tabindex: '-1', attr: 'data-cart-rent' }
 ]
 %}
 
@@ -8,7 +8,15 @@
 	<ul class="tabs__tab-list" role="tablist">
 		{% for item in cartTabs %}
 			<li class="tabs__tab-item">
-				<button class="tabs__trigger{% if item.isSelected %} _selected{% endif %}" id="{{ item.id }}" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="{{ item.tabindex }}">
+				<button
+				class="tabs__trigger{% if item.isSelected %} _selected{% endif %}"
+				id="{{ item.id }}"
+				role="tab"
+				type="button"
+				data-tab-trigger
+				aria-selected="true"
+				tabindex="{{ item.tabindex }}"
+				{% if item.attr %}{{ item.attr }}{% endif %}>
 					{{ item.name }}
 				</button>
 			</li>
@@ -21,7 +29,15 @@
 		{% include '../cart-list/cart-list-no-photo.nunj' %}
 	</section>
 	<div class="cart-bottom">
-		<p class="cart-tabs__price p3">
+		<p class="cart-tabs__price p3 _shop">
+			Стоимость аренды:<br>
+			<span class="cart-tabs__price-value h5 ttu">16 000 ₽</span>
+		</p>
+		<p class="cart-tabs__price p3 _rent">
+			Залог:<br>
+			<span class="cart-tabs__price-value h5 ttu">45 000 ₽</span>
+		</p>
+		<p class="cart-tabs__price p3 _rent">
 			Итого без учета доставки:<br>
 			<span class="cart-tabs__price-value h5 ttu">145 000 ₽</span>
 		</p>

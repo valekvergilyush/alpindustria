@@ -4,14 +4,14 @@
 
 <form class="personal-data-form">
 	{{ input({
-		className: 'personal-data-form__input',
+		className: 'personal-data-form__input _gray',
 		type: 'text',
 		id: 'personal-data-country',
 		value: 'Россия',
 		name: 'Страна'
 	}) }}
 	{{ input({
-		className: 'personal-data-form__input',
+		className: 'personal-data-form__input _gray',
 		type: 'text',
 		id: 'personal-data-city',
 		value: 'Санкт-Петербург',
@@ -19,13 +19,13 @@
 		name: 'Город*'
 	}) }}
 	{{ input({
-		className: 'personal-data-form__input',
+		className: 'personal-data-form__input _gray',
 		type: 'text',
 		id: 'personal-data-street',
 		name: 'улица'
 	}) }}
 	{{ input({
-		className: 'personal-data-form__input',
+		className: 'personal-data-form__input _gray',
 		type: 'number',
 		id: 'personal-data-index',
 		name: 'индекс'

@@ -106,7 +106,7 @@
 		@include reset-btn;
 		@extend .animated;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		width: 100%;
 		justify-content: space-between;
 		column-gap: rem(12);
@@ -161,11 +161,11 @@
 		}
 		svg {
 			width: rem(32);
-			height: rem(32);
+			height: rem(36);
 			margin-top: 0;
 			@media (max-width: $laptop-md) {
 				width: 16px;
-				height: 16px;
+				height: 20px;
 			}
 			@media (max-width: $laptop-sm) {
 				display: none;

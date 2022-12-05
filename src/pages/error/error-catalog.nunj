@@ -1,0 +1,16 @@
+{% extends "../../templates/index-page.nunj" %}
+{% from "../../includes/components/error-section/error-section.nunj" import errorSection %}
+
+{% block title %}Отключенный каталог | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main">
+		{{ errorSection({
+			img: '/assets/images/errors/error-catalog',
+			title: 'Отключенный каталог',
+			text: 'В связи c техническими работами показ онлайн-каталога временно приостановлен. Приносим свои извинения и ждем Вас в&nbsp;наших магазинах!',
+			linkName: 'На главную',
+			linkUrl: '/'
+		}) }}
+	</main>
+{% endblock %}
