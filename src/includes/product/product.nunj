@@ -4,6 +4,7 @@
 {% from "../components/product-slider/product-slider.nunj" import productSlider %}
 {% from "../components/counter/counter.nunj" import counter %}
 {% from "../components/product-reviews/product-reviews.nunj" import productReviews %}
+{% from "../components/file-download/file-download.nunj" import fileDownload %}
 
 {% set productSliderImgs = [
 	'/assets/images/catalog/item-1',
@@ -155,6 +156,12 @@
 						<p>Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ. Теплоизоляция этой модели была сертифицирована для температур до &minus;30 &deg;C&nbsp;при отсутствии движения, но&nbsp;при ходьбе может выдерживать более низкие температуры&nbsp;&mdash; до &minus;60 &deg;C.</p>
 						<p>Артикул: # 8000PM3T</p>
 					</div>
+					{{ fileDownload({
+						url: '#',
+						name: 'file_namea_goes_here.pdf',
+						size: '165.7 KB',
+						iconName: 'file-icon-2'
+					}) }}
 				</div>
 				<div class="product__block">
 					<p class="h6 product__title-md ttu">Особенности</p>
