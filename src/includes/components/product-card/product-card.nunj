@@ -58,8 +58,8 @@
 			{% if props.new %}
 				{% include "../../product-badge/new.nunj" %}
 			{% endif %}
-			{% if props.discount %}
-				{% include "../../product-badge/50%.nunj" %}
+			{% if props.exclusive %}
+				{% include "../../product-badge/exclusive.nunj" %}
 			{% endif %}
 			{% if props.featureImg %}
 				{% include "../../product-badge/dry-feature.nunj" %}

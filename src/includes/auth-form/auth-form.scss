@@ -98,7 +98,7 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
-		min-height: 176px;
+		min-height: rem(176);
 		padding: rem(40) rem(64);
 		margin: 0 calc(-1 * var(--container-padding));
 		background-color: var(--blue-dark);

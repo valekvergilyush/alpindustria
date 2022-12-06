@@ -1,0 +1,60 @@
+.product-popup {
+	height: 100%;
+	&__from {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(32);
+	}
+	&__text,
+	&__input {
+		&:not(:last-child) {
+			margin-bottom: rem(64);
+			@media (max-width: $mobile-lg) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+	&__terms {
+		margin-top: auto;
+		font-size: rem(16);
+		line-height: rem(21);
+		text-decoration-line: underline;
+		opacity: 0.4;
+		&[href],
+		&[type='button'] {
+			@extend .animated;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	&__bottom {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		min-height: rem(134);
+		min-height: rem(176);
+		padding: rem(40) rem(64);
+		margin: calc(0px - var(--container-padding));
+		margin-top: var(--container-padding);
+		background-color: var(--blue-dark);
+		color: var(--white);
+		box-sizing: border-box;
+		@media (max-width: $laptop-lg) {
+			min-height: 134px;
+			padding: 32px 40px;
+		}
+		@media (max-width: $laptop-md) {
+			min-height: 112px;
+			padding: 24px 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 64px;
+			padding: 12px 16px;
+		}
+	}
+}

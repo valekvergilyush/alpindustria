@@ -1,9 +1,14 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro fileDownload(props) %}
+	{% if props.iconName %}
+		{% set iconName = props.iconName %}
+	{% else %}
+		{% set iconName = 'file-icon' %}
+	{% endif %}
 	<a href="{{ props.url }}" download class="file-download p4 c-gray-dark">
 		{{ icon({
-			iconName: 'file-icon',
+			iconName: iconName,
 			className: 'file-download__icon',
 			attr: 'width="30" height="40" viewBox="0 0 30 40"'
 		}) }}

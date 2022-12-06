@@ -179,15 +179,9 @@
 				{{ addToCart({
 					className: 'product__add-mobile',
 					attributes: 'data-product-add-mobile',
-					list: [
-						{
-							oldPrice: '45 780 ₽',
-							price: '33 150 ₽'
-						}
-					],
 					link: {
-						text: 'в корзину',
-						url: '#'
+						text: 'Напишите мне, когда товар появится',
+						attributes: 'data-popup-opener="product-appear"'
 					}
 				}) }}
 			</div>
@@ -208,8 +202,8 @@
 					className: 'product__add',
 					counter: 3,
 					link: {
-						text: 'добавить в корзину',
-						url: '#'
+						text: 'Напишите мне, когда товар появится',
+						attributes: 'data-popup-opener="product-appear"'
 					}
 				}) }}
 		</div>

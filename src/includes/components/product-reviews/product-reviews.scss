@@ -237,4 +237,16 @@
 			--font-size-h7: 88px;
 		}
 	}
+	&__reply {
+		border-left: 1px solid var(--blue-light);
+		color: var(--blue-light);
+		padding: rem(16);
+		padding-right: 0;
+		margin-top: rem(24);
+	}
+	&__reply-logo {
+		width: rem(56);
+		height: rem(44);
+		margin-bottom: rem(8);
+	}
 }

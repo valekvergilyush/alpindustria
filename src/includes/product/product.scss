@@ -243,9 +243,6 @@
 		display: flex;
 		column-gap: var(--badges-margin);
 		row-gap: var(--badges-margin);
-		@media (max-width: $laptop-sm) {
-			flex-direction: column;
-		}
 	}
 	&__shops {
 		display: flex;
@@ -501,10 +498,12 @@
 	&__descr {
 		color: var(--gray-dark);
 		@media (max-width: $laptop-md) {
+			padding-bottom: 8px;
 			font-size: 16px;
 			line-height: 24px;
 		}
 		@media (max-width: $laptop-sm) {
+			padding-bottom: 0;
 			font-size: 16px;
 			line-height: 24px;
 		}
@@ -514,13 +513,17 @@
 		p + p {
 			margin-top: rem(24);
 		}
-	}
-	&__descr {
-		@media (max-width: $laptop-md) {
-			padding-bottom: 8px;
-		}
-		@media (max-width: $laptop-sm) {
-			padding-bottom: 0;
+		&:not(:last-child) {
+			margin-bottom: rem(48);
+			@media (max-width: $laptop-lg) {
+				margin-bottom: 32px;
+			}
+			@media (max-width: $laptop-md) {
+				margin-bottom: 24px;
+			}
+			@media (max-width: $laptop-sm) {
+				margin-bottom: 32px;
+			}
 		}
 	}
 	&__features {
