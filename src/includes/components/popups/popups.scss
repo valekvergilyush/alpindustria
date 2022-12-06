@@ -35,6 +35,7 @@
 		&[data-popup-wrapper='review-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='auth'],
+		&[data-popup-wrapper='product-appear'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -52,6 +53,7 @@
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='wishlist-services'],
 		&[data-popup-wrapper='auth'],
+		&[data-popup-wrapper='product-appear'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;

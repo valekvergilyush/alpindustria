@@ -40,6 +40,10 @@
 		{
 			"name": "auth",
 			"animation": "RTL"
+		},
+		{
+			"name": "product-appear",
+			"animation": "RTL"
 		}
 	]
 }

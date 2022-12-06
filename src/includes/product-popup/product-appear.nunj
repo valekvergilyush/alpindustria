@@ -1,0 +1,25 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="product-popup">
+	<from class="product-popup__from">
+		<h2 class="product-popup__title h5 ttu">Напишите мне</h2>
+		<p class="product-popup__text p2 c-gray-dark">Введите свою почту и мы напишем вам когда товар появится в&nbsp;нашем магазине.</p>
+		{{ input({
+			type: 'email',
+			id: 'appear-email',
+			className: 'product-popup__input',
+			name: 'Почта'
+		}) }}
+		<a href="#" class="product-popup__terms c-gray-dark">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+		<div class="product-popup__bottom">
+			{{ button({
+				text: 'Отправить',
+				type: 'submit',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+				className: 'product-popup__bottom-btn _arrow h7 ttu'
+			}) }}
+		</div>
+	</from>
+</div>
