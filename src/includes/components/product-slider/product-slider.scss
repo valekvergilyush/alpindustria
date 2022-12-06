@@ -1,4 +1,5 @@
 .product-slider {
+	$this: &;
 	display: flex;
 	background-color: var(--default-bg-color);
 	@media (max-width: $laptop-sm) {
@@ -52,6 +53,23 @@
 		}
 		@media (max-width: $laptop-sm) {
 			width: 25%;
+		}
+		&._video {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: inline('play.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				z-index: 1;
+			}
+			#{$this}__thumbnail-img {
+				opacity: 0.4;
+			}
 		}
 	}
 	&__thumbnail-img {

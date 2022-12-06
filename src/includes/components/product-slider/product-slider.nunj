@@ -9,10 +9,16 @@
 		</div>
 		<div class="product-slider__thumbnails">
 			<div class="product-slider__thumbnails-wrap">
-				{% for sliderImg in props.thumbsList %}
-					<button type="button" class="product-slider__thumbnail" data-slider-btn="{{ loop.index - 1 }}">
-						<img class="product-slider__thumbnail-img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="153" height="153" alt="thumbnail">
-					</button>
+				{% for sliderThumb in props.thumbsList %}
+					{% if sliderThumb.type === 'video' %}
+						<button type="button" class="product-slider__thumbnail _video" data-popup-opener="video">
+							<img class="product-slider__thumbnail-img" src="{{ sliderThumb.img }}.png" srcset="{{ sliderThumb.img }}@2x.png 2x" width="153" height="153" alt="thumbnail">
+						</button>
+					{% else %}
+						<button type="button" class="product-slider__thumbnail" data-popup-opener="video" data-slider-btn="{{ loop.index - 1 }}">
+							<img class="product-slider__thumbnail-img" src="{{ sliderThumb.img }}.png" srcset="{{ sliderThumb.img }}@2x.png 2x" width="153" height="153" alt="thumbnail">
+						</button>
+					{% endif %}
 				{% endfor %}
 			</div>
 		</div>

@@ -88,6 +88,10 @@
 				display: block;
 			}
 		}
+		&[data-popup-wrapper='video'] {
+			width: 100%;
+			margin-top: rem(32);
+		}
 		&._opened-delivery {
 			#{$this}__close-button {
 				display: none;
@@ -224,10 +228,18 @@
 		&[data-popup='wishlist-services'] {
 			padding-bottom: 0;
 		}
-		&[data-popup='auth'] {
+		&[data-popup='auth'],
+		&[data-popup='video'] {
 			padding: 0;
 			@media (max-width: $tablet) {
 				min-height: auto;
+			}
+		}
+		&[data-popup='video'] {
+			overflow: hidden;
+			#{$this}__close-button {
+				top: rem(8);
+				color: var(--white);
 			}
 		}
 	}
