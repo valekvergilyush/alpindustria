@@ -33,6 +33,14 @@
 					<p>Спасибо Альпиндустрия! ВЫ&nbsp;лучшие!!</p>
 				</div>
 				<p class="product-reviews__interests p3"><span class="c-blue-light">Увлечения:</span> Альпинизм, Горный туризм</p>
+				<div class="product-reviews__reply">
+					{{ icon({
+						iconName: 'logo-short',
+						className: 'product-reviews__reply-logo',
+						attr: 'width="56" height="44" viewBox="0 0 71 36"'
+					}) }}
+					<p class="p3">Попробовать восстановить севшую шерстяную вещь можно с помощью механического растягивания руками или закрепив на манекене (или чём-то подобном подходящего размера), предварительно замочив изделие в теплой воде на 15-20 минут. Но это не точно.</p>
+				</div>
 			</li>
 			<li class="product-reviews__review">
 				{{ rating({
