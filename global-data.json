@@ -44,6 +44,14 @@
 		{
 			"name": "product-appear",
 			"animation": "RTL"
+		},
+		{
+			"name": "product-technology",
+			"animation": "RTL"
+		},
+		{
+			"name": "product-to-order",
+			"animation": "RTL"
 		}
 	]
 }

@@ -170,6 +170,13 @@
 						<li class="product__feature">Съемный внутренник</li>
 						<li class="product__feature">Стелька из&nbsp;углеродного волокна Zamberlan&reg; 5&nbsp;мм</li>
 						<li class="product__feature">Промежуточная подошва: двойной слой полиуретана + Zamberlan&reg; PCS EVO</li>
+						<li class="product__feature">Материалы:
+							<ul class="product__features-second">
+								<li class="product__feature-second">Тент: 68D полиэстер <a class="product__link" data-popup-opener="product-technology">Ripstop</a> 1500mm с полиуретановым покрытием и DWR</li>
+								<li class="product__feature-second">Внутренняя палатка: 40D нейлон <a class="product__link" data-popup-opener="product-technology">Ripstop</a> с покрытием DWR / 20D Micromesh</li>
+								<li class="product__feature-second">Пол: 70 нейлон taffeta 3000mm с полиуретановым покрытием и DWR</li>
+							</ul>
+						</li>
 						<li class="product__feature">Подошва Zamberlan&reg; Vibram&reg; Penia</li>
 						<li class="product__feature">Колодка: Z8000</li>
 						<li class="product__feature">Совместимость с&nbsp;автоматическими кошками</li>
