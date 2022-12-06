@@ -243,9 +243,6 @@
 		display: flex;
 		column-gap: var(--badges-margin);
 		row-gap: var(--badges-margin);
-		@media (max-width: $laptop-sm) {
-			flex-direction: column;
-		}
 	}
 	&__shops {
 		display: flex;

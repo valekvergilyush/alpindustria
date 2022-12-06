@@ -24,13 +24,28 @@
 		--badge-size: 24px;
 		--fs-badge: 8px;
 	}
+	&__logo {
+		width: rem(24);
+		height: rem(26);
+		@media (max-width: $mobile-lg) {
+			width: 18px;
+			height: 20px;
+		}
+	}
 	&._new {
 		border-radius: 50%;
 		background-color: var(--violet-light);
 	}
-	&._discount {
-		border-radius: 50%;
+	&._exclusive {
+		width: auto;
+		min-width: var(--badge-size);
+		padding-left: rem(12);
+		padding-right: rem(12);
+		gap: rem(4);
+		border-radius: rem(100);
 		background-color: var(--blue-light);
+		font-size: rem(8);
+		line-height: rem(20);
 	}
 	&._feature {
 		padding-top: 0;
