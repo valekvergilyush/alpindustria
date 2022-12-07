@@ -32,6 +32,51 @@
 		@media (max-width: $laptop-sm) {
 			width: 100%;
 		}
+		.tns-outer {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: center;
+			height: 100%;
+		}
+		.tns-ovh {
+			height: 100%;
+		}
+		.tns-nav {
+			display: none;
+		}
+		[data-controls='prev'] {
+			display: none;
+		}
+		[data-controls='next'] {
+			@include reset-btn;
+			position: relative;
+			display: block;
+			width: 100%;
+			height: rem(50);
+			margin: 0 auto;
+			font-size: 0;
+			&::before {
+				--size: #{rem(32)};
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: var(--size);
+				height: var(--size);
+				transform: translate(-50%, -50%) rotate(135deg);
+				background-image: inline('promo-arrow-white.svg');
+				background-repeat: no-repeat;
+				background-size: rem(16);
+				background-position: center;
+				background-color: var(--blue-dark);
+				border-radius: 50%;
+			}
+		}
+		&._init {
+			#{$this}__thumbnail {
+				height: rem(100);
+			}
+		}
 	}
 	&__thumbnails-wrap {
 		height: 100%;
@@ -39,6 +84,10 @@
 			display: flex;
 			width: 100%;
 			height: 110px;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
 		}
 	}
 	&__thumbnail {
@@ -50,9 +99,7 @@
 		@media (max-width: $laptop-sm) {
 			width: 25%;
 			height: auto;
-		}
-		@media (max-width: $laptop-sm) {
-			width: 25%;
+			flex-shrink: 0;
 		}
 		&._video {
 			&::before {

@@ -13,10 +13,22 @@
 	'/assets/images/catalog/item-4'
 ] %}
 {% set productSliderThumbs = [
-	'/assets/images/catalog/item-1-mini',
-	'/assets/images/catalog/item-2-mini',
-	'/assets/images/catalog/item-3-mini',
-	'/assets/images/catalog/item-4-mini'
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-1-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-2-mini'
+	},
+	{
+		type: 'video',
+		img: '/assets/images/catalog/item-3-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
+	}
 ] %}
 {% set colorButtons = [
 	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },

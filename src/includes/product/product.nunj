@@ -10,6 +10,8 @@
 	'/assets/images/catalog/item-1',
 	'/assets/images/catalog/item-2',
 	'/assets/images/catalog/item-3',
+	'/assets/images/catalog/item-4',
+	'/assets/images/catalog/item-3',
 	'/assets/images/catalog/item-4'
 ] %}
 {% set productSliderThumbs = [
@@ -24,6 +26,18 @@
 	{
 		type: 'video',
 		img: '/assets/images/catalog/item-3-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-3-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
 	},
 	{
 		type: 'photo',

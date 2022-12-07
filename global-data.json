@@ -54,8 +54,7 @@
 			"animation": "RTL"
 		},
 		{
-			"name": "video",
-			"animation": "RTL"
+			"name": "video"
 		}
 	]
 }
