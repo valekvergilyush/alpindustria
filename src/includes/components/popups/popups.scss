@@ -36,6 +36,8 @@
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='product-appear'],
+		&[data-popup-wrapper='product-to-order'],
+		&[data-popup-wrapper='product-technology'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -54,6 +56,8 @@
 		&[data-popup-wrapper='wishlist-services'],
 		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='product-appear'],
+		&[data-popup-wrapper='product-to-order'],
+		&[data-popup-wrapper='product-technology'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
@@ -83,6 +87,10 @@
 			#{$this}__icon {
 				display: block;
 			}
+		}
+		&[data-popup-wrapper='video'] {
+			width: 100%;
+			margin-top: rem(32);
 		}
 		&._opened-delivery {
 			#{$this}__close-button {
@@ -220,10 +228,18 @@
 		&[data-popup='wishlist-services'] {
 			padding-bottom: 0;
 		}
-		&[data-popup='auth'] {
+		&[data-popup='auth'],
+		&[data-popup='video'] {
 			padding: 0;
 			@media (max-width: $tablet) {
 				min-height: auto;
+			}
+		}
+		&[data-popup='video'] {
+			overflow: hidden;
+			#{$this}__close-button {
+				top: rem(8);
+				color: var(--white);
 			}
 		}
 	}
