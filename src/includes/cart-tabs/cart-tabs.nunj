@@ -4,7 +4,7 @@
 ]
 %}
 
-<div class="cart__tabs cart-tabs tabs" data-tabs>
+<div class="cart__tabs cart-tabs tabs _cart" data-tabs>
 	<ul class="tabs__tab-list" role="tablist">
 		{% for item in cartTabs %}
 			<li class="tabs__tab-item">

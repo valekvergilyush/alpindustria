@@ -1,4 +1,5 @@
 .tabs {
+	$this: &;
 	&__tab-list {
 		display: flex;
 		margin-bottom: rem(48);
@@ -30,10 +31,15 @@
 		line-height: 1.33;
 		text-transform: uppercase;
 		color: var(--blue-dark);
-		&:hover,
 		&._selected {
 			color: var(--white);
 			background-color: var(--blue-dark);
+		}
+		&:hover {
+			&:not(#{$this}._cart &) {
+				color: var(--white);
+				background-color: var(--blue-dark);
+			}
 		}
 		@media (max-width: $laptop) {
 			min-height: 40px;
