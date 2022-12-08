@@ -33,7 +33,7 @@
 	}
 ] %}
 
-<section class="brand-list" id="brands">
+<section class="brand-list _main" id="brands">
 	<h2 class="brand-list__title page__section-title h4 ttu">Бренды</h2>
 	<ul class="brand-list__list">
 		{% for item in brandList %}

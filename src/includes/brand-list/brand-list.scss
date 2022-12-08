@@ -69,10 +69,6 @@
 				background-color: var(--white);
 			}
 		}
-		&:hover {
-			color: var(--blue-dark);
-			background-color: var(--white);
-		}
 		@media (max-width: $desktop) {
 			@include smoothValue('--cell-size', 291px, 344px, $laptop-lg, $desktop);
 		}
