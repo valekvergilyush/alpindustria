@@ -250,6 +250,7 @@ class Popups {
 				documentClassList.remove(this.openedClass);
 				this.openedClass = '';
 			}
+			this.stopIframeVideos();
 		}
 	}
 	getPopup(name) {
@@ -262,6 +263,13 @@ class Popups {
 				.querySelectorAll('[data-accordion-toggle]')
 				.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
 		}
+	}
+	stopIframeVideos() {
+		this.wrapper.querySelectorAll('iframe').forEach(iframe => {
+			const src = iframe.src;
+			iframe.src = '';
+			iframe.src = src;
+		});
 	}
 }
 
