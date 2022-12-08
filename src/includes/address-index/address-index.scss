@@ -3,6 +3,7 @@
 	overflow: hidden;
 	&__title {
 		padding-inline: var(--container-padding);
+		border-bottom: 1px solid var(--blue-dark);
 		@media (max-width: $mobile-lg) {
 			span:last-child {
 				display: none;
