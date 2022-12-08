@@ -5,7 +5,8 @@
 	<form class="product-popup__form">
 		<div class="product-popup__inner">
 			<h2 class="product-popup__title h5 ttu">Напишите мне</h2>
-			<p class="product-popup__text p2 c-gray-dark">Введите свою почту и мы напишем вам когда товар появится в&nbsp;нашем магазине.</p>
+			<p class="product-popup__text p2 c-gray-dark">Введите свою почту, и мы напишем вам, когда товар появится в&nbsp;нашем магазине.
+			</p>
 			{{ input({
 				type: 'email',
 				id: 'appear-email',

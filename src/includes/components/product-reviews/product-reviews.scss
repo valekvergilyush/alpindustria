@@ -247,6 +247,8 @@
 	&__reply-logo {
 		width: rem(56);
 		height: rem(44);
-		margin-bottom: rem(8);
+		padding: rem(6);
+		margin-bottom: rem(11);
+		box-sizing: border-box;
 	}
 }

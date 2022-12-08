@@ -90,6 +90,14 @@
 		margin-left: auto;
 		@include reset-btn;
 		text-align: right;
+		@media (max-width: $laptop-lg) {
+			font-size: 16px;
+			line-height: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			line-height: 16px;
+		}
 		&:hover {
 			#{$this}__link-icon {
 				margin-left: rem(20);
@@ -99,7 +107,6 @@
 	&__link-icon {
 		--size: #{rem(16)};
 		position: relative;
-		top: 0.1em;
 		width: var(--size);
 		height: var(--size);
 		margin-left: rem(24);
