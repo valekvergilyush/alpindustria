@@ -35,6 +35,10 @@
 		line-height: rem(21);
 		text-decoration-line: underline;
 		opacity: 0.4;
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+			line-height: 16px;
+		}
 		&[href],
 		&[type='button'] {
 			@extend .animated;
@@ -67,6 +71,9 @@
 			min-height: 64px;
 			padding: 12px 16px;
 		}
+	}
+	&__bottom-btn {
+		font-family: var(--default-font-family);
 	}
 	&__img {
 		display: grid;

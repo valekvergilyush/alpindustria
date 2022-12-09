@@ -12,9 +12,9 @@
 				id: 'appear-email',
 				className: 'product-popup__input',
 				name: 'Почта',
-				inputAttr: 'required'
+				inputAttr: 'required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"'
 			}) }}
-			<a href="#" class="product-popup__terms c-gray-dark">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+			<a href="#" class="product-popup__terms c-gray-dark">Нажимая "отправить", вы соглашаетесь с условиями оферты</a>
 		</div>
 		<div class="product-popup__bottom">
 			{{ button({
