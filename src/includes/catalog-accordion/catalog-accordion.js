@@ -1,5 +1,6 @@
 const ClassName = {
 	OPENED: '_opened',
+	TICKER: '_ticker',
 };
 
 const DURATION = 0.4;
@@ -61,6 +62,24 @@ class CatalogAccordion {
 		}
 	}
 	open(section, content, contentHeight, cb) {
+		const startTicker = () => {
+			const title = section.querySelector('[data-accordion-title]');
+
+			if (title.classList.contains(ClassName.TICKER)) {
+				const titleText = section.querySelector('[data-accordion-title-text]');
+				const paddingRight = window.innerWidth < 768 ? 80 : 150;
+				const offset = title.offsetWidth - titleText.offsetWidth - paddingRight;
+				titleText.ticker = gsap.to(titleText, {
+					x: offset,
+					duration: 3,
+					yoyo: true,
+					repeat: -1,
+					yoyoEase: 'power1.in',
+					ease: 'power1.in',
+				});
+			}
+		};
+
 		section.querySelector('[data-accordion-title]').classList.add(ClassName.OPENED);
 
 		gsap.to(content, {
@@ -78,10 +97,17 @@ class CatalogAccordion {
 				cb && cb();
 				this.openedSection = section;
 				this.openedSectionContent = content;
+				startTicker();
 			},
 		});
 	}
 	close(section, content, clear = false) {
+		const stopTicker = () => {
+			const titleText = section.querySelector('[data-accordion-title-text]');
+
+			titleText.ticker && titleText.ticker.revert();
+		};
+
 		section.querySelector('[data-accordion-title]').classList.remove(ClassName.OPENED);
 
 		gsap.to(content, {
@@ -99,6 +125,7 @@ class CatalogAccordion {
 					this.openedSectionContent = null;
 				}
 				section.classList.remove(ClassName.OPENED);
+				stopTicker();
 			},
 		});
 	}
@@ -115,7 +142,7 @@ class CatalogAccordion {
 		const titleTextContentWidth = titleText.scrollWidth - titleTextPL - titleTextPR;
 
 		if (titleContentWidth < titleTextContentWidth) {
-			title.classList.add('_ticker');
+			title.classList.add(ClassName.TICKER);
 		}
 	}
 }
