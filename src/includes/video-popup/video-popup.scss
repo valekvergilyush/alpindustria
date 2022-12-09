@@ -4,8 +4,21 @@
 	height: 100%;
 	&__title {
 		padding: rem(12) var(--container-padding);
+		padding-right: rem(180);
 		background-color: var(--blue-dark);
 		color: var(--white);
+		@media (max-width: $laptop-lg) {
+			padding-right: 100px;
+		}
+		@media (max-width: $laptop-md) {
+			padding-right: 70px;
+		}
+		@media (max-width: $laptop-sm) {
+			padding-right: 60px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-right: 50px;
+		}
 	}
 	&__video {
 		flex-grow: 1;

@@ -5,15 +5,16 @@
 	<form class="product-popup__form">
 		<div class="product-popup__inner">
 			<h2 class="product-popup__title h5 ttu">Напишите мне</h2>
-			<p class="product-popup__text p2 c-gray-dark">Введите свою почту и мы напишем вам когда товар появится в&nbsp;нашем магазине.</p>
+			<p class="product-popup__text p2 c-gray-dark">Введите свою почту, и мы напишем вам, когда товар появится в&nbsp;нашем магазине.
+			</p>
 			{{ input({
 				type: 'email',
 				id: 'appear-email',
 				className: 'product-popup__input',
 				name: 'Почта',
-				inputAttr: 'required'
+				inputAttr: 'required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"'
 			}) }}
-			<a href="#" class="product-popup__terms c-gray-dark">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+			<a href="#" class="product-popup__terms c-gray-dark">Нажимая "отправить", вы соглашаетесь с условиями оферты</a>
 		</div>
 		<div class="product-popup__bottom">
 			{{ button({

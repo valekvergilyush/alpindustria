@@ -420,6 +420,12 @@ class Addresses {
 		this.shopItems.forEach(shopItem => {
 			this.initShopItem(shopItem);
 		});
+
+		let hash = window.location.hash;
+		if (hash) {
+			hash = hash.substring(1);
+			this.changeActiveCity(hash);
+		}
 	}
 
 	citiesMobileCheck() {

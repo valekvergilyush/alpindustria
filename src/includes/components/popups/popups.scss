@@ -242,6 +242,11 @@
 				color: var(--white);
 			}
 		}
+		&[data-popup='product-appear'] {
+			@media (max-width: $tablet) {
+				min-height: auto;
+			}
+		}
 	}
 	&__close-button {
 		@extend .animated;

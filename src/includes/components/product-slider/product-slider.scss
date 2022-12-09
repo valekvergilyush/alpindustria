@@ -38,6 +38,12 @@
 			justify-content: center;
 			height: 100%;
 		}
+		.tns-controls {
+			height: 20%;
+			@media (max-width: $laptop-sm) {
+				display: none;
+			}
+		}
 		.tns-ovh {
 			height: 100%;
 		}
@@ -52,7 +58,7 @@
 			position: relative;
 			display: block;
 			width: 100%;
-			height: rem(50);
+			height: 100%;
 			margin: 0 auto;
 			font-size: 0;
 			&::before {
@@ -75,6 +81,9 @@
 		&._init {
 			#{$this}__thumbnail {
 				height: rem(100);
+			}
+			#{$this}__thumbnails-wrap {
+				overflow: initial;
 			}
 		}
 	}

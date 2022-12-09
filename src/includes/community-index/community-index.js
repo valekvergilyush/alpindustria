@@ -68,6 +68,7 @@ class CommunityIndex {
 			axis: axisValue,
 			mouseDrag: true,
 			controls: false,
+			autoplay: true,
 		});
 
 		this.slider.tns.events.on('indexChanged', slider => {

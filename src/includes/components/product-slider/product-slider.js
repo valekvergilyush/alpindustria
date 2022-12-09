@@ -9,8 +9,11 @@ class ProductSlider {
 	constructor() {
 		this.sliderBlock = document.querySelector('[data-product-slider]');
 		this.sliderBtns = document.querySelectorAll('[data-slider-btn]');
+		this.sliderBtnSelector = '[data-slider-btn]';
 		this.sliderThumbsBlock = document.querySelector('[data-product-thumbs-slider]');
 		this.sliderThumbsWrap = document.querySelector('[data-product-thumbs-wrapper]');
+
+		this.updateSliderThumbs = this.updateSliderThumbs.bind(this);
 
 		this.init();
 	}
@@ -20,7 +23,37 @@ class ProductSlider {
 			return;
 		}
 		this.initSlider();
-		this.initSliderThumbs();
+
+		if (!this.sliderThumbsBlock) {
+			return;
+		}
+		this.sliderThumbSlides = this.sliderThumbsBlock.querySelectorAll('.product-slider__thumbnail');
+		if (this.sliderThumbSlides.length <= THUMB_SLIDES_NUMBER) {
+			return;
+		}
+
+		const onWindowWidthChange = evt => {
+			if (evt.matches) {
+				if (this.sliderThumbs) {
+					this.sliderThumbs.destroy();
+					this.sliderThumbs = null;
+					this.sliderThumbsWrap.classList.remove(INIT_CLASS);
+				}
+				this.initSliderThumbs();
+			} else {
+				if (this.sliderThumbs) {
+					this.sliderThumbs.destroy();
+					this.sliderThumbs = null;
+					this.sliderThumbsWrap.classList.remove(INIT_CLASS);
+				}
+				this.initSliderThumbs('vertical');
+			}
+		};
+
+		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
+		this.mqTablet.addEventListener('change', onWindowWidthChange);
+		onWindowWidthChange(this.mqTablet);
+		window.addEventListener('resize', this.updateSliderThumbs);
 	}
 
 	initSlider() {
@@ -32,55 +65,35 @@ class ProductSlider {
 			imagesLoaded: true,
 			wrapAround: true,
 		});
-		this.sliderBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
+		document.addEventListener('click', e => {
+			const btn = e.target.closest(this.sliderBtnSelector);
+			if (btn) {
 				this.sliderBtnHandler(btn);
-			});
+			}
 		});
 	}
 
-	initSliderThumbs() {
-		if (!this.sliderThumbsBlock) {
-			return;
-		}
-		this.sliderThumbSlides = this.sliderThumbsBlock.querySelectorAll('.product-slider__thumbnail');
-		if (this.sliderThumbSlides.length <= THUMB_SLIDES_NUMBER) {
-			return;
-		}
-		this.sliderThumbsBlock.classList.add(INIT_CLASS);
-		this.updateSliderThumbs = this.updateSliderThumbs.bind(this);
+	initSliderThumbs(axisValue = 'horizontal') {
+		this.sliderThumbsWrap.classList.add(INIT_CLASS);
+		const mouseDrag = axisValue === 'horizontal';
 		this.sliderThumbs = tns({
 			container: '[data-product-thumbs-slider]',
 			items: THUMB_SLIDES_NUMBER,
 			slideBy: 'page',
-			axis: 'vertical',
-			mouseDrag: false,
-			responsive: {
-				992: {
-					axis: 'horizontal',
-					nav: false,
-					mouseDrag: true,
-				},
-			},
+			axis: axisValue,
+			mouseDrag,
 		});
 		this.updateSliderThumbs();
-		window.addEventListener('resize', this.updateSliderThumbs);
 	}
 
 	updateSliderThumbs() {
 		if (window.innerWidth < TABLET_BREAKPOINT) {
-			this.sliderThumbs.destroy();
-			this.sliderThumbsBlock.classList.add(INIT_CLASS);
-			window.removeEventListener('resize', this.updateSliderThumbs);
+			return;
 		}
 		const slides = this.sliderThumbsBlock.querySelectorAll('.product-slider__thumbnail');
-		const btn = this.sliderThumbsWrap.querySelector('[data-controls="next"]');
 		slides.forEach(slide => {
 			slide.style.height = this.sliderThumbsWrap.offsetHeight / (THUMB_SLIDES_NUMBER + 1) + 'px';
 		});
-		if (btn) {
-			btn.style.height = this.sliderThumbsWrap.offsetHeight / (THUMB_SLIDES_NUMBER + 1) + 'px';
-		}
 	}
 
 	sliderBtnHandler(btn) {
