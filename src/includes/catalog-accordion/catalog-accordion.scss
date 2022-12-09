@@ -140,10 +140,6 @@
 			#{$this}__title-text {
 				padding-left: var(--container-padding);
 				margin-left: calc(0px - var(--container-padding));
-				animation: ticker 5s ease-in infinite;
-				@media (max-width: $mobile-lg) {
-					animation-duration: 10s;
-				}
 			}
 		}
 	}
@@ -214,18 +210,5 @@
 		&:nth-child(6) {
 			z-index: 6;
 		}
-	}
-}
-
-@keyframes ticker {
-	5% {
-		transform: translate3d(0, 0, 0);
-		visibility: visible;
-	}
-	65% {
-		transform: translate3d(-50%, 0, 0);
-	}
-	100% {
-		transform: translate3d(0, 0, 0);
 	}
 }
