@@ -97,7 +97,6 @@ class ProductSlider {
 	}
 
 	sliderBtnHandler(btn) {
-		console.log('qwe');
 		const index = btn.dataset.sliderBtn;
 		this.slider.select(index);
 	}

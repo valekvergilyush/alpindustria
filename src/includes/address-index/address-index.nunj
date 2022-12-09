@@ -5,15 +5,15 @@
 	{ name: 'Магазинов', value: 25 }
 ] %}
 {% set cityList = [
-	{ name: 'Санкт-Петербург', value: 2 },
-	{ name: 'Новосибирск', value: 1 },
-	{ name: 'Москва', value: 8 },
-	{ name: 'Приэльбрусье', value: 2 },
-	{ name: 'Пермь', value: 1 },
-	{ name: 'Екатеринбург', value: 1 },
-	{ name: 'Пятигорск', value: 4 },
-	{ name: 'Воронеж', value: 4 },
-	{ name: 'Саратов', value: 4 }
+	{ name: 'Санкт-Петербург', value: 2, url: '/addresses.html#1' },
+	{ name: 'Новосибирск', value: 1, url: '/addresses.html#2' },
+	{ name: 'Москва', value: 8, url: '/addresses.html#0' },
+	{ name: 'Приэльбрусье', value: 2, url: '/addresses.html#9' },
+	{ name: 'Пермь', value: 1, url: '/addresses.html#7' },
+	{ name: 'Екатеринбург', value: 1, url: '/addresses.html#4' },
+	{ name: 'Пятигорск', value: 4, url: '/addresses.html#13' },
+	{ name: 'Воронеж', value: 4, url: '/addresses.html#14' },
+	{ name: 'Саратов', value: 4, url: '/addresses.html#15' }
 ] %}
 
 <section class="address-index">
@@ -31,16 +31,18 @@
 			<ul class="address-index__list">
 				{% for city in cityList %}
 					<li class="address-index__item">
-						<span class="address-index__item-name h5 ttu">{{ city.name }}</span>
-						<span class="address-index__item-number p1">{{ city.value }}</span>
-						<img
-							class="address-index__item-img"
-							src="/assets/images/address/shop-exterior.jpg"
-							srcset="/assets/images/address/shop-exterior@2x.jpg 2x"
-							width="404"
-							height="552"
-							alt="Здание магазина"
-						>
+						<a href="{{ city.url }}" class="address-index__link">
+							<span class="address-index__item-name h5 ttu">{{ city.name }}</span>
+							<span class="address-index__item-number p1">{{ city.value }}</span>
+							<img
+								class="address-index__item-img"
+								src="/assets/images/address/shop-exterior.jpg"
+								srcset="/assets/images/address/shop-exterior@2x.jpg 2x"
+								width="404"
+								height="552"
+								alt="Здание магазина"
+							>
+						</a>
 					</li>
 				{% endfor %}
 			</ul>

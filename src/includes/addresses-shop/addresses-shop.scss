@@ -40,6 +40,12 @@
 		--gap-2: 16px;
 		--gap-3: 8px;
 	}
+	&:first-child:last-child {
+		width: var(--tabs-min-width);
+		#{$this}__wrap {
+			width: var(--tabs-min-width);
+		}
+	}
 	&:hover {
 		width: var(--hover-width);
 	}
