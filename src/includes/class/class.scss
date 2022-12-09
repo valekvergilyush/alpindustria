@@ -59,6 +59,11 @@
 		left: 0;
 		padding-block: rem(34);
 		min-height: var(--price-block-height);
+		transition: background $default-transition-duration $default-transition-function;
+		&._no-bg {
+			color: inherit;
+			background: 0;
+		}
 		@media (max-width: $laptop-lg) {
 			padding-top: 30px;
 			padding-bottom: 39px;

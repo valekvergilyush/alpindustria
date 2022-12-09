@@ -245,7 +245,7 @@
 	}
 ] %}
 
-<section class="class">
+<section class="class" data-class>
 	<div class="class__main">
 		<div class="class__main-wrap">
 			{% include "../class-main/class-main.nunj" %}
