@@ -46,7 +46,7 @@ class CommunitySlider {
 					});
 
 					if (this.linePath) {
-						const strokeDashoffset = this.pathLength - this.pathLength * self.progress * 2;
+						const strokeDashoffset = this.pathLength - this.pathLength * self.progress * 1.8;
 
 						this.linePath.style.strokeDashoffset = strokeDashoffset <= 0 ? 0 : strokeDashoffset;
 					}

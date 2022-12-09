@@ -42,14 +42,14 @@
 		position: absolute;
 		left: var(--container-padding);
 		bottom: 0;
-		width: rem(3595);
+		width: rem(3645);
 		max-width: none;
 		pointer-events: none;
 		&._tablet {
 			display: none;
 		}
 		@media (max-width: $laptop-lg) {
-			width: 2438px;
+			width: 2718px;
 		}
 		@media (max-width: $tablet) {
 			display: none;
@@ -110,6 +110,8 @@
 			width: rem(529);
 		}
 		&._fourth {
+			position: relative;
+			z-index: 2;
 			width: rem(655);
 			height: 100%;
 		}
