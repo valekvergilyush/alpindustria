@@ -21,16 +21,32 @@ class AboutSlider {
 	startLogoAnimation() {
 		const logo = document.querySelector('[data-lottie-animation]');
 		const placeholder = document.querySelector('[data-lottie-autoplay-trigger]');
-		const x = logo.offsetWidth - placeholder.offsetWidth;
 
-		gsap.to(logo, {
-			x: -x,
-			duration: 10,
-			ease: 'linear',
+		const getToValue = () => logo.scrollWidth - placeholder.offsetWidth;
+
+		ScrollTrigger.create({
+			trigger: logo,
+			start: 'top top',
+			end: `+=${getToValue() + 50}`,
+			pin: true,
+			invalidateOnRefresh: true,
+			scrub: true,
+			onToggle: () => logo.lottieAnimation.play(),
+		});
+
+		gsap.set(logo, {
+			x: 0 - getToValue(),
 			scrollTrigger: {
 				trigger: logo,
-				start: 'top center',
-				onToggle: () => logo.lottieAnimation.play(),
+				start: 'top top',
+				end: `+=${getToValue()}`,
+				invalidateOnRefresh: true,
+				scrub: true,
+				onUpdate: self => {
+					gsap.set(logo, {
+						x: 0 - getToValue() * self.progress,
+					});
+				},
 			},
 		});
 	}
