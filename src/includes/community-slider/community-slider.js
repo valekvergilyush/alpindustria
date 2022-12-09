@@ -35,7 +35,7 @@ class CommunitySlider {
 		gsap.set(slide, {
 			x: 0 - getToValue(),
 			scrollTrigger: {
-				trigger: container,
+				trigger: slide,
 				start: 'top top',
 				end: `+=${getToValue()}`,
 				invalidateOnRefresh: true,
