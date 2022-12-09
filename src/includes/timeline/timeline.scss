@@ -98,5 +98,8 @@
 		&._active {
 			color: var(--c-active);
 		}
+		&:focus {
+			outline: none;
+		}
 	}
 }

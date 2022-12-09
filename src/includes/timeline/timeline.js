@@ -48,6 +48,8 @@ class Timeline {
 		this.progress = this.activeIndex === 0 ? 0 : this.activeIndex * this.itemWidth;
 		this.progressBar.style.width = `${this.progress}%`;
 		this.progressBar.style.height = `100%`;
+
+		this.activeLink.focus();
 	}
 	initScrollTrigger() {
 		const getActiveLink = id => Array.from(this.links).filter(link => link.hash === `#${id}`)[0];
