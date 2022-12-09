@@ -30,11 +30,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: var(--size);
+		box-sizing: border-box;
+		min-width: var(--size);
 		height: var(--size);
+		padding-inline: rem(8);
 		margin-left: rem(12);
 		border: 1px solid var(--blue-dark);
-		border-radius: 50%;
+		border-radius: 100vmax;
 		@media (max-width: $mobile-lg) {
 			--size: 20px;
 			margin-left: 8px;
