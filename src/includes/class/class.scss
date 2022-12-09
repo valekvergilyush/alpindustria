@@ -55,14 +55,21 @@
 	&__price-block {
 		flex-shrink: 0;
 		position: sticky;
+		z-index: 2;
 		bottom: -1px;
 		left: 0;
 		padding-block: rem(34);
 		min-height: var(--price-block-height);
-		transition: background $default-transition-duration $default-transition-function;
+		transition: background $default-transition-duration $default-transition-function,
+			color $default-transition-duration $default-transition-function,
+			opacity $default-transition-duration $default-transition-function;
 		&._no-bg {
 			color: inherit;
 			background: 0;
+		}
+		&._hidden {
+			opacity: 0;
+			pointer-events: none;
 		}
 		@media (max-width: $laptop-lg) {
 			padding-top: 30px;
@@ -74,6 +81,10 @@
 		}
 		@media (max-width: $laptop-sm) {
 			border-bottom: none;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
 		}
 		@media (max-width: $mobile-lg) {
 			padding-top: 13px;
