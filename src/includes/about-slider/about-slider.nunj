@@ -10,8 +10,10 @@
 				<p class="about-slider__text _first p1 _anim-first" data-animation="fade-right">Смысл нашей работы &mdash; сделать так, чтобы вы&nbsp;осмелились на&nbsp;вершину своей мечты.</p>
 			</div>
 			<div class="about-slider__col _full-height _second">
-				<div class="about-slider__logo-placeholder" data-lottie-autoplay-trigger></div>
-				<div class="about-slider__logo-img" data-lottie-autoplay="false" data-lottie-animation="/assets/jsons/about-slider-logo.json"></div>
+				<div class="about-slider__logo-wrapper">
+					<div class="about-slider__logo-placeholder" data-lottie-autoplay-trigger></div>
+					<div class="about-slider__logo-img" data-lottie-autoplay="false" data-lottie-animation="/assets/jsons/about-slider-logo.json"></div>
+				</div>
 				<p class="about-slider__text _second s1">Мы&nbsp;станем надежным спутником в&nbsp;ваших путешествиях. Поможем сделать их&nbsp;интересными и&nbsp;безопасными и&nbsp;поделимся своим опытом.</p>
 				<div class="img-wrapper _full-height" data-animation="height">
 					<div class="img-wrapper__img">

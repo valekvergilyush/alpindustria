@@ -234,6 +234,9 @@
 			padding-top: 19px;
 			&:first-child {
 				border-top: 0;
+				&::after {
+					border-top: 0;
+				}
 			}
 			&._active {
 				padding-top: 52px;

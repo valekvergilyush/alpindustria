@@ -19,23 +19,34 @@
 		padding-bottom: 13px;
 		overflow: auto;
 	}
-	&__container,
-	&__progress {
+	&__container {
+		position: relative;
+		display: flex;
 		&::before {
 			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: rem(8);
-			background-size: contain;
-		}
-	}
-	&__container {
-		position: relative;
-		display: flex;
-		&::before {
+			height: 100%;
 			background-image: inline('timeline.svg');
+			background-repeat: no-repeat;
+			background-size: var(--progressbar-width);
+		}
+		@media (max-width: $laptop-lg) {
+			&::before {
+				background-image: inline('timeline-lg.svg');
+			}
+		}
+		@media (max-width: $laptop) {
+			&::before {
+				background-image: inline('timeline-md.svg');
+			}
+		}
+		@media (max-width: $tablet) {
+			&::before {
+				background-image: inline('timeline-sm.svg');
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			flex-shrink: 0;
@@ -44,19 +55,45 @@
 		}
 	}
 	&__progress {
+		--container-max-width: 120rem;
+		--bg-width: min(var(--container-max-width), 100% - var(--container-padding) * 2);
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 100%;
 		height: 100%;
 		transform-origin: left;
 		transition: width 1s ease;
 		will-change: width;
-		&::before {
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			background-image: inline('timeline-active.svg');
+			background-repeat: no-repeat;
+			background-size: var(--progressbar-width);
+		}
+		@media (max-width: $laptop-lg) {
+			span {
+				background-image: inline('timeline-lg-active.svg');
+			}
+		}
+		@media (max-width: $laptop) {
+			span {
+				background-image: inline('timeline-md-active.svg');
+			}
+		}
+		@media (max-width: $tablet) {
+			span {
+				background-image: inline('timeline-sm-active.svg');
+			}
 		}
 	}
 	&__list {
 		position: relative;
+		z-index: 2;
 		display: flex;
 		width: 100%;
 		@media (max-width: $mobile-lg) {
@@ -66,37 +103,25 @@
 	&__item {
 		display: flex;
 		flex-grow: 1;
-		justify-content: flex-end;
 		&:has(~ .timeline__item._active) {
 			#{$this}__link {
 				color: var(--c-active);
-			}
-		}
-		&:first-child {
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-			height: 100%;
-			#{$this}__link {
-				justify-content: flex-start;
-				padding-right: 0;
-				padding-left: rem(4);
-				border-right: 0;
-				border-left: 1px solid currentColor;
 			}
 		}
 	}
 	&__link {
 		position: relative;
 		display: flex;
-		align-items: flex-end;
-		padding-right: rem(4);
+		width: 50%;
 		line-height: 1;
 		border-right: 1px solid currentColor;
 		transition: color $fast-transition-duration $default-transition-function;
+		opacity: 0;
 		&._active {
 			color: var(--c-active);
+		}
+		&:focus {
+			outline: none;
 		}
 	}
 }

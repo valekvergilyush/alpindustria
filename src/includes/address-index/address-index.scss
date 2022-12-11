@@ -191,9 +191,11 @@
 		justify-content: center;
 		align-items: center;
 		border: 2px solid currentColor;
-		border-radius: 50%;
+		border-radius: 100vmax;
+		box-sizing: border-box;
 		min-width: var(--size);
 		height: var(--size);
+		padding: 0 rem(6);
 		@media (max-width: $laptop-lg) {
 			--size: 58px;
 		}
