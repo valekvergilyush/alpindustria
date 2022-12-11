@@ -52,12 +52,12 @@
 				min-height: 400px;
 				padding-top: 23px;
 				padding-bottom: 22px;
-				margin-bottom: calc(0px - var(--item-height) * 0.833);
+				margin-bottom: calc(0px - var(--item-height) + 110px);
 				&._active {
 					margin-bottom: 0;
 				}
 				&:last-child {
-					margin-bottom: calc(0px - var(--item-height) * 0.787);
+					margin-bottom: calc(0px - var(--item-height) + 110px);
 					&._active {
 						margin-bottom: 0;
 					}
