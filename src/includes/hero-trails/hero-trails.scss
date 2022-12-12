@@ -112,6 +112,7 @@
 	&__item {
 		--item-width: #{vw(1289, 1728)};
 		--nav-item-offset: calc((100vw - var(--item-width)) / var(--closed));
+		--hover-offset: 5vmax;
 		--easing: cubic-bezier(0.8, 0, 0.2, 1);
 		--duration: 0.6s;
 		--arrow-size: #{rem(88)};
@@ -127,8 +128,9 @@
 		z-index: calc(var(--total) - var(--i));
 		padding: var(--container-padding);
 		background-color: var(--gray-light);
-		transition: transform var(--duration) var(--easing);
-		will-change: transition;
+		transition: transform var(--duration) var(--easing),
+			margin $default-transition-duration $default-transition-function;
+		will-change: transform, margin;
 		&::before {
 			content: '';
 			position: absolute;
@@ -144,6 +146,9 @@
 			transition: background $default-transition-duration $default-transition-function,
 				opacity $default-transition-duration $default-transition-function var(--duration);
 			opacity: 0;
+			._safari & {
+				transition: none;
+			}
 		}
 		&::after {
 			content: '';
@@ -158,6 +163,9 @@
 		&._active {
 			transform: translateX(-1px);
 			border-left: 0;
+			#{$this}__title {
+				transition: transform var(--duration) var(--easing);
+			}
 			#{$this}__info {
 				color: var(--white);
 			}
@@ -182,7 +190,31 @@
 				}
 			}
 			#{$this}__title {
-				transform: translateX(0);
+				transform: translate3d(0, 0, 0);
+			}
+		}
+		&._prev {
+			#{$this}__title {
+				transition: transform var(--duration) var(--easing);
+			}
+		}
+		@media (min-width: ($tablet + 1px)) {
+			&:not(._active):hover {
+				#{$this}__title {
+					transform: translate3d(calc(var(--offset-x) - var(--hover-offset)), 0, 0);
+				}
+			}
+			&:has(~ #{$this}__item:not(._active):hover) {
+				margin-left: calc(var(--i) * var(--nav-item-offset) - var(--hover-offset));
+			}
+			&:not(._active):hover:has(#{$this}__item._active) {
+				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
+			}
+			&:not(._active):first-child:hover ~ #{$this}__item {
+				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
+			}
+			&:not(._active):first-child:hover {
+				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
 			}
 		}
 		@media (max-width: $laptop-lg) {
@@ -263,8 +295,9 @@
 		--offset-x: calc(var(--item-width) - var(--nav-item-offset) - var(--container-padding) / 2);
 		margin-bottom: rem(24);
 		opacity: 1;
-		transform: translateX(var(--offset-x));
-		transition: transform var(--duration) var(--easing);
+		transform: translate3d(var(--offset-x), 0, 0);
+		transition: transform $default-transition-duration $default-transition-function;
+		will-change: transform;
 		@media (max-width: $tablet) {
 			transform: none;
 		}
