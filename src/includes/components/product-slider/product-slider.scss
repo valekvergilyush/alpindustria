@@ -46,6 +46,7 @@
 		}
 		.tns-ovh {
 			height: 100%;
+			transform: translate3d(0, 0, 0);
 		}
 		.tns-nav {
 			display: none;
@@ -105,6 +106,7 @@
 		display: block;
 		width: 100%;
 		height: 25%;
+		transform: translate3d(0, 0, 0);
 		@media (max-width: $laptop-sm) {
 			width: 25%;
 			height: auto;
