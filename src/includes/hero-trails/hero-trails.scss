@@ -188,9 +188,6 @@
 			}
 		}
 		@media (min-width: ($tablet + 1px)) {
-			// &:has(+ #{$this}__item:not(._active):hover) {
-			// 	margin-left: calc(var(--i) * var(--nav-item-offset) - var(--hover-offset));
-			// }
 			&:not(._active):hover {
 				#{$this}__title {
 					transform: translateX(calc(var(--offset-x) - var(--hover-offset)));
@@ -202,7 +199,10 @@
 			&:not(._active):hover:has(#{$this}__item._active) {
 				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
 			}
-			&:not(._active):first-child:hover:has(+ #{$this}__item) {
+			&:not(._active):first-child:hover ~ #{$this}__item {
+				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
+			}
+			&:not(._active):first-child:hover {
 				margin-left: calc(var(--i) * var(--nav-item-offset) + var(--hover-offset));
 			}
 		}
