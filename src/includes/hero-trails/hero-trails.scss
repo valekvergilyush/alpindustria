@@ -160,6 +160,9 @@
 		&._active {
 			transform: translateX(-1px);
 			border-left: 0;
+			#{$this}__title {
+				transition: transform var(--duration) var(--easing);
+			}
 			#{$this}__info {
 				color: var(--white);
 			}
@@ -185,6 +188,11 @@
 			}
 			#{$this}__title {
 				transform: translateX(0);
+			}
+		}
+		&._prev {
+			#{$this}__title {
+				transition: transform var(--duration) var(--easing);
 			}
 		}
 		@media (min-width: ($tablet + 1px)) {
@@ -285,7 +293,8 @@
 		margin-bottom: rem(24);
 		opacity: 1;
 		transform: translateX(var(--offset-x));
-		transition: transform var(--duration) var(--easing);
+		transition: transform $default-transition-duration $default-transition-function;
+		// transition: transform var(--duration) var(--easing);
 		@media (max-width: $tablet) {
 			transform: none;
 		}
