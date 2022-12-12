@@ -130,7 +130,7 @@
 		background-color: var(--gray-light);
 		transition: transform var(--duration) var(--easing),
 			margin $default-transition-duration $default-transition-function;
-		will-change: transition;
+		will-change: transform, margin;
 		&::before {
 			content: '';
 			position: absolute;
@@ -146,6 +146,9 @@
 			transition: background $default-transition-duration $default-transition-function,
 				opacity $default-transition-duration $default-transition-function var(--duration);
 			opacity: 0;
+			._safari & {
+				transition: none;
+			}
 		}
 		&::after {
 			content: '';
@@ -187,7 +190,7 @@
 				}
 			}
 			#{$this}__title {
-				transform: translateX(0);
+				transform: translate3d(0, 0, 0);
 			}
 		}
 		&._prev {
@@ -198,7 +201,7 @@
 		@media (min-width: ($tablet + 1px)) {
 			&:not(._active):hover {
 				#{$this}__title {
-					transform: translateX(calc(var(--offset-x) - var(--hover-offset)));
+					transform: translate3d(calc(var(--offset-x) - var(--hover-offset)), 0, 0);
 				}
 			}
 			&:has(~ #{$this}__item:not(._active):hover) {
@@ -292,9 +295,9 @@
 		--offset-x: calc(var(--item-width) - var(--nav-item-offset) - var(--container-padding) / 2);
 		margin-bottom: rem(24);
 		opacity: 1;
-		transform: translateX(var(--offset-x));
+		transform: translate3d(var(--offset-x), 0, 0);
 		transition: transform $default-transition-duration $default-transition-function;
-		// transition: transform var(--duration) var(--easing);
+		will-change: transform;
 		@media (max-width: $tablet) {
 			transform: none;
 		}

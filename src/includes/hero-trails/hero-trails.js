@@ -24,12 +24,13 @@ class HeroTrails {
 				evt.preventDefault();
 
 				this.activeTrigger.classList.remove(ClassName.ACTIVE);
-				this.lastActive.classList.remove(ClassName.PREV);
-
 				this.lastActive = this.activeTrigger;
 				this.activeTrigger = evt.currentTarget;
 				this.lastActive.classList.add(ClassName.PREV);
 				this.activeTrigger.classList.add(ClassName.ACTIVE);
+
+				clearTimeout(this.TO);
+				this.TO = setTimeout(() => this.lastActive.classList.remove(ClassName.PREV), 650);
 			});
 		});
 	}
