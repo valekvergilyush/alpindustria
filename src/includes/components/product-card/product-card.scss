@@ -328,10 +328,11 @@
 	}
 	&__input-span {
 		&._size {
-			width: rem(56);
-			padding-left: 0;
-			padding-right: 0;
+			min-width: rem(56);
+			padding-inline: rem(12);
+			padding-bottom: 0.15em;
 			text-align: center;
+			white-space: nowrap;
 		}
 		&._days {
 			width: rem(80);

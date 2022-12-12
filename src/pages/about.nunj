@@ -5,7 +5,7 @@
 {% set htmlClassMods = '_about' %}
 
 {% block mainContent %}
-	<main class="page__main _pt">
+	<main class="page__main">
 		{% include "../includes/about-slider/about-slider.nunj" %}
 		<div class="page__history-wrapper">
 			{% include "../includes/timeline/timeline.nunj" %}

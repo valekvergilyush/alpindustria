@@ -245,7 +245,7 @@
 	}
 ] %}
 
-<section class="class">
+<section class="class" data-class>
 	<div class="class__main">
 		<div class="class__main-wrap">
 			{% include "../class-main/class-main.nunj" %}
@@ -260,7 +260,7 @@
 			],
 			link: {
 				text: 'Записаться',
-				url: '#'
+				url: '#appointment-form'
 			}
 		}) }}
 	</div>
@@ -492,7 +492,7 @@
 			</a>
 		</div>
 		<div data-validate>
-			<form action="/">
+			<form id="appointment-form" action="/">
 				<div class="class__block">
 					<p class="class__title h5 ttu">Записаться</p>
 					{% include "../class-form/class-form.nunj" %}
