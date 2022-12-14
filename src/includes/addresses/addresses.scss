@@ -99,6 +99,9 @@
 	&__city-text {
 		opacity: 0.4;
 		@extend .animated;
+		@media (max-width: $laptop-sm) {
+			opacity: 1;
+		}
 	}
 	&__city-icon {
 		--size: #{rem(32)};
