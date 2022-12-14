@@ -1,0 +1,39 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set tabsList = [
+	{ id: 'delivery', text: 'Доставка', active: true },
+	{ id: 'payment', text: 'Оплата' },
+	{ id: 'returns', text: 'Возврат товара' },
+	{ id: 'contacts', text: 'Контакты' }
+] %}
+
+<section class="community-tabs _delivery" data-community-tab>
+	<ul class="community-tabs__tabs">
+		{% for tab in tabsList %}
+			<li class="community-tabs__tabs-item">
+				<button class="community-tabs__tabs-btn{% if tab.className %} {{tab.className}}{% endif %} {% if tab.active %}_active{% endif %} h6 ttu" id="{{ tab.id }}" type="button" data-tab-btn>
+					{{ tab.text }}
+					{{ icon({
+						iconName: 'double-arrow-right',
+						attr: 'width="48" height="48"'
+					}) }}
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="community-tabs__sections">
+		<section class="community-tabs__section _delivery _active" aria-labelledby="delivery" data-tab-section="delivery">
+			{% include "../delivery-tab/delivery-tab.nunj" %}
+		</section>
+		<section class="community-tabs__section _payment" aria-labelledby="payment" data-tab-section="payment">
+			{% include "../delivery-payment-tab/delivery-payment-tab.nunj" %}
+		</section>
+		<section class="community-tabs__section _return" aria-labelledby="returns" data-tab-section="returns">
+			{% include "../delivery-return/delivery-return.nunj" %}
+		</section>
+		<section class="community-tabs__section _contacts" aria-labelledby="contacts" data-tab-section="contacts">
+			{% include "../delivery-contacts/delivery-contacts.nunj" %}
+		</section>
+	</div>
+</section>

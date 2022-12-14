@@ -5,21 +5,8 @@
 {% block title %}Доставка и оплата | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_delivery' %}
 
-{% set breadcrumbsData = {
-	list:	[
-		{ text: 'Главная', href: '/'},
-		{ text: 'Доставка и оплата'}
-	],
-	link: {
-		href: '/',
-		text: 'Закрыть',
-		className: '_gray'
-	}
-} %}
-
 {% block mainContent %}
 	<main class="page__main _pt _white-bg">
-		{{ breadcrumbs(breadcrumbsData) }}
-		{% include "../includes/delivery-payment/delivery-payment.nunj" %}
+		{% include "../includes/community-tabs/community-tabs-delivery.nunj" %}
 	</main>
 {% endblock %}
