@@ -184,5 +184,10 @@
 				margin-top: -32px;
 			}
 		}
+		@media (max-width: $laptop-sm) {
+			&:not(._active):not(:first-child) {
+				margin-top: -18px;
+			}
+		}
 	}
 }
