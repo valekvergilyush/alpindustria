@@ -99,6 +99,9 @@
 	&__city-text {
 		opacity: 0.4;
 		@extend .animated;
+		@media (max-width: $laptop-sm) {
+			opacity: 1;
+		}
 	}
 	&__city-icon {
 		--size: #{rem(32)};
@@ -179,6 +182,11 @@
 			border-top: 1px solid var(--blue-dark);
 			&:not(._active):not(:first-child) {
 				margin-top: -32px;
+			}
+		}
+		@media (max-width: $laptop-sm) {
+			&:not(._active):not(:first-child) {
+				margin-top: -18px;
 			}
 		}
 	}

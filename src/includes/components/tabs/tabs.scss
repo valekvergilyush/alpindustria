@@ -36,7 +36,7 @@
 			background-color: var(--blue-dark);
 		}
 		&:hover {
-			&:not(#{$this}._cart &) {
+			&:not(#{$this}._cart) & {
 				color: var(--white);
 				background-color: var(--blue-dark);
 			}
