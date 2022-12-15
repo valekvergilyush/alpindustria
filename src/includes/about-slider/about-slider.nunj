@@ -1,54 +1,56 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<div class="about-slider" data-about-slider>
-	<div class="about-slider__section-wrapper">
-		<section class="about-slider__section" data-slide>
-			<div class="about-slider__col _first">
-				<h1 class="about-slider__title h2 ttu _anim-first" data-animation="words">
-					<span class="word-wrapper"><span class="word">О нас</span></span>
-				</h1>
-				<p class="about-slider__text _first p1 _anim-first" data-animation="fade-right">Смысл нашей работы &mdash; сделать так, чтобы вы&nbsp;осмелились на&nbsp;вершину своей мечты.</p>
-			</div>
-			<div class="about-slider__col _full-height _second">
-				<div class="about-slider__logo-wrapper">
-					<div class="about-slider__logo-placeholder" data-lottie-autoplay-trigger></div>
-					<div class="about-slider__logo-img" data-lottie-autoplay="false" data-lottie-animation="/assets/jsons/about-slider-logo.json"></div>
+<div class="page__slider-wrapper" data-about-slider-wrapper>
+	<div class="about-slider" data-about-slider>
+		<div class="about-slider__section-wrapper">
+			<section class="about-slider__section" data-slide>
+				<div class="about-slider__col _first">
+					<h1 class="about-slider__title h2 ttu _anim-first" data-animation="words">
+						<span class="word-wrapper"><span class="word">О нас</span></span>
+					</h1>
+					<p class="about-slider__text _first p1 _anim-first" data-animation="fade-right">Смысл нашей работы &mdash; сделать так, чтобы вы&nbsp;осмелились на&nbsp;вершину своей мечты.</p>
 				</div>
-				<p class="about-slider__text _second s1">Мы&nbsp;станем надежным спутником в&nbsp;ваших путешествиях. Поможем сделать их&nbsp;интересными и&nbsp;безопасными и&nbsp;поделимся своим опытом.</p>
-				<div class="img-wrapper _full-height" data-animation="height">
-					<div class="img-wrapper__img">
-						<picture>
-							<source srcset="/assets/images/about/slider/about-slider-1.webp, /assets/images/about/slider/about-slider-1@2x.webp 2x" type="image/webp">
-							<img
-								class="about-slider__img _first"
-								src="/assets/images/about/slider/about-slider-1.jpg"
-								srcset="/assets/images/about/slider/about-slider-1@2x.jpg 2x"
-								width="1360"
-								height="776"
-								alt=""
-								aria-hidden="true"
-							>
-						</picture>
+				<div class="about-slider__col _full-height _second">
+					<div class="about-slider__logo-wrapper">
+						<div class="about-slider__logo-placeholder" data-lottie-autoplay-trigger></div>
+						<div class="about-slider__logo-img" data-lottie-autoplay="false" data-lottie-animation="/assets/jsons/about-slider-logo.json"></div>
+					</div>
+					<p class="about-slider__text _second s1">Мы&nbsp;станем надежным спутником в&nbsp;ваших путешествиях. Поможем сделать их&nbsp;интересными и&nbsp;безопасными и&nbsp;поделимся своим опытом.</p>
+					<div class="img-wrapper _full-height" data-animation="height">
+						<div class="img-wrapper__img">
+							<picture>
+								<source srcset="/assets/images/about/slider/about-slider-1.webp, /assets/images/about/slider/about-slider-1@2x.webp 2x" type="image/webp">
+								<img
+									class="about-slider__img _first"
+									src="/assets/images/about/slider/about-slider-1.jpg"
+									srcset="/assets/images/about/slider/about-slider-1@2x.jpg 2x"
+									width="1360"
+									height="776"
+									alt=""
+									aria-hidden="true"
+								>
+							</picture>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="about-slider__col _full-screen-width _third">
-				<figure class="about-slider__quote">
-					<blockquote class="about-slider__quote-text h4 ttu">Мы&nbsp;болеем горами и&nbsp;надеемся заразить ими&nbsp;вас</blockquote>
-					<figcaption class="about-slider__quote-author h6 ttu">Сергей Зон-Зам</figcaption>
-				</figure>
-				<div class="img-wrapper" data-animation="height">
-					<div class="img-wrapper__img">
-						{{ picture({
-							className: 'about-slider__img _second',
-							path: '/assets/images/about/slider/about-slider-2',
-							ext: 'jpg',
-							width: 768,
-							height: 490
-						}) }}
+				<div class="about-slider__col _full-screen-width _third">
+					<figure class="about-slider__quote">
+						<blockquote class="about-slider__quote-text h4 ttu">Мы&nbsp;болеем горами и&nbsp;надеемся заразить ими&nbsp;вас</blockquote>
+						<figcaption class="about-slider__quote-author h6 ttu">Сергей Зон-Зам</figcaption>
+					</figure>
+					<div class="img-wrapper" data-animation="height">
+						<div class="img-wrapper__img">
+							{{ picture({
+								className: 'about-slider__img _second',
+								path: '/assets/images/about/slider/about-slider-2',
+								ext: 'jpg',
+								width: 768,
+								height: 490
+							}) }}
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	</div>
 </div>
