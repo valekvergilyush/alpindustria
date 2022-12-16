@@ -1,4 +1,5 @@
 .product {
+	$this: &;
 	--block-margin: #{rem(124)};
 	--badges-margin: #{rem(16)};
 	@media (max-width: $laptop-lg) {
@@ -301,6 +302,15 @@
 		border-bottom: 1px solid var(--gray-light);
 		font-family: var(--font-family-suisse);
 		box-sizing: border-box;
+		&._range {
+			display: flex;
+			#{$this}__colors {
+				flex-shrink: 0;
+			}
+			#{$this}__sizes {
+				width: 100%;
+			}
+		}
 		@media (max-width: $laptop-lg) {
 			grid-template-columns: 192fr 224fr;
 			padding-top: 24px;
@@ -311,6 +321,9 @@
 			justify-content: space-between;
 			column-gap: 0;
 			padding-bottom: 23px;
+			&._range {
+				column-gap: 20px;
+			}
 		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
@@ -452,6 +465,7 @@
 		}
 	}
 	&__title-sm {
+		display: flex;
 		font-family: var(--font-family-suisse);
 		font-weight: 400;
 		font-size: rem(16);
@@ -464,6 +478,11 @@
 			font-size: 14px;
 			line-height: 16px;
 		}
+	}
+	&__title-tooltip {
+		display: inline-block;
+		margin-top: -2px;
+		margin-left: rem(8);
 	}
 	&__counter-block {
 		display: none;
@@ -606,5 +625,15 @@
 			right: 0;
 			z-index: 2;
 		}
+	}
+	&__size-range {
+		width: 100%;
+		margin-top: rem(44);
+		@media (max-width: $laptop-sm) {
+			max-width: rem(272);
+		}
+	}
+	&__title-tooltip {
+		margin-left: rem(8);
 	}
 }

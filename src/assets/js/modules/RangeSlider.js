@@ -15,27 +15,42 @@ class RangeSlider {
 		this.minValue = Number(this.slider.getAttribute('data-min-value'));
 		this.maxValue = Number(this.slider.getAttribute('data-max-value'));
 		this.step = Number(this.slider.getAttribute('data-step'));
+		this.tooltips = this.slider.hasAttribute('data-tooltips');
+		this.tooltipsUnits = this.slider.getAttribute('data-tooltips-units');
+
+		const handles =
+			this.minValue && this.maxValue
+				? [this.minValue, this.maxValue]
+				: this.minValue || this.maxValue;
+
+		const connect = this.minValue && this.maxValue ? true : [true, false];
+
+		const tooltipsFormat = {
+			from: formattedValue => Number(formattedValue),
+			to: numericValue => `${Math.round(numericValue) + this.tooltipsUnits}`,
+		};
 
 		noUiSlider.create(this.slider, {
-			start: [this.minValue, this.maxValue],
-			connect: true,
+			start: handles,
+			connect: connect,
 			margin: this.step,
+			tooltips: this.tooltips,
+			format: tooltipsFormat,
 			range: {
 				min: this.min,
 				max: this.max,
 			},
 			step: this.step,
-			// pips: {
-			// 	mode: 'range',
-			// 	density: this.max,
-			// },
 		});
 
-		this.slider.noUiSlider.on('update', values => {
-			const options = { style: 'currency', currency: 'RUB', minimumFractionDigits: 0 };
-			this.outputMin.value = new Intl.NumberFormat('ru-RU', options).format(values[0]);
-			this.outputMax.value = new Intl.NumberFormat('ru-RU', options).format(values[1]);
-		});
+		if (this.outputMin && this.outputMax) {
+			this.slider.noUiSlider.on('update', values => {
+				const options = { style: 'currency', currency: 'RUB', minimumFractionDigits: 0 };
+
+				this.outputMin.value = new Intl.NumberFormat('ru-RU', options).format(values[0]);
+				this.outputMax.value = new Intl.NumberFormat('ru-RU', options).format(values[1]);
+			});
+		}
 	}
 }
 

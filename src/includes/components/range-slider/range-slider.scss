@@ -11,9 +11,6 @@
 		width: 100%;
 		border: 0;
 		height: rem(4);
-		&:active {
-			cursor: grabbing !important;
-		}
 	}
 	.noUi-base {
 		background-color: rgba(65, 92, 152, 0.2);
@@ -37,6 +34,18 @@
 		&::before,
 		&::after {
 			display: none;
+		}
+	}
+	.noUi-tooltip {
+		bottom: 100%;
+		border: 0;
+		background: 0;
+		font-family: var(--default-font-family);
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
 		}
 	}
 }

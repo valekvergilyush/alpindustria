@@ -258,7 +258,8 @@
 					max: 600000,
 					minValue: 100000,
 					maxValue: 433150,
-					step: 100
+					step: 100,
+					outputs: true
 				}) }}
 			</div>
 		</li>
