@@ -17,9 +17,7 @@ class AddressesScroll {
 			if (window.innerWidth < TABLET_BREAKPOINT) {
 				return;
 			}
-			if (evt.target.closest('.addresses-shop._active')) {
-				return;
-			}
+
 			const direction = this.wheelDirection(evt);
 			const documentScrollTop = document.documentElement.scrollTop;
 			const scrollCondition =
@@ -27,6 +25,44 @@ class AddressesScroll {
 					this.addressContentScrollProgress !== 0 &&
 					documentScrollTop === 0) ||
 				(direction === 'down' && this.addressContentScrollProgress !== 100);
+
+			const activeItem = document.querySelector('.addresses-shop._active');
+			const tabsPanelWidth = document.querySelector('.addresses__cities').offsetWidth;
+
+			let yScroll = false;
+			if (activeItem) {
+				const scrollContainer = activeItem.children[0];
+				const maxScrollTop = scrollContainer.scrollHeight - scrollContainer.offsetHeight;
+
+				const rect = scrollContainer.getBoundingClientRect();
+
+				const isInViewport =
+					rect.left >= tabsPanelWidth &&
+					rect.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+					rect.top >= 0 &&
+					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+				if (direction === 'down' && scrollContainer.scrollTop < maxScrollTop && isInViewport) {
+					evt.preventDefault();
+
+					yScroll = !yScroll;
+					scrollContainer.scrollBy(0, evt.deltaY);
+				}
+
+				if (direction === 'up' && scrollContainer.scrollTop !== 0 && isInViewport) {
+					evt.preventDefault();
+
+					yScroll = !yScroll;
+					scrollContainer.scrollBy(0, evt.deltaY);
+				}
+
+				if (yScroll) {
+					return;
+				}
+			}
+
+			console.log(evt);
+
 			if (scrollCondition) {
 				evt.preventDefault();
 				this.addressContentBlock.scrollLeft += evt.deltaY;
