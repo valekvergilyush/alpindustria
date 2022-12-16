@@ -79,6 +79,7 @@ class AlpIndustry {
 			PersonalDataForm: require('../../includes/personal-data-form/personal-data-form').default,
 			ProductCard: require('../../includes/components/product-card/product-card').default,
 			SearchBlock: require('../../includes/components/search-block/search-block').default,
+			Tooltip: require('../../includes/components/tooltip/tooltip').default,
 			Class: require('../../includes/class/class').default,
 		};
 		this.helpers = {
