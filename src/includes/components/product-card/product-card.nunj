@@ -40,7 +40,12 @@
 	<article class="{% if props.className %}{{ props.className }} {% endif %}product-card" data-product-card>
 		<a class="product-card__title ttu" href="{{ props.url }}" {% if props.linkAttr %}{{props.linkAttr}}{% endif %}>{{ props.title }}</a>
 		<p class="product-card__brand p3">{{ props.brand }}</p>
-		<p class="product-card__price p3">{{ props.price }}</p>
+		<p class="product-card__price p3">
+			{% if props.oldPrice %}
+				<span class="product-card__old-price">{{ props.oldPrice }}</span>
+			{% endif %}
+			<span>{{ props.price }}</span>
+		</p>
 		{{ button({
 			className: 'product-card__button _wishlist' + activeClassName,
 			attr: 'aria-label="Добавить в вишлист" data-notification-open'
