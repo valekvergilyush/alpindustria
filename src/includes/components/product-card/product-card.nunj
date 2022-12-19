@@ -55,11 +55,14 @@
 			attr: 'aria-label="В корзину" data-product-card-props-opener'
 		}) }}
 		<div class="product-card__badges">
+			{% if props.exclusive %}
+				{% include "../../product-badge/exclusive-icon.nunj" %}
+			{% endif %}
 			{% if props.new %}
 				{% include "../../product-badge/new.nunj" %}
 			{% endif %}
-			{% if props.exclusive %}
-				{% include "../../product-badge/exclusive.nunj" %}
+			{% if props.longDelivery %}
+				{% include "../../product-badge/long-delivery.nunj" %}
 			{% endif %}
 			{% if props.featureImg %}
 				{% include "../../product-badge/dry-feature.nunj" %}

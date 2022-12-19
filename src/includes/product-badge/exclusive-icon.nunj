@@ -1,0 +1,9 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<p class="product-badge _exclusive-icon ttu">
+	{{ icon({
+		iconName: 'logo-short',
+		className: 'product-badge__logo',
+		attr: 'width="56" height="44" viewBox="0 0 71 36"'
+	}) }}
+</p>
