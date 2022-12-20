@@ -113,9 +113,9 @@
 			height: 24px;
 			#{$this}._active & {
 				display: block;
-			}
-			&._desktop {
-				display: none;
+				&._desktop {
+					display: none;
+				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
