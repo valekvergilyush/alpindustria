@@ -61,7 +61,8 @@
 				type: 'text',
 				id: 'application-form-birthday',
 				className: 'application-form__input _gray',
-				name: 'Дата рождения'
+				name: 'Дата рождения',
+				inputAttr: 'readonly data-datepicker'
 			}) }}
 		</div>
 		<div class="application-form__fields">

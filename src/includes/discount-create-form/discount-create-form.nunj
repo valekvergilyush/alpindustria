@@ -68,7 +68,8 @@
 		type: 'text',
 		id: 'discount-create-form-birthday',
 		className: 'discount-create-form__input _gray',
-		name: 'Дата рождения'
+		name: 'Дата рождения',
+		inputAttr: 'readonly data-datepicker'
 	}) }}
 	<div class="discount-create-form__radios">
 		{{ radio({

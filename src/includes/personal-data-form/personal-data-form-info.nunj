@@ -30,7 +30,8 @@
 		label: 'Дата рождения',
 		id: 'personal-data-birthday',
 		value: '19/10/22',
-		className: '_gray'
+		className: '_gray',
+		inputAttr: 'readonly data-datepicker'
 	}) }}
 	<div class="personal-data-form__btns">
 		{{ button({

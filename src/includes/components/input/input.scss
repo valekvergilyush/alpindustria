@@ -30,6 +30,7 @@
 		color: var(--blue-light);
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
+		pointer-events: none;
 		@media (max-width: $mobile-lg) {
 			font-size: 12px;
 		}
