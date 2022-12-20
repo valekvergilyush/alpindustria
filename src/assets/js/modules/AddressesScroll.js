@@ -61,8 +61,6 @@ class AddressesScroll {
 				}
 			}
 
-			console.log(evt);
-
 			if (scrollCondition) {
 				evt.preventDefault();
 				this.addressContentBlock.scrollLeft += evt.deltaY;
