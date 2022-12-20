@@ -20,8 +20,10 @@ class SearchBlock {
 		const openBtn = block.querySelector('[data-search-open]');
 		if (openBtn) {
 			openBtn.addEventListener('click', () => {
+				const input = block.querySelector('input');
 				block.classList.add(CLASS_ACTIVE);
 				this.activeSearchBlock = block;
+				input.focus();
 				setTimeout(() => {
 					document.addEventListener('click', this.clickOutHandler);
 				});
@@ -39,6 +41,7 @@ class SearchBlock {
 		if (e.target.closest('[data-search]') || !this.activeSearchBlock) {
 			return;
 		}
+		this.activeSearchBlock.querySelector('[data-search-open]').focus();
 		this.activeSearchBlock.classList.remove(CLASS_ACTIVE);
 		document.removeEventListener('click', this.clickOutHandler);
 	}

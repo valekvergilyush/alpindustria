@@ -31,10 +31,15 @@
 		transform: translateY(-50%);
 		overflow: auto;
 		transition: width $default-transition-duration $default-transition-function;
+		scrollbar-width: none;
+		@include scrollbar {
+			display: none;
+		}
 		#{$this}._white & {
 			border-bottom: 1px solid var(--white);
 			.input__input {
 				color: var(--white);
+				border: 0;
 			}
 		}
 	}
