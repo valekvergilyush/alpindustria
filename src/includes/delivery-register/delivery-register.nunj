@@ -26,7 +26,7 @@
 			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
-			type: tel,
+			type: 'tel',
 			id: 'delivery-register-tel',
 			name: 'Телефон',
 			className: 'delivery-register__input _gray'
