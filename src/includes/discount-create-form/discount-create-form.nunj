@@ -26,7 +26,8 @@
 		type: 'tel',
 		id: 'discount-create-form-tel',
 		className: 'discount-create-form__input _gray _tel',
-		name: 'Телефон'
+		name: 'Телефон',
+		attr: 'data-validate-type="phone"'
 	}) }}
 	{{ button({
 		type: 'button',

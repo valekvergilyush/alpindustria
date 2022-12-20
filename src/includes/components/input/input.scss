@@ -88,11 +88,12 @@
 		}
 	}
 	.iti {
+		flex-grow: 1;
 		&__flag-container {
 			display: none;
-			padding-bottom: 16px;
+			padding-bottom: rem(16);
 			@media (max-width: $mobile-lg) {
-				padding-bottom: 0;
+				padding-bottom: 8px;
 			}
 		}
 		&__selected-dial-code {
@@ -116,5 +117,11 @@
 				display: none;
 			}
 		}
+	}
+}
+
+[data-validate-type='phone'] {
+	@media (max-width: $mobile-lg) {
+		padding-top: 24px;
 	}
 }

@@ -29,7 +29,8 @@
 			type: 'tel',
 			id: 'delivery-register-tel',
 			name: 'Телефон',
-			className: 'delivery-register__input _gray'
+			className: 'delivery-register__input _gray',
+			attr: 'data-validate-type="phone"'
 		}) }}
 	</div>
 	{{ checkbox({

@@ -1,8 +1,8 @@
 /* eslint-disable */
 
-const BASE_COUNTRY_CODE = '+7';
+// const BASE_COUNTRY_CODE = '+7';
 const BASE_MATRIX = '(___) ___ __ __';
-const phoneLength = BASE_COUNTRY_CODE.length + BASE_MATRIX.length;
+const phoneLength = BASE_MATRIX.length;
 
 const returnLimitationsRegEx = dataLimitations => {
 	switch (dataLimitations) {
@@ -102,7 +102,7 @@ const simpleMatrix = (formElement, dataMatrix, dataMatrixLimitations) => {
 // Маска для телефона
 
 const onInputPhoneInput = ({ target }) => {
-	const matrix = `${BASE_COUNTRY_CODE}${BASE_MATRIX}`;
+	const matrix = `${BASE_MATRIX}`;
 	const def = matrix.replace(/\D/g, '');
 	let i = 0;
 	let val = target.value.replace(/\D/g, '');
@@ -121,14 +121,14 @@ const onInputPhoneInput = ({ target }) => {
 };
 
 const prettifyPhoneInput = input => {
-	if (!input.value.startsWith(BASE_COUNTRY_CODE)) {
-		if (input.value.startsWith('8')) {
-			input.value = input.value.replace('8', BASE_COUNTRY_CODE);
-		} else {
-			input.value = `${BASE_COUNTRY_CODE}${input.value}`;
-		}
-	}
-	const matrix = `${BASE_COUNTRY_CODE}${BASE_MATRIX}`;
+	// if (!input.value.startsWith(BASE_COUNTRY_CODE)) {
+	// 	if (input.value.startsWith('8')) {
+	// 		input.value = input.value.replace('8', BASE_COUNTRY_CODE);
+	// 	} else {
+	// 		input.value = `${BASE_COUNTRY_CODE}${input.value}`;
+	// 	}
+	// }
+	const matrix = `${BASE_MATRIX}`;
 	const def = matrix.replace(/\D/g, '');
 	let i = 0;
 	let val = input.value.replace(/\D/g, '');
@@ -148,9 +148,9 @@ const prettifyPhoneInput = input => {
 };
 
 const onFocusPhoneInput = ({ target }) => {
-	if (!target.value) {
-		target.value = BASE_COUNTRY_CODE;
-	}
+	// if (!target.value) {
+	// 	target.value = BASE_COUNTRY_CODE;
+	// }
 
 	target.addEventListener('input', onInputPhoneInput);
 	target.addEventListener('blur', onBlurPhoneInput);

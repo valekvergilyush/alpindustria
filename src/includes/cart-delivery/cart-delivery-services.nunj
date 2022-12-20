@@ -1,6 +1,6 @@
 <div class="cart__delivery-content cart-delivery _rent">
-	{% include "../delivery-auth/delivery-auth.nunj" %}
-	{% include "../delivery-register/delivery-register.nunj" %}
+	<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
+	<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
 	{% include "../delivery-register/delivery-register-rent.nunj" %}
 	<p class="cart-delivery__text p2 c-gray-dark">На&nbsp;e-mail придет информация о&nbsp;подтверждении брони.<br>ВАЖНО! Если бронь производится за&nbsp;долгое время, сотрудник магазина свяжется с&nbsp;Вами за&nbsp;2&nbsp;недели до&nbsp;начала срока проката для подтверждения. Если связаться не&nbsp;получится по&nbsp;e-mail или телефону&nbsp;&mdash; бронь отменяется. Залог оставляется только наличными. Для составления договора проката необходим паспорт.</p>
 	<button class="popups__close-button" type="button" data-popup-closer>

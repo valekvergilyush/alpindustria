@@ -9,7 +9,7 @@
 				<button class="auth__tabs-btn h7 ttu _selected" id="login" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="-1">Вход</button>
 				<button class="auth__tabs-btn h7 ttu" id="registration" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">Регистрация</button>
 			</div>
-			<section class="auth__tab-section" aria-labelledby="login" role="tabpanel" data-tab-panel aria-hidden="false">
+			<section class="auth__tab-section" data-validate aria-labelledby="login" role="tabpanel" data-tab-panel aria-hidden="false">
 				{% include "../auth-form/auth-form.nunj" %}
 			</section>
 			<section class="auth__tab-section _hidden" aria-labelledby="registration" role="tabpanel" data-tab-panel aria-hidden="false">

@@ -19,7 +19,7 @@
 				}) }}
 			</button>
 		</div>
-		<div class="personal-data__form" data-data-form="info">
+		<div class="personal-data__form" data-validate data-data-form="info">
 			{% include "../personal-data-form/personal-data-form-info.nunj" %}
 		</div>
 	</div>

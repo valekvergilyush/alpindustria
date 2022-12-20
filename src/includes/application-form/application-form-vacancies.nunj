@@ -33,7 +33,7 @@
 ] %}
 
 
-<div class="application-form">
+<div class="application-form" data-validate>
 	<form class="application-form__form">
 		{% include "../vacancies-choose/vacancies-choose.nunj" %}
 		<p class="application-form__title h5 ttu c-gray-dark">Заполните анкету</p>
@@ -71,7 +71,8 @@
 				type: 'tel',
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
-				name: 'Телефон'
+				name: 'Телефон',
+				attr: 'data-validate-type="phone"'
 			}) }}
 			{{ input({
 				type: 'email',
