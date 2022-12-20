@@ -105,12 +105,6 @@
 		&__selected-flag {
 			background-color: transparent;
 		}
-		&__flag {
-			background-image: url(../images/flags/flags.png);
-			@include retina {
-				background-image: url(../images/flags/flags@2x.png);
-			}
-		}
 		&__country-list {
 			scrollbar-width: none;
 			@include scrollbar {
