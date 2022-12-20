@@ -163,8 +163,23 @@
 		opacity: 0.4;
 	}
 	&__price {
+		display: flex;
+		align-items: center;
 		margin-bottom: var(--card-padding);
+		gap: rem(8);
 		color: var(--gray-dark);
+	}
+	&__old-price {
+		font-family: var(--font-family-suisse);
+		color: var(--blue-dark);
+		text-decoration-line: line-through;
+		font-size: rem(12);
+		line-height: 110%;
+		opacity: 0.5;
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+			line-height: 120%;
+		}
 	}
 	&__photo {
 		position: absolute;

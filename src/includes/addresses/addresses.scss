@@ -115,6 +115,7 @@
 		}
 		@media (max-width: $laptop-sm) {
 			--size: 32px;
+			opacity: 1;
 			#{$this}__city._active & {
 				transform: rotate(180deg);
 			}
