@@ -174,12 +174,6 @@
 			className: 'news__search'
 		}) }}
 		<p class="news__number p2">242 товара</p>
-		{{ button({
-			className: 'news__sort h7 ttu',
-			text: 'Cортировка',
-			icon: 'sort-asc',
-			iconData: 'width="24" height="24" viewBox="0 0 24 24"'
-		}) }}
 	</div>
 	{{ newsList({
 		list: newsListData
