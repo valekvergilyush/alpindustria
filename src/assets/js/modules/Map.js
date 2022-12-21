@@ -183,6 +183,12 @@ const CONTENT = `
 		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
 		<a href="#" class="choose ttu">Выбрать магазин</a>
 	</div>`;
+const ADDRESSES_CONTENT = `
+	<div class="map-popup">
+		<h3>г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
+		<p>Ежедневно c 10:00 до 22:00</p>
+		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
+	</div>`;
 const gApiKey = `AIzaSyAghvGrW2kSxzqP6cfhFoP5GOuSUd6as8o`;
 const MAP_DATA_CART = {
 	mapData: {
@@ -223,12 +229,14 @@ const MAP_DATA_ADDRESSES = {
 				lat: 40.712784,
 				lng: -73.994606,
 			},
+			content: ADDRESSES_CONTENT,
 		},
 		{
 			position: {
 				lat: 40.712784,
 				lng: -74.1,
 			},
+			content: ADDRESSES_CONTENT,
 		},
 	],
 };

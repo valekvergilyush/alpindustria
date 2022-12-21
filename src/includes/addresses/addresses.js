@@ -26,12 +26,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -49,12 +51,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -72,12 +76,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -95,12 +101,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -118,12 +126,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -141,12 +151,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -164,12 +176,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -187,12 +201,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -210,12 +226,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -233,12 +251,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -256,12 +276,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -279,12 +301,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -302,12 +326,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -325,12 +351,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.812784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.812784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
@@ -348,12 +376,14 @@ const MAP_DATA_ADDRESSES = [
 					lat: 40.712784,
 					lng: -73.994606,
 				},
+				content: CONTENT,
 			},
 			{
 				position: {
 					lat: 40.712784,
 					lng: -74.1,
 				},
+				content: CONTENT,
 			},
 		],
 	},
