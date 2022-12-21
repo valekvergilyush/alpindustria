@@ -1,0 +1,46 @@
+.footer-popup {
+	--gap-1: #{rem(48)};
+	--gap-2: #{rem(32)};
+	--gap-3: #{rem(16)};
+	display: grid;
+	gap: var(--container-padding);
+	@media (max-width: $laptop-lg) {
+		--gap-1: 32px;
+		--gap-2: 24px;
+		--gap-3: 8px;
+	}
+	@media (max-width: $laptop-md) {
+		--gap-1: 24px;
+	}
+	@media (max-width: $laptop-sm) {
+		gap: 32px;
+	}
+	@media (max-width: $mobile-lg) {
+		gap: 48px;
+	}
+	&__title {
+		padding-right: rem(50);
+	}
+	&__block {
+		display: grid;
+		gap: var(--gap-1);
+		&._2 {
+			gap: var(--gap-2);
+		}
+		&._3 {
+			gap: var(--gap-3);
+		}
+		&._4 {
+			gap: 0;
+		}
+		a {
+			text-decoration: none;
+			&[href] {
+				@extend .animated;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}

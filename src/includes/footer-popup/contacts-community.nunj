@@ -1,0 +1,82 @@
+<div class="footer-popup">
+	<p class="footer-popup__title h5 ttu">Контакты «сообщество»</p>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">МОО "Горный клуб Альпиндустрия"</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Адрес</p>
+				<p class="p2">105037, Россия, Москва, Первомайская, 18</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Время работы</p>
+				<p class="p2">11:00-20:00 пн-пт, сб-вс</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Телефон</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>, доб. 139
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Почта</p>
+				<p class="p2">
+					<a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">E-mail куратора горного клуба</p>
+				<p class="p2">
+					<a href="mailto:e.pankova@alpindustria.ru">e.pankova@alpindustria.ru</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">Межрегиональная общественная организация содействия развитию экстремальных видов спорта «МОО Горный клуб Альпиндустрия»</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Сокращенное наименование</p>
+				<p class="p2">МОО "Горный клуб Альпиндустрия"</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Дата внесения в ЕГРЮЛ</p>
+				<p class="p2">25 апреля 2017 г.</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Фактический адрес</p>
+				<p class="p2">105037, Россия, Москва, Первомайская, 18, стр.1</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Юридический адрес</p>
+				<p class="p2">105037, Россия, Москва, Первомайская, 18, стр.1</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Телефон</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Факс</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Остальное</p>
+				<div class="footer-popup__block _4">
+					<p class="p2">ИНН: 7719468714</p>
+					<p class="p2">КПП: 771901001</p>
+					<p class="p2">ОГРН: 1177700007088</p>
+					<p class="p2">ОКПО: 74466754</p>
+					<p class="p2">ОКВЭД: 94.99</p>
+					<p class="p2">ОКТМО: 45307000000</p>
+					<p class="p2">Банк: Московский филиал ПАО РОСБАНК</p>
+					<p class="p2">Р/сч. в руб.: 40703810787140000005</p>
+					<p class="p2">К/сч.: 30101810000000000256</p>
+					<p class="p2">БИК: 044525256</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
