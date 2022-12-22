@@ -65,8 +65,6 @@
 			background-color: var(--blue-dark);
 			&:hover {
 				column-gap: rem(11);
-				color: var(--blue-dark);
-				background-color: var(--white);
 			}
 		}
 		@media (max-width: $desktop) {
