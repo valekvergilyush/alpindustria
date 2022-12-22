@@ -58,7 +58,7 @@ class AddressesScroll {
 
 					xScroll = false;
 					gsap.to(scrollContainer, {
-						scrollTo: { y: scrollContainer.scrollTop + (evt.deltaY > 0 ? 100 : -100) },
+						scrollTo: { y: scrollContainer.scrollTop + (evt.deltaY > 0 ? 150 : -150) },
 					});
 				}
 			}
@@ -67,7 +67,7 @@ class AddressesScroll {
 				evt.preventDefault();
 
 				gsap.to(this.addressContentBlock, {
-					scrollTo: { x: this.addressContentBlock.scrollLeft + (evt.deltaY > 0 ? 100 : -100) },
+					scrollTo: { x: this.addressContentBlock.scrollLeft + (evt.deltaY > 0 ? 150 : -150) },
 				});
 			}
 		});
