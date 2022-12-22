@@ -482,7 +482,7 @@
 					</li>
 				{% endfor %}
 			</ul>
-			<a href="#" class="class__link _question h7 c-gray-dark ttu">
+			<a href="#" class="class__link _question h7 c-gray-dark ttu" data-popup-opener="question-form">
 				Задать вопрос
 				{{ icon({
 					iconName: 'promo-arrow',

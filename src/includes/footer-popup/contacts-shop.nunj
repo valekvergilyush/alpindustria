@@ -1,0 +1,68 @@
+<div class="footer-popup">
+	<p class="footer-popup__title h5 ttu">Контакты «магазин»</p>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">ООО «Эталон»</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Адрес</p>
+				<p class="p2">105037, Россия, Москва, Первомайская, 18</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Время работы</p>
+				<p class="p2">10:00-19:00 пн-пт, сб-вс выходные</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Телефон</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Почта</p>
+				<p class="p2">
+					<a href="mailto:sale@alpindustria.ru">sale@alpindustria.ru</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">Общество с ограниченной ответственностью Эдельвейс</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Сокращенное наименование</p>
+				<p class="p2">ООО Эдельвейс</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Фактический адрес</p>
+				<p class="p2">105037, г. Москва, ул. Первомайская,д.18, подвал пом 2, комн.9,10</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Юридический адрес</p>
+				<p class="p2">105037, г. Москва, ул. Первомайская,д.18, подвал пом 2, комн.9,10</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Остальное</p>
+				<div class="footer-popup__block _4 p2">
+					<p>ИНН: 9719000616</p>
+					<p>КПП: 771901001</p>
+					<p>ОГРН: 1197746750134</p>
+					<p>ОКПО: 42848784</p>
+					<p>ОКВЭД: 47.91</p>
+					<p>ОКТМО: 45307000000</p>
+					<p>Банк: АО «АЛЬФА-БАНК»</p>
+					<p>Р/сч. в руб.: 40702810901100020136</p>
+					<p>К/сч.: 30101810200000000593</p>
+					<p>БИК: 044525593</p>
+				</div>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Генеральный директор</p>
+				<p class="p2">Потапова Екатерина Васильевна</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Главный бухгалтер</p>
+				<p class="p2">Наливкина Ирина Владимировна</p>
+			</div>
+		</div>
+	</div>
+</div>

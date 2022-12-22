@@ -251,6 +251,60 @@
 				padding-bottom: 56px;
 			}
 		}
+		&._delivery {
+			padding-top: var(--container-padding);
+			padding-bottom: var(--container-padding);
+		}
+		&._payment {
+			padding-top: var(--container-padding);
+			padding-bottom: rem(692);
+			@media (max-width: $laptop-lg) {
+				padding-bottom: 602px;
+			}
+			@media (max-width: $laptop-md) {
+				padding-bottom: 651px;
+			}
+			@media (max-width: $laptop-sm) {
+				padding-bottom: 893px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding-bottom: 260px;
+			}
+		}
+		&._return {
+			padding-top: var(--container-padding);
+			padding-bottom: rem(560);
+			@media (max-width: $laptop-lg) {
+				padding-bottom: 470px;
+			}
+			@media (max-width: $laptop-md) {
+				padding-bottom: 126px;
+			}
+			@media (max-width: $laptop-sm) {
+				padding-bottom: 653px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding-bottom: 95px;
+			}
+		}
+		&._contacts {
+			padding-top: var(--container-padding);
+			@media (max-width: $laptop-sm) {
+				padding-bottom: 32px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding-bottom: 60px;
+			}
+		}
+		& > .community-contacts {
+			max-width: rem(826);
+			@media (max-width: $laptop-lg) {
+				max-width: 784px;
+			}
+			@media (max-width: $laptop-md) {
+				max-width: none;
+			}
+		}
 	}
 	&._profile {
 		--left-col: 344;
@@ -282,6 +336,67 @@
 			svg {
 				margin-top: 0;
 			}
+		}
+	}
+	&._delivery {
+		--left-col: 344;
+		--right-col: 1384;
+		overflow: hidden;
+		@media (max-width: $laptop-lg) {
+			--left-col: 347;
+			--right-col: 1380;
+		}
+		@media (max-width: $laptop-md) {
+			--left-col: 345;
+			--right-col: 1386;
+		}
+		#{$this}__tabs {
+			row-gap: 18px;
+			padding-top: 73px;
+			@media (max-width: $laptop-lg) {
+				padding-top: 48px;
+			}
+			@media (max-width: $laptop-md) {
+				padding-top: 41px;
+				gap: 18px;
+			}
+			@media (max-width: $laptop-sm) {
+				gap: 0;
+			}
+		}
+		#{$this}__tabs-btn {
+			--arrow-size: #{rem(32)};
+			gap: 0;
+			@media (max-width: $laptop-md) {
+				--arrow-size: 16px;
+				font-size: 16px;
+				line-height: 20px;
+			}
+			@media (max-width: $laptop-sm) {
+				--arrow-size: 24px;
+				gap: 10px;
+				font-size: 24px;
+				line-height: 31px;
+			}
+			@media (max-width: $mobile-lg) {
+				font-size: 22px;
+				line-height: 29px;
+			}
+			svg {
+				margin-top: 0;
+				@media (max-width: $laptop-sm) {
+					margin-top: -5px;
+				}
+				@media (max-width: $mobile-lg) {
+					margin-top: -3px;
+				}
+			}
+		}
+		#{$this}__sections {
+			background-color: var(--gray-light);
+		}
+		&._active {
+			background-color: var(--gray-light);
 		}
 	}
 }

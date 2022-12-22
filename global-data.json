@@ -54,6 +54,34 @@
 			"animation": "RTL"
 		},
 		{
+			"name": "contacts-shop",
+			"animation": "RTL"
+		},
+		{
+			"name": "contacts-community",
+			"animation": "RTL"
+		},
+		{
+			"name": "contacts-distribution",
+			"animation": "RTL"
+		},
+		{
+			"name": "cart-order",
+			"animation": "RTL"
+		},
+		{
+			"name": "cart-reservation",
+			"animation": "RTL"
+		},
+		{
+			"name": "data-editing",
+			"animation": "RTL"
+		},
+		{
+			"name": "question-form",
+			"animation": "RTL"
+		},
+		{
 			"name": "video"
 		}
 	]

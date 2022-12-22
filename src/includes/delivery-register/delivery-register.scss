@@ -18,12 +18,12 @@
 		display: flex;
 		column-gap: rem(16);
 		align-items: flex-end;
-		&:first-of-type {
+		&:not(:last-child) {
 			margin-bottom: rem(24);
 		}
 		@media (max-width: $mobile-lg) {
 			column-gap: 8px;
-			&:first-of-type {
+			&:not(:last-child) {
 				margin-bottom: 22px;
 			}
 		}
@@ -51,5 +51,11 @@
 		box-sizing: border-box;
 		border: 1px solid var(--blue-dark);
 		border-radius: 100vmax;
+	}
+	&__legal {
+		margin-top: rem(16);
+	}
+	&__legal-text {
+		margin-top: rem(24);
 	}
 }

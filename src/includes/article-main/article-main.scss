@@ -51,10 +51,6 @@
 	&__author {
 		grid-area: author;
 		justify-self: flex-start;
-		@extend .animated;
-		&:hover {
-			opacity: 0.7;
-		}
 		@media (max-width: $laptop-sm) {
 			justify-self: flex-end;
 			margin-top: 0;

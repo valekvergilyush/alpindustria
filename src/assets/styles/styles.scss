@@ -115,7 +115,6 @@
 @import '../../includes/application-form/application-form';
 @import '../../includes/community-tabs/community-tabs';
 @import '../../includes/delivery-tab/delivery-tab';
-@import '../../includes/delivery-payment/delivery-payment';
 @import '../../includes/delivery-contacts/delivery-contacts';
 @import '../../includes/delivery-payment-tab/delivery-payment-tab';
 @import '../../includes/delivery-return/delivery-return';
@@ -186,6 +185,8 @@
 @import '../../includes/distribution-requisites/distribution-requisites';
 @import '../../includes/product-popup/product-popup';
 @import '../../includes/video-popup/video-popup';
+@import '../../includes/footer-popup/footer-popup';
+@import '../../includes/cart-popup/cart-popup';
 
 // ======= PAGES =======
 @import 'pages/index';

@@ -1,0 +1,35 @@
+{% from "../components/button/button.nunj" import button %}
+
+<div class="cart-popup">
+	<div class="cart-popup__wrap">
+		<p class="cart-popup__title h5 ttu">Ваш заказ успешно оформлен!</p>
+		<div class="cart-popup__block _2 c-gray-dark">
+			<div class="cart-popup__block _3">
+				<p class="p3">Номер заказа:</p>
+				<p class="h5">314820</p>
+			</div>
+			<p class="p2">На  ваш e-mail (hello@gmail.com) выслано письмо с полной информацией о заказе. В ближайшее время наш менеджер свяжется с вами для подтверждения заказа!</p>
+		</div>
+		<div class="cart-popup__block c-gray-dark _mt-a">
+			<div class="cart-popup__block _4 p3">
+				<p>Если возникли вопросы:</p>
+				<div class="cart-popup__block _no-gap">
+					<p><a href="tel:+7(495) 645-57-73">+7(495) 645-57-73</a></p>
+					<p><a href="tel:8 800 775-16-30">8 800 775-16-30</a></p>
+					<p>или пишите на <a href="#">sale@alpindustria.ru</a></p>
+				</div>
+			</div>
+			<p class="p3">Если наши менеджеры не смогут помочь вам в решении какого-либо вопроса — <a href="#">напишите директору интернет-магазина Потаповой Екатерине</a></p>
+		</div>
+	</div>
+	<div class="cart-popup__bottom">
+		{{ button({
+			text: 'Продолжить покупки',
+			type: 'botton',
+			icon: 'promo-arrow',
+			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
+			className: 'product-popup__bottom-btn _arrow h7 ttu',
+			attr: 'data-popup-closer'
+		}) }}
+	</div>
+</div>

@@ -38,6 +38,13 @@
 		&[data-popup-wrapper='product-appear'],
 		&[data-popup-wrapper='product-to-order'],
 		&[data-popup-wrapper='product-technology'],
+		&[data-popup-wrapper='contacts-shop'],
+		&[data-popup-wrapper='contacts-community'],
+		&[data-popup-wrapper='contacts-distribution'],
+		&[data-popup-wrapper='cart-order'],
+		&[data-popup-wrapper='question-form'],
+		&[data-popup-wrapper='cart-reservation'],
+		&[data-popup-wrapper='data-editing'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -58,6 +65,13 @@
 		&[data-popup-wrapper='product-appear'],
 		&[data-popup-wrapper='product-to-order'],
 		&[data-popup-wrapper='product-technology'],
+		&[data-popup-wrapper='contacts-shop'],
+		&[data-popup-wrapper='contacts-community'],
+		&[data-popup-wrapper='contacts-distribution'],
+		&[data-popup-wrapper='cart-order'],
+		&[data-popup-wrapper='cart-reservation'],
+		&[data-popup-wrapper='data-editing'],
+		&[data-popup-wrapper='question-form'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
@@ -242,7 +256,11 @@
 				color: var(--white);
 			}
 		}
-		&[data-popup='product-appear'] {
+		&[data-popup='product-appear'],
+		&[data-popup='data-editing'],
+		&[data-popup='cart-reservation'],
+		&[data-popup='question-form'],
+		&[data-popup='cart-order'] {
 			@media (max-width: $tablet) {
 				min-height: auto;
 			}

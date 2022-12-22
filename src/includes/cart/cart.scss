@@ -131,11 +131,29 @@
 		}
 		#{$this}._rent &._rent {
 			display: flex;
+			&._total {
+				display: none;
+			}
+			._opened-pay & {
+				display: none;
+				&._total {
+					display: flex;
+				}
+			}
 		}
 	}
 	&__submit {
 		margin-top: auto;
 		margin-left: auto;
+		#{$this}._shop &._rent {
+			display: none;
+		}
+		#{$this}._rent &._shop {
+			display: none;
+		}
+		#{$this}._rent &._rent {
+			display: flex;
+		}
 	}
 	&__price {
 		color: var(--blue-light);
