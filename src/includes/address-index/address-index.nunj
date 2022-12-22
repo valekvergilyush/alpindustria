@@ -46,7 +46,7 @@
 					</li>
 				{% endfor %}
 			</ul>
-			<a class="address-index__link h5 ttu" href="/addresses.html">
+			<a class="address-index__link _all h5 ttu" href="/addresses.html">
 				<div class="address-index__link-text">Все адреса</div>
 				{{ icon({
 					iconName: 'promo-arrow-blue',

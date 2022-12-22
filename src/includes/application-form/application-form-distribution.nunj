@@ -32,7 +32,7 @@
 ] %}
 
 
-<div class="application-form _distribution">
+<div class="application-form _distribution" data-validate>
 	<p class="application-form__title h5 ttu c-gray-dark">Заполните анкету</p>
 	<form class="application-form__form">
 		<p class="application-form__form-title h7 ttu c-gray-dark">Компания</p>
@@ -121,7 +121,8 @@
 				type: 'tel',
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
-				name: 'Телефон'
+				name: 'Телефон',
+				attr: 'data-validate-type="phone"'
 			}) }}
 			{{ input({
 				type: 'email',

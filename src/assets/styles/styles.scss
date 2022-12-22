@@ -7,6 +7,8 @@
 @import 'lib/flatpickr';
 @import 'lib/picker';
 @import 'lib/tiny-slider';
+@import 'lib/tippy';
+@import 'lib/intl-tel-input';
 @import 'fonts';
 @import 'typography';
 @import 'reset';
@@ -59,6 +61,7 @@
 @import '../../includes/components/message-item/message-item';
 @import '../../includes/components/search-block/search-block';
 @import '../../includes/components/error-section/error-section';
+@import '../../includes/components/tooltip/tooltip';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';

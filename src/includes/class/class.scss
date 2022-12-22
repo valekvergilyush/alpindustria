@@ -66,6 +66,9 @@
 		&._no-bg {
 			color: inherit;
 			background: 0;
+			a {
+				display: none;
+			}
 		}
 		&._hidden {
 			opacity: 0;

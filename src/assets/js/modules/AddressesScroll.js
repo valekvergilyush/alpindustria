@@ -17,19 +17,58 @@ class AddressesScroll {
 			if (window.innerWidth < TABLET_BREAKPOINT) {
 				return;
 			}
-			if (evt.target.closest('.addresses-shop._active')) {
-				return;
-			}
+
 			const direction = this.wheelDirection(evt);
 			const documentScrollTop = document.documentElement.scrollTop;
+			const activeItem = document.querySelector('.addresses-shop._active');
+			const tabsPanelWidth = document.querySelector('.addresses__cities').offsetWidth;
+			const maxScrollLeft =
+				this.addressContentBlock.scrollWidth - window.innerWidth + tabsPanelWidth;
 			const scrollCondition =
-				(direction === 'up' &&
-					this.addressContentScrollProgress !== 0 &&
+				(direction === 'down' &&
+					this.addressContentBlock.scrollLeft < maxScrollLeft &&
 					documentScrollTop === 0) ||
-				(direction === 'down' && this.addressContentScrollProgress !== 100);
-			if (scrollCondition) {
+				(direction === 'up' &&
+					this.addressContentBlock.scrollLeft !== 0 &&
+					documentScrollTop === 0);
+
+			let xScroll = true;
+
+			if (direction === 'up' && documentScrollTop === 0) {
 				evt.preventDefault();
-				this.addressContentBlock.scrollLeft += evt.deltaY;
+			}
+
+			if (activeItem) {
+				const scrollContainer = activeItem.children[0];
+				const maxScrollTop = scrollContainer.scrollHeight - scrollContainer.offsetHeight;
+
+				const rect = scrollContainer.getBoundingClientRect();
+
+				const isInViewport =
+					rect.left >= tabsPanelWidth &&
+					rect.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+					rect.top >= 0 &&
+					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+				if (
+					(direction === 'down' && scrollContainer.scrollTop < maxScrollTop && isInViewport) ||
+					(direction === 'up' && scrollContainer.scrollTop !== 0 && isInViewport)
+				) {
+					evt.preventDefault();
+
+					xScroll = false;
+					gsap.to(scrollContainer, {
+						scrollTo: { y: scrollContainer.scrollTop + (evt.deltaY > 0 ? 150 : -150) },
+					});
+				}
+			}
+
+			if (scrollCondition && xScroll) {
+				evt.preventDefault();
+
+				gsap.to(this.addressContentBlock, {
+					scrollTo: { x: this.addressContentBlock.scrollLeft + (evt.deltaY > 0 ? 150 : -150) },
+				});
 			}
 		});
 	}

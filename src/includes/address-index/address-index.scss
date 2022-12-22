@@ -155,13 +155,21 @@
 		transition: color $fast-transition-duration $default-transition-function,
 			background-color $fast-transition-duration $default-transition-function,
 			padding 0.4s $default-transition-function;
-		&:hover {
+		&:not(._all):hover {
 			padding-left: rem(16);
 			color: var(--gray-light);
 			background-color: var(--blue-dark);
 			#{$this}__item-img {
 				opacity: 1;
 				transform: translateX(var(--img-offset)) translateY(-50%) rotate(3deg);
+			}
+		}
+		&._all {
+			width: auto;
+			&:hover {
+				#{$this}__link-icon {
+					--fill: var(--blue-dark);
+				}
 			}
 		}
 		@media (max-width: $laptop-lg) {

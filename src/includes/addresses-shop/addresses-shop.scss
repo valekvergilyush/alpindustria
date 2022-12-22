@@ -14,7 +14,8 @@
 	background-color: var(--gray-light);
 	position: relative;
 	overflow: hidden;
-	transition: width $default-transition-duration $default-transition-function,
+	transition: margin $default-transition-duration $default-transition-function,
+		width $default-transition-duration $default-transition-function,
 		background-color $default-transition-duration $default-transition-function,
 		color $default-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
@@ -54,6 +55,9 @@
 		background-color: var(--blue-dark);
 		color: var(--white);
 	}
+	&:last-child:not(._active):hover {
+		margin-left: calc(var(--close-width) - var(--hover-width));
+	}
 	.addresses-shop {
 		flex-shrink: 0;
 		width: var(--open-width);
@@ -90,15 +94,32 @@
 	}
 	&__close-btn {
 		display: none;
+		@include reset-btn;
+		position: absolute;
+		&._desktop {
+			display: none;
+			top: 0;
+			right: 0;
+			width: rem(50);
+			height: rem(50);
+			margin-right: rem(-16);
+		}
+		#{$this}._active & {
+			&._desktop {
+				display: block;
+			}
+		}
 		@media (max-width: $laptop-sm) {
-			@include reset-btn;
-			position: absolute;
+			margin: 0;
 			top: 44px;
 			right: var(--container-padding);
 			width: 24px;
 			height: 24px;
 			#{$this}._active & {
 				display: block;
+				&._desktop {
+					display: none;
+				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
@@ -120,7 +141,11 @@
 			display: flex;
 		}
 	}
+	&__place-wrapper {
+		position: relative;
+	}
 	&__place {
+		padding-right: rem(50);
 		@media (max-width: $laptop-sm) {
 			font-size: 64px;
 			line-height: 64px;

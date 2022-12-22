@@ -1,15 +1,19 @@
 {% macro rangeSlider(props) %}
 	<div class="{% if props.className %}{{ props.className }} {% endif %}range-slider" data-range>
-		<output class="range-slider__value" name="Min Price" for="{{ id }}" data-range-output-min>{{ props.minValue }}</output>
-		<output class="range-slider__value" name="Max Price" for="{{ id }}" data-range-output-max>{{ props.maxValue }}</output>
+		{% if props.outputs %}
+			<output class="range-slider__value" name="Min Price" for="{{ id }}" data-range-output-min>{{ props.minValue }}</output>
+			<output class="range-slider__value" name="Max Price" for="{{ id }}" data-range-output-max>{{ props.maxValue }}</output>
+		{% endif %}
 		<div
 			class="range-slider__slider"
-			id="{{ id }}"
+			id="{{ props.id }}"
 			data-min="{% if props.min %}{{ props.min }}{% else %}}0{% endif %}"
 			data-max="{% if props.max %}{{ props.max }}{% else %}}10{% endif %}"
 			data-min-value="{% if props.minValue %}{{ props.minValue }}{% else %}}0{% endif %}"
 			data-max-value="{% if props.maxValue %}{{ props.maxValue }}{% else %}}10{% endif %}"
 			data-step="{% if props.step %}{{ props.step }}{% else %}}1{% endif %}"
+			{% if props.tooltips %} data-tooltips{% endif %}
+			{% if props.tooltipsUnits %} data-tooltips-units="{{ props.tooltipsUnits }}"{% endif %}
 			data-range-slider
 		></div>
 	</div>

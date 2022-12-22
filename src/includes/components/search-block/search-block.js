@@ -20,25 +20,43 @@ class SearchBlock {
 		const openBtn = block.querySelector('[data-search-open]');
 		if (openBtn) {
 			openBtn.addEventListener('click', () => {
+				block.input = block.querySelector('input');
 				block.classList.add(CLASS_ACTIVE);
 				this.activeSearchBlock = block;
+				block.input.focus();
 				setTimeout(() => {
 					document.addEventListener('click', this.clickOutHandler);
-				});
+				}, 200);
+
+				if (block.input.value !== '') {
+					this.close();
+				}
 			});
 		}
-		block.addEventListener('submit', e => {
-			e.preventDefault();
-			block.classList.remove(CLASS_ACTIVE);
-			this.activeSearchBlock = false;
-			document.removeEventListener('click', this.clickOutHandler);
-		});
 	}
 
 	clickOutHandler(e) {
-		if (e.target.closest('[data-search]') || !this.activeSearchBlock) {
+		if (
+			e.target.closest('[data-search]') ||
+			!this.activeSearchBlock ||
+			this.activeSearchBlock.querySelector('input').value !== ''
+		) {
 			return;
 		}
+
+		if (this.activeSearchBlock.classList.contains(CLASS_ACTIVE)) {
+			this.close();
+		}
+	}
+	close() {
+		this.activeSearchBlock.querySelector('[data-search-open]').focus();
+		this.activeSearchBlock.input.value = '';
+		this.activeSearchBlock.input.parentElement.classList.remove('_filled');
+		this.activeSearchBlock.classList.add('_closing');
+		clearTimeout(this.TO);
+		this.TO = setTimeout(() => {
+			this.activeSearchBlock.classList.remove('_closing');
+		}, 200);
 		this.activeSearchBlock.classList.remove(CLASS_ACTIVE);
 		document.removeEventListener('click', this.clickOutHandler);
 	}

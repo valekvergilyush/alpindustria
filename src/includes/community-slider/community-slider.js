@@ -25,6 +25,7 @@ class CommunitySlider {
 
 		ScrollTrigger.create({
 			trigger: container,
+			pinSpacer: '[data-about-slider-wrapper]',
 			start: 'top top',
 			end: `+=${getToValue() + 50}`,
 			pin: true,

@@ -1,3 +1,5 @@
+import intlTelInput from 'intl-tel-input';
+
 const ClassName = {
 	FILLED: '_filled',
 };
@@ -19,6 +21,14 @@ class Input {
 
 			if (input.value) {
 				field.classList.add(ClassName.FILLED);
+			}
+
+			if (input.type === 'tel') {
+				intlTelInput(input, {
+					initialCountry: 'ru',
+					onlyCountries: ['ru', 'am', 'by', 'kg', 'kz'],
+					separateDialCode: true,
+				});
 			}
 
 			input.addEventListener('input', () => {

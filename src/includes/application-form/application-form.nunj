@@ -31,7 +31,7 @@
 ] %}
 
 
-<div class="application-form">
+<div class="application-form" data-validate>
 	{% include "../community-auth/community-auth.nunj" %}
 
 	<p class="application-form__title h5 ttu c-gray-dark">Заполните анкету</p>
@@ -61,7 +61,8 @@
 				type: 'text',
 				id: 'application-form-birthday',
 				className: 'application-form__input _gray',
-				name: 'Дата рождения'
+				name: 'Дата рождения',
+				inputAttr: 'readonly data-datepicker'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -69,7 +70,8 @@
 				type: 'tel',
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
-				name: 'Телефон'
+				name: 'Телефон',
+				attr: 'data-validate-type="phone"'
 			}) }}
 			{{ input({
 				type: 'email',
