@@ -14,7 +14,8 @@
 	background-color: var(--gray-light);
 	position: relative;
 	overflow: hidden;
-	transition: width $default-transition-duration $default-transition-function,
+	transition: margin $default-transition-duration $default-transition-function,
+		width $default-transition-duration $default-transition-function,
 		background-color $default-transition-duration $default-transition-function,
 		color $default-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
@@ -53,6 +54,9 @@
 		width: var(--open-width);
 		background-color: var(--blue-dark);
 		color: var(--white);
+	}
+	&:last-child:not(._active):hover {
+		margin-left: calc(var(--close-width) - var(--hover-width));
 	}
 	.addresses-shop {
 		flex-shrink: 0;
