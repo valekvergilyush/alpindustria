@@ -86,13 +86,13 @@
 		<div class="delivery-register__fields">
 			{{ input({
 				type: text,
-				id: 'delivery-register-name',
+				id: 'delivery-register-bank',
 				name: 'Полное наименование банка',
 				className: 'delivery-register__input _gray'
 			}) }}
 			{{ input({
 				type: number,
-				id: 'delivery-register-surname',
+				id: 'delivery-register-bik',
 				name: 'БИК',
 				className: 'delivery-register__input _gray'
 			}) }}

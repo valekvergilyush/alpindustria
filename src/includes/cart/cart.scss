@@ -152,7 +152,7 @@
 			display: none;
 		}
 		#{$this}._rent &._rent {
-			display: block;
+			display: flex;
 		}
 	}
 	&__price {
