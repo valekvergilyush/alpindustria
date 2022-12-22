@@ -1,18 +1,34 @@
 {% from "../button/button.nunj" import button %}
 {% from "../input/input.nunj" import input %}
+{% from "../icon/icon.nunj" import icon %}
+
+{% set list = ['Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face'] %}
 
 {% macro searchBlock(props) %}
 	<form class="search-block {% if props.className %}{{ props.className }}{% endif %}" data-search>
-		{{ button({
-			className: 'search-block__btn _search',
-			attr: 'aria-label="Поиск", data-search-open',
-			icon: 'search',
-			iconData: 'width="32" height="32", viewBox="0 0 32 32"'
-		}) }}
 		{{ input({
 			type: 'text',
 			id: 'search-input',
-			className: 'search-block__input'
+			className: 'search-block__input',
+			placeholder: props.placeholder,
+			inputAttr: 'autocomplete="off"'
 		}) }}
+		<ul class="search-block__dropdown p3">
+			{% for item in list %}
+				<li class="search-block__dropdown-item"><a href="#">{{ item }}</a></li>
+			{% endfor %}
+		</ul>
+		<button class="search-block__btn _search button" type="button" aria-label="Поиск" data-search-open>
+			{{ icon({
+				iconName: 'search',
+				className: 'button__icon _search',
+				attr: 'width="32" height="32" viewBox="0 0 32 32"'
+			}) }}
+			{{ icon({
+				iconName: 'close-search',
+				className: 'button__icon _close-search',
+				attr: 'width="32" height="32" viewBox="0 0 32 32"'
+			}) }}
+		</button>
 	</form>
 {% endmacro %}
