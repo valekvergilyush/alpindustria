@@ -66,6 +66,22 @@
 			"animation": "RTL"
 		},
 		{
+			"name": "cart-order",
+			"animation": "RTL"
+		},
+		{
+			"name": "cart-reservation",
+			"animation": "RTL"
+		},
+		{
+			"name": "data-editing",
+			"animation": "RTL"
+		},
+		{
+			"name": "question-form",
+			"animation": "RTL"
+		},
+		{
 			"name": "video"
 		}
 	]

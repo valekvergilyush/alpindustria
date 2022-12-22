@@ -6,6 +6,7 @@
 			id="{{ props.id }}"
 			name="{{ props.name }}"
 			{% if props.checked %}checked{% endif %}
+			{% if props.inputAttr %}{{ props.inputAttr }}{% endif %}
 		>
 		<label class="checkbox__label p3" for="{{ props.id }}">{{ props.text }}</label>
 	</div>

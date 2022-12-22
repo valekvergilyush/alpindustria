@@ -1,0 +1,24 @@
+<div class="cart__delivery-content cart-delivery _total _rent">
+	<table class="cart-delivery__table">
+		<tr>
+			<th>ФИО</th>
+			<td>Константин Константинопольский</td>
+		</tr>
+		<tr>
+			<th>Почта</th>
+			<td>konstantin@gmail.com</td>
+		</tr>
+		<tr>
+			<th>Телефон</th>
+			<td>+7 (902) 222 01 02</td>
+		</tr>
+		<tr>
+			<th>Даты </th>
+			<td>22/07/22 — 12/08/22</td>
+		</tr>
+		<tr>
+			<th>Магазин</th>
+			<td>г. Санкт-Петербург, наб. Черной речки, д. 6  (ст.м. Черная Речка)</td>
+		</tr>
+	</table>
+</div>
