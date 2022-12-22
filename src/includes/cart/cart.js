@@ -25,18 +25,24 @@ class Cart {
 		this.payButton = this.container.querySelector('[data-cart-pay]');
 		this.shopButton = this.container.querySelector('[data-cart-shop]');
 		this.rentButton = this.container.querySelector('[data-cart-rent]');
+		this.legalBlock = this.container.querySelector('[data-legal-block]');
+		this.legalCheckboxes = this.container.querySelectorAll('[data-legal-checkbox]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
 		this.onPayButtonClick = this.onPayButtonClick.bind(this);
 		this.onShopButtonClick = this.onShopButtonClick.bind(this);
 		this.onRentButtonClick = this.onRentButtonClick.bind(this);
+		this.onLegalCheckboxChange = this.onLegalCheckboxChange.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
 		this.backButtons.forEach(button => button.addEventListener('click', this.onBackButtonClick));
 		this.shopButton.addEventListener('click', this.onShopButtonClick);
 		this.rentButton.addEventListener('click', this.onRentButtonClick);
+		this.legalCheckboxes.forEach(checkbox => {
+			checkbox.addEventListener('change', this.onLegalCheckboxChange);
+		});
 	}
 	onSubmitButtonClick(evt) {
 		evt.preventDefault();
@@ -109,6 +115,12 @@ class Cart {
 
 		clearTimeout(this.animTO);
 		this.animTO = setTimeout(() => this.popupWrapper.classList.remove(ClassName.ANIMATION), 300);
+	}
+	onLegalCheckboxChange(e) {
+		const legalBlock = e.target.parentNode.parentNode.querySelector('[data-legal-block]');
+		if (legalBlock) {
+			legalBlock.classList.toggle(ClassName.HIDDEN);
+		}
 	}
 }
 

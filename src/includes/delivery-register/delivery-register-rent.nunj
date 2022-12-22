@@ -1,19 +1,101 @@
-{% from "../components/input-date/input-date.nunj" import inputDate %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/button/button.nunj" import button %}
 
 <form class="cart-delivery__register-form delivery-register">
-	<p class="delivery-register__title h7 ttu">Даты бронирования:</p>
+	<p class="delivery-register__title h7 ttu">Новым покупателям:</p>
 	<div class="delivery-register__fields">
-		{{ inputDate({
-			name: 'Дата',
-			label: 'Начало',
-			id: 'delivery-date-start',
-			className: 'delivery-register__input'
+		{{ input({
+			type: text,
+			id: 'delivery-register-rent-name',
+			name: 'Имя',
+			className: 'delivery-register__input _gray'
 		}) }}
-		{{ inputDate({
-			name: 'Дата',
-			label: 'Конец',
-			id: 'delivery-date-end',
-			className: 'delivery-register__input'
+		{{ input({
+			type: text,
+			id: 'delivery-register-rent-surname',
+			name: 'Фамилия',
+			className: 'delivery-register__input _gray'
 		}) }}
+	</div>
+	<div class="delivery-register__fields">
+		{{ input({
+			type: email,
+			id: 'delivery-register-rent-email',
+			name: 'Почта',
+			className: 'delivery-register__input _gray'
+		}) }}
+		{{ input({
+			type: tel,
+			id: 'delivery-register-rent-tel',
+			name: 'Телефон',
+			className: 'delivery-register__input _gray'
+		}) }}
+	</div>
+	{{ checkbox({
+		className: 'delivery-register__checkbox',
+		id: 'legal-entity-checkbox-rent',
+		name: 'legal-entity',
+		text: 'Я являюсь юридическим лицом',
+		inputAttr: 'data-legal-checkbox'
+	}) }}
+	<div class="delivery-register__legal hidden" data-legal-block>
+		<p class="delivery-register__legal-text p4 c-gray-dark">Работаем без НДС</p>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-rent-register-organisation-name',
+				name: 'Название организации',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-rent-register-settlement-account',
+				name: 'Р/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-rent-register-legal-address',
+				name: 'Юридический адрес',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-rent-register-correspondent-account',
+				name: 'К/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: number,
+				id: 'delivery-rent-register-inn',
+				name: 'ИНН',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-rent-register-kpp',
+				name: 'КПП',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-rent-register-name',
+				name: 'Полное наименование банка',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-rent-register-surname',
+				name: 'БИК',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
 	</div>
 </form>

@@ -1,0 +1,65 @@
+<div class="footer-popup">
+	<p class="footer-popup__title h5 ttu">Контакты «дистрибуция»</p>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">ООО «Эталон»</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Адрес</p>
+				<p class="p2">115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Время работы</p>
+				<p class="p2">10:00-19:00 пн-пт, сб-вс выходные</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Телефон</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer-popup__block c-gray-dark">
+		<p class="h6 ttu">Общество с ограниченной ответственностью «Эталон»</p>
+		<div class="footer-popup__block _2">
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Сокращенное наименование</p>
+				<p class="p2">ООО «Эталон»</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Фактический адрес</p>
+				<p class="p2">115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Юридический адрес</p>
+				<p class="p2">115035, г. Москва, ул. Садовническая, д.32, стр.1, пом. 1, каб. 202</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Телефон</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Факс</p>
+				<p class="p2">
+					<a href="tel:+7 (495) 232-97-79">+7 (495) 232-97-79</a>
+				</p>
+			</div>
+			<div class="footer-popup__block _3">
+				<p class="h7 ttu">Остальное</p>
+				<div class="footer-popup__block _4 p2">
+					<p>ИНН: 7731457483</p>
+					<p>КПП: 770501001</p>
+					<p>ОГРН: 1137746953189</p>
+					<p>ОКПО: 18779320</p>
+					<p>ОКВЭД: 46.90</p>
+					<p>Банк: ООО «АТБ» Банк г Москва</p>
+					<p>Р/сч. в руб.: 40702810900000001563</p>
+					<p>К/сч.: 30101810145250000097</p>
+					<p>БИК: 044525097</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

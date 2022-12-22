@@ -36,6 +36,66 @@
 		className: 'delivery-register__checkbox',
 		id: 'legal-entity-checkbox',
 		name: 'legal-entity',
-		text: 'Я являюсь юридическим лицом'
+		text: 'Я являюсь юридическим лицом',
+		inputAttr: 'data-legal-checkbox'
 	}) }}
+	<div class="delivery-register__legal hidden" data-legal-block>
+		<p class="delivery-register__legal-text p4 c-gray-dark">Работаем без НДС</p>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-register-organisation-name',
+				name: 'Название организации',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-register-settlement-account',
+				name: 'Р/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-register-legal-address',
+				name: 'Юридический адрес',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-register-correspondent-account',
+				name: 'К/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: number,
+				id: 'delivery-register-inn',
+				name: 'ИНН',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-register-kpp',
+				name: 'КПП',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields">
+			{{ input({
+				type: text,
+				id: 'delivery-register-bank',
+				name: 'Полное наименование банка',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: number,
+				id: 'delivery-register-bik',
+				name: 'БИК',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+	</div>
 </form>

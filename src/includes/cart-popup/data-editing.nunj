@@ -1,0 +1,13 @@
+{% from "../components/button/button.nunj" import button %}
+
+<div class="cart-popup">
+	<div class="cart-popup__wrap">
+		<p class="cart-popup__title h5 ttu">Редактирование<br>данных</p>
+		<p class="p1">Ваш запрос еще на рассмотрении.<br>
+		После его подтверждения мы отправим вам письмо<br>с ссылкой на оплату. </p>
+		<div class="cart-popup__block _3 c-gray-dark p3 _mt-a">
+			<p>Если вам не терпится вступить в Горный клуб - обращайтесь к нам напрямую:</p>
+			<p><a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a></p>
+		</div>
+	</div>
+</div>
