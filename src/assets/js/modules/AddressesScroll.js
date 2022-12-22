@@ -34,6 +34,10 @@ class AddressesScroll {
 
 			let xScroll = true;
 
+			if (direction === 'up' && documentScrollTop === 0) {
+				evt.preventDefault();
+			}
+
 			if (activeItem) {
 				const scrollContainer = activeItem.children[0];
 				const maxScrollTop = scrollContainer.scrollHeight - scrollContainer.offsetHeight;
