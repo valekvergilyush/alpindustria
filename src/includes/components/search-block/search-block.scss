@@ -173,3 +173,14 @@
 		}
 	}
 }
+
+._filters-opened {
+	.search-block._white {
+		.search-block__input {
+			border-color: var(--blue-dark);
+		}
+		.input__input {
+			color: var(--blue-dark);
+		}
+	}
+}
