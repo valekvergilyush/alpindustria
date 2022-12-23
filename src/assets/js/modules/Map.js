@@ -320,7 +320,7 @@ class Map {
 			anchor: new google.maps.Point(26, 80),
 		};
 		markerOptions.options = {
-			optimized: true,
+			optimized: false,
 		};
 		// eslint-disable-next-line no-undef
 		const marker = new google.maps.Marker(markerOptions);
