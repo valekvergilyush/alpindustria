@@ -19,7 +19,7 @@
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
 				className: 'community-auth__submit-btn _arrow-s _auth ttu p2',
-				attr: 'aria-label="Авторизоваться"'
+				attr: 'aria-label="Авторизоваться" data-popup-opener="data-editing"'
 			}) }}
 		</div>
 	</form>

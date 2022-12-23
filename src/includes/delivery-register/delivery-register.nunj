@@ -42,7 +42,7 @@
 	}) }}
 	<div class="delivery-register__legal hidden" data-legal-block>
 		<p class="delivery-register__legal-text p4 c-gray-dark">Работаем без НДС</p>
-		<div class="delivery-register__fields">
+		<div class="delivery-register__fields _legal">
 			{{ input({
 				type: text,
 				id: 'delivery-register-organisation-name',
@@ -56,7 +56,7 @@
 				className: 'delivery-register__input _gray'
 			}) }}
 		</div>
-		<div class="delivery-register__fields">
+		<div class="delivery-register__fields _legal">
 			{{ input({
 				type: text,
 				id: 'delivery-register-legal-address',
@@ -70,7 +70,7 @@
 				className: 'delivery-register__input _gray'
 			}) }}
 		</div>
-		<div class="delivery-register__fields">
+		<div class="delivery-register__fields _legal">
 			{{ input({
 				type: number,
 				id: 'delivery-register-inn',
@@ -84,7 +84,7 @@
 				className: 'delivery-register__input _gray'
 			}) }}
 		</div>
-		<div class="delivery-register__fields">
+		<div class="delivery-register__fields _legal">
 			{{ input({
 				type: text,
 				id: 'delivery-register-bank',

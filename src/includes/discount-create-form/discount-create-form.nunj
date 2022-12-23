@@ -113,6 +113,7 @@
 		text: 'Создать',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
-		className: 'discount-create-form__submit _arrow-s h7 ttu'
+		className: 'discount-create-form__submit _arrow-s h7 ttu',
+			attr: 'data-popup-opener="data-editing"'
 	}) }}
 </form>

@@ -98,6 +98,7 @@
 	}
 	&__city-text {
 		opacity: 0.4;
+		will-change: transform;
 		@extend .animated;
 		@media (max-width: $laptop-sm) {
 			opacity: 1;
@@ -109,6 +110,7 @@
 		opacity: 0;
 		width: var(--size);
 		height: var(--size);
+		will-change: transform;
 		@extend .animated;
 		@media (max-width: $laptop-md) {
 			--size: 16px;

@@ -27,7 +27,8 @@
 			icon: 'promo-arrow',
 			type: 'submit',
 			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
-			className: 'auth-form__bottom-btn _arrow-s _reg h7 ttu'
+			className: 'auth-form__bottom-btn _arrow-s _reg h7 ttu',
+			attr: 'data-popup-opener="data-editing"'
 		}) }}
 	</div>
 </form>

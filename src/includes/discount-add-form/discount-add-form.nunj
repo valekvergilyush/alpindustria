@@ -21,7 +21,8 @@
 		text: 'Привязать',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
-		className: 'discount-add-form__submit _arrow-s h7 ttu'
+		className: 'discount-add-form__submit _arrow-s h7 ttu',
+		attr: 'data-popup-opener="data-editing"'
 	}) }}
 	<div class="discount-add-form__info p4">
 		<p>На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.</p>
