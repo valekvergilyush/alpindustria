@@ -27,6 +27,20 @@
 				margin-bottom: 22px;
 			}
 		}
+		&._legal {
+			gap: rem(16);
+			align-items: stretch;
+			@media (max-width: $laptop-md) {
+				flex-direction: column;
+			}
+			@media (max-width: $laptop-sm) {
+				flex-direction: row;
+			}
+			@media (max-width: $mobile-lg) {
+				gap: 8px;
+				flex-direction: column;
+			}
+		}
 	}
 	&__input {
 		flex-grow: 1;

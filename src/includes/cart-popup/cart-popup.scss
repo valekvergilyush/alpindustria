@@ -4,6 +4,7 @@
 	--gap-2: #{rem(32)};
 	--gap-3: #{rem(24)};
 	--gap-4: #{rem(16)};
+	--gap-5: #{rem(8)};
 	--min-bottom-height: #{rem(176)};
 	display: flex;
 	flex-direction: column;
@@ -51,6 +52,9 @@
 		}
 		&._4 {
 			gap: var(--gap-4);
+		}
+		&._5 {
+			gap: var(--gap-5);
 		}
 		&._no-gap {
 			gap: 0;

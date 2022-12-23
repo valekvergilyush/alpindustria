@@ -2,16 +2,16 @@
 
 <div class="cart-popup">
 	<div class="cart-popup__wrap">
-		<p class="cart-popup__title h5 ttu">Ваш заказ успешно оформлен!</p>
+		<p class="cart-popup__title h5 ttu">Ваш заказ<br>успешно оформлен!</p>
 		<div class="cart-popup__block _2 c-gray-dark">
-			<div class="cart-popup__block _3">
+			<div class="cart-popup__block _5">
 				<p class="p3">Номер заказа:</p>
 				<p class="h5">314820</p>
 			</div>
-			<p class="p2">На  ваш e-mail (hello@gmail.com) выслано письмо с полной информацией о заказе. В ближайшее время наш менеджер свяжется с вами для подтверждения заказа!</p>
+			<p class="p2">На&nbsp;ваш e-mail (hello@gmail.com) выслано письмо с&nbsp;полной информацией о&nbsp;заказе. В&nbsp;ближайшее время наш менеджер свяжется с&nbsp;вами для подтверждения заказа!</p>
 		</div>
-		<div class="cart-popup__block c-gray-dark _mt-a">
-			<div class="cart-popup__block _4 p3">
+		<div class="cart-popup__block c-gray-dark _mt-a _2 ">
+			<div class="cart-popup__block _3 p3">
 				<p>Если возникли вопросы:</p>
 				<div class="cart-popup__block _no-gap">
 					<p><a href="tel:+7(495) 645-57-73">+7(495) 645-57-73</a></p>
@@ -19,7 +19,7 @@
 					<p>или пишите на <a href="#">sale@alpindustria.ru</a></p>
 				</div>
 			</div>
-			<p class="p3">Если наши менеджеры не смогут помочь вам в решении какого-либо вопроса — <a href="#">напишите директору интернет-магазина Потаповой Екатерине</a></p>
+			<p class="p3">Если наши менеджеры не&nbsp;смогут помочь вам в&nbsp;решении какого-либо вопроса&nbsp;&mdash; <a href="#">напишите директору интернет-магазина Потаповой Екатерине</a></p>
 		</div>
 	</div>
 	<div class="cart-popup__bottom">

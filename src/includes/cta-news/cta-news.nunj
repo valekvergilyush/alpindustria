@@ -25,7 +25,8 @@
 						text: 'Подписаться',
 						icon: 'promo-arrow',
 						type: 'submit',
-						className: 'cta-news__submit h6 ttu'
+						className: 'cta-news__submit h6 ttu',
+						attr: 'data-popup-opener="data-editing"'
 					}) }}
 				</form>
 			</div>
