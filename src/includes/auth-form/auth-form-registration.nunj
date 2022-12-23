@@ -1,6 +1,6 @@
 {% from "../components/input/input.nunj" import input %}
 
-<from class="auth-form">
+<form class="auth-form">
 	{{ input({
 		type: 'email',
 		id: 'auth-reg-email',
@@ -31,4 +31,4 @@
 			attr: 'data-popup-opener="data-editing"'
 		}) }}
 	</div>
-</from>
+</form>

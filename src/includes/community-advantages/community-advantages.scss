@@ -223,7 +223,7 @@
 		}
 		#{$this}__item-text {
 			width: max-content;
-			max-width: rem(576);
+			max-width: 100%;
 			letter-spacing: -0.02em;
 			color: inherit;
 			@media (max-width: $tablet) {
@@ -478,7 +478,7 @@
 		}
 	}
 	&__item-text {
-		max-width: rem(576);
+		max-width: 100%;
 		letter-spacing: -0.02em;
 		color: inherit;
 		@media (max-width: $laptop-lg) {

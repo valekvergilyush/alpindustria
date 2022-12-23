@@ -78,23 +78,24 @@ class CommunityAdvantages {
 					if (!this._onWindowScroll) {
 						const title = document.querySelector('[data-community-advantages-title="top"]');
 
-						this.lastScrollY = window.scrollY + title.offsetHeight;
-						this.startMarginBottom = parseFloat(getComputedStyle(title).marginBottom);
+						if (title) {
+							this.lastScrollY = window.scrollY + title.offsetHeight;
+							this.startMarginBottom = parseFloat(getComputedStyle(title).marginBottom);
 
-						this._onWindowScroll = () => {
-							const deltaY = this.lastScrollY - window.scrollY;
+							this._onWindowScroll = () => {
+								const deltaY = this.lastScrollY - window.scrollY;
 
-							title.style.marginBottom = getComputedStyle(title).marginBottom;
-							title.style.marginTop = 'auto';
+								title.style.marginBottom = getComputedStyle(title).marginBottom;
+								title.style.marginTop = 'auto';
 
-							let currentMarginBottom = this.startMarginBottom + deltaY;
-							currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
+								let currentMarginBottom = this.startMarginBottom + deltaY;
+								currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
 
-							title.style.marginBottom = `${currentMarginBottom}px`;
-						};
-
-						this._onWindowScroll = this._onWindowScroll.bind(this);
-						window.addEventListener('scroll', this._onWindowScroll);
+								title.style.marginBottom = `${currentMarginBottom}px`;
+							};
+							this._onWindowScroll = this._onWindowScroll.bind(this);
+							window.addEventListener('scroll', this._onWindowScroll);
+						}
 					}
 				},
 			});

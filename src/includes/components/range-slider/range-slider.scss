@@ -11,9 +11,6 @@
 		width: 100%;
 		border: 0;
 		height: rem(4);
-		&:active {
-			cursor: grabbing !important;
-		}
 	}
 	.noUi-base {
 		background-color: rgba(65, 92, 152, 0.2);
@@ -29,14 +26,34 @@
 		border-radius: 50%;
 		background-color: var(--blue-dark);
 		border: 2px solid var(--white);
-		outline: 1px solid var(--blue-dark);
-		outline-offset: -1px;
 		box-sizing: border-box;
 		box-shadow: none;
 		cursor: grab;
-		&::before,
-		&::after {
+		&::before {
 			display: none;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			width: calc(100% + 2px);
+			height: calc(100% + 2px);
+			border: 1px solid var(--blue-dark);
+			border-radius: 50%;
+			background: 0;
+		}
+	}
+	.noUi-tooltip {
+		bottom: 100%;
+		border: 0;
+		background: 0;
+		font-family: var(--default-font-family);
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
 		}
 	}
 }

@@ -1,0 +1,11 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro tooltip(props) %}
+	<button class="tooltip{% if props.className %} {{ props.className }}{% endif %}" type="button" data-tippy-content="{{ props.text }}">
+		{{ icon({
+			iconName: 'alert-circle',
+			className: 'tooltip__icon',
+			attr: 'width="20" height="20"'
+		}) }}
+	</button>
+{% endmacro %}

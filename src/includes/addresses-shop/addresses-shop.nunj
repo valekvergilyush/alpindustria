@@ -25,7 +25,16 @@
 
 <div class="addresses__shop addresses-shop" data-shop-item>
 	<div class="addresses-shop__wrap">
-		<p class="addresses-shop__place h5 ttu">Черная речка</p>
+		<div class="addresses-shop__place-wrapper">
+			<p class="addresses-shop__place h5 ttu">Черная речка</p>
+			<button class="addresses-shop__close-btn _desktop" type="button" data-shop-close aria-label="Закрыть">
+				{{ icon({
+					iconName: 'close-button',
+					className: 'product__close-icon',
+					attr: 'width="24" height="24" viewBox="0 0 24 24"'
+				}) }}
+			</button>
+		</div>
 		<div class="addresses-shop__inner">
 			<div class="addresses-shop__block">
 				<p class="h6 ttu">Адрес</p>

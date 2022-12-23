@@ -96,6 +96,7 @@
 		@include reset-btn();
 		@extend .animated;
 		display: inline-flex;
+		flex-shrink: 0;
 		justify-content: center;
 		align-items: center;
 		column-gap: rem(8);
@@ -125,6 +126,9 @@
 				}
 			}
 		}
+		._filters-opened & {
+			color: var(--blue-dark);
+		}
 		&._search {
 			@media (max-width: $mobile-lg) {
 				margin-right: -13px;
@@ -147,6 +151,10 @@
 		}
 	}
 	&__search {
+		max-width: rem(360);
+		._fixed & {
+			display: none;
+		}
 		@media (max-width: $mobile-lg) {
 			.search-block__input {
 				right: 0;

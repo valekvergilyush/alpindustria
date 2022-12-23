@@ -138,6 +138,7 @@
 		margin-bottom: rem(24);
 		& > * {
 			flex-grow: 1;
+			width: 100%;
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 22px;

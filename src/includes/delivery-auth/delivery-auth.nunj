@@ -7,14 +7,15 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<form class="cart-delivery__auth-form delivery-auth">
+<form class="cart-delivery__auth-form delivery-auth" >
 	<p class="delivery-auth__title h7 ttu">Частым покупателям:</p>
 	<div class="delivery-auth__fields">
 		{{ input({
 			type: 'tel',
 			id: 'delivery-auth-tel',
 			className: 'delivery-auth__input _gray',
-			name: 'Телефон'
+			name: 'Телефон',
+			attr: 'data-validate-type="phone"'
 		}) }}
 		{{ button({
 			type: 'submit',

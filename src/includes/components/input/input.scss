@@ -30,6 +30,7 @@
 		color: var(--blue-light);
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
+		pointer-events: none;
 		@media (max-width: $mobile-lg) {
 			font-size: 12px;
 		}
@@ -82,5 +83,39 @@
 				font-size: 10px;
 			}
 		}
+		.iti__flag-container {
+			display: block;
+		}
+	}
+	.iti {
+		flex-grow: 1;
+		&__flag-container {
+			display: none;
+			padding-bottom: rem(16);
+			@media (max-width: $mobile-lg) {
+				padding-bottom: 8px;
+			}
+		}
+		&__selected-dial-code {
+			font-size: rem(15);
+			@media (max-width: $mobile-lg) {
+				font-size: 12px;
+			}
+		}
+		&__selected-flag {
+			background-color: transparent;
+		}
+		&__country-list {
+			scrollbar-width: none;
+			@include scrollbar {
+				display: none;
+			}
+		}
+	}
+}
+
+[data-validate-type='phone'] {
+	@media (max-width: $mobile-lg) {
+		padding-top: 24px;
 	}
 }

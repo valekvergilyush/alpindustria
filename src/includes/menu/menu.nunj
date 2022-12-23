@@ -3,7 +3,7 @@
 {% set navLinks = [
 	{
 		text: 'Магазин',
-		img: { src: '/assets/images/menu/menu-shop.jpg', srcset: '/assets/images/menu/menu-shop@2x.jpg 2x' },
+		img: { src: '/assets/images/menu/menu-shop.webp', srcset: '/assets/images/menu/menu-shop@2x.webp 2x' },
 		url: '#',
 		list: [
 			{ text: 'Все товары', url: '/catalog/' },
@@ -17,28 +17,28 @@
 			{ text: 'Горные лыжи', url: '/catalog/' }
 		]
 	},
-	{ text: 'Адреса', url: '/addresses.html', img: { src: '/assets/images/menu/menu-address.jpg', srcset: '/assets/images/menu/menu-address@2x.jpg 2x' } },
+	{ text: 'Адреса', url: '/addresses.html', img: { src: '/assets/images/menu/menu-address.webp', srcset: '/assets/images/menu/menu-address@2x.webp 2x' } },
 	{
 		text: 'Сообщество',
-		img: { src: '/assets/images/menu/menu-community.jpg', srcset: '/assets/images/menu/menu-community@2x.jpg 2x' },
+		img: { src: '/assets/images/menu/menu-community.webp', srcset: '/assets/images/menu/menu-community@2x.webp 2x' },
 		url: '#',
 		list: [
-			{ text: 'Горный клуб', url: '/community/', img: { src: '/assets/images/menu/menu-club.jpg', srcset: '/assets/images/menu/menu-club@2x.jpg 2x' } },
+			{ text: 'Горный клуб', url: '/community/', img: { src: '/assets/images/menu/menu-club.webp', srcset: '/assets/images/menu/menu-club@2x.webp 2x' } },
 			{ text: 'Занятия', url: '/community/classes.html' },
 			{ text: 'Трейлы', url: '/community/trails.html' },
 			{ text: 'Фрирайд', url: '/community/freerides.html' }
 		]
 	},
-	{ text: 'Прокат', url: '/rent.html', img: { src: '/assets/images/menu/menu-rent.jpg', srcset: '/assets/images/menu/menu-rent@2x.jpg 2x' } },
-	{ text: 'Сервисы', url: '/services.html', img: { src: '/assets/images/menu/menu-service.jpg', srcset: '/assets/images/menu/menu-service@2x.jpg 2x' } },
-	{ text: 'Новости', url: '/news.html', img: { src: '/assets/images/menu/menu-news.jpg', srcset: '/assets/images/menu/menu-news@2x.jpg 2x' } },
-	{ text: 'О нас', url: '/about.html', img: { src: '/assets/images/menu/menu-about.jpg', srcset: '/assets/images/menu/menu-about@2x.jpg 2x' } }
+	{ text: 'Прокат', url: '/rent.html', img: { src: '/assets/images/menu/menu-rent.webp', srcset: '/assets/images/menu/menu-rent@2x.webp 2x' } },
+	{ text: 'Сервисы', url: '/services.html', img: { src: '/assets/images/menu/menu-service.webp', srcset: '/assets/images/menu/menu-service@2x.webp 2x' } },
+	{ text: 'Новости', url: '/news.html', img: { src: '/assets/images/menu/menu-news.webp', srcset: '/assets/images/menu/menu-news@2x.webp 2x' } },
+	{ text: 'О нас', url: '/about.html', img: { src: '/assets/images/menu/menu-about.webp', srcset: '/assets/images/menu/menu-about@2x.webp 2x' } }
 ] %}
 
 {% set menuLinks = [
-	{ text: 'Бренды', url: '/brands.html', img: { src: '/assets/images/menu/menu-brand.jpg', srcset: '/assets/images/menu/menu-brand@2x.jpg 2x' } },
-	{ text: 'Дисконтная<br> программа', url: '/discount.html', img: { src: '/assets/images/menu/menu-delivery.jpg', srcset: '/assets/images/menu/menu-delivery@2x.jpg 2x' } },
-	{ text: 'Экология', url: '/ecology.html', img: { src: '/assets/images/menu/menu-eco.jpg', srcset: '/assets/images/menu/menu-eco@2x.jpg 2x' } }
+	{ text: 'Бренды', url: '/brands.html', img: { src: '/assets/images/menu/menu-brand.webp', srcset: '/assets/images/menu/menu-brand@2x.webp 2x' } },
+	{ text: 'Дисконтная<br> программа', url: '/discount.html', img: { src: '/assets/images/menu/menu-delivery.webp', srcset: '/assets/images/menu/menu-delivery@2x.webp 2x' } },
+	{ text: 'Экология', url: '/ecology.html', img: { src: '/assets/images/menu/menu-eco.webp', srcset: '/assets/images/menu/menu-eco@2x.webp 2x' } }
 ] %}
 
 <div class="page__menu menu" data-menu>

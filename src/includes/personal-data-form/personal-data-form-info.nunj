@@ -5,11 +5,12 @@
 
 <form class="personal-data-form">
 	{{ input({
-		type: 'phone',
+		type: 'tel',
 		id: 'personal-data-phone',
 		value: '+7 (999) 000 00 00',
 		name: 'Телефон',
-		className: '_gray'
+		className: '_gray',
+		attr: 'data-validate-type="phone"'
 	}) }}
 	{{ input({
 		type: 'email',
@@ -30,7 +31,8 @@
 		label: 'Дата рождения',
 		id: 'personal-data-birthday',
 		value: '19/10/22',
-		className: '_gray'
+		className: '_gray',
+		inputAttr: 'readonly data-datepicker'
 	}) }}
 	<div class="personal-data-form__btns">
 		{{ button({
