@@ -27,16 +27,16 @@
 	</ul>
 
 	<div class="community-tabs__sections">
-		<section class="community-tabs__section _profile _active" aria-labelledby="data" data-tab-section="data">
+		<section class="community-tabs__section _profile _messages _active" aria-labelledby="data" data-tab-section="data">
 			{% include "../personal-data/personal-data.nunj" %}
 		</section>
 		<section class="community-tabs__section _profile" aria-labelledby="payments" data-tab-section="payments">
 			{% include "../profile-purchases/profile-purchases.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile" aria-labelledby="subscription" data-tab-section="subscription">
+		<section class="community-tabs__section _profile _messages" aria-labelledby="subscription" data-tab-section="subscription">
 			{% include "../profile-subscribtion/profile-subscribtion.nunj" %}
 		</section>
-		<section class="community-tabs__section _profile" aria-labelledby="messages" data-tab-section="messages">
+		<section class="community-tabs__section _profile _messages" aria-labelledby="messages" data-tab-section="messages">
 			{% include "../profile-messages/profile-messages.nunj" %}
 		</section>
 		<section class="community-tabs__section _profile" aria-labelledby="discount" data-tab-section="discount">
