@@ -109,6 +109,9 @@ class Filters {
 	onTogglerClick(evt) {
 		evt.preventDefault();
 
+		gsap.to(window, {
+			scrollTo: { y: '#main', offsetY: this.filtersContainer.offsetHeight },
+		});
 		this.toggle();
 	}
 
