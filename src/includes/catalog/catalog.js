@@ -19,6 +19,8 @@ class Catalog {
 		this.catalogList = document.querySelector('.catalog__list');
 		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
 		this.filtersPanel = document.querySelector('.page__filters');
+		this.numbersContainerHeight =
+			this.filtersPanel.querySelector('.filters__items-number').offsetHeight;
 
 		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
 			return;
@@ -47,12 +49,40 @@ class Catalog {
 	onLayoutButtonClick(evt) {
 		evt.preventDefault();
 
-		gsap.to(window, {
-			scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
-			onComplete: () => {
-				Header.hideHeader();
-			},
-		});
+		if (window.innerWidth > 640) {
+			gsap.to(window, {
+				scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
+				onComplete: () => {
+					Header.hideHeader();
+				},
+			});
+		} else {
+			if (this.filtersPanel.classList.contains('_fixed')) {
+				const offsetY =
+					this.filtersPanel.querySelector('.filters__container').offsetHeight -
+					this.numbersContainerHeight;
+				console.log(offsetY);
+				gsap.to(window, {
+					scrollTo: {
+						y: '#main',
+						offsetY: offsetY,
+					},
+					onComplete: () => {
+						Header.hideHeader();
+					},
+				});
+			} else {
+				gsap.to(window, {
+					scrollTo: {
+						y: '#main',
+						offsetY: this.filtersPanel.querySelector('.filters__container').offsetHeight,
+					},
+					onComplete: () => {
+						Header.hideHeader();
+					},
+				});
+			}
+		}
 
 		const value = evt.target.getAttribute('data-cols');
 
