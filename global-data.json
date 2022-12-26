@@ -82,6 +82,14 @@
 			"animation": "RTL"
 		},
 		{
+			"name": "offer",
+			"animation": "RTL"
+		},
+		{
+			"name": "offer-2",
+			"animation": "RTL"
+		},
+		{
 			"name": "video"
 		}
 	]

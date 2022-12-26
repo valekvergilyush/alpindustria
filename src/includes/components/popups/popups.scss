@@ -45,6 +45,8 @@
 		&[data-popup-wrapper='question-form'],
 		&[data-popup-wrapper='cart-reservation'],
 		&[data-popup-wrapper='data-editing'],
+		&[data-popup-wrapper='offer'],
+		&[data-popup-wrapper='offer-2'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -72,6 +74,8 @@
 		&[data-popup-wrapper='cart-reservation'],
 		&[data-popup-wrapper='data-editing'],
 		&[data-popup-wrapper='question-form'],
+		&[data-popup-wrapper='offer'],
+		&[data-popup-wrapper='offer-2'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
