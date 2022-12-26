@@ -1,3 +1,5 @@
+import Header from '../header/header';
+
 const HTML_CLASSLIST = document.documentElement.classList;
 const MOBILE_BREAKPOINT = 640;
 const TABLET_BREAKPOINT = 992;
@@ -16,6 +18,7 @@ class Catalog {
 		this.layoutControls = document.querySelector('.filters__layout-buttons');
 		this.catalogList = document.querySelector('.catalog__list');
 		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
+		this.filtersPanel = document.querySelector('.page__filters');
 
 		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
 			return;
@@ -43,6 +46,15 @@ class Catalog {
 	}
 	onLayoutButtonClick(evt) {
 		evt.preventDefault();
+
+		gsap.to(window, {
+			scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
+			onComplete: () => {
+				Header.hideHeader();
+				clearTimeout(this.TO);
+				this.TO = setTimeout(() => this.filtersPanel.classList.add('_fixed'), 100);
+			},
+		});
 
 		const value = evt.target.getAttribute('data-cols');
 
