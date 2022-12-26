@@ -254,9 +254,6 @@
 		&._messages {
 			min-height: rem(600);
 			box-sizing: border-box;
-			@media (max-width: $laptop-lg) {
-				min-height: 600px;
-			}
 			@media (max-width: $laptop-sm) {
 				min-height: auto;
 			}
