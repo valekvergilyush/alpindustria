@@ -51,10 +51,6 @@ class Catalog {
 			scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
 			onComplete: () => {
 				Header.hideHeader();
-				if (window.innerWidth > 640) {
-					clearTimeout(this.TO);
-					this.TO = setTimeout(() => this.filtersPanel.classList.add('_fixed'), 100);
-				}
 			},
 		});
 
