@@ -42,7 +42,8 @@
 				text: 'Отправить',
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
-				className: 'profile-messages__submit h7 ttu _arrow-m'
+				className: 'profile-messages__submit h7 ttu _arrow-m',
+				attr: 'data-popup-opener="data-editing"'
 			}) }}
 		</form>
 	</div>

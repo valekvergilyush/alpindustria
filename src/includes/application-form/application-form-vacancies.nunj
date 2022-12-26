@@ -116,12 +116,6 @@
 			checked: true
 		}) }}
 		<a href="#" class="application-form__terms">Нажимая "оформить заказ", вы соглашаетесь с&nbsp;условиями&nbsp;оферты</a>
-		{{ button({
-			className: 'application-form__show-more-btn _show-more',
-			text: 'Показать еще',
-			icon: 'plus-circle',
-			iconData: 'width="24" height="24"'
-		}) }}
 		<div class="application-form__bottom">
 			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#">условиями оферты</a></p>
 			{{ button({
@@ -129,7 +123,8 @@
 				text: 'Подать заявку',
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
-				className: 'application-form__submit _arrow'
+				className: 'application-form__submit _arrow',
+				attr: 'data-popup-opener="data-editing"'
 			}) }}
 		</div>
 	</form>

@@ -1,0 +1,52 @@
+.offer-popup {
+	--gap-1: #{rem(96)};
+	--gap-2: #{rem(64)};
+	--gap-3: #{rem(32)};
+	@media (max-width: $laptop-lg) {
+		--gap-1: 80px;
+		--gap-2: 40px;
+		--gap-3: 24px;
+	}
+	@media (max-width: $laptop-md) {
+		--gap-1: 64px;
+		--gap-2: 32px;
+	}
+	@media (max-width: $mobile-lg) {
+		--gap-1: 48px;
+		--gap-2: 24px;
+		--gap-3: 16px;
+	}
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(80);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 64px;
+		}
+		@media (max-width: $laptop-md) {
+			margin-bottom: 40px;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 40px;
+		}
+	}
+	&__block {
+		display: grid;
+		gap: var(--gap-1);
+		list-style-type: decimal;
+		&._2 {
+			gap: var(--gap-2);
+		}
+		&._3 {
+			gap: var(--gap-3);
+		}
+		&._pl {
+			padding-left: rem(40);
+			@media (max-width: $mobile-lg) {
+				padding-left: 20px;
+			}
+		}
+	}
+}
