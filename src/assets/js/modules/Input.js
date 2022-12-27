@@ -24,10 +24,14 @@ class Input {
 			}
 
 			if (input.type === 'tel') {
-				intlTelInput(input, {
+				const iti = intlTelInput(input, {
 					initialCountry: 'ru',
 					onlyCountries: ['ru', 'am', 'by', 'kg', 'kz'],
 					separateDialCode: true,
+				});
+				input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
+				input.addEventListener('countrychange', () => {
+					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 			}
 
