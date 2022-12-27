@@ -19,8 +19,8 @@ class Catalog {
 		this.catalogList = document.querySelector('.catalog__list');
 		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
 		this.filtersPanel = document.querySelector('.page__filters');
-		this.numbersContainerHeight =
-			this.filtersPanel.querySelector('.filters__items-number').offsetHeight;
+		this.numbersContainer = document.querySelector('.filters__items-number');
+		this.numbersContainer && (this.numbersContainerHeight = this.numbersContainer.offsetHeight);
 
 		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
 			return;
@@ -61,7 +61,7 @@ class Catalog {
 				const offsetY =
 					this.filtersPanel.querySelector('.filters__container').offsetHeight -
 					this.numbersContainerHeight;
-				console.log(offsetY);
+
 				gsap.to(window, {
 					scrollTo: {
 						y: '#main',
