@@ -205,7 +205,8 @@
 		],
 		link: {
 			text: 'в корзину',
-			url: '#'
+			url: '#',
+			attributes: 'data-popup-closer data-notification-open'
 		}
 	}) }}
 </div>
