@@ -75,6 +75,7 @@
 		font-family: var(--font-family-suisse);
 		font-size: rem(24);
 		line-height: rem(36);
+		white-space: nowrap;
 		color: var(--blue-light);
 		@media (max-width: $tablet) {
 			padding-top: 28px;
