@@ -93,6 +93,7 @@
 		@media (max-width: $tablet) {
 			--icon-size: 24px;
 			#{$this}__input {
+				height: 29px;
 				padding-bottom: 0;
 			}
 		}
