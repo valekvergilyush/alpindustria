@@ -91,7 +91,10 @@ class Popups {
 		}
 
 		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
-		const popupAnimation = popup.getAttribute('data-popup-animation');
+		let popupAnimation;
+		if (popup) {
+			popupAnimation = popup.getAttribute('data-popup-animation');
+		}
 
 		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) && !env.isIOS) {
 			disableBodyScroll(this.popupsRoot);
@@ -253,7 +256,11 @@ class Popups {
 				this.openedClass = '';
 			}
 			this.stopIframeVideos();
-			window.history.back();
+			window.history.pushState(
+				'',
+				document.title,
+				window.location.pathname + window.location.search
+			);
 		}
 	}
 	getPopup(name) {

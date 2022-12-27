@@ -115,7 +115,9 @@ class AlpIndustry {
 				hash = hash.substring(1);
 
 				this.modules.Popups.close();
-				this.modules.Popups.open(hash);
+				if (this.modules.Popups.getPopup(hash)) {
+					this.modules.Popups.open(hash);
+				}
 			}
 		});
 	}
