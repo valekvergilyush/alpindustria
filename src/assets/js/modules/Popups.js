@@ -41,7 +41,9 @@ class Popups {
 		Array.from(document.querySelectorAll('[data-popup-opener]')).forEach(element => {
 			element.addEventListener('click', e => {
 				e.preventDefault();
-				this.open(e.currentTarget.getAttribute('data-popup-opener'));
+				const popupName = e.currentTarget.getAttribute('data-popup-opener');
+				window.history.pushState({}, '', `#${popupName}`);
+				this.open(popupName);
 			});
 		});
 
@@ -251,6 +253,7 @@ class Popups {
 				this.openedClass = '';
 			}
 			this.stopIframeVideos();
+			window.history.back();
 		}
 	}
 	getPopup(name) {

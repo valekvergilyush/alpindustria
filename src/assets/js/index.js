@@ -109,6 +109,14 @@ class AlpIndustry {
 					.querySelectorAll('[data-animation="words"]:not(._anim-first)')
 					.forEach(item => this.helpers.TextSplitter.split(item).words);
 			}
+
+			let hash = window.location.hash;
+			if (hash) {
+				hash = hash.substring(1);
+
+				this.modules.Popups.close();
+				this.modules.Popups.open(hash);
+			}
 		});
 	}
 }
