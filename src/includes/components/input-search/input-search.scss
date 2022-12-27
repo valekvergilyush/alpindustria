@@ -29,6 +29,9 @@
 		position: relative;
 		flex-grow: 1;
 		padding-top: rem(16);
+		@media (max-width: $tablet) {
+			padding-top: 32px;
+		}
 	}
 	&__label-text {
 		position: absolute;
@@ -38,7 +41,7 @@
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
 		@media (max-width: $tablet) {
-			top: 28px;
+			top: 34px;
 		}
 	}
 	&__input {
@@ -68,10 +71,15 @@
 		}
 	}
 	&__lang {
+		padding-top: rem(14);
 		font-family: var(--font-family-suisse);
 		font-size: rem(24);
 		line-height: rem(36);
+		white-space: nowrap;
 		color: var(--blue-light);
+		@media (max-width: $tablet) {
+			padding-top: 28px;
+		}
 		@media (max-width: $mobile-lg) {
 			font-size: 22px;
 		}
@@ -86,6 +94,7 @@
 		@media (max-width: $tablet) {
 			--icon-size: 24px;
 			#{$this}__input {
+				height: 29px;
 				padding-bottom: 0;
 			}
 		}

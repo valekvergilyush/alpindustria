@@ -2,7 +2,7 @@
 {% from "../components/textarea/textarea.nunj" import textarea %}
 {% from "../components/button/button.nunj" import button %}
 
-<div class="cart-popup">
+<div class="cart-popup" data-validate>
 	<form class="cart-popup__form">
 		<div class="cart-popup__wrap">
 			<p class="cart-popup__title h5 ttu">Задать вопрос</p>
@@ -28,10 +28,10 @@
 					name: 'Почта'
 				}) }}
 				{{ input({
-					type: 'phone',
+					type: 'tel',
 					id: 'question-form-phone',
-					className: '',
-					name: 'Телефон'
+					name: 'Телефон',
+					attr: 'data-validate-type="phone"'
 				}) }}
 				{{ textarea({
 					id: 'question-form-text',
