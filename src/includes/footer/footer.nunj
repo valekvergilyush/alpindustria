@@ -114,7 +114,7 @@
 		}) }}
 		<div class="footer__bottom">
 			<a href="#" class="footer__link _copy p4">(c) 2020 EDELVEIS, OOO</a>
-			<a href="#" class="footer__link p4" data-popup-opener="offer">Условия использования сайта</a>
+			<a href="#" class="footer__link p4" data-popup-opener="offer-2">Условия использования сайта</a>
 			<a href="#" class="footer__link p4" data-popup-opener="contacts-shop">Контакты юр. лица «Интернет-магазин»</a>
 			<a href="#" class="footer__link p4" data-popup-opener="contacts-community">Контакты юр. лица «Сообщество»</a>
 			<a href="#" class="footer__link p4" data-popup-opener="contacts-distribution">Контакты юр. лица «Дистрибуция»</a>

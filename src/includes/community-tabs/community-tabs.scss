@@ -251,6 +251,13 @@
 				padding-bottom: 56px;
 			}
 		}
+		&._messages {
+			min-height: rem(600);
+			box-sizing: border-box;
+			@media (max-width: $laptop-sm) {
+				min-height: auto;
+			}
+		}
 		&._delivery {
 			padding-top: var(--container-padding);
 			padding-bottom: var(--container-padding);

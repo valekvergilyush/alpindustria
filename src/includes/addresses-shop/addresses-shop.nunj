@@ -27,7 +27,7 @@
 	<div class="addresses-shop__wrap">
 		<div class="addresses-shop__place-wrapper">
 			<p class="addresses-shop__place h5 ttu">Черная речка</p>
-			<button class="addresses-shop__close-btn _desktop" type="button" data-shop-close aria-label="Закрыть">
+			<button class="addresses-shop__close-btn" type="button" data-shop-close aria-label="Закрыть">
 				{{ icon({
 					iconName: 'close-button',
 					className: 'product__close-icon',
@@ -86,12 +86,12 @@
 			</div>
 		</div>
 		<button class="addresses-shop__btn" type="button" data-shop-open aria-label="Открыть">Открыть</button>
-		<button class="addresses-shop__close-btn" type="button" data-shop-close aria-label="Закрыть">
+		{# <button class="addresses-shop__close-btn" type="button" data-shop-close aria-label="Закрыть">
 			{{ icon({
 				iconName: 'close-button',
 				className: 'product__close-icon',
 				attr: 'width="24" height="24" viewBox="0 0 24 24"'
 			}) }}
-		</button>
+		</button> #}
 	</div>
 </div>

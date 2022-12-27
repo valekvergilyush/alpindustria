@@ -93,37 +93,29 @@
 		}
 	}
 	&__close-btn {
-		display: none;
 		@include reset-btn;
 		position: absolute;
-		&._desktop {
-			display: none;
-			top: 0;
-			right: 0;
-			width: rem(50);
-			height: rem(50);
-			margin-right: rem(-16);
-		}
+		top: 0;
+		right: 0;
+		display: none;
+		width: rem(50);
+		height: rem(50);
+		margin-right: rem(-16);
 		#{$this}._active & {
-			&._desktop {
-				display: block;
-			}
+			display: block;
 		}
 		@media (max-width: $laptop-sm) {
 			margin: 0;
-			top: 44px;
-			right: var(--container-padding);
+			top: 20px;
 			width: 24px;
 			height: 24px;
+			margin-right: 0;
 			#{$this}._active & {
 				display: block;
-				&._desktop {
-					display: none;
-				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
-			top: 24px;
+			top: 8px;
 		}
 	}
 	&__inner {
