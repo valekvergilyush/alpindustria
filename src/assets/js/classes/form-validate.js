@@ -173,8 +173,8 @@ const onKeydownPhoneInput = e => {
 };
 
 const onBlurPhoneInput = ({ target }) => {
-		target.removeEventListener('input', onInputPhoneInput);
-		target.removeEventListener('blur', onBlurPhoneInput);
+	target.removeEventListener('input', onInputPhoneInput);
+	target.removeEventListener('blur', onBlurPhoneInput);
 };
 
 // Показ ошибок полей форм
