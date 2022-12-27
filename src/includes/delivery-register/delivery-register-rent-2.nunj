@@ -2,18 +2,20 @@
 
 <form class="cart-delivery__register-form delivery-register">
 	<p class="delivery-register__title h7 ttu">Даты бронирования:</p>
-	<div class="delivery-register__fields">
+	<div class="delivery-register__fields" data-range-date>
 		{{ inputDate({
 			name: 'Дата',
 			label: 'Начало',
 			id: 'delivery-rent-date-start',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input',
+			inputAttr: 'data-start-date data-min-date="today"'
 		}) }}
 		{{ inputDate({
 			name: 'Дата',
 			label: 'Конец',
 			id: 'delivery-rent-date-end',
-			className: 'delivery-register__input'
+			className: 'delivery-register__input',
+			inputAttr: 'data-end-date data-min-date="today"'
 		}) }}
 	</div>
 </form>
