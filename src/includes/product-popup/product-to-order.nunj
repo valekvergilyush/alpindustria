@@ -13,7 +13,7 @@
 			icon: 'promo-arrow',
 			iconData: 'width="16" height="16" viewBox="0 0 72 72"',
 			className: 'product-popup__bottom-btn _arrow h7 ttu',
-			attr: 'data-popup-closer data-notification-open'
+			attr: 'data-popup-closer data-notification-open="cart"'
 		}) }}
 	</div>
 </div>

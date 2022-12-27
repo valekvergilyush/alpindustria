@@ -11,8 +11,11 @@ class Notification {
 			return;
 		}
 		this.openBtn.forEach(btn => {
-			btn.addEventListener('click', () => {
-				this.show();
+			btn.addEventListener('click', evt => {
+				const popupName = evt.target.getAttribute('data-notification-open');
+				this.notification.classList.remove(this.classMod);
+				this.classMod = `_${popupName}`;
+				this.show(popupName);
 			});
 		});
 		this.closeBtn.forEach(btn => {
@@ -23,11 +26,13 @@ class Notification {
 	}
 
 	show() {
+		this.notification.classList.add(this.classMod);
 		this.notification.classList.remove(this.hideClass);
 	}
 
 	hide() {
 		this.notification.classList.add(this.hideClass);
+		this.notification.classList.remove(this.classMod);
 	}
 }
 

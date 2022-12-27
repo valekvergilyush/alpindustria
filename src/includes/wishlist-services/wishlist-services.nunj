@@ -206,7 +206,7 @@
 		link: {
 			text: 'в корзину',
 			url: '#',
-			attributes: 'data-popup-closer data-notification-open'
+			attributes: 'data-popup-closer data-notification-open="cart"'
 		}
 	}) }}
 </div>

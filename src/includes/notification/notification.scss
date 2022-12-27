@@ -1,4 +1,5 @@
 .notification {
+	$this: &;
 	position: fixed;
 	bottom: rem(64);
 	left: rem(64);
@@ -33,7 +34,18 @@
 		visibility: hidden;
 		opacity: 0;
 	}
+	&._wishlist {
+		#{$this}__content.notification-wishlist {
+			display: flex;
+		}
+	}
+	&._cart {
+		#{$this}__content.notification-cart {
+			display: flex;
+		}
+	}
 	&__content {
+		display: none;
 		flex-grow: 1;
 	}
 	&__close {
