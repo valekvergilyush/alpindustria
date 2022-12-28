@@ -106,6 +106,7 @@
 					<a href="/delivery.html" class="footer__arrow-link ttu h7">Доставка</a>
 				</li>
 			</ul>
+			{% include "../subscribe-form/subscribe-form.nunj" %}
 		</div>
 		{{ icon({
 			iconName: 'logo-full',
