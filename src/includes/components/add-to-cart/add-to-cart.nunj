@@ -27,7 +27,10 @@
 			}) }}
 		{% endif %}
 		{% if props.link.url %}
-			<a href="{{ props.link.url }}" class="add-to-cart__link h7 ttu">{{props.link.text}}
+			<a
+				href="{{ props.link.url }}"
+				class="add-to-cart__link h7 ttu"
+				{% if props.link.attributes %}{{ props.link.attributes }} {% endif %}>{{props.link.text}}
 				{{ icon({
 					iconName: 'promo-arrow',
 					className: 'add-to-cart__link-icon'

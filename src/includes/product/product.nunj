@@ -219,7 +219,8 @@
 					],
 					link: {
 						text: 'в корзину',
-						url: '#'
+						url: '#',
+						attributes: 'data-notification-open'
 					}
 				}) }}
 			</div>
@@ -241,7 +242,8 @@
 					counter: 3,
 					link: {
 						text: 'добавить в корзину',
-						url: '#'
+						url: '#',
+						attributes: 'data-notification-open'
 					}
 				}) }}
 		</div>
