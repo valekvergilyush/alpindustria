@@ -136,11 +136,13 @@ button {
 }
 
 [data-drag-scroll] {
-	cursor: grab;
 	overflow: auto;
 	scrollbar-width: none;
 	@include scrollbar {
 		display: none;
+	}
+	&._grab {
+		cursor: grab;
 	}
 }
 
