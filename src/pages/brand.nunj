@@ -8,10 +8,10 @@
 
 {% set breadcrumbsData = {
 	list:	[
-		{ text: 'Бренды', href: '#'}
+		{ text: 'Бренды', href: '/brands.html'}
 	],
 	link: {
-		href: '/',
+		href: '/catalog',
 		text: 'В каталог'
 	}
 } %}
