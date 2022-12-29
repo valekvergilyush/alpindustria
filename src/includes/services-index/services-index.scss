@@ -23,6 +23,11 @@
 		border-bottom: 1px solid var(--blue-dark);
 		background-color: var(--gray-light);
 		transition: all $default-transition-duration $default-transition-function;
+		&._rent {
+			#{$this}__tags {
+				max-width: rem(600);
+			}
+		}
 		@media (max-width: $laptop-sm) {
 			justify-content: center;
 			width: auto;
