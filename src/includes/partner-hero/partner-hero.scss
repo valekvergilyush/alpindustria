@@ -110,6 +110,9 @@
 			background-repeat: no-repeat;
 			transition: background $default-transition-duration $default-transition-function;
 		}
+		._safari &::before {
+			transition: none;
+		}
 		&:hover {
 			&::before {
 				background-image: inline('promo-arrow-white.svg');
