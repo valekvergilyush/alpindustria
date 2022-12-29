@@ -94,7 +94,7 @@
 	</ul>
 	<ul class="filters-form__list">
 		<li class="filters-form__item filters-form__container">
-			<button class="filters-form__item-title" type="button" data-accordion-toggle>Сортировка</button>
+			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Сортировка</button>
 			<div class="filters-form__item-content _buttons _sort">
 				{{ button({
 					className: 'filters-form__button _quick-filter _active',

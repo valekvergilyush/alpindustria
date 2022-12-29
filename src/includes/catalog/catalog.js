@@ -1,3 +1,5 @@
+import Header from '../header/header';
+
 const HTML_CLASSLIST = document.documentElement.classList;
 const MOBILE_BREAKPOINT = 640;
 const TABLET_BREAKPOINT = 992;
@@ -16,6 +18,9 @@ class Catalog {
 		this.layoutControls = document.querySelector('.filters__layout-buttons');
 		this.catalogList = document.querySelector('.catalog__list');
 		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
+		this.filtersPanel = document.querySelector('.page__filters');
+		this.numbersContainer = document.querySelector('.filters__items-number');
+		this.numbersContainer && (this.numbersContainerHeight = this.numbersContainer.offsetHeight);
 
 		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
 			return;
@@ -43,6 +48,41 @@ class Catalog {
 	}
 	onLayoutButtonClick(evt) {
 		evt.preventDefault();
+
+		if (window.innerWidth > 640) {
+			gsap.to(window, {
+				scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
+				onComplete: () => {
+					Header.hideHeader();
+				},
+			});
+		} else {
+			if (this.filtersPanel.classList.contains('_fixed')) {
+				const offsetY =
+					this.filtersPanel.querySelector('.filters__container').offsetHeight -
+					this.numbersContainerHeight;
+
+				gsap.to(window, {
+					scrollTo: {
+						y: '#main',
+						offsetY: offsetY,
+					},
+					onComplete: () => {
+						Header.hideHeader();
+					},
+				});
+			} else {
+				gsap.to(window, {
+					scrollTo: {
+						y: '#main',
+						offsetY: this.filtersPanel.querySelector('.filters__container').offsetHeight,
+					},
+					onComplete: () => {
+						Header.hideHeader();
+					},
+				});
+			}
+		}
 
 		const value = evt.target.getAttribute('data-cols');
 

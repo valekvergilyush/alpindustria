@@ -3,7 +3,7 @@
 	--margin-2: #{rem(32)};
 	--margin-3: #{rem(24)};
 	--margin-4: #{rem(16)};
-	--price-block-height: #{rem(173)};
+	--price-block-height: #{rem(177)};
 	$this: &;
 	display: grid;
 	grid-template-areas:
@@ -13,7 +13,7 @@
 	border-bottom: 1px solid var(--white);
 	@media (max-width: $laptop-lg) {
 		--margin-1: 32px;
-		--price-block-height: 134px;
+		--price-block-height: 136px;
 	}
 	@media (max-width: $laptop-md) {
 		--margin-1: 24px;

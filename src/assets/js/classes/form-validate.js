@@ -173,13 +173,8 @@ const onKeydownPhoneInput = e => {
 };
 
 const onBlurPhoneInput = ({ target }) => {
-	if (target.value === BASE_COUNTRY_CODE) {
-		const parent = target.closest('[data-validate-type="phone"]');
-		target.value = '';
-		parent.classList.remove('not-empty');
-		target.removeEventListener('input', onInputPhoneInput);
-		target.removeEventListener('blur', onBlurPhoneInput);
-	}
+	target.removeEventListener('input', onInputPhoneInput);
+	target.removeEventListener('blur', onBlurPhoneInput);
 };
 
 // Показ ошибок полей форм
