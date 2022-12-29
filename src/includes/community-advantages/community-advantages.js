@@ -91,7 +91,11 @@ class CommunityAdvantages {
 								let currentMarginBottom = this.startMarginBottom + deltaY;
 								currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
 
-								title.style.marginBottom = `${currentMarginBottom}px`;
+								gsap.to(title, {
+									marginBottom: currentMarginBottom,
+									duration: 0.5,
+								});
+								// title.style.marginBottom = `${currentMarginBottom}px`;
 							};
 							this._onWindowScroll = this._onWindowScroll.bind(this);
 							window.addEventListener('scroll', this._onWindowScroll);
