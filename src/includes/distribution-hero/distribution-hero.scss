@@ -5,12 +5,13 @@
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr min-content;
-	grid-template-rows: repeat(2, min-content);
+	grid-template-rows: 1fr min-content;
 	gap: rem(48);
-	color: var(--white);
-	overflow: hidden;
-	background-color: var(--violet-dark);
+	min-height: calc(var(--100vh) - var(--header-height));
 	padding-left: var(--padding-x);
+	color: var(--white);
+	background-color: var(--violet-dark);
+	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--padding-y: 72px;
 		--img-width: 584px;
