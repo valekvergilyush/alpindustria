@@ -4,9 +4,10 @@
 	--img-width: #{vw(704, 1728)};
 	display: grid;
 	grid-template-columns: 1fr var(--img-width);
-	grid-template-rows: repeat(2, min-content);
+	grid-template-rows: 1fr min-content;
 	gap: rem(48);
 	box-sizing: border-box;
+	min-height: calc(var(--100vh) - var(--header-height));
 	padding-left: var(--padding-x);
 	color: var(--white);
 	background-color: var(--blue-light);
@@ -20,6 +21,7 @@
 		flex-direction: column;
 		row-gap: 0;
 		height: auto;
+		min-height: auto;
 		padding-right: var(--padding-x);
 	}
 	@media (max-width: $mobile-lg) {

@@ -23,8 +23,9 @@
 	@media (max-width: $tablet) {
 		display: flex;
 		flex-direction: column;
-		padding-right: var(--padding-x);
 		gap: 20px;
+		min-height: auto;
+		padding-right: var(--padding-x);
 	}
 	@media (max-width: $mobile-lg) {
 		--padding-y: 40px;
@@ -96,6 +97,11 @@
 			object-fit: cover;
 			object-position: left;
 		}
+		@media (max-width: $laptop-sm) {
+			img {
+				object-position: center;
+			}
+		}
 		@media (max-width: $tablet) {
 			grid-column: 1/-1;
 			grid-row: -2/-1;
@@ -105,7 +111,6 @@
 				margin-inline: 0;
 				height: 480px;
 				object-fit: cover;
-				object-position: bottom;
 			}
 		}
 		@media (max-width: $tablet) {

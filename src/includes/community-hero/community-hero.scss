@@ -5,11 +5,13 @@
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr var(--img-width);
-	grid-template-rows: repeat(2, min-content);
+	grid-template-rows: 1fr min-content;
 	gap: rem(48);
+	box-sizing: border-box;
+	min-height: calc(var(--100vh) - var(--header-height) - var(--community-nav-height));
+	padding-left: var(--padding-x);
 	color: var(--white);
 	background-color: var(--blue-light);
-	padding-left: var(--padding-x);
 	@media (max-width: $laptop-lg) {
 		--padding-y: 72px;
 		--img-width: 584px;
@@ -23,6 +25,7 @@
 		flex-direction: column;
 		padding-right: var(--padding-x);
 		gap: 20px;
+		min-height: auto;
 	}
 	@media (max-width: $mobile-lg) {
 		--padding-y: 40px;
@@ -79,6 +82,7 @@
 		img {
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 		@media (max-width: $laptop-sm) {
 			grid-column: 1/-1;
