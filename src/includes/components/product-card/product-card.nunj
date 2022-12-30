@@ -154,7 +154,7 @@
 				{{ button({
 					text: 'В корзину',
 					className: 'product-card__button _add-cart h7 ttu',
-					attr: 'aria-label="В корзину" data-product-card-add-cart'
+					attr: 'aria-label="В корзину" data-product-card-add-cart data-notification-open="cart"'
 				}) }}
 			</div>
 		</form>

@@ -10,7 +10,7 @@
 		{ text: 'Обзоры снаряжений', href: '#'}
 	],
 	link: {
-		href: '/',
+		href: '/catalog',
 		text: 'В каталог'
 	}
 } %}

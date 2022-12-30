@@ -7,12 +7,12 @@
 
 {% set breadcrumbsData = {
 	list:	[
-		{ text: 'Online', href: '#'},
-		{ text: 'Туристическое  снаряжение', href: '#'},
-		{ text: 'Спальники'}
+		{ text: 'Online', href: '/catalog' },
+		{ text: 'Туристическое  снаряжение', href: '/catalog' },
+		{ text: 'Спальники', href: '/catalog' }
 	],
 	link: {
-		href: '#',
+		href: '/catalog',
 		text: 'В каталог'
 	}
 } %}

@@ -125,6 +125,19 @@
 			--height: #{rem(32)};
 		}
 	}
+	&__size {
+		display: flex;
+		align-items: center;
+		padding: rem(5) rem(16) rem(3);
+		background-color: var(--blue-dark);
+		color: var(--white);
+		border-radius: 100vmax;
+		text-align: center;
+		cursor: default;
+	}
+	&__color {
+		cursor: default;
+	}
 	&__counter {
 		min-width: rem(111);
 		--font-size: #{rem(24)};

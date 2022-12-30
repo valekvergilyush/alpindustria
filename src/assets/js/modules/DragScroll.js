@@ -1,3 +1,5 @@
+const GRAB_CLASS = '_grab';
+
 class DragScroll {
 	constructor() {
 		this.init();
@@ -15,11 +17,15 @@ class DragScroll {
 		this.onMouseMove = this.onMouseMove.bind(this);
 		this.onMouseUp = this.onMouseUp.bind(this);
 		this.onMouseDown = this.onMouseDown.bind(this);
+		this.containerHasScroll = this.containerHasScroll.bind(this);
 
 		this.dragScrollContainers.forEach(el => {
 			this.container = el;
-
+			const { hasHorizontalScrollbar, hasVerticalScrollbar } = this.containerHasScroll(el);
 			this.container.addEventListener('mousedown', this.onMouseDown);
+			if (hasHorizontalScrollbar || hasVerticalScrollbar) {
+				el.classList.add(GRAB_CLASS);
+			}
 		});
 	}
 	onMouseMove(evt) {
@@ -35,10 +41,16 @@ class DragScroll {
 		document.removeEventListener('mousemove', this.onMouseMove);
 		document.removeEventListener('mouseup', this.onMouseUp);
 
-		this.container.style.cursor = 'grab';
+		this.container.style.cursor = '';
 		this.container.style.removeProperty('user-select');
 	}
 	onMouseDown(evt) {
+		const { hasHorizontalScrollbar, hasVerticalScrollbar } = this.containerHasScroll(
+			this.container
+		);
+		if (!hasHorizontalScrollbar && !hasVerticalScrollbar) {
+			return;
+		}
 		this.container.style.cursor = 'grabbing';
 		this.container.style.userSelect = 'none';
 
@@ -53,6 +65,14 @@ class DragScroll {
 
 		document.addEventListener('mousemove', this.onMouseMove);
 		document.addEventListener('mouseup', this.onMouseUp);
+	}
+	containerHasScroll(container) {
+		const hasHorizontalScrollbar = container.scrollWidth > container.clientWidth;
+		const hasVerticalScrollbar = container.scrollHeight > container.clientHeight;
+		return {
+			hasHorizontalScrollbar,
+			hasVerticalScrollbar,
+		};
 	}
 }
 
