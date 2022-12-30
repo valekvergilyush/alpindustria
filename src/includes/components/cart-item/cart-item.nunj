@@ -4,36 +4,18 @@
 {% from "../button/button.nunj" import button %}
 
 {% macro cartItem(props) %}
-	{% set colorList = [
-		{ name: 'Красный', code: '#C9364C' },
-		{ name: 'Тёмно-фиолетовый', code: '#6F2876' },
-		{ name: 'Тёмно-синий', code: '#324481' },
-		{ name: 'Тёмно-зелёный', code: '#03836E' },
-		{ name: 'Тёмно-серый', code: '#342C25' },
-		{ name: 'Светло-серый', code: '#F5F1EE' },
-		{ name: 'Светло-зелёный', code: '#0B994B' },
-		{ name: 'Светло-фиолетовый', code: '#8B4192' },
-		{ name: 'Белый', code: '#FEFEFE' }
-	] %}
-	{% set sizeList = [
-		{ name: '37', value: '37' },
-		{ name: '38', value: '38' },
-		{ name: '41', value: '41', selected: true },
-		{ name: '42', value: '42' },
-		{ name: '43', value: '43' },
-		{ name: '44', value: '44' },
-		{ name: '45', value: '45' },
-		{ name: '46', value: '46' }
-	] %}
-
 	<div class="cart-item{% if props.readonly %} _readonly{% endif %}{% if props.className %} {{ props.className }}{% endif %}">
 		<div class="cart-item__info">
 			<p class="cart-item__title h7 ttu">{{ props.title }}</p>
 			<p class="cart-item__price">{{ props.price }}</p>
 			{% if props.readonly %}
 				<div class="cart-item__props">
-					{{ selectColor({ colors: colorList, className: 'cart-item__select _readonly' }) }}
-					{{ select({ options: sizeList, className: 'cart-item__select _rounded _size _readonly' }) }}
+					<span
+						class="cart-item__color button _color"
+						style="background:#C9364C"
+						aria-label="Красный">
+					</span>
+					<span class="cart-item__size">41</span>
 					{{ counter({ number: 1, className: 'cart-item__counter _readonly' }) }}
 				</div>
 			{% endif %}
@@ -45,8 +27,14 @@
 		</div>
 		<div class="cart-item__controls">
 			{% if not props.readonly %}
-				{{ selectColor({ colors: colorList, className: 'cart-item__select' }) }}
-				{{ select({ options: sizeList, className: 'cart-item__select _rounded _size' }) }}
+				<span
+					class="cart-item__color button _color"
+					style="background:#C9364C"
+					aria-label="Красный">
+				</span>
+				<span class="cart-item__size button _rounded">
+					41
+				</span>
 				{{ counter({ number: 1, className: 'cart-item__counter' }) }}
 			{% endif %}
 		</div>

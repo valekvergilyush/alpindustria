@@ -95,6 +95,7 @@
 	&__button {
 		@include reset-btn();
 		@extend .animated;
+		position: relative;
 		display: inline-flex;
 		flex-shrink: 0;
 		justify-content: center;
@@ -113,7 +114,7 @@
 		@media (max-width: $mobile-only) {
 			--font-size-h7: 14px;
 		}
-		span {
+		span:not([class]) {
 			padding-top: em(5, 18);
 		}
 		&._filter {
@@ -148,6 +149,35 @@
 		}
 		&._close {
 			display: none;
+		}
+	}
+	&__button-number {
+		--size: #{rem(16)};
+		&:empty {
+			display: none;
+		}
+		position: absolute;
+		top: em(7, 10);
+		right: em(-3, 10);
+		display: block;
+		min-width: var(--size);
+		height: var(--size);
+		padding-left: em(2.5, 10);
+		padding-right: em(3, 10);
+		border-radius: 100vmax;
+		color: var(--white);
+		background-color: var(--red-light);
+		line-height: var(--size);
+		text-align: center;
+		box-sizing: border-box;
+		word-break: keep-all;
+		@media (max-width: $tablet) {
+			top: 0.3em;
+			right: 0.3em;
+		}
+		@media (max-width: $mobile) {
+			top: 0.5em;
+			right: 0.3em;
 		}
 	}
 	&__search {
