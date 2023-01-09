@@ -53,6 +53,9 @@
 		font-size: rem(16);
 		line-height: 1.5;
 		cursor: pointer;
+		._button & {
+			padding-top: 0.25em;
+		}
 		@media (max-width: $tablet) {
 			row-gap: 11px;
 			font-size: 14px;
@@ -95,6 +98,12 @@
 				&::after {
 					display: block;
 				}
+			}
+		}
+		._button & {
+			+ #{$this}__label {
+				background-color: var(--blue-dark);
+				color: var(--white);
 			}
 		}
 	}
