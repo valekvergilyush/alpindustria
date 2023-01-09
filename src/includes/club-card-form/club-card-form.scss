@@ -1,0 +1,31 @@
+.club-card-form {
+	display: flex;
+	align-items: flex-end;
+	column-gap: rem(16);
+	&__input {
+		flex-grow: 1;
+		[data-form-stage='pay'] &,
+		[data-form-stage='cancel'] & {
+			display: none;
+		}
+	}
+	&__available {
+		display: none;
+		flex-grow: 1;
+		flex-direction: column;
+		row-gap: rem(8);
+		[data-form-stage='pay'] &,
+		[data-form-stage='cancel'] & {
+			display: flex;
+		}
+	}
+	&__btn {
+		display: none;
+		font-size: rem(18);
+		[data-form-stage='add'] &._add,
+		[data-form-stage='pay'] &._pay,
+		[data-form-stage='cancel'] &._cancel {
+			display: inline-flex;
+		}
+	}
+}
