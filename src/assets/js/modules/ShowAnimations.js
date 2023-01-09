@@ -1,4 +1,5 @@
 import Utils from '../utils/utils';
+import env from '../utils/env';
 
 const ClassName = {
 	ANIMATIONS: 'animations',
@@ -50,7 +51,7 @@ class ShowAnimations {
 				const isInViewport = Utils.isElementInViewport(block, 1.2);
 
 				if (isInViewport) {
-					if (block.hasAttribute('data-lottie-autoplay-trigger')) {
+					if (block.hasAttribute('data-lottie-autoplay-trigger') && !env.isSafari) {
 						const lottieBlock = block.nextElementSibling;
 
 						lottieBlock.lottieAnimation && lottieBlock.lottieAnimation.play();
