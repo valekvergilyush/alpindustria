@@ -1,0 +1,29 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<form class="footer__subscribe subscribe-form">
+	<div class="subscribe-form__input-wrapper">
+		{{ input({
+			type: 'email',
+			id: 'subscribe-form-email',
+			className: 'subscribe-form__input _c-white',
+			label: 'Будь в курсе',
+			name: 'Email',
+			inputAttr: 'required autocomplete="off"'
+		}) }}
+		<p class="subscribe-form__message _success p4">На&nbsp;указанный вами e-mail выслано письмо с&nbsp;просьбой о&nbsp;подтверждении подписки</p>
+	</div>
+	{{ button({
+		type: 'submit',
+		text: 'Подписаться',
+		icon: 'promo-arrow-filled',
+		iconData: 'width="18" height="18"',
+		className: 'subscribe-form__submit ttu'
+	}) }}
+	{{ button({
+		type: 'button',
+		icon: 'close-popup',
+		iconData: 'width="18" height="18"',
+		className: 'subscribe-form__close'
+	}) }}
+</form>
