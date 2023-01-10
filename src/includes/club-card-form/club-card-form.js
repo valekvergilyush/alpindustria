@@ -15,6 +15,7 @@ class ClubCardForm {
 		this.addButton = this.container.querySelector('.club-card-form__btn._add');
 		this.payButton = this.container.querySelector('.club-card-form__btn._pay');
 		this.cancelButton = this.container.querySelector('.club-card-form__btn._cancel');
+		this.cardBalance = this.container.querySelector('.club-card-form__available-number');
 
 		this.addButton.addEventListener('click', evt => {
 			evt.preventDefault();
@@ -49,13 +50,14 @@ class ClubCardForm {
 		this.classModifier = FormStage.PAY;
 		this.container.setAttribute('data-form-stage', this.classModifier);
 
-		this.cardBalance = this.container.querySelector('.club-card-form__available-number');
 		this.startBalanceValue = this.cardBalance.textContent;
 		this.currentBalanceValue = this.startBalanceValue;
 	}
 	_pay() {
 		this.cartPrice = document.querySelector('.cart__pay .cart__price-value');
 		this.startPriceValue = this.cartPrice.textContent.replace(/\s/, '').match(/\d+/)[0];
+		this.startBalanceValue = this.cardBalance.textContent;
+		this.currentBalanceValue = this.startBalanceValue;
 
 		this.classModifier = FormStage.CANCEL;
 		this.container.setAttribute('data-form-stage', this.classModifier);
