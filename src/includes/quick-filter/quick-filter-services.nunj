@@ -65,7 +65,8 @@
 	{ name: 'Санкт-петербург',
 		modifier: 'inner',
 		cityAttr: 'saint-petersburg',
-		subcategories: subcategories
+		subcategories: subcategories,
+		active: true
 	},
 	{ name: 'Москва',
 		cityAttr: 'moscow',
@@ -79,14 +80,14 @@
 	}
 ] %}
 
-<ul class="hero-catalog__quick-filter quick-filter" data-quick-filter data-subcategory-rent>
+<ul class="hero-catalog__quick-filter quick-filter _opened" data-quick-filter data-subcategory-rent>
 	{% for category1 in categories %}
 		{% if category1.subcategories %}
 			{% set mod = ' data-subcategory-mod="_' + category1.modifier + '"' %}
 		{% else %}
 			{% set mod = '' %}
 		{% endif %}
-		<li class="quick-filter__item"{% if category1.subcategories %}data-drag-scroll data-subcategory-item{% endif %}>
+		<li class="quick-filter__item {% if category1.active %}_opened{% endif %}"{% if category1.subcategories %}data-drag-scroll data-subcategory-item{% endif %}>
 			{{ button({
 				className: 'quick-filter__button _quick-filter',
 				text: category1.name,

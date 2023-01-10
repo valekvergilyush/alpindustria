@@ -35,6 +35,7 @@
 	{
 		name: 'санкт-петербург',
 		attribute: 'saint-petersburg',
+		isActive: true,
 		shops: [
 			'Все магазины',
 			'Черная речка',
@@ -146,11 +147,11 @@
 	</div>
 	<div class="wishlist-services__block">
 		<p class="h7 ttu">Магазин</p>
-		<div class="wishlist-services__cities-block" data-wishlist-cities>
-			<p class="wishlist-services__city-name h7 ttu c-gray-dark" data-wishlist-city-name></p>
+		<div class="wishlist-services__cities-block _active" data-wishlist-cities>
+			<p class="wishlist-services__city-name h7 ttu c-gray-dark _active" data-wishlist-city-name>Санкт-Петербург</p>
 			<ul class="wishlist-services__cities-list">
 				{% for city in cities %}
-					<li class="wishlist-services__city" data-wishlist-city-item>
+					<li class="wishlist-services__city {% if city.isActive %}_active{% endif %}" data-wishlist-city-item>
 						<button class="wishlist-services__city-btn button _quick-filter" data-wishlist-city-btn={{ city.attribute }}>{{ city.name }}</button>
 						{% if city.shops.length %}
 							{{ button({

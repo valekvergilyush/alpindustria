@@ -20,6 +20,7 @@
 		Всего:<br>
 		<span class="cart-list__number-value">3 товара</span>
 	</p>
+	<p class="cart-list__warning p2 c-red-light">ВАЖНО! В&nbsp;корзине сейчас есть товары из&nbsp;разных магазинов, вы&nbsp;можете оформить прокат нескольких товаров только из&nbsp;одного магазина.</p>
 	<ul class="cart-list__list">
 		{% for item in cartList %}
 			<li class="cart-list__item">{{ cartItem(item) }}</li>

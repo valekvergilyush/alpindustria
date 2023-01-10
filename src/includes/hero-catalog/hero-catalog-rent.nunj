@@ -16,7 +16,9 @@
 	</div>
 	<div class="hero-catalog__container container">
 		<h1 class="hero-catalog__title ttu tac">
-			<span class="hero-catalog__title-root h7"></span>
+			<span class="hero-catalog__title-root h7">
+				<span>Cанкт-петербург</span>
+			</span>
 			<span class="hero-catalog__title-category h4">Прокат</span>
 		</h1>
 		{% include "../quick-filter/quick-filter-services.nunj" %}

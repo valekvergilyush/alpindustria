@@ -4,4 +4,9 @@
 	padding: rem(40);
 	background-color: var(--blue-dark);
 	color: var(--white);
+	@media (max-width: $mobile-lg) {
+		--offset-height: 34px;
+		margin-bottom: calc(0px - var(--offset-height));
+		margin-top: var(--offset-height);
+	}
 }

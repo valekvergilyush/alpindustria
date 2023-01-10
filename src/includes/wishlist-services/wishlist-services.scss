@@ -294,7 +294,7 @@
 	}
 	&__cities-list {
 		display: flex;
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
 		gap: rem(16);
 	}
 	&__city {
@@ -314,8 +314,10 @@
 	&__shops-list {
 		display: none;
 		gap: rem(16);
+		flex-wrap: wrap;
 	}
 	&__back {
+		flex-shrink: 0;
 		display: none;
 	}
 	&__shop {

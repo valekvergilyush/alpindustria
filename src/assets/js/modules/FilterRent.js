@@ -126,7 +126,6 @@ class FilterRent {
 			extraTitleNameArray.push(pathWithCategory[1]);
 			extraTitleNameArray.push(pathWithCategory[pathWithCategory.length - 1]);
 		}
-		console.log(extraTitleNameArray);
 		this.heroTitleCategory.textContent = '';
 		this.heroTitleCategory.textContent = this.heroTitleText + ' ' + extraTitleNameArray.join(', ');
 	}
