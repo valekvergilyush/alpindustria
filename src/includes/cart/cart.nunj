@@ -90,7 +90,7 @@
 		<div class="cart-bottom">
 			<p class="cart__price _white p3 _shop">
 				Итого с учетом доставки:<br>
-				<span class="cart__price-value h5 ttu">145 000 ₽</span>
+				<span class="cart__price-value h5 ttu">145 000</span><span class="cart__price-currency h5 ttu">&nbsp;₽</span>
 			</p>
 			{{ button({
 				type: 'submit',

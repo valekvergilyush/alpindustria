@@ -1,4 +1,5 @@
 {% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/radio/radio-button.nunj" import radioButton %}
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
 
 <div class="cart__cart-pay cart-pay">
@@ -27,5 +28,25 @@
 		name: 'sms-info',
 		text: 'SMS информирование об операциях по заказу'
 	}) }}
-	<a class="cart-pay__offer-link" href="#">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+	<div class="cart-pay__sms-info" >
+		{{ radioButton({
+			id: 'cart-pay-call',
+			className: 'delivery-address__radio',
+			name: 'pay-info-radio',
+			value: 'call',
+			text: 'Позвонить',
+			checked: true
+		}) }}
+		{{ radioButton({
+			id: 'cart-pay-whatsapp',
+			className: 'delivery-address__radio',
+			name: 'pay-info-radio',
+			value: 'whatsapp',
+			text: 'WhatsApp'
+		}) }}
+	</div>
+	<a class="cart-pay__offer-link" href="#">Нажимая "оплатить", вы соглашаетесь с условиями оферты</a>
+	<div class="cart-pay__bottom" data-validate>
+		{% include "../club-card-form/club-card-form.nunj" %}
+	</div>
 </div>
