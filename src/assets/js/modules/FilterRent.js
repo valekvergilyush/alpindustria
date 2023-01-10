@@ -25,8 +25,6 @@ class FilterRent {
 			this.heroTitleText = this.heroTitleCategory.textContent;
 			this.heroBgImage = this.heroContainer.querySelector('.hero-catalog__bg-img._hero');
 			const startCity = this.heroContainer.dataset.subcategoryStartCity;
-			console.log(startCity);
-			console.log(this.heroContainer);
 			if (startCity) {
 				this.path.push(startCity);
 			}
@@ -122,7 +120,6 @@ class FilterRent {
 			element.textContent = item;
 			this.heroTitleRoot.appendChild(element);
 		});
-		console.log(this.path);
 	}
 	updateHeroTitle() {
 		const pathWithCategory = [...this.path] || [];
