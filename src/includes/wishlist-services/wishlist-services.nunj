@@ -2,6 +2,7 @@
 {% from "../components/select/select.nunj" import select %}
 {% from "../components/counter/counter.nunj" import counter %}
 {% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+{% from "../components/button/button.nunj" import button %}
 
 {% set colorButtons = [
 	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
@@ -28,6 +29,36 @@
 	{ name: 'Санкт-Петербург', value: 'Санкт-Петербург' },
 	{ name: 'Новосибирск', value: 'Новосибирск' },
 	{ name: 'Екатеринбург', value: 'Екатеринбург' }
+] %}
+
+{% set cities = [
+	{
+		name: 'санкт-петербург',
+		attribute: 'saint-petersburg',
+		shops: [
+			'Все магазины',
+			'Черная речка',
+			'Заневский'
+		]
+	},
+	{
+		name: 'Москва',
+		attribute: 'moscow',
+		shops: [
+			'Все магазины',
+			'Черная речка',
+			'Заневский'
+		]
+	},
+	{
+		name: 'Новосибирск',
+		attribute: 'novosibirsk',
+		shops: [
+			'Все магазины',
+			'Черная речка',
+			'Заневский'
+		]
+	}
 ] %}
 
 <div class="wishlist-services">
@@ -111,6 +142,34 @@
 				</div>
 				<span class="wishlist-services__rating-number p1">4.9</span>
 			</div>
+		</div>
+	</div>
+	<div class="wishlist-services__block">
+		<p class="h7 ttu">Магазин</p>
+		<div class="wishlist-services__cities-block" data-wishlist-cities>
+			<p class="wishlist-services__city-name h7 ttu c-gray-dark" data-wishlist-city-name></p>
+			<ul class="wishlist-services__cities-list">
+				{% for city in cities %}
+					<li class="wishlist-services__city" data-wishlist-city-item>
+						<button class="wishlist-services__city-btn button _quick-filter" data-wishlist-city-btn={{ city.attribute }}>{{ city.name }}</button>
+						{% if city.shops.length %}
+							{{ button({
+								className: 'wishlist-services__back _back',
+								attr: 'aria-label="Назад" data-wishlist-city-back',
+								icon: 'arrow-left',
+								iconData: 'width="24" height="24"'
+							}) }}
+							<ul class="wishlist-services__shops-list">
+								{% for shop in city.shops %}
+									<li class="wishlist-services__shop">
+										<button class="button _quick-filter" data-wishlist-shop>{{ shop }}</button>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 	<div class="wishlist-services__block">

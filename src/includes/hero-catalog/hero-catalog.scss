@@ -147,4 +147,23 @@
 			}
 		}
 	}
+	&._rent {
+		#{$this}__title {
+			max-width: none;
+		}
+		#{$this}__title-root {
+			&::before,
+			&::after {
+				content: '/';
+				opacity: 0;
+			}
+			& > span {
+				display: flex;
+				gap: rem(8);
+				&::after {
+					content: '/';
+				}
+			}
+		}
+	}
 }
