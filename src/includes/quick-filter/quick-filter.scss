@@ -86,9 +86,6 @@
 		}
 		._opened {
 			width: 100%;
-			// #{$this}__subcategories-wrapper {
-			// 	display: flex;
-			// }
 			& > #{$this}__button._quick-filter {
 				display: none;
 			}
