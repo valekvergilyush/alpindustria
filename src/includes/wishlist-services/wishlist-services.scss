@@ -296,6 +296,13 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem(16);
+		@media (max-width: $laptop-sm) {
+			flex-wrap: nowrap;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
+		}
 	}
 	&__city {
 		display: flex;
@@ -315,6 +322,13 @@
 		display: none;
 		gap: rem(16);
 		flex-wrap: wrap;
+		@media (max-width: $laptop-sm) {
+			flex-wrap: nowrap;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
+		}
 	}
 	&__back {
 		flex-shrink: 0;

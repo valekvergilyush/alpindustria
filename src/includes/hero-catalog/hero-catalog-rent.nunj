@@ -1,6 +1,6 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<section class="page__hero hero-catalog _rent _subcategory" data-parallax>
+<section class="page__hero hero-catalog _rent _subcategory" data-parallax data-subcategory-start-city="Санкт-Петербург">
 	<div class="hero-catalog__bg-img-wrapper">
 		{{ picture({
 			className: 'hero-catalog__bg-img _hero',

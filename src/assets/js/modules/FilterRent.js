@@ -24,6 +24,12 @@ class FilterRent {
 			this.heroTitleCategory = this.heroContainer.querySelector('.hero-catalog__title-category');
 			this.heroTitleText = this.heroTitleCategory.textContent;
 			this.heroBgImage = this.heroContainer.querySelector('.hero-catalog__bg-img._hero');
+			const startCity = this.heroContainer.dataset.subcategoryStartCity;
+			console.log(startCity);
+			console.log(this.heroContainer);
+			if (startCity) {
+				this.path.push(startCity);
+			}
 		}
 
 		this.subContainers.forEach(subContainer => {
@@ -96,13 +102,16 @@ class FilterRent {
 			return;
 		}
 		this.subcategoryBgImg = this.heroContainer.querySelector(`.hero-catalog__bg-img.${classMod}`);
-		if (this.subcategoryBgImg) {
+		if (!this.subcategoryBgImg) {
 			return;
 		}
 		this.heroBgImage.style.display = 'none';
 		this.subcategoryBgImg.style.display = 'block';
 	}
 	showHeroBg() {
+		if (!this.subcategoryBgImg) {
+			return;
+		}
 		this.heroBgImage.style.display = 'block';
 		this.subcategoryBgImg.style.display = 'none';
 	}
@@ -113,6 +122,7 @@ class FilterRent {
 			element.textContent = item;
 			this.heroTitleRoot.appendChild(element);
 		});
+		console.log(this.path);
 	}
 	updateHeroTitle() {
 		const pathWithCategory = [...this.path] || [];
