@@ -154,6 +154,9 @@
 			background-repeat: no-repeat;
 			transition: background $default-transition-duration $default-transition-function;
 		}
+		._safari &::before {
+			transition: none;
+		}
 		#{$this}__title {
 			order: 2;
 			width: calc(100% - var(--arrow-size) - var(--card-padding));
@@ -231,6 +234,9 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			transition: background $default-transition-duration $default-transition-function;
+		}
+		._safari &::before {
+			transition: none;
 		}
 		#{$this}__title {
 			order: 2;

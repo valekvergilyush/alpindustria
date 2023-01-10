@@ -19,6 +19,15 @@
 	@media (max-width: $mobile-lg) {
 		--height: 58px;
 	}
+	&._c-white {
+		#{$this}__label,
+		#{$this}__input {
+			color: var(--white);
+		}
+		#{$this}__input {
+			border-bottom: 1px solid rgba($white, 0.4);
+		}
+	}
 	&__label {
 		@extend .animated;
 		position: absolute;

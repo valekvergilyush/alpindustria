@@ -8,7 +8,7 @@
 		@extend .animated;
 		display: flex;
 		align-items: center;
-		height: rem(55);
+		height: var(--community-nav-height);
 		padding-top: 0.1em;
 		box-sizing: border-box;
 		&:hover {

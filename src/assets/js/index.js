@@ -83,6 +83,7 @@ class AlpIndustry {
 			Tooltip: require('../../includes/components/tooltip/tooltip').default,
 			Class: require('../../includes/class/class').default,
 			WishlistServices: require('../../includes/wishlist-services/wishlist-services').default,
+			SubscribeForm: require('../../includes/subscribe-form/subscribe-form').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

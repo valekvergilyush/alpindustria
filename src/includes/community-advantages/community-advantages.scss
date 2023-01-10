@@ -1,6 +1,8 @@
 .community-advantages {
 	$this: &;
 	--padding-y: #{rem(124)};
+	position: relative;
+	z-index: 1;
 	color: var(--white);
 	background-color: var(--blue-light);
 	height: 100vh;
