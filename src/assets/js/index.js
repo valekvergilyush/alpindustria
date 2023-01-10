@@ -26,6 +26,7 @@ class AlpIndustry {
 			Accordion: require('./modules/Accordion').default,
 			AnchorLinks: require('./modules/AnchorLinks').default,
 			FilterSubcategory: require('./modules/FilterSubcategory').default,
+			FilterRent: require('./modules/FilterRent').default,
 			DragScroll: require('./modules/DragScroll').default,
 			Product: require('./modules/Product').default,
 			Popups: require('./modules/Popups').default,
@@ -81,6 +82,7 @@ class AlpIndustry {
 			SearchBlock: require('../../includes/components/search-block/search-block').default,
 			Tooltip: require('../../includes/components/tooltip/tooltip').default,
 			Class: require('../../includes/class/class').default,
+			WishlistServices: require('../../includes/wishlist-services/wishlist-services').default,
 			SubscribeForm: require('../../includes/subscribe-form/subscribe-form').default,
 			ClubCardForm: require('../../includes/club-card-form/club-card-form').default,
 		};

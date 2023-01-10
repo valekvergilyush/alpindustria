@@ -280,4 +280,76 @@
 			top: 0;
 		}
 	}
+	&__cities-block {
+		display: grid;
+		gap: rem(16);
+		&._active {
+			#{$this}__city:not(._active) {
+				display: none;
+			}
+			#{$this}__city-btn {
+				display: none;
+			}
+		}
+	}
+	&__cities-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(16);
+		@media (max-width: $laptop-sm) {
+			flex-wrap: nowrap;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
+		}
+	}
+	&__city {
+		display: flex;
+		gap: rem(16);
+		white-space: nowrap;
+		&._active {
+			display: flex;
+			#{$this}__shops-list {
+				display: flex;
+			}
+			#{$this}__back {
+				display: grid;
+			}
+		}
+	}
+	&__shops-list {
+		display: none;
+		gap: rem(16);
+		flex-wrap: wrap;
+		@media (max-width: $laptop-sm) {
+			flex-wrap: nowrap;
+			overflow: auto;
+			@include scrollbar {
+				display: none;
+			}
+		}
+	}
+	&__back {
+		flex-shrink: 0;
+		display: none;
+	}
+	&__shop {
+		&._active {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+	&__city-name {
+		display: none;
+		gap: rem(8);
+		justify-self: flex-start;
+		opacity: 0.4;
+		&::after {
+			content: '/';
+		}
+		&._active {
+			display: flex;
+		}
+	}
 }

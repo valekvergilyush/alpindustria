@@ -47,4 +47,16 @@
 		flex-direction: column;
 		row-gap: rem(16);
 	}
+	&__warning {
+		margin-bottom: rem(48);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: 18px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 16px;
+		}
+	}
 }

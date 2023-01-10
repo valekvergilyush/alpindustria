@@ -40,25 +40,35 @@
 	<article class="{% if props.className %}{{ props.className }} {% endif %}product-card" data-product-card>
 		<a class="product-card__title ttu" href="{{ props.url }}" {% if props.linkAttr %}{{props.linkAttr}}{% endif %}>{{ props.title }}</a>
 		<p class="product-card__brand p3">{{ props.brand }}</p>
-		<p class="product-card__price p3">
-			{% if props.oldPrice %}
-				<span class="product-card__old-price">{{ props.oldPrice }}</span>
-			{% endif %}
-			<span>{{ props.price }}</span>
-		</p>
-		{{ button({
-			className: 'product-card__button _wishlist' + activeClassName,
-			attr: 'aria-label="Добавить в вишлист" data-notification-open="wishlist"'
-		}) }}
+		{% if not props.isRent %}
+			<p class="product-card__price p3">
+				{% if props.oldPrice %}
+					<span class="product-card__old-price">{{ props.oldPrice }}</span>
+				{% endif %}
+				<span>{{ props.price }}</span>
+			</p>
+			{{ button({
+				className: 'product-card__button _wishlist' + activeClassName,
+				attr: 'aria-label="Добавить в вишлист" data-notification-open="wishlist"'
+			}) }}
+		{% endif %}
 		<a class="product-card__link-photo" href="{{ props.url }}" {% if props.linkAttr %}{{props.linkAttr}}{% endif %}>
 			<img class="product-card__photo" src="{{ props.photo }}.png" srcset="{{ props.photo }}@2x.png 2x" width="304" height="364" alt="">
 			<img class="product-card__photo _zoom" src="{{ props.zoomPhoto }}.png" srcset="{{ props.zoomPhoto }}@2x.png 2x" width="432" height="540" alt="">
 		</a>
-		{{ button({
-			text: 'В корзину',
-			className: 'product-card__button _product-card',
-			attr: 'aria-label="В корзину" data-product-card-props-opener'
-		}) }}
+		{% if props.isRent %}
+			{{ button({
+				text: 'Забронировать',
+				className: 'product-card__button _product-card',
+				attr: 'aria-label="Забронировать" data-popup-opener="wishlist-services"'
+			}) }}
+		{% else %}
+			{{ button({
+				text: 'В корзину',
+				className: 'product-card__button _product-card',
+				attr: 'aria-label="В корзину" data-product-card-props-opener'
+			}) }}
+		{% endif %}
 		<div class="product-card__badges">
 			{% if props.exclusive %}
 				{% include "../../product-badge/exclusive-icon.nunj" %}

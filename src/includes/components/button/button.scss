@@ -574,7 +574,7 @@
 	}
 	&._size {
 		@extend .animated;
-		padding: rem(5) rem(18);
+		padding: rem(6) rem(18) rem(4);
 		border: 1px solid var(--blue-dark);
 		border-radius: rem(247);
 		font-family: var(--font-family-suisse);
