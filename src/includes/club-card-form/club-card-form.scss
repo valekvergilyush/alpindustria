@@ -27,5 +27,23 @@
 		[data-form-stage='cancel'] &._cancel {
 			display: inline-flex;
 		}
+		&.button .button__icon {
+			--size: #{rem(24)};
+			margin-left: rem(16);
+		}
+		@media (max-width: $laptop-lg) {
+			&.button .button__icon {
+				--size: 16px;
+			}
+		}
+		@media (max-width: $laptop) {
+			font-size: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 14px;
+			&.button .button__icon {
+				margin-left: 8px;
+			}
+		}
 	}
 }

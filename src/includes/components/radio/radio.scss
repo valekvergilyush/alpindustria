@@ -56,6 +56,14 @@
 		._button & {
 			padding-top: 0.25em;
 		}
+		@media (max-width: $laptop-lg) {
+			._button & {
+				height: auto;
+				min-height: 34px;
+				padding: 0 16px;
+				font-size: 14px;
+			}
+		}
 		@media (max-width: $tablet) {
 			row-gap: 11px;
 			font-size: 14px;
