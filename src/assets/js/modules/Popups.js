@@ -274,6 +274,10 @@ class Popups {
 				document.title,
 				window.location.pathname + window.location.search
 			);
+
+			if (env.isIOS) {
+				document.body.style.overflow = '';
+			}
 		}
 	}
 	getPopup(name) {
