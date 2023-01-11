@@ -273,8 +273,7 @@
 		&[data-popup='product-appear'],
 		&[data-popup='data-editing'],
 		&[data-popup='cart-reservation'],
-		&[data-popup='question-form'],
-		&[data-popup='cart-order'] {
+		&[data-popup='question-form'] {
 			@media (max-width: $tablet) {
 				min-height: auto;
 			}

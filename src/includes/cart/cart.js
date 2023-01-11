@@ -1,3 +1,5 @@
+import env from '../../assets/js/utils/env';
+
 const ClassName = {
 	OPENED_DELIVERY: '_opened-delivery',
 	OPENED_PAY: '_opened-pay',
@@ -89,6 +91,10 @@ class Cart {
 				},
 			});
 		}
+
+		if (env.isIOS) {
+			document.body.style.overflow = '';
+		}
 	}
 	openDefault() {
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
@@ -108,6 +114,10 @@ class Cart {
 			this.popupWrapper.classList.remove(ClassName.OPENED_PAY);
 			this.popupWrapper.classList.remove(ClassName.ANIMATION);
 		}
+
+		if (env.isIOS) {
+			document.body.style.overflow = '';
+		}
 	}
 	openPay() {
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
@@ -115,6 +125,10 @@ class Cart {
 
 		clearTimeout(this.animTO);
 		this.animTO = setTimeout(() => this.popupWrapper.classList.remove(ClassName.ANIMATION), 300);
+
+		if (env.isIOS) {
+			document.body.style.overflow = 'hidden';
+		}
 	}
 	onLegalCheckboxChange(e) {
 		const legalBlock = e.target.parentNode.parentNode.querySelector('[data-legal-block]');
