@@ -4,7 +4,7 @@
 	<div class="popups" data-popups>
 			{% for popup in props.list %}
 				<div class="popups__popup-wrapper" data-popup-wrapper="{{ popup.name }}"{% if popup.animation %} data-popup-animation="{{ popup.animation }}"{% endif %}>
-					<div class="popups__popup" data-popup="{{ popup.name }}" body-scroll-lock-ignore>
+					<div class="popups__popup" data-popup="{{ popup.name }}">
 						{% include './popups-' + popup.name + '.nunj' %}
 						<button class="popups__close-button" type="button" data-popup-closer>
 							{{ icon({

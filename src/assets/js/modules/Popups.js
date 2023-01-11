@@ -134,6 +134,19 @@ class Popups {
 								focusElement.focus && focusElement.focus();
 							}
 							this.initPopupAccordions(popup);
+							if (popup.scrollHeight > window.innerHeight) {
+								const inner = popup.querySelector('[data-popup]');
+								inner.style.overflow = 'hidden';
+								popup.addEventListener('scroll', () => {
+									if (popup.scrollTop >= Number.parseInt(getComputedStyle(inner).marginTop, 10)) {
+										inner.style.overflow = 'auto';
+									} else {
+										if (popup.scrollTop === 0) {
+											inner.style.overflow = 'hidden';
+										}
+									}
+								});
+							}
 						},
 						paused: true,
 					}
