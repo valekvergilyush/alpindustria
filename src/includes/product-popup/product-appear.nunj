@@ -14,7 +14,7 @@
 				name: 'Почта',
 				inputAttr: 'required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"'
 			}) }}
-			<a href="#" class="product-popup__terms c-gray-dark">Нажимая "отправить", вы соглашаетесь с условиями оферты</a>
+			<a href="#" class="product-popup__terms c-gray-dark" data-popup-opener="offer">Нажимая "отправить", вы соглашаетесь с условиями оферты</a>
 		</div>
 		<div class="product-popup__bottom">
 			{{ button({

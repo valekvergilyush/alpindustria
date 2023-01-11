@@ -66,6 +66,12 @@
 		}
 	}
 	&__add {
+		&:hover {
+			.button__icon {
+				margin-left: rem(4);
+				transition: margin-left $default-transition-duration $default-transition-function;
+			}
+		}
 		@media (max-width: $laptop-sm) {
 			font-size: 18px;
 			line-height: 24px;
