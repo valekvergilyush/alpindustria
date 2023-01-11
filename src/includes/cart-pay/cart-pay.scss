@@ -64,7 +64,7 @@
 		padding: 0 var(--popup-padding);
 		padding-top: rem(39);
 		padding-bottom: rem(40);
-		margin-left: calc(0px - var(--popup-padding));
+		margin-left: calc(1px - var(--popup-padding));
 		margin-top: rem(28);
 		border-top: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-lg) {

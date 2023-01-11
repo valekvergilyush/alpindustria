@@ -247,6 +247,14 @@
 		.cart__back-btn {
 			display: none;
 		}
+		.cart-bottom {
+			margin-left: calc(1px - var(--popup-padding));
+		}
+		@media (max-width: $laptop-sm) {
+			.cart-bottom {
+				margin-left: calc(0px - var(--popup-padding));
+			}
+		}
 	}
 	&__cart-pay {
 		flex-grow: 1;
@@ -414,6 +422,7 @@
 			}
 			&__pay {
 				flex-grow: 1;
+				overflow-x: hidden;
 				&::after {
 					display: none;
 				}
