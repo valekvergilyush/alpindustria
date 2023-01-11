@@ -1,20 +1,17 @@
 .cart-pay {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: rem(18);
-	@media (max-width: $laptop-lg) {
-		padding-bottom: 25px;
-	}
-	@media (max-width: $laptop) {
-		padding-bottom: 31px;
-	}
+	align-items: flex-start;
 	&__radios {
 		display: flex;
 		flex-direction: column;
-		row-gap: rem(30);
+		row-gap: rem(32);
 		margin-bottom: rem(30);
+		.radio._text .radio__text {
+			font-family: var(--default-font-family);
+		}
 		@media (max-width: $laptop-lg) {
-			row-gap: 14px;
+			row-gap: 35px;
 		}
 		@media (max-width: $laptop) {
 			row-gap: 22px;
@@ -22,34 +19,62 @@
 	}
 	&__checkbox {
 		margin-top: auto;
-		margin-bottom: rem(40);
+		margin-bottom: rem(30);
 		.checkbox__label {
 			font-size: rem(14);
 		}
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 22px;
+			.checkbox__label {
+				font-size: 12px;
+			}
 		}
 		@media (max-width: $laptop) {
-			margin-bottom: 14px;
+			margin-bottom: 16px;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 26px;
+			margin-bottom: 23px;
+			.checkbox__label {
+				font-size: 10px;
+			}
 		}
 	}
 	&__offer-link {
 		@extend .animated;
-		font-family: var(--font-family-suisse);
+		font-size: rem(12);
 		color: var(--gray-dark);
 		opacity: 0.4;
 		text-decoration: underline;
 		&:hover {
 			opacity: 1;
 		}
-		@media (max-width: $laptop-lg) {
-			font-family: var(--default-font-family);
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
 		}
+	}
+	&__sms-info {
+		display: flex;
+		column-gap: rem(8);
+		margin-bottom: rem(30);
 		@media (max-width: $laptop) {
-			font-size: 12px;
+			margin-bottom: 24px;
+		}
+	}
+	&__bottom {
+		width: 100%;
+		padding: 0 var(--popup-padding);
+		padding-top: rem(39);
+		padding-bottom: rem(40);
+		margin-left: calc(1px - var(--popup-padding));
+		margin-top: rem(28);
+		border-top: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-lg) {
+			padding-block: 23px;
+			margin-top: 23px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-block: 16px;
+			padding-top: 13px;
+			margin-top: 16px;
 		}
 	}
 }

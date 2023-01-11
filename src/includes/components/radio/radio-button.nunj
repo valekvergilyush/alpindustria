@@ -1,0 +1,16 @@
+{% macro radioButton(props) %}
+	<div class="radio _button{% if props.className %} {{ props.className }}{% endif %}">
+		<input
+			class="radio__input visually-hidden"
+			type="radio"
+			id="{{ props.id }}"
+			name="{{ props.name }}"
+			value="{% if props.value %}{{ props.value }}{% else %}{{ props.name }}{% endif %}"
+			{% if props.checked %} checked{% endif %}
+			{% if props.attr %} {{ props.attr }}{% endif %}
+		>
+		<label class="radio__label button _quick-filter p3" for="{{ props.id }}">
+			{{ props.text }}
+		</label>
+	</div>
+{% endmacro %}

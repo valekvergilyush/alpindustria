@@ -26,12 +26,12 @@
 		padding-bottom: 24px;
 	}
 	@media (max-width: $tablet) {
-		padding-left: 32px;
-		padding-right: 32px;
+		padding-top: 30px;
+		padding-inline: 32px;
 	}
 	@media (max-width: $mobile-lg) {
 		min-height: 64px;
-		padding: 13px var(--popup-padding) 12px var(--popup-padding);
+		padding: 13px var(--popup-padding) 9px var(--popup-padding);
 	}
 	&__price {
 		min-width: rem(240);
