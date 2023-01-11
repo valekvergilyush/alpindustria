@@ -165,6 +165,10 @@
 		}
 	}
 	&__btn {
+		transition: transform $default-transition-duration $default-transition-function;
+		&:hover {
+			transform: scale(1.1);
+		}
 		.button__icon {
 			--size: #{rem(32)};
 			width: var(--size);

@@ -44,7 +44,7 @@
 					className: 'cart-item__btn',
 					icon: 'cart',
 					iconData: 'width="32" height="32" viewBox="0 0 36 36"',
-					attr: 'aria-label="Добавить в корзину"'
+					attr: 'aria-label="Добавить в корзину" data-notification-open="cart"'
 				}) }}
 				{{ button({
 					className: 'cart-item__btn',

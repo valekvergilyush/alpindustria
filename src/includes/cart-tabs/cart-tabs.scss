@@ -8,6 +8,9 @@
 		flex-grow: 1;
 	}
 	&__price {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 		width: rem(240);
 		color: var(--gray-light);
 		@media (max-width: $laptop-lg) {
@@ -31,7 +34,7 @@
 			display: none;
 		}
 		.cart._rent &._rent {
-			display: block;
+			display: flex;
 		}
 	}
 	&__price-value {

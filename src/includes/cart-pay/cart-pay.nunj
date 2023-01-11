@@ -27,5 +27,5 @@
 		name: 'sms-info',
 		text: 'SMS информирование об операциях по заказу'
 	}) }}
-	<a class="cart-pay__offer-link" href="#">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
+	<a class="cart-pay__offer-link" href="#" data-popup-opener="offer">Нажимая "оформить заказ", вы соглашаетесь с условиями оферты</a>
 </div>
