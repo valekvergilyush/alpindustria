@@ -1,0 +1,106 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/radio/radio-button.nunj" import radioButton %}
+{% from "../components/product-card/product-card.nunj" import productCard %}
+
+{% set productList = [
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true },
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+] %}
+
+<div class="page__search-menu search-menu" data-search-menu>
+	<form class="search-menu__form">
+		<input
+			class="search-menu__input"
+			type="text"
+			name="Поиск"
+			placeholder="Поиск по магазину"
+			aria-label="Поиск"
+			autocomplete="off"
+			data-search-menu-input
+		>
+		{{ button({
+			className: 'search-menu__submit-btn',
+			text: 'Найдено 120 товаров',
+			icon: 'arrow-right',
+			iconData: 'width="24" height="24"'
+		}) }}
+	</form>
+	<div class="search-menu__tabs">
+		{{ radioButton({
+			id: 'search-menu-shop-radio',
+			className: 'search-menu__radio',
+			name: 'search-menu-tab',
+			value: 'shop',
+			text: 'Магазин',
+			checked: true,
+			attr: 'data-search-menu-tab data-search-input-placeholder="Поиск по магазину"'
+		}) }}
+		{{ radioButton({
+			id: 'search-menu-community-radio',
+			className: 'search-menu__radio',
+			name: 'search-menu-tab',
+			value: 'community',
+			text: 'Сообщество',
+			attr: 'data-search-menu-tab data-search-input-placeholder="Поиск по сообществу"'
+		}) }}
+		{{ radioButton({
+			id: 'search-menu-news-radio',
+			className: 'search-menu__radio',
+			name: 'search-menu-tab',
+			value: 'news',
+			text: 'Новости',
+			attr: 'data-search-menu-tab data-search-input-placeholder="Поиск по новостям"'
+		}) }}
+		{{ radioButton({
+			id: 'search-menu-brands-radio',
+			className: 'search-menu__radio',
+			name: 'search-menu-tab',
+			value: 'brands',
+			text: 'Бренды',
+			attr: 'data-search-menu-tab data-search-input-placeholder="Поиск по брендам"'
+		}) }}
+		{{ radioButton({
+			id: 'search-menu-rent-radio',
+			className: 'search-menu__radio',
+			name: 'search-menu-tab',
+			value: 'rent',
+			text: 'Прокат',
+			attr: 'data-search-menu-tab data-search-input-placeholder="Поиск по прокату"'
+		}) }}
+	</div>
+	<div class="search-menu__results">
+		<div class="search-menu__results-col _left">
+			<div class="search-menu__list-wrapper _results">
+				<ul class="search-menu__list p2">
+					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="#">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="#">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+				{{ button({
+					className: 'search-menu__show-more-btn _show-more _no-bd',
+					text: 'Показать еще',
+					icon: 'plus-circle',
+					iconData: 'width="32" height="32"'
+				}) }}
+			</div>
+			<div class="search-menu__history c-gray-dark">
+				<p class="search-menu__history-title h7 ttu">История поиска</p>
+				<ul class="search-menu__list _history p2">
+					<li><a href="#" class="search-menu__history-link">Куртка The North Face</a></li>
+					<li><a href="#" class="search-menu__history-link">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="search-menu__results-col _right">
+			<ul class="search-menu__results-list _shop">
+				{% for product in productList %}
+					<li class="search-menu__results-item">{{ productCard(product) }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

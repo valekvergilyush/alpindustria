@@ -46,6 +46,20 @@
 			transition: transform $default-transition-duration $default-transition-function;
 		}
 	}
+	&__search-menu {
+		position: fixed !important;
+		z-index: 22;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transform: translateY(-100%);
+		opacity: 0;
+		will-change: transform;
+		pointer-events: none;
+		&._initialized {
+			transition: transform $default-transition-duration $default-transition-function;
+		}
+	}
 	&._menu-opened {
 		#{$this}__menu {
 			z-index: 20;
@@ -56,6 +70,20 @@
 		#{$this}__header {
 			color: var(--white);
 			background-color: var(--blue-dark);
+			border-bottom: 1px solid currentColor;
+			transition: none;
+		}
+	}
+	&._search-opened {
+		#{$this}__search-menu {
+			z-index: 20;
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: all;
+		}
+		#{$this}__header {
+			color: var(--blue-dark);
+			background-color: var(--white);
 			border-bottom: 1px solid currentColor;
 			transition: none;
 		}
