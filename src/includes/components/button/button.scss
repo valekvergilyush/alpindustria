@@ -476,6 +476,7 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+			will-change: transform;
 		}
 		@media (max-width: $mobile-lg) {
 			--size: 16px;
@@ -502,6 +503,7 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+			will-change: transform;
 			@media (max-width: $mobile-lg) {
 				margin-left: 8px;
 			}
@@ -523,6 +525,7 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+			will-change: transform;
 			@media (max-width: $laptop-md) {
 				--size: 12px;
 				margin-left: 8px;
@@ -545,6 +548,7 @@
 			margin-left: var(--size);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
+			will-change: transform;
 		}
 	}
 	&._auth {
@@ -635,6 +639,7 @@
 			height: var(--size);
 			fill: currentColor;
 			transform: rotate(45deg);
+			will-change: transform;
 			@media (max-width: $mobile-lg) {
 				--size: 16px;
 			}
