@@ -2,23 +2,9 @@
 {% from "../input/input.nunj" import input %}
 {% from "../icon/icon.nunj" import icon %}
 
-{% set list = ['Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face', 'Куртка The North Face'] %}
-
 {% macro searchBlock(props) %}
-	<form class="search-block {% if props.className %}{{ props.className }}{% endif %}" data-search>
-		{{ input({
-			type: 'text',
-			id: 'search-input',
-			className: 'search-block__input',
-			placeholder: props.placeholder,
-			inputAttr: 'autocomplete="off"'
-		}) }}
-		<ul class="search-block__dropdown p3">
-			{% for item in list %}
-				<li class="search-block__dropdown-item"><a href="#">{{ item }}</a></li>
-			{% endfor %}
-		</ul>
-		<button class="search-block__btn _search button" type="button" aria-label="Поиск" data-search-open>
+	<form class="search-block {% if props.className %}{{ props.className }}{% endif %}">
+		<button class="search-block__btn _search button" type="button" aria-label="Поиск" data-search-toggle>
 			{{ icon({
 				iconName: 'search',
 				className: 'button__icon _search',
