@@ -115,7 +115,9 @@
 			text: 'Я хочу получать информационную рассылку о новых вакансиях',
 			checked: true
 		}) }}
-		<a href="#" class="application-form__terms" data-popup-opener="offer">Нажимая "оформить заказ", вы соглашаетесь с&nbsp;условиями&nbsp;оферты</a>
+
+		<p class="application-form__bottom-text p3 _mobile">Нажимая "подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
+		
 		<div class="application-form__bottom">
 			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
 			{{ button({
