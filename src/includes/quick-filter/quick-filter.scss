@@ -2,6 +2,7 @@
 	$this: &;
 	--gap: #{rem(16)};
 	display: flex;
+	justify-content: center;
 	column-gap: var(--gap);
 	row-gap: var(--gap);
 	flex-wrap: wrap;
@@ -29,6 +30,7 @@
 		}
 	}
 	&__item {
+		display: flex;
 		@media (max-width: $mobile-lg) {
 			flex-shrink: 0;
 			&:first-child {
@@ -55,7 +57,7 @@
 	&__subcategories-wrapper {
 		display: none;
 		gap: var(--gap);
-		margin-left: var(--container-padding);
+		margin: 0 var(--container-padding);
 		* {
 			flex-shrink: 0;
 		}
@@ -63,6 +65,7 @@
 	&__subcategories {
 		flex-grow: 1;
 		display: flex;
+		justify-content: center;
 		flex-wrap: nowrap;
 		gap: var(--gap);
 		&._opened {
