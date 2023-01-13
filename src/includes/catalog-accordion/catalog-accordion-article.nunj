@@ -7,7 +7,7 @@
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-1'
+		img: '/assets/images/news/news-img-1'
 	},
 	{
 		className: '_border',
@@ -15,7 +15,7 @@
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-2'
+		img: '/assets/images/news/news-img-2'
 	},
 	{
 		className: '_border',
@@ -23,7 +23,7 @@
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-3'
+		img: '/assets/images/news/news-img-3'
 	},
 	{
 		className: '_border',
@@ -31,7 +31,7 @@
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-4'
+		img: '/assets/images/news/news-img-4'
 	}
 ] %}
 {% set articleAccordions = [
