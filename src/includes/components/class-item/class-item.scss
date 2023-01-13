@@ -148,6 +148,10 @@
 			height: 100%;
 			object-fit: cover;
 			transition: transform $default-transition-duration $default-transition-function;
+			will-change: transform;
+		}
+		._search & {
+			width: rem(210);
 		}
 	}
 	&__info {

@@ -1,7 +1,7 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro classItem(props) %}
-	<a href="/community/class.html" class="class-item">
+	<a href="/community/class.html" class="class-item{% if props.className %} {{ props.className }}{% endif %}">
 		<div class="class-item__content">
 			<p class="class-item__title h6 ttu">{{ props.title }}</p>
 			<div class="class-item__img">

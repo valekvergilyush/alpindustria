@@ -1,6 +1,8 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/radio/radio-button.nunj" import radioButton %}
 {% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/class-item/class-item.nunj" import classItem %}
+{% from "../components/news-list/news-list.nunj" import newsList %}
 
 {% set productList = [
 	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
@@ -9,7 +11,140 @@
 	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
 ] %}
 
-<div class="page__search-menu search-menu" data-search-menu>
+{% set brandList = [
+	{
+		name: 'PackTowl',
+		src: '/assets/images/brand-logos/pack-towl.svg'
+	},
+	{
+		name: 'Snow Peak',
+		src: '/assets/images/brand-logos/snow-peak.svg'
+	},
+	{
+		name: 'Therm-A-Rrest',
+		src: '/assets/images/brand-logos/thermarest.svg'
+	},
+	{
+		name: 'The North Face',
+		className: '_wide',
+		src: '/assets/images/brand-logos/the-north-face.svg'
+	},
+	{
+		name: 'Salomon',
+		className: '_wide',
+		src: '/assets/images/brand-logos/salomon.svg'
+	},
+	{
+		name: 'MSR',
+		src: '/assets/images/brand-logos/msr.svg'
+	},
+	{
+		name: 'PackTowl',
+		src: '/assets/images/brand-logos/pack-towl.svg'
+	},
+	{
+		name: 'Snow Peak',
+		src: '/assets/images/brand-logos/snow-peak.svg'
+	}
+] %}
+
+{% set classesList = [
+	{
+		className: '_search',
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы. Занятия начнутся 20.06.22&nbsp;г.&nbsp;и&nbsp;будут проходить по&nbsp;понедельникам и&nbsp;средам в&nbsp;19:30.',
+		img: '/assets/images/article/article-img-7',
+		date: [
+			'21-25',
+			'сентября'
+		],
+		price: '175 500 ₽'
+	},
+	{
+		className: '_search',
+		title: 'Курс «Введение в&nbsp;альпинизм»',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы. Занятия начнутся 20.06.22&nbsp;г.&nbsp;и&nbsp;будут проходить по&nbsp;понедельникам и&nbsp;средам в&nbsp;19:30.',
+		img: '/assets/images/article/article-img-7',
+		date: [
+			'21-25',
+			'сентября'
+		],
+		price: '175 500 ₽'
+	},
+	{
+		className: '_search',
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы. Занятия начнутся 20.06.22&nbsp;г.&nbsp;и&nbsp;будут проходить по&nbsp;понедельникам и&nbsp;средам в&nbsp;19:30.',
+		img: '/assets/images/article/article-img-7',
+		date: [
+			'21-25',
+			'сентября'
+		],
+		price: '175 500 ₽'
+	},
+	{
+		className: '_search',
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы. Занятия начнутся 20.06.22&nbsp;г.&nbsp;и&nbsp;будут проходить по&nbsp;понедельникам и&nbsp;средам в&nbsp;19:30.',
+		img: '/assets/images/article/article-img-7',
+		date: [
+			'21-25',
+			'сентября'
+		],
+		price: '175 500 ₽'
+	}
+] %}
+
+{% set newsListData = [
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-1'
+	},
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-2'
+	},
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-3'
+	},
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-4'
+	},
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-4'
+	},
+	{
+		category: 'Обзор снаряжения',
+		date: '12/12/22',
+		title: 'Бивачная обувь: особенности и преимущества моделей',
+		author: 'Ковалёв Сергей',
+		img: 'assets/images/news/news-img-3'
+	}
+] %}
+
+<div class="page__search-menu search-menu _no-results" data-search-menu>
 	<form class="search-menu__form">
 		<input
 			class="search-menu__input"
@@ -21,10 +156,12 @@
 			data-search-menu-input
 		>
 		{{ button({
+			type: 'submit',
 			className: 'search-menu__submit-btn',
-			text: 'Найдено 120 товаров',
+			text: 'Найдено 0 товаров',
 			icon: 'arrow-right',
-			iconData: 'width="24" height="24"'
+			iconData: 'width="24" height="24"',
+			attr: 'data-search-menu-submit'
 		}) }}
 	</form>
 	<div class="search-menu__tabs">
@@ -97,6 +234,31 @@
 		</div>
 		<div class="search-menu__results-col _right">
 			<ul class="search-menu__results-list _shop">
+				{% for product in productList %}
+					<li class="search-menu__results-item">{{ productCard(product) }}</li>
+				{% endfor %}
+			</ul>
+			<ul class="search-menu__results-list _community">
+				{% for item in classesList %}
+					<li class="search-menu__results-item">
+						{{ classItem(item) }}
+					</li>
+				{% endfor %}
+			</ul>
+			{{ newsList({
+				list: newsListData,
+				className: 'search-menu__results-list _news _search'
+			}) }}
+			<ul class="search-menu__results-list _brands">
+				{% for item in brandList %}
+					<li class="search-menu__results-item">
+						<a class="search-menu__brand-link" href="/brand.html">
+							<img class="search-menu__brand-img" src="{{ item.src }}"{% if item.srcset %} srcset="{{ item.srcset }}"{% endif %} width="200" alt="{{ item.name }}">
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="search-menu__results-list _rent">
 				{% for product in productList %}
 					<li class="search-menu__results-item">{{ productCard(product) }}</li>
 				{% endfor %}

@@ -6,7 +6,7 @@
 	align-items: center;
 	&__btn {
 		display: flex;
-		width: var(--btn-size);
+		min-width: var(--btn-size);
 		height: var(--btn-size);
 		&[href],
 		&[type='button'] {
@@ -28,6 +28,16 @@
 					display: block;
 				}
 			}
+		}
+	}
+	&__label {
+		opacity: 0.5;
+	}
+	&__btn-text {
+		margin-left: rem(16);
+		&._empty,
+		._search-opened & {
+			display: none;
 		}
 	}
 }

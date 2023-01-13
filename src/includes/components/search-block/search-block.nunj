@@ -15,6 +15,7 @@
 				className: 'button__icon _close-search',
 				attr: 'width="32" height="32" viewBox="0 0 32 32"'
 			}) }}
+			<span class="search-block__btn-text h7 ttu" data-search-toggle-text><span class="search-block__label">Поиск: </span><span class="search-block__value" data-search-toggle-value></span></span>
 		</button>
 	</form>
 {% endmacro %}
