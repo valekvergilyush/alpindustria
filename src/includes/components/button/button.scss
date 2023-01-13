@@ -9,6 +9,7 @@
 	font-family: var(--font-family-suisse);
 	&__text,
 	&__icon {
+		user-select: none;
 		pointer-events: none;
 		flex-shrink: 0;
 		transition: transform $default-transition-duration $default-transition-function;
