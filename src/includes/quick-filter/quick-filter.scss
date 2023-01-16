@@ -94,4 +94,9 @@
 			}
 		}
 	}
+	._rent & {
+		#{$this}__item {
+			justify-content: center;
+		}
+	}
 }
