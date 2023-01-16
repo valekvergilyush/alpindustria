@@ -113,7 +113,7 @@ class Filters {
 		evt.preventDefault();
 
 		gsap.to(window, {
-			scrollTo: { y: '#main', offsetY: this.filtersContainer.offsetHeight },
+			scrollTo: { y: '#main', offsetY: this.filtersContainer.offsetHeight - 2 },
 		});
 		this.toggle();
 	}
