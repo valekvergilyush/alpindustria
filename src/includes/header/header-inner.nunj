@@ -1,6 +1,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/button/button-burger.nunj" import buttonBurger %}
+{% from "../components/search-block/search-block.nunj" import searchBlock %}
 
 {% set userActions = [
 	{ name: 'Личный кабинет', className: '_user', icon: 'user', iconData: 'width="32" height="32"', href: '/profile.html'},
@@ -12,6 +13,9 @@
 	<div class="header__container container">
 		<div class="header__left">
 			{{ buttonBurger({ className: 'header__button' }) }}
+			{{ searchBlock({
+				className: 'header__search'
+			}) }}
 		</div>
 		<a href="/" class="header__logo-link" aria-label="На главную">
 			{{ icon({

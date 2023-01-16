@@ -145,6 +145,9 @@
 			transform: scale(1.1);
 		}
 	}
+	&__search {
+		margin-left: rem(48);
+	}
 	&._fixed,
 	&._inner-page {
 		color: var(--blue-dark);

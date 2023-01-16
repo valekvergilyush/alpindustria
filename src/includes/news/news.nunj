@@ -1,6 +1,5 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/news-list/news-list.nunj" import newsList %}
-{% from "../components/search-block/search-block.nunj" import searchBlock %}
 
 {% set newsFilters1 = [
 	{
@@ -40,112 +39,112 @@
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-1'
+		img: '/assets/images/news/news-img-1'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-2'
+		img: '/assets/images/news/news-img-2'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-3'
+		img: '/assets/images/news/news-img-3'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-4'
+		img: '/assets/images/news/news-img-4'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-4'
+		img: '/assets/images/news/news-img-4'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-3'
+		img: '/assets/images/news/news-img-3'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-1'
+		img: '/assets/images/news/news-img-1'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-2'
+		img: '/assets/images/news/news-img-2'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-2'
+		img: '/assets/images/news/news-img-2'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-3'
+		img: '/assets/images/news/news-img-3'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-4'
+		img: '/assets/images/news/news-img-4'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-1'
+		img: '/assets/images/news/news-img-1'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-4'
+		img: '/assets/images/news/news-img-4'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-3'
+		img: '/assets/images/news/news-img-3'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-1'
+		img: '/assets/images/news/news-img-1'
 	},
 	{
 		category: 'Обзор снаряжения',
 		date: '12/12/22',
 		title: 'Бивачная обувь: особенности и преимущества моделей',
 		author: 'Ковалёв Сергей',
-		img: 'assets/images/news/news-img-2'
+		img: '/assets/images/news/news-img-2'
 	}
 ] %}
 
@@ -170,10 +169,6 @@
 		</div>
 	</div>
 	<div class="news__filters-line container">
-		{{ searchBlock({
-			className: 'news__search',
-			placeholder: 'Поиск по новостям и статьям'
-		}) }}
 		<p class="news__number p2">242 товара</p>
 	</div>
 	{{ newsList({

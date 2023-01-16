@@ -13,6 +13,7 @@
 			color: inherit;
 			font-family: var(--default-font-family);
 			font-size: rem(16);
+			user-select: none;
 			&::before {
 				display: none;
 			}

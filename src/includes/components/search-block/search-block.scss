@@ -1,23 +1,12 @@
 .search-block {
 	$this: &;
 	--btn-size: #{rem(36)};
-	--input-width: 100%;
-	--scroll-width: #{rem(18)};
 	position: relative;
-	z-index: 2;
 	display: flex;
-	justify-content: flex-end;
-	width: var(--btn-size);
-	transition: width $default-transition-duration $default-transition-function;
-	@media (max-width: $mobile-lg) {
-		--btn-size: 24px;
-	}
+	align-items: center;
 	&__btn {
-		position: absolute;
-		top: rem(8);
-		right: 0;
-		z-index: 2;
-		width: var(--btn-size);
+		display: flex;
+		min-width: var(--btn-size);
 		height: var(--btn-size);
 		&[href],
 		&[type='button'] {
@@ -30,157 +19,25 @@
 				display: none;
 			}
 		}
-		@media (max-width: $mobile-lg) {
-			top: 6px;
-		}
-	}
-	&__input {
-		width: 100%;
-		box-sizing: border-box;
-		height: rem(48);
-		padding-top: var(--padding);
-		padding-right: var(--btn-size);
-		border-bottom: 1px solid rgba($blue-light, 0.4);
-		overflow: auto;
-		opacity: 0;
-		transition: opacity $fast-transition-duration $default-transition-function,
-			width $default-transition-duration $default-transition-function;
-		scrollbar-width: none;
-		@include scrollbar {
-			display: none;
-		}
-		&:hover,
-		&:focus-within {
-			border-color: var(--blue-light);
-		}
-		.input__input {
-			color: var(--blue-dark);
-			border: 0;
-			@include placeholder {
-				color: currentColor;
-				opacity: 0.5;
-			}
-		}
-		#{$this}._white & {
-			border-bottom: 1px solid var(--white);
-			.input__input {
-				color: var(--white);
-				border: 0;
-			}
-		}
-		@media (max-width: $mobile-lg) {
-			height: 32px;
-		}
-	}
-	&__input._filled + &__dropdown {
-		display: block;
-	}
-	&__input._filled ~ &__btn {
-		.button__icon {
-			display: none;
-			&._close-search {
-				display: block;
-			}
-		}
-	}
-	&:has(&__input._filled) {
-		width: var(--input-width);
-	}
-	&._active {
-		width: var(--input-width);
-		#{$this}__input {
-			opacity: 1;
-		}
-	}
-	&._closing {
-		#{$this}__input {
-			opacity: 1;
-		}
-	}
-	&__dropdown {
-		display: none;
-		position: absolute;
-		top: calc(100% - 1px);
-		left: 0;
-		box-sizing: border-box;
-		width: 100%;
-		min-width: 290px;
-		max-height: rem(400);
-		padding: rem(24) rem(16);
-		padding-right: rem(8);
-		color: var(--blue-dark);
-		background-color: var(--white);
-		border: 1px solid var(--blue-light);
-		overflow: auto;
-		&::-webkit-scrollbar {
-			width: var(--scroll-width);
-		}
-		&::-webkit-scrollbar-track {
-			background: 0;
-		}
-		&::-webkit-scrollbar-thumb {
-			border: rem(8) solid transparent;
-			background-clip: padding-box;
-			border-radius: 100vmax;
-			background-color: var(--blue-dark);
-		}
-		&::-webkit-scrollbar-track-piece:end {
-			background: transparent;
-			margin-bottom: rem(16);
-		}
-		&::-webkit-scrollbar-track-piece:start {
-			background: transparent;
-			margin-top: rem(16);
-		}
-	}
-	&__dropdown-item {
-		&:first-child {
-			a {
-				padding-top: 0;
-			}
-		}
-		&:last-child {
-			a {
-				padding-bottom: 0;
-				border: 0;
-			}
-		}
-		a {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			column-gap: rem(16);
-			padding: rem(16) 0;
-			text-decoration: none;
-			border-bottom: 1px solid rgba($blue-light, 0.2);
-			&::after {
-				content: '';
-				width: rem(16);
-				height: rem(16);
-				background-image: inline('promo-arrow-blue-filled.svg');
-				background-repeat: no-repeat;
-				background-size: contain;
-				background-position: center;
-				opacity: 0;
-				transition: opacity $fast-transition-duration $default-transition-function;
-			}
-			&:hover {
-				color: var(--blue-dark);
-				&::after {
-					opacity: 1;
+		._search-opened & {
+			.button__icon {
+				&._search {
+					display: none;
+				}
+				&._close-search {
+					display: block;
 				}
 			}
 		}
 	}
-}
-
-._filters-opened {
-	.search-block._white {
-		.search-block__input {
-			border-color: var(--blue-dark);
-		}
-		.input__input {
-			color: var(--blue-dark);
+	&__label {
+		opacity: 0.5;
+	}
+	&__btn-text {
+		margin-left: rem(16);
+		&._empty,
+		._search-opened & {
+			display: none;
 		}
 	}
 }

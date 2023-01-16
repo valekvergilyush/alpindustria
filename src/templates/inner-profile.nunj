@@ -3,6 +3,7 @@
 {% block content %}
 	{% include "../includes/header/header-profile.nunj" %}
 	{% include "../includes/menu/menu.nunj" %}
+	{% include "../includes/search-menu/search-menu.nunj" %}
 
 	{% block mainContent %}
 	{% endblock %}
