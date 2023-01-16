@@ -14,7 +14,7 @@
 			data-step="{% if props.step %}{{ props.step }}{% else %}}1{% endif %}"
 			{% if props.tooltips %} data-tooltips{% endif %}
 			{% if props.tooltipsUnits %} data-tooltips-units="{{ props.tooltipsUnits }}"{% endif %}
-			data-range-slider
+			data-range-slider="{{ props.type }}"
 		></div>
 	</div>
 {% endmacro %}
