@@ -126,6 +126,8 @@
 			iconData: 'width="24" height="24"'
 		}) }}
 
+		<p class="application-form__bottom-text p3 _mobile">Нажимая "Зарегистрироваться", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
+
 		<div class="application-form__bottom">
 			<p class="application-form__bottom-text p3">Нажимая "Зарегистрироваться", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
 			{{ button({

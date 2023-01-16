@@ -1,3 +1,4 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Popups from '../../assets/js/modules/Popups';
 import Accordion from '../../assets/js/modules/Accordion';
 import Catalog from '../catalog/catalog';
@@ -57,6 +58,7 @@ class Filters {
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.isOpened = true;
+		disableBodyScroll(this.filtersForm);
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(this.filtersWrapper, {
@@ -91,6 +93,7 @@ class Filters {
 		}
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.isOpened = false;
+		enableBodyScroll(this.filtersForm);
 
 		gsap.to(this.filtersWrapper, {
 			width: 0,
