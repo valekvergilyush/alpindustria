@@ -19,7 +19,8 @@
 				display: none;
 			}
 		}
-		._search-opened & {
+		._search-opened &,
+		&._reset {
 			.button__icon {
 				&._search {
 					display: none;
@@ -29,12 +30,20 @@
 				}
 			}
 		}
+		@media (max-width: $mobile-lg) {
+			.button__icon {
+				width: 24px;
+				height: 24px;
+			}
+		}
 	}
 	&__label {
 		opacity: 0.5;
 	}
 	&__btn-text {
+		height: 100%;
 		margin-left: rem(16);
+		padding-top: 0.4em;
 		&._empty,
 		._search-opened & {
 			display: none;
