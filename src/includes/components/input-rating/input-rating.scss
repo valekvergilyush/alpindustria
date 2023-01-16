@@ -1,12 +1,8 @@
 .input-rating {
 	&__label {
 		margin-bottom: rem(24);
-		font-family: var(--font-family-suisse);
-		font-size: rem(18);
-		line-height: 1.33;
 		@media (max-width: $laptop) {
 			margin-bottom: 20px;
-			font-size: rem(16);
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 16px;

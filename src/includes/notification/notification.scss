@@ -43,6 +43,13 @@
 			display: flex;
 		}
 	}
+	&._link {
+		padding: rem(15);
+		align-items: center;
+		#{$this}__content.notification-link {
+			display: flex;
+		}
+	}
 	&__content {
 		display: none;
 		flex-grow: 1;

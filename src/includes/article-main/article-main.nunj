@@ -23,8 +23,7 @@
 				className: 'article-main__link _icon',
 				icon: 'link',
 				iconData: 'width="36" height="37" viewBox="0 0 36 37"',
-				href: '#',
-				attr: 'aria-label="Поделиться"'
+				attr: 'aria-label="Поделиться" data-notification-open="link"'
 			}) }}
 		</div>
 		<div class="article-main__img-wrap">

@@ -2,6 +2,34 @@
 {% from "../components/textarea/textarea.nunj" import textarea %}
 {% from "../components/input-rating/input-rating.nunj" import inputRating %}
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/checkbox/checkbox-button.nunj" import checkboxButton %}
+
+{% set hobbies = [
+	'Альпинизм',
+	'Скалолазание',
+	'Трейлраннинг',
+	'Горный туризм',
+	'Cкандинавская ходьба',
+	'Мультиспорт',
+	'Ориентирование',
+	'Хели-ски',
+	'фрирайд',
+	'Ски-тур',
+	'Кайтсерфинг/Виндсерфинг',
+	'Бег',
+	'Парашютный спорт',
+	'Ледолазание',
+	'Водные походы',
+	'Дайвинг',
+	'Сноуборд',
+	'Спелеология',
+	'Треккинг',
+	'Каякинг',
+	'Боулдеринг',
+	'Пеший туризм',
+	'Парапланеризм',
+	'Горные лыжи'
+] %}
 
 <section class="review-form" data-validate>
 	<h2 class="review-form__title h5 ttu">Добавить отзыв</h2>
@@ -43,8 +71,23 @@
 			wordCounter: 500,
 			attr: 'data-validate-type="text"'
 		}) }}
+		<div class="review-form__input _hobbies _message">
+			<p class="h6 ttu">Выберите ваши увлечения</p>
+			<div class="review-form__btns">
+				{% for item in hobbies %}
+					{{ checkboxButton({
+						className: '_button',
+						label: item,
+						id: 'hobbies-' + loop.index,
+						inputAttr: 'value="hobbies-' + loop.index + '"',
+						name: 'hobbies'
+					}) }}
+				{% endfor %}
+			</div>
+		</div>
 		{{ inputRating({
 			className: 'review-form__input _rating',
+			labelClassName: 'h6',
 			name: 'Ваша оценка',
 			min: 1,
 			max: 5,
