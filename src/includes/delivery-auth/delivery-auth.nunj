@@ -7,28 +7,58 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<form class="cart-delivery__auth-form delivery-auth" >
-	<p class="delivery-auth__title h7 ttu">Частым покупателям:</p>
-	<div class="delivery-auth__fields">
-		{{ input({
-			type: 'tel',
-			id: 'delivery-auth-tel',
-			className: 'delivery-auth__input _gray',
-			name: 'Телефон',
-			attr: 'data-validate-type="phone"'
-		}) }}
-		{{ button({
-			type: 'submit',
-			text: 'Авторизоваться',
-			icon: 'promo-arrow',
-			iconData: 'width="16" height="16"',
-			className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
-			attr: 'aria-label="Авторизоваться"'
-		}) }}
+<div class="cart-delivery__auth-form delivery-auth" data-delivery-auth data-form-stage="default">
+	<div class="delivery-auth__user-block">
+		<p class="delivery-auth__title h7 ttu">Контактные данные:</p>
+
 	</div>
-	<div class="delivery-auth__fields">
-		{% for authLink in authLinks %}
-			<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
-		{% endfor %}
-	</div>
-</form>
+	<form class="delivery-auth__form">
+		<p class="delivery-auth__title h7 ttu">Частым покупателям:</p>
+		<div class="delivery-auth__fields _tel">
+			{{ input({
+				type: 'tel',
+				id: 'delivery-auth-tel',
+				className: 'delivery-auth__input _gray',
+				name: 'Телефон',
+				attr: 'required data-validate-type="phone"'
+			}) }}
+			{{ button({
+				type: 'submit',
+				text: 'Авторизоваться',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16"',
+				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+				attr: 'aria-label="Авторизоваться"'
+			}) }}
+		</div>
+		<div class="delivery-auth__fields _sms">
+			{{ input({
+				type: 'text',
+				id: 'delivery-auth-sms',
+				className: 'delivery-auth__input _gray',
+				name: 'Код из СМС',
+				inputAttr: 'autocomplete="off"'
+			}) }}
+			{{ button({
+				type: 'submit',
+				text: 'Подтвердить',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16"',
+				className: 'delivery-auth__check-code _arrow-s _auth ttu p2',
+				attr: 'aria-label="Подтвердить"'
+			}) }}
+			{{ button({
+				type: 'button',
+				text: 'Выслать код повторно',
+				icon: 'promo-arrow-filled',
+				iconData: 'width="8" height="8"',
+				className: 'delivery-auth__send-repeat'
+			}) }}
+		</div>
+		<div class="delivery-auth__fields _socials">
+			{% for authLink in authLinks %}
+				<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
+			{% endfor %}
+		</div>
+	</form>
+</div>

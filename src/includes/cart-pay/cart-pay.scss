@@ -69,6 +69,7 @@
 		border-top: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-lg) {
 			padding-block: 23px;
+			padding-bottom: 40px;
 			margin-top: 23px;
 		}
 		@media (max-width: $mobile-lg) {

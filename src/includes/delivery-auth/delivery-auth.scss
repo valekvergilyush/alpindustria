@@ -1,4 +1,5 @@
 .delivery-auth {
+	$this: &;
 	&__title {
 		margin-bottom: rem(46);
 		@media (max-width: $laptop-lg) {
@@ -11,7 +12,13 @@
 			margin-bottom: 20px;
 		}
 	}
+	&__form {
+		#{$this}[data-form-stage='user-info'] & {
+			display: none;
+		}
+	}
 	&__fields {
+		position: relative;
 		display: flex;
 		column-gap: rem(16);
 		align-items: flex-end;
@@ -23,6 +30,16 @@
 			@media (max-width: $laptop) {
 				margin-bottom: 24px;
 			}
+		}
+		&._sms {
+			display: none;
+			padding-bottom: rem(32);
+		}
+		#{$this}[data-form-stage='sms'] &._sms {
+			display: flex;
+		}
+		#{$this}[data-form-stage='sms'] &._tel {
+			margin-bottom: 0;
 		}
 	}
 	&__input {
@@ -51,6 +68,28 @@
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 18px;
+		}
+	}
+	&__submit-btn {
+		display: none;
+		#{$this}[data-form-stage='default'] & {
+			display: inline-flex;
+		}
+	}
+	&__send-repeat {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: inline-flex;
+		font-size: rem(12);
+		.button__icon {
+			margin-left: rem(8);
+		}
+	}
+	&__user-block {
+		display: none;
+		#{$this}[data-form-stage='user-info'] & {
+			display: block;
 		}
 	}
 }

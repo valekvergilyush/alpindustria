@@ -11,7 +11,7 @@
 	}) }}
 	{{ input({
 		type: 'text',
-		id: 'club-card-form-number',
+		id: 'club-card-form-sms',
 		className: 'club-card-form__input _check-code',
 		name: 'Код из СМС',
 		inputAttr: 'autocomplete="off" inputmode="numeric"'
