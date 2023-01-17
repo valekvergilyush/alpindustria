@@ -80,7 +80,7 @@
 		.button__icon {
 			--size: #{rem(24)};
 			margin-left: rem(16);
-			transition: margin $fast-transition-duration $default-transition-function;
+			transition: margin $default-transition-duration $default-transition-function;
 		}
 		&:hover {
 			.button__icon {
@@ -153,6 +153,7 @@
 			._button .radio__label {
 				min-height: 40px;
 				padding: 0 15px;
+				padding-top: 0.2em;
 				font-size: 18px;
 			}
 		}
@@ -303,11 +304,9 @@
 		color: var(--blue-dark);
 		text-transform: uppercase;
 		font-size: rem(18);
-		&:active {
-			.button__text,
-			.button__icon {
-				transform: scale(1.05);
-			}
+		transition: column-gap $default-transition-duration $default-transition-function;
+		&:hover {
+			column-gap: rem(20);
 		}
 		@media (max-width: $laptop) {
 			font-size: 16px;
