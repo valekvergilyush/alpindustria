@@ -89,6 +89,12 @@
 				}
 			}
 		}
+		@media (max-width: $mobile-lg) {
+			--size: 55px;
+			#{$this}__line {
+				width: 40px;
+			}
+		}
 	}
 	&._quick-filter {
 		@extend .animated;

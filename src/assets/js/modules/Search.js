@@ -7,6 +7,7 @@ const ClassName = {
 	OPENED: '_search-opened',
 	EMPTY: '_empty',
 	NO_RESULTS: '_no-results',
+	RESET: '_reset',
 };
 
 class Search {
@@ -70,7 +71,17 @@ class Search {
 	_onToggleButtonClick(evt) {
 		evt.preventDefault();
 
-		this.toggle();
+		if (this.toggleButton.classList.contains(ClassName.RESET) && !this.isOpened) {
+			this.toggleButtonValue.textContent = '';
+			this.searchInput.value = '';
+			this.toggleButton.classList.remove(ClassName.RESET);
+			this.toggleButtonText.classList.add(ClassName.EMPTY);
+			this.container.classList.add(ClassName.NO_RESULTS);
+
+			this._setSubmitButtonText();
+		} else {
+			this.toggle();
+		}
 	}
 	_onWindowKeydown(evt) {
 		if (evt.key === 'Escape') {
@@ -95,9 +106,11 @@ class Search {
 		this.toggleButtonValue.textContent = evt.target.value;
 
 		if (evt.target.value) {
+			this.toggleButton.classList.add(ClassName.RESET);
 			this.toggleButtonText.classList.remove(ClassName.EMPTY);
 			this.container.classList.remove(ClassName.NO_RESULTS);
 		} else {
+			this.toggleButton.classList.remove(ClassName.RESET);
 			this.toggleButtonText.classList.add(ClassName.EMPTY);
 			this.container.classList.add(ClassName.NO_RESULTS);
 		}
@@ -110,16 +123,16 @@ class Search {
 		switch (this.activeTabValue) {
 			case 'shop':
 			case 'rent':
-				submitButtonText = this.searchInput.value ? 'Найдено 120 товаров' : 'Найдено 0 товаров';
+				submitButtonText = this.searchInput.value ? '120 товаров' : '0 товаров';
 				break;
 			case 'community':
-				submitButtonText = this.searchInput.value ? 'Найдено 8 занятий' : 'Найдено 0 занятий';
+				submitButtonText = this.searchInput.value ? '8 занятий' : '0 занятий';
 				break;
 			case 'news':
-				submitButtonText = this.searchInput.value ? 'Найдено 43 статьи' : 'Найдено 0 статей';
+				submitButtonText = this.searchInput.value ? '43 статьи' : '0 статей';
 				break;
 			case 'brands':
-				submitButtonText = this.searchInput.value ? 'Найдено 8 брендов' : 'Найдено 0 брендов';
+				submitButtonText = this.searchInput.value ? '8 брендов' : '0 брендов';
 				break;
 
 			default:
