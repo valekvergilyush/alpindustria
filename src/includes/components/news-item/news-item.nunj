@@ -1,7 +1,7 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro newsItem(props) %}
-	<a href="./news-article.html" class="{% if props.className %}{{ props.className }} {% endif %} news-item">
+	<a href="/news-article.html" class="{% if props.className %}{{ props.className }} {% endif %} news-item">
 		<p class="news-item__category-date">
 			<span class="p3">{{ props.category }}</span>
 			<span class="news-item__date c-gray-dark">{{ props.date }}</span>

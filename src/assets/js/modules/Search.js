@@ -47,11 +47,6 @@ class Search {
 		this.container.classList.add(ClassName.INITIALIZED);
 		this.container.classList.add(this.containerClassMod);
 		this.searchInput.placeholder = this.activeTab.getAttribute('data-search-input-placeholder');
-		this.toggleButtonValue.textContent = this.searchInput.value;
-
-		if (!this.searchInput.value) {
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
-		}
 	}
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
@@ -63,6 +58,7 @@ class Search {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.searchInput.blur();
 		this.isOpened = !this.isOpened;
+		this.resetSearchInput();
 		enableBodyScroll(this.container);
 	}
 	toggle() {
@@ -71,17 +67,7 @@ class Search {
 	_onToggleButtonClick(evt) {
 		evt.preventDefault();
 
-		if (this.toggleButton.classList.contains(ClassName.RESET) && !this.isOpened) {
-			this.toggleButtonValue.textContent = '';
-			this.searchInput.value = '';
-			this.toggleButton.classList.remove(ClassName.RESET);
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
-			this.container.classList.add(ClassName.NO_RESULTS);
-
-			this._setSubmitButtonText();
-		} else {
-			this.toggle();
-		}
+		this.toggle();
 	}
 	_onWindowKeydown(evt) {
 		if (evt.key === 'Escape') {
@@ -103,15 +89,9 @@ class Search {
 		this._setSubmitButtonText();
 	}
 	_onSearchInputInput(evt) {
-		this.toggleButtonValue.textContent = evt.target.value;
-
 		if (evt.target.value) {
-			this.toggleButton.classList.add(ClassName.RESET);
-			this.toggleButtonText.classList.remove(ClassName.EMPTY);
 			this.container.classList.remove(ClassName.NO_RESULTS);
 		} else {
-			this.toggleButton.classList.remove(ClassName.RESET);
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
 			this.container.classList.add(ClassName.NO_RESULTS);
 		}
 
@@ -140,6 +120,10 @@ class Search {
 				break;
 		}
 		this.searchSubmit.querySelector('.button__text').textContent = submitButtonText;
+	}
+	resetSearchInput() {
+		this.searchInput.value = '';
+		this.container.classList.add(ClassName.NO_RESULTS);
 	}
 }
 
