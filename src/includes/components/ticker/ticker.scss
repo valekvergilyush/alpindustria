@@ -12,7 +12,6 @@
 		display: flex;
 		flex-shrink: 0;
 		height: rem(92);
-		// column-gap: var(--gap);
 		@media (max-width: $laptop) {
 			height: 76px;
 		}
@@ -30,6 +29,14 @@
 				animation: animate2 60s linear infinite;
 				animation-delay: -30s;
 			}
+		}
+	}
+	&__text-icon {
+		width: rem(64);
+		height: rem(64);
+		@media (max-width: $mobile-lg) {
+			width: 46px;
+			height: 46px;
 		}
 	}
 	&__text {
