@@ -1,20 +1,53 @@
+{% from "../icon/icon.nunj" import icon %}
+
 {% macro ticker(props) %}
 	<div class="{% if props.className %}{{ props.className }} {% endif %}ticker">
 		<div class="ticker__container">
-			<div>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-			</div>
-			<div>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-				<p class="ticker__text h6 ttu">{{ props.text }}</p>
-			</div>
+			{% if props.list %}
+				<div>
+					{% for item in props.list %}
+						<p class="ticker__text h6 ttu">
+							{% if item.icon %}
+								{{ icon({
+									iconName: item.icon,
+									className: 'ticker__text-icon',
+									attr: item.iconData
+								}) }}
+							{% endif %}
+							{{ item.text }}
+						</p>
+					{% endfor %}
+				</div>
+				<div>
+					{% for item in props.list %}
+						<p class="ticker__text h6 ttu">
+							{% if item.icon %}
+								{{ icon({
+									iconName: item.icon,
+									className: 'ticker__text-icon',
+									attr: item.iconData
+								}) }}
+							{% endif %}
+							{{ item.text }}
+						</p>
+					{% endfor %}
+				</div>
+			{% else %}
+				<div>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				</div>
+				<div>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+					<p class="ticker__text h6 ttu">{{ props.text }}</p>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 {% endmacro %}

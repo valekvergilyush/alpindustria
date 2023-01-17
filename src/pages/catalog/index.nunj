@@ -13,7 +13,7 @@
 		{% include "../../includes/news-section/news-section.nunj" %}
 		{% include "../../includes/advantages/advantages.nunj" %}
 		{{ ticker({
-			className: 'page__ticker',
+			className: 'page__ticker _index',
 			text: 'Команда, влюбленная в горы'
 		}) }}
 		{% include "../../includes/catalog-accordion/catalog-accordion.nunj" %}
