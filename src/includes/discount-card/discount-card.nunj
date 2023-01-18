@@ -1,6 +1,6 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<section class="discount-card">
+<section class="discount-card" data-discount-section>
 	<div class="container">
 		<h2 class="discount-card__title ttu h4">Ваша карта</h2>
 		<p class="discount-card__text s2">На&nbsp;данный момент Ваш аккаунт не&nbsp;имеет привязанных накопительных карт.<br> Вы&nbsp;можете привязать уже существующую карту или заполнить анкету и&nbsp;оформить карту впервые:</p>
@@ -14,15 +14,6 @@
 					<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">Добавить карту</button>
 				</li>
 			</ul>
-			{{ picture({
-				className: 'discount-card__img',
-				path: '/assets/images/discount/discount-card/discount-card',
-				ext: 'png',
-				width: 576,
-				height: 280,
-				alt: 'Проверочный код на карте',
-				attr: 'loading="lazy"'
-			}) }}
 			<section class="discount-card__section _create tabs__panel" data-validate aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 				{% include "../discount-create-form/discount-create-form.nunj" %}
 			</section>
@@ -40,4 +31,5 @@
 				Обменяем карту в&nbsp;любом магазине АльпИндустрии за&nbsp;5&nbsp;минут или с&nbsp;ближайшим интернет-заказом. У&nbsp;новых карт крутой дизайн со&nbsp;знаковыми вершинами мира.</p>
 		</div>
 	</div>
+	{% include "../discount-card-info/discount-card-info.nunj" %}
 </section>

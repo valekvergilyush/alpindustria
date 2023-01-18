@@ -4,116 +4,122 @@
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
 
 <form class="discount-create-form" data-discount-create-form>
-	{{ input({
-		type: 'text',
-		id: 'discount-create-form-name',
-		className: 'discount-create-form__input _gray',
-		name: 'Имя'
-	}) }}
-	{{ input({
-		type: 'text',
-		id: 'discount-create-form-surname',
-		className: 'discount-create-form__input _gray',
-		name: 'Фамилия'
-	}) }}
-	{{ input({
-		type: 'email',
-		id: 'discount-create-form-email',
-		className: 'discount-create-form__input _gray',
-		name: 'Почта'
-	}) }}
-	{{ input({
-		type: 'tel',
-		id: 'discount-create-form-tel',
-		className: 'discount-create-form__input _gray _tel',
-		name: 'Телефон',
-		attr: 'data-validate-type="phone"'
-	}) }}
-	{{ button({
-		type: 'button',
-		text: 'Подтвердить по SMS',
-		icon: 'promo-arrow',
-		iconData: 'width="16" height="16"',
-		className: 'discount-create-form__send-sms _gray _arrow-xs p4'
-	}) }}
-	<div class="discount-create-form__sms-code">
+	<div class="discount-create-form__inputs">
 		{{ input({
 			type: 'text',
-			id: 'discount-create-form-tel-code',
+			id: 'discount-create-form-name',
 			className: 'discount-create-form__input _gray',
-			name: 'Код из СМС',
-			inputAttr: 'inputmode="numeric"'
+			name: 'Имя'
 		}) }}
-		{{ button({
-			type: 'button',
-			icon: 'promo-arrow',
-			iconData: 'width="16" height="16"',
-			className: 'discount-create-form__submit-code _arrow p4',
-			attr: 'aria-label="Подтвердить" data-submit-code'
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-surname',
+			className: 'discount-create-form__input _gray',
+			name: 'Фамилия'
 		}) }}
-		{{ button({
-			type: 'button',
-			text: 'Выслать повторно',
-			icon: 'promo-arrow',
-			iconData: 'width="16" height="16"',
-			className: 'discount-create-form__resend-sms _arrow-xs p4'
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-patronymic',
+			className: 'discount-create-form__input _gray',
+			name: 'Отчество'
+		}) }}
+		{{ input({
+			type: 'email',
+			id: 'discount-create-form-email',
+			className: 'discount-create-form__input _gray',
+			name: 'Почта'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-birthday',
+			className: 'discount-create-form__input _gray',
+			name: 'Дата рождения',
+			inputAttr: 'readonly data-datepicker'
+		}) }}
+		<div class="discount-create-form__radios">
+			{{ radio({
+				id: 'discount-create-form-radio-man',
+				className: 'discount-create-form__radio',
+				name: 'discount-create-form-gender',
+				value: 'man',
+				text: 'муж.',
+				checked: true
+			}) }}
+			{{ radio({
+				id: 'discount-create-form-radio-woman',
+				className: 'discount-create-form__radio',
+				name: 'discount-create-form-gender',
+				value: 'woman',
+				text: 'жен.'
+			}) }}
+		</div>
+		<div>
+			{{ input({
+				type: 'tel',
+				id: 'discount-create-form-tel',
+				className: 'discount-create-form__input _gray _tel',
+				name: 'Телефон',
+				attr: 'data-validate-type="phone"'
+			}) }}
+			{{ button({
+				type: 'button',
+				text: 'Подтвердить по SMS',
+				icon: 'promo-arrow',
+				iconData: 'width="16" height="16"',
+				className: 'discount-create-form__send-sms _gray _arrow-xs p4'
+			}) }}
+			<div class="discount-create-form__sms-code">
+				{{ input({
+					type: 'text',
+					id: 'discount-create-form-tel-code',
+					className: 'discount-create-form__input _gray',
+					name: 'Код из СМС',
+					inputAttr: 'inputmode="numeric"'
+				}) }}
+				{{ button({
+					type: 'button',
+					icon: 'promo-arrow',
+					iconData: 'width="16" height="16"',
+					className: 'discount-create-form__submit-code _arrow p4',
+					attr: 'aria-label="Подтвердить" data-submit-code'
+				}) }}
+				{{ button({
+					type: 'button',
+					text: 'Выслать повторно',
+					icon: 'promo-arrow',
+					iconData: 'width="16" height="16"',
+					className: 'discount-create-form__resend-sms _arrow-xs p4'
+				}) }}
+			</div>
+		</div>
+	</div>
+	<div class="discount-create-form__checkboxes">
+		<p class="p3 c-gray-dark">Хочу узнавать о&nbsp;закрытых акциях, распродажах, а&nbsp;также новых полезных статьях</p>
+		{{ checkbox({
+			className: 'discount-create-form__checkbox',
+			id: 'discount-create-form-checkbox-sms',
+			name: 'sms-info',
+			text: 'по SMS (1-2 раза в месяц)'
+		}) }}
+		{{ checkbox({
+			className: 'discount-create-form__checkbox',
+			id: 'discount-create-form-checkbox-email',
+			name: 'email-info',
+			text: 'по email (1-2 раза в неделю)'
+		}) }}
+		{{ checkbox({
+			className: 'discount-create-form__checkbox _privacy',
+			id: 'discount-create-form-checkbox-privacy',
+			name: 'privacy-agreement',
+			text: 'Даю согласие на обработку и использование персональных данных на все вреся действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”).<br>Я подтверждаю что с условиями оферты ознакомлен (-а)'
 		}) }}
 	</div>
-	{{ input({
-		type: 'text',
-		id: 'discount-create-form-patronymic',
-		className: 'discount-create-form__input _gray',
-		name: 'Отчество'
-	}) }}
-	{{ input({
-		type: 'text',
-		id: 'discount-create-form-birthday',
-		className: 'discount-create-form__input _gray',
-		name: 'Дата рождения',
-		inputAttr: 'readonly data-datepicker'
-	}) }}
-	<div class="discount-create-form__radios">
-		{{ radio({
-			id: 'discount-create-form-radio-man',
-			className: 'discount-create-form__radio',
-			name: 'discount-create-form-gender',
-			value: 'man',
-			text: 'муж.',
-			checked: true
-		}) }}
-		{{ radio({
-			id: 'discount-create-form-radio-woman',
-			className: 'discount-create-form__radio',
-			name: 'discount-create-form-gender',
-			value: 'woman',
-			text: 'жен.'
-		}) }}
-	</div>
-	<p class="p3 c-gray-dark">Хочу узнавать о&nbsp;закрытых акциях, распродажах, а&nbsp;также новых полезных статьях</p>
-	{{ checkbox({
-		className: 'discount-create-form__checkbox',
-		id: 'discount-create-form-checkbox-sms',
-		name: 'sms-info',
-		text: 'по SMS (1-2 раза в месяц)'
-	}) }}
-	{{ checkbox({
-		className: 'discount-create-form__checkbox',
-		id: 'discount-create-form-checkbox-email',
-		name: 'email-info',
-		text: 'по email (1-2 раза в неделю)'
-	}) }}
-	{{ checkbox({
-		className: 'discount-create-form__checkbox _privacy',
-		id: 'discount-create-form-checkbox-privacy',
-		name: 'privacy-agreement',
-		text: 'Даю согласие на обработку и использование персональных данных на все вреся действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”).<br>Я подтверждаю что с условиями оферты ознакомлен (-а)'
-	}) }}
 	{{ button({
 		type: 'submit',
 		text: 'Создать',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
-		className: 'discount-create-form__submit _arrow-s h7 ttu',
+		className: 'discount-create-form__submit _arrow-l h6 ttu',
 			attr: 'data-popup-opener="data-editing"'
 	}) }}
 </form>

@@ -42,6 +42,7 @@ class AlpIndustry {
 			AddressesScroll: require('./modules/AddressesScroll').default,
 			Services: require('./modules/Services').default,
 			Search: require('./modules/Search').default,
+			DiscountCard: require('./modules/DiscountCard').default,
 		};
 		this.components = {
 			Header: require('../../includes/header/header').default,

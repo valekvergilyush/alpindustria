@@ -484,10 +484,10 @@
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
 			will-change: transform;
-		}
-		@media (max-width: $mobile-lg) {
-			--size: 16px;
-			margin-left: 12px;
+			@media (max-width: $mobile-lg) {
+				--size: 16px;
+				margin-left: 12px;
+			}
 		}
 	}
 	&._arrow-m {

@@ -8,15 +8,6 @@
 				<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">Добавить карту</button>
 			</li>
 		</ul>
-		{{ picture({
-			className: 'discount-card__img',
-			path: '/assets/images/discount/discount-card/discount-card',
-			ext: 'png',
-			width: 576,
-			height: 280,
-			alt: 'Проверочный код на карте',
-			attr: 'loading="lazy"'
-		}) }}
 		<section class="discount-card__section _create tabs__panel" aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 			{% include "../discount-create-form/discount-create-form.nunj" %}
 		</section>

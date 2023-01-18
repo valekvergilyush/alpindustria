@@ -55,9 +55,6 @@
 	}
 	&__tabs {
 		--img-width: #{vw(576, 1728)};
-		display: grid;
-		grid-template-columns: var(--img-width) 1fr;
-		column-gap: rem(64);
 		margin-bottom: rem(104);
 		@media (max-width: $laptop-lg) {
 			--img-width: #{vw(544, 1440)};
@@ -103,29 +100,7 @@
 		grid-column: 1/2;
 		grid-row: 1/2;
 	}
-	&__img {
-		grid-column: 1/2;
-		grid-row: 2/3;
-		@media (max-width: $tablet) {
-			max-width: 360px;
-		}
-		@media (max-width: $mobile-only) {
-			margin-bottom: 24px;
-		}
-	}
 	&__section {
-		grid-column: 2/3;
-		grid-row: 2/3;
-		max-width: rem(576);
-		form {
-			margin-top: rem(-7);
-		}
-		@media (max-width: $laptop-lg) {
-			max-width: 468px;
-			form {
-				margin-top: 0;
-			}
-		}
 		@media (max-width: $laptop) {
 			max-width: none;
 			margin-left: auto;
@@ -199,25 +174,12 @@
 				grid-column: initial;
 				grid-row: initial;
 				max-width: 335px;
-				margin-bottom: 32px;
 			}
 			@media (max-width: $laptop-sm) {
 				max-width: 324px;
 			}
 			@media (max-width: $mobile-lg) {
 				max-width: none;
-				margin-bottom: 24px;
-			}
-		}
-		.discount-create-form__input {
-			&:not(:first-child) {
-				margin-top: rem(24);
-			}
-		}
-		.discount-create-form__submit {
-			margin-top: rem(32);
-			@media (max-width: $mobile-lg) {
-				margin-top: 24px;
 			}
 		}
 		.discount-create-form__checkbox {
@@ -226,6 +188,20 @@
 					font-size: 10px;
 				}
 			}
+		}
+	}
+	.discount-card-info {
+		display: none;
+	}
+	&._linked {
+		.discount-card-info {
+			display: grid;
+			border-top: 1px solid var(--blue-dark);
+		}
+		#{$this}__text,
+		#{$this}__tabs,
+		#{$this}__bottom {
+			display: none;
 		}
 	}
 }
