@@ -45,6 +45,16 @@
 					}
 				}
 			}
+			._search-opened & {
+				.button__icon {
+					&._search {
+						display: none;
+					}
+					&._close-search {
+						display: block;
+					}
+				}
+			}
 		}
 	}
 	&__label {
