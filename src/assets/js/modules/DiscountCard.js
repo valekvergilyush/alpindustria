@@ -1,6 +1,6 @@
 const ACTIVE_CLASS = '_linked';
 
-class Discount {
+class DiscountCard {
 	constructor() {
 		this.discountSection = document.querySelector('[data-discount-section]');
 		this.addForm = document.querySelector('[data-discount-add]');
@@ -28,4 +28,4 @@ class Discount {
 	}
 }
 
-export default new Discount();
+export default new DiscountCard();
