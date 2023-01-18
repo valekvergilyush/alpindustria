@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import Env from '../utils/env';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -52,14 +53,19 @@ class Search {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.searchInput.focus();
 		this.isOpened = !this.isOpened;
-		disableBodyScroll(this.container);
+
+		if (!Env.isIOS) {
+			disableBodyScroll(this.container);
+		}
 	}
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.searchInput.blur();
 		this.isOpened = !this.isOpened;
 		this.resetSearchInput();
-		enableBodyScroll(this.container);
+		if (!Env.isIOS) {
+			enableBodyScroll(this.container);
+		}
 	}
 	toggle() {
 		this.isOpened ? this.close() : this.open();
