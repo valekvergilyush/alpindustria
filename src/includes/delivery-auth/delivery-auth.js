@@ -11,16 +11,23 @@ class DeliveryAuth {
 
 	init() {
 		this.container = document.querySelector('[data-delivery-auth]');
+		this.authForm = this.container.querySelector('.delivery-auth__form');
 		this.authButton = this.container.querySelector('.delivery-auth__submit-btn');
 		this.checkCodeButton = this.container.querySelector('.delivery-auth__check-code');
 		this.telInput = this.container.querySelector('#delivery-auth-tel');
 		this.smsInput = this.container.querySelector('#delivery-auth-sms');
+		this.changeUserButton = this.container.querySelector('.delivery-auth__user-change');
+		this.cartRegisterContainer = document.querySelector(
+			'.cart-delivery__register-form'
+		).parentElement;
 
 		this._onAuthButtonClick = this._onAuthButtonClick.bind(this);
 		this._onCheckCodeButtonClick = this._onCheckCodeButtonClick.bind(this);
+		this._onChangeUserButtonClick = this._onChangeUserButtonClick.bind(this);
 
 		this.authButton.addEventListener('click', this._onAuthButtonClick);
 		this.checkCodeButton.addEventListener('click', this._onCheckCodeButtonClick);
+		this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
 	}
 	_onAuthButtonClick(evt) {
 		evt.preventDefault();
@@ -28,8 +35,7 @@ class DeliveryAuth {
 		if (this.telInput.getAttribute('aria-invalid') === 'true') {
 			this.telInput.focus();
 		} else {
-			this.classModifier = FormStage.SMS;
-			this.container.setAttribute('data-form-stage', this.classModifier);
+			this.setAuthFormState(FormStage.SMS);
 		}
 	}
 	_onCheckCodeButtonClick(evt) {
@@ -38,9 +44,29 @@ class DeliveryAuth {
 		if (!this.smsInput.value) {
 			this.smsInput.focus();
 		} else {
-			this.classModifier = FormStage.USER_INFO;
-			this.container.setAttribute('data-form-stage', this.classModifier);
+			this.showUserInfo();
 		}
+	}
+	_onChangeUserButtonClick(evt) {
+		evt.preventDefault();
+
+		this.setDefaultState();
+	}
+	setAuthFormState(state) {
+		this.classModifier = state;
+		this.container.setAttribute('data-form-stage', this.classModifier);
+	}
+	showUserInfo() {
+		this.setAuthFormState(FormStage.USER_INFO);
+		this.cartRegisterContainer.style.display = 'none';
+	}
+	setDefaultState() {
+		this.setAuthFormState(FormStage.DEFAULT);
+		this.cartRegisterContainer.removeAttribute('style');
+		this.authForm.reset();
+		this.telInput.setAttribute('aria-invalid', true);
+		this.telInput.closest('.delivery-auth__input').classList.remove('is-valid');
+		this.telInput.closest('.delivery-auth__input').classList.remove('_filled');
 	}
 }
 
