@@ -57,6 +57,9 @@ class Search {
 		if (!Env.isIOS) {
 			disableBodyScroll(this.container);
 		}
+		if (Env.isIOS) {
+			document.body.style.overflow = 'hidden';
+		}
 	}
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
@@ -65,6 +68,9 @@ class Search {
 		this.resetSearchInput();
 		if (!Env.isIOS) {
 			enableBodyScroll(this.container);
+		}
+		if (Env.isIOS) {
+			document.body.style.overflow = '';
 		}
 	}
 	toggle() {
