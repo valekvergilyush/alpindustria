@@ -98,10 +98,13 @@ class FilterSubcategory {
 		this.heroTitleCategory.textContent = this.heroTitleText;
 	}
 	checkContainerScroll() {
+		if (!this.quickFilter) {
+			return;
+		}
 		const hasHorizontalScroll =
 			this.quickFilter.clientWidth < this.quickFilter.scrollWidth ||
 			this.quickFilter.offsetWidth < this.quickFilter.scrollWidth;
-		console.log(this.quickFilter);
+
 		if (hasHorizontalScroll) {
 			this.quickFilter.style.justifyContent = 'flex-start';
 		} else {

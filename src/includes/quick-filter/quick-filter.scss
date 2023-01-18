@@ -57,7 +57,12 @@
 	&__subcategories-wrapper {
 		display: none;
 		gap: var(--gap);
-		margin: 0 var(--container-padding);
+		margin-left: var(--container-padding);
+		&::after {
+			content: '';
+			flex-shrink: 0;
+			width: calc(var(--container-padding) - var(--gap));
+		}
 		* {
 			flex-shrink: 0;
 		}
@@ -94,9 +99,9 @@
 			}
 		}
 	}
-	._rent & {
-		#{$this}__item {
-			justify-content: center;
-		}
-	}
+	// ._rent & {
+	// 	#{$this}__item {
+	// 		justify-content: center;
+	// 	}
+	// }
 }

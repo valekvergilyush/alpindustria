@@ -108,6 +108,9 @@ class AlpIndustry {
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 			document.querySelectorAll('[data-tabs]').forEach(tabs => new this.components.Tabs(tabs));
+			document
+				.querySelectorAll('[data-drag-scroll]')
+				.forEach(container => new this.modules.DragScroll(container));
 
 			if (window.innerWidth > TABLET_BREAKPOINT) {
 				document

@@ -29,6 +29,7 @@ class FilterRent {
 				this.path.push(startCity);
 			}
 		}
+		this.checkContainerScroll();
 
 		this.subContainers.forEach(subContainer => {
 			Array(...subContainer.children).forEach(item => {
@@ -66,6 +67,7 @@ class FilterRent {
 		const btnText = button.querySelector('.button__text').textContent;
 		this.path.push(btnText);
 		this.currentCategory = '';
+		this.checkContainerScroll();
 
 		if (upperItem) {
 			upperItem.classList.add(ClassName.SUBCATEGORY);
@@ -83,6 +85,7 @@ class FilterRent {
 		item.classList.remove(ClassName.OPENED);
 		this.path.pop();
 		this.currentCategory = '';
+		this.checkContainerScroll();
 
 		if (upperItem) {
 			upperItem.classList.remove(ClassName.SUBCATEGORY);
@@ -147,6 +150,20 @@ class FilterRent {
 		}
 		if (this.heroContainer) {
 			this.updateHeroTitle();
+		}
+	}
+	checkContainerScroll() {
+		if (!this.quickFilter) {
+			return;
+		}
+		const hasHorizontalScroll =
+			this.quickFilter.clientWidth < this.quickFilter.scrollWidth ||
+			this.quickFilter.offsetWidth < this.quickFilter.scrollWidth;
+
+		if (hasHorizontalScroll) {
+			this.quickFilter.style.justifyContent = 'flex-start';
+		} else {
+			this.quickFilter.style.justifyContent = 'center';
 		}
 	}
 }
