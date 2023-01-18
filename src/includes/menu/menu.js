@@ -63,7 +63,16 @@ class Header {
 	onMenuOpenerClick(evt) {
 		evt.preventDefault();
 
-		this.toggleMenu();
+		if (HTML_CLASSLIST.contains('_search-opened')) {
+			window.ProjectApp.modules.Search.close();
+
+			clearTimeout(this.TO);
+			this.TO = setTimeout(() => {
+				this.toggleMenu();
+			}, 300);
+		} else {
+			this.toggleMenu();
+		}
 	}
 	onWindowKeydown(evt) {
 		if (evt.key === 'Escape') {

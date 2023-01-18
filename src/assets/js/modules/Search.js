@@ -79,7 +79,16 @@ class Search {
 	_onToggleButtonClick(evt) {
 		evt.preventDefault();
 
-		this.toggle();
+		if (HTML_CLASSLIST.contains('_menu-opened')) {
+			window.ProjectApp.components.Menu.closeMenu();
+
+			clearTimeout(this.TO);
+			this.TO = setTimeout(() => {
+				this.toggle();
+			}, 300);
+		} else {
+			this.toggle();
+		}
 	}
 	_onWindowKeydown(evt) {
 		if (evt.key === 'Escape') {
