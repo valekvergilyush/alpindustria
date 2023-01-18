@@ -105,6 +105,9 @@ class AlpIndustry {
 			document
 				.querySelectorAll('.services-accordion [data-accordion-toggle]')
 				.forEach(toggle => new this.modules.Accordion(toggle));
+			document
+				.querySelectorAll('.profile-purchases [data-accordion-toggle]')
+				.forEach(toggle => new this.modules.Accordion(toggle));
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 			document.querySelectorAll('[data-tabs]').forEach(tabs => new this.components.Tabs(tabs));

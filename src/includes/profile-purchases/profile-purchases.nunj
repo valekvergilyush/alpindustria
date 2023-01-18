@@ -1,33 +1,30 @@
-{% from "../components/profile-product/profile-product.nunj" import profileProduct %}
+{% from "../components/profile-order/profile-order.nunj" import profileOrder %}
 {% from "../components/profile-review/profile-review.nunj" import profileReview %}
+{% from "../components/button/button.nunj" import button %}
 
 {% set productList = [
 	{
-		img: '/assets/images/catalog/item-1',
-		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
-		price: '33 150 ₽',
-		color: '#C9364C',
-		colorName: 'Красный',
-		size: '39',
-		amount: '3 шт.'
+		order: 'Бронирование № 175025947',
+		date: '09.05.2021',
+		status: 'Проверяется'
 	},
 	{
-		img: '/assets/images/cart/item-2',
-		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
-		price: '33 150 ₽',
-		color: '#C9364C',
-		colorName: 'Красный',
-		size: '39',
-		amount: '3 шт.'
+		order: 'Заказ № 175025947',
+		date: '09.05.2021',
+		status: 'Подтвержден',
+		statusClass: '_confirmed'
 	},
 	{
-		img: '/assets/images/catalog/item-2',
-		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
-		price: '33 150 ₽',
-		color: '#C9364C',
-		colorName: 'Красный',
-		size: '39',
-		amount: '3 шт.'
+		order: 'Заказ № 175025947',
+		date: '09.05.2021',
+		status: 'Ожидает оплаты',
+		statusClass: '_awaiting'
+	},
+	{
+		order: 'Заказ № 175025947',
+		date: '09.05.2021',
+		status: 'Отменен',
+		statusClass: '_canceled'
 	}
 ] %}
 {% set reviewList = [
@@ -64,10 +61,16 @@
 		<ul class="profile-purchases__list">
 			{% for product in productList %}
 				<li class="profile-purchases__product">
-					{{ profileProduct(product) }}
+					{{ profileOrder(product) }}
 				</li>
 			{% endfor %}
 		</ul>
+		{{ button({
+			className: 'profile-purchases__more _show-more',
+			text: 'Показать еще',
+			icon: 'plus-circle',
+			iconData: 'width="32" height="32"'
+		}) }}
 	</div>
 	<div>
 		<p class="profile-title profile-purchases__title h7 ttu">История отзывов</p>

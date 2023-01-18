@@ -1,0 +1,136 @@
+.profile-order {
+	$this: &;
+	background-color: var(--white);
+	border: 1px solid var(--blue-dark);
+	&__button {
+		@include reset-btn();
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
+		padding: rem(24);
+		gap: rem(24);
+		text-align: left;
+		@media (max-width: $mobile-lg) {
+			padding: 16px;
+		}
+		#{$this}._opened & {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+	&__date {
+		opacity: 0.5;
+		text-align: right;
+	}
+	&__status {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		&::before {
+			--size: #{rem(12)};
+			content: '';
+			width: var(--size);
+			height: var(--size);
+			border-radius: 50%;
+			background-color: var(--violet-light);
+			border: 1px solid var(--white);
+		}
+		&._confirmed {
+			&::before {
+				background-color: var(--green-light);
+			}
+		}
+		&._awaiting {
+			&::before {
+				background-color: var(--green-light);
+			}
+		}
+		&._awaiting {
+			&::before {
+				background-color: $lucky;
+			}
+		}
+		&._canceled {
+			&::before {
+				background-color: var(--red-light);
+			}
+		}
+	}
+	&__icon {
+		margin-left: auto;
+		#{$this}._opened & {
+			transform: rotate(180deg);
+			transition: transform $default-transition-duration $default-transition-function;
+		}
+	}
+	&__content {
+		display: none;
+		grid-template-columns: 1fr 1fr;
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: 1fr;
+			row-gap: 50px;
+		}
+		#{$this}._opened & {
+			display: grid;
+		}
+	}
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: rem(56);
+		padding: rem(24);
+		@media (max-width: $mobile-lg) {
+			padding-inline: 16px;
+			gap: 48px;
+		}
+		& + & {
+			border-left: 1px solid rgba($gray-dark, 0.2);
+		}
+	}
+	&__block {
+		display: grid;
+		gap: rem(32);
+		&._bdb {
+			padding-bottom: rem(32);
+			border-bottom: 1px solid rgba($gray-dark, 0.2);
+		}
+	}
+	&__goods {
+		display: grid;
+		gap: rem(24);
+	}
+	&__good {
+		padding-bottom: rem(23);
+		border-bottom: 1px solid rgba($gray-dark, 0.1);
+	}
+	&__delivery-table {
+		tbody {
+			display: grid;
+			gap: rem(32);
+		}
+		tr {
+			display: flex;
+		}
+		td {
+			&:first-child {
+				flex-shrink: 0;
+				width: 36.48%;
+				margin-right: rem(16);
+			}
+			&:last-child {
+				flex-grow: 1;
+			}
+		}
+	}
+	&__summ {
+		display: grid;
+		gap: rem(24);
+	}
+	&__price {
+		display: grid;
+		gap: rem(8);
+	}
+	&__payment {
+		align-self: start;
+	}
+}
