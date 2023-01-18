@@ -16,12 +16,14 @@ class FilterSubcategory {
 		}
 
 		this.heroContainer = document.querySelector('.page__hero');
+		this.quickFilter = document.querySelector('[data-quick-filter]');
 		if (this.heroContainer) {
 			this.heroTitleCategory = this.heroContainer.querySelector('.hero-catalog__title-category');
 			this.heroTitleText = this.heroTitleCategory.textContent;
 			this.heroBgImage = this.heroContainer.querySelector('.hero-catalog__bg-img._hero');
 		}
 
+		this.checkContainerScroll();
 		this.subContainers.forEach(subContainer => {
 			subContainer.querySelectorAll('[data-subcategory-item]').forEach(item => {
 				const button = item.querySelector('[data-subcategory-opener]');
@@ -45,6 +47,7 @@ class FilterSubcategory {
 	openSubcategory(container, item, list, button) {
 		container.classList.add(ClassName.OPENED);
 		item.classList.add(ClassName.OPENED);
+		this.checkContainerScroll();
 
 		if (this.heroContainer) {
 			this.showSubcategoryBg(button);
@@ -62,6 +65,7 @@ class FilterSubcategory {
 	closeSubcategory(container, item) {
 		container.classList.remove(ClassName.OPENED);
 		item.classList.remove(ClassName.OPENED);
+		this.checkContainerScroll();
 
 		if (this.heroContainer) {
 			this.showHeroBg();
@@ -92,6 +96,17 @@ class FilterSubcategory {
 	showHeroTitle() {
 		this.heroContainer.classList.remove(ClassName.SUBCATEGORY);
 		this.heroTitleCategory.textContent = this.heroTitleText;
+	}
+	checkContainerScroll() {
+		const hasHorizontalScroll =
+			this.quickFilter.clientWidth < this.quickFilter.scrollWidth ||
+			this.quickFilter.offsetWidth < this.quickFilter.scrollWidth;
+		console.log(this.quickFilter);
+		if (hasHorizontalScroll) {
+			this.quickFilter.style.justifyContent = 'flex-start';
+		} else {
+			this.quickFilter.style.justifyContent = 'center';
+		}
 	}
 }
 
