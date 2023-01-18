@@ -166,7 +166,7 @@
 ] %}
 
 <div class="page__search-menu search-menu _no-results" data-search-menu>
-	<form class="search-menu__form">
+	<form class="search-menu__form" data-search-menu-form>
 		<input
 			class="search-menu__input"
 			type="text"
@@ -175,6 +175,7 @@
 			aria-label="Поиск"
 			autocomplete="off"
 			data-search-menu-input
+			required
 		>
 		{{ button({
 			type: 'submit',

@@ -29,6 +29,7 @@ class Search {
 		this.tabs = this.container.querySelectorAll('[data-search-menu-tab]');
 		this.activeTab = this.container.querySelector('[data-search-menu-tab]:checked');
 		this.activeTabValue = this.container.querySelector('[data-search-menu-tab]:checked').value;
+		this.searchForm = this.container.querySelector('[data-search-menu-form]');
 		this.searchInput = this.container.querySelector('[data-search-menu-input]');
 		this.searchSubmit = this.container.querySelector('[data-search-menu-submit]');
 
@@ -37,12 +38,14 @@ class Search {
 		this._onWindowKeydown = this._onWindowKeydown.bind(this);
 		this._onToggleButtonClick = this._onToggleButtonClick.bind(this);
 		this._onTabChange = this._onTabChange.bind(this);
+		this._onSearchFormSubmit = this._onSearchFormSubmit.bind(this);
 		this._onSearchInputInput = this._onSearchInputInput.bind(this);
 
 		window.addEventListener('keydown', this._onWindowKeydown);
 		this.toggleButton.addEventListener('click', this._onToggleButtonClick);
 		this.tabs.forEach(tab => tab.addEventListener('change', this._onTabChange));
 		this.searchInput.addEventListener('input', this._onSearchInputInput);
+		this.searchForm.addEventListener('submit', this._onSearchFormSubmit);
 
 		this.isOpened = false;
 		this.container.classList.add(ClassName.INITIALIZED);
@@ -145,6 +148,11 @@ class Search {
 	resetSearchInput() {
 		this.searchInput.value = '';
 		this.container.classList.add(ClassName.NO_RESULTS);
+	}
+	_onSearchFormSubmit(evt) {
+		evt.preventDefault();
+
+		window.location = '/catalog/search-results.html';
 	}
 }
 
