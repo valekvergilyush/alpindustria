@@ -35,6 +35,16 @@
 				width: 24px;
 				height: 24px;
 			}
+			&._reset {
+				.button__icon {
+					&._search {
+						display: block;
+					}
+					&._close-search {
+						display: none;
+					}
+				}
+			}
 		}
 	}
 	&__label {
