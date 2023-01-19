@@ -2,7 +2,7 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro profileProduct(props) %}
-	<a href="product.html" class="profile-product">
+	<a href="/catalog/product-page.html" class="profile-product">
 		<div class="profile-product__img">
 			<img src="{{ props.img }}.png" srcset="{{ props.img }}@2x.png 2x" width="96" height="124" alt="">
 		</div>

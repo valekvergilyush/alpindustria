@@ -5,13 +5,14 @@
 	&__button {
 		@include reset-btn();
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 3fr 1fr;
 		width: 100%;
 		padding: rem(24);
 		gap: rem(24);
 		text-align: left;
 		@media (max-width: $mobile-lg) {
 			padding: 16px;
+			column-gap: 16px;
 		}
 		#{$this}._opened & {
 			background-color: var(--blue-dark);
@@ -29,8 +30,10 @@
 		&::before {
 			--size: #{rem(12)};
 			content: '';
+			flex-shrink: 0;
 			width: var(--size);
 			height: var(--size);
+			margin-bottom: rem(4);
 			border-radius: 50%;
 			background-color: var(--violet-light);
 			border: 1px solid var(--white);
@@ -116,6 +119,12 @@
 				flex-shrink: 0;
 				width: 36.48%;
 				margin-right: rem(16);
+				@media (max-width: $mobile-lg) {
+					width: 41%;
+				}
+				@media (max-width: $mobile) {
+					width: 29%;
+				}
 			}
 			&:last-child {
 				flex-grow: 1;

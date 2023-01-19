@@ -25,7 +25,7 @@
 
 {% macro profileOrder(props) %}
 	<div class="profile-order">
-		<button class="profile-order__button" data-accordion-toggle>
+		<button class="profile-order__button" data-accordion-toggle data-profile-order-btn>
 			<p class="p3">{{ props.order }}</p>
 			<p class="profile-order__date p3">{{ props.date }}</p>
 			<p class="profile-order__status h6 ttu {% if props.statusClass %} {{ props.statusClass }}{% endif %}">{{ props.status }}</p>
