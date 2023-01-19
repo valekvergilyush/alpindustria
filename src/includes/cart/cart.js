@@ -23,6 +23,7 @@ class Cart {
 		}
 
 		this.popupWrapper = document.querySelector('[data-popup-wrapper=cart]');
+		this.popup = this.popupWrapper.querySelector('[data-popup="cart"]');
 		this.deliveryOpener = this.container.querySelector('[data-cart-delivery-opener]');
 		this.backButtons = this.container.querySelectorAll('[data-cart-back]');
 		this.payButton = this.container.querySelector('[data-cart-pay]');
@@ -78,6 +79,7 @@ class Cart {
 		this.container.classList.add('_rent');
 	}
 	openDelivery() {
+		this.popup.scrollTo(0, 0);
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
 		if (this.popupWrapper.classList.contains(ClassName.OPENED_PAY)) {
 			this.popupWrapper.classList.remove(ClassName.OPENED_PAY);
@@ -100,6 +102,7 @@ class Cart {
 		}
 	}
 	openDefault() {
+		this.popup.scrollTo(0, 0);
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
@@ -123,6 +126,7 @@ class Cart {
 		}
 	}
 	openPay() {
+		this.popup.scrollTo(0, 0);
 		this.popupWrapper.classList.add(ClassName.ANIMATION);
 		this.popupWrapper.classList.add(ClassName.OPENED_PAY);
 
