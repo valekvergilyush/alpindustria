@@ -1,4 +1,5 @@
 import env from '../../assets/js/utils/env';
+import DeliveryAuth from '../delivery-auth/delivery-auth';
 
 const ClassName = {
 	OPENED_DELIVERY: '_opened-delivery',
@@ -90,6 +91,8 @@ class Cart {
 					this.popupWrapper.classList.remove(ClassName.ANIMATION);
 				},
 			});
+			const authContainers = document.querySelectorAll('[data-delivery-auth]');
+			authContainers.forEach(container => new DeliveryAuth(container));
 		}
 
 		if (env.isIOS) {

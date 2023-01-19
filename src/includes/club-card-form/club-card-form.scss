@@ -56,6 +56,11 @@
 			.button__icon {
 				margin-left: rem(8);
 			}
+			&:hover {
+				.button__text {
+					transform: translateX(rem(4));
+				}
+			}
 		}
 		@media (max-width: $laptop-lg) {
 			&.button .button__icon {

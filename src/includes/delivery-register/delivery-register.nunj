@@ -2,7 +2,7 @@
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
 {% from "../components/button/button.nunj" import button %}
 
-<form class="cart-delivery__register-form delivery-register">
+<form class="cart-delivery__register-form delivery-register _new-user">
 	<p class="delivery-register__title h7 ttu">Новым покупателям:</p>
 	<div class="delivery-register__fields">
 		{{ input({

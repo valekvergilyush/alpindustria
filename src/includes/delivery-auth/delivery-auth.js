@@ -5,21 +5,25 @@ const FormStage = {
 };
 
 class DeliveryAuth {
-	constructor() {
-		this.init();
+	constructor(container) {
+		this.init(container);
 	}
 
-	init() {
-		this.container = document.querySelector('[data-delivery-auth]');
+	init(container) {
+		if (!container) {
+			return;
+		}
+
+		this.container = container;
 		this.authForm = this.container.querySelector('.delivery-auth__form');
 		this.authButton = this.container.querySelector('.delivery-auth__submit-btn');
 		this.checkCodeButton = this.container.querySelector('.delivery-auth__check-code');
-		this.telInput = this.container.querySelector('#delivery-auth-tel');
-		this.smsInput = this.container.querySelector('#delivery-auth-sms');
+		this.telInput = this.container.querySelector('.delivery-auth__input._tel input');
+		this.smsInput = this.container.querySelector('.delivery-auth__input._sms input');
 		this.changeUserButton = this.container.querySelector('.delivery-auth__user-change');
-		this.cartRegisterContainer = document.querySelector(
-			'.cart-delivery__register-form'
-		).parentElement;
+		this.cartRegisterContainers = document.querySelectorAll(
+			'.cart-delivery__register-form._new-user'
+		);
 
 		this._onAuthButtonClick = this._onAuthButtonClick.bind(this);
 		this._onCheckCodeButtonClick = this._onCheckCodeButtonClick.bind(this);
@@ -58,11 +62,13 @@ class DeliveryAuth {
 	}
 	showUserInfo() {
 		this.setAuthFormState(FormStage.USER_INFO);
-		this.cartRegisterContainer.style.display = 'none';
+		this.cartRegisterContainers.forEach(item => {
+			item.parentElement.style.display = 'none';
+		});
 	}
 	setDefaultState() {
 		this.setAuthFormState(FormStage.DEFAULT);
-		this.cartRegisterContainer.removeAttribute('style');
+		this.cartRegisterContainers.forEach(item => item.parentElement.removeAttribute('style'));
 		this.authForm.reset();
 		this.telInput.setAttribute('aria-invalid', true);
 		this.telInput.closest('.delivery-auth__input').classList.remove('is-valid');
@@ -70,4 +76,4 @@ class DeliveryAuth {
 	}
 }
 
-export default new DeliveryAuth();
+export default DeliveryAuth;
