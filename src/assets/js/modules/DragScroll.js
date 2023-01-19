@@ -18,7 +18,6 @@ class DragScroll {
 		this.onMouseDown = this.onMouseDown.bind(this);
 		this.containerHasScroll = this.containerHasScroll.bind(this);
 
-		console.log(this.container);
 		const { hasHorizontalScrollbar, hasVerticalScrollbar } = this.containerHasScroll(
 			this.container
 		);
