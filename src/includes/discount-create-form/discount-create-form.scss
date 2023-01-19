@@ -101,6 +101,7 @@
 		right: 0;
 		@media (max-width: $mobile-lg) {
 			top: 35px;
+			right: 3px;
 			.button__icon {
 				--size: 12px !important;
 			}

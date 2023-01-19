@@ -24,8 +24,8 @@
 					text: 'Отвязать карту',
 					icon: 'close-button',
 					iconData: 'width="19" height="19"',
-					className: 'discount-card-info__unlink _arrow h7 ttu',
-					attr: 'data-discount-unlink'
+					className: 'discount-card-info__unlink _arrow-m h7 ttu',
+					attr: 'data-popup-opener="data-editing"'
 				}) }}
 			</div>
 		</div>

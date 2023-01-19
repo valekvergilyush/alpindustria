@@ -54,21 +54,16 @@
 	}
 	&__unlink {
 		color: var(--red-dark);
-		&._arrow {
-			text-transform: none;
+		&._arrow-m {
 			.button__icon {
-				--size: #{rem(24)};
-				transform: none;
+				--size: #{rem(19)};
+				@media (max-width: $mobile-lg) {
+					--size: #{rem(16)};
+				}
 			}
-		}
-		&.ttu {
-			text-transform: uppercase;
 		}
 	}
 	&__terms {
-		&._arrow {
-			text-transform: none;
-		}
 		.button__text {
 			flex-shrink: 1;
 			text-align: left;

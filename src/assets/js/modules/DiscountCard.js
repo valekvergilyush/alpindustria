@@ -14,9 +14,22 @@ class DiscountCard {
 			return;
 		}
 		if (this.addForm) {
+			const header = document.querySelector('.header');
+			if (header) {
+				this.headerHeight = header.offsetHeight;
+			}
 			this.addForm.addEventListener('submit', e => {
 				e.preventDefault();
 				this.discountSection.classList.add(ACTIVE_CLASS);
+				gsap.to(window, {
+					duration: 0.2,
+					delay: 0.3,
+					scrollTo: {
+						y: this.discountSection,
+						offsetY: this.headerHeight,
+					},
+					ease: 'Power1.easeInOut',
+				});
 			});
 		}
 		if (this.unlinkBtn) {

@@ -24,15 +24,15 @@
 					text: 'Ознакомьтесь с условиями программы лояльности',
 					icon: 'promo-arrow',
 					iconData: 'width="19" height="19"',
-					className: 'discount-card-info__terms _arrow',
+					className: 'discount-card-info__terms p3 _arrow-m',
 					attr: 'data-popup-opener="offer-2"'
 				}) }}
 				{{ button({
 					text: 'Отвязать карту',
-					icon: 'close-button',
+					icon: 'close-popup',
 					iconData: 'width="19" height="19"',
-					className: 'discount-card-info__unlink h7 ttu _arrow',
-					attr: 'data-discount-unlink'
+					className: 'discount-card-info__unlink h7 ttu _arrow-m',
+					attr: 'data-popup-opener="data-editing"'
 				}) }}
 			</div>
 		</div>
