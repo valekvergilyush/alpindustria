@@ -2,6 +2,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Popups from '../../assets/js/modules/Popups';
 import Accordion from '../../assets/js/modules/Accordion';
 import Catalog from '../catalog/catalog';
+import Env from '../../assets/js/utils/env';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 const TABLET_BREAKPOINT = 992;
@@ -58,7 +59,12 @@ class Filters {
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.isOpened = true;
-		disableBodyScroll(this.filtersForm);
+		if (!Env.isIOS) {
+			disableBodyScroll(this.filtersForm);
+		}
+		if (Env.isIOS) {
+			document.body.style.overflow = 'hidden';
+		}
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(this.filtersWrapper, {
@@ -93,7 +99,13 @@ class Filters {
 		}
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.isOpened = false;
-		enableBodyScroll(this.filtersForm);
+
+		if (!Env.isIOS) {
+			enableBodyScroll(this.filtersForm);
+		}
+		if (Env.isIOS) {
+			document.body.style.overflow = '';
+		}
 
 		gsap.to(this.filtersWrapper, {
 			width: 0,
