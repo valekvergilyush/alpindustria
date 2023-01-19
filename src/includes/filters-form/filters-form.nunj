@@ -7,7 +7,7 @@
 	{ className: ' _selected', name: 'The North Face' },
 	{ className: ' _selected', name: 'Мужской' },
 	{ className: ' _selected', name: 'Arcteryx' },
-	{ className: ' _selected', name: 'The North Face' }
+	{ className: ' _selected', name: 'Красный', color: '#C9364C' }
 ] %}
 {% set brandButtons = [
 	{ name: 'MSR' },
@@ -95,6 +95,7 @@
 				{{ button({
 					className: 'filters-form__button _quick-filter' + btn.className,
 					text: btn.name,
+					color: btn.color,
 					icon: 'close-button',
 					iconData: 'width="24" height="24"'
 				}) }}
