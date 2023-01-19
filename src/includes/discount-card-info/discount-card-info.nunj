@@ -22,7 +22,7 @@
 			<div class="discount-card-info__btns">
 				{{ button({
 					text: 'Отвязать карту',
-					icon: 'close-button',
+					icon: 'close-popup',
 					iconData: 'width="19" height="19"',
 					className: 'discount-card-info__unlink _arrow-m h7 ttu',
 					attr: 'data-popup-opener="data-editing"'
