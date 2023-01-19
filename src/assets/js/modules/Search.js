@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import Env from '../utils/env';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -28,6 +29,7 @@ class Search {
 		this.tabs = this.container.querySelectorAll('[data-search-menu-tab]');
 		this.activeTab = this.container.querySelector('[data-search-menu-tab]:checked');
 		this.activeTabValue = this.container.querySelector('[data-search-menu-tab]:checked').value;
+		this.searchForm = this.container.querySelector('[data-search-menu-form]');
 		this.searchInput = this.container.querySelector('[data-search-menu-input]');
 		this.searchSubmit = this.container.querySelector('[data-search-menu-submit]');
 
@@ -36,34 +38,43 @@ class Search {
 		this._onWindowKeydown = this._onWindowKeydown.bind(this);
 		this._onToggleButtonClick = this._onToggleButtonClick.bind(this);
 		this._onTabChange = this._onTabChange.bind(this);
+		this._onSearchFormSubmit = this._onSearchFormSubmit.bind(this);
 		this._onSearchInputInput = this._onSearchInputInput.bind(this);
 
 		window.addEventListener('keydown', this._onWindowKeydown);
 		this.toggleButton.addEventListener('click', this._onToggleButtonClick);
 		this.tabs.forEach(tab => tab.addEventListener('change', this._onTabChange));
 		this.searchInput.addEventListener('input', this._onSearchInputInput);
+		this.searchForm.addEventListener('submit', this._onSearchFormSubmit);
 
 		this.isOpened = false;
 		this.container.classList.add(ClassName.INITIALIZED);
 		this.container.classList.add(this.containerClassMod);
 		this.searchInput.placeholder = this.activeTab.getAttribute('data-search-input-placeholder');
-		this.toggleButtonValue.textContent = this.searchInput.value;
-
-		if (!this.searchInput.value) {
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
-		}
 	}
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.searchInput.focus();
 		this.isOpened = !this.isOpened;
-		disableBodyScroll(this.container);
+
+		if (!Env.isIOS) {
+			disableBodyScroll(this.container);
+		}
+		if (Env.isIOS) {
+			document.body.style.overflow = 'hidden';
+		}
 	}
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.searchInput.blur();
 		this.isOpened = !this.isOpened;
-		enableBodyScroll(this.container);
+		this.resetSearchInput();
+		if (!Env.isIOS) {
+			enableBodyScroll(this.container);
+		}
+		if (Env.isIOS) {
+			document.body.style.overflow = '';
+		}
 	}
 	toggle() {
 		this.isOpened ? this.close() : this.open();
@@ -71,14 +82,13 @@ class Search {
 	_onToggleButtonClick(evt) {
 		evt.preventDefault();
 
-		if (this.toggleButton.classList.contains(ClassName.RESET) && !this.isOpened) {
-			this.toggleButtonValue.textContent = '';
-			this.searchInput.value = '';
-			this.toggleButton.classList.remove(ClassName.RESET);
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
-			this.container.classList.add(ClassName.NO_RESULTS);
+		if (HTML_CLASSLIST.contains('_menu-opened')) {
+			window.ProjectApp.components.Menu.closeMenu();
 
-			this._setSubmitButtonText();
+			clearTimeout(this.TO);
+			this.TO = setTimeout(() => {
+				this.toggle();
+			}, 300);
 		} else {
 			this.toggle();
 		}
@@ -103,15 +113,9 @@ class Search {
 		this._setSubmitButtonText();
 	}
 	_onSearchInputInput(evt) {
-		this.toggleButtonValue.textContent = evt.target.value;
-
 		if (evt.target.value) {
-			this.toggleButton.classList.add(ClassName.RESET);
-			this.toggleButtonText.classList.remove(ClassName.EMPTY);
 			this.container.classList.remove(ClassName.NO_RESULTS);
 		} else {
-			this.toggleButton.classList.remove(ClassName.RESET);
-			this.toggleButtonText.classList.add(ClassName.EMPTY);
 			this.container.classList.add(ClassName.NO_RESULTS);
 		}
 
@@ -140,6 +144,15 @@ class Search {
 				break;
 		}
 		this.searchSubmit.querySelector('.button__text').textContent = submitButtonText;
+	}
+	resetSearchInput() {
+		this.searchInput.value = '';
+		this.container.classList.add(ClassName.NO_RESULTS);
+	}
+	_onSearchFormSubmit(evt) {
+		evt.preventDefault();
+
+		window.location = '/catalog/search-results.html';
 	}
 }
 

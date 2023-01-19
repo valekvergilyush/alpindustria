@@ -2,6 +2,7 @@ const FormStage = {
 	ADD: 'add',
 	PAY: 'pay',
 	CANCEL: 'cancel',
+	CODE: 'code',
 };
 
 class ClubCardForm {
@@ -14,8 +15,11 @@ class ClubCardForm {
 
 		this.addButton = this.container.querySelector('.club-card-form__btn._add');
 		this.payButton = this.container.querySelector('.club-card-form__btn._pay');
+		this.codeButton = this.container.querySelector('.club-card-form__btn._check-code');
+		this.sendCodeButton = this.container.querySelector('.club-card-form__btn._send-code');
 		this.cancelButton = this.container.querySelector('.club-card-form__btn._cancel');
 		this.cardBalance = this.container.querySelector('.club-card-form__available-number');
+		this.smsCodeInput = this.container.querySelector('.club-card-form__input._check-code input');
 
 		this.addButton.addEventListener('click', evt => {
 			evt.preventDefault();
@@ -29,10 +33,29 @@ class ClubCardForm {
 			}
 		});
 
+		this.codeButton.addEventListener('click', evt => {
+			evt.preventDefault();
+
+			if (!this.smsCodeInput.value) {
+				this.smsCodeInput.setAttribute('required', true);
+				this.smsCodeInput.reportValidity();
+			} else {
+				this._pay();
+				this.smsCodeInput.blur();
+			}
+		});
+
+		this.sendCodeButton.addEventListener('click', evt => {
+			evt.preventDefault();
+
+			this.smsCodeInput.value = '';
+			this.smsCodeInput.focus();
+		});
+
 		this.payButton.addEventListener('click', evt => {
 			evt.preventDefault();
 
-			this._pay();
+			this._openCode();
 		});
 
 		this.cancelButton.addEventListener('click', evt => {
@@ -66,6 +89,12 @@ class ClubCardForm {
 		this.currentBalanceValue = 0;
 		this.cartPrice.textContent = this.cartPriceValue.toLocaleString('ru');
 		this.cardBalance.textContent = this.currentBalanceValue;
+	}
+	_openCode() {
+		this.smsCodeInput.value = '';
+		this.classModifier = FormStage.CODE;
+		this.container.setAttribute('data-form-stage', this.classModifier);
+		this.smsCodeInput.focus();
 	}
 }
 

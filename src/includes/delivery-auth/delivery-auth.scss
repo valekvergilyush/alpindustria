@@ -1,4 +1,5 @@
 .delivery-auth {
+	$this: &;
 	&__title {
 		margin-bottom: rem(46);
 		@media (max-width: $laptop-lg) {
@@ -11,7 +12,13 @@
 			margin-bottom: 20px;
 		}
 	}
+	&__form {
+		#{$this}[data-form-stage='user-info'] & {
+			display: none;
+		}
+	}
 	&__fields {
+		position: relative;
 		display: flex;
 		column-gap: rem(16);
 		align-items: flex-end;
@@ -23,6 +30,16 @@
 			@media (max-width: $laptop) {
 				margin-bottom: 24px;
 			}
+		}
+		&._sms {
+			display: none;
+			padding-bottom: rem(32);
+		}
+		#{$this}[data-form-stage='sms'] &._sms {
+			display: flex;
+		}
+		#{$this}[data-form-stage='sms'] &._tel {
+			margin-bottom: 0;
 		}
 	}
 	&__input {
@@ -51,6 +68,99 @@
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 18px;
+		}
+	}
+	&__submit-btn {
+		display: none;
+		#{$this}[data-form-stage='default'] & {
+			display: inline-flex;
+		}
+	}
+	&__send-repeat {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: inline-flex;
+		font-size: rem(12);
+		.button__icon {
+			margin-left: rem(8);
+		}
+		&:hover {
+			.button__text {
+				transform: translateX(rem(4));
+			}
+		}
+	}
+	&__user-block {
+		display: none;
+		#{$this}[data-form-stage='user-info'] & {
+			display: block;
+		}
+	}
+	&__user-info {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: rem(32);
+		margin-bottom: rem(32);
+		border-bottom: 1px solid rgba($gray-dark, 0.1);
+		tr {
+			display: flex;
+			justify-content: space-between;
+			&:not(:last-child) {
+				margin-bottom: rem(32);
+			}
+		}
+		td {
+			flex-grow: 1;
+			width: 50%;
+			&:first-child {
+				width: 40%;
+			}
+		}
+	}
+	&__user-controls {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		column-gap: rem(32);
+		row-gap: rem(16);
+	}
+	&__user-edit {
+		.button__icon {
+			width: rem(24);
+			height: rem(24);
+			margin-left: rem(16);
+			fill: none;
+		}
+		.button__text {
+			transition: transform $default-transition-duration $default-transition-function;
+		}
+		&:hover {
+			.button__text {
+				transform: translateX(rem(5));
+			}
+		}
+	}
+	&__user-change {
+		.button__icon {
+			margin-left: rem(16);
+		}
+		.button__text {
+			transition: transform $default-transition-duration $default-transition-function;
+		}
+		&:hover {
+			.button__text {
+				transform: translateX(rem(5));
+			}
+		}
+	}
+	&__checkbox {
+		margin-top: rem(72);
+		@media (max-width: $laptop) {
+			margin-top: 57px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 48px;
 		}
 	}
 }

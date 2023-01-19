@@ -4,7 +4,7 @@
 
 {% macro searchBlock(props) %}
 	<form class="search-block {% if props.className %}{{ props.className }}{% endif %}">
-		<button class="search-block__btn _search button" type="button" aria-label="Поиск" data-search-toggle>
+		<button class="search-block__btn _search {% if props.searchInputText %}_reset{% endif %} button" type="button" aria-label="Поиск" data-search-toggle>
 			{{ icon({
 				iconName: 'search',
 				className: 'button__icon _search',
@@ -15,7 +15,7 @@
 				className: 'button__icon _close-search',
 				attr: 'width="32" height="32" viewBox="0 0 32 32"'
 			}) }}
-			<span class="search-block__btn-text h7 ttu" data-search-toggle-text><span class="search-block__label">Поиск: </span><span class="search-block__value" data-search-toggle-value></span></span>
+			<span class="search-block__btn-text {% if not props.searchInputText %}_empty{% endif %}  h7 ttu" data-search-toggle-text><span class="search-block__label">Поиск: </span><span class="search-block__value" data-search-toggle-value>{% if props.searchInputText %}{{ props.searchInputText }}{% endif %}</span></span>
 		</button>
 	</form>
 {% endmacro %}

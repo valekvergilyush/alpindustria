@@ -87,6 +87,7 @@ class AlpIndustry {
 			SubscribeForm: require('../../includes/subscribe-form/subscribe-form').default,
 			ClubCardForm: require('../../includes/club-card-form/club-card-form').default,
 			ProfileOrder: require('../../includes/components/profile-order/profile-order').default,
+			DeliveryAuth: require('../../includes/delivery-auth/delivery-auth').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

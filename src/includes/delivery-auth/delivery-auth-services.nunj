@@ -8,7 +8,7 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<div class="cart-delivery__auth-form delivery-auth" data-delivery-auth data-form-stage="default">
+<div class="cart-delivery__auth-form delivery-auth _services" data-delivery-auth data-form-stage="default">
 	<div class="delivery-auth__user-block">
 		<p class="delivery-auth__title h7 ttu">Контактные данные:</p>
 		<table class="delivery-auth__user-info p3">
@@ -53,7 +53,7 @@
 		<div class="delivery-auth__fields _tel">
 			{{ input({
 				type: 'tel',
-				id: 'delivery-auth-tel',
+				id: 'delivery-auth-services-tel',
 				className: 'delivery-auth__input _tel _gray',
 				name: 'Телефон',
 				attr: 'required data-validate-type="phone"'
@@ -70,7 +70,7 @@
 		<div class="delivery-auth__fields _sms">
 			{{ input({
 				type: 'text',
-				id: 'delivery-auth-sms',
+				id: 'delivery-auth-services-sms',
 				className: 'delivery-auth__input _sms _gray',
 				name: 'Код из СМС',
 				inputAttr: 'autocomplete="off"'

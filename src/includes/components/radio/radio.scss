@@ -85,8 +85,8 @@
 			top: 0px;
 			left: 0px;
 			z-index: 1;
-			width: calc(var(--size) - rem(4));
-			height: calc(var(--size) - rem(4));
+			width: calc(var(--size) - 4px);
+			height: calc(var(--size) - 4px);
 			border: 1px solid var(--gray-light);
 			border-radius: 50%;
 			display: none;

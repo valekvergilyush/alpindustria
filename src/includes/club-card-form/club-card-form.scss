@@ -1,12 +1,19 @@
 .club-card-form {
+	position: relative;
 	display: flex;
 	align-items: flex-end;
 	column-gap: rem(16);
 	&__input {
+		display: none;
 		flex-grow: 1;
-		[data-form-stage='pay'] &,
-		[data-form-stage='cancel'] & {
-			display: none;
+		[data-form-stage='add'] &._card-number {
+			display: flex;
+		}
+		[data-form-stage='code'] &._check-code {
+			display: flex;
+			.input__input {
+				padding-right: rem(40);
+			}
 		}
 	}
 	&__available {
@@ -30,6 +37,30 @@
 		&.button .button__icon {
 			--size: #{rem(24)};
 			margin-left: rem(16);
+		}
+		[data-form-stage='code'] &._check-code {
+			position: absolute;
+			bottom: rem(12);
+			right: 0;
+			display: inline-flex;
+			.button__icon {
+				margin: 0;
+			}
+		}
+		[data-form-stage='code'] &._send-code {
+			position: absolute;
+			bottom: rem(-24);
+			left: 0;
+			display: inline-flex;
+			font-size: rem(12);
+			.button__icon {
+				margin-left: rem(8);
+			}
+			&:hover {
+				.button__text {
+					transform: translateX(rem(4));
+				}
+			}
 		}
 		@media (max-width: $laptop-lg) {
 			&.button .button__icon {

@@ -1,4 +1,4 @@
-{% extends "../../templates/index-page.nunj" %}
+{% extends "../../templates/index-page-search-results.nunj" %}
 
 {% from "../../includes/components/ticker/ticker.nunj" import ticker %}
 
@@ -13,7 +13,7 @@
 		{% include "../../includes/news-section/news-section.nunj" %}
 		{% include "../../includes/advantages/advantages.nunj" %}
 		{{ ticker({
-			className: 'page__ticker _index',
+			className: 'page__ticker',
 			text: 'Команда, влюбленная в горы'
 		}) }}
 		{% include "../../includes/catalog-accordion/catalog-accordion.nunj" %}

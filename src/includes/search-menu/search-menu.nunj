@@ -162,12 +162,11 @@
 	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry', isRent: true },
 	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true, isRent: true },
 	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', isRent: true },
-	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry', isRent: true },
-	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom, isRent: true' }
+	{ days: true, className: 'catalog__card', url: '/catalog/product-page.html', linkAttr: 'data-popup-opener="wishlist-services"', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry', isRent: true }
 ] %}
 
 <div class="page__search-menu search-menu _no-results" data-search-menu>
-	<form class="search-menu__form">
+	<form class="search-menu__form" data-search-menu-form>
 		<input
 			class="search-menu__input"
 			type="text"
@@ -176,6 +175,7 @@
 			aria-label="Поиск"
 			autocomplete="off"
 			data-search-menu-input
+			required
 		>
 		{{ button({
 			type: 'submit',
@@ -232,12 +232,40 @@
 	<div class="search-menu__results">
 		<div class="search-menu__results-col _left">
 			<div class="search-menu__list-wrapper _results">
-				<ul class="search-menu__list p2">
-					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
-					<li><a class="search-menu__results-link" href="#">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
-					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
-					<li><a class="search-menu__results-link" href="#">Куртка The North Face</a></li>
-					<li><a class="search-menu__results-link" href="#">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				<ul class="search-menu__list _shop p2">
+					<li><a class="search-menu__results-link" href="/catalog/product-page.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/catalog/product-page.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" href="/catalog/product-page.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/catalog/product-page.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/catalog/product-page.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+				<ul class="search-menu__list _community p2">
+					<li><a class="search-menu__results-link" href="/community/class.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/community/class.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" href="/community/class.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/community/class.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/community/class.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+				<ul class="search-menu__list _news p2">
+					<li><a class="search-menu__results-link" href="/news-article.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/news-article.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" href="/news-article.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/news-article.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/news-article.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+				<ul class="search-menu__list _brands p2">
+					<li><a class="search-menu__results-link" href="/brand.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/brand.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" href="/brand.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/brand.html">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" href="/brand.html">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+				</ul>
+				<ul class="search-menu__list _rent p2">
+					<li><a class="search-menu__results-link" data-popup-opener="wishlist-services">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" data-popup-opener="wishlist-services">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
+					<li><a class="search-menu__results-link" data-popup-opener="wishlist-services">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" data-popup-opener="wishlist-services">Куртка The North Face</a></li>
+					<li><a class="search-menu__results-link" data-popup-opener="wishlist-services">Куртка The North Face M Dryzzle All Weather Jkt</a></li>
 				</ul>
 				{{ button({
 					className: 'search-menu__show-more-btn _show-more _no-bd',
