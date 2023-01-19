@@ -1,0 +1,99 @@
+{% from "../profile-product/profile-product.nunj" import profileProduct %}
+{% from "../icon/icon.nunj" import icon %}
+{% from "../button/button.nunj" import button %}
+
+{% set goods = [
+	{
+		img: '/assets/images/catalog/item-1',
+		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		color: '#C9364C',
+		colorName: 'Красный',
+		size: '39',
+		amount: '3 шт.'
+	},
+	{
+		img: '/assets/images/catalog/item-2',
+		name: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		color: '#C9364C',
+		colorName: 'Красный',
+		size: '39',
+		amount: '3 шт.'
+	}
+] %}
+
+{% macro profileOrder(props) %}
+	<div class="profile-order">
+		<button class="profile-order__button" data-accordion-toggle>
+			<p class="p3">{{ props.order }}</p>
+			<p class="profile-order__date p3">{{ props.date }}</p>
+			<p class="profile-order__status h6 ttu {% if props.statusClass %} {{ props.statusClass }}{% endif %}">{{ props.status }}</p>
+			{{ icon({
+				iconName: 'accordion-arrow',
+				className: 'profile-order__icon',
+				attr: 'width="32" height="32"'
+			}) }}
+		</button>
+		<div class="profile-order__content">
+			<div class="profile-order__section">
+				<div class="profile-order__block">
+					<p class="h7 ttu">Товары</p>
+					<ul class="profile-order__goods">
+						{% for item in goods %}
+							<li class="profile-order__good">
+								{{ profileProduct(item) }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div class="profile-order__section">
+				<div class="profile-order__block _bdb">
+					<p class="h7 ttu">Способ получения</p>
+					<table class="profile-order__delivery-table">
+						<tr>
+							<td>ФИО</td>
+							<td class="c-gray-dark">Константин Константинопольский</td>
+						</tr>
+						<tr>
+							<td>Почта</td>
+							<td class="c-gray-dark">konstantin@gmail.com</td>
+						</tr>
+						<tr>
+							<td>Телефон</td>
+							<td class="c-gray-dark">+7 (902) 222 01 02</td>
+						</tr>
+						<tr>
+							<td>Тип доставки</td>
+							<td class="c-gray-dark">Самовывоз</td>
+						</tr>
+						<tr>
+							<td>Дата доставки</td>
+							<td class="c-gray-dark">20-26 июня</td>
+						</tr>
+					</table>
+				</div>
+				<div class="profile-order__block">
+					<p class="h7 ttu">Сумма</p>
+					<div class="profile-order__summ c-gray-dark">
+						<div class="profile-order__price">
+							<p class="p3">Доставка:</p>
+							<p class="h5">1 500 ₽</p>
+						</div>
+						<div class="profile-order__price">
+							<p class="p3">Стоимость товаров:</p>
+							<p class="h5">26 000 ₽</p>
+						</div>
+					</div>
+				</div>
+				{{ button({
+					text: 'Ссылка на оплату',
+					className: 'profile-order__payment p3 _arrow-m',
+					icon: 'promo-arrow',
+					attr: ''
+				}) }}
+			</div>
+		</div>
+	</div>
+{% endmacro %}

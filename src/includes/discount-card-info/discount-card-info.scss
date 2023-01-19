@@ -1,0 +1,127 @@
+.discount-card-info {
+	--min-height: #{rem(704)};
+	--padding-top: #{rem(72)};
+	display: grid;
+	grid-template-columns: 584fr 856fr;
+	min-height: var(--min-height);
+	@media (max-width: $laptop-md) {
+		--min-height: 600px;
+		--padding-top: var(--container-padding);
+		--min-height: none;
+		grid-template-columns: 1fr;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: var(--padding-top) var(--container-padding) var(--container-padding);
+		@media (max-width: $laptop-md) {
+			order: 1;
+		}
+	}
+	&__top {
+		display: grid;
+		gap: rem(48);
+		margin-bottom: rem(48);
+		@media (max-width: $mobile-lg) {
+			gap: 24px;
+		}
+	}
+	&__top-block {
+		display: grid;
+		gap: rem(8);
+	}
+	&__bottom {
+		margin-top: auto;
+	}
+	&__profile {
+		display: grid;
+		gap: rem(16);
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__btns {
+		display: grid;
+		justify-items: flex-start;
+		gap: rem(32);
+		margin-top: rem(64);
+		@media (max-width: $mobile-lg) {
+			margin-top: 24px;
+		}
+	}
+	&__unlink {
+		color: var(--red-dark);
+		&._arrow-m {
+			.button__icon {
+				--size: #{rem(19)};
+				@media (max-width: $mobile-lg) {
+					--size: #{rem(16)};
+				}
+			}
+		}
+	}
+	&__terms {
+		.button__text {
+			flex-shrink: 1;
+			text-align: left;
+		}
+	}
+	&__img {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		color: var(--white);
+		border-left: 1px solid var(--blue-dark);
+		@media (max-width: $laptop-md) {
+			min-height: 400px;
+		}
+	}
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
+	&__logo {
+		position: relative;
+		top: rem(73);
+		left: rem(63);
+		z-index: 1;
+		width: rem(138);
+		height: rem(76);
+		@media (max-width: $laptop-sm) {
+			top: var(--container-padding);
+			left: var(--container-padding);
+			width: rem(69);
+			height: rem(38);
+		}
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__img-content {
+		position: relative;
+		z-index: 1;
+		margin-top: auto;
+		padding: var(--container-padding);
+	}
+	&__img-subtitle {
+		margin-bottom: rem(8);
+	}
+	&._profile {
+		--padding-top: var(--container-padding);
+		--min-height: #{rem(880)};
+		grid-template-columns: 704fr 642fr;
+		@media (max-width: $laptop-md) {
+			grid-template-columns: 1fr;
+			--min-height: 600px;
+		}
+	}
+}

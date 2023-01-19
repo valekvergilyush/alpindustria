@@ -31,18 +31,20 @@
 	&__list {
 		display: grid;
 		gap: rem(24);
-		@media (max-width: $laptop-sm) {
-			gap: 20px;
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
 		}
 	}
-	&__product {
-		padding-bottom: rem(24);
-		border-bottom: 1px solid rgba($gray-dark, 0.1);
-		@media (max-width: $laptop-md) {
-			padding-bottom: 21px;
+	&__more {
+		--height: #{rem(120)};
+		margin-top: rem(32);
+		@media (max-width: $mobile-lg) {
+			--height: 88px;
+			margin-top: 16px;
 		}
-		@media (max-width: $laptop-sm) {
-			padding-bottom: 16px;
+		&._show-more {
+			border-left: 1px solid var(--blue-dark);
+			border-right: 1px solid var(--blue-dark);
 		}
 	}
 	&__reviews {

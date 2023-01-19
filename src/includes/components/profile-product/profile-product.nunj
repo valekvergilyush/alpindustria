@@ -1,18 +1,24 @@
+
+{% from "../icon/icon.nunj" import icon %}
+
 {% macro profileProduct(props) %}
-	<div class="profile-product">
-		<div class="profile-product__main">
-			<a href="#" class="profile-product__img">
-				<img src="{{ props.img }}.png" srcset="{{ props.img }}@2x.png 2x" width="126" height="160" alt="">
-			</a>
-			<div class="profile-product__main-inner">
-				<a href="#" class="profile-product__name h7 ttu">{{ props.name }}</a>
-				<p class="profile-product__price c-gray-dark">{{ props.price }}</p>
+	<a href="product.html" class="profile-product">
+		<div class="profile-product__img">
+			<img src="{{ props.img }}.png" srcset="{{ props.img }}@2x.png 2x" width="96" height="124" alt="">
+		</div>
+		<div class="profile-product__inner">
+			<p class="profile-product__name p3">{{ props.name }}</p>
+			<p class="profile-product__price p4 c-gray-dark">{{ props.price }}</p>
+			<div class="profile-product__info p4">
+				<div class="profile-product__color button _color _selected" aria-label="{{ props.colorName }}" style="background-color: {{ props.color }};"></div>
+				<span class="profile-product__size">{{ props.size }}</span>
+				<span class="profile-product__amount">{{ props.amount }}</span>
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'profile-product__icon',
+					attr: 'width="16" height="16"'
+				}) }}
 			</div>
 		</div>
-		<div class="profile-product__info">
-			<div class="profile-product__color button _color _selected" aria-label="{{ props.colorName }}" style="background-color: {{ props.color }};"></div>
-			<span class="profile-product__size">{{ props.size }}</span>
-			<span class="profile-product__amount">{{ props.amount }}</span>
-		</div>
-	</div>
+	</a>
 {% endmacro %}

@@ -7,7 +7,7 @@
 	{ className: ' _selected', name: 'The North Face' },
 	{ className: ' _selected', name: 'Мужской' },
 	{ className: ' _selected', name: 'Arcteryx' },
-	{ className: ' _selected', name: 'The North Face' }
+	{ className: ' _selected', name: 'Красный', color: '#C9364C' }
 ] %}
 {% set brandButtons = [
 	{ name: 'MSR' },
@@ -73,6 +73,20 @@
 	{ name: 'Светло-фиолетовый', color: '#8B4192' },
 	{ name: 'Белый', color: '#FEFEFE' }
 ] %}
+{% set sizesButtons = [
+	{ name: 'XS', className: ' _active' },
+	{ name: 'S' },
+	{ name: 'M' },
+	{ name: 'L' },
+	{ name: 'XL' }
+] %}
+{% set typeButtons = [
+	{ name: 'Новинки' },
+	{ name: 'Только товары с доставкой', className: ' _active' },
+	{ name: 'Скидки' },
+	{ name: 'Протестировано' },
+	{ name: 'Эксклюзивно у нас' }
+] %}
 <form class="catalog__filters-form filters-form">
 	<ul class="filters-form__selected-filters filters-form__container">
 		{% for btn in selectedFilters %}
@@ -80,6 +94,7 @@
 				{{ button({
 					className: 'filters-form__button _quick-filter' + btn.className,
 					text: btn.name,
+					color: btn.color,
 					icon: 'close-button',
 					iconData: 'width="24" height="24"'
 				}) }}
@@ -121,6 +136,24 @@
 					}) }}
 				</div>
 			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Тип товаров</button>
+			<ul class="filters-form__item-content _buttons">
+				{% for btn in typeButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li>
+						{{ button({
+							className: 'filters-form__button _quick-filter' + className,
+							text: btn.name
+						}) }}
+					</li>
+				{% endfor %}
+			</ul>
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle>Бренды</button>
@@ -172,6 +205,40 @@
 					</li>
 				{% endfor %}
 			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>Размеры</button>
+			<ul class="filters-form__item-content _buttons">
+				{% for btn in sizesButtons %}
+					{% if btn.className %}
+						{% set className = btn.className %}
+					{% else %}
+						{% set className = '' %}
+					{% endif %}
+					<li>
+						{{ button({
+							className: 'filters-form__button _quick-filter' + className,
+							text: btn.name
+						}) }}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<button class="filters-form__item-title" type="button" data-accordion-toggle>год</button>
+			<div class="filters-form__item-content">
+				{{ rangeSlider({
+					className: 'filters-form__price-range',
+					id: 'price-range',
+					min: 2010,
+					max: 2015,
+					minValue: 2012,
+					maxValue: 2013,
+					step: 1,
+					type: 'year',
+					outputs: true
+				}) }}
+			</div>
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle>Вид активности</button>
@@ -254,6 +321,7 @@
 				{{ rangeSlider({
 					className: 'filters-form__price-range',
 					id: 'price-range',
+					type: 'price',
 					min: 100,
 					max: 600000,
 					minValue: 100000,

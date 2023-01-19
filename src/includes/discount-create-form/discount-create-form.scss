@@ -16,22 +16,37 @@
 			}
 		}
 	}
+	&__inputs {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(24);
+		margin-bottom: rem(24);
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__checkboxes {
+		display: grid;
+		gap: rem(16);
+		margin-bottom: rem(32);
+	}
 	&__radios {
 		display: flex;
 		column-gap: rem(50);
+		padding: 0 rem(12);
 		margin-block: rem(24);
 		.radio__label {
 			padding-left: calc(var(--size) + rem(8));
 			justify-content: center;
 		}
 		@media (max-width: $mobile-lg) {
+			margin-bottom: 0;
 			.radio__text {
 				font-size: 12px;
 			}
 		}
 	}
 	&__checkbox {
-		margin-top: rem(16);
 		.checkbox__label {
 			font-family: var(--default-font-family);
 		}
@@ -70,11 +85,7 @@
 		}
 	}
 	&__submit {
-		margin-top: rem(48);
 		margin-left: auto;
-		@media (max-width: $mobile-lg) {
-			margin-top: 22px;
-		}
 	}
 	&__sms-code {
 		position: relative;
@@ -90,6 +101,7 @@
 		right: 0;
 		@media (max-width: $mobile-lg) {
 			top: 35px;
+			right: 3px;
 			.button__icon {
 				--size: 12px !important;
 			}

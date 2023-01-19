@@ -19,6 +19,9 @@
 {% endmacro %}
 
 {% macro buttonInner(props) %}
+	{% if props.color %}
+		<span class="button__color" style="background-color: {{ props.color }}"></span>
+	{% endif %}
 	{% if props.text %}
 		<span class="button__text">{{ props.text }}</span>
 	{% endif %}

@@ -3,6 +3,8 @@
 	display: flex;
 	flex-direction: column;
 	background-color: var(--white);
+	z-index: 2;
+	position: relative;
 	&__title {
 		margin-top: rem(176);
 		margin-bottom: rem(64);

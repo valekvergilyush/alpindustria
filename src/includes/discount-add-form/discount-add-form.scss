@@ -1,6 +1,11 @@
 .discount-add-form {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 489fr 446fr;
+	gap: rem(41);
+	@media (max-width: $mobile-lg) {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
 	&__input {
 		& + & {
 			margin-top: rem(16);
@@ -12,29 +17,45 @@
 	&__submit {
 		margin-left: auto;
 		margin-top: rem(48);
-		margin-bottom: rem(72);
-		@media (max-width: $laptop-lg) {
-			margin-top: 32px;
-			margin-bottom: 55px;
-		}
-		@media (max-width: $laptop) {
-			margin-bottom: 32px;
-		}
-		@media (max-width: $tablet) {
-			margin-bottom: 24px;
-		}
 		@media (max-width: $mobile-lg) {
 			margin-top: 22px;
 		}
 	}
 	&__info {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(16);
-		color: var(--gray-dark);
-		opacity: 0.5;
+		padding-left: rem(48);
+		margin-top: rem(48);
 		@media (max-width: $tablet) {
 			max-width: 400px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 22px;
+		}
+		&::before {
+			--size: #{rem(32)};
+			content: '!';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--size);
+			height: var(--size);
+			border: 1px solid var(--blue-dark);
+			font-size: rem(18);
+			line-height: 1.33;
+		}
+	}
+	&__img {
+		@media (max-width: $tablet) {
+			max-width: 360px;
+		}
+		@media (max-width: $mobile-lg) {
+			order: -1;
 		}
 	}
 }

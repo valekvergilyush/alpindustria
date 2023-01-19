@@ -40,7 +40,7 @@
 			{% include "../profile-messages/profile-messages.nunj" %}
 		</section>
 		<section class="community-tabs__section _profile" aria-labelledby="discount" data-tab-section="discount">
-			{% include "../profile-discount/profile-discount.nunj" %}
+		{% include "../profile-discount/profile-discount.nunj" %}
 		</section>
 	</div>
 </section>

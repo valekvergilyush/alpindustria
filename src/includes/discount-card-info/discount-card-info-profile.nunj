@@ -1,0 +1,56 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="discount-card-info _profile">
+	<div class="discount-card-info__content">
+		<div class="discount-card-info__top">
+			<div class="discount-card-info__top-block">
+				<p class="p3 c-gray-dark">Номер клубной карты:</p>
+				<p class="h5">313434</p>
+			</div>
+			<div class="discount-card-info__top-block">
+				<p class="p3 c-gray-dark">Доступно баллов:</p>
+				<p class="h5">255</p>
+			</div>
+		</div>
+		<div class="discount-card-info__bottom">
+			<div class="discount-card-info__profile p3 c-gray-dark">
+				<p>Иван Федорович Крузенштерн</p>
+				<p><a href="tel:+7 (999) 000 00 00">+7 (999) 000 00 00</a></p>
+				<p><a href="mailto:hello.aplindustria@gmai.com">hello.aplindustria@gmai.com</a></p>
+			</div>
+			<div class="discount-card-info__btns">
+				{{ button({
+					text: 'Ознакомьтесь с условиями программы лояльности',
+					icon: 'promo-arrow',
+					iconData: 'width="19" height="19"',
+					className: 'discount-card-info__terms p3 _arrow-m',
+					attr: 'data-popup-opener="offer-2"'
+				}) }}
+				{{ button({
+					text: 'Отвязать карту',
+					icon: 'close-popup',
+					iconData: 'width="19" height="19"',
+					className: 'discount-card-info__unlink h7 ttu _arrow-m',
+					attr: 'data-popup-opener="data-editing"'
+				}) }}
+			</div>
+		</div>
+	</div>
+	<div class="discount-card-info__img">
+		<div class="discount-card-info__logo">
+			{{ icon({
+				iconName: 'logo-short',
+				attr: 'width="182" height="151"'
+			}) }}
+		</div>
+		<div class="discount-card-info__img-content">
+			<p class="discount-card-info__img-subtitle p1">Bronze</p>
+			<p class="discount-card-info__img-title h4 ttu">Matterhorn</p>
+		</div>
+		<picture class="discount-card-info__picture">
+			<source srcset="/assets/images/discount/matterhorn-bg.webp, /assets/images/discount/matterhorn-bg@2x.webp 2x" type="image/webp">
+			<img src="/assets/images/discount/matterhorn-bg.jpg" srcset="/assets/images/discount/matterhorn-bg@2x.jpg 2x" width="642" height="880" alt="Matterhorn" class="discount-card-info__bg">
+		</picture>
+	</div>
+</div>

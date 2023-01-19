@@ -1,14 +1,13 @@
 const GRAB_CLASS = '_grab';
 
 class DragScroll {
-	constructor() {
+	constructor(container) {
+		this.container = container;
 		this.init();
 	}
 
 	init() {
-		this.dragScrollContainers = document.querySelectorAll('[data-drag-scroll]');
-
-		if (!this.dragScrollContainers.length) {
+		if (!this.container) {
 			return;
 		}
 
@@ -19,14 +18,13 @@ class DragScroll {
 		this.onMouseDown = this.onMouseDown.bind(this);
 		this.containerHasScroll = this.containerHasScroll.bind(this);
 
-		this.dragScrollContainers.forEach(el => {
-			this.container = el;
-			const { hasHorizontalScrollbar, hasVerticalScrollbar } = this.containerHasScroll(el);
-			this.container.addEventListener('mousedown', this.onMouseDown);
-			if (hasHorizontalScrollbar || hasVerticalScrollbar) {
-				el.classList.add(GRAB_CLASS);
-			}
-		});
+		const { hasHorizontalScrollbar, hasVerticalScrollbar } = this.containerHasScroll(
+			this.container
+		);
+		this.container.addEventListener('mousedown', this.onMouseDown);
+		if (hasHorizontalScrollbar || hasVerticalScrollbar) {
+			this.container.classList.add(GRAB_CLASS);
+		}
 	}
 	onMouseMove(evt) {
 		// How far the mouse has been moved
@@ -76,4 +74,4 @@ class DragScroll {
 	}
 }
 
-export default new DragScroll();
+export default DragScroll;

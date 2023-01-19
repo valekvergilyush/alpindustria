@@ -17,6 +17,7 @@ class RangeSlider {
 		this.step = Number(this.slider.getAttribute('data-step'));
 		this.tooltips = this.slider.hasAttribute('data-tooltips');
 		this.tooltipsUnits = this.slider.getAttribute('data-tooltips-units');
+		this.type = this.slider.dataset.rangeSlider;
 
 		const handles =
 			this.minValue && this.maxValue
@@ -43,12 +44,18 @@ class RangeSlider {
 			step: this.step,
 		});
 
-		if (this.outputMin && this.outputMax) {
+		if (this.outputMin && this.outputMax && this.type === 'price') {
 			this.slider.noUiSlider.on('update', values => {
 				const options = { style: 'currency', currency: 'RUB', minimumFractionDigits: 0 };
 
 				this.outputMin.value = new Intl.NumberFormat('ru-RU', options).format(values[0]);
 				this.outputMax.value = new Intl.NumberFormat('ru-RU', options).format(values[1]);
+			});
+		}
+		if (this.outputMin && this.outputMax && this.type === 'year') {
+			this.slider.noUiSlider.on('update', values => {
+				this.outputMin.value = values[0] + ' г.';
+				this.outputMax.value = values[1] + ' г.';
 			});
 		}
 	}
