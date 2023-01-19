@@ -4,6 +4,7 @@
 	--title-min-height: #{rem(140)};
 	$this: &;
 	position: relative;
+	pointer-events: none;
 	z-index: 1;
 	overflow: hidden;
 	padding-top: var(--offset);
@@ -175,6 +176,7 @@
 	}
 	&__section {
 		position: relative;
+		pointer-events: all;
 		display: block;
 		background-color: var(--default-bg-color);
 		overflow: hidden;

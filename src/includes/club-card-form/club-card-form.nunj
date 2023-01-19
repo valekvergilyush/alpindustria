@@ -5,9 +5,16 @@
 	{{ input({
 		type: 'text',
 		id: 'club-card-form-number',
-		className: 'club-card-form__input',
+		className: 'club-card-form__input _card-number',
 		name: 'Номер клубной карты',
 		inputAttr: 'required autocomplete="off" inputmode="numeric"'
+	}) }}
+	{{ input({
+		type: 'text',
+		id: 'club-card-form-sms',
+		className: 'club-card-form__input _check-code',
+		name: 'Код из СМС',
+		inputAttr: 'autocomplete="off" inputmode="numeric"'
 	}) }}
 	<p class="club-card-form__available p3 c-gray-dark">
 		Доступно баллов:
@@ -22,6 +29,13 @@
 	}) }}
 	{{ button({
 		type: 'button',
+		icon: 'arrow-right',
+		iconData: 'width="16" height="16"',
+		className: 'club-card-form__btn _check-code _arrow-s',
+		attr: 'aria-label="Отправить"'
+	}) }}
+	{{ button({
+		type: 'button',
 		text: 'Потратить',
 		icon: 'plus',
 		iconData: 'width="24" height="24"',
@@ -33,5 +47,12 @@
 		icon: 'minus',
 		iconData: 'width="24" height="24"',
 		className: 'club-card-form__btn _cancel _arrow-s ttu'
+	}) }}
+	{{ button({
+		type: 'button',
+		text: 'Выслать код повторно',
+		icon: 'promo-arrow-filled',
+		iconData: 'width="8" height="8"',
+		className: 'club-card-form__btn _send-code'
 	}) }}
 </form>
