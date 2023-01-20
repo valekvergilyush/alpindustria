@@ -11,6 +11,10 @@
 		flex-shrink: 0;
 		width: rem(96);
 		height: rem(124);
+		@media (max-width: $mobile-lg) {
+			width: 80px;
+			height: 104px;
+		}
 		img {
 			width: 100%;
 			height: 100%;
