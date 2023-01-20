@@ -452,6 +452,9 @@
 			padding: 2px 17px;
 			padding-top: 9px;
 		}
+		@media (max-width: $mobile) {
+			padding-inline: 15px;
+		}
 	}
 	&._social-m {
 		padding: rem(1.5) rem(22);

@@ -15,7 +15,7 @@
 	{{ input({
 		type: 'email',
 		id: 'personal-data-email',
-		value: 'hello.aplindustria@gmai.com',
+		value: 'hello.aplindustria@gmail.com',
 		name: 'Почта',
 		className: '_gray'
 	}) }}

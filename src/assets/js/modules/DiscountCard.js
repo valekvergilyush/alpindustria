@@ -22,8 +22,7 @@ class DiscountCard {
 				e.preventDefault();
 				this.discountSection.classList.add(ACTIVE_CLASS);
 				gsap.to(window, {
-					duration: 0.2,
-					delay: 0.3,
+					duration: 0.3,
 					scrollTo: {
 						y: this.discountSection,
 						offsetY: this.headerHeight,

@@ -17,12 +17,12 @@
 			<div class="discount-card-info__profile p3 c-gray-dark">
 				<p>Иван Федорович Крузенштерн</p>
 				<p><a href="tel:+7 (999) 000 00 00">+7 (999) 000 00 00</a></p>
-				<p><a href="mailto:hello.aplindustria@gmai.com">hello.aplindustria@gmai.com</a></p>
+				<p><a href="mailto:hello.aplindustria@gmail.com">hello.aplindustria@gmail.com</a></p>
 			</div>
 			<div class="discount-card-info__btns">
 				{{ button({
 					text: 'Отвязать карту',
-					icon: 'close-button',
+					icon: 'close-popup',
 					iconData: 'width="19" height="19"',
 					className: 'discount-card-info__unlink _arrow-m h7 ttu',
 					attr: 'data-popup-opener="data-editing"'
