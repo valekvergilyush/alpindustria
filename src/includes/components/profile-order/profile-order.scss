@@ -117,13 +117,14 @@
 		td {
 			&:first-child {
 				flex-shrink: 0;
-				width: 36.48%;
-				margin-right: rem(16);
+				width: 40%;
+				padding-right: rem(16);
+				box-sizing: border-box;
 				@media (max-width: $mobile-lg) {
-					width: 41%;
+					width: 50%;
 				}
 				@media (max-width: $mobile) {
-					width: 29%;
+					width: 45%;
 				}
 			}
 			&:last-child {

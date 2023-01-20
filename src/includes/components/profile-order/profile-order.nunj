@@ -51,7 +51,7 @@
 			<div class="profile-order__section">
 				<div class="profile-order__block _bdb">
 					<p class="h7 ttu">Способ получения</p>
-					<table class="profile-order__delivery-table">
+					<table class="profile-order__delivery-table p3">
 						<tr>
 							<td>ФИО</td>
 							<td class="c-gray-dark">Константин Константинопольский</td>
