@@ -316,6 +316,8 @@
 	&._profile {
 		--left-col: 344;
 		--right-col: 1384;
+		box-sizing: border-box;
+		min-height: calc(var(--100vh) - var(--header-height));
 		@media (max-width: $laptop-lg) {
 			--left-col: 436;
 			--right-col: 1296;
