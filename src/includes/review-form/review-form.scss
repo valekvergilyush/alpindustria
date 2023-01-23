@@ -38,12 +38,14 @@
 		}
 	}
 	&__input {
+		margin-bottom: rem(12);
 		&._message {
 			margin-bottom: var(--margin);
 		}
 		&._hobbies {
 			display: grid;
 			gap: rem(24);
+			margin-bottom: 0;
 			@media (max-width: $laptop) {
 				margin-bottom: 20px;
 			}
