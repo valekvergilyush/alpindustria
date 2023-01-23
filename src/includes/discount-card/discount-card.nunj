@@ -17,7 +17,7 @@
 			<section class="discount-card__section _create tabs__panel" data-validate aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
 				{% include "../discount-create-form/discount-create-form.nunj" %}
 			</section>
-			<section class="discount-card__section _add tabs__panel" aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
+			<section class="discount-card__section _add tabs__panel" data-validate aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
 				{% include "../discount-add-form/discount-add-form.nunj" %}
 			</section>
 		</div>

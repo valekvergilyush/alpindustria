@@ -41,13 +41,19 @@
 				type: 'text',
 				id: 'application-form-company',
 				className: 'application-form__input _gray',
-				name: 'Компания'
+				name: 'Компания',
+				label: 'Компания*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-city',
 				className: 'application-form__input _gray',
-				name: 'Город'
+				name: 'Город',
+				label: 'Город*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -55,7 +61,10 @@
 				type: 'text',
 				id: 'application-form-activity',
 				className: 'application-form__input _gray',
-				name: 'Сфера деятельности'
+				name: 'Сфера деятельности',
+				label: 'Сфера деятельности*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -89,7 +98,10 @@
 				type: 'text',
 				id: 'application-form-inn',
 				className: 'application-form__input _gray',
-				name: 'ИНН'
+				name: 'ИНН',
+				label: 'ИНН*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 		</div>
 
@@ -107,13 +119,19 @@
 				type: 'text',
 				id: 'application-form-fio',
 				className: 'application-form__input _gray',
-				name: 'ФИО'
+				name: 'ФИО',
+				label: 'ФИО*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-job-title',
 				className: 'application-form__input _gray',
-				name: 'Должность'
+				name: 'Должность',
+				label: 'Должность*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -122,18 +140,24 @@
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
 				name: 'Телефон',
+				label: 'Телефон*',
+				inputAttr: 'required',
 				attr: 'data-validate-type="phone"'
 			}) }}
 			{{ input({
 				type: 'email',
 				id: 'application-form-email',
 				className: 'application-form__input _gray',
-				name: 'Почта'
+				name: 'Почта',
+				label: 'Почта*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="email"'
 			}) }}
 		</div>
 
-		<p class="application-form__title _brand h5 ttu c-gray-dark" id="hobby-list-label">Какие бренды вас интересуют</p>
-		<ul class="application-form__hobbies c-blue-dark" aria-labelledby="hobby-list-label">
+		<p class="application-form__title _brand h5 ttu c-gray-dark" id="hobby-list-label">Какие бренды вас интересуют*</p>
+		<p class="application-form__hobbies-error-msg p4">Выберите бренды</p>
+		<ul class="application-form__hobbies c-blue-dark" aria-labelledby="hobby-list-label" data-validate-type="toggle-group">
 			{% for hobby in hobbyList %}
 				<li class="application-form__hobbies-item">
 					{{ checkboxButton({
@@ -168,8 +192,7 @@
 				text: 'Подать заявку',
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
-				className: 'application-form__submit _arrow',
-				attr: 'data-popup-opener="data-editing"'
+				className: 'application-form__submit _arrow'
 			}) }}
 		</div>
 	</form>

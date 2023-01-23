@@ -61,14 +61,20 @@
 			type: 'text',
 			id: 'delivery-address-street',
 			className: 'delivery-address__input _gray',
-			name: 'Улица'
+			name: 'Улица',
+			label: 'Улица*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
 		}) }}
 		<div class="delivery-address__fields _cols-4">
 			{{ input({
 				type: 'text',
 				id: 'delivery-address-house',
 				className: 'delivery-address__input _gray',
-				name: 'Дом'
+				name: 'Дом',
+				label: 'Дом*',
+				inputAttr: 'required',
+				attr: 'data-validate-type="text"'
 			}) }}
 			{{ input({
 				type: 'text',
@@ -118,7 +124,7 @@
 					label: 'Дата',
 					id: 'delivery-date-input',
 					className: 'delivery-address__date',
-					inputAttr: 'data-min-date="2022-11-29"'
+					inputAttr: 'data-min-date="today"'
 				}) }}
 				{{ inputTime({
 					name: 'Время',

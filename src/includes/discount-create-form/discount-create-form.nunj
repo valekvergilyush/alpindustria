@@ -9,32 +9,46 @@
 			type: 'text',
 			id: 'discount-create-form-name',
 			className: 'discount-create-form__input _gray',
-			name: 'Имя'
+			name: 'Имя',
+			label: 'Имя*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'discount-create-form-surname',
 			className: 'discount-create-form__input _gray',
-			name: 'Фамилия'
+			name: 'Фамилия',
+			label: 'Фамилия*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'discount-create-form-patronymic',
 			className: 'discount-create-form__input _gray',
-			name: 'Отчество'
+			name: 'Отчество',
+			label: 'Отчество*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'email',
 			id: 'discount-create-form-email',
 			className: 'discount-create-form__input _gray',
-			name: 'Почта'
+			name: 'Почта',
+			label: 'Почта*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="email"'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'discount-create-form-birthday',
 			className: 'discount-create-form__input _gray',
 			name: 'Дата рождения',
-			inputAttr: 'readonly data-datepicker'
+			label: 'Дата*',
+			inputAttr: 'required readonly data-datepicker',
+			attr: 'data-validate-type="text"'
 		}) }}
 		<div class="discount-create-form__radios">
 			{{ radio({
@@ -59,7 +73,9 @@
 				id: 'discount-create-form-tel',
 				className: 'discount-create-form__input _gray _tel',
 				name: 'Телефон',
-				attr: 'data-validate-type="phone"'
+				label: 'Телефон*',
+				attr: 'data-validate-type="phone"',
+				inputAttr: 'required'
 			}) }}
 			{{ button({
 				type: 'button',
@@ -111,6 +127,8 @@
 			className: 'discount-create-form__checkbox _privacy',
 			id: 'discount-create-form-checkbox-privacy',
 			name: 'privacy-agreement',
+			inputAttr: 'required',
+			attr: 'data-validate-type="checkbox"',
 			text: 'Даю согласие на обработку и использование персональных данных на все время действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”).<br>Я подтверждаю, что с условиями оферты ознакомлен (-а)'
 		}) }}
 	</div>
@@ -119,7 +137,6 @@
 		text: 'Создать',
 		icon: 'promo-arrow',
 		iconData: 'width="16" height="16"',
-		className: 'discount-create-form__submit _arrow-l h6 ttu',
-			attr: 'data-popup-opener="data-editing"'
+		className: 'discount-create-form__submit _arrow-l h6 ttu'
 	}) }}
 </form>

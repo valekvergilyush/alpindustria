@@ -69,7 +69,7 @@
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
 				className: 'cart__submit _arrow _rent',
-				attr: 'data-popup-opener="cart-reservation"'
+				attr: 'data-cart-rent-submit'
 			}) }}
 		</div>
 	</div>

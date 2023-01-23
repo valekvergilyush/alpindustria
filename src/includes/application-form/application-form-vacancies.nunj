@@ -42,13 +42,19 @@
 				type: 'text',
 				id: 'application-form-name',
 				className: 'application-form__input _gray',
-				name: 'Имя'
+				name: 'Имя',
+				label: 'Имя*',
+				attr: 'data-validate-type="text"',
+				inputAttr: 'required'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-surname',
 				className: 'application-form__input _gray',
-				name: 'Фамилия'
+				name: 'Фамилия',
+				label: 'Фамилия*',
+				attr: 'data-validate-type="text"',
+				inputAttr: 'required'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -56,14 +62,19 @@
 				type: 'text',
 				id: 'application-form-city',
 				className: 'application-form__input _gray',
-				name: 'Город'
+				name: 'Город',
+				label: 'Город*',
+				attr: 'data-validate-type="text"',
+				inputAttr: 'required'
 			}) }}
 			{{ input({
 				type: 'text',
 				id: 'application-form-birthday',
 				className: 'application-form__input _gray',
 				name: 'Дата рождения',
-				inputAttr: 'readonly data-datepicker'
+				label: 'Дата рождения*',
+				inputAttr: 'required readonly data-datepicker',
+				attr: 'data-validate-type="text"'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -72,13 +83,18 @@
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
 				name: 'Телефон',
-				attr: 'data-validate-type="phone"'
+				label: 'Телефон*',
+				attr: 'data-validate-type="phone"',
+				inputAttr: 'required'
 			}) }}
 			{{ input({
 				type: 'email',
 				id: 'application-form-email',
 				className: 'application-form__input _gray',
-				name: 'Почта'
+				name: 'Почта',
+				label: 'Почта*',
+				attr: 'data-validate-type="email"',
+				inputAttr: 'required'
 			}) }}
 		</div>
 		<div class="application-form__fields">
@@ -86,7 +102,10 @@
 				type: 'text',
 				id: 'application-form-about',
 				className: 'application-form__input _gray',
-				name: 'Расскажите о себе'
+				name: 'Расскажите о себе',
+				label: 'Расскажите о себе*',
+				attr: 'data-validate-type="text"',
+				inputAttr: 'required'
 			}) }}
 		</div>
 		{{ inputFile({
@@ -96,8 +115,9 @@
 			label:'Прикрепите резюме',
 			accept: 'image/*'
 		}) }}
-		<p class="application-form__title h5 ttu c-gray-dark" id="hobby-list-label">Выберите Ваши увлечения</p>
-		<ul class="application-form__hobbies c-blue-dark" aria-labelledby="hobby-list-label">
+		<p class="application-form__title h5 ttu c-gray-dark" id="hobby-list-label">Выберите Ваши увлечения*</p>
+		<p class="application-form__hobbies-error-msg p4">Выберите увлечения</p>
+		<ul class="application-form__hobbies c-blue-dark" aria-labelledby="hobby-list-label" data-validate-type="toggle-group">
 			{% for hobby in hobbyList %}
 				<li class="application-form__hobbies-item">
 					{{ checkboxButton({
@@ -117,7 +137,7 @@
 		}) }}
 
 		<p class="application-form__bottom-text p3 _mobile">Нажимая "подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
-		
+
 		<div class="application-form__bottom">
 			<p class="application-form__bottom-text p3">Нажимая "Подать заявку", вы&nbsp;соглашаетесь с&nbsp;<a href="#" data-popup-opener="offer">условиями оферты</a></p>
 			{{ button({
@@ -125,8 +145,7 @@
 				text: 'Подать заявку',
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
-				className: 'application-form__submit _arrow',
-				attr: 'data-popup-opener="data-editing"'
+				className: 'application-form__submit _arrow'
 			}) }}
 		</div>
 	</form>

@@ -1,17 +1,19 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro inputFile(props) %}
-	<div class="input-file{% if props.className %} {{ props.className }}{% endif %}" data-input-file>
+	<div class="input-file{% if props.className %} {{ props.className }}{% endif %}" data-input-file{% if props.attr %} {{ props.attr }}{% endif %}>
 		<input
 			class="input-file__input visually-hidden"
 			type="file"
 			id="{{ props.id }}"
 			name="{{ props.name }}"
 			{% if props.accept %}accept="{{ props.accept }}"{% endif %}
+			{% if props.inputAttr %} {{ props.inputAttr }}{% endif %}
 		>
 		<label class="input-file__label" for="{{ props.id }}">
 			{{ props.label }}
 		</label>
+		<span class="input-file__error-msg p4">Прикрепите файл</span>
 		<button class="input-file__remove-btn" type="button">
 			{{ icon({
 				iconName: 'close-button',

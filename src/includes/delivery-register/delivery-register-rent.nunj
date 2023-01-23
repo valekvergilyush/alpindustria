@@ -6,29 +6,41 @@
 	<p class="delivery-register__title h7 ttu">Новым покупателям:</p>
 	<div class="delivery-register__fields">
 		{{ input({
-			type: text,
+			type: 'text',
 			id: 'delivery-register-rent-name',
 			name: 'Имя',
+			label: 'Имя*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
 			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
-			type: text,
+			type: 'text',
 			id: 'delivery-register-rent-surname',
 			name: 'Фамилия',
+			label: 'Фамилия*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
 			className: 'delivery-register__input _gray'
 		}) }}
 	</div>
 	<div class="delivery-register__fields">
 		{{ input({
-			type: email,
+			type: 'email',
 			id: 'delivery-register-rent-email',
 			name: 'Почта',
+			label: 'Почта*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="email"',
 			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
-			type: tel,
+			type: 'tel',
 			id: 'delivery-register-rent-tel',
 			name: 'Телефон',
+			label: 'Телефон*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="phone"',
 			className: 'delivery-register__input _gray'
 		}) }}
 	</div>
@@ -43,13 +55,13 @@
 		<p class="delivery-register__legal-text p4 c-gray-dark">Работаем без НДС</p>
 		<div class="delivery-register__fields _legal">
 			{{ input({
-				type: text,
+				type: 'text',
 				id: 'delivery-rent-register-organisation-name',
 				name: 'Название организации',
 				className: 'delivery-register__input _gray'
 			}) }}
 			{{ input({
-				type: number,
+				type: 'number',
 				id: 'delivery-rent-register-settlement-account',
 				name: 'Р/С',
 				className: 'delivery-register__input _gray'
@@ -57,13 +69,13 @@
 		</div>
 		<div class="delivery-register__fields _legal">
 			{{ input({
-				type: text,
+				type: 'text',
 				id: 'delivery-rent-register-legal-address',
 				name: 'Юридический адрес',
 				className: 'delivery-register__input _gray'
 			}) }}
 			{{ input({
-				type: number,
+				type: 'number',
 				id: 'delivery-rent-register-correspondent-account',
 				name: 'К/С',
 				className: 'delivery-register__input _gray'
@@ -71,13 +83,13 @@
 		</div>
 		<div class="delivery-register__fields _legal">
 			{{ input({
-				type: number,
+				type: 'number',
 				id: 'delivery-rent-register-inn',
 				name: 'ИНН',
 				className: 'delivery-register__input _gray'
 			}) }}
 			{{ input({
-				type: number,
+				type: 'number',
 				id: 'delivery-rent-register-kpp',
 				name: 'КПП',
 				className: 'delivery-register__input _gray'
@@ -85,13 +97,13 @@
 		</div>
 		<div class="delivery-register__fields _legal">
 			{{ input({
-				type: text,
+				type: 'text',
 				id: 'delivery-rent-register-name',
 				name: 'Полное наименование банка',
 				className: 'delivery-register__input _gray'
 			}) }}
 			{{ input({
-				type: number,
+				type: 'number',
 				id: 'delivery-rent-register-surname',
 				name: 'БИК',
 				className: 'delivery-register__input _gray'

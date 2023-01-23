@@ -1,5 +1,6 @@
 .input-file {
 	$this: &;
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	&._filled {
@@ -34,5 +35,15 @@
 		height: var(--size);
 		margin-left: rem(8);
 		margin-top: 0.3em;
+	}
+	&__error-msg {
+		display: none;
+		position: absolute;
+		bottom: rem(-4);
+		transform: translateY(100%);
+		color: var(--red-light);
+		.is-invalid & {
+			display: block;
+		}
 	}
 }

@@ -20,15 +20,22 @@ class DiscountCard {
 			}
 			this.addForm.addEventListener('submit', e => {
 				e.preventDefault();
-				this.discountSection.classList.add(ACTIVE_CLASS);
-				gsap.to(window, {
-					duration: 0.3,
-					scrollTo: {
-						y: this.discountSection,
-						offsetY: this.headerHeight,
-					},
-					ease: 'Power1.easeInOut',
-				});
+
+				const invalidInput = this.addForm.querySelector('.is-invalid');
+
+				if (!invalidInput) {
+					this.discountSection.classList.add(ACTIVE_CLASS);
+					gsap.to(window, {
+						duration: 0.3,
+						scrollTo: {
+							y: this.discountSection,
+							offsetY: this.headerHeight,
+						},
+						ease: 'Power1.easeInOut',
+					});
+				} else {
+					this.addForm.querySelector('.is-invalid input').focus();
+				}
 			});
 		}
 		if (this.unlinkBtn) {

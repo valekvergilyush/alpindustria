@@ -23,11 +23,14 @@ class InputDate {
 		this.inputs.forEach(input => {
 			const minDate = input.dataset.minDate || false;
 			const maxDate = input.dataset.maxDate || false;
+			const defaultDate = input.dataset.minDate === 'today' && new Date();
 			input.flatpickrInstance = flatpickr(input, {
 				...OPTIONS,
 				minDate,
 				maxDate,
+				defaultDate,
 			});
+			input.flatpickrInstance.set;
 			this.flatpickrs.push(input.flatpickrInstance);
 		});
 
