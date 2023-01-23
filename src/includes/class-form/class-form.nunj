@@ -8,36 +8,40 @@
 			type: 'text',
 			id: 'class-form-name',
 			name: 'Имя',
+			label: 'Имя*',
 			className: 'class-form__input',
+			inputAttr: 'required',
 			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'class-form-surname',
 			name: 'Фамилия',
+			label: 'Фамилия*',
 			className: 'class-form__input',
+			inputAttr: 'required',
 			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'tel',
 			id: 'class-form-phone',
 			name: 'Телефон',
+			label: 'Телефон*',
 			className: 'class-form__input',
+			inputAttr: 'required',
 			attr: 'data-validate-type="phone"'
 		}) }}
 		{{ input({
 			type: 'email',
 			id: 'class-form-email',
 			name: 'Почта',
-			className: 'class-form__input',
-			attr: 'data-validate-type="email"'
+			className: 'class-form__input'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'class-form-review',
 			name: 'Уже проходили занятия в нашем Горном клубе? Напишите об этом',
-			className: 'class-form__input _review',
-			attr: 'data-validate-type="text"'
+			className: 'class-form__input _review'
 		}) }}
 	</div>
 	{{ checkbox({
