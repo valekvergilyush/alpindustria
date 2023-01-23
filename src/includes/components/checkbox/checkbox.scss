@@ -1,6 +1,7 @@
 .checkbox {
 	$this: &;
 	--size: #{rem(16)};
+	position: relative;
 	display: flex;
 	font-family: var(--font-family-suisse);
 	@media (max-width: $laptop) {
@@ -68,5 +69,15 @@
 	}
 	&._vacancies {
 		margin-bottom: rem(48);
+	}
+	&__error-msg {
+		display: none;
+		position: absolute;
+		bottom: rem(-4);
+		transform: translateY(100%);
+		color: var(--red-light);
+		.is-invalid & {
+			display: block;
+		}
 	}
 }
