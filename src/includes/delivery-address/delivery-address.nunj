@@ -124,7 +124,7 @@
 					label: 'Дата',
 					id: 'delivery-date-input',
 					className: 'delivery-address__date',
-					inputAttr: 'data-min-date="2022-11-29"'
+					inputAttr: 'data-min-date="today"'
 				}) }}
 				{{ inputTime({
 					name: 'Время',
