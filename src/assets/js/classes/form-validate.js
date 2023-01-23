@@ -207,7 +207,7 @@ const showError = el => {
 	}
 };
 
-const showInputsError = inputs => {
+export const showInputsError = inputs => {
 	let flag = true;
 	let result = true;
 	inputs.forEach(input => {

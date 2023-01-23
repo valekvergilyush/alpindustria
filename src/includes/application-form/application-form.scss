@@ -305,4 +305,9 @@
 			display: none;
 		}
 	}
+	&__hobbies-error-msg {
+		display: none;
+		margin-bottom: rem(16);
+		color: var(--red-light);
+	}
 }

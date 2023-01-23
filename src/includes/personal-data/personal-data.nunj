@@ -38,7 +38,7 @@
 				}) }}
 			</button>
 		</div>
-		<div class="personal-data__form" data-data-form="address">
+		<div class="personal-data__form" data-data-form="address" data-validate>
 			{% include "../personal-data-form/personal-data-form.nunj" %}
 			{{ button({
 				className: 'personal-data__add ttu',

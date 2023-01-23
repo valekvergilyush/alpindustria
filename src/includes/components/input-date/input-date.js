@@ -4,6 +4,7 @@ import { Russian } from 'flatpickr/dist/l10n/ru';
 const OPTIONS = {
 	disableMobile: 'true',
 	dateFormat: 'd/m/y',
+	defaultDate: new Date(),
 	locale: Russian,
 };
 class InputDate {
@@ -28,6 +29,7 @@ class InputDate {
 				minDate,
 				maxDate,
 			});
+			input.flatpickrInstance.set;
 			this.flatpickrs.push(input.flatpickrInstance);
 		});
 

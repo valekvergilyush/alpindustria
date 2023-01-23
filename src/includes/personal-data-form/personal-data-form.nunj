@@ -8,7 +8,10 @@
 		type: 'text',
 		id: 'personal-data-country',
 		value: 'Россия',
-		name: 'Страна'
+		name: 'Страна',
+		label: 'Страна*',
+		inputAttr: 'required',
+		attr: 'data-validate-type="text"'
 	}) }}
 	{{ input({
 		className: 'personal-data-form__input _gray',
@@ -16,35 +19,46 @@
 		id: 'personal-data-city',
 		value: 'Санкт-Петербург',
 		inputAttr: 'required',
-		name: 'Город*'
+		name: 'Город',
+		label: 'Город*',
+		attr: 'data-validate-type="text"'
 	}) }}
 	{{ input({
 		className: 'personal-data-form__input _gray',
 		type: 'text',
 		id: 'personal-data-street',
-		name: 'улица'
+		name: 'Улица',
+		label: 'Улица*',
+		inputAttr: 'required',
+		attr: 'data-validate-type="text"'
 	}) }}
 	{{ input({
 		className: 'personal-data-form__input _gray',
 		type: 'number',
 		id: 'personal-data-index',
-		name: 'индекс'
+		name: 'Индекс',
+		label: 'Индекс*',
+		inputAttr: 'required',
+		attr: 'data-validate-type="text"'
 	}) }}
 	<div class="personal-data-form__inputs">
 		{{ input({
 			type: 'number',
 			id: 'personal-data-house',
-			name: 'дом'
+			name: 'Дом',
+			label: 'Дом*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
 			type: 'number',
 			id: 'personal-data-structure',
-			name: 'строение'
+			name: 'Строение'
 		}) }}
 		{{ input({
 			type: 'number',
 			id: 'personal-data-flat',
-			name: 'квартира'
+			name: 'Квартира'
 		}) }}
 	</div>
 	{{ checkbox({

@@ -8,14 +8,18 @@
 			id: 'discount-add-form-number',
 			className: 'discount-add-form__input _gray',
 			name: 'Номер карты',
-			inputAttr: 'inputmode="numeric" required'
+			label: 'Номер карты*',
+			inputAttr: 'inputmode="numeric" required',
+			attr: 'data-validate-type="text" data-limitations="digit"'
 		}) }}
 		{{ input({
 			type: 'text',
 			id: 'discount-add-form-code',
 			className: 'discount-add-form__input',
 			name: 'Проверочный код',
-			inputAttr: 'inputmode="numeric" required'
+			label: 'Проверочный код*',
+			inputAttr: 'inputmode="numeric" required autocomplete="off"',
+			attr: 'data-validate-type="text" data-limitations="digit"'
 		}) }}
 		<div class="discount-add-form__info p4">
 			<p>На&nbsp;карте нет проверочного кода? Давненько вы&nbsp;к&nbsp;нам не&nbsp;заходили. У&nbsp;вас карта старого образца, с&nbsp;декабря 2015&nbsp;мы перешли на&nbsp;новые.</p>

@@ -12,11 +12,19 @@ class PersonalDataForm {
 		}
 		this.openBtns = document.querySelectorAll('[data-data-form-open]');
 		this.closeBtns = document.querySelectorAll('[data-data-form-close]');
+
 		this.forms.forEach(formBlock => {
 			const form = formBlock.querySelector('form');
 			form.addEventListener('submit', e => {
 				e.preventDefault();
-				formBlock.classList.remove(CLASS_ACTIVE);
+
+				const invalidInput = form.querySelector('.is-invalid');
+
+				if (!invalidInput) {
+					formBlock.classList.remove(CLASS_ACTIVE);
+				} else {
+					form.querySelector('.is-invalid input').focus();
+				}
 			});
 		});
 		this.openBtns.forEach(btn => {
