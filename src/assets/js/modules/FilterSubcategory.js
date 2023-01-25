@@ -49,7 +49,7 @@ class FilterSubcategory {
 		item.classList.add(ClassName.OPENED);
 		this.checkContainerScroll();
 
-		if (this.heroContainer) {
+		if (this.heroContainer && this.heroContainer.contains(item)) {
 			this.showSubcategoryBg(button);
 			this.showSubcategoryTitle(button);
 		}
@@ -61,15 +61,37 @@ class FilterSubcategory {
 				this.calcListWidth(list);
 			});
 		}
+
+		if (container.getAttribute('data-subcategory') === 'filter-address') {
+			const breadcrumbs = container.previousElementSibling;
+
+			if (breadcrumbs.hasAttribute('data-subcategory-breadcrumbs')) {
+				breadcrumbs.classList.add(ClassName.OPENED);
+				breadcrumbs.textContent = button.textContent;
+				const div = document.createElement('span');
+				div.classList.add('.breadcrumbs-divider');
+				div.textContent = '/';
+				breadcrumbs.append(div);
+			}
+		}
 	}
 	closeSubcategory(container, item) {
 		container.classList.remove(ClassName.OPENED);
 		item.classList.remove(ClassName.OPENED);
 		this.checkContainerScroll();
 
-		if (this.heroContainer) {
+		if (this.heroContainer && this.heroContainer.contains(item)) {
 			this.showHeroBg();
 			this.showHeroTitle();
+		}
+
+		if (container.getAttribute('data-subcategory') === 'filter-address') {
+			const breadcrumbs = container.previousElementSibling;
+
+			if (breadcrumbs.hasAttribute('data-subcategory-breadcrumbs')) {
+				breadcrumbs.classList.remove(ClassName.OPENED);
+				breadcrumbs.textContent = '';
+			}
 		}
 	}
 	calcListWidth(list) {
@@ -80,7 +102,6 @@ class FilterSubcategory {
 	showSubcategoryBg(button) {
 		const classMod = button.getAttribute('data-subcategory-mod');
 		this.subcategoryBgImg = this.heroContainer.querySelector(`.hero-catalog__bg-img.${classMod}`);
-
 		this.heroBgImage.style.display = 'none';
 		this.subcategoryBgImg.style.display = 'block';
 	}

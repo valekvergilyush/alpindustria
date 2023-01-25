@@ -163,4 +163,12 @@
 		flex-wrap: wrap;
 		gap: var(--buttons-gap);
 	}
+	&__breadcrumbs {
+		display: none;
+		column-gap: rem(8);
+		color: rgba($gray-dark, 0.4);
+		&._opened {
+			display: flex;
+		}
+	}
 }
