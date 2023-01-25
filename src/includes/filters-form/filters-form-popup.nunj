@@ -260,42 +260,45 @@
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle>Магазины (адреса)</button>
-			<ul class="filters-form__item-content _buttons" data-subcategory>
-				{% for btn in cityButtons %}
-					{% if btn.className %}
-						{% set className = btn.className %}
-					{% else %}
-						{% set className = '' %}
-					{% endif %}
-					<li {% if btn.categories %}data-subcategory-item{% endif %}>
-						{{ button({
-							className: 'filters-form__button _quick-filter' + className,
-							text: btn.name,
-							attr: 'data-subcategory-opener'
-						}) }}
-						{% if btn.categories %}
-							<div class="filters-form__subcategories-wrapper">
-								{{ button({
-									className: 'filters-form__button _back',
-									attr: 'aria-label="Назад" data-subcategory-back',
-									icon: 'arrow-left',
-									iconData: 'width="24" height="24"'
-								}) }}
-								<ul class="filters-form__subcategories">
-									{% for category in btn.categories %}
-										<li>
-											{{ button({
-												className: 'filters-form__button _quick-filter' + className,
-												text: category.name
-											}) }}
-										</li>
-									{% endfor %}
-								</ul>
-							</div>
+			<div>
+				<p class="filters-form__breadcrumbs h7 ttu" data-subcategory-breadcrumbs></p>
+				<ul class="filters-form__item-content _buttons" data-subcategory="filter-address">
+					{% for btn in cityButtons %}
+						{% if btn.className %}
+							{% set className = btn.className %}
+						{% else %}
+							{% set className = '' %}
 						{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
+						<li {% if btn.categories %}data-subcategory-item{% endif %}>
+							{{ button({
+								className: 'filters-form__button _quick-filter' + className,
+								text: btn.name,
+								attr: 'data-subcategory-opener'
+							}) }}
+							{% if btn.categories %}
+								<div class="filters-form__subcategories-wrapper">
+									{{ button({
+										className: 'filters-form__button _back',
+										attr: 'aria-label="Назад" data-subcategory-back',
+										icon: 'arrow-left',
+										iconData: 'width="24" height="24"'
+									}) }}
+									<ul class="filters-form__subcategories">
+										{% for category in btn.categories %}
+											<li>
+												{{ button({
+													className: 'filters-form__button _quick-filter' + className,
+													text: category.name
+												}) }}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle>Цвет</button>
