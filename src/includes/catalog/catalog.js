@@ -109,16 +109,18 @@ class Catalog {
 	onWindowResize() {
 		this.setFiltersFormWidth();
 
-		if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
-			this.setLayout(3);
-		} else if (window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) {
-			this.setLayout(2);
-		}
+		if (!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED)) {
+			if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
+				this.setLayout(3);
+			} else if (window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) {
+				this.setLayout(2);
+			}
 
-		if (this.layout === 1 && window.innerWidth > MOBILE_BREAKPOINT) {
-			this.setLayout(2);
-		} else if (this.layout === 2 && window.innerWidth > TABLET_BREAKPOINT) {
-			this.setLayout(4);
+			if (this.layout === 1 && window.innerWidth > MOBILE_BREAKPOINT) {
+				this.setLayout(2);
+			} else if (this.layout === 2 && window.innerWidth > TABLET_BREAKPOINT) {
+				this.setLayout(4);
+			}
 		}
 	}
 	setFiltersFormWidth() {

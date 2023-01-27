@@ -1,8 +1,12 @@
 .catalog {
 	$this: &;
+	position: relative;
 	@media (max-width: $mobile-lg) {
 		--offset-height: 32px;
 		padding-top: var(--offset-height);
+		._filters-opened & {
+			padding-top: 0;
+		}
 	}
 	&__wrapper {
 		position: relative;
@@ -19,6 +23,15 @@
 		opacity: 0;
 		overflow: hidden;
 		will-change: width, opacity;
+		@media (max-width: $laptop-sm) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 5;
+			width: 100%;
+			transform: translateX(-100%);
+			opacity: 1;
+		}
 	}
 	&__filters-form {
 		width: 100%;
