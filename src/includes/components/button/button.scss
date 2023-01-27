@@ -7,6 +7,9 @@
 	align-items: center;
 	box-sizing: border-box;
 	font-family: var(--font-family-suisse);
+	&[disabled] {
+		cursor: default;
+	}
 	&__text,
 	&__icon {
 		user-select: none;

@@ -17,7 +17,7 @@ class Filters {
 
 	init() {
 		this.filtersContainer = document.querySelector('.page__filters');
-		this.filtersHeaderMobile = this.filtersContainer.querySelector('.filters__container');
+		this.filtersHeaderMobile = document.querySelector('.filters__container');
 		this.filtersWrapper = document.querySelector('.catalog__filters-wrapper');
 		this.filtersForm = document.querySelector('.filters-form');
 

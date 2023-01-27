@@ -8,20 +8,22 @@
 	width: 100%;
 	min-height: var(--card-height);
 	box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
-		-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
+		1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
 	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--card-height: 450px;
 	}
+	@media (max-width: $laptop-md) {
+		--empty-logo-size: 200px 160px;
+	}
 	@media (max-width: $laptop) {
 		--card-height: 420px;
-		--empty-logo-size: 200px 160px;
 	}
 	@media (max-width: $mobile-lg) {
 		--card-height: 320px;
 		--empty-logo-size: 146px 122px;
-		box-shadow: inset 0 -1px 0 0 var(--blue-dark), -1px -1px 0 0 var(--blue-dark),
-			0 -1px 0 0 var(--blue-dark);
+		box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
+			-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
 	}
 	&._empty {
 		background-color: var(--gray-light);
@@ -29,6 +31,8 @@
 		background-size: var(--empty-logo-size);
 		background-position: center;
 		background-repeat: no-repeat;
+		box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
+			-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
 	}
 	&._start {
 		--logo-width: #{rem(76)};
