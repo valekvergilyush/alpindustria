@@ -88,6 +88,10 @@
 		},
 		{
 			"name": "video"
+		},
+		{
+			"name": "unsubscribe-form",
+			"animation": "RTL"
 		}
 	]
 }

@@ -1,0 +1,139 @@
+.unsubscribe-form {
+	$this: &;
+	--margin: #{rem(74)};
+	--bottom-height: #{rem(176)};
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	@media (max-width: $laptop-lg) {
+		--margin: 64px;
+		--bottom-height: 134px;
+	}
+	@media (max-width: $laptop) {
+		--margin: 37px;
+		--bottom-height: 120px;
+	}
+	@media (max-width: $tablet) {
+		--margin: 24px;
+	}
+	@media (max-width: $mobile-lg) {
+		--margin: 40px;
+		--bottom-height: 64px;
+	}
+	&__title {
+		padding-right: rem(50);
+		margin-top: -0.1em;
+		margin-bottom: var(--margin);
+		@media (max-width: $laptop) {
+			margin-top: 0;
+		}
+	}
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.4em;
+		margin-bottom: rem(96);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: rem(48);
+		}
+		@media (max-width: $laptop) {
+			margin-bottom: rem(32);
+		}
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		@media (max-width: $laptop-sm) {
+			padding-bottom: calc(var(--bottom-height) + 32px);
+		}
+	}
+	&__list {
+		display: grid;
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			gap: 20px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(24);
+		@media (max-width: $laptop-md) {
+			gap: 20px;
+		}
+		@media (max-width: $laptop-sm) {
+			gap: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
+	}
+	&__switch {
+		flex-shrink: 0;
+	}
+	&__item-inner {
+		flex-grow: 1;
+	}
+	&__name {
+		@media (max-width: $laptop-sm) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+	&__descr {
+		opacity: 0.5;
+		@media (max-width: $laptop-sm) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+		}
+	}
+	&__bottom {
+		position: relative;
+		display: flex;
+		width: calc(100% + var(--popup-padding) * 2);
+		min-height: var(--bottom-height);
+		margin: auto calc(0px - var(--popup-padding)) 0;
+		color: var(--white);
+		background-color: var(--blue-dark);
+		@media (max-width: $laptop-sm) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: calc(100% + var(--popup-padding));
+		}
+	}
+	&__submit {
+		position: static;
+		margin: auto rem(64) rem(40) auto;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: $laptop-lg) {
+			margin-right: 40px;
+		}
+		@media (max-width: $laptop) {
+			margin-right: 24px;
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-right: 16px;
+			margin-bottom: 12px;
+		}
+	}
+}

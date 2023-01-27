@@ -30,6 +30,7 @@
 		&[data-popup-wrapper='availability'],
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='unsubscribe-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='product-appear'],
@@ -58,6 +59,7 @@
 		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='city-form'],
 		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='unsubscribe-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='wishlist-services'],
 		&[data-popup-wrapper='auth'],
@@ -207,6 +209,7 @@
 		&[data-popup='cart'],
 		&[data-popup='cart-empty'],
 		&[data-popup='cart-services'],
+		&[data-popup='unsubscribe-form'],
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
 		}
