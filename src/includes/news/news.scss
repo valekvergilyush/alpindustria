@@ -1,5 +1,7 @@
 .news {
 	--filter-gap: #{rem(16)};
+	display: flex;
+	flex-direction: column;
 	@media (max-width: $laptop-sm) {
 		--filter-gap: 8px;
 	}
@@ -118,6 +120,11 @@
 	}
 	&__show-more-btn {
 		margin-top: -1px;
+		._no-results &[disabled] {
+			> * {
+				display: none;
+			}
+		}
 		&._show-more {
 			@media (max-width: $laptop-sm) {
 				--height: 176px;
