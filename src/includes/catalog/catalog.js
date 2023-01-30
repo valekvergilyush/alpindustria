@@ -51,7 +51,7 @@ class Catalog {
 
 		if (window.innerWidth > 640) {
 			gsap.to(window, {
-				scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
+				scrollTo: { y: '#catalog-main', offsetY: this.filtersPanel.offsetHeight },
 				onComplete: () => {
 					Header.hideHeader();
 				},
@@ -64,7 +64,7 @@ class Catalog {
 
 				gsap.to(window, {
 					scrollTo: {
-						y: '#main',
+						y: '#catalog-main',
 						offsetY: offsetY,
 					},
 					onComplete: () => {
@@ -74,7 +74,7 @@ class Catalog {
 			} else {
 				gsap.to(window, {
 					scrollTo: {
-						y: '#main',
+						y: '#catalog-main',
 						offsetY: this.filtersPanel.querySelector('.filters__container').offsetHeight,
 					},
 					onComplete: () => {

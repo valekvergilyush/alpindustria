@@ -62,7 +62,7 @@ class Filters {
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(window, {
-				scrollTo: { y: '#main', offsetY: this.filtersContainer.offsetHeight - 2 },
+				scrollTo: { y: '#catalog-main', offsetY: this.filtersContainer.offsetHeight - 2 },
 			});
 			gsap.to(this.filtersWrapper, {
 				width: document.body.clientWidth / 2,
@@ -75,7 +75,7 @@ class Filters {
 		} else {
 			gsap.to(window, {
 				scrollTo: {
-					y: '#main',
+					y: '#catalog-main',
 					offsetY: this.filtersHeaderMobile.offsetHeight - 1,
 				},
 			});
