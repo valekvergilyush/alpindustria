@@ -31,7 +31,9 @@
 		{{ brandMain(brandMainData) }}
 		{% include "../includes/brand-history/brand-history.nunj" %}
 		{% include "../includes/banner-section/banner-section.nunj" %}
-		{% include "../includes/filters/filters.nunj" %}
-		{% include "../includes/catalog/catalog.nunj" %}
+		<div id="catalog-main">
+			{% include "../includes/filters/filters.nunj" %}
+			{% include "../includes/catalog/catalog.nunj" %}
+		</div>
 	</main>
 {% endblock %}
