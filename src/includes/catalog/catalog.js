@@ -22,7 +22,7 @@ class Catalog {
 		this.numbersContainer = document.querySelector('.filters__items-number');
 		this.numbersContainer && (this.numbersContainerHeight = this.numbersContainer.offsetHeight);
 
-		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
+		if (!this.layoutControls || !this.catalogList || !this.filtersWrapper) {
 			return;
 		}
 
