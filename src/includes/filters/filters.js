@@ -28,6 +28,7 @@ class Filters {
 		this.toggler = this.filtersContainer.querySelector('[data-filters-toggle]');
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
 		this.accordions = [];
+		this.filtersContainer.animating = false;
 
 		this.isOpened = HTML_CLASSLIST.contains(ClassName.OPENED);
 
@@ -48,7 +49,11 @@ class Filters {
 		onWindowWidthChange(this.mqTablet);
 	}
 	toggle() {
+		this.filtersContainer.animating = true;
 		this.isOpened ? this.close() : this.open();
+		this.animTO = setTimeout(() => {
+			this.filtersContainer.animating = false;
+		}, 300);
 	}
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
