@@ -44,7 +44,7 @@
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			padding-bottom: calc(var(--bottom-height) + 32px);
 		}
 	}
@@ -106,7 +106,7 @@
 		margin: auto calc(0px - var(--popup-padding)) 0;
 		color: var(--white);
 		background-color: var(--blue-dark);
-		@media (max-width: $laptop-sm) {
+		@media (max-width: $tablet) {
 			position: fixed;
 			left: 0;
 			bottom: 0;
