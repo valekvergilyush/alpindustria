@@ -1,0 +1,79 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set newsFilters1 = [
+	{
+		name: 'Все материалы'
+	},
+	{
+		name: 'Как выбрать...'
+	},
+	{
+		name: 'Обзоры снаряжения',
+		active: true
+	},
+	{
+		name: 'Материалы  и технологии'
+	},
+	{
+		name: 'Новости outdoor'
+	}
+] %}
+{% set newsFilters2 = [
+	{
+		name: 'Советы и инструкции'
+	},
+	{
+		name: 'История'
+	},
+	{
+		name: 'Тесты и отзывы'
+	},
+	{
+		name: 'Восхождения и путешествия'
+	}
+] %}
+
+<section class="news _no-results">
+	<h1 class="news__title h4 ttu">Новости и&nbsp;статьи</h1>
+	<div class="news__filter-btns h4">
+		<div class="news__filter-btns-wrap">
+			{% for item in newsFilters1 %}
+				{{ button({
+					className: 'news__filter _quick-filter',
+					text: item.name
+				}) }}
+			{% endfor %}
+		</div>
+		<div class="news__filter-btns-wrap">
+			{% for item in newsFilters2 %}
+				{{ button({
+					className: 'news__filter _quick-filter',
+					text: item.name
+				}) }}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="news__filters-line container">
+		<p class="news__number p2">242 товара</p>
+	</div>
+	<ul class="page__catalog-list catalog__list">
+		<li class="catalog__item _no-results">
+			<p class="catalog__item-title h4 ttu">Новостей не найдено</p>
+			<p class="p1">Попробуйте изменить параметры фильтров и попробовать еще раз</p>
+		</li>
+		<li class="catalog__item _empty">
+			{% include "../catalog-promo/empty-card.nunj" %}
+		</li>
+		<li class="catalog__item _empty">
+			{% include "../catalog-promo/empty-card.nunj" %}
+		</li>
+	</ul>
+	{{ button({
+		className: 'news__show-more-btn _show-more',
+		text: 'Показать еще',
+		icon: 'plus-circle',
+		iconData: 'width="32" height="32"',
+		attr: 'disabled'
+	}) }}
+	{% include "../cta-news/cta-news.nunj" %}
+</section>

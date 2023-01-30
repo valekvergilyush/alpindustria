@@ -1,0 +1,9 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Новости | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/news/news-no-results-banner.nunj" %}
+	</main>
+{% endblock %}

@@ -1,5 +1,5 @@
 {% from "../components/button/button.nunj" import button %}
-{% from "../components/news-list/news-list.nunj" import newsList %}
+{% from "../components/news-item/news-item.nunj" import newsItem %}
 
 {% set newsFilters1 = [
 	{
@@ -171,9 +171,16 @@
 	<div class="news__filters-line container">
 		<p class="news__number p2">242 товара</p>
 	</div>
-	{{ newsList({
+	{# {{ newsList({
 		list: newsListData
-	}) }}
+	}) }} #}
+	<ul class="page__catalog-list catalog__list _news">
+		{% for newsData in newsListData %}
+			<li class="catalog__item">
+				{{ newsItem(newsData) }}
+			</li>
+		{% endfor %}
+	</ul>
 	{{ button({
 		className: 'news__show-more-btn _show-more',
 		text: 'Показать еще',

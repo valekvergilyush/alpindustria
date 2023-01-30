@@ -331,6 +331,7 @@
 		}
 	}
 	&__results-list {
+		position: relative;
 		display: none;
 		#{$this}._shop &._shop,
 		#{$this}._rent &._rent {
@@ -366,6 +367,15 @@
 		}
 		#{$this}._news &._news {
 			display: flex;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 1px;
+			background-color: var(--gray-light);
 		}
 	}
 }

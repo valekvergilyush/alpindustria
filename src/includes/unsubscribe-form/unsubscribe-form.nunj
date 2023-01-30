@@ -1,0 +1,56 @@
+{% from "../components/switch/switch.nunj" import switch %}
+{% from "../components/button/button.nunj" import button %}
+
+{% set subscribtion = [
+	{
+		inputValue: 'main',
+		name: 'Основная рассылка АльпИндустрии',
+		descr: 'Не чаще раза в неделю мы присылаем самые свежие новости'
+	},
+	{
+		inputValue: 'main',
+		name: 'Рассылка туроператора',
+		descr: 'Еженедельные подборки приключений'
+	},
+	{
+		inputValue: 'main',
+		checked: true,
+		name: 'Рассылка Горной Школы',
+		descr: 'Позволит получать напоминания и новости о лекциях и мероприятиях Горной Школы'
+	}
+] %}
+
+<section class="unsubscribe-form" data-validate>
+	<h2 class="unsubscribe-form__title h5 ttu">Управление подписками</h2>
+	<div class="unsubscribe-form__desc p2 c-gray-dark">
+		<p>Мы&nbsp;хотим, чтобы вы&nbsp;получали только полезные письма.Снимите галочки с&nbsp;тех рассылок, которые вам не&nbsp;интересны, и&nbsp;они перестанут приходить в&nbsp;почтовый ящик.</p>
+		<p>E-mail: lirachka@yandex.ru</p>
+	</div>
+	<form class="unsubscribe-form__form" data-unsubscribe-form>
+		<ul class="unsubscribe-form__list">
+			{% for item in subscribtion %}
+				<li class="unsubscribe-form__item">
+					<div class="unsubscribe-form__item-inner c-gray-dark">
+						<p class="unsubscribe-form__name p1">{{ item.name }}</p>
+						<p class="unsubscribe-form__descr p3">{{ item.descr }}</p>
+					</div>
+					{{ switch({
+						className: 'unsubscribe-form__switch',
+						name: 'subscribtion',
+						value: item.inputValue,
+						checked: item.checked
+					}) }}
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="unsubscribe-form__bottom">
+			{{ button({
+				type: 'submit',
+				text: 'Сохранить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'unsubscribe-form__submit _arrow'
+			}) }}
+		</div>
+	</form>
+</section>

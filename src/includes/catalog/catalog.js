@@ -22,7 +22,7 @@ class Catalog {
 		this.numbersContainer = document.querySelector('.filters__items-number');
 		this.numbersContainer && (this.numbersContainerHeight = this.numbersContainer.offsetHeight);
 
-		if (!this.layoutControls && !this.catalogList && !this.filtersWrapper) {
+		if (!this.layoutControls || !this.catalogList || !this.filtersWrapper) {
 			return;
 		}
 
@@ -51,7 +51,7 @@ class Catalog {
 
 		if (window.innerWidth > 640) {
 			gsap.to(window, {
-				scrollTo: { y: '#main', offsetY: this.filtersPanel.offsetHeight },
+				scrollTo: { y: '#catalog-main', offsetY: this.filtersPanel.offsetHeight },
 				onComplete: () => {
 					Header.hideHeader();
 				},
@@ -64,7 +64,7 @@ class Catalog {
 
 				gsap.to(window, {
 					scrollTo: {
-						y: '#main',
+						y: '#catalog-main',
 						offsetY: offsetY,
 					},
 					onComplete: () => {
@@ -74,7 +74,7 @@ class Catalog {
 			} else {
 				gsap.to(window, {
 					scrollTo: {
-						y: '#main',
+						y: '#catalog-main',
 						offsetY: this.filtersPanel.querySelector('.filters__container').offsetHeight,
 					},
 					onComplete: () => {
@@ -109,16 +109,18 @@ class Catalog {
 	onWindowResize() {
 		this.setFiltersFormWidth();
 
-		if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
-			this.setLayout(3);
-		} else if (window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) {
-			this.setLayout(2);
-		}
+		if (!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED)) {
+			if (window.innerWidth <= TABLET_BREAKPOINT && this.layout > 3) {
+				this.setLayout(3);
+			} else if (window.innerWidth <= MOBILE_BREAKPOINT && this.layout > 2) {
+				this.setLayout(2);
+			}
 
-		if (this.layout === 1 && window.innerWidth > MOBILE_BREAKPOINT) {
-			this.setLayout(2);
-		} else if (this.layout === 2 && window.innerWidth > TABLET_BREAKPOINT) {
-			this.setLayout(4);
+			if (this.layout === 1 && window.innerWidth > MOBILE_BREAKPOINT) {
+				this.setLayout(2);
+			} else if (this.layout === 2 && window.innerWidth > TABLET_BREAKPOINT) {
+				this.setLayout(4);
+			}
 		}
 	}
 	setFiltersFormWidth() {

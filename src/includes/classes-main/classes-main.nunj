@@ -63,11 +63,6 @@
 			>
 		</label>
 		<p class="classes-main__number p2">24 занятия</p>
-		{{ button({
-			className: 'classes-main__search',
-			icon: 'search',
-			iconData: 'viewBox="0 0 32 32" width="36" height="36"'
-		}) }}
 	</div>
 	<div class="classes-main__bg">
 		<img src="/assets/images/classes/classes-bg.jpg" srcset="/assets/images/classes/classes-bg@2x.jpg 2x" width="1728" height="725" alt="">

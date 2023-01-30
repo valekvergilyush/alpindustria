@@ -1,4 +1,5 @@
 import ScrollHelper from '../../assets/js/helpers/ScrollHelper';
+import utils from '../../assets/js/utils/utils';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -41,10 +42,8 @@ class Header {
 
 		window.addEventListener('resize', this.onWindowResize);
 
-		clearTimeout(this.TO);
-		this.TO = setTimeout(() => {
-			HTML_CLASSLIST.add('is-header-inited');
-		}, 200);
+		const currentScrollTop = utils.getCurrentScrollTop();
+		this.onWindowScroll(currentScrollTop);
 	}
 	_directionChangeController(direction) {
 		this.direction = direction;

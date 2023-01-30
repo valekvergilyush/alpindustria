@@ -40,7 +40,7 @@
 	&__edit {
 		@include reset-btn;
 		flex-shrink: 0;
-		color: var(--dark-blue);
+		color: var(--blue-dark);
 		&:hover {
 			#{$this}__edit-icon {
 				fill: currentColor;

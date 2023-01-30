@@ -3,9 +3,6 @@
 	"siteName": "АльпИндустрия",
 	"popupsList": [
 		{
-			"name": "filters-form"
-		},
-		{
 			"name": "availability",
 			"animation": "RTL"
 		},
@@ -91,6 +88,10 @@
 		},
 		{
 			"name": "video"
+		},
+		{
+			"name": "unsubscribe-form",
+			"animation": "RTL"
 		}
 	]
 }

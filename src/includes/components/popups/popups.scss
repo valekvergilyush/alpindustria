@@ -27,12 +27,10 @@
 	&__popup-wrapper {
 		position: relative;
 		display: none;
-		&[data-popup-wrapper='filters-form'] {
-			overflow: auto;
-		}
 		&[data-popup-wrapper='availability'],
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='unsubscribe-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='auth'],
 		&[data-popup-wrapper='product-appear'],
@@ -61,6 +59,7 @@
 		&[data-popup-wrapper='sizes'],
 		&[data-popup-wrapper='city-form'],
 		&[data-popup-wrapper='review-form'],
+		&[data-popup-wrapper='unsubscribe-form'],
 		&[data-popup-wrapper='wishlist'],
 		&[data-popup-wrapper='wishlist-services'],
 		&[data-popup-wrapper='auth'],
@@ -191,21 +190,6 @@
 				width: 100%;
 			}
 		}
-		&[data-popup='filters-form'] {
-			padding-top: calc(var(--header-height) + 24px);
-			.catalog__filters-form {
-				position: static !important;
-				width: 100% !important;
-				padding: 0 !important;
-				border: 0 !important;
-				transform: none !important;
-			}
-			@media (max-width: $laptop-sm) {
-				.popups__close-button {
-					display: none;
-				}
-			}
-		}
 		&[data-popup='availability'],
 		&[data-popup='sizes'],
 		&[data-popup='review-form'] {
@@ -225,6 +209,7 @@
 		&[data-popup='cart'],
 		&[data-popup='cart-empty'],
 		&[data-popup='cart-services'],
+		&[data-popup='unsubscribe-form'],
 		&[data-popup='review-form'] {
 			padding-bottom: 0;
 		}

@@ -1,13 +1,49 @@
 .community-classes-list {
+	--empty-logo-size: 22.5rem 18rem;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	padding-top: 1px;
 	overflow: hidden;
+	@media (max-width: $laptop-md) {
+		--empty-logo-size: 200px 160px;
+	}
 	@media (max-width: $laptop-sm) {
 		grid-template-columns: repeat(1, 1fr);
 	}
 	&__item {
 		box-shadow: inset 0 -1px 0 0 var(--blue-dark), -1px -1px 0 0 var(--blue-dark),
 			0 -1px 0 0 var(--blue-dark);
+		&._no-results {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			row-gap: rem(64);
+			box-sizing: border-box;
+			min-height: 450px;
+			padding: rem(40);
+			p {
+				max-width: rem(490);
+			}
+			@media (max-width: $laptop) {
+				padding: 32px;
+				min-height: 420px;
+			}
+			@media (max-width: $mobile-lg) {
+				padding: 24px 16px;
+				padding-top: 26px;
+				min-height: 280px;
+			}
+		}
+		&._empty {
+			min-height: 450px;
+			background-color: var(--gray-light);
+			background-image: inline('empty-logo.svg');
+			background-size: var(--empty-logo-size);
+			background-position: center;
+			background-repeat: no-repeat;
+			@media (max-width: $laptop) {
+				min-height: 420px;
+			}
+		}
 	}
 }

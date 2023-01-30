@@ -9,13 +9,8 @@
 	{% include "../../includes/hero-catalog/hero-catalog.nunj" %}
 	{% include "../../includes/filters/filters.nunj" %}
 	<main id="catalog-main" class="page__main">
-		{% include "../../includes/catalog/catalog.nunj" %}
+		{% include "../../includes/catalog/catalog-no-results-banner.nunj" %}
 		{% include "../../includes/news-section/news-section.nunj" %}
-		{% include "../../includes/advantages/advantages.nunj" %}
-		{{ ticker({
-			className: 'page__ticker _index',
-			text: 'Команда, влюбленная в горы'
-		}) }}
 		{% include "../../includes/catalog-accordion/catalog-accordion.nunj" %}
 	</main>
 {% endblock %}
