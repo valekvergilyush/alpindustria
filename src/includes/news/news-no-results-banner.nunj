@@ -65,15 +65,20 @@
 			{% include "../catalog-promo/empty-card.nunj" %}
 		</li>
 		<li class="catalog__item _empty">
-			{% include "../catalog-promo/empty-card.nunj" %}
+			{% include "../catalog-promo/promo-1.nunj" %}
+		</li>
+		<li class="catalog__item catalog-promo _xl">
+			{% include "../catalog-promo/promo-2.nunj" %}
+		</li>
+		<li class="catalog__item catalog-promo _xl">
+			{% include "../catalog-promo/promo-3.nunj" %}
 		</li>
 	</ul>
 	{{ button({
 		className: 'news__show-more-btn _show-more',
 		text: 'Показать еще',
 		icon: 'plus-circle',
-		iconData: 'width="32" height="32"',
-		attr: 'disabled'
+		iconData: 'width="32" height="32"'
 	}) }}
 	{% include "../cta-news/cta-news.nunj" %}
 </section>
