@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import Header from '../header/header';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -8,7 +9,7 @@ const ClassName = {
 	MENU_OPENED: '_menu-opened',
 };
 
-class Header {
+class Menu {
 	constructor() {
 		this.init();
 	}
@@ -35,6 +36,7 @@ class Header {
 		});
 
 		this.isMenuOpened = false;
+		this.menu.animating = false;
 
 		this.onWindowKeydown = this.onWindowKeydown.bind(this);
 		this.onMenuOpenerClick = this.onMenuOpenerClick.bind(this);
@@ -58,7 +60,11 @@ class Header {
 		enableBodyScroll(this.menu);
 	}
 	toggleMenu() {
+		this.menu.animating = true;
 		this.isMenuOpened ? this.closeMenu() : this.openMenu();
+		this.animTO = setTimeout(() => {
+			this.menu.animating = false;
+		}, 300);
 	}
 	onMenuOpenerClick(evt) {
 		evt.preventDefault();
@@ -81,4 +87,4 @@ class Header {
 	}
 }
 
-export default new Header();
+export default new Menu();

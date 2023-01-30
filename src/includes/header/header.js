@@ -7,6 +7,7 @@ const ClassName = {
 	FIXED: '_fixed',
 	HEADER_OPENED: '_header-opened',
 	FILTERS_OPENED: '_filters-opened',
+	HIDDEN_NUM: '_hidden-num',
 };
 
 const Direction = {
@@ -26,6 +27,7 @@ class Header {
 		}
 
 		this.isHeaderHidden = false;
+		this.menu = document.querySelector('[data-menu]');
 		this.filtersElement = document.querySelector('.page__filters');
 		this.timeline = document.querySelector('[data-timeline]');
 
@@ -33,7 +35,7 @@ class Header {
 		this.onWindowResize = this.onWindowResize.bind(this);
 
 		if (this.filtersElement) {
-			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+			this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
 		}
 
 		this.headerElementHeight = this.headerElement.offsetHeight;
@@ -57,23 +59,34 @@ class Header {
 	}
 	onWindowScroll(y) {
 		this.scrollY = y;
+
 		if (this.scrollY < this.headerElementHeight * 1.5) {
 			this.headerElement.classList.remove(ClassName.FIXED);
 		} else {
 			this.headerElement.classList.add(ClassName.FIXED);
 		}
 
-		if (this.filtersElementPos > 0 && this.direction === Direction.UP) {
+		if (this.filtersElementTopPos > 0 && this.direction === Direction.UP) {
 			this.showHeader();
 		}
 
 		if (this.filtersElement) {
-			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+			this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
+			this.catalogListTopPos = document
+				.querySelector('.page__catalog-list')
+				.getBoundingClientRect().top;
 
-			if (this.filtersElementPos < 0) {
+			console.log(this.filtersElement.offsetHeight);
+			if (this.filtersElementTopPos < 0) {
 				this.filtersElement.classList.add(ClassName.FIXED);
-			} else {
+			} else if (this.filtersElementTopPos > this.headerElementHeight) {
 				this.filtersElement.classList.remove(ClassName.FIXED);
+			}
+
+			if (this.catalogListTopPos < 0) {
+				this.filtersElement.classList.add(ClassName.HIDDEN_NUM);
+			} else if (this.catalogListTopPos > this.filtersElement.offsetHeight) {
+				this.filtersElement.classList.remove(ClassName.HIDDEN_NUM);
 			}
 		}
 		HTML_CLASSLIST.add('is-header-inited');
@@ -81,14 +94,17 @@ class Header {
 	onWindowResize() {
 		this.headerElementHeight = this.headerElement.offsetHeight;
 		if (this.filtersElement) {
-			this.filtersElementPos = this.filtersElement.getBoundingClientRect().top;
+			this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
 		}
 	}
 	showHeader() {
+		if (this.filtersElement.animating) {
+			return;
+		}
 		this.isFilterNotOpened = true;
 		if (this.filtersElement) {
 			this.isFilterNotOpened =
-				!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementPos > 0;
+				!HTML_CLASSLIST.contains(ClassName.FILTERS_OPENED) || this.filtersElementTopPos > 0;
 		}
 		if (this.isFilterNotOpened || this.scrollY === 0) {
 			this.isHeaderHidden = !this.isHeaderHidden;
@@ -107,6 +123,9 @@ class Header {
 		}
 	}
 	hideHeader() {
+		if (this.menu.animating) {
+			return;
+		}
 		this.isHeaderHidden = !this.isHeaderHidden;
 		gsap.to(this.headerElement, {
 			yPercent: -100,
