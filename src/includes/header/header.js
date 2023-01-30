@@ -98,7 +98,7 @@ class Header {
 		}
 	}
 	showHeader() {
-		if (this.filtersElement.animating) {
+		if (this.filtersElement && this.filtersElement.animating) {
 			return;
 		}
 		this.isFilterNotOpened = true;
