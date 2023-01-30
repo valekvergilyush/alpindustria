@@ -8,7 +8,7 @@
 	width: 100%;
 	min-height: var(--card-height);
 	box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
-		1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
+		-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
 	overflow: hidden;
 	@media (max-width: $laptop-lg) {
 		--card-height: 450px;

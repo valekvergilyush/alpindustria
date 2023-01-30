@@ -58,6 +58,7 @@
 	}
 	&__list {
 		--item-width: 25%;
+		position: relative;
 		display: grid;
 		width: 100%;
 		grid-template-columns: repeat(auto-fit, minmax(var(--item-width), 1fr));
@@ -403,6 +404,15 @@
 				}
 			}
 		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 1px;
+			background-color: var(--gray-light);
+		}
 	}
 	&__item {
 		display: flex;
@@ -443,6 +453,10 @@
 			p {
 				max-width: rem(490);
 			}
+		}
+		._news & {
+			box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
+				-1px -1px 0 0 var(--blue-dark), 0 -1px 0 0 var(--blue-dark);
 		}
 		@media (max-width: $laptop) {
 			&._no-results {
