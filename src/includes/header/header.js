@@ -72,20 +72,22 @@ class Header {
 
 		if (this.filtersElement) {
 			this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
+			const numbersContainerHeight =
+				this.filtersElement.offsetHeight -
+				Number.parseInt(getComputedStyle(this.filtersElement).paddingBottom, 10);
 			this.catalogListTopPos = document
 				.querySelector('.page__catalog-list')
 				.getBoundingClientRect().top;
 
-			console.log(this.filtersElement.offsetHeight);
 			if (this.filtersElementTopPos < 0) {
 				this.filtersElement.classList.add(ClassName.FIXED);
 			} else if (this.filtersElementTopPos > this.headerElementHeight) {
 				this.filtersElement.classList.remove(ClassName.FIXED);
 			}
 
-			if (this.catalogListTopPos < 0) {
+			if (this.catalogListTopPos < numbersContainerHeight) {
 				this.filtersElement.classList.add(ClassName.HIDDEN_NUM);
-			} else if (this.catalogListTopPos > this.filtersElement.offsetHeight) {
+			} else if (this.catalogListTopPos > numbersContainerHeight) {
 				this.filtersElement.classList.remove(ClassName.HIDDEN_NUM);
 			}
 		}

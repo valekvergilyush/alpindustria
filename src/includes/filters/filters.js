@@ -8,6 +8,7 @@ const TABLET_BREAKPOINT = 992;
 
 const ClassName = {
 	OPENED: '_filters-opened',
+	HIDDEN_NUM: '_hidden-num',
 };
 
 class Filters {
@@ -135,6 +136,8 @@ class Filters {
 				clearProps: true,
 			});
 		}
+
+		this.filtersContainer.classList.remove(ClassName.HIDDEN_NUM);
 
 		document.querySelector('.filters__layout').classList.remove('no-pe');
 
