@@ -58,7 +58,7 @@
 	</div>
 	<ul class="page__catalog-list catalog__list">
 		<li class="catalog__item _no-results">
-			<p class="catalog__item-title h4 ttu">Новостей не найдено</p>
+			<p class="catalog__item-title h4 ttu">Новостей не&nbsp;найдено</p>
 			<p class="p1">Попробуйте изменить параметры фильтров и попробовать еще раз</p>
 		</li>
 		<li class="catalog__item _empty">
