@@ -49,7 +49,8 @@
 				text: 'Сохранить',
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
-				className: 'unsubscribe-form__submit _arrow'
+				className: 'unsubscribe-form__submit _arrow',
+				attr: 'data-notification-open="save"'
 			}) }}
 		</div>
 	</form>
