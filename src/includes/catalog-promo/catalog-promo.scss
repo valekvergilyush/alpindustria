@@ -5,6 +5,7 @@
 	--card-padding: #{rem(16)};
 	--card-margin: #{rem(8)};
 	position: relative;
+	display: block;
 	width: 100%;
 	min-height: var(--card-height);
 	box-shadow: inset -1px 0 0 0 var(--blue-dark), inset 0 -1px 0 0 var(--blue-dark),
