@@ -31,7 +31,7 @@ class RangeSlider {
 			to: numericValue => `${Math.round(numericValue) + this.tooltipsUnits}`,
 		};
 
-		noUiSlider.create(this.slider, {
+		this.slider.noUiSlider = noUiSlider.create(this.slider, {
 			start: handles,
 			connect: connect,
 			margin: this.step,
