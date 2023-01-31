@@ -4,6 +4,7 @@
 	{% include "../notification-wishlist/notification-wishlist.nunj" %}
 	{% include "../notification-cart/notification-cart.nunj" %}
 	{% include "../notification-link/notification-link.nunj" %}
+	{% include "../notification-save/notification-save.nunj" %}
 	<button class="notification__close" type="button" data-notification-close>
 		{{ icon({
 			iconName: "close-popup",

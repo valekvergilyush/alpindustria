@@ -1,0 +1,12 @@
+<ul class="community-classes-list _no-results">
+	<li class="community-classes-list__item _no-results">
+		<p class="community-classes-list__item-title h4 ttu">Занятий не&nbsp;найдено</p>
+		<p class="p1">Попробуйте изменить параметры фильтров и попробовать еще раз</p>
+	</li>
+	<li class="community-classes-list__item">
+		{% include "../catalog-promo/promo-2.nunj" %}
+	</li>
+	<li class="community-classes-list__item">
+		{% include "../catalog-promo/promo-3.nunj" %}
+	</li>
+</ul>

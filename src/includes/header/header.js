@@ -39,13 +39,17 @@ class Header {
 		}
 
 		this.headerElementHeight = this.headerElement.offsetHeight;
-		ScrollHelper.onScroll.add(y => this.onWindowScroll(y));
-		ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
 
 		window.addEventListener('resize', this.onWindowResize);
 
 		const currentScrollTop = utils.getCurrentScrollTop();
 		this.onWindowScroll(currentScrollTop);
+
+		clearImmediate(this.helpersTO);
+		this.helpersTO = setTimeout(() => {
+			ScrollHelper.onScroll.add(yPos => this.onWindowScroll(yPos));
+			ScrollHelper.onDirectionChange.add(direction => this._directionChangeController(direction));
+		}, 500);
 	}
 	_directionChangeController(direction) {
 		this.direction = direction;
@@ -69,27 +73,8 @@ class Header {
 		if (this.filtersElementTopPos > 0 && this.direction === Direction.UP) {
 			this.showHeader();
 		}
-
 		if (this.filtersElement) {
-			this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
-			const numbersContainerHeight =
-				this.filtersElement.offsetHeight -
-				Number.parseInt(getComputedStyle(this.filtersElement).paddingBottom, 10);
-			this.catalogListTopPos = document
-				.querySelector('.page__catalog-list')
-				.getBoundingClientRect().top;
-
-			if (this.filtersElementTopPos < 0) {
-				this.filtersElement.classList.add(ClassName.FIXED);
-			} else if (this.filtersElementTopPos > this.headerElementHeight) {
-				this.filtersElement.classList.remove(ClassName.FIXED);
-			}
-
-			if (this.catalogListTopPos < numbersContainerHeight) {
-				this.filtersElement.classList.add(ClassName.HIDDEN_NUM);
-			} else if (this.catalogListTopPos > numbersContainerHeight) {
-				this.filtersElement.classList.remove(ClassName.HIDDEN_NUM);
-			}
+			this.toggleFilterHeader();
 		}
 		HTML_CLASSLIST.add('is-header-inited');
 	}
@@ -123,6 +108,7 @@ class Header {
 				});
 			HTML_CLASSLIST.add(ClassName.HEADER_OPENED);
 		}
+		HTML_CLASSLIST.add('is-header-inited');
 	}
 	hideHeader() {
 		if (this.menu.animating) {
@@ -144,6 +130,27 @@ class Header {
 				duration: 0.1,
 				ease: 'linear',
 			});
+	}
+	toggleFilterHeader() {
+		this.filtersElementTopPos = this.filtersElement.getBoundingClientRect().top;
+		const numbersContainerHeight =
+			this.filtersElement.offsetHeight -
+			Number.parseInt(getComputedStyle(this.filtersElement).paddingBottom, 10);
+		this.catalogListTopPos = document
+			.querySelector('.page__catalog-list')
+			.getBoundingClientRect().top;
+
+		if (this.filtersElementTopPos < 0) {
+			this.filtersElement.classList.add(ClassName.FIXED);
+		} else if (this.filtersElementTopPos > this.headerElementHeight) {
+			this.filtersElement.classList.remove(ClassName.FIXED);
+		}
+
+		if (this.catalogListTopPos < numbersContainerHeight) {
+			this.filtersElement.classList.add(ClassName.HIDDEN_NUM);
+		} else if (this.catalogListTopPos > numbersContainerHeight) {
+			this.filtersElement.classList.remove(ClassName.HIDDEN_NUM);
+		}
 	}
 }
 
