@@ -48,6 +48,9 @@
 				display: none;
 			}
 		}
+		._no-results & {
+			pointer-events: none;
+		}
 	}
 	&__layout-buttons {
 		display: flex;

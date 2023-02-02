@@ -3,7 +3,7 @@
 {% from "../includes/components/ticker/ticker.nunj" import ticker %}
 
 {% block title %}Прокат | {{ super() }}{% endblock title %}
-{% set htmlClassMods = '_catalog' %}
+{% set htmlClassMods = '_catalog _no-results' %}
 
 {% block mainContent %}
 	{% include "../includes/hero-catalog/hero-catalog-rent.nunj" %}
