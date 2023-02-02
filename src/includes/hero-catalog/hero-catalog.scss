@@ -129,6 +129,7 @@
 		@media (max-width: $mobile-lg) {
 			width: calc(100% + var(--container-padding) * 2);
 			margin-left: calc(0px - var(--container-padding));
+			padding-left: var(--container-padding);
 		}
 	}
 	&__filters {
