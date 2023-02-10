@@ -96,8 +96,10 @@ class FilterSubcategory {
 	}
 	calcListWidth(list) {
 		list.style.flexWrap = 'nowrap';
+		list.style.justifyContent = 'flex-start';
 		list.style.width = `${(list.scrollWidth + 100) / 2}px`;
 		list.style.flexWrap = 'wrap';
+		list.style.justifyContent = 'center';
 	}
 	showSubcategoryBg(button) {
 		const classMod = button.getAttribute('data-subcategory-mod');
