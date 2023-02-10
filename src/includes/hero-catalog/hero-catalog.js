@@ -13,7 +13,6 @@ class HeroCatalog {
 		}
 
 		this.initParallax = this.initParallax.bind(this);
-		this.setBgImgHeight = this.setBgImgHeight.bind(this);
 
 		if (this.container.hasAttribute('data-parallax')) {
 			this.title = this.container.querySelector('.hero-catalog__title');
@@ -21,10 +20,7 @@ class HeroCatalog {
 			this.bgImages = this.container.querySelectorAll('.hero-catalog__bg-img');
 			this.bgImageWrapper = this.container.querySelector('.hero-catalog__bg-img-wrapper');
 
-			this.setBgImgHeight();
-
 			ScrollHelper.onScroll.add(this.initParallax);
-			window.addEventListener('resize', this.setBgImgHeight);
 		}
 	}
 	initParallax() {
@@ -32,12 +28,6 @@ class HeroCatalog {
 
 		gsap.set(this.title, { y: -ratio * 250 });
 		gsap.set(this.filter, { y: -ratio * 150 });
-	}
-	setBgImgHeight() {
-		this.bgImageHeight = this.bgImageWrapper.offsetHeight;
-		gsap.set(this.bgImages, {
-			height: this.bgImageHeight,
-		});
 	}
 }
 export default new HeroCatalog();

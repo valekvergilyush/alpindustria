@@ -1,4 +1,3 @@
-import HeroCatalog from '../../../includes/hero-catalog/hero-catalog';
 const ClassName = {
 	OPENED: '_opened',
 	SUBCATEGORY: '_subcategory',
@@ -75,7 +74,6 @@ class FilterSubcategory {
 				breadcrumbs.append(div);
 			}
 		}
-		HeroCatalog.setBgImgHeight();
 	}
 	closeSubcategory(container, item) {
 		container.classList.remove(ClassName.OPENED);
