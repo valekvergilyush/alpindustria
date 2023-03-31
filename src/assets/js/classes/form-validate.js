@@ -102,7 +102,8 @@ const simpleMatrix = (formElement, dataMatrix, dataMatrixLimitations) => {
 // Маска для телефона
 
 const onInputPhoneInput = ({ target }) => {
-	const matrix = `${BASE_MATRIX}`;
+	const mask = target.placeholder.replace(/[0-9]/g, '_');
+	const matrix = mask;
 	const def = matrix.replace(/\D/g, '');
 	let i = 0;
 	let val = target.value.replace(/\D/g, '');
@@ -121,14 +122,8 @@ const onInputPhoneInput = ({ target }) => {
 };
 
 const prettifyPhoneInput = input => {
-	// if (!input.value.startsWith(BASE_COUNTRY_CODE)) {
-	// 	if (input.value.startsWith('8')) {
-	// 		input.value = input.value.replace('8', BASE_COUNTRY_CODE);
-	// 	} else {
-	// 		input.value = `${BASE_COUNTRY_CODE}${input.value}`;
-	// 	}
-	// }
-	const matrix = `${BASE_MATRIX}`;
+	const mask = input.placeholder.replace(/[0-9]/g, '_');
+	const matrix = mask;
 	const def = matrix.replace(/\D/g, '');
 	let i = 0;
 	let val = input.value.replace(/\D/g, '');
@@ -148,17 +143,13 @@ const prettifyPhoneInput = input => {
 };
 
 const onFocusPhoneInput = ({ target }) => {
-	// if (!target.value) {
-	// 	target.value = BASE_COUNTRY_CODE;
-	// }
-
 	target.addEventListener('input', onInputPhoneInput);
 	target.addEventListener('blur', onBlurPhoneInput);
 	target.addEventListener('keydown', onKeydownPhoneInput);
 };
 
 const onKeydownPhoneInput = e => {
-	if ((e.target.selectionStart === 1 && e.keyCode === 8) || e.keyCode === 46) {
+	if ((e.target.selectionStart === 0 && e.keyCode === 8) || e.keyCode === 46) {
 		e.preventDefault();
 	}
 	if (

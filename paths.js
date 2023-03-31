@@ -19,7 +19,7 @@ export default {
 		fonts: 'src/assets/fonts/**/*.*',
 		sprites: 'src/assets/images/sprites/*.png',
 		svg: 'src/assets/svg/**/*.svg',
-		jsons: 'src/assets/jsons/**/*.json',
+		jsons: 'src/assets/jsons/**/*.*',
 	},
 	watch: {
 		nunj: ['src/**/*.nunj', 'global-data.json'],

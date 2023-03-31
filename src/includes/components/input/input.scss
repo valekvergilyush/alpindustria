@@ -60,6 +60,10 @@
 		@media (max-width: $mobile-lg) {
 			font-size: 12px;
 		}
+		@include placeholder {
+			color: transparent;
+			opacity: 0;
+		}
 		&:-webkit-autofill,
 		&:-webkit-autofill:hover,
 		&:-webkit-autofill:focus,

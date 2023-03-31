@@ -25,6 +25,7 @@ class Input {
 
 			if (input.type === 'tel') {
 				const iti = intlTelInput(input, {
+					utilsScript: '/assets/jsons/tel-input-utils.js',
 					initialCountry: 'ru',
 					onlyCountries: ['ru', 'am', 'by', 'kg', 'kz'],
 					separateDialCode: true,
