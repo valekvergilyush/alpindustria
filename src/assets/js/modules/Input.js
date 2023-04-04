@@ -32,6 +32,7 @@ class Input {
 				});
 				input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				input.addEventListener('countrychange', () => {
+					input.value = '';
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 			}
