@@ -33,9 +33,6 @@
 		--gap-2: 16px;
 		--gap-3: 8px;
 	}
-	&:last-child {
-		max-height: var(--hover-height);
-	}
 	&:hover {
 		max-height: var(--hover-height);
 	}
@@ -43,9 +40,6 @@
 		max-height: none;
 		background-color: var(--blue-dark);
 		color: var(--white);
-	}
-	&:last-child:not(._active):hover {
-		margin-left: calc(var(--close-width) - var(--hover-width));
 	}
 	.addresses-shop {
 		flex-shrink: 0;
