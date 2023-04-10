@@ -1,7 +1,7 @@
 .addresses {
 	$this: &;
 	--nav-width: #{rem(385)};
-	--tabs-min-width: #{rem(470)};
+	--tabs-min-width: #{rem(569)};
 	display: flex;
 	height: calc(100vh - var(--header-height));
 	@media (max-width: $laptop-lg) {
@@ -162,6 +162,16 @@
 	&__tabs {
 		display: flex;
 		min-width: calc(var(--tabs-min-width));
+		max-height: 100%;
+		border-left: 1px solid var(--blue-dark);
+		overflow: auto;
+		scrollbar-width: none;
+		@include scrollbar {
+			display: none;
+		}
+		@media (max-width: $laptop-sm) {
+			border-left: none;
+		}
 	}
 	&__tab {
 		display: none;
@@ -172,16 +182,14 @@
 	}
 	&__shops {
 		display: flex;
-		@media (max-width: $laptop-sm) {
-			width: 100%;
-			flex-direction: column;
-		}
+		flex-direction: column;
+		width: 100%;
 	}
 	&__shop {
 		flex-shrink: 0;
-		border-left: 1px solid var(--blue-dark);
+		border-bottom: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-sm) {
-			border-left: none;
+			border-bottom: none;
 			border-top: 1px solid var(--blue-dark);
 			&:not(._active):not(:first-child) {
 				margin-top: -32px;
