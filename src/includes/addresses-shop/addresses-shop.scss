@@ -28,6 +28,8 @@
 		--gap: 32px;
 		--gap-1: 20px;
 		--gap-2: 20px;
+	}
+	@media (max-width: $laptop-sm) {
 		--max-height: auto;
 		--hover-height: auto;
 	}
