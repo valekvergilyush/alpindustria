@@ -1,16 +1,14 @@
 .addresses {
 	$this: &;
 	--nav-width: #{rem(385)};
-	--tabs-min-width: #{rem(569)};
+	--tabs-min-width: 48%;
 	display: flex;
 	height: calc(100vh - var(--header-height));
 	@media (max-width: $laptop-lg) {
 		--nav-width: 312px;
-		--tabs-min-width: 420px;
 	}
 	@media (max-width: $laptop-md) {
 		--nav-width: 224px;
-		--tabs-min-width: 417px;
 	}
 	@media (max-width: $laptop-sm) {
 		--nav-width: 100%;

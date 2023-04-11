@@ -55,6 +55,9 @@
 		@include scrollbar {
 			display: none;
 		}
+		#{$this}._active & {
+			padding-bottom: 96px;
+		}
 		@media (max-width: $laptop-sm) {
 			padding: 8px var(--container-padding);
 			#{$this}._active & {

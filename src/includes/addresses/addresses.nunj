@@ -39,8 +39,7 @@
 				<div class="addresses__tab {% if loop.index === 2 %}_active{% endif %}" data-city-tab="{{ loop.index - 1 }}">
 					<div class="addresses__shops">
 						{% if (loop.index % 2 === 1) %}
-							{% include "../addresses-shop/addresses-shop-2.nunj" %}
-							{% include "../addresses-shop/addresses-shop.nunj" %}
+							{% include "../addresses-shop/addresses-shop-active.nunj" %}
 						{% else %}
 							{% include "../addresses-shop/addresses-shop.nunj" %}
 							{% include "../addresses-shop/addresses-shop-2.nunj" %}
