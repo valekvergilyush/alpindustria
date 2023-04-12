@@ -65,7 +65,7 @@
 			padding-bottom: 96px;
 		}
 		@media (max-width: $laptop-sm) {
-			padding: 8px var(--container-padding);
+			padding: 24px var(--container-padding) 16px;
 			#{$this}._active & {
 				padding: var(--container-padding);
 			}

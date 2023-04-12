@@ -190,12 +190,7 @@
 			border-bottom: none;
 			border-top: 1px solid var(--blue-dark);
 			&:not(._active):not(:first-child) {
-				margin-top: -32px;
-			}
-		}
-		@media (max-width: $laptop-sm) {
-			&:not(._active):not(:first-child) {
-				margin-top: -18px;
+				margin-top: -24px;
 			}
 		}
 	}
