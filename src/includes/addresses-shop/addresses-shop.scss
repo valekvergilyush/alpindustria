@@ -5,15 +5,18 @@
 	--gap-2: #{rem(24)};
 	--gap-3: #{rem(16)};
 	--gap-4: #{rem(8)};
+	--max-height: 76px;
+	--hover-height: 96px;
 	display: flex;
 	justify-content: flex-start;
-	align-items: flex-end;
 	width: 100%;
+	max-height: var(--max-height);
 	background-color: var(--gray-light);
 	position: relative;
 	overflow: hidden;
 	transition: margin $default-transition-duration $default-transition-function,
 		transform $default-transition-duration $default-transition-function,
+		max-height $default-transition-duration $default-transition-function,
 		background-color $default-transition-duration $default-transition-function,
 		color $default-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
@@ -35,7 +38,11 @@
 		--gap-2: 16px;
 		--gap-3: 8px;
 	}
+	&:hover {
+		max-height: var(--hover-height);
+	}
 	&._active {
+		max-height: none;
 		background-color: var(--blue-dark);
 		color: var(--white);
 	}
