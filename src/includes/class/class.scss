@@ -39,6 +39,7 @@
 		grid-area: main;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 		@media (max-width: $laptop-sm) {
 			width: 100%;
 		}
@@ -46,7 +47,6 @@
 	&__main-wrap {
 		position: sticky;
 		bottom: var(--price-block-height);
-		margin-top: auto;
 	}
 	&__main-inner {
 		position: sticky;
