@@ -39,7 +39,6 @@ class AlpIndustry {
 			Notification: require('./modules/Notification').default,
 			ShowAnimations: require('./modules/ShowAnimations').default,
 			ArticleSlider: require('./modules/ArticleSlider').default,
-			AddressesScroll: require('./modules/AddressesScroll').default,
 			Services: require('./modules/Services').default,
 			Search: require('./modules/Search').default,
 			DiscountCard: require('./modules/DiscountCard').default,

@@ -1,5 +1,4 @@
 import Map from '../../assets/js/modules/Map';
-import AddressesScroll from '../../assets/js/modules/AddressesScroll';
 
 const CLASS_ACTIVE = '_active';
 const CLASS_WRAP_ACTIVE = '_wrap-active';
@@ -394,7 +393,8 @@ class Addresses {
 		this.addressesBlock = document.querySelector('[data-addresses]');
 		this.cityBtns = document.querySelectorAll('[data-city-btn]');
 		this.cityTabs = document.querySelectorAll('[data-city-tab]');
-		this.shopItems = document.querySelectorAll('[data-shop-item]');
+		this.shopItems = document.querySelectorAll('[data-shop-item]:not(:first-child:last-child)');
+		this.singleShopItems = document.querySelectorAll('[data-shop-item]:first-child:last-child');
 		this.activeCityIndex = ACTIVE_CITY_INDEX;
 		this.mqTablet = window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`);
 		this.init();
@@ -404,6 +404,7 @@ class Addresses {
 		if (!this.addressesBlock) {
 			return;
 		}
+		console.log(this.singleShopItems);
 		// cities
 		this.cityBtns.forEach(btn => {
 			btn.addEventListener('click', e => {
@@ -448,7 +449,6 @@ class Addresses {
 	changeActiveCity(index) {
 		this.closeActiveCityTab();
 		this.openCityTab(index);
-		AddressesScroll.addressContentProgressUpdate();
 		this.setMapData(index);
 	}
 
@@ -507,6 +507,9 @@ class Addresses {
 	clearShopItems() {
 		this.shopItems.forEach(item => {
 			this.closeShopItem(item);
+		});
+		this.singleShopItems.forEach(item => {
+			this.openShopItem(item);
 		});
 	}
 

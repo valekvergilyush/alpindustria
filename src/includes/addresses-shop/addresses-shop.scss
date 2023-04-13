@@ -5,75 +5,67 @@
 	--gap-2: #{rem(24)};
 	--gap-3: #{rem(16)};
 	--gap-4: #{rem(8)};
-	--close-width: #{rem(320)};
-	--hover-width: #{rem(421)};
-	--open-width: #{rem(555)};
+	--max-height: 76px;
+	--hover-height: 96px;
 	display: flex;
 	justify-content: flex-start;
-	width: var(--close-width);
+	width: 100%;
+	max-height: var(--max-height);
 	background-color: var(--gray-light);
 	position: relative;
 	overflow: hidden;
 	transition: margin $default-transition-duration $default-transition-function,
-		width $default-transition-duration $default-transition-function,
+		transform $default-transition-duration $default-transition-function,
+		max-height $default-transition-duration $default-transition-function,
 		background-color $default-transition-duration $default-transition-function,
 		color $default-transition-duration $default-transition-function;
 	@media (max-width: $laptop-lg) {
-		--close-width: 236px;
-		--hover-width: 402px;
-		--open-width: 415px;
 		--gap: 48px;
 	}
 	@media (max-width: $laptop-md) {
 		--close-width: 228px;
 		--hover-width: var(--close-width);
-		--open-width: 292px;
 		--gap: 32px;
 		--gap-1: 20px;
 		--gap-2: 20px;
 	}
 	@media (max-width: $laptop-sm) {
-		--close-width: 100%;
-		--open-width: 100%;
+		--max-height: auto;
+		--hover-height: auto;
 	}
 	@media (max-width: $mobile-lg) {
 		--gap-1: 16px;
 		--gap-2: 16px;
 		--gap-3: 8px;
 	}
-	&:first-child:last-child {
-		width: var(--tabs-min-width);
-		#{$this}__wrap {
-			width: var(--tabs-min-width);
-		}
-	}
 	&:hover {
-		width: var(--hover-width);
+		max-height: var(--hover-height);
 	}
 	&._active {
-		width: var(--open-width);
+		max-height: none;
 		background-color: var(--blue-dark);
 		color: var(--white);
 	}
-	&:last-child:not(._active):hover {
-		margin-left: calc(var(--close-width) - var(--hover-width));
-	}
 	.addresses-shop {
 		flex-shrink: 0;
-		width: var(--open-width);
 	}
 	&__wrap {
 		flex-shrink: 0;
-		width: var(--open-width);
-		padding: var(--container-padding);
+		width: 100%;
+		padding: 40px;
+		padding-bottom: 3px;
 		overflow: auto;
 		box-sizing: border-box;
 		scrollbar-width: none;
+		transition: height $default-transition-duration $default-transition-function;
 		@include scrollbar {
 			display: none;
 		}
+		#{$this}._active & {
+			padding-bottom: 96px;
+		}
 		@media (max-width: $laptop-sm) {
-			padding: 8px var(--container-padding);
+			padding: 24px var(--container-padding) 16px;
 			#{$this}._active & {
 				padding: var(--container-padding);
 			}
@@ -103,6 +95,10 @@
 		margin-right: rem(-16);
 		#{$this}._active & {
 			display: block;
+		}
+		@media (max-width: $laptop-md) {
+			width: 39px;
+			height: 39px;
 		}
 		@media (max-width: $laptop-sm) {
 			margin: 0;

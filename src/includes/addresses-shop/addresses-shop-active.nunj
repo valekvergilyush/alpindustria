@@ -1,0 +1,90 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set addressLinks = [
+	{
+		name: 'Ски-сервис',
+		url: '/services.html'
+	},
+	{
+		name: 'Заточка ледорубов и кошек',
+		url: '/services.html#sharpening'
+	},
+	{
+		name: 'Прокат снаряжения',
+		url: '/rent.html'
+	},
+	{
+		name: 'Тест-центр часов',
+		url: '/rent.html'
+	},
+	{
+		name: 'Приём батареек',
+		url: '/services.html#battery'
+	}
+] %}
+
+<div class="addresses__shop addresses-shop _active" data-shop-item>
+	<div class="addresses-shop__wrap">
+		<div class="addresses-shop__place-wrapper">
+			<p class="addresses-shop__place h5 ttu">Черная речка</p>
+		</div>
+		<div class="addresses-shop__inner">
+			<div class="addresses-shop__block">
+				<p class="h6 ttu">Адрес</p>
+				<div class="addresses-shop__block _2">
+					<div class="addresses-shop__block _4">
+						<p class="p1">наб. Черной речки, д. 6</p>
+						<p class="addresses-shop__point p3">м.Черная речка</p>
+					</div>
+					<p class="addresses-shop__exclamation p4">
+						Будьте внимательны! Парковка на 1-й Парковой улице запрещена, в том числе в «карманах» рядом с магазином.
+					</p>
+				</div>
+			</div>
+			<div class="addresses-shop__block">
+				<p class="h6 ttu">Время работы</p>
+				<div class="addresses-shop__block _2">
+					<p class="p2">Ежедневно 10:00-22:00</p>
+					<p class="addresses-shop__exclamation p4">В период праздников, с 1 по 9 января, магазин работаем с 14:00 до 19:00</p>
+				</div>
+			</div>
+			<div class="addresses-shop__block">
+				<p class="h6 ttu">Контакты</p>
+				<div class="addresses-shop__block _3">
+					<a href="tel:+7(812)242-11-95" class="h7">+7 (812) 242-11-95</a>
+					<a href="mailto:info.spb@alpindustria.ru" class="h7 ttu">info.spb@alpindustria.ru</a>
+				</div>
+			</div>
+			<div class="addresses-shop__block">
+				<p class="h6 ttu">Cервисы</p>
+				<div class="addresses-shop__block _3">
+					{% for item in addressLinks %}
+						<a href="{{ item.url }}" class="addresses-shop__arrow h7 ttu">
+							{{ item.name }}
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'addresses-shop__arrow-icon',
+								attr: 'width="16" height="16" viewBox="0 0 24 24"'
+							}) }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="addresses-shop__block">
+				<p class="h6 ttu">Фото</p>
+				<div class="addresses-shop__block _2">
+					<img src="/assets/images/addresses/addresses-img-2.jpg" alt="Фото">
+					<img src="/assets/images/addresses/addresses-img-1.jpg" alt="Фото">
+				</div>
+			</div>
+		</div>
+		<button class="addresses-shop__btn" type="button" data-shop-open aria-label="Открыть">Открыть</button>
+		{# <button class="addresses-shop__close-btn" type="button" data-shop-close aria-label="Закрыть">
+			{{ icon({
+				iconName: 'close-button',
+				className: 'product__close-icon',
+				attr: 'width="24" height="24" viewBox="0 0 24 24"'
+			}) }}
+		</button> #}
+	</div>
+</div>
