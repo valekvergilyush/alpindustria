@@ -18,8 +18,17 @@
 		padding-bottom: 20px;
 	}
 	&__content {
-		max-width: var(--block-width);
+		display: grid;
+		grid-template-columns: 608fr 460fr 460fr;
 		margin-left: auto;
+		> * {
+			grid-column: 2 / span 2;
+		}
+		@media (max-width: $laptop-sm) {
+			> * {
+				grid-column: 1/-1;
+			}
+		}
 	}
 	&__products-list {
 		display: flex;
