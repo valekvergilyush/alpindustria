@@ -1,5 +1,6 @@
 @media (min-width: ($tablet + 1)) {
-	[data-animation='fade-right'] {
+	[data-animation='fade-right'],
+	[data-slider-animation='fade-right'] {
 		opacity: 0;
 		&.is-animated,
 		.animations &._anim-first {
@@ -12,7 +13,8 @@
 		&._full-height {
 			height: 100%;
 		}
-		&[data-animation='height'] {
+		&[data-animation='height'],
+		&[data-slider-animation='height'] {
 			.img-wrapper__img {
 				overflow: hidden;
 				height: 0;
@@ -27,7 +29,8 @@
 		}
 	}
 
-	[data-animation='words'] {
+	[data-animation='words'],
+	[data-slider-animation='words'] {
 		display: flex;
 		flex-wrap: wrap;
 		align-content: flex-start;
@@ -55,7 +58,10 @@
 	._loading {
 		[data-animation='fade-right'],
 		[data-animation='height'],
-		[data-animation='words'] {
+		[data-animation='words'],
+		[data-slider-animation='height'],
+		[data-slider-animation='fade-right'],
+		[data-slider-animation='words'] {
 			opacity: 0;
 		}
 	}

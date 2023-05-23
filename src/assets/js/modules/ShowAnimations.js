@@ -14,9 +14,7 @@ class ShowAnimations {
 	}
 
 	init() {
-		this.animatedBlocks = document.querySelectorAll(
-			'[data-animation]:not([data-slider-animation]), [data-lottie-autoplay-trigger]'
-		);
+		this.animatedBlocks = document.querySelectorAll('[data-lottie-autoplay-trigger]');
 
 		this.animatedLines = document.querySelectorAll('[data-animation-line]');
 

@@ -1,5 +1,6 @@
 import { tns } from 'tiny-slider';
 import Utils from '../../assets/js/utils/utils';
+import TextSplitter from '../../assets/js/helpers/TextSplitter';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -71,27 +72,64 @@ class CommunityIndex {
 			autoplay: true,
 		});
 
-		this.slider.tns.events.on('indexChanged', slider => {
-			const index = slider.index - 1;
-			const slide = this.slides[index];
-
-			if (slide) {
-				const animatedBlocks = slide.querySelectorAll('[data-animation]');
+		this.slider.tns.events.on('transitionEnd', slider => {
+			Array.from(slider.slideItems).forEach(slide => {
+				const animatedBlocks = slide.querySelectorAll('[data-slider-animation]');
 				animatedBlocks.forEach(block => {
 					const isAnimated = block.classList.contains(ClassName.ANIMATED);
 
 					if (!isAnimated) {
+						if (
+							block.getAttribute('data-slider-animation') === 'words' &&
+							!block.querySelector('.word')
+						) {
+							TextSplitter.split(block).words;
+						}
 						block.classList.add(ClassName.ANIMATED);
 					}
 				});
+			});
+		});
+		this.slider.tns.events.on('transitionStart', slider => {
+			const slide = slider.slideItems[slider.index];
+
+			Array.from(slider.slideItems).forEach(item => {
+				const animatedBlocks = item.querySelectorAll('[data-slider-animation]');
+				animatedBlocks.forEach(block => {
+					block.classList.remove(ClassName.ANIMATED);
+				});
+			});
+
+			if (slide) {
+				const animatedBlocks = slide.querySelectorAll('[data-slider-animation]');
+				animatedBlocks.forEach(block => {
+					block.classList.remove(ClassName.ANIMATED);
+				});
 			}
+		});
+		this.slider.tns.events.on('dragStart', slider => {
+			console.log('dragStart');
+			Array.from(slider.slideItems).forEach(slide => {
+				if (!slide.classList.contains('tns-slide-active')) {
+					const animatedBlocks = slide.querySelectorAll('[data-slider-animation]');
+					animatedBlocks.forEach(block => {
+						block.classList.remove(ClassName.ANIMATED);
+					});
+				}
+			});
 		});
 	}
 	_onWindowScroll() {
-		const animatedBlocks = this.slides[0].querySelectorAll('[data-animation]');
+		const animatedBlocks = this.slides[0].querySelectorAll('[data-slider-animation]');
 		animatedBlocks.forEach(block => {
 			const isAnimated = block.classList.contains(ClassName.ANIMATED);
 			if (!isAnimated) {
+				if (
+					block.getAttribute('data-slider-animation') === 'words' &&
+					!block.querySelector('.word')
+				) {
+					TextSplitter.split(block).words;
+				}
 				const isInViewport = Utils.isElementInViewport(block, 1.2);
 
 				isInViewport && block.classList.add(ClassName.ANIMATED);
