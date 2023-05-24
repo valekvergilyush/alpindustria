@@ -192,6 +192,11 @@
 			&:not(._active):not(:first-child) {
 				margin-top: -24px;
 			}
+			&:not(:last-child) {
+				.addresses-shop__block:last-of-type {
+					padding-bottom: 20px;
+				}
+			}
 		}
 	}
 }

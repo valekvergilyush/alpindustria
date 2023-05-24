@@ -1,4 +1,5 @@
 import Map from '../../assets/js/modules/Map';
+import Header from '../header/header';
 
 const CLASS_ACTIVE = '_active';
 const CLASS_WRAP_ACTIVE = '_wrap-active';
@@ -404,7 +405,6 @@ class Addresses {
 		if (!this.addressesBlock) {
 			return;
 		}
-		console.log(this.singleShopItems);
 		// cities
 		this.cityBtns.forEach(btn => {
 			btn.addEventListener('click', e => {
@@ -494,6 +494,22 @@ class Addresses {
 				e.preventDefault();
 				this.clearShopItems();
 				this.openShopItem(shopBlock);
+
+				if (window.innerWidth > 992) {
+					window.scrollTo(0, 0);
+					shopBlock.closest('.addresses__tabs').scrollTo(0, 0);
+					shopBlock.scrollIntoView();
+					setTimeout(() => {
+						Header.hideHeader();
+					}, 200);
+				} else {
+					setTimeout(() => {
+						shopBlock.scrollIntoView({ behavior: 'smooth' });
+					}, 250);
+					setTimeout(() => {
+						Header.hideHeader();
+					}, 300);
+				}
 			});
 		}
 		if (closeBtn) {
