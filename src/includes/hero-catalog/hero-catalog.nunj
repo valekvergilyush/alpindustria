@@ -32,7 +32,7 @@
 			<span class="hero-catalog__title-root h7">
 				<a class="hero-catalog__title-link" href="/catalog/">Магазин</a>
 				<span class="hero-catalog__title-separator">/</span>
-				<span class="hero-catalog__title-link" data-subtitle></span>
+				<a class="hero-catalog__title-link" data-subtitle></a>
 			</span>
 			<span class="hero-catalog__title-category h4">Магазин</span>
 		</h1>

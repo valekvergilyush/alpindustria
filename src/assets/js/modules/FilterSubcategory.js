@@ -47,6 +47,7 @@ class FilterSubcategory {
 			subContainer.querySelectorAll('[data-subcategory2-item]').forEach(item => {
 				const button = item.querySelector('[data-subcategory-opener2]');
 				const backButton = item.querySelector('[data-subcategory-back2]');
+				const backButton2 = this.heroContainer.querySelector('[data-subtitle]');
 				const list = item.querySelector('[data-subcategory-list2]');
 
 				button.addEventListener('click', evt => {
@@ -56,6 +57,12 @@ class FilterSubcategory {
 				});
 
 				backButton.addEventListener('click', evt => {
+					evt.preventDefault();
+
+					this.closeSubcategory(subContainer, item, list, '_subcategory-opened', 1);
+				});
+
+				backButton2.addEventListener('click', evt => {
 					evt.preventDefault();
 
 					this.closeSubcategory(subContainer, item, list, '_subcategory-opened', 1);
