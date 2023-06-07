@@ -127,6 +127,9 @@ class FilterSubcategory {
 		}
 	}
 	calcListWidth(list, row = 2) {
+		if (row === 1) {
+			return;
+		}
 		list.style.width = 'auto';
 		list.style.flexWrap = 'nowrap';
 		list.style.justifyContent = 'flex-start';

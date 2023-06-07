@@ -120,6 +120,7 @@
 	&._subcategory {
 		#{$this}__title-root {
 			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 	&._services {
