@@ -8,7 +8,14 @@
 		subcategories: [
 			{ name: 'Все туристическое снаряжение' },
 			{ name: 'Коньки и сани-волокуши' },
-			{ name: 'Палатки и тенты' },
+			{ name: 'Палатки и тенты',
+				modifier: 'tents',
+				subcategories: [
+					{ name: 'Одноместные' },
+					{ name: 'Двухместные' },
+					{ name: 'Тенты' }
+				]
+			},
 			{ name: 'Оптика' },
 			{ name: 'Косметика для путешествий' },
 			{ name: 'Аксессуары и запчасти' },
@@ -59,11 +66,37 @@
 					}) }}
 					<ul class="quick-filter__subcategories" data-subcategory-list>
 						{% for subcategory in category.subcategories %}
-							<li>
+							{% if subcategory.subcategories %}
+								{% set subcategoryMod = ' data-subcategory-mod="_' + subcategory.modifier + '"' %}
+							{% else %}
+								{% set subcategoryMod = '' %}
+							{% endif %}
+							<li {% if subcategory.subcategories %}data-drag-scroll data-subcategory2-item{% endif %}>
 								{{ button({
 									className: 'quick-filter__button _quick-filter',
-									text: subcategory.name
+									text: subcategory.name,
+									attr: 'data-subcategory-opener2' + subcategoryMod
 								}) }}
+								{% if subcategory.subcategories %}
+									<div class="quick-filter__subcategories-wrapper">
+										{{ button({
+											className: 'quick-filter__button _back',
+											attr: 'aria-label="Назад" data-subcategory-back2',
+											icon: 'arrow-left',
+											iconData: 'width="24" height="24"'
+										}) }}
+										<ul class="quick-filter__subcategories" data-subcategory-list2>
+											{% for subcategory2 in subcategory.subcategories %}
+												<li>
+													{{ button({
+														className: 'quick-filter__button _quick-filter',
+														text: subcategory2.name
+													}) }}
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+								{% endif %}
 							</li>
 						{% endfor %}
 					</ul>
