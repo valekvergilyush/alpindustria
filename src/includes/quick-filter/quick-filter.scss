@@ -100,4 +100,27 @@
 			}
 		}
 	}
+	&._subcategory-opened {
+		[data-subcategory-back] {
+			display: none;
+		}
+		[data-subcategory-list] {
+			width: auto !important;
+			> * {
+				display: none;
+			}
+			[data-subcategory2-item]._opened {
+				display: block;
+				.quick-filter__subcategories-wrapper {
+					display: flex;
+				}
+			}
+			[data-subcategory-opener2] {
+				display: inline-flex;
+			}
+			[data-subcategory-list2] {
+				justify-content: flex-start !important;
+			}
+		}
+	}
 }

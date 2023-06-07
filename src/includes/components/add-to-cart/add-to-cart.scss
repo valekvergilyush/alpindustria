@@ -20,14 +20,15 @@
 		min-height: 64px;
 		padding: 12px 16px;
 	}
+	@media (max-width: ($mobile - 1px)) {
+		column-gap: 4px;
+	}
 	&__list {
 		display: flex;
 		align-items: flex-end;
 		gap: rem(20);
 		@media (max-width: $laptop-sm) {
 			gap: 16px;
-		}
-		@media (max-width: $mobile-lg) {
 		}
 	}
 	&__item {
@@ -42,15 +43,12 @@
 			min-width: 200px;
 		}
 		@media (max-width: $mobile-lg) {
-			min-width: 96px;
+			min-width: auto;
 		}
 	}
 	&__text {
 		margin-bottom: rem(8);
 		@media (max-width: $laptop-md) {
-			margin-bottom: 4px;
-		}
-		@media (max-width: $mobile-lg) {
 			margin-bottom: 4px;
 		}
 	}
@@ -65,6 +63,7 @@
 		}
 	}
 	&__price {
+		white-space: nowrap;
 		@media (max-width: $laptop-lg) {
 			font-size: 28px;
 			line-height: 36px;
@@ -113,5 +112,8 @@
 		fill: currentColor;
 		transform: rotate(45deg);
 		transition: margin-left $default-transition-duration $default-transition-function;
+		@media (max-width: $mobile-lg) {
+			margin-left: 8px;
+		}
 	}
 }
