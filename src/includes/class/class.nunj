@@ -254,8 +254,12 @@
 			className: 'class__price-block',
 			list: [
 				{
-					text: 'Стоимость участия:',
-					price: '145 000 ₽'
+					text: 'Стоимость:',
+					price: '16 000 ₽'
+				},
+				{
+					text: 'Осталось мест:',
+					price: '45'
 				}
 			],
 			link: {
