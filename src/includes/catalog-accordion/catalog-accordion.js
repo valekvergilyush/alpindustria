@@ -53,14 +53,14 @@ class CatalogAccordion {
 		if (this.openedSection === section) {
 			this.close(section, content, true);
 		} else {
-			const cb = () => {
-				this.close(this.openedSection, this.openedSectionContent);
-			};
-			if (this.openedSection && this.openedSectionContent) {
-				this.open(section, content, contentHeight, cb);
-			} else {
-				this.open(section, content, contentHeight);
-			}
+			// const cb = () => {
+			// 	this.close(this.openedSection, this.openedSectionContent);
+			// };
+			// if (this.openedSection && this.openedSectionContent) {
+			// 	this.open(section, content, contentHeight, cb);
+			// } else {
+			this.open(section, content, contentHeight);
+			// }
 		}
 	}
 	open(section, content, contentHeight, cb) {
@@ -97,15 +97,15 @@ class CatalogAccordion {
 			onComplete: () => {
 				section.classList.add(ClassName.OPENED);
 				cb && cb();
-				const title = section.querySelector('[data-accordion-title]');
-				setTimeout(() => {
-					if (!Utils.isElementInViewport(title)) {
-						title.scrollIntoView({
-							behavior: 'smooth',
-							block: 'center',
-						});
-					}
-				}, 500);
+				// const title = section.querySelector('[data-accordion-title]');
+				// setTimeout(() => {
+				// 	if (!Utils.isElementInViewport(title)) {
+				// 		title.scrollIntoView({
+				// 			behavior: 'smooth',
+				// 			block: 'center',
+				// 		});
+				// 	}
+				// }, 500);
 				this.openedSection = section;
 				this.openedSectionContent = content;
 				startTicker();
