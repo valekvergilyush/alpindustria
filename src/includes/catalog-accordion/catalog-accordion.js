@@ -1,3 +1,5 @@
+import Utils from '../../assets/js/utils/utils';
+
 const ClassName = {
 	OPENED: '_opened',
 	TICKER: '_ticker',
@@ -95,6 +97,15 @@ class CatalogAccordion {
 			onComplete: () => {
 				section.classList.add(ClassName.OPENED);
 				cb && cb();
+				const title = section.querySelector('[data-accordion-title]');
+				setTimeout(() => {
+					if (!Utils.isElementInViewport(title)) {
+						title.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+						});
+					}
+				}, 500);
 				this.openedSection = section;
 				this.openedSectionContent = content;
 				startTicker();
