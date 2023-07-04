@@ -348,3 +348,30 @@
 		#{$prop}: $min;
 	}
 }
+
+@mixin blue-scrollbar {
+	--max-width-scrollbar: #{rem(600)};
+	scrollbar-width: thin;
+	scrollbar-color: $blue-dark rgba($blue-light, 0.2);
+	@include scrollbar {
+		display: block;
+	}
+	&::-webkit-scrollbar {
+		height: rem(6);
+	}
+	&::-webkit-scrollbar-track {
+		background-color: rgba($blue-light, 0.2);
+		border: 1px solid $white;
+		border-radius: rem(4);
+		margin-left: calc((100vw - var(--max-width-scrollbar)) / 2);
+		margin-right: calc((100vw - var(--max-width-scrollbar)) / 2);
+		@media (max-width: $tablet) {
+			margin-left: var(--container-padding);
+			margin-right: var(--container-padding);
+		}
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $blue-dark;
+		border-radius: rem(4);
+	}
+}
