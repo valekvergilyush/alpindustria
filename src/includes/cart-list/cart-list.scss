@@ -46,6 +46,9 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: rem(16);
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 64px;
+		}
 	}
 	&__warning {
 		margin-bottom: rem(48);

@@ -28,7 +28,7 @@
 	<section class="cart-tabs__section _rental tabs__panel" aria-labelledby="rental" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
 		{% include '../cart-list/cart-list-no-photo.nunj' %}
 	</section>
-	<div class="cart-bottom">
+	<div class="cart-bottom _fixed">
 		<p class="cart-tabs__price p3 _rent">
 			Стоимость аренды:<br>
 			<span class="cart-tabs__price-value h5 ttu">16 000 ₽</span>

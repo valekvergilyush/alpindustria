@@ -281,6 +281,14 @@
 			margin-right: 3px;
 		}
 	}
+	@media (max-width: $mobile-lg) {
+		.cart-bottom._fixed {
+			position: fixed;
+			left: var(--popup-padding);
+			bottom: 0;
+			width: 100%;
+		}
+	}
 }
 
 ._opened-delivery {
