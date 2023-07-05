@@ -59,12 +59,12 @@ class Filters {
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.isOpened = true;
-		if (!Env.isIOS) {
-			disableBodyScroll(this.filtersForm);
-		}
-		if (Env.isIOS) {
-			document.body.style.overflow = 'hidden';
-		}
+		// if (!Env.isIOS) {
+		// 	disableBodyScroll(this.filtersForm);
+		// }
+		// if (Env.isIOS) {
+		// 	document.body.style.overflow = 'hidden';
+		// }
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(window, {
