@@ -91,6 +91,9 @@
 		line-height: 1.2;
 		@media (max-width: $tablet) {
 			margin-bottom: 103px;
+			.space {
+				display: none;
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 89px;
