@@ -1,6 +1,19 @@
 <div class="cart__delivery-content cart-delivery _shop">
-	<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
-	<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
+	<div class="cart__block" data-auth-block>
+		<div class="cart__title-wrap">
+			<p class="cart__block-title ttu">01. контактные данные</p>
+			<button class="cart__title-btn" data-auth-btn>
+				<span>У меня есть аккаунт</span>
+				{{ icon({
+					iconName: 'user',
+					className: 'cart__title-btn-icon',
+					attr: 'width="24" height="24" viewBox="0 0 32 33"'
+				}) }}
+			</button>
+		</div>
+		<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
+		<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
+	</div>
 	{% include "../delivery-address/delivery-address.nunj" %}
 	<button class="popups__close-button" type="button" data-popup-closer>
 		{{ icon({

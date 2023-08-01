@@ -35,6 +35,9 @@
 			display: none;
 			padding-bottom: rem(32);
 		}
+		&._socials {
+			align-items: center;
+		}
 		#{$this}[data-form-stage='sms'] &._sms {
 			display: flex;
 		}
@@ -162,5 +165,28 @@
 		@media (max-width: $mobile-lg) {
 			margin-top: 48px;
 		}
+	}
+	&__form {
+		&._email {
+			display: none;
+		}
+		.cart__block._email & {
+			display: none;
+			&._email {
+				display: block;
+			}
+		}
+	}
+	&__change-auth {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		margin-left: auto;
+	}
+	&__change-auth-icon {
+		--size: #{rem(8)};
+		width: var(--size);
+		height: var(--size);
 	}
 }

@@ -33,14 +33,14 @@
 				className: 'cart__back-btn',
 				attr: 'aria-label="Назад" data-cart-back="delivery"'
 			}) }}
-			<h2 class="cart__title _delivery h5 ttu _shop">Доставка</h2>
-			<h2 class="cart__title _delivery h5 ttu _rent">Бронирование</h2>
+			<h2 class="cart__title _delivery h5 ttu">Оформление</h2>
 		</div>
 
+		{% include '../cart-breadcrumbs/cart-breadcrumbs.nunj' %}
 		{% include '../cart-delivery/cart-delivery.nunj' %}
-		{% include '../cart-delivery/cart-delivery-services.nunj' %}
+		{# {% include '../cart-delivery/cart-delivery-services.nunj' %} #}
 		{% include '../cart-delivery/cart-delivery-total.nunj' %}
-		{% include '../cart-delivery/cart-delivery-total-services.nunj' %}
+		{# {% include '../cart-delivery/cart-delivery-total-services.nunj' %} #}
 
 		<div class="cart-bottom _fixed">
 			<p class="cart__price _white p3 _shop">
@@ -63,14 +63,14 @@
 				className: 'cart__submit _arrow _shop',
 				attr: 'data-cart-pay'
 			}) }}
-			{{ button({
+			{# {{ button({
 				type: 'submit',
 				text: 'Оформить',
 				icon: 'promo-arrow',
 				iconData: 'width="18" height="18"',
 				className: 'cart__submit _arrow _rent',
 				attr: 'data-cart-rent-submit'
-			}) }}
+			}) }} #}
 		</div>
 	</div>
 

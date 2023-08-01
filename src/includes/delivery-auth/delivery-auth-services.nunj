@@ -8,9 +8,9 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<div class="cart-delivery__auth-form delivery-auth _services" data-delivery-auth data-form-stage="default">
+<div class="delivery-auth _services" data-delivery-auth data-form-stage="default">
 	<div class="delivery-auth__user-block">
-		<p class="delivery-auth__title h7 ttu">Контактные данные:</p>
+		{# <p class="delivery-auth__title h7 ttu">Контактные данные:</p> #}
 		<table class="delivery-auth__user-info p3">
 			<tr>
 				<td>ФИО</td>
@@ -49,7 +49,7 @@
 		}) }}
 	</div>
 	<form class="delivery-auth__form">
-		<p class="delivery-auth__title h7 ttu">Частым покупателям:</p>
+		{# <p class="delivery-auth__title h7 ttu">Частым покупателям:</p> #}
 		<div class="delivery-auth__fields _tel">
 			{{ input({
 				type: 'tel',

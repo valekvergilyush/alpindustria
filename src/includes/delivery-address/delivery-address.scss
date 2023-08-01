@@ -60,8 +60,6 @@
 	}
 	&__map-wrapper {
 		position: relative;
-		width: calc(100% + var(--popup-padding) * 2);
-		margin-left: calc(0px - var(--popup-padding));
 		margin-bottom: 48px;
 		padding-bottom: 87.4%;
 		background-color: var(--white);
@@ -143,5 +141,8 @@
 		margin-top: rem(7);
 		font-size: rem(32);
 		line-height: 1.3;
+	}
+	&__tabs-list {
+		margin-inline: calc(var(--block-padding) * -1);
 	}
 }

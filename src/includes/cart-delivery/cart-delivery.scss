@@ -70,18 +70,6 @@
 			margin-bottom: 48px;
 		}
 	}
-	&__register-form {
-		margin-bottom: rem(96);
-		@media (max-width: $laptop-lg) {
-			margin-bottom: 71px;
-		}
-		@media (max-width: $laptop) {
-			margin-bottom: 56px;
-		}
-		@media (max-width: $mobile-lg) {
-			margin-bottom: 48px;
-		}
-	}
 	&__table {
 		margin-bottom: rem(48);
 		text-align: left;
