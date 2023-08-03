@@ -49,7 +49,7 @@ class Cart {
 		this.backButtons.forEach(button => button.addEventListener('click', this.onBackButtonClick));
 		this.shopButton.addEventListener('click', this.onShopButtonClick);
 		this.rentButton.addEventListener('click', this.onRentButtonClick);
-		this.rentSubmitButton.addEventListener('click', this.onRentSubmitButtonClick);
+		// this.rentSubmitButton.addEventListener('click', this.onRentSubmitButtonClick);
 		this.legalCheckboxes.forEach(checkbox => {
 			checkbox.addEventListener('change', this.onLegalCheckboxChange);
 		});

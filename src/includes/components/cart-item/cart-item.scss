@@ -38,6 +38,7 @@
 		width: min-content;
 		padding-top: rem(4);
 		margin-right: rem(48);
+		grid-area: info;
 		@media (max-width: $laptop-lg) {
 			margin-right: 24px;
 		}
@@ -74,6 +75,7 @@
 		height: rem(160);
 		margin-right: rem(16);
 		background-color: var(--gray-light);
+		grid-area: img-wrapper;
 		@media (max-width: $laptop) {
 			width: 100px;
 			height: 127px;
@@ -96,6 +98,7 @@
 		display: flex;
 		column-gap: rem(24);
 		align-items: center;
+		grid-area: controls;
 		@media (max-width: $laptop-lg) {
 			column-gap: 16px;
 		}

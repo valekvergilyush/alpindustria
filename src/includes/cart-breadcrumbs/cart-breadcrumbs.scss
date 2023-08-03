@@ -1,0 +1,27 @@
+.cart-breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	counter-reset: breadcrumbs-counter;
+	@media (max-width: $laptop) {
+		flex-wrap: nowrap;
+		overflow: auto;
+		white-space: nowrap;
+		@include scrollbar {
+			display: none;
+		}
+	}
+	&__item {
+		counter-increment: breadcrumbs-counter;
+		&::before {
+			content: counters(breadcrumbs-counter, '.', decimal-leading-zero) '. ';
+		}
+		&:not(:last-child) {
+			margin-right: rem(8);
+			&::after {
+				content: '/';
+				margin-left: rem(4);
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{% set linkList = [
+	{
+		name: 'Контактные данные',
+		href: '#'
+	},
+	{
+		name: 'Способ доставки',
+		href: '#'
+	},
+	{
+		name: 'Дисконтная карта',
+		href: '#'
+	},
+	{
+		name: 'Информирование по заказу',
+		href: '#'
+	}
+] %}
+
+<ol class="cart-breadcrumbs cart__breadcrumbs">
+	{% for item in linkList %}
+		<li class="cart-breadcrumbs__item">
+			<a href="{{ item.href }}" class="cart-breadcrumbs__link">{{ item.name }}</a>
+		</li>
+	{% endfor %}
+</ol>
