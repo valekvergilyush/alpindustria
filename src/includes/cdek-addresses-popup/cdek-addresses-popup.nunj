@@ -1,0 +1,13 @@
+{% from "../components/input/input.nunj" import input %}
+
+<div class="cdek-addresses-popup">
+	<h2 class="h5 cdek-addresses-popup__title ttu">Пункты сдэк</h2>
+	{{ input({
+		type: 'text',
+		id: 'delivery-address-sdek',
+		className: 'cdek-addresses-popup__input',
+		name: 'Поиск',
+		label: 'Поиск по пунктам выдачи'
+	}) }}
+	<div class="cdek-addresses-popup__map map" data-map="cdek"></div>
+</div>

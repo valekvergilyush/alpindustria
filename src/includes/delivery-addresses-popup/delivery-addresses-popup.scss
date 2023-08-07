@@ -1,0 +1,31 @@
+.delivery-addresses-popup {
+	&__title {
+		padding-right: rem(50);
+		margin-bottom: rem(40);
+	}
+	&__addresses {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+	}
+	&__btn {
+		@include reset-btn;
+		display: block;
+		width: 100%;
+		padding: rem(24);
+		border: 1px solid var(--blue-dark);
+		text-align: left;
+		transition: background-color $default-transition-duration $default-transition-function,
+			border-color $default-transition-duration $default-transition-function;
+		&._active {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+		&:not(._active) {
+			&:hover {
+				background-color: rgba($blue-dark, 0.1);
+				border-color: rgba($blue-dark, 0.1);
+			}
+		}
+	}
+}

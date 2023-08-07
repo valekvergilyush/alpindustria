@@ -48,7 +48,8 @@
 			display: none;
 		}
 	}
-	&._filled {
+	&._filled,
+	&._placeholder {
 		#{$this}__label {
 			font-size: rem(12);
 		}

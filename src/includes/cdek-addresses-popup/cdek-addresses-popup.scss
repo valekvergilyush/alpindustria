@@ -1,0 +1,18 @@
+.cdek-addresses-popup {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	&__title {
+		margin-bottom: rem(40);
+		padding-right: rem(50);
+	}
+	&__input {
+		margin-bottom: rem(40);
+	}
+	&__map {
+		flex-grow: 1;
+		margin: 0 calc(var(--popup-padding) * -1) calc(var(--popup-padding) * -1);
+		border-top: 1px solid var(--blue-dark);
+		background-color: red;
+	}
+}

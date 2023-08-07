@@ -24,25 +24,14 @@ class DeliveryAuth {
 		this.cartRegisterContainers = document.querySelectorAll(
 			'.cart-delivery__register-form._new-user'
 		);
-		this.authBtn = this.container.querySelector('[data-auth-btn]');
-		this.authBlock = this.container.querySelector('[data-auth-block]');
-		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
 
 		this._onAuthButtonClick = this._onAuthButtonClick.bind(this);
 		this._onCheckCodeButtonClick = this._onCheckCodeButtonClick.bind(this);
 		this._onChangeUserButtonClick = this._onChangeUserButtonClick.bind(this);
-		this.onAuthBtnClick = this.onAuthBtnClick.bind(this);
-		this.onAuthBtnChangeClick = this.onAuthBtnChangeClick.bind(this);
 
 		this.authButton.addEventListener('click', this._onAuthButtonClick);
 		this.checkCodeButton.addEventListener('click', this._onCheckCodeButtonClick);
 		this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
-		this.deliveryAuthChange.forEach(btn => {
-			btn.addEventListener('click', this.onAuthBtnChangeClick);
-		});
-		if (this.authBtn) {
-			this.authBtn.addEventListener('click', this.onAuthBtnClick);
-		}
 	}
 	_onAuthButtonClick(evt) {
 		evt.preventDefault();
@@ -84,14 +73,6 @@ class DeliveryAuth {
 		this.telInput.setAttribute('aria-invalid', true);
 		this.telInput.closest('.delivery-auth__input').classList.remove('is-valid');
 		this.telInput.closest('.delivery-auth__input').classList.remove('_filled');
-	}
-	onAuthBtnClick(e) {
-		e.preventDefault();
-		this.authBlock.classList.toggle('_auth');
-	}
-	onAuthBtnChangeClick(e) {
-		e.preventDefault();
-		this.authBlock.classList.toggle('_email');
 	}
 }
 

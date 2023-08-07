@@ -1,0 +1,32 @@
+{% set deliveryAddresses = [
+	{
+		address: 'Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв',
+		index: '644505'
+	},
+	{
+		address: 'Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв',
+		index: '644505'
+	},
+	{
+		address: 'Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв',
+		index: '644505'
+	},
+	{
+		address: 'Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв',
+		index: '644505'
+	}
+] %}
+
+<div class="delivery-addresses-popup">
+	<h2 class="h5 delivery-addresses-popup__title ttu">Ваши адреса</h2>
+	<ul class="delivery-addresses-popup__addresses">
+		{% for item in deliveryAddresses %}
+			<li>
+				<button class="delivery-addresses-popup__btn {% if loop.index === 1 %}_active{% endif %}" type="button" data-popup-opener="cart">
+					<p class="p2">{{ item.address }}</p>
+					<p>{{ item.index }}</p>
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

@@ -35,6 +35,10 @@ class Cart {
 		this.rentSubmitButton = this.container.querySelector('[data-cart-rent-submit]');
 		this.legalBlock = this.container.querySelector('[data-legal-block]');
 		this.legalCheckboxes = this.container.querySelectorAll('[data-legal-checkbox]');
+		this.authBtns = this.container.querySelectorAll('[data-auth-btn]');
+		this.editProfileDataBtns = this.container.querySelectorAll('[data-edit-profile-data]');
+		this.authBlock = this.container.querySelector('[data-auth-block]');
+		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -43,6 +47,9 @@ class Cart {
 		this.onRentButtonClick = this.onRentButtonClick.bind(this);
 		this.onRentSubmitButtonClick = this.onRentSubmitButtonClick.bind(this);
 		this.onLegalCheckboxChange = this.onLegalCheckboxChange.bind(this);
+		this.onAuthBtnClick = this.onAuthBtnClick.bind(this);
+		this.onAuthBtnChangeClick = this.onAuthBtnChangeClick.bind(this);
+		this.onEditProfileDataBtnClick = this.onEditProfileDataBtnClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
@@ -52,6 +59,15 @@ class Cart {
 		// this.rentSubmitButton.addEventListener('click', this.onRentSubmitButtonClick);
 		this.legalCheckboxes.forEach(checkbox => {
 			checkbox.addEventListener('change', this.onLegalCheckboxChange);
+		});
+		this.deliveryAuthChange.forEach(btn => {
+			btn.addEventListener('click', this.onAuthBtnChangeClick);
+		});
+		this.authBtns.forEach(btn => {
+			btn.addEventListener('click', this.onAuthBtnClick);
+		});
+		this.editProfileDataBtns.forEach(btn => {
+			btn.addEventListener('click', this.onEditProfileDataBtnClick);
 		});
 	}
 	onSubmitButtonClick(evt) {
@@ -202,6 +218,22 @@ class Cart {
 		if (legalBlock) {
 			legalBlock.classList.toggle(ClassName.HIDDEN);
 		}
+	}
+	onAuthBtnClick(e) {
+		e.preventDefault();
+		this.authBlock.classList.remove('_profile');
+		this.authBlock.classList.remove('_edit');
+		this.authBlock.classList.add('_auth');
+	}
+	onAuthBtnChangeClick(e) {
+		e.preventDefault();
+		this.authBlock.classList.toggle('_email');
+	}
+	onEditProfileDataBtnClick(e) {
+		e.preventDefault();
+		this.authBlock.classList.remove('_profile');
+		this.authBlock.classList.remove('_auth');
+		this.authBlock.classList.add('_edit');
 	}
 }
 
