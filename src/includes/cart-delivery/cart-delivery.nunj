@@ -1,8 +1,8 @@
 <div class="cart__delivery-content cart-delivery _shop">
-	<div class="cart__block _profile" data-auth-block>
+	<div class="cart__block _profile" data-auth-block id="cart-contacts">
 		<div class="cart__title-wrap">
 			<p class="cart__block-title ttu h6">01. контактные данные</p>
-			<button class="cart__title-btn _edit" type="button" data-auth-btn>
+			<button class="cart__title-btn p3 _edit" type="button" data-auth-btn>
 				<span>У меня есть аккаунт</span>
 				{{ icon({
 					iconName: 'user',
