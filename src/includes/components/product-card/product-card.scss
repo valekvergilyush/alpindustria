@@ -61,10 +61,8 @@
 	}
 	&:hover {
 		padding-bottom: calc(var(--button-height) + var(--card-padding));
-		#{$this}__button {
-			&._product-card {
-				transform: translateY(0%);
-			}
+		#{$this}__props {
+			transform: translateY(0%);
 		}
 		#{$this}__photo {
 			opacity: 0;
@@ -74,10 +72,8 @@
 		}
 		@media (max-width: $laptop) {
 			padding-bottom: var(--card-padding-bottom);
-			#{$this}__button {
-				&._product-card {
-					transform: none;
-				}
+			#{$this}__props {
+				transform: translateY(100%);
 			}
 			#{$this}__photo {
 				opacity: 1;
@@ -94,14 +90,14 @@
 		&:hover {
 			padding-bottom: var(--card-padding);
 		}
-		#{$this}__props {
-			transform: translateY(0%);
-		}
-		#{$this}__button {
-			&._product-card {
-				transform: translateY(100%);
-			}
-		}
+		// #{$this}__props {
+		// 	transform: translateY(0%);
+		// }
+		// #{$this}__button {
+		// 	&._product-card {
+		// 		transform: translateY(100%);
+		// 	}
+		// }
 		#{$this}__photo {
 			opacity: 0;
 			&._zoom {

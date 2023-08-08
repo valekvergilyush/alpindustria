@@ -27,8 +27,8 @@ class ProductCard {
 			if (evt.matches) {
 				this.destroy();
 			} else {
-				this.propsOpener.forEach(button => {
-					button.addEventListener('click', this.onOpenerClick);
+				this.cards.forEach(card => {
+					this.onOpenerClick(card);
 				});
 			}
 		};
@@ -52,14 +52,8 @@ class ProductCard {
 			scroll += scrollStep;
 		});
 	}
-	onOpenerClick(event) {
-		event.preventDefault();
-
-		const btn = event.target;
-
-		const card = btn.closest('[data-product-card]');
+	onOpenerClick(card) {
 		const form = card.querySelector('[data-product-card-props]');
-		const closer = card.querySelector('[data-product-card-props-closer]');
 		const colorInputs = card.querySelectorAll('.product-card__colors input');
 		const sizeInputs = card.querySelectorAll('.product-card__sizes input');
 		const daysInputs = card.querySelectorAll('.product-card__days input');
@@ -133,11 +127,6 @@ class ProductCard {
 		sizeInputs.length && this.initInputSlider(card.sizes);
 		daysInputs.length && this.initInputSlider(card.days);
 
-		closer.addEventListener('click', e => {
-			e.preventDefault();
-
-			card.classList.remove(ClassName.PROPS_OPENED);
-		});
 		backButton.addEventListener('click', e => {
 			e.preventDefault();
 
@@ -149,9 +138,6 @@ class ProductCard {
 		document
 			.querySelectorAll(`[data-product-card].${ClassName.PROPS_OPENED}`)
 			.forEach(card => card.classList.remove(ClassName.PROPS_OPENED));
-		this.propsOpener.forEach(button => {
-			button.removeEventListener('click', this.onOpenerClick);
-		});
 	}
 }
 
