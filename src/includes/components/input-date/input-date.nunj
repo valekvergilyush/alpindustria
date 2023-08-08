@@ -1,5 +1,5 @@
 {% macro inputDate(props) %}
-	<div class="input-date{% if props.className %} {{ props.className }}{% endif %}">
+	<div class="input-date{% if props.className %} {{ props.className }}{% endif %}" {% if props.attr %} {{ props.attr }}{% endif %}>
 		<label class="input-date__label" for="{{ props.id }}">{% if props.label %}{{ props.label }}{% endif %}</label>
 		<input
 			class="input-date__input"

@@ -1,0 +1,25 @@
+<div class="delivery-data p3 _cdek">
+	<div class="delivery-data__row">
+		<p class="delivery-data__title">Ближайшая доставка</p>
+		<div>
+			<p class="delivery-data__blue s2">20-26 июня</p>
+			<p class="delivery-data__gray p4">Без возможности отказаться от части товаров.</p>
+		</div>
+	</div>
+	<div class="delivery-data__row">
+		<p class="delivery-data__title">Срок хранения</p>
+		<p>3 дня</p>
+	</div>
+	<div class="delivery-data__row">
+		<p class="delivery-data__title">Оплата</p>
+		<p>Любым удобным способом</p>
+	</div>
+	<div class="delivery-data__row">
+		<p class="delivery-data__title">Телефон</p>
+		<p>+7 (812) 242-11-95</p>
+	</div>
+	<div class="delivery-data__row">
+		<p class="delivery-data__title">Как доехать</p>
+		<p>Здесь будет текст о том, как доехать до этого пункта самовывоза наиболее легким способом</p>
+	</div>
+</div>

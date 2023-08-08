@@ -1,8 +1,8 @@
 <div class="cart__delivery-content cart-delivery _shop">
-	<div class="cart__block" data-auth-block>
+	<div class="cart__block _profile" data-auth-block>
 		<div class="cart__title-wrap">
-			<p class="cart__block-title ttu">01. контактные данные</p>
-			<button class="cart__title-btn" data-auth-btn>
+			<p class="cart__block-title ttu h6">01. контактные данные</p>
+			<button class="cart__title-btn _edit" type="button" data-auth-btn>
 				<span>У меня есть аккаунт</span>
 				{{ icon({
 					iconName: 'user',
@@ -10,11 +10,22 @@
 					attr: 'width="24" height="24" viewBox="0 0 32 33"'
 				}) }}
 			</button>
+			<button class="cart__title-btn _auth" type="button" data-edit-profile-data>
+				<span>У меня нет аккаунта</span>
+				{{ icon({
+					iconName: 'user',
+					className: 'cart__title-btn-icon',
+					attr: 'width="24" height="24" viewBox="0 0 32 33"'
+				}) }}
+			</button>
 		</div>
+		{% include "../order-auth-data/order-auth-data.nunj" %}
 		<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
 		<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
 	</div>
 	{% include "../delivery-address/delivery-address.nunj" %}
+	{% include "../cart-discount/cart-discount.nunj" %}
+	{% include "../order-information/order-information.nunj" %}
 	<button class="popups__close-button" type="button" data-popup-closer>
 		{{ icon({
 			iconName: "close-popup",

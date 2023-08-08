@@ -1,0 +1,159 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/input-date/input-date.nunj" import inputDate %}
+{% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="create-card-popup">
+	<div class="create-card-popup__start">
+		<h2 class="h5 create-card-popup__title ttu">Оформление карты</h2>
+		<div class="create-card-popup__form-wrap" data-validate data-callback="card-popup">
+			<form class="create-card-popup__form">
+				<div class="create-card-popup__row">
+					{{ input({
+						type: 'text',
+						id: 'name',
+						className: '',
+						label: 'Имя',
+						attr: 'required data-validate-type="text"'
+					}) }}
+					{{ input({
+						type: 'text',
+						id: 'surname',
+						className: '',
+						label: 'Фамилия',
+						attr: 'required data-validate-type="text"'
+					}) }}
+				</div>
+				<div class="create-card-popup__row">
+					{{ input({
+						type: 'text',
+						id: 'middle name',
+						className: '',
+						label: 'Отчество',
+						attr: 'required data-validate-type="text"'
+					}) }}
+					{{ input({
+						type: 'text',
+						id: 'email',
+						className: '',
+						label: 'Почта',
+						attr: 'required data-validate-type="text"'
+					}) }}
+				</div>
+				<div class="create-card-popup__row">
+					{{ inputDate({
+						name: 'card-birth-date',
+						label: 'Дата рождения',
+						id: 'birth-date',
+						className: '',
+						attr: 'required data-validate-type="text"'
+					}) }}
+					<div class="create-card-popup__radios">
+						{{ radio({
+							id: 'card-sex-radio-1',
+							className: '',
+							name: 'card-sex',
+							value: 'male',
+							attr: 'data-value="male"',
+							label: 'муж.',
+							checked: true
+						}) }}
+						{{ radio({
+							id: 'card-sex-radio-2',
+							className: '',
+							name: 'card-sex',
+							value: 'female',
+							attr: 'data-value="female"',
+							label: 'жен'
+						}) }}
+					</div>
+				</div>
+				<div class="create-card-popup__row">
+					<div class="create-card-popup__phone">
+						{{ input({
+							type: 'phone',
+							id: 'card-phone',
+							className: '',
+							label: 'Телефон',
+							attr: 'required data-validate-type="text"'
+						}) }}
+						<button class="create-card-popup__submit-phone">
+							<span>Подтвердить по SMS</span>
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'create-card-popup__submit-phone-icon',
+								attr: 'width="8" height="8"'
+							}) }}
+						</button>
+					</div>
+					{{ input({
+						type: 'text',
+						id: 'card-sms',
+						className: '',
+						label: 'Код из СМС',
+						attr: 'required data-validate-type="text"'
+					}) }}
+				</div>
+				<p class="create-card-popup__text p3">Хочу узнавать о закрытых акциях, распродажах, а также новых полезных статьях</p>
+				{{ checkbox({
+					className: 'p3 create-card-popup__checkbox',
+					id: 'sms-subscribe',
+					name: 'sms-subscribe',
+					text: 'по SMS (1-2 раза в месяц)'
+				}) }}
+				{{ checkbox({
+					className: 'p3 create-card-popup__checkbox',
+					id: 'sms-email',
+					name: 'sms-email',
+					text: 'по email (1-2 раза в неделю)'
+				}) }}
+				{{ checkbox({
+					className: 'p4 create-card-popup__checkbox _blue',
+					id: 'personal-data',
+					name: 'personal-data',
+					text: 'Даю согласие на обработку и использование персональных данных на все вреся действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”). Я подтверждаю что с условиями оферты ознакомлен (-а)',
+					attr: 'required data-validate-type="checkbox"'
+				}) }}
+				<div class="create-card-popup__bottom">
+					{{ button({
+						type: 'submit',
+						text: 'оформить',
+						icon: 'promo-arrow',
+						iconData: 'width="18" height="18"',
+						className: 'create-card-popup__submit _arrow'
+					}) }}
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="create-card-popup__anim-wrap">
+		<div class="create-card-popup__anim" data-lottie-animation="/assets/jsons/card-anim.json"></div>
+	</div>
+	<div class="create-card-popup__success-wrap">
+		<h2 class="h5 create-card-popup__title">Ваша карта успешно оформлена!</h2>
+		<div class="create-card-popup__info">
+			<p class="p3 c-gray-dark">Номер клубной карты:</p>
+			<p class="h5">313434</p>
+		</div>
+		<div class="create-card-popup__info">
+			<p class="p3 c-gray-dark">Доступно баллов:</p>
+			<p class="h5">0</p>
+		</div>
+		<div class="create-card-popup__contacts">
+			<p class="p3 c-gray-dark">Иван Федорович Крузенштерн</p>
+			<a class="p3 create-card-popup__link" href="tel:+79990000000" class="p3 c-gray-dark">+7 (999) 000 00 00</a>
+			<a class="p3 create-card-popup__link" href="mailto:hello.aplindustria@gmai.com" class="p3 c-gray-dark">hello.aplindustria@gmai.com</a>
+		</div>
+		<div class="create-card-popup__bottom _success">
+			{{ button({
+				text: 'продолжить покупки',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'create-card-popup__submit _arrow',
+				attr: 'data-popup-opener="cart"'
+			}) }}
+		</div>
+	</div>
+</div>

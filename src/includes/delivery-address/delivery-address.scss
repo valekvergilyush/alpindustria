@@ -19,6 +19,9 @@
 	&__section {
 		display: flex;
 		flex-direction: column;
+		.delivery-data._cdek {
+			display: none;
+		}
 		&._courier {
 			#{$this}__store-info {
 				display: none;
@@ -31,12 +34,15 @@
 			#{$this}__store-info {
 				display: block;
 			}
-			#{$this}__map-wrapper._sdek {
+			#{$this}__delivery-wrapper._sdek {
 				display: block;
 			}
 			#{$this}__select._sdek {
 				display: block;
 			}
+		}
+		&._cdek-address .delivery-data._cdek {
+			display: flex;
 		}
 	}
 	&__select {
@@ -58,31 +64,11 @@
 			}
 		}
 	}
-	&__map-wrapper {
+	&__delivery-wrapper {
 		position: relative;
-		margin-bottom: 48px;
-		padding-bottom: 87.4%;
-		background-color: var(--white);
-		@media (max-width: $laptop) {
-			margin-bottom: 35px;
-		}
-		@media (max-width: $tablet) {
-			padding-bottom: 76.8%;
-		}
-		@media (max-width: $mobile-lg) {
-			padding-bottom: 0;
-			height: 540px;
-		}
 		&._sdek {
 			display: none;
 		}
-	}
-	&__map {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 	}
 	&__fields {
 		display: flex;
@@ -144,5 +130,115 @@
 	}
 	&__tabs-list {
 		margin-inline: calc(var(--block-padding) * -1);
+	}
+	&__change-city {
+		align-self: flex-start;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+	}
+	&__pick-up-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: rem(16);
+		gap: rem(16);
+		border: 1px solid var(--blue-dark);
+		color: var(--blue-dark);
+		background-color: transparent;
+		#{$this}__section._cdek-address & {
+			display: none;
+		}
+	}
+	&__pick-up-icon {
+		fill: none;
+	}
+	&__change-city {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		font-size: rem(32);
+		letter-spacing: -0.64px;
+		&:not(:last-child) {
+			margin-bottom: rem(48);
+		}
+	}
+	&__change-city-icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+		fill: none;
+	}
+	&__text {
+		font-size: rem(18);
+		line-height: rem(24);
+		color: var(--gray-dark);
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__change-address {
+		display: flex;
+		flex-direction: column;
+		font: inherit;
+		&._cdek {
+			&:not(:last-child) {
+				margin-bottom: rem(48);
+			}
+			#{$this}__section:not(._cdek-address) & {
+				display: none;
+			}
+		}
+	}
+	&__change-address-text {
+		padding: rem(24);
+		background-color: var(--blue-dark);
+		color: var(--white);
+		font-size: rem(20);
+		line-height: rem(28);
+	}
+	&__change-address-btn {
+		@include reset-btn;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: rem(16);
+		padding: rem(18) rem(24);
+		border: 1px solid var(--blue-dark);
+		font-family: var(--font-family-suisse);
+		font-size: rem(16);
+		line-height: 1.25;
+	}
+	&__edit-address {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		font: inherit;
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__edit-address-icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+		fill: none;
+	}
+	&__change-address-wrap {
+		&:not(:last-child) {
+			margin-bottom: rem(48);
+		}
+		#{$this}._edit & {
+			display: none;
+		}
+	}
+	&__address-inputs {
+		display: none;
+		#{$this}._edit & {
+			display: block;
+		}
 	}
 }

@@ -1,3 +1,5 @@
+import Popups from '../../assets/js/modules/Popups';
+
 class DeliveryAddress {
 	constructor() {
 		this.init();
@@ -12,6 +14,7 @@ class DeliveryAddress {
 
 		this.section = this.container.querySelector('.delivery-address__radios').parentElement;
 		this.radios = this.container.querySelectorAll('.delivery-address__radios [type="radio"]');
+		this.editAddressBtn = this.container.querySelector('[data-edit-address]');
 		this.sectionMod = '_courier';
 
 		this.radios.forEach(radio => {
@@ -25,6 +28,16 @@ class DeliveryAddress {
 				this.section.classList.add(this.sectionMod);
 			});
 		});
+		if (this.editAddressBtn) {
+			this.editAddressBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.toggle('_edit');
+			});
+		}
+	}
+	setCdekAddress() {
+		this.section.classList.add('_cdek-address');
+		Popups.open('cart');
 	}
 }
 

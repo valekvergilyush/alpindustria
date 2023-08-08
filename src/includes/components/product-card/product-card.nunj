@@ -143,12 +143,6 @@
 					</div>
 				</div>
 			{% endif %}
-			{{ icon({
-				iconName: 'double-arrow-down',
-				className: 'product-card__arrow-icon',
-				attr: 'width="32" height="32"'
-			}) }}
-
 
 			<div class="product-card__total">
 				{{ button({
@@ -168,6 +162,5 @@
 				}) }}
 			</div>
 		</form>
-		<button class="product-card__close-btn" type="button" aria-label="Закрыть" data-product-card-props-closer></button>
 	</article>
 {% endmacro %}

@@ -1,0 +1,31 @@
+.order-information {
+	@media (max-width: $mobile-lg) {
+		margin-bottom: 123px;
+	}
+	&__textarea {
+		margin-bottom: rem(32);
+	}
+	&__checkbox {
+		margin-bottom: rem(24);
+	}
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+	}
+	&__btn {
+		padding: rem(8) rem(16);
+		border: 1px solid var(--blue-dark);
+		background-color: var(--blue-dark);
+		border-radius: rem(100);
+		font-size: rem(14);
+		line-height: rem(16);
+		&[href^='tel'] {
+			color: var(--white);
+		}
+		&._white {
+			background-color: var(--white);
+			color: var(--blue-dark);
+		}
+	}
+}

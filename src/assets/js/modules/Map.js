@@ -1,3 +1,4 @@
+import DeliveryAddress from '../../../includes/delivery-address/delivery-address';
 import GoogleMapsApi from '../helpers/google-map-api';
 
 const MAP_STYLES = [
@@ -183,6 +184,13 @@ const CONTENT = `
 		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
 		<a href="#" class="choose ttu">Выбрать магазин</a>
 	</div>`;
+const CDEK_CONTENT = `
+	<div class="map-popup">
+		<h3>г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
+		<p>Ежедневно c 10:00 до 22:00</p>
+		<p>Телефон: <a href="tel:+78122421195">+7 (812) 242-11-95</a></p>
+		<button type="button" class="choose ttu" data-set-cdek-delivery="1">Выбрать магазин</button>
+	</div>`;
 const ADDRESSES_CONTENT = `
 	<div class="map-popup">
 		<h3>г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)</h3>
@@ -240,6 +248,31 @@ const MAP_DATA_ADDRESSES = {
 		},
 	],
 };
+const MAP_DATA_CDEK = {
+	mapData: {
+		center: {
+			lat: 40.712784,
+			lng: -74.005941,
+		},
+		zoom: 11,
+	},
+	pointsData: [
+		{
+			position: {
+				lat: 40.712784,
+				lng: -73.994606,
+			},
+			content: CDEK_CONTENT,
+		},
+		{
+			position: {
+				lat: 40.712784,
+				lng: -74.1,
+			},
+			content: CDEK_CONTENT,
+		},
+	],
+};
 
 class Map {
 	constructor() {
@@ -259,6 +292,7 @@ class Map {
 			//cart map
 			const cartMapBlocks = document.querySelectorAll(`[data-map="cart"]`);
 			const addressMapBlock = document.querySelector(`[data-map="address"]`);
+			const cdekMapBlock = document.querySelector(`[data-map="cdek"]`);
 			if (cartMapBlocks.length) {
 				cartMapBlocks.forEach(cartMapBlock => {
 					this.renderMap(cartMapBlock, MAP_DATA_CART);
@@ -266,6 +300,17 @@ class Map {
 			}
 			if (addressMapBlock) {
 				this.adressesMap = this.renderMap(addressMapBlock, MAP_DATA_ADDRESSES);
+			}
+			if (cdekMapBlock) {
+				this.cdekMap = this.renderMap(cdekMapBlock, MAP_DATA_CDEK);
+				document.addEventListener('click', e => {
+					const cdekBtn = e.target.closest('[data-set-cdek-delivery]');
+					if (!cdekBtn) {
+						return;
+					}
+					const deliveryNumber = cdekBtn.dataset.setCdekDelivery;
+					DeliveryAddress.setCdekAddress(deliveryNumber);
+				});
 			}
 		});
 	}

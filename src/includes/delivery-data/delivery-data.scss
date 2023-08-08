@@ -1,0 +1,23 @@
+.delivery-data {
+	display: flex;
+	flex-direction: column;
+	gap: rem(24);
+	padding: rem(24);
+	background-color: var(--solitude);
+	color: var(--gray-dark);
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(16);
+	}
+	&__title {
+		color: var(--blue-dark);
+	}
+	&__blue {
+		color: var(--blue-dark);
+	}
+	&__gray {
+		color: var(--grey-dark);
+		opacity: 0.5;
+	}
+}

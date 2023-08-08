@@ -92,6 +92,18 @@
 		{
 			"name": "unsubscribe-form",
 			"animation": "RTL"
+		},
+		{
+			"name": "delivery-addresses",
+			"animation": "RTL"
+		},
+		{
+			"name": "cdek-addresses",
+			"animation": "RTL"
+		},
+		{
+			"name": "create-card",
+			"animation": "RTL"
 		}
 	]
 }
