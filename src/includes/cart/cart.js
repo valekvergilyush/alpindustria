@@ -8,6 +8,9 @@ const ClassName = {
 	OPENED_PAY: '_opened-pay',
 	HIDDEN: 'hidden',
 	ANIMATION: '_animation',
+	PROFILE: '_profile',
+	AUTH: '_auth',
+	EDIT: '_edit',
 };
 
 const TABLET_BREAKPOINT = 992;
@@ -231,9 +234,9 @@ class Cart {
 	}
 	onEditProfileDataBtnClick(e) {
 		e.preventDefault();
-		this.authBlock.classList.remove('_profile');
-		this.authBlock.classList.remove('_auth');
-		this.authBlock.classList.add('_edit');
+		this.authBlock.classList.remove(ClassName.PROFILE);
+		this.authBlock.classList.remove(ClassName.AUTH);
+		this.authBlock.classList.add(ClassName.EDIT);
 	}
 }
 

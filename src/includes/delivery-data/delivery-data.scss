@@ -3,7 +3,7 @@
 	flex-direction: column;
 	gap: rem(24);
 	padding: rem(24);
-	background-color: #f2f4f8;
+	background-color: var(--solitude);
 	color: var(--gray-dark);
 	&__row {
 		display: grid;

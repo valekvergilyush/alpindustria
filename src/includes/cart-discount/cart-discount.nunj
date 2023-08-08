@@ -24,7 +24,7 @@
 			label: 'Промокод',
 			attr: 'required data-validate-type="number"'
 		}) }}
-		<button class="cart-discount__btn h7 ttu">
+		<button class="cart-discount__btn h7 ttu" type="button">
 			<span>Применить</span>
 			{{ icon({
 				iconName: 'promo-arrow',
@@ -114,7 +114,7 @@
 				}) }}
 			</button>
 		</div>
-		<button class="cart-discount__card-delete" type="button" data-delete-card>
+		<button class="cart-discount__card-delete" type="button" data-delete-card aria-label="Удалить карту">
 			{{ icon({
 				iconName: 'close-filter',
 				className: 'cart-discount__card-delete-icon',
