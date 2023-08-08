@@ -1,0 +1,137 @@
+.create-card-popup {
+	$this: &;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	&__start {
+		display: none;
+		height: 100%;
+		#{$this}:not(._anim):not(._success) & {
+			display: block;
+		}
+	}
+	&__title {
+		flex-shrink: 0;
+		margin-bottom: rem(40);
+	}
+	&__form-wrap {
+		flex-grow: 1;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(24);
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+			@media (max-width: $tablet) {
+				grid-template-columns: repeat(1, 1fr);
+				margin-bottom: 16px;
+				gap: 16px;
+			}
+		}
+	}
+	&__text {
+		margin-top: rem(36);
+		margin-bottom: rem(16);
+		color: var(--gray-dark);
+	}
+	&__checkbox {
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+		&:last-child {
+			margin-bottom: rem(40);
+		}
+		.checkbox__label {
+			font: inherit;
+		}
+		&._blue {
+			.checkbox__label {
+				color: var(--blue-dark);
+			}
+		}
+	}
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: flex-end;
+		background-color: var(--blue-dark);
+		min-height: rem(134);
+		padding: rem(32) rem(40);
+		margin: auto calc(var(--popup-padding) * -1) calc(var(--popup-padding) * -1);
+		box-sizing: border-box;
+		&._success {
+			margin-top: rem(40);
+		}
+	}
+	&__submit {
+		color: var(--white);
+	}
+	&__submit-phone {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		margin-top: rem(20);
+	}
+	&__submit-phone-icon {
+		--size: #{rem(8)};
+		width: var(--size);
+		height: var(--size);
+		fill: var(--blue-dark);
+	}
+	&__radios {
+		display: flex;
+		align-items: center;
+		gap: rem(16) rem(50);
+		flex-wrap: wrap;
+	}
+	&__anim-wrap {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		#{$this}._anim & {
+			display: flex;
+		}
+	}
+	&__anim {
+		width: 100%;
+	}
+	&__success-wrap {
+		display: none;
+		flex-direction: column;
+		height: 100%;
+		#{$this}._success & {
+			display: flex;
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: rem(16);
+		margin-top: auto;
+		color: var(--gray-dark);
+	}
+	&__link {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

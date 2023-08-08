@@ -13,6 +13,10 @@ class FormValidate {
 				validationSuccessCallback: this.baseValidationSuccessCallback,
 				validationErrorCallback: this.baseValidationErrorCallback,
 			},
+			'card-popup': {
+				validationSuccessCallback: this.cardPopupValidationSuccessCallback,
+				validationErrorCallback: this.baseValidationErrorCallback,
+			},
 		};
 		this.init();
 	}
@@ -38,6 +42,16 @@ class FormValidate {
 	};
 	baseValidationSuccessCallback = e => {
 		e.preventDefault();
+		this.resetForm(e.target);
+	};
+	cardPopupValidationSuccessCallback = e => {
+		e.preventDefault();
+		const container = e.target.closest('.create-card-popup');
+		container.classList.add('_anim');
+		setTimeout(() => {
+			container.classList.remove('_anim');
+			container.classList.add('_success');
+		}, 1000);
 		this.resetForm(e.target);
 	};
 }

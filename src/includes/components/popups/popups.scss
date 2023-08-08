@@ -47,6 +47,7 @@
 		&[data-popup-wrapper='offer-2'],
 		&[data-popup-wrapper='delivery-addresses'],
 		&[data-popup-wrapper='cdek-addresses'],
+		&[data-popup-wrapper='create-card'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -78,6 +79,7 @@
 		&[data-popup-wrapper='offer'],
 		&[data-popup-wrapper='delivery-addresses'],
 		&[data-popup-wrapper='cdek-addresses'],
+		&[data-popup-wrapper='create-card'],
 		&[data-popup-wrapper='offer-2'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {

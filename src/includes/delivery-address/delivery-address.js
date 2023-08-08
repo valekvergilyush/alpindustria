@@ -1,4 +1,4 @@
-import Popups from "../../assets/js/modules/Popups";
+import Popups from '../../assets/js/modules/Popups';
 
 class DeliveryAddress {
 	constructor() {
