@@ -125,7 +125,7 @@
 				<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
 			{% endfor %}
 			<button class="delivery-auth__change-auth" type="button" data-delivery-auth-change>
-				<span>Войти через почту</span>
+				<span>Войти по номеру</span>
 				{{ icon({
 					iconName: 'promo-arrow-filled',
 					className: 'delivery-auth__change-auth-icon',

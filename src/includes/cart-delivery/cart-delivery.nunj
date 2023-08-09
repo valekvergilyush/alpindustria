@@ -26,7 +26,7 @@
 	{% include "../delivery-address/delivery-address.nunj" %}
 	{% include "../cart-discount/cart-discount.nunj" %}
 	{% include "../order-information/order-information.nunj" %}
-	<button class="popups__close-button" type="button" data-popup-closer>
+	<button class="popups__close-button _order" type="button" data-popup-closer>
 		{{ icon({
 			iconName: "close-popup",
 			className: "popups__close-icon",

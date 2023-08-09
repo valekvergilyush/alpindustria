@@ -52,6 +52,18 @@
 		@media (max-width: $laptop) {
 			justify-self: flex-end;
 		}
+		&._promo {
+			#{$this}._bonus & {
+				display: none;
+			}
+		}
+		&._accepted {
+			display: none;
+			color: var(--green-light);
+			#{$this}._bonus & {
+				display: flex;
+			}
+		}
 	}
 	&__btn-icon {
 		--size: #{rem(16)};
@@ -64,6 +76,9 @@
 		&._plus {
 			--size: #{rem(24)};
 		}
+		&._check {
+			--size: #{rem(24)};
+		}
 	}
 	&__sms {
 		display: none;
@@ -72,6 +87,13 @@
 		gap: rem(24);
 		#{$this}._sms & {
 			display: grid;
+		}
+		&._card {
+			padding: rem(24) rem(24);
+			border: 1px solid var(--blue-dark);
+			#{$this}._bonus-sms & {
+				display: grid;
+			}
 		}
 	}
 	&__sms-inner {
@@ -111,6 +133,9 @@
 		gap: rem(16);
 		align-items: center;
 		margin-top: rem(32);
+		@media (max-width: $tablet) {
+			grid-template-columns: auto;
+		}
 		#{$this}._card & {
 			display: grid;
 		}
@@ -120,6 +145,9 @@
 		@include reset-btn;
 		width: var(--size);
 		height: var(--size);
+		@media (max-width: $tablet) {
+			margin-left: auto;
+		}
 	}
 	&__card-delete-icon {
 		width: 100%;
@@ -132,19 +160,48 @@
 		gap: rem(16);
 		padding: rem(24) rem(32);
 		border: 1px solid var(--blue-dark);
+		#{$this}._bonus-sms & {
+			display: none;
+		}
+		@media (max-width: $tablet) {
+			grid-template-columns: auto;
+			padding: 16px;
+		}
 	}
 	&__card-img {
 		margin-right: rem(32);
+		@media (max-width: $tablet) {
+			margin-right: 0;
+		}
+		img {
+			width: 100%;
+		}
 	}
 	&__card-bonus {
 		@include reset-btn;
-		display: flex;
+		display: none;
 		justify-content: center;
+		align-items: center;
 		width: 100%;
 		gap: rem(16);
 		padding: rem(18);
 		background-color: var(--blue-dark);
 		color: var(--white);
+		&._card {
+			#{$this}:not(._bonus-sms):not(._card-bonus) & {
+				display: flex;
+			}
+		}
+		&._bonus-sms {
+			#{$this}._bonus-sms & {
+				display: flex;
+			}
+		}
+		&._card-bonus {
+			#{$this}._card-bonus & {
+				display: flex;
+			}
+		}
 	}
 	&__card-bonus-icon {
 		fill: none;
@@ -153,5 +210,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(8);
+		@media (max-width: $tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 }
