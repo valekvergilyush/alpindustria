@@ -110,7 +110,7 @@
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Доступно баллов:</p>
-					<p class="h6">255</p>
+					<p class="h6">255 <span class="cart__label"><span>-</span> <span>100</span></span></p>
 				</div>
 			</div>
 			<div class="cart-discount__sms _card">
@@ -146,7 +146,7 @@
 				{{ icon({
 					iconName: 'star-empty-2',
 					className: 'cart-discount__card-bonus-icon',
-					attr: 'width="24" height="24"'
+					attr: 'width="24" height="24" viewBox="0 0 26 26"'
 				}) }}
 			</button>
 			<button class="cart-discount__card-bonus h7 ttu _bonus-sms" type="button" data-submit-bonus>
@@ -154,7 +154,7 @@
 				{{ icon({
 					iconName: 'star-empty-2',
 					className: 'cart-discount__card-bonus-icon',
-					attr: 'width="24" height="24"'
+					attr: 'width="24" height="24" viewBox="0 0 26 26"'
 				}) }}
 			</button>
 			<button class="cart-discount__card-bonus h7 ttu _card-bonus" type="button" data-cancel-bonus>

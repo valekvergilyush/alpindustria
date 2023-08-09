@@ -10,7 +10,7 @@
 					attr: 'width="24" height="24" viewBox="0 0 32 33"'
 				}) }}
 			</button>
-			<button class="cart__title-btn _auth" type="button" data-edit-profile-data>
+			<button class="cart__title-btn p3 _auth" type="button" data-edit-profile-data>
 				<span>У меня нет аккаунта</span>
 				{{ icon({
 					iconName: 'user',
