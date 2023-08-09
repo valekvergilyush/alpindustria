@@ -1,5 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import env from '../utils/env';
+import ScrollLock from '../utils/scroll-lock';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
@@ -92,18 +91,9 @@ class Modals {
 
 		if (
 			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP) &&
-			!env.isIOS
+			!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 		) {
-			disableBodyScroll(this.modalsRoot);
-		}
-
-		if (
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP) &&
-			env.isIOS
-		) {
-			document.body.style.overflow = 'hidden';
+			ScrollLock.enable();
 		}
 
 		if (!modal) {
@@ -275,18 +265,9 @@ class Modals {
 
 			if (
 				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-				!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP) &&
-				!env.isIOS
+				!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 			) {
-				enableBodyScroll(this.modalsRoot);
-			}
-
-			if (
-				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-				!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP) &&
-				env.isIOS
-			) {
-				document.body.style.overflow = '';
+				ScrollLock.disable();
 			}
 		}
 	}
