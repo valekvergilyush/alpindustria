@@ -147,6 +147,7 @@
 		border: 1px solid var(--blue-dark);
 		color: var(--blue-dark);
 		background-color: transparent;
+		cursor: pointer;
 		#{$this}__section._cdek-address & {
 			display: none;
 		}
@@ -210,6 +211,7 @@
 		font-family: var(--font-family-suisse);
 		font-size: rem(16);
 		line-height: 1.25;
+		cursor: pointer;
 	}
 	&__edit-address {
 		@include reset-btn;
