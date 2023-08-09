@@ -21,7 +21,7 @@
 	{ name: 'г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)', value: 'г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)' }
 ] %} #}
 
-<div class="cart__block cart__delivery-address delivery-address tabs" data-tabs>
+<div class="cart__block cart__delivery-address delivery-address tabs" data-tabs id="cart-delivery">
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">02. Информация о доставке</p>
 	</div>

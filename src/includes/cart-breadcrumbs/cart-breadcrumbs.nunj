@@ -1,19 +1,19 @@
 {% set linkList = [
 	{
 		name: 'Контактные данные',
-		href: '#'
+		href: '#cart-contacts'
 	},
 	{
 		name: 'Способ доставки',
-		href: '#'
+		href: '#cart-delivery'
 	},
 	{
 		name: 'Дисконтная карта',
-		href: '#'
+		href: '#cart-discount'
 	},
 	{
 		name: 'Информирование по заказу',
-		href: '#'
+		href: '#cart-info'
 	}
 ] %}
 

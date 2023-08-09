@@ -42,7 +42,7 @@
 		{% include '../cart-delivery/cart-delivery-total.nunj' %}
 		{# {% include '../cart-delivery/cart-delivery-total-services.nunj' %} #}
 
-		<div class="cart-bottom _fixed">
+		<div class="cart-bottom">
 			<p class="cart__price _white p3 _shop">
 				Итого с учетом доставки:<br>
 				<span class="cart__price-value h5 ttu">145 000 ₽</span>

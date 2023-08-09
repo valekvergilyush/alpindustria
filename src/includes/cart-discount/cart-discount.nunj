@@ -1,10 +1,10 @@
 {% from "../components/input/input.nunj" import input %}
 
-<div class="cart-discount cart__block">
+<div class="cart-discount cart__block" id="cart-discount">
 	<div class="cart__title-wrap">
-		<p class="cart__block-title ttu h6">03. промокод и дисконтная карта</p>
+		<p class="cart__block-title ttu h6">03. дисконтная карта и промокод</p>
 	</div>
-	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" href="#">Условия программы лояльности</a>.</p>
+	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" href="/discount.html">Условия программы лояльности</a>.</p>
 	<div class="cart-discount__issue">
 		<p>У вас нет карты? Оформите прямо сейчас</p>
 		<button class="cart-discount__btn h7 ttu" type="button" data-popup-opener="create-card">
@@ -94,7 +94,7 @@
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Статус:</p>
-					<p class="h6">Silver</p>
+					<p class="h6 ttu">Silver</p>
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Номер карты:</p>
@@ -105,10 +105,46 @@
 					<p class="h6">0</p>
 				</div>
 			</div>
+			<div class="cart-discount__sms">
+				<button type="button" class="cart-discount__sms-back" data-sms-back>
+					{{ icon({
+						iconName: 'double-arrow-left',
+						className: 'cart-discount__sms-back-icon',
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+				<div class="cart-discount__sms-inner">
+					<div class="cart-discount__sms-input">
+						{{ input({
+							type: 'text',
+							id: 'discount-phone-sms',
+							className: 'cart-discount__sms-input',
+							label: 'Код из СМС',
+							attr: 'required data-validate-type="number"'
+						}) }}
+						<button class="cart-discount__btn h7 ttu" type="button" data-sms-submit>
+							<span>Подтвердить</span>
+							{{ icon({
+								iconName: 'promo-arrow',
+								className: 'cart-discount__btn-icon _arrow',
+								attr: 'width="24" height="24"'
+							}) }}
+						</button>
+					</div>
+					<button class="p4 cart-discount__btn-send-code" type="button">
+						<span>Выслать код повторно</span>
+						{{ icon({
+							iconName: 'promo-arrow',
+							className: 'cart-discount__btn-send-code-icon',
+							attr: 'width="24" height="24"'
+						}) }}
+					</button>
+				</div>
+			</div>
 			<button class="cart-discount__card-bonus h7 ttu" type="button">
 				<span>потратить баллы</span>
 				{{ icon({
-					iconName: 'star',
+					iconName: 'star-empty',
 					className: 'cart-discount__card-bonus-icon',
 					attr: 'width="24" height="24"'
 				}) }}
