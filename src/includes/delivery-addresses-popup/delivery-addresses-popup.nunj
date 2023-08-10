@@ -22,7 +22,7 @@
 	<ul class="delivery-addresses-popup__addresses">
 		{% for item in deliveryAddresses %}
 			<li>
-				<button class="delivery-addresses-popup__btn {% if loop.index === 1 %}_active{% endif %}" type="button" data-popup-opener="cart">
+				<button class="delivery-addresses-popup__btn {% if loop.index === 1 %}_active{% endif %}" type="button" data-modal-closer>
 					<p class="p2">{{ item.address }}</p>
 					<p>{{ item.index }}</p>
 				</button>

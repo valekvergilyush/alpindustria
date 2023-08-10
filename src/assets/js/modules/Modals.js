@@ -6,7 +6,7 @@ const HTML_CLASSLIST = document.documentElement.classList;
 
 const ClassName = {
 	OPENED_MENU: '_menu-opened',
-	OPENED_MODAL: '_modal-opened',
+	OPENED_POPUP: '_popup-opened',
 };
 
 const Animation = {
@@ -17,7 +17,7 @@ const TABLET_BREAKPOINT = 768;
 
 const documentClassList = document.documentElement.classList;
 
-class Popups {
+class Modals {
 	constructor() {
 		this.init();
 	}
@@ -30,24 +30,23 @@ class Popups {
 		this.opened = false;
 		this.openedClass = '';
 
-		this.wrapper = document.querySelector('[data-popups]');
+		this.wrapper = document.querySelector('[data-modals]');
 
-		this.activePopup = null;
-		this.activePopupName = '';
-		this.popupsRoot = document.querySelector('[data-popups]');
-		this.popups = document.querySelectorAll('[data-popup-wrapper]');
-		this.closeButton = document.querySelector('.popups__close-button.close-button');
+		this.activeModal = null;
+		this.activeModalName = '';
+		this.modalsRoot = document.querySelector('[data-modals]');
+		this.modals = document.querySelectorAll('[data-modal-wrapper]');
+		this.closeButton = document.querySelector('.modals__close-button.close-button');
 
-		Array.from(document.querySelectorAll('[data-popup-opener]')).forEach(element => {
+		Array.from(document.querySelectorAll('[data-modal-opener]')).forEach(element => {
 			element.addEventListener('click', e => {
 				e.preventDefault();
-				const popupName = e.currentTarget.getAttribute('data-popup-opener');
-				window.history.pushState({}, '', `#${popupName}`);
-				this.open(popupName);
+				const modalName = e.currentTarget.getAttribute('data-modal-opener');
+				this.open(modalName);
 			});
 		});
 
-		Array.from(document.querySelectorAll('[data-popup-closer]')).forEach(element => {
+		Array.from(document.querySelectorAll('[data-modal-closer]')).forEach(element => {
 			element.addEventListener('click', e => {
 				e.preventDefault();
 				this.close();
@@ -76,7 +75,7 @@ class Popups {
 		onWindowWidthChange(this.mqTablet);
 	}
 	open(name) {
-		if (this.activePopupName === name) {
+		if (this.activeModalName === name) {
 			return;
 		}
 
@@ -84,27 +83,27 @@ class Popups {
 			this.close(true);
 		}
 
-		const popup = this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
-		let popupAnimation;
-		if (popup) {
-			popupAnimation = popup.getAttribute('data-popup-animation');
+		const modal = this.wrapper.querySelector('[data-modal-wrapper="' + name + '"]');
+		let modalAnimation;
+		if (modal) {
+			modalAnimation = modal.getAttribute('data-modal-animation');
 		}
 
 		if (
 			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MODAL)
+			!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 		) {
 			ScrollLock.enable();
 		}
 
-		if (!popup) {
-			console.log('No popup for ' + name + ' opener');
+		if (!modal) {
+			console.log('No modal for ' + name + ' opener');
 			return;
 		}
 
 		this.opened = true;
-		this.activePopup = popup;
-		this.activePopupName = name;
+		this.activeModal = modal;
+		this.activeModalName = name;
 
 		this.wrapper.classList.add('_' + name);
 
@@ -120,26 +119,26 @@ class Popups {
 		const onWindowWidthChange = evt => {
 			if (evt.matches) {
 				this.openAnimation = gsap.fromTo(
-					this.activePopup,
+					this.activeModal,
 					{ yPercent: 100, display: 'flex' },
 					{
 						yPercent: 0,
 						duration: 0.35,
 						clearProps: 'transform',
 						onComplete: () => {
-							const focusElement = this.activePopup.querySelector('[data-popup-focus]');
+							const focusElement = this.activeModal.querySelector('[data-modal-focus]');
 							if (focusElement) {
 								focusElement.focus && focusElement.focus();
 							}
-							this.initPopupAccordions(popup);
-							if (popup.scrollHeight > window.innerHeight) {
-								const inner = popup.querySelector('[data-popup]');
+							this.initModalAccordions(modal);
+							if (modal.scrollHeight > window.innerHeight) {
+								const inner = modal.querySelector('[data-modal]');
 								inner.style.overflow = 'hidden';
-								popup.addEventListener('scroll', () => {
-									if (popup.scrollTop >= Number.parseInt(getComputedStyle(inner).marginTop, 10)) {
+								modal.addEventListener('scroll', () => {
+									if (modal.scrollTop >= Number.parseInt(getComputedStyle(inner).marginTop, 10)) {
 										inner.style.overflow = 'auto';
 									} else {
-										if (popup.scrollTop === 0) {
+										if (modal.scrollTop === 0) {
 											inner.style.overflow = 'hidden';
 										}
 									}
@@ -151,17 +150,17 @@ class Popups {
 				);
 			} else {
 				this.openAnimation = gsap.fromTo(
-					this.activePopup,
+					this.activeModal,
 					{ xPercent: 100, display: 'flex' },
 					{
 						xPercent: 0,
 						duration: 0.35,
 						onComplete: () => {
-							const focusElement = this.activePopup.querySelector('[data-popup-focus]');
+							const focusElement = this.activeModal.querySelector('[data-modal-focus]');
 							if (focusElement) {
 								focusElement.focus && focusElement.focus();
 							}
-							this.initPopupAccordions(popup);
+							this.initModalAccordions(modal);
 						},
 						paused: true,
 					}
@@ -169,56 +168,56 @@ class Popups {
 			}
 		};
 
-		if (popupAnimation === Animation.RTL) {
+		if (modalAnimation === Animation.RTL) {
 			this.mqTablet.addEventListener('change', onWindowWidthChange);
 			onWindowWidthChange(this.mqTablet);
 			this.openAnimation.play();
 		} else {
 			gsap.fromTo(
-				this.activePopup,
+				this.activeModal,
 				{ autoAlpha: 0, scale: 0.98, display: 'flex' },
 				{
 					duration: 0.35,
 					autoAlpha: 1,
 					scale: 1,
 					onComplete: () => {
-						const focusElement = this.activePopup.querySelector('[data-popup-focus]');
+						const focusElement = this.activeModal.querySelector('[data-modal-focus]');
 						if (focusElement) {
 							focusElement.focus && focusElement.focus();
 						}
-						this.onOpened.call(popup);
-						this.initPopupAccordions(popup);
+						this.onOpened.call(modal);
+						this.initModalAccordions(modal);
 					},
 				}
 			);
 		}
 
-		documentClassList.add('_popup-opened');
+		documentClassList.add('_modal-opened');
 
-		this.openedClass = '_popup-opened-' + name;
+		this.openedClass = '_modal-opened-' + name;
 		documentClassList.add(this.openedClass);
 
-		this.onOpen.call(popup);
+		this.onOpen.call(modal);
 	}
 	close(immediate = false) {
 		if (this.opened) {
 			this.opened = false;
 
-			this.wrapper.classList.remove('_' + this.activePopupName);
+			this.wrapper.classList.remove('_' + this.activeModalName);
 
-			this.onCloseStart.call(this.activePopupName);
+			this.onCloseStart.call(this.activeModalName);
 
-			this.activePopupName = '';
+			this.activeModalName = '';
 
 			this.wrapper.classList.add('no-pe');
 
-			const popupAnimation = this.activePopup.getAttribute('data-popup-animation');
+			const modalAnimation = this.activeModal.getAttribute('data-modal-animation');
 
 			gsap.to(this.wrapper, 0.35, { duration: 0.35, autoAlpha: 0, display: 'none' });
 
 			const onWindowWidthChange = evt => {
 				if (evt.matches) {
-					this.closeAnimation = gsap.to(this.activePopup, {
+					this.closeAnimation = gsap.to(this.activeModal, {
 						duration: immediate ? 0 : 0.35,
 						yPercent: 100,
 						display: 'none',
@@ -228,7 +227,7 @@ class Popups {
 						paused: true,
 					});
 				} else {
-					this.closeAnimation = gsap.to(this.activePopup, {
+					this.closeAnimation = gsap.to(this.activeModal, {
 						duration: immediate ? 0 : 0.35,
 						xPercent: 100,
 						display: 'none',
@@ -240,12 +239,12 @@ class Popups {
 				}
 			};
 
-			if (popupAnimation === Animation.RTL) {
+			if (modalAnimation === Animation.RTL) {
 				this.mqTablet.addEventListener('change', onWindowWidthChange);
 				onWindowWidthChange(this.mqTablet);
 				this.closeAnimation.play();
 			} else {
-				gsap.to(this.activePopup, {
+				gsap.to(this.activeModal, {
 					duration: immediate ? 0 : 0.35,
 					autoAlpha: 0,
 					scale: 0.98,
@@ -256,36 +255,31 @@ class Popups {
 				});
 			}
 
-			documentClassList.remove('_popup-opened');
+			documentClassList.remove('_modal-opened');
 
 			if (this.openedClass !== '') {
 				documentClassList.remove(this.openedClass);
 				this.openedClass = '';
 			}
 			this.stopIframeVideos();
-			window.history.pushState(
-				'',
-				document.title,
-				window.location.pathname + window.location.search
-			);
 
 			if (
 				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-				!HTML_CLASSLIST.contains(ClassName.OPENED_MODAL)
+				!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 			) {
 				ScrollLock.disable();
 			}
 		}
 	}
-	getPopup(name) {
-		return this.wrapper.querySelector('[data-popup-wrapper="' + name + '"]');
+	getModal(name) {
+		return this.wrapper.querySelector('[data-modal-wrapper="' + name + '"]');
 	}
-	initPopupAccordions(popup) {
-		if (!popup.accorions) {
-			popup.accorions = [];
-			popup
+	initModalAccordions(modal) {
+		if (!modal.accorions) {
+			modal.accorions = [];
+			modal
 				.querySelectorAll('[data-accordion-toggle]')
-				.forEach(toggle => popup.accorions.push(new Accordion(toggle)));
+				.forEach(toggle => modal.accorions.push(new Accordion(toggle)));
 		}
 	}
 	stopIframeVideos() {
@@ -297,4 +291,4 @@ class Popups {
 	}
 }
 
-export default new Popups();
+export default new Modals();

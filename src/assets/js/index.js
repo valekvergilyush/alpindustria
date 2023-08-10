@@ -30,6 +30,7 @@ class AlpIndustry {
 			DragScroll: require('./modules/DragScroll').default,
 			Product: require('./modules/Product').default,
 			Popups: require('./modules/Popups').default,
+			Modals: require('./modules/Modals').default,
 			Select: require('./modules/Select').default,
 			Availability: require('./modules/Availability').default,
 			Input: require('./modules/Input').default,
