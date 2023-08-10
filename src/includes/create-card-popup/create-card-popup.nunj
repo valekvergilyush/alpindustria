@@ -110,7 +110,7 @@
 					text: 'по email (1-2 раза в неделю)'
 				}) }}
 				{{ checkbox({
-					className: 'p4 create-card-popup__checkbox _blue',
+					className: 'p4 create-card-popup__checkbox _blue _last',
 					id: 'personal-data',
 					name: 'personal-data',
 					text: 'Даю согласие на обработку и использование персональных данных на все вреся действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”). Я подтверждаю что с условиями оферты ознакомлен (-а)',
@@ -132,7 +132,7 @@
 		<div class="create-card-popup__anim" data-lottie-animation="/assets/jsons/card-anim.json"></div>
 	</div>
 	<div class="create-card-popup__success-wrap">
-		<h2 class="h5 create-card-popup__title">Ваша карта успешно оформлена!</h2>
+		<h2 class="h5 create-card-popup__title ttu">Ваша карта успешно оформлена!</h2>
 		<div class="create-card-popup__info">
 			<p class="p3 c-gray-dark">Номер клубной карты:</p>
 			<p class="h5">313434</p>

@@ -4,7 +4,7 @@
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">03. дисконтная карта и промокод</p>
 	</div>
-	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" href="/discount.html">Условия программы лояльности</a>.</p>
+	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" target="_blank" href="/discount.html">Условия программы лояльности</a>.</p>
 	<div class="cart-discount__issue">
 		<p>У вас нет карты? Оформите прямо сейчас</p>
 		<button class="cart-discount__btn h7 ttu" type="button" data-popup-opener="create-card">
@@ -24,7 +24,7 @@
 			label: 'Промокод',
 			attr: 'required data-validate-type="number"'
 		}) }}
-		<button class="cart-discount__btn h7 ttu" type="button">
+		<button class="cart-discount__btn _promo h7 ttu" type="button" data-add-bonus>
 			<span>Применить</span>
 			{{ icon({
 				iconName: 'promo-arrow',
@@ -32,6 +32,14 @@
 				attr: 'width="16" height="16"'
 			}) }}
 		</button>
+		<p class="cart-discount__btn ttu _accepted">
+			<span>Промокод активирован</span>
+			{{ icon({
+				iconName: 'check',
+				className: 'cart-discount__btn-icon _check',
+				attr: 'width="24" height="24"'
+			}) }}
+		</p>
 	</div>
 	<div class="cart-discount__link-card">
 		{{ input({
@@ -102,10 +110,10 @@
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Доступно баллов:</p>
-					<p class="h6">0</p>
+					<p class="h6">255 <span class="cart__label"><span>-</span> <span>100</span></span></p>
 				</div>
 			</div>
-			<div class="cart-discount__sms">
+			<div class="cart-discount__sms _card">
 				<button type="button" class="cart-discount__sms-back" data-sms-back>
 					{{ icon({
 						iconName: 'double-arrow-left',
@@ -122,14 +130,6 @@
 							label: 'Код из СМС',
 							attr: 'required data-validate-type="number"'
 						}) }}
-						<button class="cart-discount__btn h7 ttu" type="button" data-sms-submit>
-							<span>Подтвердить</span>
-							{{ icon({
-								iconName: 'promo-arrow',
-								className: 'cart-discount__btn-icon _arrow',
-								attr: 'width="24" height="24"'
-							}) }}
-						</button>
 					</div>
 					<button class="p4 cart-discount__btn-send-code" type="button">
 						<span>Выслать код повторно</span>
@@ -141,10 +141,26 @@
 					</button>
 				</div>
 			</div>
-			<button class="cart-discount__card-bonus h7 ttu" type="button">
+			<button class="cart-discount__card-bonus h7 ttu _card" type="button" data-spend-bonus>
 				<span>потратить баллы</span>
 				{{ icon({
-					iconName: 'star-empty',
+					iconName: 'star-empty-2',
+					className: 'cart-discount__card-bonus-icon',
+					attr: 'width="24" height="24" viewBox="0 0 26 26"'
+				}) }}
+			</button>
+			<button class="cart-discount__card-bonus h7 ttu _bonus-sms" type="button" data-submit-bonus>
+				<span>подтвердить списание баллов</span>
+				{{ icon({
+					iconName: 'star-empty-2',
+					className: 'cart-discount__card-bonus-icon',
+					attr: 'width="24" height="24" viewBox="0 0 26 26"'
+				}) }}
+			</button>
+			<button class="cart-discount__card-bonus h7 ttu _card-bonus" type="button" data-cancel-bonus>
+				<span>не списывать баллы</span>
+				{{ icon({
+					iconName: 'star',
 					className: 'cart-discount__card-bonus-icon',
 					attr: 'width="24" height="24"'
 				}) }}

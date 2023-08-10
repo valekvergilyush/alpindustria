@@ -11,15 +11,6 @@
 ]
 %}
 
-{# {% set cityList = [
-	{ name: 'Москва', value: 'Москва' },
-	{ name: 'Санкт-Петербург', value: 'Санкт-Петербург' },
-	{ name: 'Новосибирск', value: 'Новосибирск' },
-	{ name: 'Екатеринбург', value: 'Екатеринбург' }
-] %}
-{% set shopList = [
-	{ name: 'г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)', value: 'г. Санкт-Петербург, наб. Черной речки, д. 6 (ст.м. Черная Речка)' }
-] %} #}
 
 <div class="cart__block cart__delivery-address delivery-address tabs" data-tabs id="cart-delivery">
 	<div class="cart__title-wrap">
@@ -35,13 +26,6 @@
 		{% endfor %}
 	</ul>
 	<section class="delivery-address__section _courier tabs__panel" aria-labelledby="delivery" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
-		{# {{ select({
-			id: 'city-select-courier',
-			options: cityList,
-			className: 'delivery-address__select _delivery',
-			label: 'Город',
-			search: true
-		}) }} #}
 		<button class="delivery-address__change-city s2" type="button" data-modal-opener="city-form">
 			<span>г. Санкт-Петербург</span>
 			{{ icon({
@@ -217,9 +201,5 @@
 			Стоимость доставки:<br>
 			<span class="delivery-address__price-value">Бесплатно</span>
 		</p>
-		{# <div class="delivery-address__map-wrapper">
-			<div class="delivery-address__map map" data-map="cart"></div>
-		</div>
-		{% include "../store-info/store-info.nunj" %} #}
 	</section>
 </div>
