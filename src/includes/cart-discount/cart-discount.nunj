@@ -43,7 +43,7 @@
 	</div>
 	<div class="cart-discount__link-card">
 		{{ input({
-			type: 'text',
+			type: 'tel',
 			id: 'discount-phone',
 			className: '',
 			label: 'Номер телефона',
@@ -110,7 +110,7 @@
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Доступно баллов:</p>
-					<p class="h6">255 <span class="cart__label"><span>-</span> <span>100</span></span></p>
+					<p class="h6">255 <span class="cart-discount__label cart__label"><span>-</span> <span>100</span></span></p>
 				</div>
 			</div>
 			<div class="cart-discount__sms _card">

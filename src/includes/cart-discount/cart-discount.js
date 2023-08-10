@@ -18,6 +18,7 @@ class CartDiscount {
 		this.spendBonusBtn = this.container.querySelector('[data-spend-bonus]');
 		this.submitBonusBtn = this.container.querySelector('[data-submit-bonus]');
 		this.cancelBonusBtn = this.container.querySelector('[data-cancel-bonus]');
+		this.cartBottom = document.querySelector('[data-order-bottom]');
 
 		this.addCardBtn.addEventListener('click', evt => {
 			evt.preventDefault();
@@ -48,10 +49,12 @@ class CartDiscount {
 			evt.preventDefault();
 			this.container.classList.remove('_bonus-sms');
 			this.container.classList.add('_card-bonus');
+			this.cartBottom.classList.add('_card-bonus');
 		});
 		this.cancelBonusBtn.addEventListener('click', evt => {
 			evt.preventDefault();
 			this.container.classList.remove('_card-bonus');
+			this.cartBottom.classList.remove('_card-bonus');
 		});
 	}
 }

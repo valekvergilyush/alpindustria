@@ -62,7 +62,8 @@
 				text: 'Авторизоваться',
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2'
+				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+				attr: 'data-submit-auth'
 			}) }}
 		</div>
 		<div class="delivery-auth__fields _sms">
@@ -117,7 +118,8 @@
 				text: 'Авторизоваться',
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2'
+				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+				attr: 'data-submit-auth'
 			}) }}
 		</div>
 		<div class="delivery-auth__fields _socials">

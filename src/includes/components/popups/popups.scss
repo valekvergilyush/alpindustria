@@ -288,6 +288,14 @@
 				min-height: auto;
 			}
 		}
+		&[data-popup='create-card'] {
+			#{$this}__close-button {
+				transform: translateY(#{rem(12)});
+				@media (max-width: $laptop) {
+					transform: translateY(5px);
+				}
+			}
+		}
 	}
 	&__close-button {
 		@extend .animated;

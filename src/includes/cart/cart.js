@@ -42,6 +42,7 @@ class Cart {
 		this.editProfileDataBtns = this.container.querySelectorAll('[data-edit-profile-data]');
 		this.authBlock = this.container.querySelector('[data-auth-block]');
 		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
+		this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -53,6 +54,7 @@ class Cart {
 		this.onAuthBtnClick = this.onAuthBtnClick.bind(this);
 		this.onAuthBtnChangeClick = this.onAuthBtnChangeClick.bind(this);
 		this.onEditProfileDataBtnClick = this.onEditProfileDataBtnClick.bind(this);
+		this.onSubmitAuthBtnClick = this.onSubmitAuthBtnClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
@@ -71,6 +73,9 @@ class Cart {
 		});
 		this.editProfileDataBtns.forEach(btn => {
 			btn.addEventListener('click', this.onEditProfileDataBtnClick);
+		});
+		this.submitAuthBtns.forEach(btn => {
+			btn.addEventListener('click', this.onSubmitAuthBtnClick);
 		});
 	}
 	onSubmitButtonClick(evt) {
@@ -237,6 +242,12 @@ class Cart {
 		this.authBlock.classList.remove(ClassName.PROFILE);
 		this.authBlock.classList.remove(ClassName.AUTH);
 		this.authBlock.classList.add(ClassName.EDIT);
+	}
+	onSubmitAuthBtnClick(e) {
+		e.preventDefault();
+		this.authBlock.classList.remove(ClassName.EDIT);
+		this.authBlock.classList.remove(ClassName.AUTH);
+		this.authBlock.classList.add(ClassName.PROFILE);
 	}
 }
 

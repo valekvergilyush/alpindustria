@@ -140,10 +140,37 @@
 		&._total {
 			display: none;
 		}
+		#{$this}._shop &._rent {
+			display: none;
+		}
+		#{$this}._rent &._shop {
+			display: none;
+		}
+		#{$this}._rent &._rent {
+			display: flex;
+			&._total {
+				display: none;
+			}
+			._opened-pay & {
+				display: none;
+				&._total {
+					display: flex;
+				}
+			}
+		}
 	}
 	&__submit {
 		margin-top: auto;
 		margin-left: auto;
+		#{$this}._shop &._rent {
+			display: none;
+		}
+		#{$this}._rent &._shop {
+			display: none;
+		}
+		#{$this}._rent &._rent {
+			display: flex;
+		}
 	}
 	&__price {
 		color: var(--blue-light);
@@ -338,7 +365,7 @@
 		}
 	}
 	&__label {
-		display: inline-flex;
+		display: none;
 		align-items: center;
 		gap: 2px;
 		padding: rem(4) rem(8);
@@ -349,6 +376,12 @@
 		color: var(--white);
 		text-transform: initial;
 		transform: translateY(-2px);
+		.cart-discount._card-bonus & {
+			display: inline-flex;
+		}
+		.cart-bottom._card-bonus & {
+			display: inline-flex;
+		}
 	}
 	&__label-small {
 		font-size: rem(8);
@@ -362,11 +395,15 @@
 		}
 	}
 	&__breadcrumbs {
+		display: none;
 		flex-shrink: 0;
 		margin-bottom: rem(40);
 		@media (max-width: $laptop) {
 			margin-inline: calc(var(--popup-padding) * -1);
 			padding-inline: var(--popup-padding);
+		}
+		#{$this}._shop & {
+			display: flex;
 		}
 	}
 }

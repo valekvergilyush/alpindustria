@@ -73,7 +73,7 @@
 				<div class="create-card-popup__row">
 					<div class="create-card-popup__phone">
 						{{ input({
-							type: 'phone',
+							type: 'tel',
 							id: 'card-phone',
 							className: '',
 							label: 'Телефон',
