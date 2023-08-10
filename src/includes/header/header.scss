@@ -11,6 +11,11 @@
 			background-color $fast-transition-duration $default-transition-function;
 		opacity: initial;
 	}
+	._popup-opened-cart & {
+		background-color: var(--white);
+		border-bottom: 1px solid var(--blue-dark);
+		color: var(--blue-dark);
+	}
 	&__container {
 		display: flex;
 		align-items: center;

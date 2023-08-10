@@ -5,14 +5,16 @@
 	height: 100%;
 	&__start {
 		display: none;
+		flex-direction: column;
 		height: 100%;
 		#{$this}:not(._anim):not(._success) & {
-			display: block;
+			display: flex;
 		}
 	}
 	&__title {
 		flex-shrink: 0;
 		margin-bottom: rem(40);
+		padding-right: rem(50);
 	}
 	&__form-wrap {
 		flex-grow: 1;
@@ -41,11 +43,14 @@
 		color: var(--gray-dark);
 	}
 	&__checkbox {
-		&:not(:last-child) {
+		&:not(._last) {
 			margin-bottom: rem(16);
 		}
-		&:last-child {
+		&._last {
 			margin-bottom: rem(40);
+			@media (max-width: $tablet) {
+				margin-bottom: 32px;
+			}
 		}
 		.checkbox__label {
 			font: inherit;
@@ -66,6 +71,10 @@
 		padding: rem(32) rem(40);
 		margin: auto calc(var(--popup-padding) * -1) calc(var(--popup-padding) * -1);
 		box-sizing: border-box;
+		@media (max-width: $tablet) {
+			padding: 16px;
+			min-height: 72px;
+		}
 		&._success {
 			margin-top: rem(40);
 		}

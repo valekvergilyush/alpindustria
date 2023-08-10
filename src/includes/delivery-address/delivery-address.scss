@@ -147,6 +147,7 @@
 		border: 1px solid var(--blue-dark);
 		color: var(--blue-dark);
 		background-color: transparent;
+		cursor: pointer;
 		#{$this}__section._cdek-address & {
 			display: none;
 		}

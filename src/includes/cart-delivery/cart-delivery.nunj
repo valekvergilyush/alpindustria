@@ -10,7 +10,7 @@
 					attr: 'width="24" height="24" viewBox="0 0 32 33"'
 				}) }}
 			</button>
-			<button class="cart__title-btn _auth" type="button" data-edit-profile-data>
+			<button class="cart__title-btn p3 _auth" type="button" data-edit-profile-data>
 				<span>У меня нет аккаунта</span>
 				{{ icon({
 					iconName: 'user',
@@ -26,7 +26,7 @@
 	{% include "../delivery-address/delivery-address.nunj" %}
 	{% include "../cart-discount/cart-discount.nunj" %}
 	{% include "../order-information/order-information.nunj" %}
-	<button class="popups__close-button" type="button" data-popup-closer>
+	<button class="popups__close-button _order" type="button" data-popup-closer>
 		{{ icon({
 			iconName: "close-popup",
 			className: "popups__close-icon",

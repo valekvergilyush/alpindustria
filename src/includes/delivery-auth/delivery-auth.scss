@@ -37,6 +37,11 @@
 		}
 		&._socials {
 			align-items: center;
+			@media (max-width: $tablet) {
+				flex-direction: column;
+				align-items: stretch;
+				gap: 8px;
+			}
 		}
 		#{$this}[data-form-stage='sms'] &._sms {
 			display: flex;
@@ -68,6 +73,9 @@
 			height: 32px;
 			padding: 0 11px;
 			padding-top: 0.35em;
+		}
+		@media (max-width: $tablet) {
+			align-items: center;
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 18px;
