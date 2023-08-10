@@ -1,109 +1,111 @@
 {
-	"siteLang": "ru",
-	"siteName": "АльпИндустрия",
+	"modalsList": [
+		{
+			"animation": "RTL",
+			"name": "cdek-addresses"
+		},
+		{
+			"animation": "RTL",
+			"name": "delivery-addresses"
+		},
+		{
+			"animation": "RTL",
+			"name": "city-form"
+		}
+	],
 	"popupsList": [
 		{
-			"name": "availability",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "availability"
 		},
 		{
-			"name": "city-form",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "sizes"
 		},
 		{
-			"name": "sizes",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "review-form"
 		},
 		{
-			"name": "review-form",
-			"animation": "RTL"
-		},
-    {
-			"name": "cart",
-			"animation": "RTL"
-		},
-    {
-			"name": "cart-empty",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "cart"
 		},
 		{
-			"name": "wishlist",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "cart-empty"
 		},
 		{
-			"name": "wishlist-services",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "wishlist"
 		},
 		{
-			"name": "auth",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "wishlist-services"
 		},
 		{
-			"name": "product-appear",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "auth"
 		},
 		{
-			"name": "product-technology",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "product-appear"
 		},
 		{
-			"name": "product-to-order",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "product-technology"
 		},
 		{
-			"name": "contacts-shop",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "product-to-order"
 		},
 		{
-			"name": "contacts-community",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "contacts-shop"
 		},
 		{
-			"name": "contacts-distribution",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "contacts-community"
 		},
 		{
-			"name": "cart-order",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "contacts-distribution"
 		},
 		{
-			"name": "cart-reservation",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "cart-order"
 		},
 		{
-			"name": "data-editing",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "cart-reservation"
 		},
 		{
-			"name": "question-form",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "data-editing"
 		},
 		{
-			"name": "offer",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "question-form"
 		},
 		{
-			"name": "offer-2",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "offer"
+		},
+		{
+			"animation": "RTL",
+			"name": "offer-2"
 		},
 		{
 			"name": "video"
 		},
 		{
-			"name": "unsubscribe-form",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "unsubscribe-form"
 		},
 		{
-			"name": "delivery-addresses",
-			"animation": "RTL"
-		},
-		{
-			"name": "cdek-addresses",
-			"animation": "RTL"
-		},
-		{
-			"name": "create-card",
-			"animation": "RTL"
+			"animation": "RTL",
+			"name": "create-card"
 		}
-	]
+	],
+	"siteLang": "ru",
+	"siteName": "АльпИндустрия"
 }

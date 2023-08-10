@@ -175,10 +175,6 @@ class Cart {
 			const authContainers = document.querySelectorAll('[data-delivery-auth]');
 			authContainers.forEach(container => new DeliveryAuth(container));
 		}
-
-		if (env.isIOS) {
-			document.body.style.overflow = '';
-		}
 	}
 	openDefault() {
 		this.popup.scrollTo(0, 0);
@@ -199,10 +195,6 @@ class Cart {
 			this.popupWrapper.classList.remove(ClassName.OPENED_PAY);
 			this.popupWrapper.classList.remove(ClassName.ANIMATION);
 		}
-
-		if (env.isIOS) {
-			document.body.style.overflow = '';
-		}
 	}
 	openPay() {
 		this.popup.scrollTo(0, 0);
@@ -211,10 +203,6 @@ class Cart {
 
 		clearTimeout(this.animTO);
 		this.animTO = setTimeout(() => this.popupWrapper.classList.remove(ClassName.ANIMATION), 300);
-
-		if (env.isIOS) {
-			document.body.style.overflow = 'hidden';
-		}
 	}
 	onLegalCheckboxChange(e) {
 		const legalBlock = e.target.parentNode.parentNode.querySelector('[data-legal-block]');

@@ -1,5 +1,6 @@
 {% from "./_head-scripts.nunj" import headScripts %}
 {% from "../includes/components/popups/popups.nunj" import popups %}
+{% from "../includes/components/modals/modals.nunj" import modals %}
 
 <!DOCTYPE html>
 <html lang="{{ siteLang }}" class="page _loading{% if htmlClassMods %} {{ htmlClassMods }}{% endif %}">
@@ -25,6 +26,7 @@
 		</div>
 
 		{{ popups({ list: popupsList }) }}
+		{{ modals({ list: modalsList }) }}
 		{% include "../includes/notification/notification.nunj" %}
 		{% block scripts %}
 			<script src="/assets/js/bundle.js?hash"></script>

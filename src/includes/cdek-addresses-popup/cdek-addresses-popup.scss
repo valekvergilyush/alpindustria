@@ -11,7 +11,7 @@
 	}
 	&__map {
 		flex-grow: 1;
-		margin: 0 calc(var(--popup-padding) * -1) calc(var(--popup-padding) * -1);
+		margin: 0 calc(var(--modal-padding) * -1) calc(var(--modal-padding) * -1);
 		border-top: 1px solid var(--blue-dark);
 		background-color: red;
 	}
