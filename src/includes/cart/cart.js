@@ -42,7 +42,7 @@ class Cart {
 		this.editProfileDataBtns = this.container.querySelectorAll('[data-edit-profile-data]');
 		this.authBlock = this.container.querySelector('[data-auth-block]');
 		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
-		this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
+		// this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -74,9 +74,9 @@ class Cart {
 		this.editProfileDataBtns.forEach(btn => {
 			btn.addEventListener('click', this.onEditProfileDataBtnClick);
 		});
-		this.submitAuthBtns.forEach(btn => {
-			btn.addEventListener('click', this.onSubmitAuthBtnClick);
-		});
+		// this.submitAuthBtns.forEach(btn => {
+		// 	btn.addEventListener('click', this.onSubmitAuthBtnClick);
+		// });
 	}
 	onSubmitButtonClick(evt) {
 		evt.preventDefault();

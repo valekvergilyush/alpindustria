@@ -10,7 +10,6 @@
 
 <div class="delivery-auth" data-delivery-auth data-form-stage="default">
 	<div class="delivery-auth__user-block">
-		{# <p class="delivery-auth__title h7 ttu">Контактные данные:</p> #}
 		<table class="delivery-auth__user-info p3">
 			<tr>
 				<td>ФИО</td>

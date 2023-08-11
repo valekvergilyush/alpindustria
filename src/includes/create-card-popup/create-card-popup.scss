@@ -69,7 +69,7 @@
 		background-color: var(--blue-dark);
 		min-height: rem(134);
 		padding: rem(32) rem(40);
-		margin: auto calc(var(--popup-padding) * -1) calc(var(--popup-padding) * -1);
+		margin: auto calc(var(--modal-padding) * -1) calc(var(--modal-padding) * -1);
 		box-sizing: border-box;
 		@media (max-width: $tablet) {
 			padding: 16px;
