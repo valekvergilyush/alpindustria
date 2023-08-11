@@ -36,7 +36,6 @@ class Input {
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 				input.addEventListener('input', () => {
-					console.log(`is valid: ${iti.isValidNumber()}`);
 					if (iti.isValidNumber()) {
 						input.classList.add('is-valid');
 					} else {
