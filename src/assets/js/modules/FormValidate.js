@@ -1,3 +1,4 @@
+import cartDiscount from '../../../includes/cart-discount/cart-discount';
 import FormsValidate from '../classes/form-validate';
 const formWrappers = document.querySelectorAll('[data-validate]');
 
@@ -15,6 +16,10 @@ class FormValidate {
 			},
 			'card-popup': {
 				validationSuccessCallback: this.cardPopupValidationSuccessCallback,
+				validationErrorCallback: this.baseValidationErrorCallback,
+			},
+			'cart-discount-phone': {
+				validationSuccessCallback: this.cartDiscountPhoneValidationSuccessCallback,
 				validationErrorCallback: this.baseValidationErrorCallback,
 			},
 		};
@@ -52,6 +57,11 @@ class FormValidate {
 			container.classList.remove('_anim');
 			container.classList.add('_success');
 		}, 1000);
+		this.resetForm(e.target);
+	};
+	cartDiscountPhoneValidationSuccessCallback = e => {
+		e.preventDefault();
+		cartDiscount.addCard();
 		this.resetForm(e.target);
 	};
 }

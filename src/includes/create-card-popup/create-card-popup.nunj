@@ -39,7 +39,7 @@
 						id: 'email',
 						className: '',
 						label: 'Почта',
-						attr: 'required data-validate-type="text"'
+						attr: 'required data-validate-type="email"'
 					}) }}
 				</div>
 				<div class="create-card-popup__row">
@@ -77,7 +77,7 @@
 							id: 'card-phone',
 							className: '',
 							label: 'Телефон',
-							attr: 'required data-validate-type="text"'
+							attr: 'required data-validate-type="phone"'
 						}) }}
 						<button class="create-card-popup__submit-phone">
 							<span>Подтвердить по SMS</span>

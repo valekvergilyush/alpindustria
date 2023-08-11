@@ -148,6 +148,7 @@
 		}
 		#{$this}._rent &._rent {
 			display: flex;
+			gap: rem(40);
 			&._total {
 				display: none;
 			}

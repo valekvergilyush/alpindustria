@@ -20,42 +20,61 @@ class CartDiscount {
 		this.cancelBonusBtn = this.container.querySelector('[data-cancel-bonus]');
 		this.cartBottom = document.querySelector('[data-order-bottom]');
 
-		this.addCardBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.add('_sms');
-		});
-		this.smsBackBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.remove('_sms');
-		});
-		this.smsSubmitBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.remove('_sms');
-			this.container.classList.add('_card');
-		});
-		this.deleteCardBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.remove('_card');
-		});
-		this.addBonusBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.add('_bonus');
-		});
-		this.spendBonusBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.add('_bonus-sms');
-		});
-		this.submitBonusBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.remove('_bonus-sms');
-			this.container.classList.add('_card-bonus');
-			this.cartBottom.classList.add('_card-bonus');
-		});
-		this.cancelBonusBtn.addEventListener('click', evt => {
-			evt.preventDefault();
-			this.container.classList.remove('_card-bonus');
-			this.cartBottom.classList.remove('_card-bonus');
-		});
+		if (this.addCardBtn) {
+			this.addCardBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.addCard();
+			});
+		}
+		if (this.smsBackBtn) {
+			this.smsBackBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_sms');
+			});
+		}
+		if (this.smsSubmitBtn) {
+			this.smsSubmitBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_sms');
+				this.container.classList.add('_card');
+			});
+		}
+		if (this.deleteCardBtn) {
+			this.deleteCardBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_card');
+			});
+		}
+		if (this.addBonusBtn) {
+			this.addBonusBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.add('_bonus');
+			});
+		}
+		if (this.spendBonusBtn) {
+			this.spendBonusBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.add('_bonus-sms');
+			});
+		}
+		if (this.submitBonusBtn) {
+			this.submitBonusBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_bonus-sms');
+				this.container.classList.add('_card-bonus');
+				this.cartBottom.classList.add('_card-bonus');
+			});
+		}
+		if (this.cancelBonusBtn) {
+			this.cancelBonusBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_card-bonus');
+				this.cartBottom.classList.remove('_card-bonus');
+			});
+		}
+	}
+	addCard() {
+		this.container.classList.add('_sms');
 	}
 }
 
