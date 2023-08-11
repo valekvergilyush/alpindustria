@@ -75,7 +75,7 @@
 			padding-top: 0.35em;
 		}
 		@media (max-width: $tablet) {
-			align-items: center;
+			justify-content: center;
 		}
 		@media (max-width: $mobile-lg) {
 			font-size: 18px;

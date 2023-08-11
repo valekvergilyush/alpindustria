@@ -35,6 +35,13 @@ class Input {
 					input.value = '';
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
+				input.addEventListener('input', () => {
+					if (iti.isValidNumber()) {
+						input.classList.add('is-valid');
+					} else {
+						input.classList.remove('is-valid');
+					}
+				});
 			}
 
 			input.addEventListener('input', () => {

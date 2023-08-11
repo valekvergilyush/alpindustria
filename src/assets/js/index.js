@@ -89,6 +89,7 @@ class AlpIndustry {
 			ProfileOrder: require('../../includes/components/profile-order/profile-order').default,
 			DeliveryAuth: require('../../includes/delivery-auth/delivery-auth').default,
 			CartDiscount: require('../../includes/cart-discount/cart-discount').default,
+			CartBreadcrumbs: require('../../includes/cart-breadcrumbs/cart-breadcrumbs').default,
 			ReviewForm: require('../../includes/review-form/review-form').default,
 		};
 		this.helpers = {

@@ -41,22 +41,24 @@
 			}) }}
 		</p>
 	</div>
-	<div class="cart-discount__link-card">
-		{{ input({
-			type: 'text',
-			id: 'discount-phone',
-			className: '',
-			label: 'Номер телефона',
-			attr: 'required data-validate-type="phone"'
-		}) }}
-		<button class="cart-discount__btn h7 ttu" type="button" data-add-card>
-			<span>Привязать карту</span>
-			{{ icon({
-				iconName: 'plus',
-				className: 'cart-discount__btn-icon _plus',
-				attr: 'width="24" height="24"'
+	<div class="" data-validate data-callback="cart-discount-phone">
+		<form action="" class="cart-discount__link-card">
+			{{ input({
+				type: 'tel',
+				id: 'discount-phone',
+				className: '',
+				label: 'Номер телефона',
+				attr: 'required data-validate-type="phone"'
 			}) }}
-		</button>
+			<button class="cart-discount__btn h7 ttu" type="submit">
+				<span>Привязать карту</span>
+				{{ icon({
+					iconName: 'plus',
+					className: 'cart-discount__btn-icon _plus',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</form>
 	</div>
 	<div class="cart-discount__sms">
 		<button type="button" class="cart-discount__sms-back" data-sms-back>
@@ -110,7 +112,7 @@
 				</div>
 				<div class="cart-discount__card-col">
 					<p class="p3">Доступно баллов:</p>
-					<p class="h6">255 <span class="cart__label"><span>-</span> <span>100</span></span></p>
+					<p class="h6">255 <span class="cart-discount__label cart__label"><span>-</span> <span>100</span></span></p>
 				</div>
 			</div>
 			<div class="cart-discount__sms _card">

@@ -20,7 +20,7 @@
 <ol class="cart-breadcrumbs cart__breadcrumbs">
 	{% for item in linkList %}
 		<li class="cart-breadcrumbs__item">
-			<a href="{{ item.href }}" class="cart-breadcrumbs__link">{{ item.name }}</a>
+			<a href="{{ item.href }}" class="cart-breadcrumbs__link" data-cart-breadcrumb>{{ item.name }}</a>
 		</li>
 	{% endfor %}
 </ol>
