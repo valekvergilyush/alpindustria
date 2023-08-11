@@ -108,7 +108,6 @@ class CommunityIndex {
 			}
 		});
 		this.slider.tns.events.on('dragStart', slider => {
-			console.log('dragStart');
 			Array.from(slider.slideItems).forEach(slide => {
 				if (!slide.classList.contains('tns-slide-active')) {
 					const animatedBlocks = slide.querySelectorAll('[data-slider-animation]');

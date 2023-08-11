@@ -18,9 +18,7 @@ class CartBreadcrumbs {
 	}
 	_onLinkClick(e) {
 		e.preventDefault();
-		console.log(e.currentTarget.hash);
 		const currentSection = document.querySelector(e.currentTarget.hash);
-		console.log(this.secondContainer);
 		if (currentSection) {
 			if (this.popupWrap) {
 				this.popupWrap.scrollTo({
