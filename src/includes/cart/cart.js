@@ -178,7 +178,7 @@ class Cart {
 				},
 			});
 			const authContainers = document.querySelectorAll('[data-delivery-auth]');
-			authContainers.forEach(container => new DeliveryAuth(container));
+			authContainers.forEach(container => (container.auth = new DeliveryAuth(container)));
 		}
 	}
 	openDefault() {
@@ -223,7 +223,10 @@ class Cart {
 	}
 	onAuthBtnChangeClick(e) {
 		e.preventDefault();
+
 		this.authBlock.classList.toggle('_email');
+		const authContainer = e.target.closest('[data-delivery-auth]');
+		authContainer.auth.setAuthFormState('default');
 	}
 	onEditProfileDataBtnClick(e) {
 		e.preventDefault();
@@ -233,9 +236,29 @@ class Cart {
 	}
 	onSubmitAuthBtnClick(e) {
 		e.preventDefault();
-		this.authBlock.classList.remove(ClassName.EDIT);
-		this.authBlock.classList.remove(ClassName.AUTH);
-		this.authBlock.classList.add(ClassName.PROFILE);
+
+		const form = e.target.closest('form');
+		const input = form.querySelector('input');
+
+		if (form.classList.contains('_email')) {
+			if (!input.checkValidity()) {
+				input.closest('.input').classList.add('is-invalid');
+				input.focus();
+			} else {
+				this.authBlock.classList.remove(ClassName.EDIT);
+				this.authBlock.classList.remove(ClassName.AUTH);
+				this.authBlock.classList.add(ClassName.PROFILE);
+			}
+		} else {
+			if (input.getAttribute('aria-invalid') === 'true') {
+				input.closest('.input').classList.add('is-invalid');
+				input.focus();
+				return;
+			}
+
+			const authContainer = e.target.closest('[data-delivery-auth]');
+			authContainer.auth.setAuthFormState('sms');
+		}
 	}
 }
 
