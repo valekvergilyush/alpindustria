@@ -4,6 +4,14 @@ const ClassName = {
 	FILLED: '_filled',
 };
 
+const errorMap = [
+	'Invalid number',
+	'Invalid country code',
+	'Too short',
+	'Too long',
+	'Invalid number',
+];
+
 class Input {
 	constructor() {
 		this.init();
@@ -37,7 +45,12 @@ class Input {
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 				input.addEventListener('input', evt => {
-					if (input.iti.isValidNumber()) {
+					// console.log(input.iti);
+					// const error = input.iti.getValidationError();
+					// console.log(input.iti.isPossibleNumber());
+					// console.log(error);
+					// console.log(errorMap[error]);
+					if (input.placeholder.length === evt.target.value.length) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
 						input.closest('.input').classList.remove('is-invalid');
@@ -47,7 +60,10 @@ class Input {
 					}
 				});
 				input.addEventListener('change', evt => {
-					if (input.iti.isValidNumber()) {
+					// console.log(input.value);
+					// console.log(input.iti.getValidationError());
+					// console.log(input.iti.isPossibleNumber());
+					if (input.placeholder.length === evt.target.value.length) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
 						input.closest('.input').classList.remove('is-invalid');
