@@ -30,13 +30,14 @@ class Input {
 					onlyCountries: ['ru', 'am', 'by', 'kg', 'kz'],
 					separateDialCode: true,
 				});
+				input.iti = iti;
 				input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				input.addEventListener('countrychange', () => {
 					input.value = '';
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 				input.addEventListener('input', evt => {
-					if (input.placeholder.length === evt.target.value.length) {
+					if (input.iti.isValidNumber()) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
 						input.closest('.input').classList.remove('is-invalid');
@@ -46,7 +47,7 @@ class Input {
 					}
 				});
 				input.addEventListener('change', evt => {
-					if (input.placeholder.length === evt.target.value.length) {
+					if (input.iti.isValidNumber()) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
 						input.closest('.input').classList.remove('is-invalid');
