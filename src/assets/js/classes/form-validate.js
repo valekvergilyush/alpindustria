@@ -271,7 +271,7 @@ const validateTextInput = input => {
 const validatePhoneInput = input => {
 	const parent = input.closest('[data-validate-type]');
 	let flag = true;
-	if (input.classList.contains('is-valid')) {
+	if (input.iti.isValidNumber()) {
 		parent.classList.remove('is-invalid');
 		parent.classList.add('is-valid');
 		input.setAttribute('aria-invalid', 'false');
