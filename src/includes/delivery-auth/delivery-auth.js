@@ -31,7 +31,9 @@ class DeliveryAuth {
 
 		this.authButton.addEventListener('click', this._onAuthButtonClick);
 		this.checkCodeButton.addEventListener('click', this._onCheckCodeButtonClick);
-		this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
+		if (this.changeUserButton) {
+			this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
+		}
 	}
 	_onAuthButtonClick(evt) {
 		evt.preventDefault();
