@@ -231,7 +231,9 @@ class Cart {
 
 		this.authBlock.classList.toggle('_email');
 		const authContainer = e.target.closest('[data-delivery-auth]');
-		authContainer.auth.setAuthFormState('default');
+		if (authContainer) {
+			authContainer.auth.setAuthFormState('default');
+		}
 	}
 	onEditProfileDataBtnClick(e) {
 		e.preventDefault();
@@ -254,7 +256,7 @@ class Cart {
 		}
 		const form = btn.closest('form');
 		form.reset();
-		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', false));
+		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', true));
 		this.authBlock.classList.remove(ClassName.EDIT);
 		this.authBlock.classList.remove(ClassName.AUTH);
 		this.authBlock.classList.remove(ClassName.SMS);
@@ -265,7 +267,7 @@ class Cart {
 		const btn = e.target;
 		const form = btn.closest('form');
 		form.reset();
-		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', false));
+		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', true));
 		this.authBlock.classList.remove(ClassName.EDIT);
 		this.authBlock.classList.remove(ClassName.AUTH);
 		this.authBlock.classList.remove(ClassName.SMS);
