@@ -34,6 +34,9 @@
 		&._sms {
 			display: none;
 			padding-bottom: rem(32);
+			.cart__block._sms & {
+				display: flex;
+			}
 		}
 		&._socials {
 			align-items: center;

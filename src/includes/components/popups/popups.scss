@@ -45,7 +45,6 @@
 		&[data-popup-wrapper='data-editing'],
 		&[data-popup-wrapper='offer'],
 		&[data-popup-wrapper='offer-2'],
-		&[data-popup-wrapper='create-card'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -75,7 +74,6 @@
 		&[data-popup-wrapper='data-editing'],
 		&[data-popup-wrapper='question-form'],
 		&[data-popup-wrapper='offer'],
-		&[data-popup-wrapper='create-card'],
 		&[data-popup-wrapper='offer-2'],
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
@@ -282,14 +280,6 @@
 		&[data-popup='question-form'] {
 			@media (max-width: $tablet) {
 				min-height: auto;
-			}
-		}
-		&[data-popup='create-card'] {
-			#{$this}__close-button {
-				transform: translateY(#{rem(12)});
-				@media (max-width: $laptop) {
-					transform: translateY(5px);
-				}
 			}
 		}
 	}

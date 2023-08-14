@@ -7,7 +7,7 @@
 	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" target="_blank" href="/discount.html">Условия программы лояльности</a>.</p>
 	<div class="cart-discount__issue">
 		<p>У вас нет карты? Оформите прямо сейчас</p>
-		<button class="cart-discount__btn h7 ttu" type="button" data-popup-opener="create-card">
+		<button class="cart-discount__btn h7 ttu" type="button" data-modal-opener="create-card">
 			<span>Оформить карту</span>
 			{{ icon({
 				iconName: 'promo-arrow',

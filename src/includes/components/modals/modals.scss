@@ -28,11 +28,13 @@
 		position: relative;
 		display: none;
 		&[data-modal-wrapper='cdek-addresses'],
+		&[data-modal-wrapper='create-card'],
 		&[data-modal-wrapper='delivery-addresses'] {
 			width: 50%;
 		}
 
 		&[data-modal-wrapper='city-form'],
+		&[data-modal-wrapper='create-card'],
 		&[data-modal-wrapper='delivery-addresses'],
 		&[data-modal-wrapper='cdek-addresses'] {
 			@media (max-width: $tablet) {
@@ -111,6 +113,14 @@
 			}
 			@media (max-width: $tablet) {
 				width: 100%;
+			}
+		}
+		&[data-popup='create-card'] {
+			#{$this}__close-button {
+				transform: translateY(#{rem(12)});
+				@media (max-width: $laptop) {
+					transform: translateY(5px);
+				}
 			}
 		}
 	}

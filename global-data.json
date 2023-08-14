@@ -11,6 +11,10 @@
 		{
 			"animation": "RTL",
 			"name": "city-form"
+		},
+		{
+			"animation": "RTL",
+			"name": "create-card"
 		}
 	],
 	"popupsList": [
@@ -100,10 +104,6 @@
 		{
 			"animation": "RTL",
 			"name": "unsubscribe-form"
-		},
-		{
-			"animation": "RTL",
-			"name": "create-card"
 		}
 	],
 	"siteLang": "ru",

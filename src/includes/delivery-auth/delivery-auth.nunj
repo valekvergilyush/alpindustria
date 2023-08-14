@@ -8,47 +8,8 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<div class="delivery-auth" data-delivery-auth data-form-stage="default">
-	<div class="delivery-auth__user-block">
-		{# <p class="delivery-auth__title h7 ttu">Контактные данные:</p> #}
-		<table class="delivery-auth__user-info p3">
-			<tr>
-				<td>ФИО</td>
-				<td class="c-gray-dark">Константин Константинопольский</td>
-			</tr>
-			<tr>
-				<td>Почта</td>
-				<td class="c-gray-dark">konstantin@gmail.com</td>
-			</tr>
-			<tr>
-				<td>Телефон</td>
-				<td class="c-gray-dark">+7 (902) 222 01 02</td>
-			</tr>
-		</table>
-		<div class="delivery-auth__user-controls">
-			{{ button({
-				text: 'Изменить свои данные',
-				icon: 'pencil',
-				iconData: 'width="24" height="24"',
-				className: 'delivery-auth__user-edit p3',
-				href: '/profile.html'
-			}) }}
-			{{ button({
-				text: 'Авторизоваться под другим именем',
-				icon: 'promo-arrow-filled',
-				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__user-change p3'
-			}) }}
-		</div>
-		{{ checkbox({
-			className: 'delivery-auth__checkbox',
-			id: 'auth-legal-entity-checkbox',
-			name: 'legal-entity',
-			text: 'Я являюсь юридическим лицом',
-			inputAttr: 'data-legal-checkbox'
-		}) }}
-	</div>
-	<form class="delivery-auth__form">
+<form class="delivery-auth" data-form-stage="default">
+	<div class="delivery-auth__form">
 		<div class="delivery-auth__fields _tel">
 			{{ input({
 				type: 'tel',
@@ -62,7 +23,7 @@
 				text: 'Авторизоваться',
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2 _tel',
 				attr: 'data-submit-auth'
 			}) }}
 		</div>
@@ -80,7 +41,7 @@
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
 				className: 'delivery-auth__check-code _arrow-s _auth ttu p2',
-				attr: 'aria-label="Подтвердить"'
+				attr: 'aria-label="Подтвердить" data-submit-sms-auth'
 			}) }}
 			{{ button({
 				type: 'button',
@@ -103,22 +64,22 @@
 				}) }}
 			</button>
 		</div>
-	</form>
-	<form class="delivery-auth__form _email">
+	</div>
+	<div class="delivery-auth__form _email">
 		<div class="delivery-auth__fields _tel">
 			{{ input({
 				type: 'email',
 				id: 'delivery-auth-email',
 				className: 'delivery-auth__input _email _gray',
 				name: 'Почта',
-				attr: 'required data-validate-type="email"'
+				inputAttr: 'required data-validate-type="email"'
 			}) }}
 			{{ button({
 				type: 'submit',
 				text: 'Авторизоваться',
 				icon: 'promo-arrow',
 				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2',
+				className: 'delivery-auth__submit-btn _arrow-s _auth ttu p2 _email',
 				attr: 'data-submit-auth'
 			}) }}
 		</div>
@@ -135,5 +96,5 @@
 				}) }}
 			</button>
 		</div>
-	</form>
-</div>
+	</div>
+</form>

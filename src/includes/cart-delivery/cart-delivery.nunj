@@ -1,5 +1,5 @@
 <div class="cart__delivery-content cart-delivery _shop">
-	<div class="cart__block _profile" data-auth-block id="cart-contacts">
+	<div class="cart__block _auth" data-contact-auth-block id="cart-contacts">
 		<div class="cart__title-wrap">
 			<p class="cart__block-title ttu h6">01. контактные данные</p>
 			<button class="cart__title-btn p3 _edit" type="button" data-auth-btn>

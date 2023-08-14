@@ -30,16 +30,31 @@ class Input {
 					onlyCountries: ['ru', 'am', 'by', 'kg', 'kz'],
 					separateDialCode: true,
 				});
+				input.iti = iti;
 				input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				input.addEventListener('countrychange', () => {
 					input.value = '';
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
-				input.addEventListener('input', () => {
-					if (iti.isValidNumber()) {
-						input.classList.add('is-valid');
+				input.addEventListener('input', evt => {
+					if (input.iti.isValidNumber()) {
+						input.setAttribute('aria-invalid', false);
+						input.closest('.input').classList.add('is-valid');
+						input.closest('.input').classList.remove('is-invalid');
 					} else {
-						input.classList.remove('is-valid');
+						input.closest('.input').classList.remove('is-valid');
+						input.closest('.input').classList.remove('is-invalid');
+					}
+				});
+				input.addEventListener('change', evt => {
+					if (input.iti.isValidNumber()) {
+						input.setAttribute('aria-invalid', false);
+						input.closest('.input').classList.add('is-valid');
+						input.closest('.input').classList.remove('is-invalid');
+					} else {
+						input.setAttribute('aria-invalid', true);
+						input.closest('.input').classList.remove('is-valid');
+						input.closest('.input').classList.add('is-invalid');
 					}
 				});
 			}

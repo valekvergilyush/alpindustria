@@ -11,6 +11,7 @@ const ClassName = {
 	PROFILE: '_profile',
 	AUTH: '_auth',
 	EDIT: '_edit',
+	SMS: '_sms',
 };
 
 const TABLET_BREAKPOINT = 992;
@@ -40,9 +41,10 @@ class Cart {
 		this.legalCheckboxes = this.container.querySelectorAll('[data-legal-checkbox]');
 		this.authBtns = this.container.querySelectorAll('[data-auth-btn]');
 		this.editProfileDataBtns = this.container.querySelectorAll('[data-edit-profile-data]');
-		this.authBlock = this.container.querySelector('[data-auth-block]');
+		this.authBlock = this.container.querySelector('[data-contact-auth-block]');
 		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
 		this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
+		this.submitSmsAuthBtn = this.container.querySelector('[data-submit-sms-auth]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -55,13 +57,13 @@ class Cart {
 		this.onAuthBtnChangeClick = this.onAuthBtnChangeClick.bind(this);
 		this.onEditProfileDataBtnClick = this.onEditProfileDataBtnClick.bind(this);
 		this.onSubmitAuthBtnClick = this.onSubmitAuthBtnClick.bind(this);
+		this.onSubmitSmsAuthBtnClick = this.onSubmitSmsAuthBtnClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
 		this.backButtons.forEach(button => button.addEventListener('click', this.onBackButtonClick));
 		this.shopButton.addEventListener('click', this.onShopButtonClick);
 		this.rentButton.addEventListener('click', this.onRentButtonClick);
-		// this.rentSubmitButton.addEventListener('click', this.onRentSubmitButtonClick);
 		this.legalCheckboxes.forEach(checkbox => {
 			checkbox.addEventListener('change', this.onLegalCheckboxChange);
 		});
@@ -77,6 +79,9 @@ class Cart {
 		this.submitAuthBtns.forEach(btn => {
 			btn.addEventListener('click', this.onSubmitAuthBtnClick);
 		});
+		if (this.submitSmsAuthBtn) {
+			this.submitSmsAuthBtn.addEventListener('click', this.onSubmitSmsAuthBtnClick);
+		}
 	}
 	onSubmitButtonClick(evt) {
 		evt.preventDefault();
@@ -178,7 +183,7 @@ class Cart {
 				},
 			});
 			const authContainers = document.querySelectorAll('[data-delivery-auth]');
-			authContainers.forEach(container => new DeliveryAuth(container));
+			authContainers.forEach(container => (container.auth = new DeliveryAuth(container)));
 		}
 	}
 	openDefault() {
@@ -223,7 +228,12 @@ class Cart {
 	}
 	onAuthBtnChangeClick(e) {
 		e.preventDefault();
+
 		this.authBlock.classList.toggle('_email');
+		const authContainer = e.target.closest('[data-delivery-auth]');
+		if (authContainer) {
+			authContainer.auth.setAuthFormState('default');
+		}
 	}
 	onEditProfileDataBtnClick(e) {
 		e.preventDefault();
@@ -233,8 +243,34 @@ class Cart {
 	}
 	onSubmitAuthBtnClick(e) {
 		e.preventDefault();
+		const btn = e.target;
+		const input = btn.parentElement.querySelector('input');
+		if (input.getAttribute('aria-invalid') === 'true') {
+			input.focus();
+			return;
+		}
+		if (btn.classList.contains('_tel')) {
+			console.log('contains tel');
+			this.authBlock.classList.add(ClassName.SMS);
+			return;
+		}
+		const form = btn.closest('form');
+		form.reset();
+		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', true));
 		this.authBlock.classList.remove(ClassName.EDIT);
 		this.authBlock.classList.remove(ClassName.AUTH);
+		this.authBlock.classList.remove(ClassName.SMS);
+		this.authBlock.classList.add(ClassName.PROFILE);
+	}
+	onSubmitSmsAuthBtnClick(e) {
+		e.preventDefault();
+		const btn = e.target;
+		const form = btn.closest('form');
+		form.reset();
+		form.querySelectorAll('input').forEach(i => i.setAttribute('aria-invalid', true));
+		this.authBlock.classList.remove(ClassName.EDIT);
+		this.authBlock.classList.remove(ClassName.AUTH);
+		this.authBlock.classList.remove(ClassName.SMS);
 		this.authBlock.classList.add(ClassName.PROFILE);
 	}
 }
