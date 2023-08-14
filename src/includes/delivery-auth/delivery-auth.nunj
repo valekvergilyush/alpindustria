@@ -9,44 +9,6 @@
 ] %}
 
 <form class="delivery-auth" data-form-stage="default">
-	{# <div class="delivery-auth__user-block">
-		<table class="delivery-auth__user-info p3">
-			<tr>
-				<td>ФИО</td>
-				<td class="c-gray-dark">Константин Константинопольский</td>
-			</tr>
-			<tr>
-				<td>Почта</td>
-				<td class="c-gray-dark">konstantin@gmail.com</td>
-			</tr>
-			<tr>
-				<td>Телефон</td>
-				<td class="c-gray-dark">+7 (902) 222 01 02</td>
-			</tr>
-		</table>
-		<div class="delivery-auth__user-controls">
-			{{ button({
-				text: 'Изменить свои данные',
-				icon: 'pencil',
-				iconData: 'width="24" height="24"',
-				className: 'delivery-auth__user-edit p3',
-				href: '/profile.html'
-			}) }}
-			{{ button({
-				text: 'Авторизоваться под другим именем',
-				icon: 'promo-arrow-filled',
-				iconData: 'width="16" height="16"',
-				className: 'delivery-auth__user-change p3'
-			}) }}
-		</div>
-		{{ checkbox({
-			className: 'delivery-auth__checkbox',
-			id: 'auth-legal-entity-checkbox',
-			name: 'legal-entity',
-			text: 'Я являюсь юридическим лицом',
-			inputAttr: 'data-legal-checkbox'
-		}) }}
-	</div> #}
 	<div class="delivery-auth__form">
 		<div class="delivery-auth__fields _tel">
 			{{ input({
