@@ -25,7 +25,6 @@ class DeliveryAuth {
 			'.cart-delivery__register-form._new-user'
 		);
 
-		this._onAuthButtonClick = this._onAuthButtonClick.bind(this);
 		this._onCheckCodeButtonClick = this._onCheckCodeButtonClick.bind(this);
 		this._onChangeUserButtonClick = this._onChangeUserButtonClick.bind(this);
 
@@ -33,15 +32,6 @@ class DeliveryAuth {
 		this.checkCodeButton.addEventListener('click', this._onCheckCodeButtonClick);
 		if (this.changeUserButton) {
 			this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
-		}
-	}
-	_onAuthButtonClick(evt) {
-		evt.preventDefault();
-
-		if (this.telInput.getAttribute('aria-invalid') === 'true') {
-			this.telInput.focus();
-		} else {
-			this.setAuthFormState(FormStage.SMS);
 		}
 	}
 	_onCheckCodeButtonClick(evt) {
