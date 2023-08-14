@@ -45,11 +45,6 @@ class Input {
 					input.setAttribute('data-country-code', `+${iti.getSelectedCountryData().dialCode}`);
 				});
 				input.addEventListener('input', evt => {
-					// console.log(input.iti);
-					// const error = input.iti.getValidationError();
-					// console.log(input.iti.isPossibleNumber());
-					// console.log(error);
-					// console.log(errorMap[error]);
 					if (input.placeholder.length === evt.target.value.length) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
@@ -60,9 +55,6 @@ class Input {
 					}
 				});
 				input.addEventListener('change', evt => {
-					// console.log(input.value);
-					// console.log(input.iti.getValidationError());
-					// console.log(input.iti.isPossibleNumber());
 					if (input.placeholder.length === evt.target.value.length) {
 						input.setAttribute('aria-invalid', false);
 						input.closest('.input').classList.add('is-valid');
