@@ -348,6 +348,9 @@
 				--dropdown-width: 100%;
 				overflow: visible;
 				padding-top: 68px;
+				&::before {
+					display: none;
+				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
