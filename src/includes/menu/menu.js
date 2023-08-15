@@ -22,6 +22,11 @@ class Menu {
 		this.menuOpener = document.querySelector('[data-menu-opener]');
 		this.menuImg = document.querySelector('[data-menu-img]');
 		this.menuImgLinks = document.querySelectorAll('[data-menu-img-src]');
+		this.cartOpener = document.querySelector('[data-popup-opener="cart"]');
+
+		this.cartOpener.addEventListener('click', () => {
+			this.closeMenu();
+		});
 
 		this.menuImgLinks.forEach(link => {
 			const imgSrc = link.getAttribute('data-menu-img-src');

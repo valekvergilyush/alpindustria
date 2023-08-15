@@ -10,13 +10,13 @@
 	padding-top: var(--header-height);
 	color: var(--white);
 	background-color: var(--blue-dark);
-	overflow: hidden;
+	overflow: auto;
+	overflow-x: hidden;
 	@media (max-width: $laptop-lg) {
 		--col-width: 583px;
 	}
 	@media (max-width: $laptop-md) {
 		--col-width: 608px;
-		overflow: auto;
 		grid-template-rows: repeat(3, min-content);
 	}
 	@media (max-width: $laptop-sm) {
@@ -323,7 +323,7 @@
 		transition: transform $default-transition-duration $default-transition-function;
 		will-change: transform;
 		&._catalog {
-			--dropdown-width: calc(var(--img-width) / 2);
+			--dropdown-width: calc(var(--img-width) / 2 - 1px);
 			overflow: auto;
 			&::before {
 				content: attr(aria-label);
