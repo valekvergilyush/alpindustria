@@ -1,5 +1,4 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import Header from '../header/header';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -40,8 +39,10 @@ class Menu {
 
 		this.onWindowKeydown = this.onWindowKeydown.bind(this);
 		this.onMenuOpenerClick = this.onMenuOpenerClick.bind(this);
+		this.onWindowResize = this.onWindowResize.bind(this);
 
 		window.addEventListener('keydown', this.onWindowKeydown);
+		window.addEventListener('resize', this.onWindowResize);
 
 		this.menuOpener.addEventListener('click', this.onMenuOpenerClick);
 		this.menu.classList.add(ClassName.INITIALIZED);
@@ -51,6 +52,7 @@ class Menu {
 		this.menuOpener.classList.add(ClassName.OPENED);
 		this.isMenuOpened = !this.isMenuOpened;
 		disableBodyScroll(this.menu);
+		this.onWindowResize();
 	}
 	closeMenu() {
 		HTML_CLASSLIST.remove(ClassName.MENU_OPENED);
@@ -83,6 +85,11 @@ class Menu {
 	onWindowKeydown(evt) {
 		if (evt.key === 'Escape') {
 			this.closeMenu();
+		}
+	}
+	onWindowResize() {
+		if (this.isMenuOpened) {
+			this.menu.style.setProperty('--img-width', `${this.menuImg.offsetWidth}px`);
 		}
 	}
 }
