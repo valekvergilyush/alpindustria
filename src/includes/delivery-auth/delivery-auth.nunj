@@ -72,7 +72,7 @@
 				id: 'delivery-auth-email',
 				className: 'delivery-auth__input _email _gray',
 				name: 'Почта',
-				inputAttr: 'required data-validate-type="email"'
+				attr: 'data-validate-type="email"'
 			}) }}
 			{{ button({
 				type: 'submit',
