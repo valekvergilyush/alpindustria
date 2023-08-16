@@ -1,0 +1,58 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set activities = [
+	{
+		name: 'Горный туризм',
+		src: '/assets/images/activities/activity-1.jpg',
+		src2x: '/assets/images/activities/activity-1@2x.jpg'
+	},
+	{
+		name: 'Трейлраннинг',
+		src: '/assets/images/activities/activity-2.jpg',
+		src2x: '/assets/images/activities/activity-2@2x.jpg'
+	},
+	{
+		name: 'Кемпинг',
+		src: '/assets/images/activities/activity-3.jpg',
+		src2x: '/assets/images/activities/activity-3@2x.jpg'
+	},
+	{
+		name: 'Треккинг',
+		src: '/assets/images/activities/activity-4.jpg',
+		src2x: '/assets/images/activities/activity-4@2x.jpg'
+	},
+	{
+		name: 'Высотный альпинизм',
+		src: '/assets/images/activities/activity-5.jpg',
+		src2x: '/assets/images/activities/activity-5@2x.jpg'
+	}
+] %}
+
+<section class="activities">
+	<h2 class="activities__title page__section-title h4 ttu">Виды активности</h2>
+	<div class="activities__slider">
+		<ul data-activities-slider>
+			{% for item in activities %}
+				<li class="activities__slide">
+					<a href="#"><span class="activities__slide-name">{{ item.name }}</span></a>
+					<picture class="activities__slide-img">
+						<img src="{{ item.src }}" srcset="{{ item.src2x }}" width="360" height="480" alt="">
+					</picture>
+				</li>
+			{% endfor %}
+		</ul>
+
+		<button class="activities__button flickity-button flickity-prev-next-button prev" disabled="true" type="button" aria-label="Previous">
+			{{ icon({
+				iconName: 'slider-arrow-left',
+				attr: 'width="56" height="56"'
+			}) }}
+		</button>
+		<button class="activities__button flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+			{{ icon({
+				iconName: 'slider-arrow-right',
+				attr: 'width="56" height="56"'
+			}) }}
+		</button>
+	</div>
+</section>

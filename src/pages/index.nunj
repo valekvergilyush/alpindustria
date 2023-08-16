@@ -7,7 +7,7 @@
 {% block mainContent %}
 	<main class="page__main">
 		{% include "../includes/hero-index/hero-index.nunj" %}
-		{% include "../includes/brand-list/brand-list.nunj" %}
+		{% include "../includes/activities/activities.nunj" %}
 		{% include "../includes/category-list/category-list.nunj" %}
 		{% include "../includes/address-index/address-index.nunj" %}
 		{% include "../includes/community-index/community-index.nunj" %}
