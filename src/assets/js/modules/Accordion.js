@@ -57,11 +57,34 @@ export default class Accordion {
 	open() {
 		!this.options.multiple &&
 			window.accordions.forEach(accordion => {
+				if (accordion.content.contains(document.querySelector('.menu__catalog-accordion'))) {
+					return;
+				}
+
 				accordion.isExpanded && accordion.close();
 			});
 
+		this._getHeighValues();
 		this.parentElement.classList.add(ClassName.OPENED);
-		this.parentElement.style.setProperty('--height', `${this.sumHeight}px`);
+		if (!this.trigger.classList.contains('menu__nav-link') || window.innerWidth < 1281) {
+			gsap.to(this.parentElement, {
+				height: this.sumHeight,
+				duration: 0.3,
+				ease: 'Power2.out',
+				onComplete: () => {
+					if (!this.trigger.classList.contains('menu__nav-link')) {
+						gsap.to(this.parentElement, {
+							height: 'auto',
+							duration: 0.3,
+							delay: 0.3,
+							ease: 'none',
+						});
+					} else {
+						gsap.set(this.parentElement, { height: 'auto' });
+					}
+				},
+			});
+		}
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
 		if (this.trigger.classList.contains('menu__nav-link')) {
@@ -74,12 +97,20 @@ export default class Accordion {
 		}
 	}
 	close() {
+		if (this.content.contains(document.querySelector('.menu__catalog-accordion'))) {
+			this.content
+				.querySelectorAll('[data-accordion-toggle]')
+				.forEach(toggle => toggle.accordion.close());
+		}
 		this.parentElement.classList.remove(ClassName.OPENED);
-		this.parentElement.parentElement.style.setProperty(
-			'--item-height',
-			`${this.triggerHeight + 1}px`
-		);
-		this.parentElement.style.setProperty('--height', `${this.triggerHeight}px`);
+
+		if (!this.trigger.classList.contains('menu__nav-link') || window.innerWidth < 1281) {
+			gsap.to(this.parentElement, {
+				height: this.triggerHeight + 1,
+				duration: 0.3,
+				ease: 'Power2.out',
+			});
+		}
 		this.trigger.setAttribute('aria-expanded', !this.isExpanded);
 		this.isExpanded = !this.isExpanded;
 		this.onDocumentClick && document.removeEventListener('click', this.onDocumentClick);

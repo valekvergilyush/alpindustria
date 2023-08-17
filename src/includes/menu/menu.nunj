@@ -5,7 +5,7 @@
 		text: 'Магазин',
 		img: { src: '/assets/images/menu/menu-shop.webp', srcset: '/assets/images/menu/menu-shop@2x.webp 2x' },
 		url: '#',
-		list: [
+		list1: [
 			{ text: 'Все товары', url: '/catalog/' },
 			{ text: 'Одежда', url: '/catalog/' },
 			{ text: 'Лыжный туризм', url: '/catalog/' },
@@ -15,6 +15,24 @@
 			{ text: 'Альпинистское снаряжение', url: '/catalog/' },
 			{ text: 'Сноуборды', url: '/catalog/' },
 			{ text: 'Горные лыжи', url: '/catalog/' }
+		],
+		list2: [
+			{ text: 'Горный туризм', url: '/catalog/' },
+			{ text: 'Треккинг', url: '/catalog/' },
+			{ text: 'Трейлраннинг', url: '/catalog/' },
+			{ text: 'Кемпинг', url: '/catalog/' },
+			{ text: 'Высотный альпинизм', url: '/catalog/' },
+			{ text: 'Веревочные парки и Via Ferrata', url: '/catalog/' },
+			{ text: 'Скалолазание', url: '/catalog/' },
+			{ text: 'Технический альпинизм', url: '/catalog/' },
+			{ text: 'Горные лыжи', url: '/catalog/' },
+			{ text: 'Городской стиль', url: '/catalog/' },
+			{ text: 'Промышленный альпинизм', url: '/catalog/' },
+			{ text: 'Спелеология', url: '/catalog/' },
+			{ text: 'Фрирайд', url: '/catalog/' },
+			{ text: 'Экспедиционные лыжи', url: '/catalog/' },
+			{ text: 'Ледолазание', url: '/catalog/' },
+			{ text: 'Ски-тур', url: '/catalog/' }
 		]
 	},
 	{ text: 'Адреса', url: '/addresses.html', img: { src: '/assets/images/menu/menu-address.webp', srcset: '/assets/images/menu/menu-address@2x.webp 2x' } },
@@ -74,15 +92,15 @@
 	<nav class="menu__nav">
 		<ul class="menu__nav-list">
 			{% for link in navLinks %}
-				<li class="menu__nav-item{% if link.list %} _dropdown{% endif %}">
+				<li class="menu__nav-item{% if link.list or link.list1 or link.list2 %} _dropdown{% endif %}">
 					<a
 						class="menu__nav-link ttu"
 						href="{{ link.url }}"
-						{% if link.list %} data-accordion-toggle{% if link.opened %}="opened"{% endif %}{% endif %}
+						{% if link.list or link.list1 or link.list2 %} data-accordion-toggle{% if link.opened %}="opened"{% endif %}{% endif %}
 						{% if link.img %} data-menu-img-src="{{ link.img.src }}" data-menu-img-srcset="{{ link.img.srcset }}"{% endif %}
 					>
 						{{ link.text }}
-						{% if link.list %}
+						{% if link.list or link.list1 or link.list2 %}
 							{{ icon({
 								iconName: 'accordion-arrow',
 								className: 'menu__accordion-icon',
@@ -102,6 +120,54 @@
 								</li>
 							{% endfor %}
 						</ul>
+					{% endif %}
+
+					{% if link.list1 or link.list2 %}
+					<div>
+						{% if link.list1 %}
+							<div class="menu__catalog-accordion">
+								<button type="button" data-accordion-toggle>
+									Товары
+									<svg width="32" height="32">
+										<use xlink:href="#icon-accordion-arrow"></use>
+									</svg>
+								</button>
+								<ul class="menu__dropdown _catalog" aria-label="Товары">
+									{% for item in link.list1 %}
+										<li class="menu__dropdown-item">
+											<a
+												class="menu__dropdown-link h7 ttu"
+												href="{{ item.url }}"
+												{% if item.img %} data-menu-img-src="{{ item.img.src }}" data-menu-img-srcset="{{ item.img.srcset }}"{% endif %}
+											>{{ item.text }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+
+						{% if link.list2 %}
+							<div class="menu__catalog-accordion">
+								<button type="button" data-accordion-toggle>
+									Активности
+									<svg width="32" height="32">
+										<use xlink:href="#icon-accordion-arrow"></use>
+									</svg>
+								</button>
+								<ul class="menu__dropdown _catalog _activities" aria-label="Активности">
+									{% for item in link.list2 %}
+										<li class="menu__dropdown-item">
+											<a
+												class="menu__dropdown-link h7 ttu"
+												href="{{ item.url }}"
+												{% if item.img %} data-menu-img-src="{{ item.img.src }}" data-menu-img-srcset="{{ item.img.srcset }}"{% endif %}
+											>{{ item.text }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+					</div>
 					{% endif %}
 				</li>
 			{% endfor %}
