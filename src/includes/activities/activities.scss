@@ -50,7 +50,7 @@
 					}
 				}
 			}
-			&.is-selected {
+			&.swiper-slide-active {
 				#{$this}__slide-name {
 					transform: translateY(rem(-17));
 					&::after {
@@ -126,31 +126,26 @@
 		}
 	}
 	&__button {
+		--swiper-navigation-top-offset: 0;
+		--swiper-navigation-sides-offset: 0;
 		z-index: 4;
 		width: rem(104);
 		height: 100%;
+		border: 0;
 		border-radius: 0;
+		margin-top: 0;
 		color: var(--blue-dark);
 		background-color: var(--gray-light);
-		&.next {
-			right: 0;
+		&.swiper-button-disabled {
+			opacity: 0;
+		}
+		&::after {
+			display: none;
 		}
 		svg {
 			width: rem(56);
 			height: rem(56);
 			fill: none;
-		}
-		&:disabled,
-		&[disabled] {
-			opacity: 0 !important;
-			pointer-events: all;
-		}
-		&:hover,
-		&:focus,
-		&:active {
-			outline: none;
-			box-shadow: none;
-			opacity: 1;
 		}
 		&:hover {
 			background-color: var(--gray-light);
@@ -166,26 +161,28 @@
 		}
 	}
 
-	.flickity-page-dots {
+	.swiper-pagination {
 		display: none;
 		bottom: 24px;
 		@media (max-width: $tablet) {
 			display: flex;
 			justify-content: center;
 			gap: 10px;
-			button {
+			span {
 				display: block;
 				border: 0;
 				color: transparent;
 				box-sizing: border-box;
 				width: 10px;
 				height: 10px;
+				margin: 0;
 				border-radius: 100vmax;
 				border: 1px solid var(--white);
 				background-color: var(--white);
+				opacity: 1;
 				transition: width $default-transition-duration $default-transition-function,
 					background-color $default-transition-duration $default-transition-function;
-				&.is-selected {
+				&.swiper-pagination-bullet-active {
 					width: 43px;
 					background-color: transparent;
 				}

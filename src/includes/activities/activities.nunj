@@ -30,10 +30,10 @@
 
 <section class="activities">
 	<h2 class="activities__title page__section-title h4 ttu">Виды активности</h2>
-	<div class="activities__slider">
-		<ul data-activities-slider>
+	<div class="activities__slider swiper">
+		<ul class="swiper-wrapper" data-activities-slider>
 			{% for item in activities %}
-				<li class="activities__slide">
+				<li class="activities__slide swiper-slide">
 					<a href="#"><span class="activities__slide-name">{{ item.name }}</span></a>
 					<picture class="activities__slide-img">
 						<img src="{{ item.src }}" srcset="{{ item.src2x }}" width="360" height="480" alt="">
@@ -42,13 +42,15 @@
 			{% endfor %}
 		</ul>
 
-		<button class="activities__button flickity-button flickity-prev-next-button prev" disabled="true" type="button" aria-label="Previous">
+		<div class="swiper-pagination"></div>
+
+		<button class="activities__button swiper-button-prev" type="button" aria-label="Previous">
 			{{ icon({
 				iconName: 'slider-arrow-left',
 				attr: 'width="56" height="56"'
 			}) }}
 		</button>
-		<button class="activities__button flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+		<button class="activities__button swiper-button-next" type="button" aria-label="Next">
 			{{ icon({
 				iconName: 'slider-arrow-right',
 				attr: 'width="56" height="56"'

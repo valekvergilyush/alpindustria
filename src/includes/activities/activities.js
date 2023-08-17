@@ -1,4 +1,4 @@
-import Flickity from 'flickity';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 class Activities {
 	constructor() {
@@ -12,67 +12,29 @@ class Activities {
 			return;
 		}
 
-		const sliderContainer = document.querySelector('[data-activities-slider]');
-		const buttonPrev = container.querySelector('.activities__button.prev');
-		const buttonNext = container.querySelector('.activities__button.next');
+		const buttonPrev = container.querySelector('.swiper-button-prev');
+		const buttonNext = container.querySelector('.swiper-button-next');
+		const paginationEl = container.querySelector('.swiper-pagination');
 
-		this.slider = new Flickity(sliderContainer, {
-			cellSelector: '[data-activities-slider] li',
-			cellAlign: 'left',
-			groupCells: 4,
-			contain: true,
-			pageDots: true,
-			prevNextButtons: false,
-			draggable: true,
+		this.slider = new Swiper(container, {
+			modules: [Navigation, Pagination],
+			slidesPerView: 'auto',
+			centeredSlides: true,
+			loop: false,
+			pagination: {
+				el: paginationEl,
+				type: 'bullets',
+			},
+			navigation: {
+				prevEl: buttonPrev,
+				nextEl: buttonNext,
+			},
+			breakpoints: {
+				769: {
+					centeredSlides: false,
+				},
+			},
 		});
-
-		const onChange = index => {
-			if (index === 0) {
-				buttonPrev.setAttribute('disabled', true);
-			} else {
-				buttonPrev.removeAttribute('disabled');
-			}
-			if (index === this.slider.slides.length - 1) {
-				buttonNext.setAttribute('disabled', true);
-			} else {
-				buttonNext.removeAttribute('disabled');
-			}
-		};
-
-		const onResize = () => {
-			if (window.innerWidth < 1024) {
-				this.slider.destroy();
-				this.slider = new Flickity(sliderContainer, {
-					cellSelector: '[data-activities-slider] li',
-					cellAlign: 'left',
-					groupCells: 3,
-					contain: true,
-					pageDots: true,
-					prevNextButtons: false,
-					draggable: true,
-				});
-			}
-			if (window.innerWidth < 768) {
-				this.slider.destroy();
-				this.slider = new Flickity(sliderContainer, {
-					cellSelector: '[data-activities-slider] li',
-					pageDots: true,
-					prevNextButtons: false,
-					draggable: true,
-				});
-			}
-
-			this.slider.on('change', onChange);
-		};
-
-		window.addEventListener('resize', onResize);
-		buttonPrev.addEventListener('click', () => {
-			this.slider.previous();
-		});
-		buttonNext.addEventListener('click', () => {
-			this.slider.next();
-		});
-		onResize();
 	}
 }
 
