@@ -90,10 +90,7 @@ class Popups {
 			popupAnimation = popup.getAttribute('data-popup-animation');
 		}
 
-		if (
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
-			!HTML_CLASSLIST.contains(ClassName.OPENED_MODAL)
-		) {
+		if (!HTML_CLASSLIST.contains(ClassName.OPENED_MODAL)) {
 			ScrollLock.enable();
 		}
 

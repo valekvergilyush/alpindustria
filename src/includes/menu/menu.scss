@@ -11,6 +11,7 @@
 	color: var(--white);
 	background-color: var(--blue-dark);
 	overflow: auto;
+	overflow-x: hidden;
 	@media (max-width: $laptop-lg) {
 		--col-width: 583px;
 	}
@@ -91,14 +92,24 @@
 		box-sizing: border-box;
 		border-bottom: 1px solid currentColor;
 		&:hover {
+			background-color: var(--white);
 			#{$this}__nav-link {
 				color: var(--blue-dark);
 				background-color: var(--white);
+			}
+			& > * {
+				background: var(--blue-dark);
 			}
 		}
 		&._opened {
 			#{$this}__dropdown {
 				transform: translateX(calc(100% + 1px));
+				&._catalog {
+					transform: translateX(calc(100% + 1px));
+					&._activities {
+						transform: translateX(calc(200% + 1px));
+					}
+				}
 			}
 		}
 		&:last-child {
@@ -108,18 +119,20 @@
 			position: relative;
 			flex-grow: 0;
 			height: var(--item-height);
-			transition: height $default-transition-duration $default-transition-function;
 			&:last-child {
 				border-bottom: 1px solid currentColor;
 			}
 			&._opened {
+				background-color: var(--white);
+				& > * {
+					background: var(--blue-dark);
+				}
 				#{$this}__dropdown {
-					transform: none;
+					transform: none !important;
 				}
 			}
 			&._dropdown {
 				overflow: hidden;
-				height: var(--height);
 			}
 			&._opened {
 				#{$this}__nav-link {
@@ -175,6 +188,8 @@
 		@media (max-width: $laptop-md) {
 			--font-size-h4: 56px;
 			min-height: 97px;
+			flex-grow: 0;
+			margin-bottom: 1px;
 		}
 		@media (max-width: $laptop-sm) {
 			padding-top: 0.24em;
@@ -224,7 +239,7 @@
 		flex-grow: 1;
 		align-items: center;
 		justify-content: center;
-		min-width: rem(235);
+		min-width: rem(257);
 		padding: rem(15);
 		border-left: 1px solid currentColor;
 		text-align: center;
@@ -233,7 +248,7 @@
 			background-color: var(--white);
 		}
 		@media (max-width: $laptop-lg) {
-			min-width: 195px;
+			min-width: 214px;
 			font-size: 18px;
 		}
 		@media (max-width: $laptop-md) {
@@ -291,7 +306,7 @@
 		}
 	}
 	&__dropdown {
-		--drowdown-width: #{rem(321)};
+		--dropdown-width: #{rem(321)};
 		position: absolute;
 		z-index: -1;
 		top: 0;
@@ -301,27 +316,49 @@
 		flex-direction: column;
 		row-gap: rem(24);
 		background-color: var(--blue-dark);
-		width: var(--drowdown-width);
+		width: var(--dropdown-width);
 		height: 100%;
 		padding: rem(48);
 		border-right: 1px solid currentColor;
 		transition: transform $default-transition-duration $default-transition-function;
 		will-change: transform;
+		&._catalog {
+			--dropdown-width: calc(var(--img-width) / 2 - 1px);
+			overflow: auto;
+			&::before {
+				content: attr(aria-label);
+				@extend .h6;
+				margin-bottom: rem(8);
+				text-transform: uppercase;
+			}
+		}
 		@media (max-width: $laptop-lg) {
-			--drowdown-width: 272px;
+			--dropdown-width: 272px;
 			padding: 32px;
 			row-gap: 25px;
 		}
 		@media (max-width: $laptop-md) {
-			--drowdown-width: 100%;
+			--dropdown-width: 100%;
 			z-index: 1;
 			position: static;
+			height: fit-content;
 			padding-bottom: 64px;
 			border: 0;
+			&._catalog {
+				--dropdown-width: 100%;
+				overflow: visible;
+				padding-top: 68px;
+				&::before {
+					display: none;
+				}
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			padding: 24px 16px;
 			row-gap: 22px;
+			&._catalog {
+				padding-top: 56px;
+			}
 		}
 	}
 	&__dropdown-link {
@@ -413,6 +450,62 @@
 				--size: 16px;
 				top: -1px;
 				left: 2px;
+			}
+		}
+	}
+	&__catalog-accordion {
+		height: 0;
+		margin-bottom: -1px;
+		button {
+			@include reset-btn;
+			@extend .h6;
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 32px;
+			display: none;
+			column-gap: 16px;
+			width: fit-content;
+			height: fit-content;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-align-last: left;
+		}
+		svg {
+			transition: transform 0.3s ease-out;
+		}
+		&._opened {
+			svg {
+				transform: scaleY(-1);
+			}
+		}
+		@media (max-width: $laptop-md) {
+			--item-height: 36px;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			box-sizing: border-box;
+			flex-grow: 0;
+			height: var(--item-height);
+			margin-top: 24px;
+			margin-bottom: 0;
+			transition: height 0.3s ease-out;
+			overflow: hidden;
+			&:last-child {
+				margin-bottom: 24px;
+			}
+			button {
+				display: flex;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			--item-height: 24px;
+			button {
+				left: 16px;
+			}
+			svg {
+				width: 24px;
+				height: 24px;
 			}
 		}
 	}
