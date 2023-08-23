@@ -110,7 +110,6 @@
 		#{$this}__btn {
 			align-self: flex-end;
 			@media (max-width: $tablet) {
-				justify-self: flex-start;
 				order: 1;
 			}
 		}
