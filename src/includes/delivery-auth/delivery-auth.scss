@@ -41,9 +41,11 @@
 		&._socials {
 			align-items: center;
 			@media (max-width: $tablet) {
-				flex-direction: column;
-				align-items: stretch;
-				gap: 8px;
+				flex-wrap: wrap;
+				row-gap: 24px;
+			}
+			@media (max-width: ($mobile - 1)) {
+				column-gap: 4px;
 			}
 		}
 		#{$this}[data-form-stage='sms'] &._sms {
@@ -194,6 +196,10 @@
 		align-items: center;
 		gap: rem(8);
 		margin-left: auto;
+		@media (max-width: $tablet) {
+			margin-left: 0;
+			margin-right: 40%;
+		}
 	}
 	&__change-auth-icon {
 		--size: #{rem(8)};

@@ -9,15 +9,20 @@ class LottieAnimations {
 	}
 	initPlayer(container, path) {
 		let isAutoplay = true;
+		let loop = false;
 
 		if (container.getAttribute('data-lottie-autoplay') === 'false') {
 			isAutoplay = false;
 		}
 
+		if (container.getAttribute('data-lottie-loop') === 'true') {
+			loop = true;
+		}
+
 		this.player = lottie.loadAnimation({
 			container: container,
 			renderer: 'svg',
-			loop: false,
+			loop: loop,
 			autoplay: isAutoplay,
 			path: path,
 		});

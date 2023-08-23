@@ -160,10 +160,11 @@
 		display: flex;
 		align-items: center;
 		gap: rem(16);
-		font-size: rem(32);
-		letter-spacing: -0.64px;
 		&:not(:last-child) {
 			margin-bottom: rem(48);
+			@media (max-width: $tablet) {
+				margin-bottom: 32px;
+			}
 		}
 	}
 	&__change-city-icon {
@@ -171,10 +172,11 @@
 		width: var(--size);
 		height: var(--size);
 		fill: none;
+		@media (max-width: $tablet) {
+			--size: 16px;
+		}
 	}
 	&__text {
-		font-size: rem(18);
-		line-height: rem(24);
 		color: var(--gray-dark);
 		&:not(:last-child) {
 			margin-bottom: rem(24);
@@ -199,6 +201,10 @@
 		color: var(--white);
 		font-size: rem(20);
 		line-height: rem(28);
+		@media (max-width: $tablet) {
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 	&__change-address-btn {
 		@include reset-btn;

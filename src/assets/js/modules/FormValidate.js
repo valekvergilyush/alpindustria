@@ -56,7 +56,7 @@ class FormValidate {
 		setTimeout(() => {
 			container.classList.remove('_anim');
 			container.classList.add('_success');
-		}, 1000);
+		}, 5000);
 		this.resetForm(e.target);
 	};
 	cartDiscountPhoneValidationSuccessCallback = e => {

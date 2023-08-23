@@ -6,7 +6,7 @@
 	</div>
 	<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" target="_blank" href="/discount.html">Условия программы лояльности</a>.</p>
 	<div class="cart-discount__issue">
-		<p>У вас нет карты? Оформите прямо сейчас</p>
+		<p class="p3">У вас нет карты? Оформите прямо сейчас</p>
 		<button class="cart-discount__btn h7 ttu" type="button" data-modal-opener="create-card">
 			<span>Оформить карту</span>
 			{{ icon({
@@ -69,7 +69,7 @@
 			}) }}
 		</button>
 		<div class="cart-discount__sms-inner">
-			<div class="cart-discount__sms-input">
+			{# <div class="cart-discount__sms-input"> #}
 				{{ input({
 					type: 'text',
 					id: 'discount-phone-sms',
@@ -85,15 +85,15 @@
 						attr: 'width="24" height="24"'
 					}) }}
 				</button>
-			</div>
-			<button class="p4 cart-discount__btn-send-code" type="button">
-				<span>Выслать код повторно</span>
-				{{ icon({
-					iconName: 'promo-arrow',
-					className: 'cart-discount__btn-send-code-icon',
-					attr: 'width="24" height="24"'
-				}) }}
-			</button>
+				<button class="p4 cart-discount__btn-send-code" type="button">
+					<span>Выслать код повторно</span>
+					{{ icon({
+						iconName: 'promo-arrow',
+						className: 'cart-discount__btn-send-code-icon',
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+			{# </div> #}
 		</div>
 	</div>
 	<div class="cart-discount__card-wrap">
