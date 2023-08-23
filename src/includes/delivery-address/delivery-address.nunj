@@ -34,7 +34,7 @@
 				attr: 'width="24" height="24"'
 			}) }}
 		</button>
-		<p class="delivery-address__text ttu">Выберите способ доставки:</p>
+		<p class="delivery-address__text h7 ttu">Выберите способ доставки:</p>
 		<div class="delivery-address__radios">
 			{{ radio({
 				id: 'delivery-address-radio-1',

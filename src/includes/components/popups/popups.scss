@@ -119,6 +119,12 @@
 			width: 100%;
 			margin-top: rem(32);
 		}
+		&[data-popup-wrapper='cart'] {
+			#{$this}__popup {
+				margin-top: 0;
+				padding-top: calc(var(--header-height) + var(--popup-padding));
+			}
+		}
 		&._opened-delivery {
 			#{$this}__close-button:not(._order) {
 				display: none;
@@ -249,6 +255,7 @@
 			}
 			@media (max-width: $mobile-lg) {
 				--popup-padding: 16px;
+				margin-top: 0;
 				.popups__close-button {
 					padding: 4px;
 				}

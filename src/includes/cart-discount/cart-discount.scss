@@ -52,6 +52,9 @@
 		@media (max-width: $laptop) {
 			justify-self: flex-end;
 		}
+		@media (max-width: $tablet) {
+			font-weight: 450;
+		}
 		&._promo {
 			#{$this}._bonus & {
 				display: none;
@@ -97,9 +100,20 @@
 		}
 	}
 	&__sms-inner {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: 1fr auto;
 		gap: rem(8);
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+		#{$this}__btn {
+			align-self: flex-end;
+			@media (max-width: $tablet) {
+				justify-self: flex-start;
+				order: 1;
+			}
+		}
 	}
 	&__sms-back {
 		@include reset-btn;
@@ -111,9 +125,8 @@
 		height: 100%;
 	}
 	&__sms-input {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
 		gap: rem(8);
 	}
 	&__btn-send-code {
