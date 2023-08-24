@@ -169,6 +169,9 @@
 		}
 	}
 	&__price {
+		display: flex;
+		flex-direction: column;
+		gap: rem(4);
 		color: var(--blue-light);
 		min-width: rem(240);
 		margin-top: auto;
@@ -323,6 +326,7 @@
 		margin-bottom: rem(48);
 		@media (max-width: $tablet) {
 			flex-direction: column;
+			gap: 16px;
 		}
 		&._discount {
 			margin-bottom: rem(16);
@@ -331,6 +335,8 @@
 	&__block-title {
 		color: var(--gray-dark);
 		line-height: 1;
+		font-weight: 450;
+		letter-spacing: 0.1px;
 	}
 	&__title-btn {
 		@include reset-btn;

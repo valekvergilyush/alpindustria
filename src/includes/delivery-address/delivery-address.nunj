@@ -197,9 +197,5 @@
 			}) }}
 		</div>
 		{% include "../delivery-data/delivery-data.nunj" %}
-		<p class="delivery-address__price">
-			Стоимость доставки:<br>
-			<span class="delivery-address__price-value">Бесплатно</span>
-		</p>
 	</section>
 </div>

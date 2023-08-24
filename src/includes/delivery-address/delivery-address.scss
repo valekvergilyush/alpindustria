@@ -1,15 +1,5 @@
 .delivery-address {
 	$this: &;
-	padding-bottom: rem(48);
-	@media (max-width: $laptop-lg) {
-		padding-bottom: 32px;
-	}
-	@media (max-width: $laptop) {
-		padding-bottom: 46px;
-	}
-	@media (max-width: $mobile-lg) {
-		padding-bottom: 52px;
-	}
 	&__title {
 		margin-bottom: rem(24);
 		@media (max-width: $mobile-lg) {
@@ -118,7 +108,7 @@
 		border-top: 1px solid rgba($blue-light, 0.2);
 		font-family: var(--font-family-suisse);
 		@media (max-width: $laptop-lg) {
-			margin-top: 70px;
+			margin-top: 32px;
 			padding-top: 32px;
 		}
 	}
