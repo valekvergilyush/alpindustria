@@ -7,6 +7,8 @@
 	&__slider {
 		position: relative;
 		background-color: var(--black);
+		border-top: 1px solid var(--blue-dark);
+		border-bottom: 1px solid var(--blue-dark);
 	}
 	&__slide {
 		display: grid;
@@ -15,6 +17,10 @@
 		width: 25%;
 		color: var(--white);
 		text-transform: uppercase;
+		border-right: 1px solid var(--blue-dark);
+		&:first-child {
+			border-left: 1px solid var(--blue-dark);
+		}
 		a {
 			position: absolute;
 			top: 0;
@@ -183,6 +189,9 @@
 				opacity: 1;
 				transition: width $default-transition-duration $default-transition-function,
 					background-color $default-transition-duration $default-transition-function;
+				&.swiper-pagination-bullet {
+					margin: 0;
+				}
 				&.swiper-pagination-bullet-active {
 					width: 43px;
 					background-color: transparent;

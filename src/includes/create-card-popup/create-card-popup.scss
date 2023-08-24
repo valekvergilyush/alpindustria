@@ -103,15 +103,21 @@
 	}
 	&__anim-wrap {
 		display: none;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		width: rem(175);
 		height: 100%;
+		gap: rem(16);
+		margin: 0 auto;
+		text-align: center;
 		#{$this}._anim & {
 			display: flex;
 		}
 	}
 	&__anim {
-		width: 100%;
+		width: rem(170);
+		height: rem(140);
 	}
 	&__success-wrap {
 		display: none;

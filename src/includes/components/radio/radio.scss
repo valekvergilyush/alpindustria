@@ -66,8 +66,8 @@
 			}
 		}
 		@media (max-width: $tablet) {
-			row-gap: 11px;
-			font-size: 14px;
+			row-gap: 8px;
+			font-size: 16px;
 		}
 	}
 	&__box {
@@ -97,7 +97,7 @@
 		font-size: rem(12);
 		line-height: 1.33;
 		@media (max-width: $mobile-lg) {
-			font-size: 10px;
+			font-size: 12px;
 		}
 	}
 	&__input:checked {
