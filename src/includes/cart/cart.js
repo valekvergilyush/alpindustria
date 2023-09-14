@@ -45,6 +45,10 @@ class Cart {
 		this.deliveryAuthChange = this.container.querySelectorAll('[data-delivery-auth-change]');
 		this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
 		this.submitSmsAuthBtn = this.container.querySelector('[data-submit-sms-auth]');
+		this.nextButtons = this.container.querySelectorAll('[data-cart-next]');
+		this.deliverySection = this.container.querySelector('.cart__delivery');
+		this.header = document.querySelector('.page__header');
+		this.orderButton = document.querySelector('[data-order-bottom]');
 
 		this.onSubmitButtonClick = this.onSubmitButtonClick.bind(this);
 		this.onBackButtonClick = this.onBackButtonClick.bind(this);
@@ -58,6 +62,7 @@ class Cart {
 		this.onEditProfileDataBtnClick = this.onEditProfileDataBtnClick.bind(this);
 		this.onSubmitAuthBtnClick = this.onSubmitAuthBtnClick.bind(this);
 		this.onSubmitSmsAuthBtnClick = this.onSubmitSmsAuthBtnClick.bind(this);
+		this.onNextButtonClick = this.onNextButtonClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
@@ -78,6 +83,9 @@ class Cart {
 		});
 		this.submitAuthBtns.forEach(btn => {
 			btn.addEventListener('click', this.onSubmitAuthBtnClick);
+		});
+		this.nextButtons.forEach(btn => {
+			btn.addEventListener('click', this.onNextButtonClick);
 		});
 		if (this.submitSmsAuthBtn) {
 			this.submitSmsAuthBtn.addEventListener('click', this.onSubmitSmsAuthBtnClick);
@@ -272,6 +280,31 @@ class Cart {
 		this.authBlock.classList.remove(ClassName.AUTH);
 		this.authBlock.classList.remove(ClassName.SMS);
 		this.authBlock.classList.add(ClassName.PROFILE);
+	}
+	onNextButtonClick(e) {
+		const button = e.target;
+		const targetId = button.getAttribute('data-cart-next');
+		const targetBlock = this.container.querySelector(`#${targetId}`) || this.orderButton;
+		const yPos = targetBlock.getBoundingClientRect().top;
+		const headerHeight = this.header.offsetHeight;
+		const buttonHeight = button.offsetHeight;
+		const scrollOffset = yPos - headerHeight - buttonHeight - 16;
+
+		targetBlock.classList.remove(`_${ClassName.HIDDEN}`);
+		button.classList.add(`_${ClassName.HIDDEN}`);
+
+		if (window.innerWidth > 768) {
+			this.deliverySection.scrollBy({
+				top: scrollOffset,
+				left: 0,
+			});
+		} else {
+			this.popup.scrollBy({
+				top: scrollOffset,
+				left: 0,
+				behavior: 'smooth',
+			});
+		}
 	}
 }
 

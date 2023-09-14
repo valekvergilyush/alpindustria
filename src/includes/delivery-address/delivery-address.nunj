@@ -12,7 +12,7 @@
 %}
 
 
-<div class="cart__block cart__delivery-address delivery-address tabs" data-tabs id="cart-delivery">
+<div class="cart__block _hidden cart__delivery-address delivery-address tabs" data-tabs id="cart-delivery">
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">02. Информация о доставке</p>
 	</div>
@@ -198,4 +198,12 @@
 		</div>
 		{% include "../delivery-data/delivery-data.nunj" %}
 	</section>
+
+	<button class="cart__next-button" type="button" data-cart-next="cart-discount">
+		Дальше
+		{{ icon({
+			iconName: "down",
+			attr: 'width="24" height="24"'
+		}) }}
+	</button>
 </div>

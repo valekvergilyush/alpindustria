@@ -22,6 +22,13 @@
 		{% include "../order-auth-data/order-auth-data.nunj" %}
 		<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
 		<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
+		<button class="cart__next-button" type="button" data-cart-next="cart-delivery">
+			Дальше
+			{{ icon({
+				iconName: "down",
+				attr: 'width="24" height="24"'
+			}) }}
+		</button>
 	</div>
 	{% include "../delivery-address/delivery-address.nunj" %}
 	{% include "../cart-discount/cart-discount.nunj" %}

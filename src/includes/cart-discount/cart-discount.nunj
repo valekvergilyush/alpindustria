@@ -1,6 +1,6 @@
 {% from "../components/input/input.nunj" import input %}
 
-<div class="cart-discount cart__block" id="cart-discount">
+<div class="cart-discount cart__block _hidden" id="cart-discount">
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">03. дисконтная карта и промокод</p>
 	</div>
@@ -176,4 +176,12 @@
 			}) }}
 		</button>
 	</div>
+
+	<button class="cart__next-button" type="button" data-cart-next="cart-info">
+		Дальше
+		{{ icon({
+			iconName: "down",
+			attr: 'width="24" height="24"'
+		}) }}
+	</button>
 </div>
