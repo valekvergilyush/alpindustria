@@ -343,9 +343,15 @@
 		}
 		&._hidden {
 			box-sizing: border-box;
-			height: rem(92);
 			overflow: hidden;
+			height: rem(126);
 			background-color: var(--gray-light);
+			@media (max-width: $desktop) {
+				height: 92px;
+			}
+			@media (max-width: $mobile-only) {
+				height: 100px;
+			}
 			.cart__block-title {
 				color: rgba($gray-dark, 0.4);
 			}
