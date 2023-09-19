@@ -12,6 +12,7 @@ const ClassName = {
 	AUTH: '_auth',
 	EDIT: '_edit',
 	SMS: '_sms',
+	COMPLETE: 'complete',
 };
 
 const TABLET_BREAKPOINT = 992;
@@ -46,6 +47,7 @@ class Cart {
 		this.submitAuthBtns = this.container.querySelectorAll('[data-submit-auth]');
 		this.submitSmsAuthBtn = this.container.querySelector('[data-submit-sms-auth]');
 		this.nextButtons = this.container.querySelectorAll('[data-cart-next]');
+		this.editDataButtons = this.container.querySelectorAll('[data-edit-data]');
 		this.deliverySection = this.container.querySelector('.cart__delivery');
 		this.header = document.querySelector('.page__header');
 		this.orderButton = document.querySelector('[data-order-bottom]');
@@ -63,6 +65,7 @@ class Cart {
 		this.onSubmitAuthBtnClick = this.onSubmitAuthBtnClick.bind(this);
 		this.onSubmitSmsAuthBtnClick = this.onSubmitSmsAuthBtnClick.bind(this);
 		this.onNextButtonClick = this.onNextButtonClick.bind(this);
+		this.onEditDataButtonClick = this.onEditDataButtonClick.bind(this);
 
 		this.deliveryOpener.addEventListener('click', this.onSubmitButtonClick);
 		this.payButton.addEventListener('click', this.onPayButtonClick);
@@ -86,6 +89,9 @@ class Cart {
 		});
 		this.nextButtons.forEach(btn => {
 			btn.addEventListener('click', this.onNextButtonClick);
+		});
+		this.editDataButtons.forEach(btn => {
+			btn.addEventListener('click', this.onEditDataButtonClick);
 		});
 		if (this.submitSmsAuthBtn) {
 			this.submitSmsAuthBtn.addEventListener('click', this.onSubmitSmsAuthBtnClick);
@@ -289,7 +295,9 @@ class Cart {
 		const headerHeight = this.header.offsetHeight;
 		const buttonHeight = button.offsetHeight;
 		const scrollOffset = yPos - headerHeight - buttonHeight - 16;
+		const currentBlock = e.target.closest('.cart__block');
 
+		currentBlock.classList.add(`_${ClassName.COMPLETE}`);
 		targetBlock.classList.remove(`_${ClassName.HIDDEN}`);
 		button.classList.add(`_${ClassName.HIDDEN}`);
 
@@ -305,6 +313,13 @@ class Cart {
 				behavior: 'smooth',
 			});
 		}
+	}
+	onEditDataButtonClick(e) {
+		e.preventDefault();
+		const currentBlock = e.target.closest('.cart__block');
+		const nextBtn = currentBlock.querySelector('[data-cart-next]');
+		currentBlock.classList.remove(`_${ClassName.COMPLETE}`);
+		nextBtn.classList.remove(`_${ClassName.HIDDEN}`);
 	}
 }
 

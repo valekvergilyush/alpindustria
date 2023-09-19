@@ -3,21 +3,21 @@
 <div class="order-auth-data">
 	<div class="order-auth-data__data">
 		<div class="order-auth-data__row">
-			<div class="order-auth-data__title">ФИО</div>
-			<div class="order-auth-data__value">Константин Константинопольский</div>
+			<div class="order-auth-data__title">Промокод</div>
+			<div class="order-auth-data__value">Нет</div>
 		</div>
 		<div class="order-auth-data__row">
-			<div class="order-auth-data__title">Почта</div>
-			<div class="order-auth-data__value">konstantin@gmail.com</div>
+			<div class="order-auth-data__title">Карта</div>
+			<div class="order-auth-data__value">313434</div>
 		</div>
 		<div class="order-auth-data__row">
-			<div class="order-auth-data__title">Телефон</div>
-			<div class="order-auth-data__value">+7 (902) 222 01 02</div>
+			<div class="order-auth-data__title">Списано баллов</div>
+			<div class="order-auth-data__value">0</div>
 		</div>
 	</div>
 	<div class="order-auth-data__bottom">
 		<button class="order-auth-data__btn p3" type="button" data-edit-data>
-			<span>Изменить свои данные</span>
+			<span>Изменить данные</span>
 			{{ icon({
 				iconName: 'pencil',
 				className: 'order-auth-data__btn-icon',

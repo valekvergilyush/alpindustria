@@ -315,7 +315,8 @@
 		.order-auth-data {
 			display: none;
 		}
-		&._profile {
+		&._profile,
+		&._complete {
 			.order-auth-data {
 				display: block;
 			}
@@ -328,6 +329,14 @@
 		&._edit {
 			.delivery-register {
 				display: block;
+			}
+		}
+		&._complete {
+			#{$this}__inner,
+			.delivery-auth,
+			.delivery-address__tabs-list,
+			.delivery-address__section {
+				display: none;
 			}
 		}
 		&._hidden {

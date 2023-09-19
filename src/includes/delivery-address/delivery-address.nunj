@@ -199,6 +199,7 @@
 		{% include "../delivery-data/delivery-data.nunj" %}
 	</section>
 
+	{% include "../order-auth-data/order-auth-data-delivery.nunj" %}
 	<button class="cart__next-button" type="button" data-cart-next="cart-discount">
 		Дальше
 		{{ icon({

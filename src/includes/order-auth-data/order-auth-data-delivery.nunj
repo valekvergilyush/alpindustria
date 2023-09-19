@@ -1,0 +1,28 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="order-auth-data">
+	<div class="order-auth-data__data">
+		<div class="order-auth-data__row">
+			<div class="order-auth-data__title">Способ доставки</div>
+			<div class="order-auth-data__value">Курьерская</div>
+		</div>
+		<div class="order-auth-data__row">
+			<div class="order-auth-data__title">Курьерская</div>
+			<div class="order-auth-data__value">Россия, Санкт-Петербург, Шпалерная 51 к1,  4 парадная, 32кв, 644505</div>
+		</div>
+		<div class="order-auth-data__row">
+			<div class="order-auth-data__title">Время получения заказа</div>
+			<div class="order-auth-data__value">20/08/23, 19:00</div>
+		</div>
+	</div>
+	<div class="order-auth-data__bottom">
+		<button class="order-auth-data__btn p3" type="button" data-edit-data>
+			<span>Изменить данные</span>
+			{{ icon({
+				iconName: 'pencil',
+				className: 'order-auth-data__btn-icon',
+				attr: 'width="24" height="24"'
+			}) }}
+		</button>
+	</div>
+</div>

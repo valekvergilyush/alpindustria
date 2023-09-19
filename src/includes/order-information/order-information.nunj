@@ -5,23 +5,26 @@
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">04. Информирование по заказу</p>
 	</div>
-	{{ textarea({
-		id: 'profile-message',
-		className: 'order-information__textarea _placeholder',
-		name: 'Комментарий',
-		placeholder: 'Сюда вы можете написать сообщение для курьера'
-	}) }}
-	{{ checkbox({
-		className: 'order-information__checkbox',
-		id: 'application-form-email-info',
-		name: 'Хочу получать информационную рассылку',
-		text: 'Я хочу получать информационную рассылку оптового отдела',
-		checked: true
-	}) }}
-	<div class="order-information__btns">
-		<a href="tel:+79999999999" class="order-information__btn ttu">Позвонить</a>
-		<a href="tel:+79999999999" class="order-information__btn ttu _white">Whatsapp</a>
+	<div class="cart__inner">
+		{{ textarea({
+			id: 'profile-message',
+			className: 'order-information__textarea _placeholder',
+			name: 'Комментарий',
+			placeholder: 'Сюда вы можете написать сообщение для курьера'
+		}) }}
+		{{ checkbox({
+			className: 'order-information__checkbox',
+			id: 'application-form-email-info',
+			name: 'Хочу получать информационную рассылку',
+			text: 'Я хочу получать информационную рассылку оптового отдела',
+			checked: true
+		}) }}
+		<div class="order-information__btns">
+			<a href="tel:+79999999999" class="order-information__btn ttu">Позвонить</a>
+			<a href="tel:+79999999999" class="order-information__btn ttu _white">Whatsapp</a>
+		</div>
 	</div>
+	{% include "../order-auth-data/order-auth-data-information.nunj" %}
 
 	<button class="cart__next-button" type="button" data-cart-next="order-btn">
 		Дальше
