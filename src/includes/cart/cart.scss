@@ -305,7 +305,7 @@
 		border: 1px solid rgba($blue-light, 0.2);
 		background-color: var(--white);
 		@media (max-width: $mobile-only) {
-			padding: 24px var(--block-padding) 32px;
+			padding: 24px var(--block-padding);
 		}
 		&:not(:last-child) {
 			margin-bottom: rem(16);
@@ -344,19 +344,16 @@
 		&._hidden {
 			box-sizing: border-box;
 			overflow: hidden;
-			height: rem(126);
 			background-color: var(--gray-light);
-			@media (max-width: $desktop) {
-				height: 92px;
-			}
-			@media (max-width: $mobile-only) {
-				height: 100px;
+			& > *:not(#{$this}__title-wrap) {
+				display: none;
 			}
 			.cart__block-title {
 				color: rgba($gray-dark, 0.4);
 			}
 			.cart__title-wrap {
-				padding-bottom: var(--block-padding);
+				padding-bottom: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
