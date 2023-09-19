@@ -332,9 +332,11 @@
 			}
 		}
 		&._complete {
+			.cart__title-btn._edit,
 			#{$this}__inner,
 			.delivery-auth,
 			.delivery-address__tabs-list,
+			.delivery-register._new-user,
 			.delivery-address__section {
 				display: none;
 			}
@@ -388,11 +390,13 @@
 		&._auth {
 			display: none;
 		}
-		#{$this}__block._edit &._edit {
-			display: flex;
-		}
+		#{$this}__block._edit &._edit,
 		#{$this}__block._auth &._auth {
 			display: flex;
+		}
+		#{$this}__block._complete &._edit,
+		#{$this}__block._complete &._auth {
+			display: none;
 		}
 	}
 	&__title-btn-icon {
