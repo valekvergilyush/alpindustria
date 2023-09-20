@@ -178,7 +178,7 @@
 			</button>
 		</div>
 	</div>
-	{% include "../order-auth-data/order-auth-data-delivery.nunj" %}
+	{% include "../order-auth-data/order-auth-data-discount.nunj" %}
 
 	<button class="cart__next-button" type="button" data-cart-next="cart-info">
 		Дальше
