@@ -237,7 +237,7 @@
 				&._order {
 					top: calc(var(--popup-padding) + #{rem(12)});
 					@media (max-width: $laptop) {
-						top: calc(var(--popup-padding));
+						top: 24px;
 					}
 				}
 			}
@@ -247,20 +247,17 @@
 					padding: 6px;
 				}
 				.popups__close-icon {
-					--size: 28px;
+					--size: 24px;
 				}
 			}
 			@media (max-width: $tablet) {
 				padding-top: var(--popup-padding);
 			}
 			@media (max-width: $mobile-lg) {
-				--popup-padding: 16px;
+				--popup-padding: 8px;
 				margin-top: 0;
 				.popups__close-button {
 					padding: 4px;
-				}
-				.popups__close-icon {
-					--size: 18px;
 				}
 			}
 		}

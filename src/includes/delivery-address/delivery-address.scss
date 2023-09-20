@@ -99,7 +99,7 @@
 		row-gap: rem(24);
 		margin-bottom: rem(48);
 		@media (max-width: $mobile-lg) {
-			row-gap: 26px;
+			row-gap: 16px;
 		}
 	}
 	&__price {
@@ -120,6 +120,8 @@
 	}
 	&__tabs-list {
 		margin-inline: calc(var(--block-padding) * -1);
+		@media (max-width: $mobile-only) {
+		}
 	}
 	&__change-city {
 		align-self: flex-start;

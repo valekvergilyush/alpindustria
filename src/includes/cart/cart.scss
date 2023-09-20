@@ -42,16 +42,13 @@
 	}
 	&__back-btn {
 		display: none;
-		@media (max-width: $mobile-lg) {
-			.button__icon {
-				width: 22px;
-				height: 22px;
-			}
-		}
 	}
 	&__title-wrapper {
 		&._delivery {
 			margin-bottom: rem(40);
+			@media (max-width: $mobile-only) {
+				margin-bottom: 48px;
+			}
 		}
 	}
 	&__title {
@@ -125,6 +122,9 @@
 		@media (max-width: $tablet) {
 			height: auto;
 			border-left: none;
+		}
+		@media (max-width: $mobile-only) {
+			padding-top: 24px;
 		}
 		.cart-bottom {
 			position: static;
@@ -368,6 +368,7 @@
 		@media (max-width: $tablet) {
 			flex-direction: column;
 			gap: 16px;
+			margin-bottom: 32px;
 		}
 		&._discount {
 			margin-bottom: rem(16);
@@ -481,6 +482,7 @@
 			display: none;
 		}
 		@media (max-width: $mobile-only) {
+			margin-top: 32px;
 			margin-bottom: calc(var(--block-padding) * -2);
 		}
 		@media (max-width: $mobile-lg) {
