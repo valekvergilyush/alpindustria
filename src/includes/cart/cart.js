@@ -309,6 +309,15 @@ class Cart {
 		if (isAllComplete) {
 			this.orderButton.classList.remove(`_${ClassName.HIDDEN}`);
 		}
+		if (!targetBlock.classList.contains(`_${ClassName.COMPLETE}`)) {
+			this.currentUncompleteBlock = targetBlock;
+		}
+
+		const uncompleteBlockNextBtn = this.currentUncompleteBlock.querySelector('[data-cart-next]');
+
+		if (uncompleteBlockNextBtn) {
+			uncompleteBlockNextBtn.classList.remove(`_${ClassName.HIDDEN}`);
+		}
 
 		if (window.innerWidth > 768) {
 			this.deliverySection.scrollBy({
@@ -328,8 +337,11 @@ class Cart {
 		const currentBlock = e.target.closest('.cart__block');
 		const nextBtn = currentBlock.querySelector('[data-cart-next]');
 		currentBlock.classList.remove(`_${ClassName.COMPLETE}`);
-		nextBtn.classList.remove(`_${ClassName.HIDDEN}`);
 		this.orderButton.classList.add(`_${ClassName.HIDDEN}`);
+		this.nextButtons.forEach(btn => {
+			btn.classList.add(`_${ClassName.HIDDEN}`);
+		});
+		nextBtn.classList.remove(`_${ClassName.HIDDEN}`);
 	}
 }
 
