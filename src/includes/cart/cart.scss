@@ -308,10 +308,7 @@
 			padding: 24px var(--block-padding);
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(48);
-			@media (max-width: $mobile-only) {
-				margin-bottom: 32px;
-			}
+			margin-bottom: rem(16);
 		}
 		.delivery-register,
 		.delivery-auth,
@@ -357,6 +354,12 @@
 			.cart__title-wrap {
 				padding-bottom: 0;
 				margin-bottom: 0;
+			}
+		}
+		&._last {
+			margin-bottom: rem(48);
+			@media (max-width: $mobile-only) {
+				margin-bottom: 32px;
 			}
 		}
 	}

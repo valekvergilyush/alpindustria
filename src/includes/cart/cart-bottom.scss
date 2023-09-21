@@ -31,7 +31,7 @@
 	}
 	@media (max-width: $mobile-lg) {
 		min-height: 80px;
-		padding: var(--popup-padding);
+		padding: 16px;
 	}
 	&__price {
 		min-width: rem(240);

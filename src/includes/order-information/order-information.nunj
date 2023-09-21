@@ -1,7 +1,7 @@
 {% from "../components/textarea/textarea.nunj" import textarea %}
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
 
-<div class="cart__block _hidden order-information" id="cart-info">
+<div class="cart__block _hidden _last order-information" id="cart-info">
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">04. Информирование по заказу</p>
 	</div>
