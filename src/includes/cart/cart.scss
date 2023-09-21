@@ -308,7 +308,10 @@
 			padding: 24px var(--block-padding);
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(16);
+			margin-bottom: rem(48);
+			@media (max-width: $mobile-only) {
+				margin-bottom: 32px;
+			}
 		}
 		.delivery-register,
 		.delivery-auth,
@@ -466,6 +469,7 @@
 		margin-top: var(--block-padding);
 		color: var(--white);
 		background-color: var(--blue-dark);
+		font-family: var(--font-family-suisse);
 		font-size: rem(16);
 		font-weight: 400;
 		line-height: rem(20);

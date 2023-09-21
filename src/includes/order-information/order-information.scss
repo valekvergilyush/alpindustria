@@ -4,6 +4,11 @@
 	}
 	&__textarea {
 		margin-bottom: rem(32);
+		.textarea__label {
+			@media (max-width: $mobile-only) {
+				padding-top: 0;
+			}
+		}
 	}
 	&__checkbox {
 		margin-bottom: rem(24);

@@ -301,6 +301,15 @@ class Cart {
 		targetBlock.classList.remove(`_${ClassName.HIDDEN}`);
 		button.classList.add(`_${ClassName.HIDDEN}`);
 
+		const blocks = this.container.querySelectorAll('.cart__block');
+		const isAllComplete = Array(...blocks).every(block =>
+			block.classList.contains(`_${ClassName.COMPLETE}`)
+		);
+
+		if (isAllComplete) {
+			this.orderButton.classList.remove(`_${ClassName.HIDDEN}`);
+		}
+
 		if (window.innerWidth > 768) {
 			this.deliverySection.scrollBy({
 				top: scrollOffset,
@@ -320,6 +329,7 @@ class Cart {
 		const nextBtn = currentBlock.querySelector('[data-cart-next]');
 		currentBlock.classList.remove(`_${ClassName.COMPLETE}`);
 		nextBtn.classList.remove(`_${ClassName.HIDDEN}`);
+		this.orderButton.classList.add(`_${ClassName.HIDDEN}`);
 	}
 }
 
