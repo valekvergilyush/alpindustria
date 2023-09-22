@@ -46,14 +46,14 @@
 	&__input {
 		flex-grow: 1;
 		width: 100%;
+		@media (max-width: $mobile-lg) {
+			--height: 56px;
+		}
 	}
 	&__checkbox {
 		margin-top: rem(34);
 		@media (max-width: $laptop) {
 			margin-top: 32px;
-		}
-		@media (max-width: $mobile-lg) {
-			margin-top: 24px;
 		}
 	}
 	&__link {

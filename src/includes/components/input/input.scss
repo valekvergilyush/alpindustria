@@ -18,6 +18,8 @@
 	}
 	@media (max-width: $mobile-lg) {
 		--height: 58px;
+		--padding: 8px;
+		padding-top: 24px;
 	}
 	&._c-white {
 		#{$this}__label,
@@ -41,6 +43,7 @@
 			font-size $fast-transition-duration $default-transition-function;
 		pointer-events: none;
 		@media (max-width: $mobile-lg) {
+			top: 50%;
 			font-size: 12px;
 		}
 	}
@@ -60,7 +63,7 @@
 		outline: 0;
 		border-bottom: 1px solid rgba($blue-light, 0.4);
 		@media (max-width: $mobile-lg) {
-			font-size: 12px;
+			font-size: 14px;
 		}
 		@include placeholder {
 			color: transparent;
@@ -108,6 +111,7 @@
 			top: 15%;
 			font-size: rem(12);
 			@media (max-width: $mobile-lg) {
+				top: 4px;
 				font-size: 10px;
 			}
 		}

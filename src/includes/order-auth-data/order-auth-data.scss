@@ -1,8 +1,15 @@
 .order-auth-data {
+	@media (max-width: $mobile-only) {
+		font-size: 12px;
+		line-height: 16px;
+	}
 	&__data {
 		display: flex;
 		flex-direction: column;
 		gap: rem(32);
+		@media (max-width: $mobile-only) {
+			gap: 16px;
+		}
 	}
 	&__row {
 		display: grid;
@@ -24,6 +31,10 @@
 		@media (max-width: $tablet) {
 			flex-direction: column;
 			gap: 24px;
+		}
+		@media (max-width: $mobile-only) {
+			margin-top: 24px;
+			padding-top: 24px;
 		}
 	}
 	&__btn {

@@ -238,6 +238,7 @@
 					top: calc(var(--popup-padding) + #{rem(12)});
 					@media (max-width: $laptop) {
 						top: 24px;
+						right: 16px;
 					}
 				}
 			}
