@@ -8,11 +8,13 @@
 			--padding: 8px;
 			margin-bottom: 24px;
 		}
-		.textarea__label {
-			padding-top: 0;
-			@media (max-width: $mobile-only) {
-				font-size: 10px;
-				line-height: 16px;
+		&,
+		&._placeholder {
+			.textarea__label {
+				padding-top: 0;
+				@media (max-width: $mobile-only) {
+					font-size: 10px;
+				}
 			}
 		}
 		.textarea__input {

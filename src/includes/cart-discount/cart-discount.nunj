@@ -2,10 +2,10 @@
 
 <div class="cart-discount cart__block _hidden" id="cart-discount">
 	<div class="cart__title-wrap">
-		<p class="cart__block-title ttu h6">03. дисконтная карта и промокод</p>
+		<p class="cart__block-title ttu h6">03. дисконтная карта и&nbsp;промокод</p>
 	</div>
 	<div class="cart__inner">
-		<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы. Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" target="_blank" href="/discount.html">Условия программы лояльности</a>.</p>
+		<p class="cart-discount__text">Если у вас есть промокод, вы можете применить его и вам начислятся баллы.<span class="p cart-discount__text-create"> Привяжите карту, чтобы воспользоваться промокодом. <a class="cart-discount__link" target="_blank" href="/discount.html">Условия программы лояльности</a>.</span></p>
 		<div class="cart-discount__issue">
 			<p class="p3">У вас нет карты? Оформите прямо сейчас</p>
 			<button class="cart-discount__btn h7 ttu" type="button" data-modal-opener="create-card">

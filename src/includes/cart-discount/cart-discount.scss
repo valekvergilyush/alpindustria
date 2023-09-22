@@ -1,6 +1,6 @@
 .cart-discount {
 	$this: &;
-	&:not(._hidden) {
+	&:not(._hidden):not(._complete) {
 		.cart__title-wrap {
 			@media (max-width: $mobile-only) {
 				margin-bottom: 16px;
@@ -14,6 +14,11 @@
 			margin-bottom: 48px;
 			font-size: 14px;
 			line-height: 24px;
+		}
+	}
+	&__text-create {
+		#{$this}._card & {
+			display: none;
 		}
 	}
 	&__link {
