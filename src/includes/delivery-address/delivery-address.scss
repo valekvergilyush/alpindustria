@@ -154,7 +154,6 @@
 		display: flex;
 		align-items: center;
 		gap: rem(16);
-		font-family: var(--font-family-suisse);
 	}
 	&__pick-up-button {
 		display: flex;
@@ -179,6 +178,7 @@
 		display: flex;
 		align-items: center;
 		gap: rem(16);
+		font-family: var(--font-family-suisse);
 		&:not(:last-child) {
 			margin-bottom: rem(48);
 			@media (max-width: $tablet) {
