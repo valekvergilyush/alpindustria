@@ -179,6 +179,9 @@
 		align-items: center;
 		gap: rem(16);
 		font-family: var(--font-family-suisse);
+		@media (max-width: $mobile-only) {
+			gap: 8px;
+		}
 		&:not(:last-child) {
 			margin-bottom: rem(48);
 			@media (max-width: $tablet) {
@@ -244,6 +247,9 @@
 		align-items: center;
 		gap: rem(16);
 		font: inherit;
+		@media (max-width: $mobile-only) {
+			gap: 8px;
+		}
 		&:not(:last-child) {
 			margin-bottom: rem(24);
 		}
@@ -253,6 +259,9 @@
 		width: var(--size);
 		height: var(--size);
 		fill: none;
+		@media (max-width: $mobile-only) {
+			--size: 16px;
+		}
 	}
 	&__change-address-wrap {
 		&:not(:last-child) {
