@@ -36,13 +36,13 @@
 			<h2 class="cart__title _delivery h5 ttu">Оформление</h2>
 		</div>
 
-		{% include '../cart-breadcrumbs/cart-breadcrumbs.nunj' %}
+		{# {% include '../cart-breadcrumbs/cart-breadcrumbs.nunj' %} #}
 		{% include '../cart-delivery/cart-delivery.nunj' %}
 		{% include '../cart-delivery/cart-delivery-services.nunj' %}
 		{% include '../cart-delivery/cart-delivery-total.nunj' %}
 		{% include '../cart-delivery/cart-delivery-total-services.nunj' %}
 
-		<div class="cart-bottom" data-order-bottom>
+		<div class="cart-bottom _hidden" data-order-bottom>
 			<p class="cart__price _white p3 _shop">
 				Итого с учетом доставки:<br>
 				<span class="cart__price-value h5 ttu">145 000 ₽ <span class="cart__label"><span>-</span> <span>100</span> <span class="cart__label-small">баллов</span></span></span>

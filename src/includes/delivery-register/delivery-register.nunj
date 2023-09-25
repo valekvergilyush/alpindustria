@@ -25,15 +25,6 @@
 	</div>
 	<div class="delivery-register__fields">
 		{{ input({
-			type: 'email',
-			id: 'delivery-register-email',
-			name: 'Почта',
-			label: 'Почта*',
-			inputAttr: 'required',
-			attr: 'data-validate-type="email"',
-			className: 'delivery-register__input _gray'
-		}) }}
-		{{ input({
 			type: 'tel',
 			id: 'delivery-register-tel',
 			name: 'Телефон',
@@ -41,6 +32,15 @@
 			className: 'delivery-register__input _gray',
 			inputAttr: 'required',
 			attr: 'data-validate-type="phone"'
+		}) }}
+		{{ input({
+			type: 'email',
+			id: 'delivery-register-email',
+			name: 'Почта',
+			label: 'Почта*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="email"',
+			className: 'delivery-register__input _gray'
 		}) }}
 	</div>
 	{{ checkbox({

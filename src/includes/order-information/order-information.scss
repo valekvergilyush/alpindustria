@@ -4,6 +4,26 @@
 	}
 	&__textarea {
 		margin-bottom: rem(32);
+		@media (max-width: $mobile-only) {
+			--padding: 8px;
+			margin-bottom: 24px;
+		}
+		&,
+		&._placeholder {
+			.textarea__label {
+				padding-top: 0;
+				@media (max-width: $mobile-only) {
+					font-size: 10px;
+				}
+			}
+		}
+		.textarea__input {
+			@media (max-width: $mobile-only) {
+				height: 80px;
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
 	}
 	&__checkbox {
 		margin-bottom: rem(24);

@@ -1,8 +1,25 @@
 .cart-discount {
 	$this: &;
+	&:not(._hidden):not(._complete) {
+		.cart__title-wrap {
+			@media (max-width: $mobile-only) {
+				margin-bottom: 16px;
+			}
+		}
+	}
 	&__text {
 		margin-bottom: rem(16);
 		color: var(--gray-dark);
+		@media (max-width: $mobile-only) {
+			margin-bottom: 48px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+	&__text-create {
+		#{$this}._card & {
+			display: none;
+		}
 	}
 	&__link {
 		color: var(--blue-light);
@@ -20,6 +37,9 @@
 		@media (max-width: $laptop) {
 			grid-template-columns: 1fr;
 		}
+		@media (max-width: $mobile-only) {
+			gap: 16px;
+		}
 	}
 	&__promo,
 	&__link-card {
@@ -36,6 +56,9 @@
 		padding: rem(24);
 		margin-bottom: rem(32);
 		background-color: rgba($blue-dark, 0.07);
+		#{$this}._card & {
+			display: none;
+		}
 	}
 	&__promo {
 		margin-bottom: rem(16);
@@ -54,6 +77,10 @@
 		}
 		@media (max-width: $tablet) {
 			font-weight: 450;
+		}
+		@media (max-width: $mobile-only) {
+			gap: 16px;
+			font-size: 18px;
 		}
 		&._promo {
 			#{$this}._bonus & {
@@ -148,6 +175,9 @@
 		@media (max-width: $tablet) {
 			grid-template-columns: auto;
 		}
+		@media (max-width: $mobile-only) {
+			margin-top: 24px;
+		}
 		#{$this}._card & {
 			display: grid;
 		}
@@ -185,6 +215,9 @@
 		@media (max-width: $tablet) {
 			margin-right: 0;
 		}
+		@media (max-width: $mobile-only) {
+			margin-bottom: 10px;
+		}
 		img {
 			width: 100%;
 		}
@@ -197,8 +230,14 @@
 		width: 100%;
 		gap: rem(16);
 		padding: rem(18);
-		background-color: var(--blue-dark);
-		color: var(--white);
+		border: 1px solid var(--blue-dark);
+		border-top: none;
+		font-family: var(--font-family-suisse);
+		@media (max-width: $mobile-only) {
+			padding: 16px;
+			gap: 8px;
+			line-height: 1;
+		}
 		&._card {
 			#{$this}:not(._bonus-sms):not(._card-bonus) & {
 				display: flex;
@@ -216,7 +255,13 @@
 		}
 	}
 	&__card-bonus-icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
 		fill: none;
+		@media (max-width: $mobile-only) {
+			--size: 16px;
+		}
 	}
 	&__card-col {
 		display: flex;
