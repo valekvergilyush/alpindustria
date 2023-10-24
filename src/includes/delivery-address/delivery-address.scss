@@ -72,19 +72,14 @@
 		}
 		&._cols-4 {
 			margin-top: rem(24);
-			margin-bottom: rem(48);
 			.delivery-address__input {
 				width: 20%;
 				@media (max-width: $mobile-lg) {
 					width: 40%;
 				}
 			}
-			@media (max-width: $tablet) {
-				margin-bottom: 50px;
-			}
 			@media (max-width: $mobile-lg) {
 				margin-top: 22px;
-				margin-bottom: 30px;
 				row-gap: 6px;
 			}
 		}
@@ -234,12 +229,22 @@
 		justify-content: center;
 		align-items: center;
 		gap: rem(16);
-		padding: rem(18) rem(24);
+		padding: rem(15) rem(24);
 		border: 1px solid var(--blue-dark);
 		font-family: var(--font-family-suisse);
 		font-size: rem(16);
 		line-height: 1.25;
 		cursor: pointer;
+		&._save {
+			width: 100%;
+			margin-top: rem(24);
+		}
+		@media (max-width: $mobile-only) {
+			gap: rem(8);
+			padding: rem(14) rem(24);
+			font-size: rem(14);
+			line-height: rem(16);
+		}
 	}
 	&__edit-address {
 		@include reset-btn;
@@ -247,11 +252,14 @@
 		align-items: center;
 		gap: rem(16);
 		font: inherit;
-		@media (max-width: $mobile-only) {
-			gap: 8px;
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(24);
+		}
+		@media (max-width: $mobile-only) {
+			gap: 8px;
+			&:not(:last-child) {
+				margin-bottom: rem(16);
+			}
 		}
 	}
 	&__edit-address-icon {
@@ -273,8 +281,15 @@
 	}
 	&__address-inputs {
 		display: none;
+		margin-bottom: rem(48);
 		#{$this}._edit & {
 			display: block;
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: 50px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 30px;
 		}
 	}
 }
