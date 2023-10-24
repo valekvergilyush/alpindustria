@@ -117,6 +117,8 @@ class AlpIndustry {
 
 			document.querySelectorAll('[data-range]').forEach(item => new this.modules.RangeSlider(item));
 			document.querySelectorAll('[data-tabs]').forEach(tabs => new this.components.Tabs(tabs));
+
+			document.querySelectorAll('[data-team-list]').forEach(item => new this.components.Team(item));
 			document
 				.querySelectorAll('[data-drag-scroll]')
 				.forEach(container => new this.modules.DragScroll(container));
