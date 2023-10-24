@@ -1,0 +1,22 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro video(props) %}
+<div class="video">
+	<div class="video__container">
+		<img class="video__img" src="assets/images/article/video.jpg" srcset="assets/images/article/video@2x.jpg 2x" alt="">
+		<button class="video__button" type="button" data-popup-opener="video">
+			{{ icon({
+				iconName: 'play-btn',
+				className: 'video__icon',
+				attr: 'width="96" height="96"'
+			}) }}
+			{{ icon({
+				iconName: 'play-btn-hover',
+				className: 'video__icon _hover',
+				attr: 'width="96" height="96"'
+			}) }}
+		</button>
+	</div>
+	<p class="article-content__img-text p3">Ковалёв Сергей на&nbsp;восхождении на&nbsp;Ама-даблам</p>
+</div>
+{% endmacro %}
