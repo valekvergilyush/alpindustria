@@ -2,6 +2,7 @@
 	$this: &;
 	--button-margin: #{rem(63)};
 	position: relative;
+	box-sizing: border-box;
 	display: flex;
 	padding-left: calc(608 / 1508 * 100%);
 	._loading & {
