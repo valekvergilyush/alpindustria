@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 	display: flex;
 	padding-left: calc(608 / 1508 * 100%);
+	padding-right: var(--container-padding);
 	._loading & {
 		opacity: 0;
 		pointer-events: none;
@@ -27,13 +28,15 @@
 	@media (max-width: $mobile-lg) {
 		--button-margin: 8px;
 		padding-inline: 0;
+		&._sm {
+			padding-inline: var(--container-padding);
+		}
 	}
 	&__product {
-		width: rem(432);
+		width: max(rem(432), 25%);
 		flex-shrink: 1;
 		.swiper-initialized & {
 			flex-shrink: 0;
-			width: 25%;
 		}
 		@media (max-width: $laptop-lg) {
 			width: rem(360);

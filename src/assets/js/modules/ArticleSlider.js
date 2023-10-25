@@ -21,9 +21,16 @@ class ArticleSlider {
 
 	initSlider(slider) {
 		const slides = slider.querySelectorAll('.article-slider__product:not(._empty)');
+		const articleSlider = slider.querySelector('.article-slider');
+
+		if (slides.length === 1) {
+			articleSlider.classList.add('_sm');
+			return;
+		}
+
 		if (slides.length < 3) return;
 
-		const articleSlider = slider.querySelector('.article-slider');
+		articleSlider.classList.remove('_sm');
 		articleSlider.classList.add('_md');
 
 		const windowWidth = window.innerWidth;
