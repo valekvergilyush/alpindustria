@@ -238,12 +238,20 @@
 		&._save {
 			width: 100%;
 			margin-top: rem(24);
+			span {
+				padding-top: 0.25em;
+			}
 		}
 		@media (max-width: $mobile-only) {
 			gap: rem(8);
 			padding: rem(14) rem(24);
 			font-size: rem(14);
 			line-height: rem(16);
+			&._save {
+				span {
+					padding-top: 0.2em;
+				}
+			}
 		}
 	}
 	&__edit-address {

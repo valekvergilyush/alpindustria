@@ -130,7 +130,7 @@
 					<button class="delivery-address__change-address-btn _save ttu" type="submit" data-save-edit>
 						<span>Сохранить этот адрес</span>
 						{{ icon({
-							iconName: 'plus-circle-blue',
+							iconName: 'save-plus',
 							className: 'delivery-address__change-city-icon',
 							attr: 'width="24" height="24"'
 						}) }}
