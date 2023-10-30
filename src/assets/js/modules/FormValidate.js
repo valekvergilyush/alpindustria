@@ -1,4 +1,5 @@
 import cartDiscount from '../../../includes/cart-discount/cart-discount';
+import DeliveryAddress from '../../../includes/delivery-address/delivery-address';
 import FormsValidate from '../classes/form-validate';
 const formWrappers = document.querySelectorAll('[data-validate]');
 
@@ -20,6 +21,10 @@ class FormValidate {
 			},
 			'cart-discount-phone': {
 				validationSuccessCallback: this.cartDiscountPhoneValidationSuccessCallback,
+				validationErrorCallback: this.baseValidationErrorCallback,
+			},
+			'save-address': {
+				validationSuccessCallback: this.saveAddressValidationSuccessCallback,
 				validationErrorCallback: this.baseValidationErrorCallback,
 			},
 		};
@@ -44,6 +49,8 @@ class FormValidate {
 	}
 	baseValidationErrorCallback = e => {
 		e.preventDefault();
+
+		e.target.querySelector('[aria-invalid="true"]').focus();
 	};
 	baseValidationSuccessCallback = e => {
 		e.preventDefault();
@@ -62,6 +69,12 @@ class FormValidate {
 	cartDiscountPhoneValidationSuccessCallback = e => {
 		e.preventDefault();
 		cartDiscount.addCard();
+		this.resetForm(e.target);
+	};
+	saveAddressValidationSuccessCallback = e => {
+		e.preventDefault();
+
+		DeliveryAddress.container.classList.remove('_edit');
 		this.resetForm(e.target);
 	};
 }

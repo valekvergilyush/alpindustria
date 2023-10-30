@@ -1,10 +1,8 @@
+{% from "../components/video/video.nunj" import video %}
+
 <div class="article-content c-gray-dark">
-	<div class="article-content__img-block _size-1">
-		<div class="article-content__img">
-			<img src="assets/images/article/article-img-6.jpg" srcset="assets/images/article/article-img-6@2x.jpg 2x" alt="Ковалёв Сергей на восхождении на Ама-даблам">
-		</div>
-		<p class="article-content__img-text p3">Ковалёв Сергей на&nbsp;восхождении на&nbsp;Ама-даблам</p>
-	</div>
+	{{ video() }}
+
 	<div class="article-content__text-block">
 		<p class="h6 c-blue-dark ttu">Кошки</p>
 		<p>Большая часть маршрута лезется в&nbsp;кошках. И&nbsp;часто, это единственная страховка. Так что мой выбор кошки Grivel G12 New Matic. За&nbsp;20&nbsp;лет использования у&nbsp;меня эти кошки ни&nbsp;разу не&nbsp;слетели с&nbsp;ботинка. Удобная передняя часть позволяет легко надеть их&nbsp;даже в&nbsp;глубоком рыхлом снегу.</p>

@@ -15,6 +15,7 @@ class DeliveryAddress {
 		this.section = this.container.querySelector('.delivery-address__radios').parentElement;
 		this.radios = this.container.querySelectorAll('.delivery-address__radios [type="radio"]');
 		this.editAddressBtn = this.container.querySelector('[data-edit-address]');
+		this.closeEditBtn = this.container.querySelector('[data-close-edit]');
 		this.sectionMod = '_courier';
 
 		this.radios.forEach(radio => {
@@ -31,7 +32,13 @@ class DeliveryAddress {
 		if (this.editAddressBtn) {
 			this.editAddressBtn.addEventListener('click', evt => {
 				evt.preventDefault();
-				this.container.classList.toggle('_edit');
+				this.container.classList.add('_edit');
+			});
+		}
+		if (this.closeEditBtn) {
+			this.closeEditBtn.addEventListener('click', evt => {
+				evt.preventDefault();
+				this.container.classList.remove('_edit');
 			});
 		}
 	}

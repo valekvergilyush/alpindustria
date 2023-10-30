@@ -79,45 +79,63 @@
 					</button>
 				</div>
 			</div>
-			<div class="delivery-address__address-inputs">
-				{{ input({
-					type: 'text',
-					id: 'delivery-address-street',
-					className: 'delivery-address__input _gray',
-					name: 'Улица',
-					label: 'Улица*',
-					inputAttr: 'required',
-					attr: 'data-validate-type="text"'
-				}) }}
-				<div class="delivery-address__fields _cols-4">
+			<div data-validate data-callback="save-address">
+				<form class="delivery-address__address-inputs" novalidate>
+					<button class="delivery-address__edit-address" type="button" data-close-edit>
+						<span>Отменить редактирование</span>
+						{{ icon({
+							iconName: 'pencil',
+							className: 'delivery-address__edit-address-icon',
+							attr: 'width="24" height="24"'
+						}) }}
+					</button>
 					{{ input({
 						type: 'text',
-						id: 'delivery-address-house',
+						id: 'delivery-address-street',
 						className: 'delivery-address__input _gray',
-						name: 'Дом',
-						label: 'Дом*',
+						name: 'Улица',
+						label: 'Улица*',
 						inputAttr: 'required',
 						attr: 'data-validate-type="text"'
 					}) }}
-					{{ input({
-						type: 'text',
-						id: 'delivery-address-housing',
-						className: 'delivery-address__input _gray',
-						name: 'Корпус'
-					}) }}
-					{{ input({
-						type: 'text',
-						id: 'delivery-address-apartment',
-						className: 'delivery-address__input _gray',
-						name: 'Квартира'
-					}) }}
-					{{ input({
-						type: 'text',
-						id: 'delivery-address-index',
-						className: 'delivery-address__input _gray',
-						name: 'Индекс'
-					}) }}
-				</div>
+					<div class="delivery-address__fields _cols-4">
+						{{ input({
+							type: 'text',
+							id: 'delivery-address-house',
+							className: 'delivery-address__input _gray',
+							name: 'Дом',
+							label: 'Дом*',
+							inputAttr: 'required',
+							attr: 'data-validate-type="text"'
+						}) }}
+						{{ input({
+							type: 'text',
+							id: 'delivery-address-housing',
+							className: 'delivery-address__input _gray',
+							name: 'Корпус'
+						}) }}
+						{{ input({
+							type: 'text',
+							id: 'delivery-address-apartment',
+							className: 'delivery-address__input _gray',
+							name: 'Квартира'
+						}) }}
+						{{ input({
+							type: 'text',
+							id: 'delivery-address-index',
+							className: 'delivery-address__input _gray',
+							name: 'Индекс'
+						}) }}
+					</div>
+					<button class="delivery-address__change-address-btn _save ttu" type="submit" data-save-edit>
+						<span>Сохранить этот адрес</span>
+						{{ icon({
+							iconName: 'save-plus',
+							className: 'delivery-address__change-city-icon',
+							attr: 'width="24" height="24"'
+						}) }}
+					</button>
+				</form>
 			</div>
 			<p class="delivery-address__title h7 ttu">Выберите время, когда вы хотите получить заказ:</p>
 			<div class="delivery-address__fields _datetime">

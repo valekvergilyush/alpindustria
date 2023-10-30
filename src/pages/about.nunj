@@ -19,5 +19,6 @@
 			{% include "../includes/history/history-today.nunj" %}
 		</div>
 		{% include "../includes/team/team.nunj" %}
+		{% include "../includes/team/team-dog.nunj" %}
 	</main>
 {% endblock %}

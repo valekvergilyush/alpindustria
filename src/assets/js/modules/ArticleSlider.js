@@ -1,4 +1,4 @@
-import Flickity from 'flickity';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 class ArticleSlider {
 	constructor() {
@@ -12,14 +12,60 @@ class ArticleSlider {
 		}
 		this.sliderBlocks.forEach(slider => {
 			this.initSlider(slider);
+
+			window.addEventListener('resize', () => {
+				this.initSlider(slider);
+			});
 		});
 	}
 
 	initSlider(slider) {
-		this.slider = new Flickity(slider, {
-			pageDots: false,
-			wrapAround: true,
-			cellAlign: 'left',
+		const slides = slider.querySelectorAll('.article-slider__product:not(._empty)');
+		const articleSlider = slider.querySelector('.article-slider');
+
+		if (slides.length === 1) {
+			articleSlider.classList.add('_sm');
+			return;
+		}
+
+		if (slides.length < 3) return;
+
+		articleSlider.classList.remove('_sm');
+		articleSlider.classList.add('_md');
+
+		const windowWidth = window.innerWidth;
+
+		if (
+			(windowWidth <= 992 && slides.length > 3) ||
+			(windowWidth <= 640 && slides.length > 2) ||
+			slides.length > 4
+		) {
+			if (!slider.slider) {
+				slider.slider = this.initSwiper(slider);
+			}
+		} else if (slider.slider) {
+			slider.slider.destroy();
+			slider.slider = null;
+		}
+	}
+
+	initSwiper(slider) {
+		const buttonPrev = slider.querySelector('.swiper-button-prev');
+		const buttonNext = slider.querySelector('.swiper-button-next');
+		const paginationEl = slider.querySelector('.swiper-pagination');
+
+		return new Swiper(slider, {
+			modules: [Navigation, Pagination],
+			slidesPerView: 'auto',
+			loop: false,
+			pagination: {
+				el: paginationEl,
+				type: 'bullets',
+			},
+			navigation: {
+				prevEl: buttonPrev,
+				nextEl: buttonNext,
+			},
 		});
 	}
 }

@@ -13,12 +13,12 @@ const MOBILE_BREAKPOINT = 640;
 const TABLET_BREAKPOINT = 992;
 
 class Team {
-	constructor() {
-		this.init();
+	constructor(container) {
+		this.init(container);
 	}
 
-	init() {
-		this.container = document.querySelector('[data-team-list]');
+	init(container) {
+		this.container = container;
 
 		if (!this.container) {
 			return;
@@ -190,4 +190,4 @@ class Team {
 	}
 }
 
-export default new Team();
+export default Team;
