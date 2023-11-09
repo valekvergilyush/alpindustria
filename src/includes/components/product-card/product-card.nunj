@@ -161,6 +161,12 @@
 					attr: 'aria-label="В корзину" data-product-card-add-cart data-notification-open="cart"'
 				}) }}
 			</div>
+
+			{{ icon({
+				iconName: 'double-arrow-down',
+				className: 'product-card__arrow-icon',
+				attr: 'width="32" height="32"'
+			}) }}
 		</form>
 	</article>
 {% endmacro %}
