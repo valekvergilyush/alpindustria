@@ -10,6 +10,14 @@
 					attr: 'width="24" height="24" viewBox="0 0 32 33"'
 				}) }}
 			</button>
+			<button class="cart__title-btn p3 _exit" type="button" data-auth-btn>
+				<span>Выйти из аккаунта</span>
+				{{ icon({
+					iconName: 'log-out',
+					className: 'cart__title-btn-icon',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
 			<button class="cart__title-btn p3 _auth" type="button" data-edit-profile-data>
 				<span>У меня нет аккаунта</span>
 				{{ icon({
@@ -22,6 +30,7 @@
 		{% include "../order-auth-data/order-auth-data.nunj" %}
 		<div data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
 		<div data-validate>{% include "../delivery-register/delivery-register.nunj" %}</div>
+		<div data-validate>{% include "../delivery-register/delivery-register-auth-email.nunj" %}</div>
 		<button class="cart__next-button" type="button" data-cart-next="cart-delivery">
 			Дальше
 			{{ icon({

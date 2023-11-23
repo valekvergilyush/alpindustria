@@ -334,6 +334,14 @@
 				display: block;
 			}
 		}
+		._auth-email & {
+			.delivery-auth {
+				display: none;
+			}
+			.delivery-register._auth-email {
+				display: block;
+			}
+		}
 		&._complete {
 			.cart__title-btn._edit,
 			#{$this}__inner,
@@ -402,8 +410,12 @@
 		@media (max-width: $mobile-lg) {
 			gap: 8px;
 		}
+		&._exit {
+			color: var(--red-light);
+		}
 		&._edit,
-		&._auth {
+		&._auth,
+		&._exit {
 			display: none;
 		}
 		#{$this}__block._edit &._edit,
@@ -413,6 +425,15 @@
 		#{$this}__block._complete &._edit,
 		#{$this}__block._complete &._auth {
 			display: none;
+		}
+		._auth-email & {
+			&._edit,
+			&._auth {
+				display: none !important;
+			}
+			&._exit {
+				display: flex;
+			}
 		}
 	}
 	&__title-btn-icon {

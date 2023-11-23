@@ -7,6 +7,10 @@
 	height: var(--height);
 	padding-top: rem(35);
 	box-sizing: border-box;
+	&._readonly {
+		opacity: 0.5;
+		pointer-events: none;
+	}
 	&:hover,
 	&:focus-within {
 		#{$this}__label {
