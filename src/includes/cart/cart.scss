@@ -335,7 +335,8 @@
 			}
 		}
 		._auth-email & {
-			.delivery-auth {
+			.delivery-auth,
+			.order-auth-data {
 				display: none;
 			}
 			.delivery-register._auth-email {
