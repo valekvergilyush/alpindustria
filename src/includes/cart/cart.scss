@@ -314,6 +314,7 @@
 			}
 		}
 		.delivery-register,
+		.delivery-register._auth-email,
 		.delivery-auth,
 		.order-auth-data {
 			display: none;
@@ -330,7 +331,7 @@
 			}
 		}
 		&._edit {
-			.delivery-register {
+			.delivery-register._new-user {
 				display: block;
 			}
 		}

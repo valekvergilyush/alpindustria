@@ -47,7 +47,7 @@
 	</div>
 	{{ checkbox({
 		className: 'delivery-register__checkbox',
-		id: 'legal-entity-checkbox',
+		id: 'legal-entity-checkbox-auth-email',
 		name: 'legal-entity',
 		text: 'Я являюсь юридическим лицом',
 		inputAttr: 'data-legal-checkbox'
