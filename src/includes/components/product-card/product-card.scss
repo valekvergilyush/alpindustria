@@ -61,7 +61,7 @@
 	}
 	&:hover {
 		padding-bottom: calc(var(--button-height) + var(--card-padding));
-		#{$this}__props {
+		#{$this}__button._product-card {
 			transform: translateY(0%);
 		}
 		#{$this}__photo {
@@ -87,8 +87,9 @@
 		box-shadow: none;
 	}
 	&._props-opened {
-		&:hover {
-			padding-bottom: var(--card-padding);
+		padding-bottom: var(--card-padding);
+		#{$this}__props {
+			transform: translateY(0%);
 		}
 		#{$this}__photo {
 			opacity: 0;
@@ -275,6 +276,7 @@
 		overflow: auto;
 		scrollbar-width: none;
 		scroll-behavior: smooth;
+		padding: 1px;
 		@include scrollbar {
 			display: none;
 		}

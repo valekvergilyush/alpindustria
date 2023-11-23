@@ -18,10 +18,26 @@ class ProductCard {
 		}
 
 		this.mqLaptop = window.matchMedia(`(max-width: ${LAPTOP_BREAKPOINT}px)`);
-		this.propsOpener = document.querySelectorAll('[data-product-card-props-opener]');
+		this.propsOpeners = document.querySelectorAll('[data-product-card-props-opener]');
 		this.sliderOffsetGap = 16;
 
 		this.onOpenerClick = this.onOpenerClick.bind(this);
+
+		this.propsOpeners.forEach(opener => {
+			opener.addEventListener('mouseenter', evt => {
+				const card = evt.target.closest('[data-product-card]');
+				const form = card.querySelector('[data-product-card-props]');
+
+				card.classList.add(ClassName.PROPS_OPENED);
+				form.addEventListener(
+					'mouseleave',
+					() => {
+						card.classList.remove(ClassName.PROPS_OPENED);
+					},
+					{ once: true }
+				);
+			});
+		});
 
 		const onWindowWidthChange = evt => {
 			if (evt.matches) {
@@ -111,7 +127,7 @@ class ProductCard {
 				})
 			);
 
-		card.classList.add(ClassName.PROPS_OPENED);
+		// card.classList.add(ClassName.PROPS_OPENED);
 
 		card.sizes = {
 			block: card.querySelector('[data-product-sizes]'),
