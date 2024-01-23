@@ -8,6 +8,7 @@ export default {
 		sprites: 'build/assets/images/sprites/',
 		svg: 'build/assets/svg/',
 		jsons: 'build/assets/jsons/',
+		robots: 'build/',
 	},
 	src: {
 		templates: './src/',
@@ -20,6 +21,7 @@ export default {
 		sprites: 'src/assets/images/sprites/*.png',
 		svg: 'src/assets/svg/**/*.svg',
 		jsons: 'src/assets/jsons/**/*.*',
+		robots: 'src/assets/robots/**/*.*',
 	},
 	watch: {
 		nunj: ['src/**/*.nunj', 'global-data.json'],
@@ -30,6 +32,7 @@ export default {
 		sprites: 'src/assets/images/sprites/*.png',
 		svg: 'src/assets/svg/**/*.svg',
 		jsons: 'src/assets/jsons/**/*.json',
+		robots: 'src/assets/robots/**/*.*',
 	},
 	clean: 'build/',
 };
