@@ -36,6 +36,10 @@
 		border-radius: 50%;
 		background-color: var(--violet-light);
 	}
+	&._discount {
+		border-radius: 50%;
+		background-color: var(--blue-light);
+	}
 	&._exclusive {
 		width: auto;
 		min-width: var(--badge-size);
