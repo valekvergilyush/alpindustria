@@ -45,22 +45,12 @@
 	}
 ] %}
 {% set colorButtons = [
-	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
-	{ name: 'Красный', color: '#C9364C' }
+	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true }
 ] %}
 {% set sizeButtons = [
 	{ value: '37' },
 	{ value: '38', disabled: true },
-	{ value: '39', selected: true },
-	{ value: '40' },
-	{ value: '41' },
-	{ value: '42' },
-	{ value: '43' },
-	{ value: '44' },
-	{ value: '45' },
-	{ value: '46' },
-	{ value: '47' },
-	{ value: '48' }
+	{ value: '39', selected: true }
 ] %}
 
 <section class="product">
@@ -77,29 +67,13 @@
 							icon: 'promo-arrow'
 						}) }}
 						<div class="product__price-wrap">
-							<p class="product__old-price">45 780 руб.</p>
 							<p class="product__price s1">33 150 руб.</p>
 						</div>
-						{{ button({
-							className: 'product__favorite _wishlist _wishlist-sm',
-							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist"'
-						}) }}
 						<div class="product__badges">
 							{% include "../product-badge/new.nunj" %}
-							{% include "../product-badge/discount.nunj" %}
-							{% include "../product-badge/long-delivery.nunj" %}
-							{% include "../product-badge/dry-feature.nunj" %}
 						</div>
 					</div>
 					<p class="product__code p4">Код товара для заказа по&nbsp;телефону: 402317</p>
-					<span href="#" class="product__rating">
-						{{ icon({
-							iconName: 'star',
-							className: 'product__rating-icon',
-							attr: 'width="32" height="32" viewBox="0 0 26.3 24.5"'
-						}) }}
-						4.9
-					</span>
 					<div class="product__shops">
 						{{ button({
 							className: 'product__available _arrow-s p3',
@@ -265,13 +239,14 @@
 				}) }}
 			</div>
 			{{ addToCart({
-				className: 'product__add',
-				counter: 3,
-				link: {
-					text: 'Напишите мне, когда товар появится',
-					attributes: 'data-popup-opener="product-appear"'
-				}
-			}) }}
+					className: 'product__add',
+					counter: 3,
+					link: {
+						text: 'добавить в корзину',
+						url: '#',
+						attributes: 'data-notification-open="cart"'
+					}
+				}) }}
 		</div>
 	</div>
 </section>

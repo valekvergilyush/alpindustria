@@ -520,12 +520,12 @@
 			top: -0.1em;
 			width: var(--size);
 			height: var(--size);
-			margin-left: var(--size);
+			margin-left: rem(5);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
 			will-change: transform;
 			@media (max-width: $mobile-lg) {
-				margin-left: 8px;
+				margin-left: 4px;
 			}
 		}
 	}
@@ -542,7 +542,7 @@
 			--size: #{rem(16)};
 			width: var(--size);
 			height: var(--size);
-			margin-left: var(--size);
+			margin-left: rem(8);
 			transition: transform $default-transition-duration $default-transition-function;
 			fill: currentColor;
 			will-change: transform;
