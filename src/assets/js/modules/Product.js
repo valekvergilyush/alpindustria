@@ -2,8 +2,6 @@ class Product {
 	constructor() {
 		this.addBlock = document.querySelector('[data-product-add-mobile]');
 		this.review = document.querySelector('[data-product-review]');
-		this.img = document.querySelector('[data-product-img]');
-		this.info = document.querySelector('[data-product-info]');
 
 		this.init();
 

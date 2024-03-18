@@ -11,6 +11,8 @@
 	'/assets/images/catalog/item-2',
 	'/assets/images/catalog/item-3',
 	'/assets/images/catalog/item-4',
+	'/assets/images/catalog/item-1',
+	'/assets/images/catalog/item-2',
 	'/assets/images/catalog/item-3',
 	'/assets/images/catalog/item-4'
 ] %}
@@ -257,7 +259,7 @@
 			}) }}
 		</div>
 		<div class="product__img">
-			<div class="product__img-wrap" data-product-img>
+			<div class="product__img-wrap" >
 				{{ productSlider({
 					className: 'product__slider',
 					imgsList: productSliderImgs,

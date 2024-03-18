@@ -1,26 +1,20 @@
 {% macro productSlider(props) %}
 	<div class="product-slider {% if props.className %}{{ props.className }} {% endif %}">
-		<div class="product-slider__main" data-product-slider>
+		<div class="product-slider__container f-carousel" data-product-slider>
 			{% for sliderImg in props.imgsList %}
-				<div class="product-slider__img-wrap {% if loop.index === 1 %}is-selected{% endif %}">
-					<img class="product-slider__img" src="{{ sliderImg }}.png" srcset="{{ sliderImg }}@2x.png 2x" width="704" height="737" alt="slider-img">
+				<div
+					class="product-slider__slide f-carousel__slide f-panzoom"
+					data-thumb-src="{{ sliderImg }}.png"
+				>
+					<img
+						class="product-slider__img f-panzoom__content"
+						src="{{ sliderImg }}.png"
+						srcset="{{ sliderImg }}@2x.png 2x"
+						alt=""
+						data-fancybox="gallery"
+					>
 				</div>
 			{% endfor %}
-		</div>
-		<div class="product-slider__thumbnails" data-product-thumbs-wrapper>
-			<div class="product-slider__thumbnails-wrap" data-product-thumbs-slider>
-				{% for sliderThumb in props.thumbsList %}
-					{% if sliderThumb.type === 'video' %}
-						<button type="button" class="product-slider__thumbnail _video" data-popup-opener="video">
-							<img class="product-slider__thumbnail-img" src="{{ sliderThumb.img }}.png" srcset="{{ sliderThumb.img }}@2x.png 2x" width="153" height="153" alt="thumbnail">
-						</button>
-					{% else %}
-						<button type="button" class="product-slider__thumbnail" data-slider-btn="{{ loop.index - 1 }}">
-							<img class="product-slider__thumbnail-img" src="{{ sliderThumb.img }}.png" srcset="{{ sliderThumb.img }}@2x.png 2x" width="153" height="153" alt="thumbnail">
-						</button>
-					{% endif %}
-				{% endfor %}
-			</div>
 		</div>
 	</div>
 {% endmacro %}
