@@ -1,0 +1,16 @@
+.button-up {
+	@include reset-btn();
+	--size: #{rem(56)};
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	background-color: var(--blue-dark);
+	@media (max-width: $mobile-lg) {
+		--size: 48px;
+	}
+	&__icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+	}
+}

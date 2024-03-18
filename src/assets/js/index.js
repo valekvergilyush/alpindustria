@@ -138,6 +138,18 @@ class AlpIndustry {
 					this.modules.Popups.open(hash);
 				}
 			}
+
+			gsap.to('[data-scroll-top-btn]', {
+				autoAlpha: 1,
+				y: 0,
+				duration: 0.15,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '.page__wrapper',
+					start: 'top+=500 top',
+					toggleActions: 'play none none reverse',
+				},
+			});
 		});
 	}
 }

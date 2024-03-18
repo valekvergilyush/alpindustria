@@ -4,6 +4,7 @@
 	--footer-spacing-2: #{rem(32)};
 	--footer-hover: #{darken($white, 15%)};
 	position: relative;
+	z-index: 3;
 	background-color: var(--blue-light);
 	color: var(--white);
 	background-image: url('../images/footer/footer-bg.jpg');
