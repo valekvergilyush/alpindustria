@@ -4,11 +4,20 @@
 	flex-direction: column;
 	overflow: hidden;
 	border-top: 1px solid var(--blue-dark);
+	&._wallet {
+		background-color: var(--white);
+	}
 	&__title {
 		margin-top: rem(176);
 		margin-bottom: rem(64);
+		#{$this}._wallet & {
+			margin-top: rem(64);
+		}
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 40px;
+			#{$this}._wallet & {
+				margin-top: 40px;
+			}
 		}
 		@media (max-width: $laptop) {
 			margin-top: 124px;
@@ -202,6 +211,13 @@
 		#{$this}__tabs,
 		#{$this}__bottom {
 			display: none;
+		}
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@media (max-width: $laptop-sm) {
+			grid-template-columns: auto;
 		}
 	}
 }

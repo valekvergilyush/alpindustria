@@ -10,6 +10,11 @@ class SubscribeForm {
 
 	init() {
 		this.form = document.querySelector('.footer__subscribe');
+
+		if (!this.form) {
+			return;
+		}
+
 		this.submitButton = this.form.querySelector('.subscribe-form__submit');
 		this.closeButton = this.form.querySelector('.subscribe-form__close');
 		this.input = this.form.querySelector('.subscribe-form__input');

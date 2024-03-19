@@ -1,0 +1,26 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="discount-card _wallet" data-discount-section>
+	<div class="discount-card__container container">
+		<div class="discount-card__content">
+			<h1 class="discount-card__title ttu h5">Дисконтная карта</h1>
+			<div class="discount-card__tabs tabs" data-tabs>
+				<ul class="tabs__tab-list" role="tablist">
+					<li class="tabs__tab-item">
+						<button class="tabs__trigger _selected" id="add" role="tab" type="button" data-tab-trigger aria-selected="true" tabindex="0">У меня есть карта</button>
+					</li>
+					<li class="tabs__tab-item">
+						<button class="tabs__trigger" id="create" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">У меня нет карты</button>
+					</li>
+				</ul>
+				<section class="discount-card__section _add tabs__panel" data-validate aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
+					{% include "../discount-add-form/discount-add-form.nunj" %}
+				</section>
+				<section class="discount-card__section _create tabs__panel" data-validate aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
+					{% include "../discount-create-form/discount-create-form.nunj" %}
+				</section>
+			</div>
+		</div>
+	</div>
+	{% include "../discount-card-info/discount-card-info.nunj" %}
+</section>
