@@ -36,7 +36,7 @@ class Auth {
 	setState(state) {
 		this.clearStates();
 		this.authBlock.classList.add(stateClasses[state]);
-		this.authBlock.dateset.auth = state;
+		this.authBlock.dataset.auth = state;
 	}
 
 	clearStates() {

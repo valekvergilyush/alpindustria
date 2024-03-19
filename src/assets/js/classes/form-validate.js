@@ -99,75 +99,6 @@ const simpleMatrix = (formElement, dataMatrix, dataMatrixLimitations) => {
 	}
 };
 
-// Маска для телефона
-
-const onInputPhoneInput = ({ target }) => {
-	const mask = target.placeholder.replace(/[0-9]/g, '_');
-	const matrix = mask;
-	const def = matrix.replace(/\D/g, '');
-	let i = 0;
-	let val = target.value.replace(/\D/g, '');
-	if (def.length >= val.length) {
-		val = def;
-	}
-	target.value = matrix.replace(/./g, a => {
-		if (/[_\d]/.test(a) && i < val.length) {
-			return val.charAt(i++);
-		} else if (i >= val.length) {
-			return '';
-		} else {
-			return a;
-		}
-	});
-};
-
-const prettifyPhoneInput = input => {
-	const mask = input.placeholder.replace(/[0-9]/g, '_');
-	const matrix = mask;
-	const def = matrix.replace(/\D/g, '');
-	let i = 0;
-	let val = input.value.replace(/\D/g, '');
-	if (def.length >= val.length) {
-		val = def;
-	}
-
-	input.value = matrix.replace(/./g, a => {
-		if (/[_\d]/.test(a) && i < val.length) {
-			return val.charAt(i++);
-		} else if (i >= val.length) {
-			return '';
-		} else {
-			return a;
-		}
-	});
-};
-
-const onFocusPhoneInput = ({ target }) => {
-	target.addEventListener('input', onInputPhoneInput);
-	target.addEventListener('blur', onBlurPhoneInput);
-	target.addEventListener('keydown', onKeydownPhoneInput);
-};
-
-const onKeydownPhoneInput = e => {
-	if ((e.target.selectionStart === 0 && e.keyCode === 8) || e.keyCode === 46) {
-		e.preventDefault();
-	}
-	if (
-		e.target.selectionStart <= phoneLength &&
-		e.keyCode !== 8 &&
-		e.keyCode !== 46 &&
-		e.keyCode !== 37 &&
-		e.keyCode !== 39
-	) {
-		e.target.setSelectionRange(phoneLength, phoneLength);
-	}
-};
-
-const onBlurPhoneInput = ({ target }) => {
-	target.removeEventListener('input', onInputPhoneInput);
-	target.removeEventListener('blur', onBlurPhoneInput);
-};
-
 // Показ ошибок полей форм
 
 const hideError = el => {
@@ -498,13 +429,6 @@ const formElementValidateAction = formValidateElement => {
 
 		if (dataMatrix) {
 			simpleMatrix(formElement, dataMatrix, dataMatrixLimitations);
-		}
-
-		if (dataValidateType === 'phone') {
-			if (formElement.value) {
-				prettifyPhoneInput(formElement);
-			}
-			formElement.addEventListener('focus', onFocusPhoneInput);
 		}
 
 		formElement.addEventListener('input', () => {
