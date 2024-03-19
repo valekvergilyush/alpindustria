@@ -15,6 +15,11 @@ class ProductSlider {
 
 	init() {
 		const slides = this.container.querySelectorAll('.product-slider__slide');
+		const resetSlideZoom = slide => {
+			slide.zoomed = false;
+			slide.panzoom.reset();
+			slide.contentEl.classList.add('can-zoom_in');
+		};
 		new Carousel(
 			this.container,
 			{
@@ -87,10 +92,29 @@ class ProductSlider {
 			idle: false,
 			compact: false,
 			dragToClose: false,
-
 			animated: false,
 			showClass: 'f-fadeSlowIn',
 			hideClass: false,
+			contentClick: 'zoomToMax',
+			on: {
+				'Carousel.change': fancybox => {
+					const slide = fancybox.getSlide();
+					resetSlideZoom(slide);
+				},
+				reveal: fancybox => {
+					const slide = fancybox.getSlide();
+					resetSlideZoom(slide);
+				},
+				'Carousel.click': fancybox => {
+					const slide = fancybox.getSlide();
+					if (slide.zoomed) {
+						resetSlideZoom(slide);
+					} else {
+						slide.zoomed = true;
+						slide.contentEl.classList.remove('can-zoom_in');
+					}
+				},
+			},
 
 			Carousel: {
 				infinite: false,
@@ -99,12 +123,11 @@ class ProductSlider {
 			Images: {
 				zoom: false,
 				Panzoom: {
-					maxScale: 2,
+					maxScale: 3,
 				},
 			},
 
 			Toolbar: {
-				absolute: true,
 				display: {
 					left: [],
 					middle: [],
