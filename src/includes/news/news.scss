@@ -12,8 +12,8 @@
 		margin-inline: auto;
 		text-align: center;
 		@media (max-width: $laptop-lg) {
-			margin-top: 112px;
-			margin-bottom: 47px;
+			margin-top: 115px;
+			margin-bottom: 44px;
 		}
 		@media (max-width: $laptop-md) {
 			max-width: 296px;
@@ -96,6 +96,7 @@
 		padding-block: rem(32);
 		@media (max-width: $laptop-lg) {
 			padding-block: 24px;
+			margin-bottom: 5px;
 		}
 		@media (max-width: $laptop-sm) {
 			padding-block: 20px;
