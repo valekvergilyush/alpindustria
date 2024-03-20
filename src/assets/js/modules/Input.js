@@ -60,8 +60,11 @@ class Input {
 					const start7 = val.startsWith('+7');
 					const start8 = val.startsWith('8') || val.startsWith('7');
 
-					start7 && (evt.target.value = val.slice(2));
-					start8 && (evt.target.value = val.slice(1));
+					// start7 && (evt.target.value = val.slice(2));
+					// start8 && (evt.target.value = val.slice(1));
+
+					start7 && input.mask.updateValue(val.slice(2));
+					start8 && input.mask.updateValue(val.slice(1));
 
 					if (input.placeholder.length === val.length) {
 						input.setAttribute('aria-invalid', false);

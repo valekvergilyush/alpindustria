@@ -28,7 +28,9 @@
 
 		{{ popups({ list: popupsList }) }}
 		{{ modals({ list: modalsList }) }}
-		{{ buttonUp({ className: 'page__button-up' }) }}
+		{% if not noButtonUp %}
+			{{ buttonUp({ className: 'page__button-up' }) }}
+		{% endif %}
 
 		{% include "../includes/notification/notification.nunj" %}
 		{% block scripts %}

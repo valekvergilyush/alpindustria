@@ -11,6 +11,9 @@
 	@media (max-width: $laptop-lg) {
 		min-height: 134px;
 		padding: 38px 40px 32px;
+		._wallet & {
+			padding: 38px 44px 37px;
+		}
 	}
 	@media (max-width: $laptop-md) {
 		min-height: 120px;
@@ -112,8 +115,14 @@
 		fill: currentColor;
 		transform: rotate(45deg);
 		transition: margin-left $default-transition-duration $default-transition-function;
+		._wallet & {
+			margin-left: rem(30);
+		}
 		@media (max-width: $mobile-lg) {
 			margin-left: 8px;
+			._wallet & {
+				margin-left: 16px;
+			}
 		}
 	}
 }

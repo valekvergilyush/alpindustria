@@ -1,27 +1,61 @@
 .discount-card-info {
+	$this: &;
 	--min-height: #{rem(704)};
 	--padding-top: #{rem(72)};
 	display: grid;
 	grid-template-columns: 584fr 856fr;
 	min-height: var(--min-height);
+	&._wallet {
+		--padding-top: #{rem(40)};
+	}
 	@media (max-width: $laptop-md) {
 		--min-height: 600px;
 		--padding-top: var(--container-padding);
 		--min-height: none;
 		grid-template-columns: 1fr;
 	}
+	@media (max-width: $laptop-sm) {
+		&._wallet {
+			--padding-top: #{rem(48)};
+		}
+	}
 	&__content {
 		display: flex;
 		flex-direction: column;
 		padding: var(--padding-top) var(--container-padding) var(--container-padding);
+		#{$this}._wallet & {
+			padding-bottom: rem(66);
+		}
 		@media (max-width: $laptop-md) {
 			order: 1;
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				position: relative;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				.h5 {
+					font-size: 44px;
+				}
+				.p3 {
+					font-size: 16px;
+				}
+			}
 		}
 	}
 	&__top {
 		display: grid;
 		gap: rem(48);
 		margin-bottom: rem(48);
+		#{$this}._wallet & {
+			gap: rem(24);
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				gap: rem(32);
+				margin-bottom: 122px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			gap: 24px;
 		}
@@ -32,6 +66,11 @@
 	}
 	&__bottom {
 		margin-top: auto;
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				margin-top: 0;
+			}
+		}
 	}
 	&__profile {
 		display: grid;
@@ -48,6 +87,18 @@
 		justify-items: flex-start;
 		gap: rem(32);
 		margin-top: rem(64);
+		#{$this}._wallet & {
+			justify-items: stretch;
+			margin-top: rem(40);
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				position: absolute;
+				left: var(--container-padding);
+				right: var(--container-padding);
+				bottom: 68px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			margin-top: 24px;
 		}
@@ -100,6 +151,12 @@
 			left: var(--container-padding);
 			width: rem(69);
 			height: rem(38);
+			#{$this}._wallet & {
+				top: 38px;
+				left: 46px;
+				width: 96px;
+				height: auto;
+			}
 		}
 		svg {
 			width: 100%;
@@ -122,6 +179,22 @@
 		@media (max-width: $laptop-md) {
 			grid-template-columns: 1fr;
 			--min-height: 600px;
+		}
+	}
+	&__qr-code {
+		margin: 0 auto;
+		margin-top: rem(45);
+		@media (max-width: $laptop-sm) {
+			margin-top: -14px;
+		}
+	}
+	&__qr-code ~ &__img-content {
+		padding-top: rem(11);
+		margin-top: 0;
+		padding-inline: rem(64);
+		@media (max-width: $laptop-sm) {
+			padding: 32px;
+			padding-top: 0;
 		}
 	}
 }

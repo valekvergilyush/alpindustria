@@ -1,0 +1,73 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+
+<div class="add-card-form">
+	<div class="add-card-form__tel-wrapper" data-validate data-callback="add-card-form">
+		<form class="add-card-form__tel cart-discount__link-card">
+			{{ input({
+				type: 'tel',
+				id: 'discount-phone',
+				className: '',
+				label: 'Номер телефона',
+				attr: 'required data-validate-type="phone"'
+			}) }}
+			<button class="add-card-form__button cart-discount__btn h7 ttu" type="submit">
+				<span>Привязать карту</span>
+				{{ icon({
+					iconName: 'plus',
+					className: 'cart-discount__btn-icon _plus',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+			{{ addToCart({
+				className: 'add-card-form__button _mobile',
+				link: {
+					text: 'Привязать карту',
+					attributes: 'type="submit"'
+				}
+			}) }}
+		</form>
+	</div>
+	<div class="add-card-form__sms cart-discount__sms">
+		<button type="button" class="add-card-form__back cart-discount__sms-back">
+			{{ icon({
+				iconName: 'double-arrow-left',
+				className: 'cart-discount__sms-back-icon',
+				attr: 'width="24" height="24"'
+			}) }}
+		</button>
+		<div class="cart-discount__sms-inner">
+			{{ input({
+				type: 'text',
+				id: 'discount-phone-sms',
+				className: 'cart-discount__sms-input',
+				label: 'Код из СМС',
+				attr: 'required data-validate-type="number"'
+			}) }}
+			<button class="add-card-form__sms-submit cart-discount__btn h7 ttu" type="button">
+				<span>Подтвердить</span>
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'cart-discount__btn-icon _arrow',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+			<button class="add-card-form__sms-send p4 cart-discount__btn-send-code" type="button">
+				<span>Выслать код повторно</span>
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'cart-discount__btn-send-code-icon',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+			{{ addToCart({
+				className: 'add-card-form__sms-submit _mobile',
+				link: {
+					text: 'Подтвердить',
+					attributes: 'type="submit"'
+				}
+			}) }}
+		</div>
+	</div>
+</div>

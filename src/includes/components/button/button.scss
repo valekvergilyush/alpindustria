@@ -693,6 +693,22 @@
 			margin-left: rem(16);
 		}
 	}
+	&._wallet {
+		gap: rem(10);
+		padding: rem(7) rem(20);
+		border-radius: rem(8);
+		font-size: rem(18);
+		color: var(--white);
+		background-color: var(--default-black);
+		&::after {
+			--size: #{rem(36)};
+			content: '';
+			width: var(--size);
+			height: var(--size);
+			background: url('/assets/images/wallet/wallet-icon.png') no-repeat;
+			background-size: contain;
+		}
+	}
 }
 
 ._mobile {

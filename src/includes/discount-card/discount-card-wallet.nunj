@@ -1,8 +1,8 @@
 {% from "../components/picture/picture.nunj" import picture %}
 
-<section class="discount-card _wallet" data-discount-section>
-	<div class="discount-card__container container">
-		<div class="discount-card__content">
+<section class="page__discount-card discount-card _wallet" data-discount-section>
+	<div class="discount-card__container">
+		<div class="discount-card__content container">
 			<h1 class="discount-card__title ttu h5">Дисконтная карта</h1>
 			<div class="discount-card__tabs tabs" data-tabs>
 				<ul class="tabs__tab-list" role="tablist">
@@ -13,14 +13,24 @@
 						<button class="tabs__trigger" id="create" role="tab" type="button" data-tab-trigger aria-selected="false" tabindex="-1">У меня нет карты</button>
 					</li>
 				</ul>
-				<section class="discount-card__section _add tabs__panel" data-validate aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="-1">
-					{% include "../discount-add-form/discount-add-form.nunj" %}
+				<section class="discount-card__section _add tabs__panel" data-validate aria-labelledby="add" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
+					{% include "./add-card-form.nunj" %}
 				</section>
-				<section class="discount-card__section _create tabs__panel" data-validate aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="false" tabindex="0">
-					{% include "../discount-create-form/discount-create-form.nunj" %}
+				<section class="discount-card__section _create tabs__panel" data-validate aria-labelledby="create" role="tabpanel" data-tab-panel aria-hidden="true" tabindex="-1">
+					{% include "../discount-create-form/discount-create-form-wallet.nunj" %}
 				</section>
 			</div>
 		</div>
+		<div class="discount-card__anim-wrap">
+			<div class="discount-card__anim" data-lottie-animation="/assets/jsons/card-anim.json" data-lottie-loop="true"></div>
+			<p class="p3 tac">Создаем вашу карту, это займет пару секунд</p>
+		</div>
+		<picture class="discount-card__bg-wrapper">
+			<source media="(max-width: 992px)" srcset="/assets/images/wallet/bg-tablet.webp, /assets/images/wallet/bg-tablet@2x.webp 2x" type="image/webp">
+			<img class="discount-card__bg" src="/assets/images/wallet/bg.webp" srcset="/assets/images/wallet/bg@2x.webp 2x" alt="">
+		</picture>
 	</div>
-	{% include "../discount-card-info/discount-card-info.nunj" %}
+	<div class="discount-card__info">
+		{% include "../discount-card-info/discount-card-info-wallet.nunj" %}
+	</div>
 </section>

@@ -3,6 +3,9 @@
 	&__tab-list {
 		display: flex;
 		margin-bottom: rem(48);
+		._wallet & {
+			margin-bottom: rem(20);
+		}
 		@media (max-width: $laptop-lg) {
 			margin-bottom: 32px;
 		}
@@ -59,6 +62,10 @@
 	}
 	&__panel {
 		outline: 0;
+		visibility: hidden;
+		.is-initialized & {
+			visibility: initial;
+		}
 		&._hidden {
 			display: none;
 		}

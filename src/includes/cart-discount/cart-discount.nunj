@@ -42,7 +42,7 @@
 				}) }}
 			</p>
 		</div>
-		<div class="" data-validate data-callback="cart-discount-phone">
+		<div data-validate data-callback="cart-discount-phone">
 			<form action="" class="cart-discount__link-card">
 				{{ input({
 					type: 'tel',

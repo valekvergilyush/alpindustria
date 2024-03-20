@@ -92,6 +92,7 @@ class AlpIndustry {
 			CartBreadcrumbs: require('../../includes/cart-breadcrumbs/cart-breadcrumbs').default,
 			ReviewForm: require('../../includes/review-form/review-form').default,
 			Activities: require('../../includes/activities/activities').default,
+			DiscountCard: require('../../includes/discount-card/discount-card').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

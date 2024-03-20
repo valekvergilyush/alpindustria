@@ -47,6 +47,9 @@
 	}
 	&__link-card {
 		display: none;
+		._wallet & {
+			display: grid;
+		}
 		#{$this}:not(._card):not(._sms) & {
 			display: grid;
 		}

@@ -2,6 +2,15 @@
 	$this: &;
 	display: flex;
 	flex-direction: column;
+	&._wallet {
+		padding-top: rem(20);
+		@media (max-width: $laptop-sm) {
+			padding-top: 4px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-top: 10px;
+		}
+	}
 	&._tel_confirmed {
 		#{$this}__sms-code,
 		#{$this}__send-sms {
@@ -21,14 +30,38 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: rem(24);
 		margin-bottom: rem(24);
+		#{$this}._wallet & {
+			margin-bottom: rem(38);
+		}
 		@media (max-width: $mobile-lg) {
 			grid-template-columns: 1fr;
+			#{$this}._wallet & {
+				gap: 14px;
+			}
 		}
 	}
 	&__checkboxes {
 		display: grid;
 		gap: rem(16);
 		margin-bottom: rem(32);
+		#{$this}._wallet & {
+			margin-bottom: rem(40);
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				> .p3 {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				margin-bottom: 16px;
+				> .p3 {
+					font-size: 12px;
+				}
+			}
+		}
 	}
 	&__radios {
 		display: flex;
@@ -44,6 +77,12 @@
 			.radio__text {
 				font-size: 12px;
 			}
+			#{$this}._wallet & {
+				order: 2;
+				.radio__text {
+					font-size: 16px;
+				}
+			}
 		}
 	}
 	&__checkbox {
@@ -54,9 +93,20 @@
 			.checkbox__label {
 				color: var(--blue-light);
 				font-size: rem(12);
+				line-height: 1.33;
 				&::before {
 					top: 50%;
 					transform: translateY(-50%);
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._privacy {
+				.checkbox__label {
+					#{$this}._wallet & {
+						font-size: 10px;
+						line-height: 1.6;
+					}
 				}
 			}
 		}
@@ -86,6 +136,19 @@
 	}
 	&__submit {
 		margin-left: auto;
+		#{$this}._wallet & {
+			margin-inline: calc(0px - var(--container-padding));
+		}
+		@media (max-width: $laptop-sm) {
+			min-height: 132px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 72px;
+			#{$this}._wallet & {
+				min-height: 72px;
+				padding: 20px 24px 18px;
+			}
+		}
 	}
 	&__sms-code {
 		position: relative;
@@ -94,6 +157,17 @@
 	&__resend-sms {
 		margin-top: rem(16);
 		margin-right: auto;
+		#{$this}._wallet & {
+			margin-left: rem(14);
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				margin-top: 8px;
+				margin-left: auto;
+				margin-right: 0;
+				font-size: 12px;
+			}
+		}
 	}
 	&__submit-code {
 		position: absolute;
@@ -104,6 +178,19 @@
 			right: 3px;
 			.button__icon {
 				--size: 12px !important;
+			}
+		}
+	}
+	&__tel {
+		grid-column: 1/-1;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(24);
+		@media (max-width: $mobile-lg) {
+			grid-template-columns: 1fr;
+			gap: 14px;
+			> * {
+				display: grid;
 			}
 		}
 	}
