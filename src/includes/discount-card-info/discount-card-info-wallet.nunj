@@ -41,6 +41,7 @@
 			<p class="discount-card-info__img-title h4 ttu">Matterhorn</p>
 		</div>
 		<picture class="discount-card-info__picture">
+			<source media="(max-width: 640px)" srcset="/assets/images/wallet/info-bg-mobile.webp, /assets/images/wallet/info-bg-mobile@2x.webp 2x" type="image/webp">
 			<source media="(max-width: 992px)" srcset="/assets/images/wallet/info-bg-tablet.webp, /assets/images/wallet/info-bg-tablet@2x.webp 2x" type="image/webp">
 			<source srcset="/assets/images/wallet/info-bg.webp, /assets/images/wallet/info-bg@2x.webp 2x" type="image/webp">
 			<img class="discount-card-info__bg" src="/assets/images/wallet/info-bg.jpg" srcset="/assets/images/wallet/info-bg@2x.jpg 2x" width="642" height="880" alt="">

@@ -8,6 +8,8 @@
 			padding-top: 4px;
 		}
 		@media (max-width: $mobile-lg) {
+			display: flex;
+			flex-direction: column;
 			padding-top: 10px;
 		}
 	}
@@ -147,6 +149,7 @@
 			#{$this}._wallet & {
 				min-height: 72px;
 				padding: 20px 24px 18px;
+				margin-top: auto;
 			}
 		}
 	}

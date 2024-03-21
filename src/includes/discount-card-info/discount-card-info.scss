@@ -16,7 +16,12 @@
 	}
 	@media (max-width: $laptop-sm) {
 		&._wallet {
-			--padding-top: #{rem(48)};
+			--padding-top: 48px;
+		}
+	}
+	@media (max-width: $mobile-lg) {
+		&._wallet {
+			--padding-top: 32px;
 		}
 	}
 	&__content {
@@ -42,6 +47,17 @@
 				}
 			}
 		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				grid-template-columns: auto;
+				.h5 {
+					font-size: 38px;
+				}
+				.p3 {
+					font-size: 12px;
+				}
+			}
+		}
 	}
 	&__top {
 		display: grid;
@@ -58,11 +74,20 @@
 		}
 		@media (max-width: $mobile-lg) {
 			gap: 24px;
+			#{$this}._wallet & {
+				gap: 24px;
+				margin-bottom: 28px;
+			}
 		}
 	}
 	&__top-block {
 		display: grid;
 		gap: rem(8);
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				gap: 14px;
+			}
+		}
 	}
 	&__bottom {
 		margin-top: auto;
@@ -79,6 +104,12 @@
 			text-decoration: none;
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 16px;
+				gap: 24px;
 			}
 		}
 	}
@@ -101,6 +132,10 @@
 		}
 		@media (max-width: $mobile-lg) {
 			margin-top: 24px;
+			#{$this}._wallet & {
+				position: static;
+				margin-top: 38px;
+			}
 		}
 	}
 	&__unlink {
@@ -128,6 +163,10 @@
 		border-left: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-md) {
 			min-height: 400px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: auto;
+			aspect-ratio: 375/320;
 		}
 	}
 	&__bg {
@@ -162,6 +201,16 @@
 			width: 100%;
 			height: 100%;
 		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				top: 28px;
+				left: var(--container-padding);
+				width: 56px;
+				svg {
+					display: block;
+				}
+			}
+		}
 	}
 	&__img-content {
 		position: relative;
@@ -171,6 +220,12 @@
 	}
 	&__img-subtitle {
 		margin-bottom: rem(8);
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
 	}
 	&._profile {
 		--padding-top: var(--container-padding);
@@ -187,6 +242,11 @@
 		@media (max-width: $laptop-sm) {
 			margin-top: -14px;
 		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				display: none;
+			}
+		}
 	}
 	&__qr-code ~ &__img-content {
 		padding-top: rem(11);
@@ -195,6 +255,18 @@
 		@media (max-width: $laptop-sm) {
 			padding: 32px;
 			padding-top: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: auto;
+			padding-inline: var(--container-padding);
+			padding-bottom: 24px;
+		}
+	}
+	&__img-title {
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 38px;
+			}
 		}
 	}
 }

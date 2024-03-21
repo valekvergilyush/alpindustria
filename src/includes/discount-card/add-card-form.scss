@@ -65,6 +65,9 @@
 			padding-bottom: 236px;
 			align-items: start;
 		}
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 146px;
+		}
 	}
 	&__sms-submit {
 		gap: rem(20);
