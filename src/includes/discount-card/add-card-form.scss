@@ -56,7 +56,7 @@
 	}
 	&__sms {
 		position: relative;
-		margin-top: rem(24);
+		margin-top: rem(4);
 		#{$this}._sms & {
 			display: grid;
 		}

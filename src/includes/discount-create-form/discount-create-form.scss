@@ -161,7 +161,7 @@
 		margin-top: rem(16);
 		margin-right: auto;
 		#{$this}._wallet & {
-			margin-left: rem(14);
+			margin-left: 0;
 		}
 		@media (max-width: $mobile-lg) {
 			#{$this}._wallet & {

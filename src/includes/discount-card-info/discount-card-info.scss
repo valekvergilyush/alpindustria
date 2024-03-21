@@ -39,6 +39,7 @@
 				position: relative;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
+				align-items: start;
 				.h5 {
 					font-size: 44px;
 				}
@@ -250,14 +251,13 @@
 	}
 	&__qr-code ~ &__img-content {
 		padding-top: rem(11);
-		margin-top: 0;
+		margin-top: auto;
 		padding-inline: rem(64);
 		@media (max-width: $laptop-sm) {
 			padding: 32px;
 			padding-top: 0;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-top: auto;
 			padding-inline: var(--container-padding);
 			padding-bottom: 24px;
 		}
