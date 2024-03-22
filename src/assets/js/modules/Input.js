@@ -99,6 +99,13 @@ class Input {
 					field.classList.remove(ClassName.FILLED);
 				}
 			});
+			input.addEventListener('change', () => {
+				if (input.value) {
+					field.classList.add(ClassName.FILLED);
+				} else {
+					field.classList.remove(ClassName.FILLED);
+				}
+			});
 		});
 	}
 }
