@@ -109,8 +109,7 @@
 			display: block;
 		}
 	}
-	&:focus-within,
-	&._filled {
+	& {
 		#{$this}__label {
 			top: 15%;
 			font-size: rem(12);
@@ -126,7 +125,6 @@
 	.iti {
 		flex-grow: 1;
 		&__flag-container {
-			display: none;
 			padding-bottom: rem(16);
 			@media (max-width: $mobile-lg) {
 				padding-bottom: 8px;
