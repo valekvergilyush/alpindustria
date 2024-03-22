@@ -106,6 +106,14 @@ class Input {
 					field.classList.remove(ClassName.FILLED);
 				}
 			});
+
+			setInterval(() => {
+				if (input.value) {
+					field.classList.add(ClassName.FILLED);
+				} else {
+					field.classList.remove(ClassName.FILLED);
+				}
+			}, 1000);
 		});
 	}
 }
