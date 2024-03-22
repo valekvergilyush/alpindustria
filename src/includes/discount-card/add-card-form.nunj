@@ -10,7 +10,8 @@
 				id: 'discount-phone',
 				className: '',
 				label: 'Номер телефона',
-				attr: 'required data-validate-type="phone"'
+				attr: 'data-validate-type="phone" ',
+				inputAttr: 'required autocomplete="off"'
 			}) }}
 			<button class="add-card-form__button cart-discount__btn h7 ttu" type="submit">
 				<span>Привязать карту</span>

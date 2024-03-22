@@ -77,7 +77,7 @@
 					name: 'Телефон',
 					label: 'Телефон*',
 					attr: 'data-validate-type="phone"',
-					inputAttr: 'required'
+					inputAttr: 'required autocomplete="off"'
 				}) }}
 				{{ button({
 					type: 'button',
