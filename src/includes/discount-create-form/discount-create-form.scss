@@ -4,6 +4,7 @@
 	flex-direction: column;
 	&._wallet {
 		padding-top: rem(20);
+		height: 100%;
 		@media (max-width: $laptop-sm) {
 			padding-top: 4px;
 		}
@@ -140,6 +141,7 @@
 		margin-left: auto;
 		#{$this}._wallet & {
 			margin-inline: calc(0px - var(--container-padding));
+			margin-top: auto;
 		}
 		@media (max-width: $laptop-sm) {
 			min-height: 132px;
