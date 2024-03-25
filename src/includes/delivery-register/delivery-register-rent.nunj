@@ -34,11 +34,11 @@
 			className: 'delivery-register__input _gray'
 		}) }}
 		{{ input({
-			type: 'tel',
+			type: 'text',
 			id: 'delivery-register-rent-tel',
 			name: 'Телефон',
 			label: 'Телефон*',
-			inputAttr: 'required',
+			inputAttr: 'required inputmode="tel"',
 			attr: 'data-validate-type="phone"',
 			className: 'delivery-register__input _gray'
 		}) }}

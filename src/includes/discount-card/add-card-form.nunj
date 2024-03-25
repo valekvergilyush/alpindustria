@@ -6,12 +6,12 @@
 	<div class="add-card-form__tel-wrapper" data-validate data-callback="add-card-form">
 		<form class="add-card-form__tel cart-discount__link-card">
 			{{ input({
-				type: 'tel',
+				type: 'text',
 				id: 'discount-phone',
 				className: '',
 				label: 'Номер телефона',
-				attr: 'data-validate-type="phone" ',
-				inputAttr: 'required autocomplete="off"'
+				attr: 'data-validate-type="phone"',
+				inputAttr: 'required inputmode="tel"'
 			}) }}
 			<button class="add-card-form__button cart-discount__btn h7 ttu" type="submit">
 				<span>Привязать карту</span>

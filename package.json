@@ -89,7 +89,7 @@
     "gsap": "^3.7.0",
     "gulp-dart-sass": "^1.0.2",
     "imask": "^7.5.0",
-    "intl-tel-input": "^17.0.19",
+    "intl-tel-input": "^20.1.0",
     "lottie-web": "^5.9.6",
     "nouislider": "^15.6.1",
     "pickerjs": "^1.2.1",

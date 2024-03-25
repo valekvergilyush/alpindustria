@@ -25,7 +25,6 @@ class Input {
 		};
 
 		const updateInputTelMask = input => {
-			console.log(input);
 			const inputMask = getInputMask(input);
 			input.mask.updateOptions({ mask: inputMask });
 			input.mask.unmaskedValue = '';
@@ -38,12 +37,13 @@ class Input {
 				field.classList.add(ClassName.FILLED);
 			}
 
-			if (input.type === 'tel') {
+			if (input.inputMode === 'tel') {
 				const iti = intlTelInput(input, {
 					utilsScript: '/assets/jsons/tel-input-utils.js',
 					initialCountry: 'ru',
 					onlyCountries: ['ru', 'am', 'by', 'kg'],
 					separateDialCode: true,
+					countrySearch: false,
 					customPlaceholder: selectedCountryPlaceholder => selectedCountryPlaceholder,
 				});
 				input.iti = iti;

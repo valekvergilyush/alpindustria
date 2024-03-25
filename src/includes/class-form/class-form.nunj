@@ -23,12 +23,12 @@
 			attr: 'data-validate-type="text"'
 		}) }}
 		{{ input({
-			type: 'tel',
+			type: 'text',
 			id: 'class-form-phone',
 			name: 'Телефон',
 			label: 'Телефон*',
 			className: 'class-form__input',
-			inputAttr: 'required',
+			inputAttr: 'required inputmode="tel"',
 			attr: 'data-validate-type="phone"'
 		}) }}
 		{{ input({

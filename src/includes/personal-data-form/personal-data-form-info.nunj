@@ -5,12 +5,13 @@
 
 <form class="personal-data-form">
 	{{ input({
-		type: 'tel',
+		type: 'text',
 		id: 'personal-data-phone',
 		value: '+7 (999) 000 00 00',
 		name: 'Телефон',
 		className: '_gray',
-		attr: 'data-validate-type="phone"'
+		attr: 'data-validate-type="phone"',
+		inputAttr: 'inputmode="tel"'
 	}) }}
 	{{ input({
 		type: 'email',

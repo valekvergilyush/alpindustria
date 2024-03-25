@@ -200,6 +200,9 @@ const validateTextInput = input => {
 };
 
 const validatePhoneInput = input => {
+	if (input.inputMode !== 'tel') {
+		return;
+	}
 	const parent = input.closest('[data-validate-type]');
 	let flag = true;
 	if (input.iti.isValidNumber()) {

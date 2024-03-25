@@ -28,10 +28,11 @@
 					name: 'Почта'
 				}) }}
 				{{ input({
-					type: 'tel',
+					type: 'text',
 					id: 'question-form-phone',
 					name: 'Телефон',
-					attr: 'data-validate-type="phone"'
+					attr: 'data-validate-type="phone"',
+					inputAttr: 'inputmode="tel"'
 				}) }}
 				{{ textarea({
 					id: 'question-form-text',

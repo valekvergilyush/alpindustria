@@ -71,13 +71,13 @@
 		<div class="discount-create-form__tel">
 			<div>
 				{{ input({
-					type: 'tel',
+					type: 'text',
 					id: 'discount-create-form-tel',
 					className: 'discount-create-form__input _gray _tel',
 					name: 'Телефон',
 					label: 'Телефон*',
 					attr: 'data-validate-type="phone"',
-					inputAttr: 'required autocomplete="off"'
+					inputAttr: 'required inputmode="tel"'
 				}) }}
 				{{ button({
 					type: 'button',

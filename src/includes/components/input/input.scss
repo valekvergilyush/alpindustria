@@ -125,6 +125,11 @@
 	}
 	.iti {
 		flex-grow: 1;
+		&__a11y-text {
+			position: absolute;
+			visibility: hidden;
+			pointer-events: none;
+		}
 		&__flag-container {
 			display: none;
 			padding-bottom: rem(16);
@@ -140,6 +145,7 @@
 			}
 		}
 		&__selected-flag {
+			width: fit-content;
 			background-color: transparent;
 		}
 		&__country-list {

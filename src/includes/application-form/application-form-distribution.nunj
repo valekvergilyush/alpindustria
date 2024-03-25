@@ -136,12 +136,12 @@
 		</div>
 		<div class="application-form__fields">
 			{{ input({
-				type: 'tel',
+				type: 'text',
 				id: 'application-form-tel',
 				className: 'application-form__input _gray',
 				name: 'Телефон',
 				label: 'Телефон*',
-				inputAttr: 'required',
+				inputAttr: 'required inputmode="tel"',
 				attr: 'data-validate-type="phone"'
 			}) }}
 			{{ input({

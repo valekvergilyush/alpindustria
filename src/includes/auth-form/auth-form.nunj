@@ -8,11 +8,12 @@
 		name: 'Почта'
 	}) }}
 	{{ input({
-		type: 'tel',
+		type: 'text',
 		id: 'auth-login-tel',
 		className: 'auth-form__input _phone _code',
 		name: 'Телефон',
-		attr: 'data-validate-type="phone"'
+		attr: 'data-validate-type="phone"',
+		inputAttr: 'inputmode="tel"'
 	}) }}
 	{{ input({
 		type: 'number',

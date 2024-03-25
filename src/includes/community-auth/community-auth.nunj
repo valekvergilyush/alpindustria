@@ -7,11 +7,12 @@
 	<form class="community-auth__form">
 		<div class="community-auth__fields">
 			{{ input({
-				type: 'tel',
+				type: 'text',
 				id: 'community-auth-tel',
 				className: 'community-auth__input _gray',
 				name: 'Телефон',
-				attr: 'data-validate-type="phone"'
+				attr: 'data-validate-type="phone"',
+				inputAttr: 'inputmode="tel"'
 			}) }}
 			{{ button({
 				type: 'submit',
