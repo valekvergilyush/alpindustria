@@ -109,7 +109,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			#{$this}._wallet & {
-				font-size: 16px;
+				font-size: 16px !important;
 				gap: 24px;
 			}
 		}
