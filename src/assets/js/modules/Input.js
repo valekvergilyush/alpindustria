@@ -42,7 +42,6 @@ class Input {
 					utilsScript: '/assets/jsons/tel-input-utils.js',
 					initialCountry: 'ru',
 					onlyCountries: ['ru', 'am', 'by', 'kg'],
-					separateDialCode: true,
 					countrySearch: false,
 					customPlaceholder: selectedCountryPlaceholder => selectedCountryPlaceholder,
 				});

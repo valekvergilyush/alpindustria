@@ -131,6 +131,7 @@
 			pointer-events: none;
 		}
 		&__flag-container {
+			z-index: 1;
 			display: none;
 			padding-bottom: rem(16);
 			@media (max-width: $mobile-lg) {
