@@ -299,7 +299,7 @@
 	}
 	&__content {
 		#{$this}._anim & {
-			display: none;
+			display: none !important;
 		}
 		#{$this}._wallet & {
 			display: flex;
@@ -312,6 +312,8 @@
 	}
 	&__anim-wrap {
 		display: none;
+		grid-column: 1/2;
+		grid-row: 1/2;
 		p {
 			width: rem(174);
 		}
@@ -321,6 +323,9 @@
 			justify-content: center;
 			gap: rem(16);
 			align-items: center;
+		}
+		@media (max-width: $laptop-sm) {
+			grid-row: auto;
 		}
 	}
 	&__anim {
