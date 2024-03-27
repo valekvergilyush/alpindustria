@@ -7,6 +7,10 @@
 	height: var(--height);
 	padding-top: rem(35);
 	box-sizing: border-box;
+	&._readonly {
+		opacity: 0.5;
+		pointer-events: none;
+	}
 	&:hover,
 	&:focus-within {
 		#{$this}__label {
@@ -121,7 +125,13 @@
 	}
 	.iti {
 		flex-grow: 1;
+		&__a11y-text {
+			position: absolute;
+			visibility: hidden;
+			pointer-events: none;
+		}
 		&__flag-container {
+			z-index: 1;
 			display: none;
 			padding-bottom: rem(16);
 			@media (max-width: $mobile-lg) {
@@ -136,6 +146,7 @@
 			}
 		}
 		&__selected-flag {
+			width: fit-content;
 			background-color: transparent;
 		}
 		&__country-list {

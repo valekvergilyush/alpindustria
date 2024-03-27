@@ -1,0 +1,13 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Дисконтная карта | {{ super() }}{% endblock title %}
+
+{% set noFooter = true %}
+{% set noButtonUp = true %}
+{% set htmlClassMods = '_wallet' %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/discount-card/discount-card-wallet.nunj" %}
+	</main>
+{% endblock %}

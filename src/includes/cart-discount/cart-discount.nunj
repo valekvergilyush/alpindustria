@@ -42,14 +42,15 @@
 				}) }}
 			</p>
 		</div>
-		<div class="" data-validate data-callback="cart-discount-phone">
+		<div data-validate data-callback="cart-discount-phone">
 			<form action="" class="cart-discount__link-card">
 				{{ input({
-					type: 'tel',
+					type: 'text',
 					id: 'discount-phone',
 					className: '',
 					label: 'Номер телефона',
-					attr: 'required data-validate-type="phone"'
+					attr: 'required data-validate-type="phone"',
+					inputAttr: 'inputmode="tel"'
 				}) }}
 				<button class="cart-discount__btn h7 ttu" type="submit">
 					<span>Привязать карту</span>

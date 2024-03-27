@@ -381,6 +381,7 @@
 		opacity: 0;
 		transition: opacity $default-transition-duration $card-button-transition-function;
 		pointer-events: none;
+		display: none;
 	}
 	&__total {
 		display: none;

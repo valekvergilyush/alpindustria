@@ -1,5 +1,6 @@
 import cartDiscount from '../../../includes/cart-discount/cart-discount';
 import DeliveryAddress from '../../../includes/delivery-address/delivery-address';
+import DiscountCard from '../../../includes/discount-card/discount-card';
 import FormsValidate from '../classes/form-validate';
 const formWrappers = document.querySelectorAll('[data-validate]');
 
@@ -25,6 +26,10 @@ class FormValidate {
 			},
 			'save-address': {
 				validationSuccessCallback: this.saveAddressValidationSuccessCallback,
+				validationErrorCallback: this.baseValidationErrorCallback,
+			},
+			'add-card-form': {
+				validationSuccessCallback: this.addCardFormValidationSuccessCallback,
 				validationErrorCallback: this.baseValidationErrorCallback,
 			},
 		};
@@ -75,6 +80,12 @@ class FormValidate {
 		e.preventDefault();
 
 		DeliveryAddress.container.classList.remove('_edit');
+		this.resetForm(e.target);
+	};
+	addCardFormValidationSuccessCallback = e => {
+		e.preventDefault();
+
+		DiscountCard.addCardFormContainer.classList.add('_sms');
 		this.resetForm(e.target);
 	};
 }

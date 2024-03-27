@@ -1,0 +1,50 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="discount-card-info _wallet">
+	<div class="discount-card-info__content">
+		<div class="discount-card-info__top">
+			<div class="discount-card-info__top-block">
+				<p class="p3 c-gray-dark">Номер клубной карты:</p>
+				<p class="h5">313434</p>
+			</div>
+			<div class="discount-card-info__top-block">
+				<p class="p3 c-gray-dark">Доступно баллов:</p>
+				<p class="h5">255</p>
+			</div>
+		</div>
+		<div class="discount-card-info__bottom">
+			<div class="discount-card-info__profile p3 c-gray-dark">
+				<p>Иван Федорович Крузенштерн</p>
+				<p><a href="tel:+7 (999) 000 00 00">+7 (999) 000 00 00</a></p>
+				<p><a href="mailto:hello.aplindustria@gmail.com">hello.aplindustria@gmail.com</a></p>
+			</div>
+			<div class="discount-card-info__btns">
+				{{ button({
+					text: 'Добавить в apple wallet',
+					className: '_wallet'
+				}) }}
+			</div>
+		</div>
+	</div>
+	<div class="discount-card-info__img">
+		<div class="discount-card-info__logo">
+			{{ icon({
+				iconName: 'logo-short',
+				className: 'address-index__link-icon',
+				attr: 'width="182" height="151"'
+			}) }}
+		</div>
+		{% include "../discount-card/qr-code.nunj" %}
+		<div class="discount-card-info__img-content">
+			<p class="discount-card-info__img-subtitle p1">Bronze</p>
+			<p class="discount-card-info__img-title h4 ttu">Matterhorn</p>
+		</div>
+		<picture class="discount-card-info__picture">
+			<source media="(max-width: 640px)" srcset="/assets/images/wallet/info-bg-mobile.webp, /assets/images/wallet/info-bg-mobile@2x.webp 2x" type="image/webp">
+			<source media="(max-width: 992px)" srcset="/assets/images/wallet/info-bg-tablet.webp, /assets/images/wallet/info-bg-tablet@2x.webp 2x" type="image/webp">
+			<source srcset="/assets/images/wallet/info-bg.webp, /assets/images/wallet/info-bg@2x.webp 2x" type="image/webp">
+			<img class="discount-card-info__bg" src="/assets/images/wallet/info-bg.jpg" srcset="/assets/images/wallet/info-bg@2x.jpg 2x" width="642" height="880" alt="">
+		</picture>
+	</div>
+</div>

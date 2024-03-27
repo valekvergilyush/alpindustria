@@ -92,6 +92,7 @@ class AlpIndustry {
 			CartBreadcrumbs: require('../../includes/cart-breadcrumbs/cart-breadcrumbs').default,
 			ReviewForm: require('../../includes/review-form/review-form').default,
 			Activities: require('../../includes/activities/activities').default,
+			DiscountCard: require('../../includes/discount-card/discount-card').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
@@ -138,6 +139,18 @@ class AlpIndustry {
 					this.modules.Popups.open(hash);
 				}
 			}
+
+			gsap.to('[data-scroll-top-btn]', {
+				autoAlpha: 1,
+				y: 0,
+				duration: 0.15,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '.page__wrapper',
+					start: 'top+=500 top',
+					toggleActions: 'play none none reverse',
+				},
+			});
 		});
 	}
 }

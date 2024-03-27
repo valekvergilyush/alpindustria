@@ -1,0 +1,170 @@
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/product-slider/product-slider.nunj" import productSlider %}
+{% from "../components/counter/counter.nunj" import counter %}
+{% from "../components/product-reviews/product-reviews.nunj" import productReviews %}
+{% from "../components/file-download/file-download.nunj" import fileDownload %}
+
+{% set productSliderImgs = [
+	'/assets/images/catalog/item-1',
+	'/assets/images/catalog/item-2',
+	'/assets/images/catalog/item-3',
+	'/assets/images/catalog/item-4',
+	'/assets/images/catalog/item-3',
+	'/assets/images/catalog/item-4'
+] %}
+{% set productSliderThumbs = [
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-1-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-2-mini'
+	},
+	{
+		type: 'video',
+		img: '/assets/images/catalog/item-3-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-3-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4-mini'
+	}
+] %}
+{% set colorButtons = [
+	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true }
+] %}
+{% set sizeButtons = [
+	{ value: '37' },
+	{ value: '38', disabled: true },
+	{ value: '39', selected: true }
+] %}
+
+<section class="product">
+	<div class="product__wrap">
+		<div class="product__content-wrap">
+			<div class="product__content-main" data-product-info>
+				<div class="product__content _main">
+					<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
+					<div class="product__main-info">
+						{{ button({
+							className: 'product__brand _arrow-m p1',
+							text: 'The North Face',
+							href: '#',
+							icon: 'promo-arrow'
+						}) }}
+						<div class="product__price-wrap">
+							<p class="product__price s1">33 150 руб.</p>
+						</div>
+						<div class="product__badges">
+							{% include "../product-badge/new.nunj" %}
+						</div>
+					</div>
+					<p class="product__code p4">Код товара для заказа по&nbsp;телефону: 402317</p>
+					<div class="product__shops">
+						{{ button({
+							className: 'product__available _arrow-s p3',
+							text: 'В наличии в 2 магазинах',
+							icon: 'promo-arrow',
+							attr: 'data-popup-opener="availability"'
+						}) }}
+					</div>
+				</div>
+			</div>
+			<div class="product__content">
+				<div class="product__counter-block">
+					<div class="product__title-sm-wrap">
+						<p class="product__title-sm ttu">количество</p>
+					</div>
+					{{ counter({
+						number: 3,
+						className: 'product__counter'
+					}) }}
+				</div>
+				<div class="product__block">
+					<p class="h6 product__title-md ttu">Описание</p>
+					<div class="product__descr p3">
+						<p>Ботинки Zamberlan 8000 Everest Evo RR&nbsp;специально разработаны для экстремальных экспедиций на&nbsp;больших высотах. Съемный внутренний ботинок гарантирует оптимальную теплоизоляцию, новая подошва Vibram&reg; Penia имеет глубокие разнонаправленные шипы для лучшего сцепления и&nbsp;долговечности. Промежуточная подошва из&nbsp;двух слоев полиуретана&nbsp;&mdash; жесткого и&nbsp;более мягкого, для обеспечения поддержки, амортизирующих свойств и&nbsp;небольшого веса. Прочная застежка устойчива к&nbsp;механическим нагрузкам и&nbsp;повреждениям, высокое голенище с&nbsp;ветро и&nbsp;водонепроницаемой молнией YKK устойчивой к&nbsp;УФ. Теплоизоляция этой модели была сертифицирована для температур до &minus;30 &deg;C&nbsp;при отсутствии движения, но&nbsp;при ходьбе может выдерживать более низкие температуры&nbsp;&mdash; до &minus;60 &deg;C.</p>
+						<p>Артикул: # 8000PM3T</p>
+					</div>
+					{{ fileDownload({
+						url: '#',
+						name: 'file_namea_goes_here.pdf',
+						size: '165.7 KB',
+						iconName: 'file-icon-2'
+					}) }}
+				</div>
+				<div class="product__block">
+					<p class="h6 product__title-md ttu">Особенности</p>
+					<ul class="product__features p3">
+						<li class="product__feature">Верх: Cordura&reg;&nbsp;/ микрофибра</li>
+						<li class="product__feature">Съемный внутренник</li>
+						<li class="product__feature">Стелька из&nbsp;углеродного волокна Zamberlan&reg; 5&nbsp;мм</li>
+						<li class="product__feature">Промежуточная подошва: двойной слой полиуретана + Zamberlan&reg; PCS EVO</li>
+						<li class="product__feature">Материалы:
+							<ul class="product__features-second">
+								<li class="product__feature-second">Тент: 68D полиэстер <a class="product__link" data-popup-opener="product-technology">Ripstop</a> 1500mm с полиуретановым покрытием и DWR</li>
+								<li class="product__feature-second">Внутренняя палатка: 40D нейлон <a class="product__link" data-popup-opener="product-technology">Ripstop</a> с покрытием DWR / 20D Micromesh</li>
+								<li class="product__feature-second">Пол: 70 нейлон taffeta 3000mm с полиуретановым покрытием и DWR</li>
+							</ul>
+						</li>
+						<li class="product__feature">Подошва Zamberlan&reg; Vibram&reg; Penia</li>
+						<li class="product__feature">Колодка: Z8000</li>
+						<li class="product__feature">Совместимость с&nbsp;автоматическими кошками</li>
+						<li class="product__feature">Вес: 2640 г (пара 42 р)</li>
+					</ul>
+				</div>
+				{{ addToCart({
+					className: 'product__add-mobile',
+					attributes: 'data-product-add-mobile',
+					list: [
+						{
+							oldPrice: '45 780 ₽',
+							price: '33 150 ₽'
+						}
+					],
+					link: {
+						text: 'в корзину',
+						url: '#',
+						attributes: 'data-notification-open="cart"'
+					}
+				}) }}
+			</div>
+			{{ productReviews({
+				attributes: 'data-product-review',
+				className: 'product__reviews'
+			}) }}
+		</div>
+		<div class="product__img">
+			<div class="product__img-wrap" >
+				{{ productSlider({
+					className: 'product__slider',
+					imgsList: productSliderImgs,
+					thumbsList: productSliderThumbs
+				}) }}
+			</div>
+			{{ addToCart({
+					className: 'product__add',
+					counter: 3,
+					link: {
+						text: 'добавить в корзину',
+						url: '#',
+						attributes: 'data-notification-open="cart"'
+					}
+				}) }}
+		</div>
+	</div>
+</section>

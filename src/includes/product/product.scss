@@ -1,7 +1,10 @@
 .product {
 	$this: &;
 	--block-margin: #{rem(124)};
-	--badges-margin: #{rem(16)};
+	--badges-margin: #{rem(12)};
+
+	position: relative;
+	z-index: 5;
 	@media (max-width: $laptop-lg) {
 		--block-margin: 96px;
 	}
@@ -10,7 +13,7 @@
 		--badges-margin: 8px;
 	}
 	@media (max-width: $mobile-lg) {
-		--block-margin: 64px;
+		--block-margin: 68px;
 	}
 	&__wrap {
 		display: flex;
@@ -58,7 +61,6 @@
 		bottom: 0;
 		flex-shrink: 0;
 		.add-to-cart__counter {
-			align-self: center;
 			@media (max-width: $laptop-lg) {
 				align-self: flex-end;
 			}
@@ -84,10 +86,38 @@
 		margin-bottom: var(--block-margin);
 		min-height: calc(100vh - var(--header-height) - var(--breadcrumbs-height));
 		box-sizing: border-box;
+		&:not(:has(#{$this}__colors-sizes)) {
+			min-height: auto;
+			margin-bottom: 16px;
+			#{$this}__main-info {
+				margin-bottom: var(--block-margin);
+			}
+		}
+		@media (max-width: $laptop-lg) {
+			padding-top: 36px;
+			&:not(:has(#{$this}__colors-sizes)) {
+				min-height: auto;
+				margin-bottom: 26px;
+				#{$this}__main-info {
+					margin-bottom: var(--block-margin);
+				}
+			}
+		}
 		@media (max-width: $laptop-sm) {
 			min-height: auto;
 			max-height: none;
 			margin-bottom: 16px;
+			padding-top: 10px;
+			&:not(:has(#{$this}__colors-sizes)) {
+				min-height: auto;
+				margin-bottom: 26px;
+				#{$this}__main-info {
+					margin-bottom: 0;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
 		}
 	}
 	&__content {
@@ -95,46 +125,72 @@
 		background-color: var(--white);
 		&._main {
 			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
+			display: grid;
+			grid-template-rows: repeat(3, min-content) 1fr;
+			padding-bottom: rem(32);
+		}
+		@media (max-width: $laptop-lg) {
+			&._main {
+				padding-bottom: 22px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._main {
+				padding-bottom: 15px;
+			}
 		}
 	}
 	&__title {
-		margin-bottom: rem(16);
+		grid-column: 1/3;
+		margin-block: rem(16);
 		@media (max-width: $laptop-md) {
 			margin-bottom: 8px;
 		}
+		@media (max-width: $mobile-lg) {
+			margin-block: 8px;
+		}
 	}
 	&__main-info {
+		grid-column: 1/3;
 		display: grid;
-		grid-template-columns: repeat(2, auto);
-		justify-content: space-between;
-		column-gap: rem(16);
-		grid-template-areas:
-			'brand rating'
-			'price price'
-			'favorite favorite';
+		grid-template-columns: 1fr 1fr;
+		justify-items: start;
 		@media (max-width: $laptop-sm) {
-			grid-template-areas:
-				'brand brand'
-				'rating favorite';
+			grid-column: 1/3;
+			grid-row: 2/3;
+			grid-template-columns: auto;
 		}
 	}
 	&__brand {
-		grid-area: brand;
+		margin-block: rem(10) rem(40);
+		@media (max-width: $laptop-lg) {
+			margin-block: 0 6px;
+			font-size: 20px;
+		}
 		@media (max-width: $laptop-sm) {
 			justify-self: flex-start;
 			margin-bottom: 16px;
+			font-size: 16px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-bottom: 8px;
+			font-size: 14px;
 		}
 	}
 	&__rating {
+		grid-column: 2/3;
+		grid-row: 1/2;
 		display: flex;
+		justify-content: flex-end;
 		align-items: center;
-		grid-area: rating;
 		font-family: var(--font-family-suisse);
-		font-size: rem(22);
-		line-height: rem(29);
+		font-size: rem(18);
+		line-height: rem(24);
 		@media (max-width: $laptop-sm) {
+			grid-column: 1/2;
+			grid-row: 2/3;
+			justify-content: flex-start;
+			align-items: flex-end;
 			font-family: var(--default-font-family);
 			font-weight: 400;
 			font-size: 16px;
@@ -142,8 +198,8 @@
 		}
 	}
 	&__rating-icon {
-		--size: #{rem(28)};
-		margin-right: rem(15);
+		--size: #{rem(22)};
+		margin-right: rem(10);
 		width: var(--size);
 		height: var(--size);
 		@media (max-width: $laptop-md) {
@@ -155,8 +211,7 @@
 		}
 	}
 	&__price-wrap {
-		grid-area: price;
-		margin-top: rem(56);
+		grid-column: 1/2;
 		@media (max-width: $laptop-lg) {
 			margin-top: 24px;
 		}
@@ -193,32 +248,34 @@
 		}
 	}
 	&__favorite {
+		grid-column: 1/2;
 		margin-top: rem(32);
 		margin-bottom: rem(32);
 		@media (max-width: $laptop-lg) {
-			margin-top: 19px;
+			margin-top: 22px;
 			margin-bottom: 32px;
 		}
 		@media (max-width: $laptop-md) {
 			margin-top: 20px;
 		}
 		@media (max-width: $laptop-sm) {
+			place-self: end;
 			margin: 0;
-			margin-left: auto;
 		}
 	}
 	&__badges {
+		grid-column: 2/3;
+		grid-row: 2/3;
 		position: relative;
 		z-index: 1;
 		display: flex;
+		justify-content: flex-end;
 		column-gap: var(--badges-margin);
 		row-gap: var(--badges-margin);
 		width: 100%;
-		margin-top: auto;
-		margin-bottom: rem(64);
 		pointer-events: none;
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 24px;
+			margin-top: 24px;
 		}
 		@media (max-width: $laptop-md) {
 			margin-bottom: 16px;
@@ -228,8 +285,27 @@
 			top: var(--container-padding);
 			left: var(--container-padding);
 			right: var(--container-padding);
+			display: grid;
+			grid-template-columns: auto auto;
+			justify-content: space-between;
 			width: auto;
-			margin-bottom: 0;
+			margin: 0;
+			> * {
+				grid-column: 1/2;
+				&._feature {
+					grid-column: 2/3;
+					grid-row: 1;
+					&:nth-of-type(2) {
+						grid-row: 2;
+					}
+					&:nth-of-type(3) {
+						grid-row: 3;
+					}
+					&:nth-of-type(4) {
+						grid-row: 4;
+					}
+				}
+			}
 		}
 		.product-badge {
 			@media (max-width: $laptop-md) {
@@ -240,30 +316,19 @@
 			}
 		}
 	}
-	&__badges-left {
-		display: flex;
-		column-gap: var(--badges-margin);
-		row-gap: var(--badges-margin);
-	}
 	&__shops {
+		grid-column: 1/2;
 		display: flex;
 		align-items: center;
+		align-self: end;
 		justify-content: space-between;
 		row-gap: rem(16);
-		margin-bottom: rem(32);
-		@media (max-width: $desktop) {
-			margin-bottom: 16px;
-		}
-		@media (max-width: $laptop-md) {
-			margin-bottom: 8px;
-		}
 		@media (max-width: $laptop-sm) {
-			flex-direction: row-reverse;
 			align-items: flex-end;
 			margin-top: 72px;
-			margin-bottom: 24px;
 		}
 		@media (max-width: $mobile-lg) {
+			grid-column: 1/3;
 			align-items: flex-start;
 			flex-direction: column-reverse;
 			margin-top: var(--block-margin);
@@ -271,9 +336,27 @@
 		}
 	}
 	&__code {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		align-self: center;
 		opacity: 0.4;
+		@media (max-width: $laptop-sm) {
+			grid-column: 2/3;
+			grid-row: 3 / 4;
+			margin-top: 72px;
+			place-self: end;
+		}
+		@media (max-width: $mobile-lg) {
+			grid-column: 1/3;
+			grid-row: -1;
+			justify-self: start;
+			margin: 0;
+		}
 	}
 	&__available {
+		@media (max-width: $laptop-lg) {
+			font-size: 12px;
+		}
 		@media (max-width: $laptop-sm) {
 			padding-left: 36px;
 			font-family: var(--default-font-family);
@@ -294,10 +377,12 @@
 	}
 	&__colors-sizes {
 		display: grid;
-		grid-template-columns: 280fr 392fr;
+		grid-auto-rows: min-content;
+		align-content: space-between;
 		column-gap: var(--container-padding);
+		row-gap: rem(32);
 		min-height: var(--add-block-height);
-		padding: rem(16) var(--container-padding) rem(24);
+		padding: rem(35) var(--container-padding) rem(40);
 		border-top: 1px solid var(--gray-light);
 		border-bottom: 1px solid var(--gray-light);
 		font-family: var(--font-family-suisse);
@@ -312,14 +397,11 @@
 			}
 		}
 		@media (max-width: $laptop-lg) {
-			grid-template-columns: 192fr 224fr;
 			padding-top: 24px;
-			padding-bottom: 32px;
+			padding-bottom: 26px;
+			row-gap: rem(8);
 		}
 		@media (max-width: $laptop-md) {
-			grid-template-columns: auto auto;
-			justify-content: space-between;
-			column-gap: 0;
 			padding-bottom: 23px;
 			&._range {
 				column-gap: 20px;
@@ -329,59 +411,102 @@
 			min-height: auto;
 			display: flex;
 			flex-direction: column;
-			grid-template-columns: initial;
-			padding-top: 16px;
-			padding-bottom: 32px;
+			padding-top: 8px;
+			padding-bottom: 24px;
 		}
 		@media (max-width: $mobile-lg) {
 			padding-bottom: 40px;
+			row-gap: 12px;
+		}
+	}
+	&__colors,
+	&__sizes {
+		position: relative;
+		display: grid;
+		grid-template-columns: rem(68) 1fr;
+		gap: rem(24);
+		@media (max-width: $laptop-sm) {
+			grid-template-columns: auto;
 		}
 	}
 	&__inputs-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: rem(8);
-		@media (max-width: $laptop-lg) {
+		--height: #{rem(32)};
+		flex-grow: 1;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, var(--button-width));
+		gap: rem(4);
+		height: var(--height);
+		overflow: hidden;
+		._show & {
+			height: auto;
+		}
+		&._sizes {
+			--button-width: #{rem(56)};
+		}
+		&._colors {
+			--button-width: #{rem(32)};
+		}
+		@media (max-width: $laptop-sm) {
+			display: flex;
 			flex-wrap: nowrap;
-			overflow: auto;
-			&._colors {
-				width: 192px;
+			overflow: visible;
+			gap: 8px;
+		}
+	}
+	&__inputs-item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		&._show,
+		&._hide {
+			display: none;
+			._has-wrap & {
+				display: flex;
 			}
-			&._sizes {
-				width: 312px;
-			}
-			scrollbar-width: none;
-			@include scrollbar {
+		}
+		&._show {
+			grid-column: span 1 / -1;
+			grid-row: 1 / 2;
+			._show & {
 				display: none;
 			}
 		}
-		@media (max-width: $laptop-lg-2) {
-			&._colors {
-				width: 152px;
-			}
-			&._sizes {
-				width: 184px;
+		&._hide {
+			display: none;
+			grid-column: span 2 / -1;
+			grid-row: auto;
+			._show & {
+				display: flex;
 			}
 		}
 		@media (max-width: $laptop-sm) {
-			flex-wrap: nowrap;
-			overflow: auto;
-			padding-left: var(--container-padding);
-			padding-right: var(--container-padding);
-			margin-left: calc(var(--container-padding) * -1);
-			margin-right: calc(var(--container-padding) * -1);
-			&._colors {
-				width: auto;
+			&._show,
+			&._hide {
+				._has-wrap & {
+					display: none;
+				}
 			}
-			&._sizes {
-				width: auto;
+		}
+	}
+	&__inputs-btn {
+		align-items: center;
+		gap: rem(4);
+		padding-left: rem(11);
+		min-height: rem(31);
+		&._hide {
+			padding-left: 0;
+			flex-direction: row-reverse;
+		}
+		@media (max-width: $laptop-lg) {
+			&._show {
+				position: relative;
+				left: 4px;
 			}
 		}
 	}
 	&__colors {
 		@media (max-width: $laptop-sm) {
 			padding-bottom: 32px;
-			margin-bottom: 16px;
 			border-bottom: 1px solid var(--gray-light);
 		}
 		@media (max-width: $mobile-lg) {
@@ -410,6 +535,17 @@
 	}
 	&__inputs-wrap {
 		display: flex;
+		overflow: hidden;
+		gap: rem(4);
+		@media (max-width: $laptop-sm) {
+			overflow: auto;
+			padding-inline: var(--container-padding);
+			margin-inline: calc(var(--container-padding) * -1);
+			scrollbar-width: none;
+			@include scrollbar {
+				display: none;
+			}
+		}
 	}
 	&__inputs-next {
 		--size: #{rem(32)};
@@ -438,31 +574,49 @@
 		transform: rotate(180deg);
 	}
 	&__size-table {
+		@extend .animated;
 		@include reset-btn;
-		display: block;
-		padding-top: 2px;
-		padding-bottom: 1px;
-		border-bottom: 1px solid var(--blue-dark);
-		transition: border-color $default-transition-duration $default-transition-function;
+		place-self: end;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(8);
+		&._mobile {
+			display: none;
+		}
+		svg {
+			--size: #{rem(24)};
+			width: var(--size);
+			height: var(--size);
+		}
 		&:hover {
-			border-color: transparent;
+			opacity: 0.8;
+		}
+		@media (max-width: $laptop-lg) {
+			font-size: 12px;
+		}
+		@media (max-width: $laptop-sm) {
+			display: none;
+			&._mobile {
+				display: inline-flex;
+				position: absolute;
+				top: 6px;
+				right: 0;
+				line-height: 20px;
+				border-bottom: 1px solid var(--blue-dark);
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._mobile {
+				font-size: 10px;
+				line-height: 16px;
+			}
 		}
 	}
 	&__title-sm-wrap {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		column-gap: rem(16);
-		margin-bottom: rem(32);
-		@media (max-width: $laptop-lg) {
-			margin-bottom: 24px;
-		}
-		@media (max-width: $laptop-md) {
-			margin-bottom: 16px;
-		}
-		@media (max-width: $laptop-sm) {
-			margin-bottom: 24px;
-		}
+		padding-top: 0.45em;
 	}
 	&__title-sm {
 		display: flex;
@@ -491,13 +645,14 @@
 			display: block;
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: 104px;
+			margin-bottom: 110px;
 		}
 	}
 	&__counter {
 		display: inline-flex;
 		@media (max-width: $laptop-sm) {
 			min-width: 111px;
+			margin-top: rem(24);
 		}
 	}
 	&__block {
@@ -627,6 +782,7 @@
 		}
 	}
 	&__size-range {
+		grid-column: 1/-1;
 		width: 100%;
 		margin-top: rem(44);
 		@media (max-width: $laptop-sm) {

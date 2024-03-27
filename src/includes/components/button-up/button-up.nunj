@@ -1,0 +1,13 @@
+{% from "../button/button.nunj" import button %}
+
+{% macro buttonUp(props) %}
+	{% set cls = props.className or '' %}
+
+	{{ button({
+		className: cls + ' button-up',
+		attr: 'aria-label="Наверх" data-scroll-top-btn data-anchor-link',
+		href: '#',
+		icon: 'arrow-up',
+		iconData: 'width="24" height="24"'
+	}) }}
+{% endmacro %}

@@ -1,8 +1,10 @@
 import Popups from '../../assets/js/modules/Popups';
+import DiscountCard from '../discount-card/discount-card';
 
 const ClassName = {
 	TEL_CONFIRMED: '_tel_confirmed',
 };
+let animTO;
 
 class DiscountCreateForm {
 	constructor() {
@@ -18,6 +20,7 @@ class DiscountCreateForm {
 
 		this.submitCodeButton = this.container.querySelector('[data-submit-code]');
 		const submitPopupName = 'data-editing';
+		const isWallet = this.container.classList.contains('_wallet');
 
 		this.submitCodeButton &&
 			this.submitCodeButton.addEventListener('click', evt => {
@@ -32,6 +35,16 @@ class DiscountCreateForm {
 			const invalidInput = this.container.querySelector('.is-invalid');
 
 			if (!invalidInput) {
+				if (isWallet) {
+					DiscountCard.showAnim();
+					clearTimeout(animTO);
+					animTO = setTimeout(() => {
+						DiscountCard.hideAnim();
+						DiscountCard.showCardInfo();
+					}, 5000);
+
+					return;
+				}
 				Popups.open(submitPopupName);
 			} else {
 				this.container.querySelector('.is-invalid input').focus();

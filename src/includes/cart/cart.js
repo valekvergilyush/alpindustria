@@ -230,6 +230,7 @@ class Cart {
 	}
 	onLegalCheckboxChange(e) {
 		const legalBlock = e.target.parentNode.parentNode.querySelector('[data-legal-block]');
+		console.log(e.target);
 		if (legalBlock) {
 			legalBlock.classList.toggle(ClassName.HIDDEN);
 		}

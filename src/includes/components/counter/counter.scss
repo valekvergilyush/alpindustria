@@ -8,12 +8,16 @@
 	justify-content: space-between;
 	column-gap: rem(4);
 	min-width: rem(135);
+	@media (max-width: $laptop-lg) {
+		--font-size: 28px;
+		min-width: 126px;
+	}
 	@media (max-width: $laptop-sm) {
 		--font-size: 24px;
 	}
 	@media (max-width: $mobile-lg) {
-		--size: 25px;
-		--icon-size: 16px;
+		--size: 32px;
+		--icon-size: 24px;
 	}
 	&._readonly {
 		min-width: auto;

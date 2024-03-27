@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "@fancyapps/ui": "5.0.33",
     "body-scroll-lock": "^4.0.0-beta.0",
     "core-js": "^3.15.2",
     "custom-select": "^1.1.15",
@@ -87,6 +88,7 @@
     "global": "^4.4.0",
     "gsap": "^3.7.0",
     "gulp-dart-sass": "^1.0.2",
+    "imask": "^7.5.0",
     "intl-tel-input": "^17.0.19",
     "lottie-web": "^5.9.6",
     "nouislider": "^15.6.1",

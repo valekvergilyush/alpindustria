@@ -1,6 +1,6 @@
 {% macro input(props) %}
 	<div
-		class="{% if props.className %}{{ props.className }} {% endif %}input"
+		class="{% if props.className %}{{ props.className }} {% endif %}input{% if props.readonly %} _readonly{% endif %}"
 		{% if props.attr %} {{ props.attr }}{% endif %}>
 		<input
 			class="input__input"
@@ -10,6 +10,7 @@
 			{% if props.value %}value="{{ props.value }}"{% endif %}
 			placeholder=""
 			{% if props.inputAttr %}{{ props.inputAttr }}{% endif %}
+			{% if props.readonly %} readonly{% endif %}
 		>
 		<label class="input__label{% if props.labelClassName %} {{ props.labelClassName }}{% endif %}" for="{{ props.id }}">
 			{% if props.label %}{{ props.label }}{% else %}{{ props.name }}{% endif %}

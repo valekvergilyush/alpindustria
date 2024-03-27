@@ -1,0 +1,131 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/add-to-cart/add-to-cart.nunj" import addToCart %}
+
+<form class="discount-create-form _wallet" data-discount-create-form>
+	<div class="discount-create-form__inputs">
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-name',
+			className: 'discount-create-form__input _gray',
+			name: 'Имя',
+			label: 'Имя*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-surname',
+			className: 'discount-create-form__input _gray',
+			name: 'Фамилия',
+			label: 'Фамилия*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-patronymic',
+			className: 'discount-create-form__input _gray',
+			name: 'Отчество',
+			label: 'Отчество*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"'
+		}) }}
+		{{ input({
+			type: 'email',
+			id: 'discount-create-form-email',
+			className: 'discount-create-form__input _gray',
+			name: 'Почта',
+			label: 'Почта*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="email"'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'discount-create-form-birthday',
+			className: 'discount-create-form__input _gray',
+			name: 'Дата рождения',
+			label: 'Дата рождения*',
+			inputAttr: 'required readonly data-datepicker',
+			attr: 'data-validate-type="text"'
+		}) }}
+		<div class="discount-create-form__radios">
+			{{ radio({
+				id: 'discount-create-form-radio-man',
+				className: 'discount-create-form__radio',
+				name: 'discount-create-form-gender',
+				value: 'man',
+				text: 'муж.',
+				checked: true
+			}) }}
+			{{ radio({
+				id: 'discount-create-form-radio-woman',
+				className: 'discount-create-form__radio',
+				name: 'discount-create-form-gender',
+				value: 'woman',
+				text: 'жен.'
+			}) }}
+		</div>
+		<div class="discount-create-form__tel">
+			<div>
+				{{ input({
+					type: 'text',
+					id: 'discount-create-form-tel',
+					className: 'discount-create-form__input _gray _tel',
+					name: 'Телефон',
+					label: 'Телефон*',
+					attr: 'data-validate-type="phone"',
+					inputAttr: 'required inputmode="tel"'
+				}) }}
+				{{ button({
+					type: 'button',
+					text: 'Подтвердить по SMS',
+					icon: 'promo-arrow',
+					iconData: 'width="16" height="16"',
+					className: 'discount-create-form__send-sms _gray _arrow-xs p4'
+				}) }}
+			</div>
+			<div class="discount-create-form__sms-code">
+				{{ input({
+					type: 'text',
+					id: 'discount-create-form-tel-code',
+					className: 'discount-create-form__input _gray',
+					name: 'Код из СМС',
+					inputAttr: 'required inputmode="numeric"'
+				}) }}
+			</div>
+		</div>
+	</div>
+	<div class="discount-create-form__checkboxes">
+		<p class="p3 c-gray-dark">Хочу узнавать о&nbsp;закрытых акциях, распродажах, а&nbsp;также новых полезных статьях</p>
+		{{ checkbox({
+			className: 'discount-create-form__checkbox',
+			id: 'discount-create-form-checkbox-sms',
+			name: 'sms-info',
+			text: 'по SMS (1-2 раза в месяц)'
+		}) }}
+		{{ checkbox({
+			className: 'discount-create-form__checkbox',
+			id: 'discount-create-form-checkbox-email',
+			name: 'email-info',
+			text: 'по email (1-2 раза в неделю)'
+		}) }}
+		{{ checkbox({
+			className: 'discount-create-form__checkbox _privacy',
+			id: 'discount-create-form-checkbox-privacy',
+			name: 'privacy-agreement',
+			inputAttr: 'required',
+			attr: 'data-validate-type="checkbox"',
+			text: 'Даю согласие на обработку и использование персональных данных на все время действия карты (ФЗ РФ от 27 июля 2006 г. № 152-ФЗ “О персональных данных”).<br>Я подтверждаю, что с условиями оферты ознакомлен (-а)'
+		}) }}
+	</div>
+	{{ addToCart({
+		className: 'discount-create-form__submit',
+		link: {
+			text: 'Оформить',
+			attributes: 'type="submit"'
+		}
+	}) }}
+</form>

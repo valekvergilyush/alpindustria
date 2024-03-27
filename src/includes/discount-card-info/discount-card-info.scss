@@ -1,37 +1,102 @@
 .discount-card-info {
+	$this: &;
 	--min-height: #{rem(704)};
 	--padding-top: #{rem(72)};
 	display: grid;
 	grid-template-columns: 584fr 856fr;
 	min-height: var(--min-height);
+	&._wallet {
+		--padding-top: #{rem(40)};
+	}
 	@media (max-width: $laptop-md) {
 		--min-height: 600px;
 		--padding-top: var(--container-padding);
 		--min-height: none;
 		grid-template-columns: 1fr;
 	}
+	@media (max-width: $laptop-sm) {
+		&._wallet {
+			--padding-top: 48px;
+		}
+	}
+	@media (max-width: $mobile-lg) {
+		&._wallet {
+			--padding-top: 32px;
+		}
+	}
 	&__content {
 		display: flex;
 		flex-direction: column;
 		padding: var(--padding-top) var(--container-padding) var(--container-padding);
+		#{$this}._wallet & {
+			padding-bottom: rem(66);
+		}
 		@media (max-width: $laptop-md) {
 			order: 1;
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				position: relative;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				align-items: start;
+				.h5 {
+					font-size: 44px;
+				}
+				.p3 {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				grid-template-columns: auto;
+				.h5 {
+					font-size: 38px;
+				}
+				.p3 {
+					font-size: 12px;
+				}
+			}
 		}
 	}
 	&__top {
 		display: grid;
 		gap: rem(48);
 		margin-bottom: rem(48);
+		#{$this}._wallet & {
+			gap: rem(24);
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				gap: rem(32);
+				margin-bottom: 122px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			gap: 24px;
+			#{$this}._wallet & {
+				gap: 24px;
+				margin-bottom: 28px;
+			}
 		}
 	}
 	&__top-block {
 		display: grid;
 		gap: rem(8);
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				gap: 14px;
+			}
+		}
 	}
 	&__bottom {
 		margin-top: auto;
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				margin-top: 0;
+			}
+		}
 	}
 	&__profile {
 		display: grid;
@@ -42,14 +107,36 @@
 				text-decoration: underline;
 			}
 		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 16px !important;
+				gap: 24px;
+			}
+		}
 	}
 	&__btns {
 		display: grid;
 		justify-items: flex-start;
 		gap: rem(32);
 		margin-top: rem(64);
+		#{$this}._wallet & {
+			justify-items: stretch;
+			margin-top: rem(40);
+		}
+		@media (max-width: $laptop-sm) {
+			#{$this}._wallet & {
+				position: absolute;
+				left: var(--container-padding);
+				right: var(--container-padding);
+				bottom: 68px;
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			margin-top: 24px;
+			#{$this}._wallet & {
+				position: static;
+				margin-top: 38px;
+			}
 		}
 	}
 	&__unlink {
@@ -78,6 +165,10 @@
 		@media (max-width: $laptop-md) {
 			min-height: 400px;
 		}
+		@media (max-width: $mobile-lg) {
+			min-height: auto;
+			aspect-ratio: 375/320;
+		}
 	}
 	&__bg {
 		position: absolute;
@@ -100,10 +191,26 @@
 			left: var(--container-padding);
 			width: rem(69);
 			height: rem(38);
+			#{$this}._wallet & {
+				top: 38px;
+				left: 46px;
+				width: 96px;
+				height: auto;
+			}
 		}
 		svg {
 			width: 100%;
 			height: 100%;
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				top: 28px;
+				left: var(--container-padding);
+				width: 56px;
+				svg {
+					display: block;
+				}
+			}
 		}
 	}
 	&__img-content {
@@ -114,6 +221,12 @@
 	}
 	&__img-subtitle {
 		margin-bottom: rem(8);
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
 	}
 	&._profile {
 		--padding-top: var(--container-padding);
@@ -122,6 +235,38 @@
 		@media (max-width: $laptop-md) {
 			grid-template-columns: 1fr;
 			--min-height: 600px;
+		}
+	}
+	&__qr-code {
+		margin: auto;
+		@media (max-width: $laptop-sm) {
+			margin-top: -14px;
+		}
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				display: none;
+			}
+		}
+	}
+	&__qr-code ~ &__img-content {
+		padding-top: rem(11);
+		margin-top: 0;
+		padding-inline: rem(64);
+		@media (max-width: $laptop-sm) {
+			padding: 32px;
+			padding-top: 0;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: auto;
+			padding-inline: var(--container-padding);
+			padding-bottom: 24px;
+		}
+	}
+	&__img-title {
+		@media (max-width: $mobile-lg) {
+			#{$this}._wallet & {
+				font-size: 38px;
+			}
 		}
 	}
 }

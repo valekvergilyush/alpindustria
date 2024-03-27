@@ -1,0 +1,12 @@
+.page {
+	$this: &;
+	&._wallet {
+		#{$this}__main {
+			display: flex;
+			flex-direction: column;
+		}
+		#{$this}__discount-card {
+			flex-grow: 1;
+		}
+	}
+}

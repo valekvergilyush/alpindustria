@@ -8,5 +8,7 @@
 	{% block mainContent %}
 	{% endblock %}
 
-	{% include "../includes/footer/footer.nunj" %}
+	{% if not noFooter %}
+		{% include "../includes/footer/footer.nunj" %}
+	{% endif %}
 {% endblock %}

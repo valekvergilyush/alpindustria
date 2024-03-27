@@ -50,11 +50,12 @@
 	<form class="delivery-auth__form">
 		<div class="delivery-auth__fields _tel">
 			{{ input({
-				type: 'tel',
+				type: 'text',
 				id: 'delivery-auth-services-tel',
 				className: 'delivery-auth__input _tel _gray',
 				name: 'Телефон',
-				attr: 'required data-validate-type="phone"'
+				attr: 'required data-validate-type="phone"',
+				inputAttr: 'inputmode="tel"'
 			}) }}
 			{{ button({
 				type: 'submit',

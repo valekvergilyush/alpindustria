@@ -18,18 +18,17 @@ class ProductCard {
 		}
 
 		this.mqLaptop = window.matchMedia(`(max-width: ${LAPTOP_BREAKPOINT}px)`);
-		this.propsOpeners = document.querySelectorAll('[data-product-card-props-opener]');
+		this.propsOpeners = document.querySelectorAll('[data-product-card]');
 		this.sliderOffsetGap = 16;
 
 		this.onOpenerClick = this.onOpenerClick.bind(this);
 
 		this.propsOpeners.forEach(opener => {
-			opener.addEventListener('mouseenter', evt => {
-				const card = evt.target.closest('[data-product-card]');
-				const form = card.querySelector('[data-product-card-props]');
+			opener.addEventListener('mouseenter', () => {
+				const card = opener;
 
 				card.classList.add(ClassName.PROPS_OPENED);
-				form.addEventListener(
+				card.addEventListener(
 					'mouseleave',
 					() => {
 						card.classList.remove(ClassName.PROPS_OPENED);

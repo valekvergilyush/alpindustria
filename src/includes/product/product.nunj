@@ -11,6 +11,8 @@
 	'/assets/images/catalog/item-2',
 	'/assets/images/catalog/item-3',
 	'/assets/images/catalog/item-4',
+	'/assets/images/catalog/item-1',
+	'/assets/images/catalog/item-2',
 	'/assets/images/catalog/item-3',
 	'/assets/images/catalog/item-4'
 ] %}
@@ -46,12 +48,7 @@
 ] %}
 {% set colorButtons = [
 	{ name: 'Тёмно-зелёный', color: '#03836E', selected: true },
-	{ name: 'Красный', color: '#C9364C' },
-	{ name: 'Тёмно-фиолетовый', color: '#6F2876', disabled: true },
-	{ name: 'Тёмно-синий', color: '#324481' },
-	{ name: 'Белый', color: '#FEFEFE' },
-	{ name: 'Тёмно-серый', color: '#342C25' },
-	{ name: 'Светло-зелёный', color: '#0B994B' }
+	{ name: 'Красный', color: '#C9364C' }
 ] %}
 {% set sizeButtons = [
 	{ value: '37' },
@@ -62,7 +59,10 @@
 	{ value: '42' },
 	{ value: '43' },
 	{ value: '44' },
-	{ value: '45' }
+	{ value: '45' },
+	{ value: '46' },
+	{ value: '47' },
+	{ value: '48' }
 ] %}
 
 <section class="product">
@@ -73,19 +73,11 @@
 					<h1 class="product__title h5 ttu">Куртка The North Face M Dryzzle All Weather Jkt</h1>
 					<div class="product__main-info">
 						{{ button({
-							className: 'product__brand _arrow-m p2',
+							className: 'product__brand _arrow-m p1',
 							text: 'The North Face',
 							href: '#',
 							icon: 'promo-arrow'
 						}) }}
-						<span href="#" class="product__rating">
-							{{ icon({
-								iconName: 'star',
-								className: 'product__rating-icon',
-								attr: 'width="32" height="32" viewBox="0 0 26.3 24.5"'
-							}) }}
-							4.9
-						</span>
 						<div class="product__price-wrap">
 							<p class="product__old-price">45 780 руб.</p>
 							<p class="product__price s1">33 150 руб.</p>
@@ -94,24 +86,37 @@
 							className: 'product__favorite _wishlist _wishlist-sm',
 							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist"'
 						}) }}
-					</div>
-					<div class="product__badges">
-						<div class="product__badges-left">
-							{% include "../product-badge/exclusive.nunj" %}
+						<div class="product__badges">
 							{% include "../product-badge/new.nunj" %}
+							{% include "../product-badge/discount.nunj" %}
 							{% include "../product-badge/long-delivery.nunj" %}
+							{% include "../product-badge/dry-feature.nunj" %}
 						</div>
-						{% include "../product-badge/dry-feature.nunj" %}
 					</div>
+					<p class="product__code p4">Код товара для заказа по&nbsp;телефону: 402317</p>
+					<span href="#" class="product__rating">
+						{{ icon({
+							iconName: 'star',
+							className: 'product__rating-icon',
+							attr: 'width="32" height="32" viewBox="0 0 26.3 24.5"'
+						}) }}
+						4.9
+					</span>
 					<div class="product__shops">
-						<p class="product__code p4">Код товара для заказа по&nbsp;телефону: 402317</p>
 						{{ button({
-							className: 'product__available _arrow-s p4',
+							className: 'product__available _arrow-s p3',
 							text: 'В наличии в 2 магазинах',
 							icon: 'promo-arrow',
 							attr: 'data-popup-opener="availability"'
 						}) }}
 					</div>
+					<button type="button" class="product__size-table p3" data-popup-opener="sizes">
+						Таблица размеров
+						{{ icon({
+							iconName: 'ruler',
+							attr: 'width="24" height="24"'
+						}) }}
+					</button>
 				</div>
 				<div class="product__colors-sizes">
 					<div class="product__colors">
@@ -119,7 +124,7 @@
 							<p class="product__title-sm ttu">Цвет</p>
 						</div>
 						<div class="product__inputs-wrap">
-							<ul class="product__inputs-list _colors" data-product-colors data-slider-group="4">
+							<ul class="product__inputs-list _colors" data-product-list="colors">
 								{% for btn in colorButtons %}
 									<li class="product__inputs-item">
 										<label class="product__color">
@@ -128,23 +133,33 @@
 										</label>
 									</li>
 								{% endfor %}
+									<li class="product__inputs-item _hide">
+										{{ button({
+											className: 'product__inputs-btn _hide p4',
+											text: 'Скрыть',
+											icon: 'chevron-left',
+											iconData: 'width="16" height="16"',
+											attr: 'data-hide="colors"'
+										}) }}
+									</li>
+									<li class="product__inputs-item _show">
+										{{ button({
+											className: 'product__inputs-btn _show p4',
+											text: 'Еще',
+											icon: 'chevron-right',
+											iconData: 'width="16" height="16"',
+											attr: 'data-show="colors"'
+										}) }}
+									</li>
 							</ul>
-							<button type="button" aria-label="Следующие цвета" class="product__inputs-next" data-product-colors-next>
-								{{ icon({
-									iconName: 'arrow-left',
-									className: 'product__inputs-next-icon',
-									attr: 'width="24" height="24"'
-								}) }}
-							</button>
 						</div>
 					</div>
 					<div class="product__sizes">
 						<div class="product__title-sm-wrap">
 							<p class="product__title-sm ttu">Размер</p>
-							<button type="button" class="product__size-table p4" data-popup-opener="sizes">Таблица размеров</button>
 						</div>
 						<div class="product__inputs-wrap">
-							<ul class="product__inputs-list _sizes" data-product-sizes  data-slider-group="3">
+							<ul class="product__inputs-list _sizes" data-product-list="sizes">
 								{% for btn in sizeButtons %}
 									<li class="product__inputs-item">
 										<label class="product__size">
@@ -153,15 +168,29 @@
 										</label>
 									</li>
 								{% endfor %}
+								<li class="product__inputs-item _hide">
+									{{ button({
+										className: 'product__inputs-btn _hide p4',
+										text: 'Скрыть',
+										icon: 'chevron-left',
+										iconData: 'width="16" height="16"',
+										attr: 'data-hide="sizes"'
+									}) }}
+								</li>
+								<li class="product__inputs-item _show">
+									{{ button({
+										className: 'product__inputs-btn _show p4',
+										text: 'Еще',
+										icon: 'chevron-right',
+										iconData: 'width="16" height="16"',
+										attr: 'data-show="sizes"'
+									}) }}
+								</li>
 							</ul>
-							<button type="button" aria-label="Следующие цвета" class="product__inputs-next" data-product-sizes-next>
-								{{ icon({
-									iconName: 'arrow-left',
-									className: 'product__inputs-next-icon',
-									attr: 'width="24" height="24"'
-								}) }}
-							</button>
 						</div>
+						<button type="button" class="product__size-table _mobile p3" data-popup-opener="sizes">
+							Таблица размеров
+						</button>
 					</div>
 				</div>
 			</div>
@@ -230,7 +259,7 @@
 			}) }}
 		</div>
 		<div class="product__img">
-			<div class="product__img-wrap" data-product-img>
+			<div class="product__img-wrap" >
 				{{ productSlider({
 					className: 'product__slider',
 					imgsList: productSliderImgs,

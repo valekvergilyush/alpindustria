@@ -1,6 +1,7 @@
 // ======= GLOBAL =======
 @import 'constants';
 @import 'lib/base';
+@import 'lib/fancybox/index';
 @import 'lib/nouislider';
 @import 'lib/flickity';
 @import 'lib/custom-select';
@@ -66,6 +67,7 @@
 @import '../../includes/components/error-section/error-section';
 @import '../../includes/components/tooltip/tooltip';
 @import '../../includes/components/video/video';
+@import '../../includes/components/button-up/button-up';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -209,6 +211,8 @@
 @import '../../includes/discount-card-info/discount-card-info';
 @import '../../includes/unsubscribe-form/unsubscribe-form';
 @import '../../includes/activities/activities';
+@import '../../includes/discount-card/add-card-form';
+@import '../../includes/discount-card/discount-card-qr';
 
 // ======= PAGES =======
 @import 'pages/index';
@@ -218,3 +222,4 @@
 @import 'pages/sticky-sections';
 @import 'pages/about';
 @import 'pages/profile';
+@import 'pages/wallet';

@@ -1,0 +1,29 @@
+.discount-card-qr {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	width: min-content;
+	gap: rem(13);
+	padding: rem(35);
+	color: var(--gray-dark);
+	background-color: var(--white);
+	@media (max-width: $laptop-sm) {
+		padding: 16px;
+		gap: 5px;
+	}
+	&__img {
+		--size: #{rem(256)};
+		width: var(--size);
+		height: var(--size);
+		@media (max-width: $laptop-sm) {
+			--size: 194px;
+		}
+	}
+	&__text {
+		@media (max-width: $laptop-sm) {
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+}

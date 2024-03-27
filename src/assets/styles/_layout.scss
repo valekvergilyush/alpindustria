@@ -60,6 +60,14 @@
 			transition: transform $default-transition-duration $default-transition-function;
 		}
 	}
+	&__button-up.button {
+		position: fixed;
+		z-index: 2;
+		bottom: rem(24);
+		right: rem(24);
+		visibility: hidden;
+		transform: translateY(20px);
+	}
 	&._menu-opened {
 		#{$this}__menu {
 			z-index: 20;

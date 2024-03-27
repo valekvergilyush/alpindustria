@@ -1,0 +1,31 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% from "../../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+{% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+
+{% block title %}Восхождение на эльбрус | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Online', href: '/catalog'},
+		{ text: 'Туристическое  снаряжение', href: '/catalog'},
+		{ text: 'Восхождение на эльбрус 2022', href: '/catalog'}
+	],
+	link: {
+		href: '/catalog',
+		text: 'В каталог'
+	}
+} %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{% include "../../includes/product/product-no-content.nunj" %}
+		{{ ticker({
+			className: 'page__ticker _white-bg',
+			list: [{ icon: 'ticker-discount', iconData: 'width="64" height="64"', text: 'Скидка 30% для постоянных клиентов' }, { icon: 'ticker-mountain', iconData: 'width="64" height="64"', text: 'Горная школа' }, { icon: 'ticker-delivery', iconData: 'width="64" height="64"', text: 'Доставка по России и в Беларусь' }, { icon: 'ticker-logo-year', iconData: 'width="64" height="64"', text: 'Работаем с 1988 года' }, { icon: 'ticker-official', iconData: 'width="64" height="64"', text: 'Только официальные поставки' }]
+		}) }}
+		{% include "../../includes/banner-section/banner-section.nunj" %}
+		{% include "../../includes/catalog-accordion/catalog-accordion-product.nunj" %}
+	</main>
+{% endblock %}

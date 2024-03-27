@@ -64,12 +64,12 @@
 			attr: 'data-validate-type="email"'
 		}) }}
 		{{ input({
-			type: 'tel',
+			type: 'text',
 			id: 'review-author-tel',
 			className: 'review-form__input',
 			name: 'Телефон',
 			label: 'Телефон*',
-			inputAttr: 'required',
+			inputAttr: 'required inputmode="tel"',
 			attr: 'data-validate-type="phone"'
 		}) }}
 		{{ textarea({

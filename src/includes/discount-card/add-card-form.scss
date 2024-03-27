@@ -1,0 +1,114 @@
+.add-card-form {
+	$this: &;
+	display: flex;
+	flex-direction: column;
+	> * {
+		flex-grow: 1;
+	}
+
+	&__button {
+		gap: rem(18);
+		margin-bottom: rem(-3);
+		&._mobile {
+			display: none;
+		}
+		@media (max-width: $laptop-sm) {
+			display: none;
+			&._mobile {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				margin-top: 130px;
+				margin-inline: calc(0px - var(--container-padding));
+				padding-inline: calc(var(--container-padding) * 2);
+				min-height: 136px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 8px;
+			margin-bottom: 0;
+			&._mobile {
+				min-height: 72px;
+				padding-top: 37px;
+				padding-inline: var(--container-padding);
+				padding-bottom: 31px;
+			}
+		}
+	}
+	&__tel-wrapper {
+		#{$this}._sms & {
+			display: none;
+		}
+	}
+	&__tel {
+		position: relative;
+		@media (max-width: $laptop-sm) {
+			padding-bottom: 170px;
+			height: 100%;
+			box-sizing: border-box;
+			align-items: start;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 10px;
+		}
+	}
+	&__sms {
+		position: relative;
+		margin-top: rem(4);
+		#{$this}._sms & {
+			display: grid;
+		}
+		@media (max-width: $laptop-sm) {
+			margin-top: 20px;
+			padding-bottom: 236px;
+			align-items: start;
+		}
+		@media (max-width: $mobile-lg) {
+			padding-bottom: 146px;
+		}
+	}
+	&__sms-submit {
+		gap: rem(20);
+		margin-right: rem(4);
+		&._mobile {
+			display: none;
+		}
+		@media (max-width: $laptop-sm) {
+			display: none;
+			&._mobile {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				margin-top: 130px;
+				margin-inline: calc(0px - var(--container-padding));
+				padding-inline: calc(var(--container-padding) * 2);
+				min-height: 136px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			&._mobile {
+				min-height: 72px;
+				padding-top: 30px;
+				padding-inline: var(--container-padding);
+				padding-bottom: 20px;
+			}
+		}
+	}
+	&__sms-send {
+		@media (max-width: $mobile-lg) {
+			font-size: 12px;
+		}
+	}
+	&__back {
+		@media (max-width: $laptop-sm) {
+			margin-top: 30px;
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: 24px;
+		}
+	}
+}
