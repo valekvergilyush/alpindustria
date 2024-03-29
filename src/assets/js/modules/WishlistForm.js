@@ -1,43 +1,27 @@
 class WishlistForm {
 	constructor() {
-		this.form = document.querySelector('[data-wishlist-form]');
-		this.opener = document.querySelector('[data-wishlist-show]');
-		this.cancelBtn = document.querySelector('[data-wishlist-cancel]');
-		this.input = document.querySelector('[data-wishlist-input]');
-		this.hideClass = '_hide';
 		this.init();
 	}
 	init() {
-		if (!this.form || !this.opener) {
+		this.container = document.querySelector('[data-wishlist-form]');
+		this.popupOpeners = document.querySelectorAll('[data-popup-opener="wishlist"]');
+
+		if (!this.container || this.popupOpeners.length === 0) {
 			return;
 		}
 
-		this.opener.addEventListener('click', () => {
-			this.hideOpener();
-			this.showForm();
-			this.input.focus();
+		const nameInput = this.container.querySelector('[data-wishlist-input]');
+
+		this.popupOpeners.forEach(opener => {
+			opener.addEventListener('click', evt => {
+				evt.preventDefault();
+
+				opener.TO && clearTimeout(opener.TO);
+				opener.TO = setTimeout(() => {
+					nameInput.focus();
+				}, 300);
+			});
 		});
-		this.cancelBtn.addEventListener('click', () => {
-			this.hideForm();
-			this.showOpener();
-			this.input.value = '';
-		});
-	}
-
-	showOpener() {
-		this.opener.classList.remove(this.hideClass);
-	}
-
-	hideOpener() {
-		this.opener.classList.add(this.hideClass);
-	}
-
-	showForm() {
-		this.form.classList.remove(this.hideClass);
-	}
-
-	hideForm() {
-		this.form.classList.add(this.hideClass);
 	}
 }
 
