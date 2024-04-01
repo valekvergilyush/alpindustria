@@ -45,6 +45,7 @@
 		&[data-popup-wrapper='data-editing'],
 		&[data-popup-wrapper='offer'],
 		&[data-popup-wrapper='offer-2'],
+		&[data-popup-wrapper='wishlist-delete'],
 		&[data-popup-wrapper='sizes'] {
 			width: 50%;
 		}
@@ -118,6 +119,13 @@
 		&[data-popup-wrapper='video'] {
 			width: 100%;
 			margin-top: rem(32);
+		}
+		&[data-popup-wrapper='wishlist-delete'] {
+			@media (max-width: $tablet) {
+				width: 100%;
+				margin-top: auto;
+				min-height: min-content;
+			}
 		}
 		&[data-popup-wrapper='cart'] {
 			#{$this}__popup {
@@ -286,6 +294,10 @@
 			@media (max-width: $tablet) {
 				min-height: auto;
 			}
+		}
+		&[data-popup='wishlist-delete'] {
+			display: grid;
+			place-items: center;
 		}
 	}
 	&__close-button {

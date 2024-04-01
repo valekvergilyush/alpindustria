@@ -1,0 +1,1 @@
+{% include '../../wishlist-delete/wishlist-delete.nunj' %}

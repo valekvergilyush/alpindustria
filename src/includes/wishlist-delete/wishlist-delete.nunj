@@ -1,0 +1,24 @@
+{% from "../components/button/button.nunj" import button %}
+
+<div class="wishlist-delete">
+	<p class="wishlist-delete__title h5 ttu">Удалить вишлист?</p>
+	<div class="wishlist-delete__text p2">
+		<p>Вишлист &laquo;Восхождение на&nbsp;эльбрус 2022&raquo; будет удален без возможности восстановления.</p>
+	</div>
+	<div class="wishlist-delete__controls c-blue-dark">
+		{{ button({
+			className: 'h7 ttu _arrow-s wishlist-delete__del',
+			text: 'Удалить',
+			icon: 'close-popup',
+			type: 'submit',
+			iconData: 'width="32" height="32" viewBox="0 0 32 32"'
+		}) }}
+		{{ button({
+			className: 'h7 ttu _arrow-s',
+			text: 'Отменить',
+			icon: 'promo-arrow',
+			attr: 'data-popup-closer',
+			iconData: 'width="24" height="24" viewBox="0 0 24 24"'
+		}) }}
+	</div>
+</div>

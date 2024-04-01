@@ -104,6 +104,10 @@
 		{
 			"animation": "RTL",
 			"name": "unsubscribe-form"
+		},
+		{
+			"animation": "RTL",
+			"name": "wishlist-delete"
 		}
 	],
 	"siteLang": "ru",
