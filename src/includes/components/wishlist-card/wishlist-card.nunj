@@ -13,9 +13,9 @@
 		{% else %}
 				<div class="wishlist-card__img-wrap">
 					{{ icon({
-						iconName: 'logo-short',
+						iconName: 'wishlist-empty',
 						className: 'wishlist-card__img _empty',
-						attr: 'width="356" height="415"'
+						attr: 'width="515" height="270"'
 					}) }}
 				</div>
 		{% endif %}

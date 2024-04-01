@@ -1,0 +1,26 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<div class="new-wishlist" data-validate>
+	<form class="new-wishlist__form">
+		{{ input({
+			type: 'text',
+			id: 'wishlist-name',
+			className: 'whishlist-popup__input _edit',
+			name: 'Название',
+			inputAttr: 'data-wishlist-input maxlength="25"',
+			attr: 'data-validate-type="text" ',
+			wordCounter: 25
+		}) }}
+		<div class="whishlist-popup__form-btns _edit">
+			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
+			{{ button({
+				className: 'h7 ttu _arrow-s whishlist-popup__submit',
+				text: 'Создать',
+				icon: 'promo-arrow',
+				type: 'submit',
+				iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+			}) }}
+		</div>
+	</form>
+</div>

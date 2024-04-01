@@ -14,7 +14,30 @@
 		price: '33 150 ₽',
 		srcImg: '/assets/images/cart/item-2.png',
 		srcsetImg: '/assets/images/cart/item-2@2x.png 2x',
+		btns: true,
+		longDelivery: true
+	},
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-3.png',
+		srcsetImg: '/assets/images/cart/item-3@2x.png 2x',
 		btns: true
+	},
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-1.png',
+		srcsetImg: '/assets/images/cart/item-1@2x.png 2x',
+		btns: true
+	},
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-2.png',
+		srcsetImg: '/assets/images/cart/item-2@2x.png 2x',
+		btns: true,
+		longDelivery: true
 	},
 	{
 		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
@@ -28,30 +51,31 @@
 <div class="wishlist-lists">
 	<div class="container">
 		<div class="wishlist-lists__wrap">
+			<ul class="wishlist-lists__filter">
+				<li>
+					{{ button({
+						className: '_quick-filter _active h7 ttu',
+						text: 'Все занятия'
+					}) }}
+				</li>
+				<li>
+					{{ button({
+						className: '_quick-filter h7 ttu',
+						text: 'Товары в наличии'
+					}) }}
+				</li>
+				<li>
+					{{ button({
+						className: '_quick-filter h7 ttu',
+						text: 'Купленные товары'
+					}) }}
+				</li>
+			</ul>
 			<div class="wishlist-lists__block">
 				<div class="wishlist-lists__top">
 					<div class="wishlist-lists__text">
 						<p class="p3 wishlist-lists__small">Всего:</p>
 						<p class="s2 wishlist-lists__number">16 товаров</p>
-					</div>
-					{{ button({
-						className: 'wishlist-lists__add h7 ttu',
-						icon: 'cart',
-						text: 'добавить все<span class="desktop"> в корзину</span>',
-						iconData: 'width="36" height="36" viewBox="0 0 36 36"',
-						attr: 'data-notification-open="cart"'
-					}) }}
-				</div>
-				<ul class="wishlist-lists__list">
-					{% for item in cartList %}
-						<li class="wishlist-lists__item">{{ cartItem(item) }}</li>
-					{% endfor %}
-				</ul>
-			</div>
-			<div class="wishlist-lists__block _desktop">
-				<div class="wishlist-lists__top">
-					<div class="wishlist-lists__text">
-					<p class="p3 wishlist-lists__small">Купленные товары:</p>
 					</div>
 				</div>
 				<ul class="wishlist-lists__list">

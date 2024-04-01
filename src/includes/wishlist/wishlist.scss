@@ -12,6 +12,9 @@
 	&__input {
 		flex-direction: column;
 		margin-bottom: rem(40);
+		@media (max-width: $mobile-lg) {
+			--height: 50px;
+		}
 	}
 	&__form {
 		@media (max-width: $laptop-md) {
@@ -22,6 +25,10 @@
 		display: flex;
 		justify-content: space-between;
 		gap: rem(16);
+		&._edit {
+			gap: rem(32);
+			justify-content: flex-end;
+		}
 	}
 	&__cancel {
 		@extend .animated;

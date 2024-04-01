@@ -19,6 +19,12 @@
 					{{ counter({ number: 1, className: 'cart-item__counter _readonly' }) }}
 				</div>
 			{% endif %}
+
+			{% if props.longDelivery %}
+			<ul class="cart-item__badges">
+				<li>{% include "../../product-badge/long-delivery.nunj" %}</li>
+			</ul>
+			{% endif %}
 		</div>
 		<div class="cart-item__img-wrapper">
 			{% if props.srcImg %}

@@ -1,4 +1,6 @@
 .title-block {
+	$this: &;
+
 	padding-top: rem(29);
 	padding-bottom: rem(67);
 	@media (max-width: $laptop-lg) {
@@ -31,14 +33,24 @@
 			line-height: 42px;
 		}
 	}
-	&__links {
+	&__links,
+	&__controls {
 		display: flex;
-		column-gap: rem(16);
+		flex-wrap: wrap;
+		gap: rem(16);
 		@media (max-width: $laptop-sm) {
-			column-gap: 8px;
+			gap: 8px;
 		}
 		@media (max-width: $mobile-lg) {
-			column-gap: 12px;
+			gap: 12px;
+		}
+	}
+	&__controls {
+		flex-grow: 1;
+		justify-content: flex-end;
+		@media (max-width: $mobile-md) {
+			width: 100%;
+			justify-content: flex-start;
 		}
 	}
 	&__link {
@@ -85,17 +97,25 @@
 				line-height: 24px;
 			}
 		}
-		&._edit {
-			margin-left: auto;
-		}
 		&._delete {
 			margin-left: 8px;
 		}
 		&._edit,
 		&._delete {
 			@media (max-width: $mobile-lg) {
-				display: none;
+				// display: none;
 			}
+		}
+	}
+	&__wrap {
+		#{$this}._edit & {
+			display: none;
+		}
+	}
+	&__form-wrap {
+		display: none;
+		#{$this}._edit & {
+			display: block;
 		}
 	}
 }

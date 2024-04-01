@@ -17,10 +17,9 @@
 		display: flex;
 		flex-direction: column;
 		max-width: rem(1316);
-		row-gap: rem(120);
+		row-gap: rem(40);
 		@media (max-width: $laptop-lg) {
 			max-width: none;
-			row-gap: 80px;
 		}
 	}
 	&__top {
@@ -95,6 +94,11 @@
 				--size: 32px;
 			}
 		}
+	}
+	&__filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(8);
 	}
 	&__list {
 		display: grid;
