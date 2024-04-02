@@ -6,7 +6,7 @@
 		<p class="news-item__title h7 ttu">{{ props.title }}</p>
 		<p class="news-item__date p4 c-gray-dark">{{ props.date }}</p>
 		<p class="news-item__author">
-			<span class="p4 c-gray-dark">{{ props.author }}</span>
+			<span class="p4 c-blue-light">{{ props.author }}</span>
 			{{ icon({
 				iconName: 'promo-arrow',
 				className: 'news-item__icon',
