@@ -1,6 +1,8 @@
+{% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/range-slider/range-slider.nunj" import rangeSlider %}
 {% from "../components/input-search/input-search.nunj" import inputSearch %}
+{% from "../components/switch/switch.nunj" import switch %}
 
 {% set selectedFilters = [
 	{ className: ' _selected', name: 'По убыванию цены' },
@@ -109,6 +111,45 @@
 		</li>
 	</ul>
 	<ul class="filters-form__list">
+		<li class="filters-form__container">
+			<div class="filters-form__item filters-form__item-title _switch">
+				{{ icon({
+					iconName: 'filter-new',
+					className: 'filters-form__item-icon',
+					attr: 'width="52" height="52"'
+				}) }}
+				<p id="filter-new">
+					Новинки
+					<span class="filters-form__item-text p3 c-gray-dark">Последние поступления</span>
+				</p>
+				{{ switch({
+					className: 'filters-form__item-switch _rounded',
+					name: 'new',
+					value: 'new',
+					attr: 'aria-labelledby="filter-new"'
+				}) }}
+			</div>
+		</li>
+		<li class="filters-form__item filters-form__container">
+			<div class="filters-form__item-title _switch">
+				{{ icon({
+					iconName: 'filter-discount',
+					className: 'filters-form__item-icon',
+					attr: 'width="52" height="52"'
+				}) }}
+				<p id="filter-discount">
+					Скидки
+					<span class="filters-form__item-text p3 c-gray-dark">Сейчас дешевле</span>
+				</p>
+				{{ switch({
+					className: 'filters-form__item-switch _rounded',
+					name: 'discount',
+					value: 'discount',
+					attr: 'aria-labelledby="filter-discount"',
+					checked: true
+				}) }}
+			</div>
+		</li>
 		<li class="filters-form__item filters-form__container">
 			<button class="filters-form__item-title" type="button" data-accordion-toggle="opened">Сортировка</button>
 			<div class="filters-form__item-content _buttons _sort">
