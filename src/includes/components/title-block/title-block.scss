@@ -3,6 +3,7 @@
 
 	padding-top: rem(29);
 	padding-bottom: rem(67);
+	border-bottom: 1px solid var(--blue-dark);
 	@media (max-width: $laptop-lg) {
 		padding-top: 40px;
 		padding-bottom: 60px;

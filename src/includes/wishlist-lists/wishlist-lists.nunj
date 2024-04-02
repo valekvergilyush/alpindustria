@@ -55,7 +55,7 @@
 				<li>
 					{{ button({
 						className: '_quick-filter _active h7 ttu',
-						text: 'Все занятия'
+						text: 'Все товары'
 					}) }}
 				</li>
 				<li>
@@ -75,7 +75,7 @@
 				<div class="wishlist-lists__top">
 					<div class="wishlist-lists__text">
 						<p class="p3 wishlist-lists__small">Всего:</p>
-						<p class="s2 wishlist-lists__number">16 товаров</p>
+						<p class="s2 wishlist-lists__number">6 товаров</p>
 					</div>
 				</div>
 				<ul class="wishlist-lists__list">

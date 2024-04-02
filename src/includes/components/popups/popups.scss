@@ -130,6 +130,18 @@
 				max-width: none;
 				margin-top: auto;
 				min-height: min-content;
+				&::before {
+					content: '';
+					position: absolute;
+					z-index: 1;
+					top: rem(5);
+					left: 50%;
+					transform: translateX(-50%);
+					width: rem(40);
+					height: 2px;
+					background-color: var(--blue-dark);
+					opacity: 0.2;
+				}
 			}
 		}
 		&[data-popup-wrapper='cart'] {
