@@ -55,6 +55,12 @@
 				width: 50%;
 			}
 		}
+		&[data-popup-wrapper='wishlist'] {
+			@media (max-width: $laptop-md) {
+				width: 100%;
+				max-width: rem(640);
+			}
+		}
 		&[data-popup-wrapper='cart'],
 		&[data-popup-wrapper='cart-empty'],
 		&[data-popup-wrapper='sizes'],
@@ -79,6 +85,7 @@
 		&[data-popup-wrapper='availability'] {
 			@media (max-width: $tablet) {
 				width: 100%;
+				max-width: 100%;
 				height: 100%;
 				overflow: auto;
 				scrollbar-width: none;

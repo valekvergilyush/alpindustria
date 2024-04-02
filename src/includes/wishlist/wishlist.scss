@@ -24,6 +24,7 @@
 	&__form-btns {
 		display: flex;
 		gap: rem(32);
+		align-items: flex-end;
 		justify-content: flex-end;
 	}
 	&__cancel {
