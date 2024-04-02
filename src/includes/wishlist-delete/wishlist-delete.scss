@@ -11,8 +11,12 @@
 			margin-bottom: rem(12);
 		}
 	}
+	&__text {
+		max-width: rem(500);
+	}
 	&__controls {
 		display: flex;
+		flex-wrap: wrap;
 		gap: rem(40);
 		justify-content: center;
 		margin-top: rem(64);

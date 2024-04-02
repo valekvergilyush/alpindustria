@@ -7,14 +7,14 @@
 	</div>
 	<div class="wishlist-delete__controls c-blue-dark">
 		{{ button({
-			className: 'h7 ttu _arrow-s wishlist-delete__del',
+			className: 'h6 ttu _arrow-l wishlist-delete__del',
 			text: 'Удалить',
 			icon: 'close-popup',
 			type: 'submit',
 			iconData: 'width="32" height="32" viewBox="0 0 32 32"'
 		}) }}
 		{{ button({
-			className: 'h7 ttu _arrow-s',
+			className: 'h6 ttu _arrow-l',
 			text: 'Отменить',
 			icon: 'promo-arrow',
 			attr: 'data-popup-closer',

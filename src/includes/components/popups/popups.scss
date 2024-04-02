@@ -121,8 +121,13 @@
 			margin-top: rem(32);
 		}
 		&[data-popup-wrapper='wishlist-delete'] {
+			max-width: rem(704);
+			#{$this}__icon {
+				display: block;
+			}
 			@media (max-width: $tablet) {
 				width: 100%;
+				max-width: none;
 				margin-top: auto;
 				min-height: min-content;
 			}
