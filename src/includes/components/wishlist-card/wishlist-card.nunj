@@ -26,12 +26,6 @@
 		</div>
 		<div class="wishlist-card__row _bottom">
 			<p class="wishlist-card__small">{{ props.number }}</p>
-			{{ button({
-				className: 'wishlist-card__add-mobile h7 ttu _plus',
-				text: 'Добавить',
-				icon: 'plus-circle-blue',
-				iconData: 'width="24" height="24" viewBox="0 0 32 33"'
-			}) }}
 		</div>
 	</div>
 {% endmacro %}
