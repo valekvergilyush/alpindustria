@@ -16,7 +16,7 @@
 			<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
 			{{ button({
 				className: 'h7 ttu _arrow-s whishlist-popup__submit',
-				text: 'Создать',
+				text: 'Сохранить',
 				icon: 'promo-arrow',
 				type: 'submit',
 				iconData: 'width="16" height="16" viewBox="0 0 72 72"'
