@@ -98,9 +98,6 @@
 		text-align: right;
 		opacity: 0.2;
 		order: 2;
-		#{$this}._edit & {
-			text-align: left;
-		}
 	}
 	&__error-msg {
 		display: none;

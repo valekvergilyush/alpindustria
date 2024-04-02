@@ -1,4 +1,5 @@
 .wishlist-item {
+	position: relative;
 	display: grid;
 	grid-template-areas:
 		'imgs top'
@@ -98,6 +99,14 @@
 		}
 		@media (max-width: $mobile-lg) {
 			max-width: none;
+		}
+		a {
+			text-decoration: none;
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+			}
 		}
 	}
 	&__bottom {

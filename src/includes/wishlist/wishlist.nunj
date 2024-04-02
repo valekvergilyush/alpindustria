@@ -49,7 +49,7 @@
 ] %}
 
 <div class="whishlist-popup">
-	<h2 class="whishlist-popup__title h5 ttu">Вишлист</h2>
+	<h2 class="whishlist-popup__title h5 ttu">Новый вишлист</h2>
 	<div class="whishlist-popup__form" data-validate data-wishlist-form>
 		<form>
 			{{ input({

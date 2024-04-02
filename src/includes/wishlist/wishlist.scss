@@ -23,12 +23,8 @@
 	}
 	&__form-btns {
 		display: flex;
-		justify-content: space-between;
-		gap: rem(16);
-		&._edit {
-			gap: rem(32);
-			justify-content: flex-end;
-		}
+		gap: rem(32);
+		justify-content: flex-end;
 	}
 	&__cancel {
 		@extend .animated;
