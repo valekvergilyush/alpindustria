@@ -39,30 +39,33 @@
 	&__inner {
 		&::before {
 			--offset: 3px;
+			--width: #{rem(32)};
+
 			content: '';
 			position: absolute;
 			top: var(--offset);
 			bottom: var(--offset);
 			left: var(--offset);
-			width: rem(32);
+			width: var(--width);
 			border: 1px solid currentColor;
 			box-sizing: border-box;
+			transform: translateZ(0);
 			transition: left $default-transition-duration $default-transition-function,
-				transform $default-transition-duration $default-transition-function,
 				background-color $default-transition-duration $default-transition-function;
+			will-change: left;
 			#{$this}._rounded & {
 				border-radius: 50%;
 				background-color: var(--white);
 			}
 			@media (max-width: $laptop-md) {
-				width: 24px;
+				--width: 24px;
 				#{$this}._rounded & {
 					--offset: 1px;
-					width: 28px;
+					--width: 28px;
 				}
 			}
 			@media (max-width: $mobile-lg) {
-				width: 20px;
+				--width: 20px;
 			}
 		}
 		input:checked ~ & {
@@ -73,8 +76,7 @@
 				opacity: 1;
 			}
 			&::before {
-				left: calc(100% - var(--offset));
-				transform: translateX(-100%);
+				left: calc(100% - var(--width) - var(--offset));
 				background-color: currentColor;
 				#{$this}._rounded & {
 					background-color: var(--white);
