@@ -11,6 +11,7 @@
 	opacity: 0;
 	transition: opacity $default-transition-duration $default-transition-function;
 	transition-delay: $default-transition-duration;
+	mix-blend-mode: multiply;
 	&.is-inited {
 		opacity: 1;
 	}
