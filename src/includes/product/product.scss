@@ -423,25 +423,34 @@
 	&__sizes {
 		position: relative;
 		display: grid;
-		grid-template-columns: rem(68) 1fr;
+		grid-template-columns: auto 1fr;
 		gap: rem(24);
 		@media (max-width: $laptop-sm) {
 			grid-template-columns: auto;
 		}
 	}
 	&__inputs-list {
-		--height: #{rem(32)};
+		--height: #{rem(34)};
 		flex-grow: 1;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, var(--button-width));
-		gap: rem(4);
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(5);
 		height: var(--height);
 		overflow: hidden;
 		._show & {
 			height: auto;
 		}
 		&._sizes {
-			--button-width: #{rem(56)};
+			display: flex;
+			flex-wrap: wrap;
+			// grid-template-columns: auto;
+			// grid-auto-flow: column;
+			// justify-content: start;
+			// grid-auto-columns: min-content;
+			// --button-width: auto;
+			#{$this}__inputs-item {
+				width: fit-content;
+			}
 		}
 		&._colors {
 			--button-width: #{rem(32)};
@@ -457,6 +466,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		&:first-child {
+			margin-left: 1px;
+		}
 		&._show,
 		&._hide {
 			display: none;
@@ -465,9 +477,12 @@
 			}
 		}
 		&._show {
+			position: absolute;
+			top: 0;
+			right: 0;
 			grid-column: span 1 / -1;
 			grid-row: 1 / 2;
-			._show & {
+			._show ._has-wrap & {
 				display: none;
 			}
 		}
@@ -475,7 +490,10 @@
 			display: none;
 			grid-column: span 2 / -1;
 			grid-row: auto;
-			._show & {
+			._has-wrap & {
+				display: none;
+			}
+			._show ._has-wrap & {
 				display: flex;
 			}
 		}
@@ -497,11 +515,11 @@
 			padding-left: 0;
 			flex-direction: row-reverse;
 		}
-		@media (max-width: $laptop-lg) {
-			&._show {
-				position: relative;
-				left: 4px;
-			}
+		&._show {
+			position: relative;
+			left: 4px;
+			box-shadow: 0 0 rem(4) rem(4) var(--white);
+			background-color: var(--white);
 		}
 	}
 	&__colors {

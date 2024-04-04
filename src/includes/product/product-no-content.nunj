@@ -49,18 +49,14 @@
 	{ name: 'Красный', color: '#C9364C' }
 ] %}
 {% set sizeButtons = [
-	{ value: '37' },
-	{ value: '38', disabled: true },
-	{ value: '39', selected: true },
-	{ value: '40' },
-	{ value: '41' },
-	{ value: '42' },
-	{ value: '43' },
-	{ value: '44' },
-	{ value: '45' },
-	{ value: '46' },
-	{ value: '47' },
-	{ value: '48' }
+	{ value: '38', selected: true },
+	{ value: '40-44' },
+	{ value: '44-48' },
+	{ value: '50' },
+	{ value: '52' },
+	{ value: '54' },
+	{ value: '56' },
+	{ value: '58' }
 ] %}
 
 <section class="product">
@@ -154,7 +150,7 @@
 					</div>
 					<div class="product__sizes">
 						<div class="product__title-sm-wrap">
-							<p class="product__title-sm ttu">Размер</p>
+							<p class="product__title-sm ttu">Размер, обхват, см</p>
 						</div>
 						<div class="product__inputs-wrap">
 							<ul class="product__inputs-list _sizes" data-product-list="sizes">
