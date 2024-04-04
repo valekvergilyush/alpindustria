@@ -39,6 +39,7 @@
 		padding-top: rem(4);
 		margin-right: rem(48);
 		grid-area: info;
+		align-self: stretch;
 		@media (max-width: $laptop-lg) {
 			margin-right: 24px;
 		}
@@ -55,6 +56,15 @@
 		@media (max-width: $mobile-lg) {
 			max-width: none;
 			margin-right: 0;
+			align-self: auto;
+		}
+	}
+	&__badges {
+		display: flex;
+		gap: rem(16);
+		margin-top: auto;
+		@media (max-width: $mobile-lg) {
+			margin-top: 11px;
 		}
 	}
 	&__title {

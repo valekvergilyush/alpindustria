@@ -1,0 +1,31 @@
+.wishlist-delete {
+	position: relative;
+	text-align: center;
+	color: var(--gray-dark);
+	@media (max-width: $tablet) {
+		padding: rem(158) 0;
+	}
+	&__title {
+		margin-bottom: rem(16);
+		@media (max-width: $tablet) {
+			margin-bottom: rem(12);
+		}
+	}
+	&__text {
+		max-width: rem(500);
+	}
+	&__controls {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(40);
+		justify-content: center;
+		margin-top: rem(64);
+		@media (max-width: $tablet) {
+			margin-top: rem(40);
+			gap: rem(32);
+		}
+	}
+	&__del {
+		color: var(--red-dark);
+	}
+}

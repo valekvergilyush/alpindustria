@@ -3,5 +3,5 @@
 {{ icon({
 	iconName: 'delivery-long',
 	className: 'product-badge',
-	attr: 'width="48" height="48" viewBox="0 0 48 48"'
+	attr: 'width="48" height="48" viewBox="0 0 48 48" aria-label="Long delivery"'
 }) }}

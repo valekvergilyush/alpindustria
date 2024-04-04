@@ -19,17 +19,17 @@
 			{% endif %}
 		</div>
 		<div class="wishlist-item__top">
-			<p class="wishlist-item__title h6 ttu">{{ props.data.name }}</p>
+			<p class="wishlist-item__title h6 ttu"><a class="wishlist-item__title-link" href="#">{{ props.data.name }}</a></p>
 			<p class="wishlist-item__small">{{ props.data.year }}</p>
 		</div>
 		<div class="wishlist-item__bottom">
 			<p class="wishlist-item__small">{{ props.data.number }}</p>
-			{{ button({
+			{# {{ button({
 				className: 'wishlist-item__btn h7 ttu _plus',
 				text: 'Добавить',
 				icon: 'plus-circle-blue',
 				iconData: 'width="32" height="33" viewBox="0 0 32 33"'
-			}) }}
+			}) }} #}
 		</div>
 	</div>
 {% endmacro %}

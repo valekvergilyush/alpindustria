@@ -4,6 +4,6 @@
 
 {% block mainContent %}
 	<main class="page__main _pt">
-		{% include "../includes/wishlists/wishlists.nunj" %}
+		{% include "../includes/wishlists/wishlists-new-item.nunj" %}
 	</main>
 {% endblock %}

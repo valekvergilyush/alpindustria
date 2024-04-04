@@ -18,7 +18,8 @@
 } %}
 
 {% set titleData = {
-	title: 'ВОСХОЖДЕНИЕ НА&nbsp;ЭЛЬБРУС 2022'
+	title: 'ВОСХОЖДЕНИЕ НА&nbsp;ЭЛЬБРУС 2022',
+	attr: 'data-title-block'
 } %}
 
 {% set cartList = [

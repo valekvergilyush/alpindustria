@@ -20,10 +20,7 @@
 		justify-content: space-between;
 		align-items: flex-end;
 		column-gap: rem(24);
-		margin-bottom: rem(80);
-		@media (max-width: $laptop-lg) {
-			margin-bottom: 64px;
-		}
+		margin-bottom: rem(62);
 		@media (max-width: $laptop-md) {
 			margin-bottom: 48px;
 		}
@@ -43,10 +40,11 @@
 		opacity: 0.5;
 		margin-left: rem(24);
 		@media (max-width: $mobile-lg) {
-			display: none;
+			margin-left: 8px;
 		}
 	}
 	&__new {
+		margin-bottom: rem(18);
 		@media (max-width: $laptop-md) {
 			&._plus {
 				.button__icon {

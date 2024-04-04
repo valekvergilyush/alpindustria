@@ -7,13 +7,13 @@ export default {
 		scrollPosition = window.scrollY;
 		body.style.overflow = 'hidden';
 		body.style.position = 'fixed';
-		// body.style.top = `-${scrollPosition}px`;
+		document.querySelector('.wrapper').style.top = `-${scrollPosition}px`;
 		body.style.width = '100%';
 	},
 	disable() {
 		body.style.removeProperty('overflow');
 		body.style.removeProperty('position');
-		body.style.removeProperty('top');
+		document.querySelector('.wrapper').style.removeProperty('top');
 		body.style.removeProperty('width');
 		window.scrollTo(0, scrollPosition);
 	},

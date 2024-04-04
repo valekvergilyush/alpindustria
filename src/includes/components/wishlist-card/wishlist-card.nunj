@@ -1,13 +1,24 @@
 {% from "../button/button.nunj" import button %}
+{% from "../icon/icon.nunj" import icon %}
 
 {% macro wishlistCard(props) %}
 	<div class="{% if props.className %}{{ props.className }} {% endif %}wishlist-card">
 		<a href="wishlist-page.html" class="wishlist-card__imgs">
+		{% if props.imgs %}
 			{% for img in props.imgs %}
 				<div class="wishlist-card__img-wrap">
 					<img class="wishlist-card__img" src="{{ img }}.png" srcset="{{ img }}@2x.png 2x" width="356" height="415" alt="">
 				</div>
 			{% endfor %}
+		{% else %}
+				<div class="wishlist-card__img-wrap">
+					{{ icon({
+						iconName: 'wishlist-empty',
+						className: 'wishlist-card__img _empty',
+						attr: 'width="515" height="270"'
+					}) }}
+				</div>
+		{% endif %}
 		</a>
 		<div class="wishlist-card__row _title">
 			<a href="wishlist-page.html" class="wishlist-card__name h5 ttu">{{ props.name }}</a>
@@ -15,18 +26,6 @@
 		</div>
 		<div class="wishlist-card__row _bottom">
 			<p class="wishlist-card__small">{{ props.number }}</p>
-			{{ button({
-				className: 'h7 ttu wishlist-card__add',
-				text: 'Добавить все в корзину',
-				icon: 'cart',
-				iconData: 'width="36" height="36" viewBox="0 0 36 36"'
-			}) }}
-			{{ button({
-				className: 'wishlist-card__add-mobile h7 ttu _plus',
-				text: 'Добавить',
-				icon: 'plus-circle-blue',
-				iconData: 'width="24" height="24" viewBox="0 0 32 33"'
-			}) }}
 		</div>
 	</div>
 {% endmacro %}

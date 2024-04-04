@@ -92,6 +92,13 @@
 		max-width: none;
 		height: 100%;
 		object-fit: contain;
+		&._empty {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 517/270;
+			opacity: 0.05;
+			max-width: rem(515) !important;
+		}
 		@media (max-width: $laptop-lg) {
 			width: 296px;
 		}

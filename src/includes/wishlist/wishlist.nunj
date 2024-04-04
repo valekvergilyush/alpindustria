@@ -49,8 +49,8 @@
 ] %}
 
 <div class="whishlist-popup">
-	<h2 class="whishlist-popup__title h5 ttu">Вишлист</h2>
-	<div class="whishlist-popup__form _hide" data-validate data-wishlist-form>
+	<h2 class="whishlist-popup__title h5 ttu">Новый вишлист</h2>
+	<div class="whishlist-popup__form" data-validate data-wishlist-form>
 		<form>
 			{{ input({
 				type: 'text',
@@ -62,7 +62,7 @@
 				wordCounter: 25
 			}) }}
 			<div class="whishlist-popup__form-btns">
-				<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel>Отмена</button>
+				<button type="button" class="button h7 ttu whishlist-popup__cancel" data-wishlist-cancel data-popup-closer>Отмена</button>
 				{{ button({
 					className: 'h7 ttu _arrow-s whishlist-popup__submit',
 					text: 'Создать',
@@ -73,13 +73,6 @@
 			</div>
 		</form>
 	</div>
-	{{ button({
-		className: 'whishlist-popup__new h7 ttu _plus',
-		text: 'Создать новый',
-		icon: 'plus-circle-blue',
-		iconData: 'width="32" height="33" viewBox="0 0 32 33"',
-		attr: 'data-wishlist-show'
-	}) }}
 	<div class="whishlist-popup__list">
 		{% for item in whishlistList %}
 			{{ wishlistItem({

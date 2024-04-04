@@ -8,12 +8,13 @@ import images from './gulp-tasks/images';
 import svg from './gulp-tasks/svg';
 import jsons from './gulp-tasks/jsons';
 import robots from './gulp-tasks/robots';
+import docs from './gulp-tasks/docs';
 import webpack from './gulp-tasks/webpack';
 import zip from './gulp-tasks/zip';
 import watch from './gulp-tasks/watch';
 import server from './gulp-tasks/server';
 
-gulp.task('build', gulp.parallel(html, styles, fonts, images, svg, jsons, robots, webpack));
+gulp.task('build', gulp.parallel(html, styles, fonts, images, svg, jsons, robots, docs, webpack));
 
 gulp.task('production', gulp.series(clean, 'build', assetsVersion));
 

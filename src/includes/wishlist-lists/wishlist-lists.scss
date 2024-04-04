@@ -17,10 +17,9 @@
 		display: flex;
 		flex-direction: column;
 		max-width: rem(1316);
-		row-gap: rem(120);
+		row-gap: rem(40);
 		@media (max-width: $laptop-lg) {
 			max-width: none;
-			row-gap: 80px;
 		}
 	}
 	&__top {
@@ -96,9 +95,16 @@
 			}
 		}
 	}
+	&__filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(8);
+	}
 	&__list {
 		display: grid;
 		row-gap: rem(20);
+		padding-top: rem(23);
+		border-top: 1px solid rgba(52, 44, 37, 0.1);
 	}
 	&__item {
 		.cart-item {

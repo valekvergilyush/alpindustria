@@ -47,10 +47,17 @@
 				{% endif %}
 				<span>{{ props.price }}</span>
 			</p>
-			{{ button({
-				className: 'product-card__button _wishlist' + activeClassName,
-				attr: 'aria-label="Добавить в вишлист" data-notification-open="wishlist"'
-			}) }}
+			{% if props.noAuth %}
+				{{ button({
+					className: 'product-card__button _wishlist' + activeClassName,
+					attr: 'aria-label="Добавить в вишлист" data-popup-opener="auth"'
+				}) }}
+			{% else %}
+				{{ button({
+					className: 'product-card__button _wishlist' + activeClassName,
+					attr: 'aria-label="Добавить в вишлист" data-notification-open="wishlist"'
+				}) }}
+			{% endif %}
 		{% endif %}
 		<a class="product-card__link-photo" href="{{ props.url }}" {% if props.linkAttr %}{{props.linkAttr}}{% endif %}>
 			<img class="product-card__photo" src="{{ props.photo }}.png" srcset="{{ props.photo }}@2x.png 2x" width="304" height="364" alt="">

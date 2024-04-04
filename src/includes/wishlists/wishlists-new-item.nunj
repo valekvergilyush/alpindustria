@@ -1,0 +1,74 @@
+
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/wishlist-card/wishlist-card.nunj" import wishlistCard %}
+
+{% set wishlistList = [
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '0 товаров'
+	},
+	{
+		name: 'Камчатка',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-2',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-4'
+		]
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-2',
+			'/assets/images/catalog/item-4'
+		]
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-2',
+			'/assets/images/catalog/item-4'
+		]
+	},
+	{
+		name: 'Камчатка',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-2'
+		]
+	}
+] %}
+
+<section class="wishlists">
+	<div class="container wishlists__wrap">
+		<div class="wishlists__header">
+			<h2 class="wishlists__title ttu">
+				<span class="h3">Вишлист</span>
+				<span class="wishlists__title-number h6">5</span>
+			</h2>
+			{{ button({
+				className: 'wishlists__new h7 ttu _plus',
+				text: '<span class="desktop">Добавить</span><span class="mobile">Создать новый</span> вишлист',
+				icon: 'plus-circle-blue',
+				iconData: 'width="32" height="33" viewBox="0 0 32 33"',
+				attr: 'data-popup-opener="wishlist"'
+			}) }}
+		</div>
+		<ul class="wishlists__list">
+			{% for item in wishlistList %}
+				<li class="wishlists__item">
+					{{ wishlistCard(item) }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

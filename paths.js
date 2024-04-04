@@ -9,6 +9,7 @@ export default {
 		svg: 'build/assets/svg/',
 		jsons: 'build/assets/jsons/',
 		robots: 'build/',
+		docs: 'build/docs/',
 	},
 	src: {
 		templates: './src/',
@@ -22,6 +23,7 @@ export default {
 		svg: 'src/assets/svg/**/*.svg',
 		jsons: 'src/assets/jsons/**/*.*',
 		robots: 'src/assets/robots/**/*.*',
+		docs: 'src/assets/docs/**/*.*',
 	},
 	watch: {
 		nunj: ['src/**/*.nunj', 'global-data.json'],
@@ -33,6 +35,7 @@ export default {
 		svg: 'src/assets/svg/**/*.svg',
 		jsons: 'src/assets/jsons/**/*.json',
 		robots: 'src/assets/robots/**/*.*',
+		docs: 'src/assets/docs/**/*.*',
 	},
 	clean: 'build/',
 };

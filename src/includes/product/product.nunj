@@ -156,7 +156,7 @@
 					</div>
 					<div class="product__sizes">
 						<div class="product__title-sm-wrap">
-							<p class="product__title-sm ttu">Размер</p>
+							<p class="product__title-sm ttu">Размер, обхват, см</p>
 						</div>
 						<div class="product__inputs-wrap">
 							<ul class="product__inputs-list _sizes" data-product-list="sizes">

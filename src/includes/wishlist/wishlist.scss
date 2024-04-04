@@ -9,31 +9,23 @@
 			margin-bottom: 32px;
 		}
 	}
-	&__new {
-		@media (max-width: $mobile-lg) {
-			font-size: 16px;
-			line-height: 20px;
-		}
-		&._hide {
-			display: none;
-		}
-	}
 	&__input {
 		flex-direction: column;
 		margin-bottom: rem(40);
+		@media (max-width: $mobile-lg) {
+			--height: 50px;
+		}
 	}
 	&__form {
 		@media (max-width: $laptop-md) {
 			padding-bottom: 10px;
 		}
-		&._hide {
-			display: none;
-		}
 	}
 	&__form-btns {
 		display: flex;
-		justify-content: space-between;
-		gap: rem(16);
+		gap: rem(32);
+		align-items: flex-end;
+		justify-content: flex-end;
 	}
 	&__cancel {
 		@extend .animated;

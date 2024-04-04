@@ -153,6 +153,7 @@ class Popups {
 					{
 						xPercent: 0,
 						duration: 0.35,
+						clearProps: 'transform',
 						onComplete: () => {
 							const focusElement = this.activePopup.querySelector('[data-popup-focus]');
 							if (focusElement) {

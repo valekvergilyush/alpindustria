@@ -1,4 +1,5 @@
 .wishlist-item {
+	position: relative;
 	display: grid;
 	grid-template-areas:
 		'imgs top'
@@ -31,10 +32,6 @@
 		box-sizing: border-box;
 		@media (max-width: $laptop-lg) {
 			height: 128px;
-		}
-		@media (max-width: $laptop-md) {
-			width: 179px;
-			height: 112px;
 		}
 		@media (max-width: $laptop-md) {
 			width: 179px;
@@ -98,6 +95,14 @@
 		}
 		@media (max-width: $mobile-lg) {
 			max-width: none;
+		}
+		a {
+			text-decoration: none;
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+			}
 		}
 	}
 	&__bottom {
