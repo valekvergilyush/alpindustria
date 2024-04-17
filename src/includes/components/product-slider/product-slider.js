@@ -10,6 +10,11 @@ class ProductSlider {
 			return;
 		}
 
+		this.container.querySelectorAll('[data-zoom-img]').forEach(img => {
+			const zoomImgUrl = img.getAttribute('data-zoom-img');
+			img.src = zoomImgUrl;
+		});
+
 		this.init();
 	}
 
@@ -20,6 +25,7 @@ class ProductSlider {
 			slide.panzoom.reset();
 			slide.contentEl.classList.add('can-zoom_in');
 		};
+
 		new Carousel(
 			this.container,
 			{
@@ -53,10 +59,6 @@ class ProductSlider {
 						const initPanzoom = el => {
 							const instance = new Panzoom(el, options);
 							el.panzoom = instance;
-
-							const imgEl = el.querySelector('[data-zoom-img]');
-							const zoomImgUrl = imgEl.getAttribute('data-zoom-img');
-							imgEl.src = zoomImgUrl;
 
 							el.addEventListener('mouseenter', evt => {
 								if (!evt.buttons) {

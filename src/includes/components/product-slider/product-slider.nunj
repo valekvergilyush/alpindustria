@@ -9,7 +9,6 @@
 					<img
 						class="product-slider__img f-panzoom__content"
 						src="{{ sliderImg }}.png"
-						srcset="{{ sliderImg }}@2x.png 2x"
 						{% if props.zoom %}data-zoom-img="{{ sliderImg }}-x4-zoom.png"{% endif %}
 						alt=""
 						data-fancybox="gallery"

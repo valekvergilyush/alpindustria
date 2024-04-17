@@ -36,6 +36,12 @@
 	}
 }
 
+.fancybox__carousel {
+	@media (min-width: 993px) {
+		width: calc(100vw - 172px);
+	}
+}
+
 .product-slider__container,
 .f-thumbs.is-classic,
 .fancybox__toolbar,
