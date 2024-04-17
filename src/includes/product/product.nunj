@@ -263,7 +263,8 @@
 				{{ productSlider({
 					className: 'product__slider',
 					imgsList: productSliderImgs,
-					thumbsList: productSliderThumbs
+					thumbsList: productSliderThumbs,
+					zoom: true
 				}) }}
 			</div>
 			{{ addToCart({

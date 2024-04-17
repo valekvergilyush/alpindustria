@@ -47,12 +47,16 @@ class ProductSlider {
 							mouseMoveFactor: 1.25,
 							click: false,
 							wheel: false,
-							maxScale: 3,
+							maxScale: 1,
 						};
 
 						const initPanzoom = el => {
 							const instance = new Panzoom(el, options);
 							el.panzoom = instance;
+
+							const imgEl = el.querySelector('[data-zoom-img]');
+							const zoomImgUrl = imgEl.getAttribute('data-zoom-img');
+							imgEl.src = zoomImgUrl;
 
 							el.addEventListener('mouseenter', evt => {
 								if (!evt.buttons) {
@@ -123,7 +127,7 @@ class ProductSlider {
 			Images: {
 				zoom: false,
 				Panzoom: {
-					maxScale: 3,
+					maxScale: 1,
 				},
 			},
 
