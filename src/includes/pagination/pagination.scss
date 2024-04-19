@@ -1,0 +1,35 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: rem(32);
+	margin: rem(64) 0;
+	&__list {
+		display: flex;
+		gap: rem(4);
+		min-width: rem(310);
+	}
+	&__item {
+		display: flex;
+		width: min-content;
+	}
+	&__link {
+		color: var(--blue-dark);
+		padding: rem(8) rem(16);
+		border-bottom: rem(2) solid rgba(50, 68, 129, 0.2);
+		font-size: rem(28);
+		font-family: var(--font-family-suisse);
+		line-height: normal;
+		text-transform: uppercase;
+		min-width: rem(43);
+		box-sizing: border-box;
+		&._current {
+			border-bottom-color: var(--blue-dark);
+		}
+	}
+	&__arrow {
+		&._next {
+			transform: scale(-1, 1);
+		}
+	}
+}
