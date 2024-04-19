@@ -356,4 +356,17 @@
 	&._cart {
 		z-index: 15;
 	}
+	&._subscription-news {
+		background: transparent;
+		padding: rem(40);
+		box-sizing: border-box;
+		#{$this}__popup-wrapper,
+		#{$this}__popup {
+			height: auto;
+			padding: 0;
+		}
+		#{$this}__popup-wrapper {
+			align-self: flex-end;
+		}
+	}
 }

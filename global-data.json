@@ -20,6 +20,10 @@
 	"popupsList": [
 		{
 			"animation": "RTL",
+			"name": "subscription-news"
+		},
+		{
+			"animation": "RTL",
 			"name": "availability"
 		},
 		{
