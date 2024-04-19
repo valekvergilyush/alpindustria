@@ -19,7 +19,6 @@
 	],
 	"popupsList": [
 		{
-			"animation": "RTL",
 			"name": "subscription-news"
 		},
 		{
