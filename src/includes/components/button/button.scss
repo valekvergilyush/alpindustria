@@ -359,7 +359,7 @@
 		@extend .animated;
 		column-gap: rem(24);
 		width: var(--width, 100%);
-		height: rem(90);
+		height: var(--height, #{rem(280)});
 		border: 1px solid currentColor;
 		border-left: 0;
 		border-right: 0;
