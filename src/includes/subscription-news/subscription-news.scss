@@ -1,5 +1,7 @@
 .subscription-news {
 	width: rem(432);
+	overflow: hidden;
+	border: 1px solid var(--blue-dark);
 	&__header {
 		padding: rem(32);
 		box-sizing: border-box;
@@ -19,9 +21,32 @@
 	}
 	&__title {
 		position: relative;
+		max-width: rem(268);
+	}
+	&__text {
+		color: var(--gray-dark);
+		margin-bottom: rem(8);
+	}
+	&__input {
+		margin-bottom: rem(16);
 	}
 	&__footer {
 		padding: rem(32);
 		box-sizing: border-box;
+	}
+	&__submit {
+		display: block;
+		margin-left: auto;
+		.button__icon {
+			--size: #{rem(24)};
+			width: var(--size);
+			height: var(--size);
+			margin-left: rem(12);
+			fill: currentColor;
+			@media (max-width: $laptop-lg) {
+				--size: 16px;
+				margin-left: 8px;
+			}
+		}
 	}
 }

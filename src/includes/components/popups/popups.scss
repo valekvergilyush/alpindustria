@@ -368,5 +368,11 @@
 		#{$this}__popup-wrapper {
 			align-self: flex-end;
 		}
+		#{$this}__close-button {
+			--size: #{rem(24)};
+			--popup-padding: #{rem(37)};
+			width: var(--size);
+			height: var(--size);
+		}
 	}
 }

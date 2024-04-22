@@ -6,33 +6,33 @@
 	<header class="subscription-news__header">
 		{{picture({
 			className: 'subscription-news__img',
-			path: '/assets/images/distribution/hero/distribution-hero',
+			path: '/assets/images/subscription-news/bg',
 			ext: 'jpg',
 			width: 704,
 			height: 836,
 			attr: 'aria-hidden="true"'
 		})}}
-		<p class="subscription-news__title h6">1000 баллов на&nbsp;дисконтную карту</p>
+		<p class="subscription-news__title h6 ttu">1000 баллов на&nbsp;дисконтную карту</p>
 	</header>
 	<footer class="subscription-news__footer">
-		<p class="subscription-news__text p1">
-			Подпишитесь на&nbsp;новости и&nbsp;получите баллы на&nbsp;дисконтную карту
+		<p class="subscription-news__text p3">
+			Подпишитесь на&nbsp;новости <br> и&nbsp;получите баллы на&nbsp;дисконтную карту
 		</p>
 		<form class="subscription-news__form">
-			{{ input({
+			{{input({
 				type: 'email',
 				id: 'email-form',
 				name: 'Ваш E-MAIL',
-				className: 'cta-news__input',
+				className: 'subscription-news__input',
 				inputAttr: 'required'
-			}) }}
-			{{ button({
+			})}}
+			{{button({
 				text: 'Подписаться',
 				icon: 'promo-arrow',
 				type: 'submit',
-				className: 'cta-news__submit h6 ttu',
+				className: 'subscription-news__submit h7 ttu',
 				attr: 'data-popup-opener="data-editing"'
-			}) }}
+			})}}
 		</form>
 	</footer>
 </div>
