@@ -2,7 +2,7 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/picture/picture.nunj" import picture %}
 
-<div class="subscription-news">
+<div class="subscription-news" data-validate>
 	<header class="subscription-news__header">
 		{{picture({
 			className: 'subscription-news__img',
@@ -21,17 +21,17 @@
 		<form class="subscription-news__form">
 			{{input({
 				type: 'email',
-				id: 'email-form',
+				id: 'email-subscription',
 				name: 'Ваш E-MAIL',
 				className: 'subscription-news__input',
-				inputAttr: 'required'
+				inputAttr: 'required',
+				attr: 'data-validate-type="email"'
 			})}}
 			{{button({
 				text: 'Подписаться',
 				icon: 'promo-arrow',
 				type: 'submit',
-				className: 'subscription-news__submit h7 ttu',
-				attr: 'data-popup-opener="data-editing"'
+				className: 'subscription-news__submit h7 ttu'
 			})}}
 		</form>
 	</footer>

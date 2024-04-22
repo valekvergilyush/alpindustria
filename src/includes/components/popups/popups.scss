@@ -356,7 +356,8 @@
 	&._cart {
 		z-index: 15;
 	}
-	&._subscription-news {
+	&._subscription-news,
+	&._subscription-success {
 		background: transparent;
 		padding: rem(40);
 		box-sizing: border-box;

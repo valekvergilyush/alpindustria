@@ -1,0 +1,10 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+
+<div class="subscription-success">
+	<p class="subscription-success__title h6">
+		Подписка <br> оформлена
+	</p>
+	<p class="subscription-success__text p3">1000 баллов будут начислены на&nbsp;на&nbsp;дисконтную карту карту. Если у&nbsp;вас нет карты вы&nbsp;можете ее <a class="subscription-success__link" href="/apple-wallet.html" target="_blank">оформить&nbsp;прямо сейчас</a></p>
+</div>

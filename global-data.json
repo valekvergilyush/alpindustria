@@ -19,6 +19,9 @@
 	],
 	"popupsList": [
 		{
+			"name": "subscription-success"
+		},
+		{
 			"name": "subscription-news"
 		},
 		{

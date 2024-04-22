@@ -1,0 +1,14 @@
+.subscription-success {
+	width: rem(432);
+	padding: rem(32);
+	box-sizing: border-box;
+	&__title {
+		margin-bottom: rem(16);
+	}
+	&__text {
+		color: var(--gray-dark);
+	}
+	&__link {
+		color: var(--blue-light);
+	}
+}
