@@ -2,6 +2,10 @@
 	width: rem(432);
 	padding: rem(32);
 	box-sizing: border-box;
+	@media (max-width: $tablet) {
+		width: 360px;
+		padding: 24px;
+	}
 	&__title {
 		margin-bottom: rem(16);
 	}
