@@ -371,7 +371,7 @@
 		#{$this}__popup {
 			height: auto;
 			padding: 0;
-			@media (max-width: $mobile) {
+			@media (max-width: $mobile-md) {
 				width: 100%;
 			}
 		}

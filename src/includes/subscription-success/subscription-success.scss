@@ -3,6 +3,9 @@
 	padding: rem(32);
 	box-sizing: border-box;
 	@media (max-width: $tablet) {
+		width: 360px;
+	}
+	@media (max-width: $mobile-md) {
 		width: 100%;
 		padding: 24px;
 	}

@@ -1,10 +1,11 @@
 .subscription-news {
 	width: rem(432);
 	border: 1px solid var(--blue-dark);
+	box-sizing: border-box;
 	@media (max-width: $tablet) {
 		width: 360px;
 	}
-	@media (max-width: $mobile) {
+	@media (max-width: $mobile-md) {
 		width: 100%;
 	}
 	&__header {
