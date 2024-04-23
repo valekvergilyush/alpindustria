@@ -386,6 +386,9 @@
 			@media (max-width: $tablet) {
 				--popup-padding: 29px;
 			}
+			@media (max-width: $mobile-md) {
+				--popup-padding: 24px;
+			}
 		}
 	}
 }

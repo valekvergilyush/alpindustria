@@ -4,14 +4,17 @@
 
 <div class="subscription-news" data-validate>
 	<header class="subscription-news__header">
-		{{picture({
-			className: 'subscription-news__img',
-			path: '/assets/images/subscription-news/bg',
-			ext: 'jpg',
-			width: 704,
-			height: 836,
-			attr: 'aria-hidden="true"'
-		})}}
+		<picture class="subscription-news__img">
+			<source srcset="/assets/images/subscription-news/bg.webp, /assets/images/subscription-news/bg@2x.webp 2x" type="image/webp">
+			<img
+				src="/assets/images/subscription-news/bg.jpg"
+				srcset="/assets/images/subscription-news/bg@2x.jpg 2x"
+				width="704"
+				height="836"
+				alt=""
+				aria-hidden="true"
+			>
+		</picture>
 		<p class="subscription-news__title h6 ttu">1000 баллов на&nbsp;дисконтную карту</p>
 	</header>
 	<footer class="subscription-news__footer">

@@ -26,11 +26,16 @@
 		height: 100%;
 		img {
 			object-fit: cover;
+			height: 100%;
+			object-position: bottom right;
 		}
 	}
 	&__title {
 		position: relative;
 		max-width: rem(268);
+		@media (max-width: $mobile-lg) {
+			max-width: 203px;
+		}
 	}
 	&__text {
 		color: var(--gray-dark);
