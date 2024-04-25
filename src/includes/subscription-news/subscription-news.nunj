@@ -1,0 +1,41 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/picture/picture.nunj" import picture %}
+
+<div class="subscription-news" data-validate>
+	<header class="subscription-news__header">
+		<picture class="subscription-news__img">
+			<source srcset="/assets/images/subscription-news/bg.webp, /assets/images/subscription-news/bg@2x.webp 2x" type="image/webp">
+			<img
+				src="/assets/images/subscription-news/bg.jpg"
+				srcset="/assets/images/subscription-news/bg@2x.jpg 2x"
+				width="704"
+				height="836"
+				alt=""
+				aria-hidden="true"
+			>
+		</picture>
+		<p class="subscription-news__title h6 ttu">1000 баллов на&nbsp;дисконтную карту</p>
+	</header>
+	<footer class="subscription-news__footer">
+		<p class="subscription-news__text p3">
+			Подпишитесь на&nbsp;новости <br> и&nbsp;получите баллы на&nbsp;дисконтную карту
+		</p>
+		<form class="subscription-news__form">
+			{{input({
+				type: 'email',
+				id: 'email-subscription',
+				name: 'Ваш E-MAIL',
+				className: 'subscription-news__input',
+				inputAttr: 'required',
+				attr: 'data-validate-type="email"'
+			})}}
+			{{button({
+				text: 'Подписаться',
+				icon: 'promo-arrow',
+				type: 'submit',
+				className: 'subscription-news__submit h7 ttu'
+			})}}
+		</form>
+	</footer>
+</div>

@@ -217,7 +217,7 @@ const validatePhoneInput = input => {
 	return flag;
 };
 
-const validateEmailInput = input => {
+export const validateEmailInput = input => {
 	const parent = input.closest('[data-validate-type]');
 	let flag = true;
 	const emailString =

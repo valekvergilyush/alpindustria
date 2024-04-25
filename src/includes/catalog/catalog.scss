@@ -1,3 +1,5 @@
+$button: '.button';
+
 .catalog {
 	$this: &;
 	position: relative;
@@ -473,6 +475,23 @@
 	&__show-more-btn {
 		grid-column: 1/-1;
 		margin-top: -1px;
+		&._show-more {
+			height: rem(90);
+			@media (max-width: $mobile-lg) {
+				height: 80px;
+				column-gap: 10px;
+			}
+			#{$button}__text {
+				@media (max-width: $mobile-lg) {
+					font-size: 16px;
+				}
+			}
+			#{$button}__icon {
+				@media (max-width: $mobile-lg) {
+					--icon-size: 32px;
+				}
+			}
+		}
 		._no-results &[disabled] {
 			> * {
 				display: none;

@@ -206,6 +206,10 @@ class Popups {
 
 			this.onCloseStart.call(this.activePopupName);
 
+			if (this.activePopupName === 'subscription-news') {
+				localStorage.setItem('subscription-news', 'saved');
+			}
+
 			this.activePopupName = '';
 
 			this.wrapper.classList.add('no-pe');

@@ -94,6 +94,7 @@ class AlpIndustry {
 			Activities: require('../../includes/activities/activities').default,
 			DiscountCard: require('../../includes/discount-card/discount-card').default,
 			TitleBlock: require('../../includes/components/title-block/title-block').default,
+			SubscriptionNews: require('../../includes/subscription-news/subscription-news').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
