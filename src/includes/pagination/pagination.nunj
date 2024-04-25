@@ -13,7 +13,7 @@
 			<a class="pagination__link" href="#" aria-label="Страница 1" aria-current="page">1</a>
 		</li>
 		<li class="pagination__item">
-			<a class="pagination__link _current" href="#" aria-label="Страница 2">2</a>
+			<span class="pagination__link _current" aria-label="Страница 2">2</span>
 		</li>
 		<li class="pagination__item">
 			<a class="pagination__link" href="#" aria-label="Страница 3">3</a>
