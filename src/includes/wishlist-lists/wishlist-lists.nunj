@@ -1,3 +1,4 @@
+{% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/cart-item/cart-item.nunj" import cartItem %}
 
@@ -83,6 +84,26 @@
 						<li class="wishlist-lists__item">{{ cartItem(item) }}</li>
 					{% endfor %}
 				</ul>
+
+				<div class="wishlist-lists__footer">
+					<div class="wishlist-lists__footer-text p2">
+						{{ icon({
+							iconName: 'heart',
+							className: 'wishlist-lists__footer-icon',
+							attr: 'width="32" height="32"'
+						}) }}
+						<p>
+							Вы&nbsp;можете добавить еще товары из&nbsp;каталога
+						</p>
+					</div>
+					{{ button({
+						className: 'h7 ttu _arrow-s wishlist-lists__footer-link',
+						href: '/catalog',
+						text: 'Перейти в&nbsp;каталог',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+					}) }}
+				</div>
 			</div>
 		</div>
 	</div>

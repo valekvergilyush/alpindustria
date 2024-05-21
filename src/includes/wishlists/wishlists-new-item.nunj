@@ -4,8 +4,9 @@
 
 {% set wishlistList = [
 	{
-		name: 'Восхождение на&nbsp;эльбрус',
-		year: '2022',
+		url: 'wishlist-page-empty.html',
+		name: 'Восхождение 2024',
+		year: '2024',
 		number: '0 товаров'
 	},
 	{

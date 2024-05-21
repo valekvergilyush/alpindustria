@@ -1,0 +1,52 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% from "../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
+{% from "../includes/components/title-block/title-block.nunj" import titleBlock %}
+
+{% block title %}Вишлист | {{ super() }}{% endblock title %}
+
+{% set breadcrumbsData = {
+	list:	[
+		{ text: 'Магазин', href: '/catalog' },
+		{ text: 'Туристическое  снаряжение', href: '/catalog' },
+		{ text: 'Восхождение 2024' }
+	],
+	link: {
+		href: '/catalog',
+		text: 'В каталог'
+	}
+} %}
+
+{% set titleData = {
+	title: 'ВОСХОЖДЕНИЕ 2024',
+	attr: 'data-title-block'
+} %}
+
+{% set cartList = [
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-1.jpg',
+		srcsetImg: '/assets/images/cart/item-1@2x.jpg 2x'
+	},
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-2.jpg',
+		srcsetImg: '/assets/images/cart/item-2@2x.jpg 2x'
+	},
+	{
+		title: 'Куртка The North Face M Dryzzle All Weather Jkt',
+		price: '33 150 ₽',
+		srcImg: '/assets/images/cart/item-3.jpg',
+		srcsetImg: '/assets/images/cart/item-3@2x.jpg 2x'
+	}
+] %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{{ breadcrumbs(breadcrumbsData) }}
+		{{ titleBlock(titleData) }}
+		{% include "../includes/wishlist-lists/wishlist-lists-empty.nunj" %}
+	</main>
+{% endblock %}

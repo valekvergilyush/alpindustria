@@ -1,0 +1,27 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/cart-item/cart-item.nunj" import cartItem %}
+
+<div class="wishlist-lists _empty">
+	<div class="container">
+		<div class="wishlist-lists__wrap">
+			<div class="wishlist-lists__block">
+
+				<div class="wishlist-lists__footer">
+					<div class="wishlist-lists__footer-text p2">
+						<p>
+							Вишлист пуст, вы&nbsp;можете добавлять понравившиеся товары из&nbsp;каталога
+						</p>
+					</div>
+					{{ button({
+						className: 'h7 ttu _arrow-s wishlist-lists__footer-link',
+						href: '/catalog',
+						text: 'В&nbsp;каталог',
+						icon: 'promo-arrow',
+						iconData: 'width="16" height="16" viewBox="0 0 72 72"'
+					}) }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

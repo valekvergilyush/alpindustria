@@ -1,8 +1,8 @@
 .notification {
 	$this: &;
 	position: fixed;
-	bottom: rem(64);
-	left: rem(64);
+	bottom: rem(32);
+	left: rem(32);
 	z-index: 30;
 	display: flex;
 	align-items: flex-start;
@@ -13,6 +13,9 @@
 	transition: visability $default-transition-duration $default-transition-function,
 		opacity $default-transition-duration $default-transition-function,
 		transform $default-transition-duration $default-transition-function;
+	&._wishlist-new {
+		width: rem(433);
+	}
 	@media (max-width: $laptop-lg) {
 		bottom: 22px;
 		left: 28px;
@@ -27,6 +30,9 @@
 		left: 16px;
 		right: 16px;
 		width: auto;
+		&._wishlist-new {
+			width: auto;
+		}
 	}
 	&._hide {
 		transform: translate3d(0, #{rem(20)}, 0);
@@ -35,6 +41,11 @@
 	}
 	&._wishlist {
 		#{$this}__content.notification-wishlist {
+			display: flex;
+		}
+	}
+	&._wishlist-new {
+		#{$this}__content.notification-wishlist-new {
 			display: flex;
 		}
 	}
@@ -63,23 +74,36 @@
 	}
 	&__close {
 		@include reset-btn;
-		--size: #{rem(44)};
+		@extend .animated;
+
+		--size: #{rem(24)};
 		flex-shrink: 0;
 		width: var(--size);
 		height: var(--size);
-		padding: rem(6);
 		margin-left: rem(16);
-		@extend .animated;
-		@media (max-width: $laptop-md) {
-			--size: 32px;
-			padding: 4px;
-		}
-		@media (max-width: $mobile-lg) {
-			--size: 24px;
-			padding: 3px;
+		padding: rem(3);
+		.popups__close-icon {
+			width: 100%;
+			height: 100%;
 		}
 		&:hover {
 			opacity: 0.7;
+		}
+	}
+	&__button {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: rem(22) rem(20) rem(18) rem(20);
+		background-color: var(--blue-dark);
+		color: var(--gray-light);
+		&:hover {
+			opacity: 0.9;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: rem(14);
+			line-height: rem(16);
 		}
 	}
 }

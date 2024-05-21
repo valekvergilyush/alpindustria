@@ -2,8 +2,13 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro wishlistCard(props) %}
+	{% if props.url %}
+		{% set url = props.url %}
+	{% else %}
+		{% set url = 'wishlist-page.html' %}
+	{% endif %}
 	<div class="{% if props.className %}{{ props.className }} {% endif %}wishlist-card">
-		<a href="wishlist-page.html" class="wishlist-card__imgs">
+		<a href="{{ url }}" class="wishlist-card__imgs">
 		{% if props.imgs %}
 			{% for img in props.imgs %}
 				<div class="wishlist-card__img-wrap">
@@ -21,7 +26,7 @@
 		{% endif %}
 		</a>
 		<div class="wishlist-card__row _title">
-			<a href="wishlist-page.html" class="wishlist-card__name h5 ttu">{{ props.name }}</a>
+			<a href="{{ url }}" class="wishlist-card__name h5 ttu">{{ props.name }}</a>
 			<p class="wishlist-card__small">{{ props.year }}</p>
 		</div>
 		<div class="wishlist-card__row _bottom">

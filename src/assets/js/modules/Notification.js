@@ -13,8 +13,6 @@ class Notification {
 		this.openBtn.forEach(btn => {
 			btn.addEventListener('click', evt => {
 				const popupName = evt.target.getAttribute('data-notification-open');
-				this.notification.classList.remove(this.classMod);
-				this.classMod = `_${popupName}`;
 				this.show(popupName);
 			});
 		});
@@ -25,7 +23,9 @@ class Notification {
 		});
 	}
 
-	show() {
+	show(name) {
+		this.notification.classList.remove(this.classMod);
+		this.classMod = `_${name}`;
 		this.notification.classList.add(this.classMod);
 		this.notification.classList.remove(this.hideClass);
 	}
