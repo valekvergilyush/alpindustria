@@ -34,7 +34,7 @@
 					<div class="title-block__controls">
 						{{button({
 							className: 'wishlists__new h7 ttu _plus',
-							text: '<span class="desktop">Сохранить</span> вишлист',
+							text: 'Сохранить вишлист',
 							icon: 'plus-circle-blue',
 							iconData: 'width="32" height="33" viewBox="0 0 32 33"',
 							attr: 'data-notification-open="wishlist-save"'

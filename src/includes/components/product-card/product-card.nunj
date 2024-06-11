@@ -55,7 +55,7 @@
 			{% else %}
 				{{ button({
 					className: 'product-card__button _wishlist' + activeClassName,
-					attr: 'aria-label="Добавить в вишлист" data-notification-open="wishlist"'
+					attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist-list"'
 				}) }}
 			{% endif %}
 		{% endif %}

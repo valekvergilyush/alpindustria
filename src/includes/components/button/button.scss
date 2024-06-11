@@ -673,7 +673,8 @@
 			}
 		}
 	}
-	&._plus {
+	&._plus,
+	&._minus {
 		#{$this}__text {
 			padding-top: 0.15em;
 		}

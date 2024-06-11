@@ -1,0 +1,73 @@
+{% from "../components/wishlist-item/wishlist-item.nunj" import wishlistItem %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/input/input.nunj" import input %}
+
+{% set whishlistList = [
+	{
+		name: 'Новый вишлист',
+		year: '2022',
+		number: '16 товаров',
+		hasAddButton: true
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-3'
+		],
+		hasRemoveButton: true
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1'
+		],
+		hasRemoveButton: true
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-2'
+		],
+		hasAddButton: true
+	},
+	{
+		name: 'Восхождение на&nbsp;эльбрус',
+		year: '2022',
+		number: '16 товаров',
+		imgs: [
+			'/assets/images/catalog/item-3',
+			'/assets/images/catalog/item-1',
+			'/assets/images/catalog/item-2',
+			'/assets/images/catalog/item-4'
+		],
+		hasAddButton: true
+	}
+] %}
+
+<div class="whishlist-popup">
+	<h2 class="whishlist-popup__title h5 ttu">вишлист</h2>
+	{{button({
+		className: 'wishlists__new h7 ttu _plus',
+		text: 'Создать новый',
+		icon: 'plus-circle-blue',
+		iconData: 'width="32" height="33" viewBox="0 0 32 33"',
+		attr: 'data-popup-opener="wishlist"'
+	})}}
+	<div class="whishlist-popup__list">
+		{% for item in whishlistList %}
+			{{ wishlistItem({
+				data: item,
+				className: 'whishlist-popup__item'
+			}) }}
+		{% endfor %}
+	</div>
+</div>

@@ -130,7 +130,8 @@
 			line-height: 16px;
 		}
 	}
-	&__btn._plus {
+	&__btn._plus,
+	&__btn._minus {
 		.button__icon {
 			margin-left: rem(8);
 			@media (max-width: $laptop-md) {
@@ -140,6 +141,9 @@
 				--size: 24px;
 			}
 		}
+	}
+	&__btn._minus {
+		color: var(--red-light);
 	}
 	&__img-empty {
 		width: rem(152);
