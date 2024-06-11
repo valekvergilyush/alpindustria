@@ -2,6 +2,7 @@
 
 <div class="notification _hide" data-notification>
 	{% include "../notification-wishlist/notification-wishlist.nunj" %}
+	{% include "../notification-wishlist/notification-wishlist-save.nunj" %}
 	{% include "../notification-wishlist/notification-wishlist-new.nunj" %}
 	{% include "../notification-cart/notification-cart.nunj" %}
 	{% include "../notification-link/notification-link.nunj" %}

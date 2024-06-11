@@ -17,6 +17,11 @@ class TitleBlock {
 		this.titleContainer = this.container.querySelector('.title-block__wrap');
 		this.formContainer = this.container.querySelector('.title-block__form-wrap');
 		this.editButton = this.container.querySelector('.title-block__link._edit');
+
+		if (!this.editButton) {
+			return;
+		}
+
 		this.formInput = this.formContainer.querySelector('input');
 		this.formClose = this.formContainer.querySelector('[data-wishlist-cancel]');
 

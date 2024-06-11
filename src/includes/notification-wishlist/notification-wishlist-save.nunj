@@ -1,0 +1,18 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="notification__content notification-wishlist-save">
+	<div class="notification-wishlist__imgs">
+		{% include "../../assets/images/inline/empty-logo.svg" %}
+	</div>
+	<div class="notification-wishlist__content">
+		<p class="notification-wishlist__text p3">Вишлист сохранен:</p>
+		<a href="/wishlist-page-empty.html" class="notification-wishlist__link h7 ttu">
+			ВОСХОЖДЕНИЕ <br> НА ЭЛЬБРУС 2024
+			{{ icon({
+				iconName: "promo-arrow",
+				className: "notification-wishlist__link-icon _sm",
+				attr: 'width="12" height="12" viewBox="0 0 72 72"'
+			}) }}
+		</a>
+	</div>
+</div>
