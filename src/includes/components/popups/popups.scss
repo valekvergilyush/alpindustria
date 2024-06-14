@@ -82,7 +82,8 @@
 		&[data-popup-wrapper='question-form'],
 		&[data-popup-wrapper='offer'],
 		&[data-popup-wrapper='offer-2'],
-		&[data-popup-wrapper='availability'] {
+		&[data-popup-wrapper='availability'],
+		&[data-popup-wrapper='wishlist-list'] {
 			@media (max-width: $tablet) {
 				width: 100%;
 				max-width: 100%;
