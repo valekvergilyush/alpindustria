@@ -49,6 +49,11 @@
 			display: flex;
 		}
 	}
+	&._wishlist-save {
+		#{$this}__content.notification-wishlist-save {
+			display: flex;
+		}
+	}
 	&._cart {
 		#{$this}__content.notification-cart {
 			display: flex;

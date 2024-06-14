@@ -82,7 +82,7 @@
 						</div>
 						{{ button({
 							className: 'product__favorite _wishlist _wishlist-sm',
-							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist"'
+							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist-list"'
 						}) }}
 						<div class="product__badges">
 							{% include "../product-badge/new.nunj" %}

@@ -139,3 +139,25 @@
 		}
 	}
 }
+
+.notification-wishlist-save {
+	$this: '.notification-wishlist';
+	#{$this}__link {
+		display: block;
+	}
+	#{$this}__imgs {
+		width: rem(96);
+		height: rem(80);
+		flex-shrink: 0;
+		margin-left: rem(20);
+		> * {
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: $mobile-lg) {
+			width: rem(86);
+			height: rem(72);
+			margin-left: 0;
+		}
+	}
+}

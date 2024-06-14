@@ -30,22 +30,35 @@
 					attr: 'aria-label="Загрузить" download',
 					iconData: 'width="36" height="37" viewBox="0 0 36 37"'
 				}) }}
-				<div class="title-block__controls">
-					{{ button({
-						className: 'title-block__link _edit',
-						href: '#',
-						icon: 'pencil',
-						attr: 'aria-label="Редактировать"',
-						iconData: 'width="36" height="37" viewBox="0 0 36 37"'
-					}) }}
-					{{ button({
-						className: 'title-block__link _delete',
-						href: '#',
-						icon: 'trash',
-						attr: 'aria-label="Удалить" data-popup-opener="wishlist-delete"',
-						iconData: 'width="36" height="37" viewBox="0 0 36 37"'
-					}) }}
-				</div>
+				{% if props.isSave %}
+					<div class="title-block__controls">
+						{{button({
+							className: 'wishlists__new h7 ttu _plus',
+							text: 'Сохранить вишлист',
+							icon: 'plus-circle-blue',
+							iconData: 'width="32" height="33" viewBox="0 0 32 33"',
+							attr: 'data-notification-open="wishlist-save"'
+						})}}
+					</div>
+				{% else %}
+					<div class="title-block__controls">
+						{{ button({
+							className: 'title-block__link _edit',
+							href: '#',
+							icon: 'pencil',
+							attr: 'aria-label="Редактировать"',
+							iconData: 'width="36" height="37" viewBox="0 0 36 37"'
+						}) }}
+						{{ button({
+							className: 'title-block__link _delete',
+							href: '#',
+							icon: 'trash',
+							attr: 'aria-label="Удалить" data-popup-opener="wishlist-delete"',
+							iconData: 'width="36" height="37" viewBox="0 0 36 37"'
+						}) }}
+					</div>
+				{% endif %}
+
 			</div>
 		</div>
 

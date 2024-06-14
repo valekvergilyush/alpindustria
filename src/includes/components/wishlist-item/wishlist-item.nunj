@@ -24,12 +24,24 @@
 		</div>
 		<div class="wishlist-item__bottom">
 			<p class="wishlist-item__small">{{ props.data.number }}</p>
-			{# {{ button({
-				className: 'wishlist-item__btn h7 ttu _plus',
-				text: 'Добавить',
-				icon: 'plus-circle-blue',
-				iconData: 'width="32" height="33" viewBox="0 0 32 33"'
-			}) }} #}
+			<div class="wishlist-item__btns">
+				{% if props.data.hasAddButton %}
+					{{ button({
+						className: 'wishlist-item__btn h7 ttu _plus',
+						text: 'Добавить',
+						icon: 'plus-circle-blue',
+						iconData: 'width="32" height="33" viewBox="0 0 32 33"'
+					})}}
+				{% endif %}
+				{% if props.data.hasRemoveButton %}
+					{{ button({
+						className: 'wishlist-item__btn h7 ttu _minus',
+						text: 'Убрать',
+						icon: 'minus-circle-red',
+						iconData: 'width="32" height="33" viewBox="0 0 32 33"'
+					})}}
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endmacro %}
