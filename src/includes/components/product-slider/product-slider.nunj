@@ -4,7 +4,7 @@
 			{% for item in props.thumbsList %}
 				<div
 					class="product-slider__slide f-carousel__slide f-panzoom"
-					data-thumb-src="{{ item.img }}.png" {% if item.type == 'video' %}data-video="true"{% endif %}
+					data-thumb-src="{{ item.img }}.png" {% if item.type == 'video' %}data-video="{{ item.index }}"{% endif %}
 				>
 					<img
 						class="product-slider__img f-panzoom__content"

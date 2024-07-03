@@ -88,6 +88,17 @@ class ProductSlider {
 								}
 							});
 						});
+
+						setTimeout(() => {
+							const thumbs = this.container.parentElement.querySelectorAll('.f-thumbs__slide');
+							thumbs.forEach(thumb => {
+								const index = thumb.dataset.index;
+								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
+								if (el) {
+									thumb.classList.add('_has-video');
+								}
+							});
+						}, 1000);
 					},
 					change: instance => {
 						const page = instance.page;

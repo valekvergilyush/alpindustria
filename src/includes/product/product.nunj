@@ -27,6 +27,7 @@
 	},
 	{
 		type: 'video',
+		index: 2,
 		img: '/assets/images/catalog/item-3'
 	},
 	{
