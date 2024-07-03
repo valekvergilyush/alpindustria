@@ -96,20 +96,12 @@ class ProductSlider {
 								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
 								if (el) {
 									thumb.classList.add('_has-video');
+									thumb.addEventListener('click', () => {
+										Popups.open('video');
+									});
 								}
 							});
 						}, 1000);
-					},
-					change: instance => {
-						const page = instance.page;
-						const slides = instance.pages[page].slides;
-						slides.forEach(slide => {
-							const currentSlide = slide.el;
-							const hasVideo = currentSlide.dataset.video;
-							if (hasVideo) {
-								Popups.open('video');
-							}
-						});
 					},
 				},
 			},
