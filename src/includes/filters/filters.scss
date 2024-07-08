@@ -51,6 +51,9 @@
 		._no-results & {
 			pointer-events: none;
 		}
+		&.no-pe {
+			opacity: 0;
+		}
 	}
 	&__layout-buttons {
 		display: flex;
