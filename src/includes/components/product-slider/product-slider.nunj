@@ -1,15 +1,15 @@
 {% macro productSlider(props) %}
 	<div class="product-slider {% if props.className %}{{ props.className }} {% endif %}">
 		<div class="product-slider__container f-carousel" data-product-slider>
-			{% for sliderImg in props.imgsList %}
+			{% for item in props.thumbsList %}
 				<div
 					class="product-slider__slide f-carousel__slide f-panzoom"
-					data-thumb-src="{{ sliderImg }}.png"
+					data-thumb-src="{{ item.img }}.png" {% if item.type == 'video' %}data-video="{{ item.index }}"{% endif %}
 				>
 					<img
 						class="product-slider__img f-panzoom__content"
-						src="{{ sliderImg }}.png"
-						{% if props.zoom %}data-zoom-img="{{ sliderImg }}-x4-zoom.png"{% endif %}
+						src="{{ item.img }}.png"
+						{% if props.zoom %}data-zoom-img="{{ item.img }}-x4-zoom.png"{% endif %}
 						alt=""
 						data-fancybox="gallery"
 					>

@@ -160,3 +160,29 @@
 .fancybox__content.can-zoom_in {
 	cursor: zoom-in;
 }
+
+.f-thumbs__slide {
+	&._has-video {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			--size: #{rem(56)};
+			width: var(--size);
+			height: var(--size);
+			background-image: inline('play.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 3;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}

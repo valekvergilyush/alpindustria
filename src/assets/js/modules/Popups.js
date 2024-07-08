@@ -54,6 +54,12 @@ class Popups {
 			});
 		});
 
+		window.addEventListener('keydown', e => {
+			if (this.opened && e.key === 'Escape') {
+				this.close();
+			}
+		});
+
 		this.wrapper.addEventListener('click', e => {
 			if (this.opened) {
 				if (e.target === this.wrapper) {

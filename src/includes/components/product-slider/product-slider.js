@@ -1,6 +1,7 @@
 import { Carousel, Fancybox } from '@fancyapps/ui/';
 import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm';
 import { Panzoom } from '@fancyapps/ui/dist/panzoom/panzoom.esm';
+import Popups from '../../../assets/js/modules/Popups.js';
 
 class ProductSlider {
 	constructor() {
@@ -25,7 +26,6 @@ class ProductSlider {
 			slide.panzoom.reset();
 			slide.contentEl.classList.add('can-zoom_in');
 		};
-
 		new Carousel(
 			this.container,
 			{
@@ -88,12 +88,25 @@ class ProductSlider {
 								}
 							});
 						});
+
+						setTimeout(() => {
+							const thumbs = this.container.parentElement.querySelectorAll('.f-thumbs__slide');
+							thumbs.forEach(thumb => {
+								const index = thumb.dataset.index;
+								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
+								if (el) {
+									thumb.classList.add('_has-video');
+									thumb.addEventListener('click', () => {
+										Popups.open('video');
+									});
+								}
+							});
+						}, 1000);
 					},
 				},
 			},
 			{ Thumbs }
 		);
-
 		Fancybox.bind('[data-fancybox="gallery"]', {
 			idle: false,
 			compact: false,

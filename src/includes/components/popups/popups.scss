@@ -127,6 +127,12 @@
 		&[data-popup-wrapper='video'] {
 			width: 100%;
 			margin-top: rem(32);
+			@media (max-width: $tablet) {
+				margin-top: 0;
+				iframe {
+					height: rem(400);
+				}
+			}
 		}
 		&[data-popup-wrapper='wishlist-delete'] {
 			max-width: rem(704);
@@ -310,6 +316,9 @@
 			#{$this}__close-button {
 				top: rem(8);
 				color: var(--white);
+			}
+			@media (max-width: $tablet) {
+				background: var(--default-black);
 			}
 		}
 		&[data-popup='product-appear'],

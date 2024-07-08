@@ -19,31 +19,36 @@
 {% set productSliderThumbs = [
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-1-mini'
+		img: '/assets/images/catalog/item-1'
 	},
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-2-mini'
+		img: '/assets/images/catalog/item-2'
 	},
 	{
 		type: 'video',
-		img: '/assets/images/catalog/item-3-mini'
+		index: 2,
+		img: '/assets/images/catalog/item-3'
 	},
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-4-mini'
+		img: '/assets/images/catalog/item-4'
 	},
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-3-mini'
+		img: '/assets/images/catalog/item-1'
 	},
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-4-mini'
+		img: '/assets/images/catalog/item-2'
 	},
 	{
 		type: 'photo',
-		img: '/assets/images/catalog/item-4-mini'
+		img: '/assets/images/catalog/item-3'
+	},
+	{
+		type: 'photo',
+		img: '/assets/images/catalog/item-4'
 	}
 ] %}
 {% set colorButtons = [
@@ -264,6 +269,7 @@
 					className: 'product__slider',
 					imgsList: productSliderImgs,
 					thumbsList: productSliderThumbs,
+					video: true,
 					zoom: true
 				}) }}
 			</div>
