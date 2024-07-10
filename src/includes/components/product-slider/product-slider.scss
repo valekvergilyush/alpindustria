@@ -229,4 +229,10 @@
 			opacity: 1;
 		}
 	}
+	&.is-nav-selected {
+		&::before,
+		&::after {
+			opacity: 0;
+		}
+	}
 }
