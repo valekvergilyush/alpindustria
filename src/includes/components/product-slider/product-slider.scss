@@ -33,6 +33,39 @@
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		&._has-video {
+			position: relative;
+			&::before {
+				--size: #{rem(56)};
+
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: var(--size);
+				height: var(--size);
+				background-image: inline('play.svg');
+				background-size: contain;
+				background-repeat: no-repeat;
+				z-index: 3;
+				transition: transform $default-transition-duration $default-transition-function;
+			}
+			&:hover {
+				&::before {
+					transform: translate(-50%, -50%) scale(1.1);
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+		}
 	}
 }
 
@@ -162,27 +195,44 @@
 }
 
 .f-thumbs__slide {
+	position: relative;
+	&::before,
+	&::after {
+		opacity: 0;
+		transition: opacity $default-transition-duration $default-transition-function;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		--size: #{rem(56)};
+		width: var(--size);
+		height: var(--size);
+		background-image: inline('play.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: 3;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+
+	&.for-video,
 	&._has-video {
-		position: relative;
-		&::before {
-			content: '';
-			position: absolute;
-			--size: #{rem(56)};
-			width: var(--size);
-			height: var(--size);
-			background-image: inline('play.svg');
-			background-size: contain;
-			background-repeat: no-repeat;
-			z-index: 3;
-		}
+		&::before,
 		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(255, 255, 255, 0.5);
+			opacity: 1;
+		}
+	}
+	&.is-nav-selected {
+		&::before,
+		&::after {
+			opacity: 0;
 		}
 	}
 }

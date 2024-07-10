@@ -1,7 +1,6 @@
 import { Carousel, Fancybox } from '@fancyapps/ui/';
 import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm';
 import { Panzoom } from '@fancyapps/ui/dist/panzoom/panzoom.esm';
-import Popups from '../../../assets/js/modules/Popups.js';
 
 class ProductSlider {
 	constructor() {
@@ -22,92 +21,15 @@ class ProductSlider {
 	init() {
 		const slides = this.container.querySelectorAll('.product-slider__slide');
 		const resetSlideZoom = slide => {
+			if (!slide.panzoom) {
+				return;
+			}
 			slide.zoomed = false;
 			slide.panzoom.reset();
 			slide.contentEl.classList.add('can-zoom_in');
 		};
-		new Carousel(
-			this.container,
-			{
-				infinite: false,
-				Dots: false,
-				Thumbs: {
-					type: 'classic',
-					Carousel: {
-						dragFree: false,
-						slidesPerPage: 'auto',
-						Navigation: true,
-
-						axis: 'x',
-						breakpoints: {
-							'(min-width: 993px)': {
-								axis: 'y',
-							},
-						},
-					},
-				},
-				on: {
-					ready: () => {
-						const options = {
-							panMode: 'mousemove',
-							mouseMoveFactor: 1.25,
-							click: false,
-							wheel: false,
-							maxScale: 1,
-						};
-
-						const initPanzoom = el => {
-							const instance = new Panzoom(el, options);
-							el.panzoom = instance;
-
-							el.addEventListener('mouseenter', evt => {
-								if (!evt.buttons) {
-									instance.zoomToMax(evt);
-								}
-							});
-
-							el.addEventListener('mouseleave', () => {
-								instance.reset();
-							});
-						};
-
-						this.container.parentElement.classList.add('is-inited');
-						slides.forEach(el => {
-							initPanzoom(el);
-						});
-
-						window.addEventListener('resize', () => {
-							slides.forEach(el => {
-								if (window.innerWidth < 992) {
-									if (el.panzoom) {
-										el.panzoom.destroy();
-										el.panzoom = null;
-									}
-								} else {
-									!el.panzoom && initPanzoom(el);
-								}
-							});
-						});
-
-						setTimeout(() => {
-							const thumbs = this.container.parentElement.querySelectorAll('.f-thumbs__slide');
-							thumbs.forEach(thumb => {
-								const index = thumb.dataset.index;
-								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
-								if (el) {
-									thumb.classList.add('_has-video');
-									thumb.addEventListener('click', () => {
-										Popups.open('video');
-									});
-								}
-							});
-						}, 1000);
-					},
-				},
-			},
-			{ Thumbs }
-		);
 		Fancybox.bind('[data-fancybox="gallery"]', {
+			id: 12345,
 			idle: false,
 			compact: false,
 			dragToClose: false,
@@ -173,6 +95,89 @@ class ProductSlider {
 				},
 			},
 		});
+
+		new Carousel(
+			this.container,
+			{
+				infinite: false,
+				Dots: false,
+				Thumbs: {
+					type: 'classic',
+					Carousel: {
+						dragFree: false,
+						slidesPerPage: 'auto',
+						Navigation: true,
+
+						axis: 'x',
+						breakpoints: {
+							'(min-width: 993px)': {
+								axis: 'y',
+							},
+						},
+					},
+				},
+				on: {
+					ready: () => {
+						const options = {
+							panMode: 'mousemove',
+							mouseMoveFactor: 1.25,
+							click: false,
+							wheel: false,
+							maxScale: 1,
+						};
+
+						const initPanzoom = el => {
+							if (el.hasAttribute('data-video')) {
+								return;
+							}
+
+							const instance = new Panzoom(el, options);
+							el.panzoom = instance;
+
+							el.addEventListener('mouseenter', evt => {
+								if (!evt.buttons) {
+									instance.zoomToMax(evt);
+								}
+							});
+
+							el.addEventListener('mouseleave', () => {
+								instance.reset();
+							});
+						};
+
+						this.container.parentElement.classList.add('is-inited');
+						slides.forEach(el => {
+							initPanzoom(el);
+						});
+
+						window.addEventListener('resize', () => {
+							slides.forEach(el => {
+								if (window.innerWidth < 992) {
+									if (el.panzoom) {
+										el.panzoom.destroy();
+										el.panzoom = null;
+									}
+								} else {
+									!el.panzoom && initPanzoom(el);
+								}
+							});
+						});
+
+						setTimeout(() => {
+							const thumbs = this.container.parentElement.querySelectorAll('.f-thumbs__slide');
+							thumbs.forEach(thumb => {
+								const index = thumb.dataset.index;
+								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
+								if (el) {
+									thumb.classList.add('_has-video');
+								}
+							});
+						}, 1000);
+					},
+				},
+			},
+			{ Thumbs }
+		);
 	}
 }
 
