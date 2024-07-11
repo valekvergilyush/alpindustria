@@ -2,6 +2,8 @@ import { Carousel, Fancybox } from '@fancyapps/ui/';
 import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm';
 import { Panzoom } from '@fancyapps/ui/dist/panzoom/panzoom.esm';
 
+const isMobile = () => window.innerWidth < 992;
+
 class ProductSlider {
 	constructor() {
 		this.container = document.querySelector('[data-product-slider]');
@@ -29,7 +31,6 @@ class ProductSlider {
 			slide.contentEl.classList.add('can-zoom_in');
 		};
 		Fancybox.bind('[data-fancybox="gallery"]', {
-			id: 12345,
 			idle: false,
 			compact: false,
 			dragToClose: false,
@@ -127,7 +128,7 @@ class ProductSlider {
 						};
 
 						const initPanzoom = el => {
-							if (el.hasAttribute('data-video')) {
+							if (el.hasAttribute('data-video') || isMobile()) {
 								return;
 							}
 
@@ -144,6 +145,12 @@ class ProductSlider {
 								instance.reset();
 							});
 						};
+						const destroyPanzoom = el => {
+							if (el.panzoom) {
+								el.panzoom.destroy();
+								el.panzoom = null;
+							}
+						};
 
 						this.container.parentElement.classList.add('is-inited');
 						slides.forEach(el => {
@@ -152,11 +159,8 @@ class ProductSlider {
 
 						window.addEventListener('resize', () => {
 							slides.forEach(el => {
-								if (window.innerWidth < 992) {
-									if (el.panzoom) {
-										el.panzoom.destroy();
-										el.panzoom = null;
-									}
+								if (isMobile()) {
+									destroyPanzoom(el);
 								} else {
 									!el.panzoom && initPanzoom(el);
 								}
