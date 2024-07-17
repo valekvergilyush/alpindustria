@@ -43,7 +43,8 @@
 		img: '/assets/images/catalog/item-2'
 	},
 	{
-		type: 'photo',
+		type: 'video',
+		index: 6,
 		img: '/assets/images/catalog/item-3'
 	},
 	{

@@ -3,6 +3,16 @@ import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm';
 import { Panzoom } from '@fancyapps/ui/dist/panzoom/panzoom.esm';
 
 const isMobile = () => window.innerWidth < 992;
+const toggleVideoClass = instance => {
+	const slideItems = instance.pages.map(item => item.slides[0]);
+	const thumbs = document.querySelectorAll('.product-slider .f-thumbs__slide');
+
+	thumbs.forEach(thumb => {
+		const index = Number(thumb.getAttribute('data-index'));
+		const hasVideo = slideItems[index].el.hasAttribute('data-video');
+		thumb.classList.toggle('_has-video', hasVideo);
+	});
+};
 
 class ProductSlider {
 	constructor() {
@@ -118,7 +128,7 @@ class ProductSlider {
 					},
 				},
 				on: {
-					ready: () => {
+					ready: instance => {
 						const options = {
 							panMode: 'mousemove',
 							mouseMoveFactor: 1.25,
@@ -132,17 +142,17 @@ class ProductSlider {
 								return;
 							}
 
-							const instance = new Panzoom(el, options);
-							el.panzoom = instance;
+							const panzoomInstance = new Panzoom(el, options);
+							el.panzoom = panzoomInstance;
 
 							el.addEventListener('mouseenter', evt => {
 								if (!evt.buttons) {
-									instance.zoomToMax(evt);
+									panzoomInstance.zoomToMax(evt);
 								}
 							});
 
 							el.addEventListener('mouseleave', () => {
-								instance.reset();
+								panzoomInstance.reset();
 							});
 						};
 						const destroyPanzoom = el => {
@@ -168,15 +178,13 @@ class ProductSlider {
 						});
 
 						setTimeout(() => {
-							const thumbs = this.container.parentElement.querySelectorAll('.f-thumbs__slide');
-							thumbs.forEach(thumb => {
-								const index = thumb.dataset.index;
-								const el = document.querySelector(`.product-slider__slide[data-video="${index}"]`);
-								if (el) {
-									thumb.classList.add('_has-video');
-								}
-							});
-						}, 1000);
+							toggleVideoClass(instance);
+						}, 300);
+					},
+					change: instance => {
+						setTimeout(() => {
+							toggleVideoClass(instance);
+						}, 300);
 					},
 				},
 			},
