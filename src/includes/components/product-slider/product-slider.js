@@ -177,14 +177,9 @@ class ProductSlider {
 							});
 						});
 
-						setTimeout(() => {
+						setInterval(() => {
 							toggleVideoClass(instance);
-						}, 300);
-					},
-					change: instance => {
-						setTimeout(() => {
-							toggleVideoClass(instance);
-						}, 300);
+						}, 1000);
 					},
 				},
 			},
