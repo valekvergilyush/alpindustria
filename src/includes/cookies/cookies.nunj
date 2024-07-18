@@ -1,0 +1,15 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<section class="cookies _hidden" data-cookies>
+	<div class="cookies__text p3">
+		<p>Этот сайт использует <span>cookies</span>, чтобы помочь улучшить ваш пользовательский опыт</p>
+
+		<button class="cookies__close" type="button" aria-label="Закрыть">
+			{{ icon({
+				iconName: "close-popup",
+				className: "cookies__close-icon",
+				attr: 'width="32" height="32" viewBox="0 0 32 32"'
+			}) }}
+		</button>
+	</div>
+</section>

@@ -33,6 +33,7 @@
 		{% endif %}
 
 		{% include "../includes/notification/notification.nunj" %}
+		{% include "../includes/cookies/cookies.nunj" %}
 		{% block scripts %}
 			<script src="/assets/js/bundle.js?hash"></script>
 		{% endblock %}
