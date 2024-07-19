@@ -69,6 +69,14 @@
 			}) }}
 			Личный кабинет
 		</a>
+		<a href="/compare.html" class="menu__compare-link ttu">
+			{{ icon({
+				iconName: 'compare',
+				className: 'menu__user-icon',
+				attr: 'width="24" height="24"'
+			}) }}
+			Сравнения товаров
+		</a>
 		<button class="menu__location ttu" type="button" data-popup-opener="city-form">
 			{{ icon({
 				iconName: 'map-pin',

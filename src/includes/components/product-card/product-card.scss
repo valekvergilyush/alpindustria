@@ -237,18 +237,37 @@
 			}
 		}
 		&._wishlist {
-			margin-top: 0 - rem(9);
-			margin-left: 0 - rem(9);
 			@media (max-width: $laptop) {
 				position: absolute;
-				left: 8px;
-				bottom: 8px;
-				margin-top: 0;
-				margin-left: 0;
+				left: 16px;
+				bottom: 16px;
 			}
 			@media (max-width: $mobile-lg) {
-				left: 0;
-				bottom: 0;
+				left: 4px;
+				bottom: 4px;
+			}
+		}
+		&._compare {
+			margin-top: rem(13);
+			&:hover {
+				.button__icon {
+					fill: var(--blue-dark);
+				}
+			}
+			@media (max-width: $laptop) {
+				position: absolute;
+				left: 60px;
+				bottom: 16px;
+				margin-top: 0;
+				&:hover {
+					.button__icon {
+						fill: none;
+					}
+				}
+			}
+			@media (max-width: $mobile-lg) {
+				left: 44px;
+				bottom: 9px;
 			}
 		}
 		&._add-cart {

@@ -8,8 +8,8 @@
 	{% set attr = props.attr %}
 
 	<picture class="picture{% if className %} {{ className }}{% endif %}">
-		<source media="(max-width: 375px)" srcset="{{ path }}-xs.webp, {{ path }}-xs@2x.webp 2x" type="image/webp">
-		<source media="(max-width: 375px)" srcset="{{ path }}-xs.{{ ext }}, {{ path }}-xs@2x.{{ ext }} 2x">
+		<source media="(max-width: 425px)" srcset="{{ path }}-xs.webp, {{ path }}-xs@2x.webp 2x" type="image/webp">
+		<source media="(max-width: 425px)" srcset="{{ path }}-xs.{{ ext }}, {{ path }}-xs@2x.{{ ext }} 2x">
 		<source media="(max-width: 768px)" srcset="{{ path }}-sm.webp, {{ path }}-sm@2x.webp 2x" type="image/webp">
 		<source media="(max-width: 768px)" srcset="{{ path }}-sm.{{ ext }}, {{ path }}-sm@2x.{{ ext }} 2x">
 		<source media="(max-width: 1024px)" srcset="{{ path }}-md.webp, {{ path }}-md@2x.webp 2x" type="image/webp">

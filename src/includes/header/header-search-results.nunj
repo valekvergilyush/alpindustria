@@ -17,6 +17,13 @@
 				className: 'header__search',
 				searchInputText: 'Куртка'
 			}) }}
+			{{ button({
+				href: '/compare.html',
+				icon: 'compare',
+				iconData: 'width="32" height="32"',
+				className: 'header__compare-link _compare',
+				attr: 'data-tippy-content="Сравнение товаров"'
+			}) }}
 		</div>
 		<a href="/" class="header__logo-link" aria-label="На главную">
 			{{ icon({

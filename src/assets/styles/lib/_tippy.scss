@@ -13,7 +13,7 @@
 	line-height: 1.4;
 	white-space: normal;
 	outline: 0;
-	transition-property: transform, visibility, opacity;
+	transition: none;
 }
 .tippy-box[data-placement^='top'] > .tippy-arrow {
 	bottom: 0;
@@ -53,15 +53,13 @@
 	border-right-color: initial;
 	transform-origin: center right;
 }
-.tippy-box[data-inertia][data-state='visible'] {
-	transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
-}
 .tippy-arrow {
 	width: 16px;
 	height: 16px;
 	color: #333;
 }
-.tippy-arrow:before {
+.tippy-arrow:before,
+.tippy-arrow:after {
 	content: '';
 	position: absolute;
 	border-color: transparent;
@@ -70,5 +68,4 @@
 .tippy-content {
 	position: relative;
 	padding: 5px 9px;
-	z-index: 1;
 }

@@ -6,9 +6,11 @@ class Tooltip {
 	}
 
 	init() {
-		tippy('[data-tippy-content]', {
-			offset: [0, 18],
-			maxWidth: 210,
+		document.querySelectorAll('[data-tippy-content]').forEach(el => {
+			el.tippy = tippy(el, {
+				offset: [0, 16],
+				maxWidth: 210,
+			});
 		});
 	}
 }
