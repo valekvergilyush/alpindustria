@@ -7,5 +7,8 @@
 {% block mainContent %}
 	<main class="page__main">
 		{% include "../includes/hero-catalog/hero-catalog-compare.nunj" %}
+		{% include "../includes/compare-header/compare-header.nunj" %}
+		{% include "../includes/compare/compare.nunj" %}
+		{% include "../includes/catalog-accordion/catalog-accordion-compare.nunj" %}
 	</main>
 {% endblock %}

@@ -1,0 +1,14 @@
+{% from "../components/button/button.nunj" import button %}
+
+<div class="compare-header" data-compare-header>
+	<div class="compare-header__container container">
+		<p class="compare-header__qty">4&nbsp;товара</p>
+
+		{{ button({
+			className: 'compare-header__delete p2',
+			text: 'Удалить все',
+			icon: 'trash-outline',
+			iconData: 'width="24" height="24"'
+		}) }}
+	</div>
+</div>

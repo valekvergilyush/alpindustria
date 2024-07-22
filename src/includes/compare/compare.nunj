@@ -1,0 +1,350 @@
+{% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set productList = [
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true },
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-4', zoomPhoto: '/assets/images/catalog/item-4-zoom', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+] %}
+
+<div class="compare" data-compare>
+	<div class="compare__container">
+		<table class="compare__table">
+			<tbody>
+				<tr>
+					<th class="compare__col _header" scope="row">Выбранные товары</th>
+					{% for product in productList %}
+						<td class="compare__col _product">{{ productCard(product) }}</td>
+					{% endfor %}
+				</tr>
+				<tr>
+					<th class="compare__col _title" scope="row">Описание</th>
+					<td class="compare__col _desc">
+						<div data-show-more-text>
+							<p>Kailas Mont-X - штормовая куртка, предназначенная для восхождений на высоты от 5000 до 6000 метров. Изготовлена из мембранного материала GORE-TEX - Артикул: # 8000PM3T</p>
+						</div>
+						{{ button({
+							className: 'compare__show-more',
+							text: 'Читать дальше',
+							attr: 'data-show-more-toggle data-close-text="Свернуть"'
+						}) }}
+					</td>
+					<td class="compare__col _desc">
+						<div data-show-more-text>
+							<p>Куртка Dynafit Transalper GTX M&nbsp;JKT&nbsp;&mdash; легкая и&nbsp;компактная мембранная куртка для трейлраннинга, треккинга, любых активностей в&nbsp;горах и&nbsp;не&nbsp;только. Куртка имеет гибридную конструкцию, она выполнена из&nbsp;двух материалов GORE-TEX active и&nbsp;PACLITE &reg; PLUS.</p>
+						</div>
+						{{ button({
+							className: 'compare__show-more',
+							text: 'Читать дальше',
+							attr: 'data-show-more-toggle data-close-text="Свернуть"'
+						}) }}
+					</td>
+					<td class="compare__col _desc">
+						<div data-show-more-text>
+							<p>Куртка Dynafit Elevation GTX - лёгкая, компактная и надёжная защита от непогоды. Рекомендована производителем для альпинизма. Дождь, ветер, снег, снежная крупа - вы будете готовы к изменчивой погоде больших высот. Артикул: # 8000PM3T</p>
+						</div>
+						{{ button({
+							className: 'compare__show-more',
+							text: 'Читать дальше',
+							attr: 'data-show-more-toggle data-close-text="Свернуть"'
+						}) }}
+					</td>
+					<td class="compare__col _desc">
+						<div data-show-more-text>
+							<p>Куртка Dynafit Transalper GTX M&nbsp;JKT&nbsp;&mdash; легкая и&nbsp;компактная мембранная куртка для трейлраннинга, треккинга, любых активностей в&nbsp;горах и&nbsp;не&nbsp;только. Куртка имеет гибридную конструкцию, она выполнена из&nbsp;двух материалов GORE-TEX active и&nbsp;PACLITE &reg; PLUS.</p>
+						</div>
+						{{ button({
+							className: 'compare__show-more',
+							text: 'Читать дальше',
+							attr: 'data-show-more-toggle data-close-text="Свернуть"'
+						}) }}
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Размеры</th>
+					<td class="compare__col">
+						<ul class="compare__sizes">
+							<li>M</li>
+							<li>L</li>
+							<li>XL</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__sizes">
+							<li>M</li>
+							<li>XL</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__sizes">
+							<li>M</li>
+							<li>L</li>
+							<li>XL</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__sizes">
+							<li>M</li>
+							<li>XL</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Бренд</th>
+					<td class="compare__col">
+						{{ button({
+							className: 'compare__link _arrow-s p2',
+							href: '#',
+							text: 'Montura',
+							icon: 'promo-arrow',
+							iconData: 'width="16" height="16"'
+						}) }}
+					</td>
+					<td class="compare__col">
+						{{ button({
+							className: 'compare__link _arrow-s p2',
+							href: '#',
+							text: 'Kailas',
+							icon: 'promo-arrow',
+							iconData: 'width="16" height="16"'
+						}) }}
+					</td>
+					<td class="compare__col">
+						{{ button({
+							className: 'compare__link _arrow-s p2',
+							href: '#',
+							text: 'Montura',
+							icon: 'promo-arrow',
+							iconData: 'width="16" height="16"'
+						}) }}
+					</td>
+					<td class="compare__col">
+						{{ button({
+							className: 'compare__link _arrow-s p2',
+							href: '#',
+							text: 'Kailas',
+							icon: 'promo-arrow',
+							iconData: 'width="16" height="16"'
+						}) }}
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Вид активности</th>
+					<td class="compare__col">Ски-тур</td>
+					<td class="compare__col">Ски-тур</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Рейтинг</th>
+					<td class="compare__col">
+						<p class="compare__rating">
+							<a href="#">
+								{{ icon({
+									iconName: 'star',
+									className: 'compare__rating-icon',
+									attr: 'width="16" height="16"'
+								}) }}
+								5.0
+							</a>
+							<span>6 оценок</span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__rating">
+							<a href="#">
+								{{ icon({
+									iconName: 'star',
+									className: 'compare__rating-icon',
+									attr: 'width="16" height="16"'
+								}) }}
+								4.5
+							</a>
+							<span>16 оценок</span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__rating">
+							<a href="#">
+								{{ icon({
+									iconName: 'star',
+									className: 'compare__rating-icon',
+									attr: 'width="16" height="16"'
+								}) }}
+								4.5
+							</a>
+							<span>16 оценок</span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__rating">
+							<a href="#">
+								{{ icon({
+									iconName: 'star',
+									className: 'compare__rating-icon',
+									attr: 'width="16" height="16"'
+								}) }}
+								4.5
+							</a>
+							<span>16 оценок</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Состав</th>
+					<td class="compare__col">основной: 100% полиэстер<br> юбка: 90% полиэстер, 10% спандекс</td>
+					<td class="compare__col">основной: 100% полиэстер</td>
+					<td class="compare__col">основной: 100% полиэстер</td>
+					<td class="compare__col">основной: 100% полиэстер</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Материал</th>
+					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
+					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
+					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
+					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Паропроницаемость</th>
+					<td class="compare__col">
+						<p class="compare__progress">
+							5/6
+							<span class="compare__progress-line" style="--progress:5/6"></span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__progress">
+							5/6
+							<span class="compare__progress-line" style="--progress:5/6"></span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__progress">
+							3/6
+							<span class="compare__progress-line" style="--progress:3/6"></span>
+						</p>
+					</td>
+					<td class="compare__col">
+						<p class="compare__progress">
+							5/6
+							<span class="compare__progress-line" style="--progress:5/6"></span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Водостойкость</th>
+					<td class="compare__col">28000 мм</td>
+					<td class="compare__col">28000 мм</td>
+					<td class="compare__col">28000 мм</td>
+					<td class="compare__col">28000 мм</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Вес</th>
+					<td class="compare__col">520 г</td>
+					<td class="compare__col">520 г</td>
+					<td class="compare__col">520 г</td>
+					<td class="compare__col">520 г</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Карманы</th>
+					<td class="compare__col">
+						<p>4&nbsp;шт:</p>
+						<ul>
+							<li>Внешние нагрудные на&nbsp;молниях: 2&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;молнии: 1&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<p>4&nbsp;шт:</p>
+						<ul>
+							<li>Внешние нагрудные на&nbsp;молниях: 2&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;молнии: 1&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<p>4&nbsp;шт:</p>
+						<ul>
+							<li>Внешние нагрудные на&nbsp;молниях: 2&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;молнии: 1&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<p>4&nbsp;шт:</p>
+						<ul>
+							<li>Внешние нагрудные на&nbsp;молниях: 2&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;молнии: 1&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Объем</th>
+					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Цвета</th>
+					<td class="compare__col">
+						<ul class="compare__colors">
+							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
+							<li style="--color:#6f2876"><span class="visually-hidden">фиолетовый</span></li>
+							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__colors">
+							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
+							<li style="--color:#6f2876"><span class="visually-hidden">фиолетовый</span></li>
+							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__colors">
+							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
+							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
+						</ul>
+					</td>
+					<td class="compare__col">
+						<ul class="compare__colors">
+							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
+							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Доставка</th>
+					<td class="compare__col">Самовывоз</td>
+					<td class="compare__col">Курьер</td>
+					<td class="compare__col">Курьер</td>
+					<td class="compare__col">Курьер</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu" scope="row">Манжеты на липучках</th>
+					<td class="compare__col">
+						{{ icon({
+							iconName: 'check',
+							className: 'compare__check-icon',
+							attr: 'width="32" height="32" aria-label="Есть"'
+						}) }}
+					</td>
+					<td class="compare__col">
+						{{ icon({
+							iconName: 'check',
+							className: 'compare__check-icon',
+							attr: 'width="32" height="32" aria-label="Есть"'
+						}) }}
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

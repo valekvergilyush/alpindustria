@@ -61,14 +61,14 @@
 			{% if props.noAuth %}
 				{{ button({
 					className: 'product-card__button _wishlist' + activeClassName,
-					attr: 'aria-label="Добавить в сравнения" data-popup-opener="auth"'
+					attr: 'aria-label="Добавить в сравнение" data-popup-opener="auth"'
 				}) }}
 			{% else %}
 				{{ button({
 					className: 'product-card__button _compare' + activeClassName,
 					icon: 'compare',
 					iconData: 'width="32" height="32"',
-					attr: 'aria-label="Добавить в сравнения"'
+					attr: 'aria-label="Добавить в сравнение" data-notification-open="compare-new"'
 				}) }}
 			{% endif %}
 		{% endif %}
