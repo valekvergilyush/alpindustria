@@ -1,0 +1,18 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+<div class="notification__content notification-compare notification-compare-new">
+	<div class="notification-compare__imgs">
+		<div class="notification-compare__img-wrap">
+			<img class="notification-compare__img" src="/assets/images/catalog/item-4.png" srcset="/assets/images/catalog/item-4@2x.png 2x" width="53" height="62" alt="">
+		</div>
+	</div>
+	<div class="notification-compare__content">
+		<p class="notification-compare__text p3">Добавлен в <a href="/compare.html">«КУРТКИ»</a></p>
+		<a href="/compare.html" class="notification-compare__link h7 ttu">
+			Куртка The North Face M Dryzzle All Weather Jkt
+		</a>
+	</div>
+	<a class="notification__button button h7 ttu" href="/compare.html">
+		<span class="button__text">Перейти в&nbsp;сравнение</span>
+	</a>
+</div>

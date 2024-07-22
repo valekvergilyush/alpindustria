@@ -7,6 +7,7 @@
 	{% include "../notification-cart/notification-cart.nunj" %}
 	{% include "../notification-link/notification-link.nunj" %}
 	{% include "../notification-save/notification-save.nunj" %}
+	{% include "../notification-compare/notification-compare-new.nunj" %}
 	<button class="notification__close" type="button" data-notification-close>
 		{{ icon({
 			iconName: "close-popup",
