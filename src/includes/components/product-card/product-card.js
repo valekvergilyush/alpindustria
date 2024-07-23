@@ -20,6 +20,7 @@ class ProductCard {
 		this.mqLaptop = window.matchMedia(`(max-width: ${LAPTOP_BREAKPOINT}px)`);
 		this.propsOpeners = document.querySelectorAll('[data-product-card-props-opener]');
 		this.sliderOffsetGap = 16;
+		this.closers = document.querySelectorAll('[data-prod-sizecolors-closer]');
 
 		this.onOpenerClick = this.onOpenerClick.bind(this);
 
@@ -27,8 +28,17 @@ class ProductCard {
 			opener.addEventListener('mouseenter', () => {
 				const card = opener.closest('[data-product-card]');
 				const form = card.querySelector('[data-product-card-props]');
+				const closer = card.querySelector('[data-prod-sizecolors-closer]');
 
-				card.classList.add(ClassName.PROPS_OPENED);
+				setTimeout(() => {
+					closer.addEventListener(
+						'click',
+						() => {
+							card.classList.remove(ClassName.PROPS_OPENED);
+						},
+						{ once: true }
+					);
+				});
 				form.addEventListener(
 					'mouseleave',
 					() => {
@@ -36,21 +46,13 @@ class ProductCard {
 					},
 					{ once: true }
 				);
+				card.classList.add(ClassName.PROPS_OPENED);
 			});
 		});
 
-		const onWindowWidthChange = evt => {
-			if (evt.matches) {
-				this.destroy();
-			} else {
-				this.cards.forEach(card => {
-					this.onOpenerClick(card);
-				});
-			}
-		};
-
-		this.mqLaptop.addEventListener('change', onWindowWidthChange);
-		onWindowWidthChange(this.mqLaptop);
+		this.cards.forEach(card => {
+			this.onOpenerClick(card);
+		});
 	}
 	initInputSlider(element) {
 		let scroll = 0;
@@ -77,6 +79,12 @@ class ProductCard {
 		const sizeOutput = card.querySelector('[data-product-card-size]');
 		const daysOutput = card.querySelector('[data-product-card-days]');
 		const backButton = card.querySelector('[data-product-card-back]');
+
+		// window.addEventListener('click', evt => {
+		// 	if (!form.contains(evt.target)) {
+
+		// 	}
+		// }, { once: true });
 
 		const isCheckedAll = () => {
 			if (daysInputs.length) {

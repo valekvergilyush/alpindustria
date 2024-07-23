@@ -76,6 +76,7 @@
 			<img class="product-card__photo" src="{{ props.photo }}.png" srcset="{{ props.photo }}@2x.png 2x" width="304" height="364" alt="">
 			<img class="product-card__photo _zoom" src="{{ props.zoomPhoto }}.png" srcset="{{ props.zoomPhoto }}@2x.png 2x" width="432" height="540" alt="">
 		</a>
+		<button class="product-card__close-btn" type="button" aria-label="Закрыть" data-prod-sizecolors-closer></button>
 		{% if props.isRent %}
 			{{ button({
 				text: 'Забронировать',

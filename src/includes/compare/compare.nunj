@@ -1,5 +1,6 @@
 {% from "../components/product-card/product-card.nunj" import productCard %}
 {% from "../components/button/button.nunj" import button %}
+{% from "../components/switch/switch.nunj" import switch %}
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set productList = [
@@ -14,13 +15,24 @@
 		<table class="compare__table">
 			<tbody>
 				<tr>
-					<th class="compare__col _header" scope="row">Выбранные товары</th>
+					<th class="compare__col _header">Выбранные товары</th>
 					{% for product in productList %}
 						<td class="compare__col _product">{{ productCard(product) }}</td>
 					{% endfor %}
 				</tr>
+				<tr class="compare__row _mobile">
+					<td class="compare__toggle">
+						<span id="only-differences">Только различия</span>
+						{{ switch({
+							className: 'compare__toggle-switch _rounded _sm',
+							name: 'only-differences',
+							value: 'only-differences',
+							attr: 'aria-labelledby="only-differences"'
+						}) }}
+					</td>
+				</tr>
 				<tr>
-					<th class="compare__col _title" scope="row">Описание</th>
+					<th class="compare__col _title">Описание</th>
 					<td class="compare__col _desc">
 						<div data-show-more-text>
 							<p>Kailas Mont-X - штормовая куртка, предназначенная для восхождений на высоты от 5000 до 6000 метров. Изготовлена из мембранного материала GORE-TEX - Артикул: # 8000PM3T</p>
@@ -63,7 +75,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Размеры</th>
+					<th class="compare__col _title h6 ttu">Размеры</th>
 					<td class="compare__col">
 						<ul class="compare__sizes">
 							<li>M</li>
@@ -92,7 +104,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Бренд</th>
+					<th class="compare__col _title h6 ttu">Бренд</th>
 					<td class="compare__col">
 						{{ button({
 							className: 'compare__link _arrow-s p2',
@@ -131,14 +143,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Вид активности</th>
+					<th class="compare__col _title h6 ttu">Вид активности</th>
 					<td class="compare__col">Ски-тур</td>
 					<td class="compare__col">Ски-тур</td>
 					<td class="compare__col"></td>
 					<td class="compare__col"></td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Рейтинг</th>
+					<th class="compare__col _title h6 ttu">Рейтинг</th>
 					<td class="compare__col">
 						<p class="compare__rating">
 							<a href="#">
@@ -193,21 +205,21 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Состав</th>
+					<th class="compare__col _title h6 ttu">Состав</th>
 					<td class="compare__col">основной: 100% полиэстер<br> юбка: 90% полиэстер, 10% спандекс</td>
 					<td class="compare__col">основной: 100% полиэстер</td>
 					<td class="compare__col">основной: 100% полиэстер</td>
 					<td class="compare__col">основной: 100% полиэстер</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Материал</th>
+					<th class="compare__col _title h6 ttu">Материал</th>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Паропроницаемость</th>
+					<th class="compare__col _title h6 ttu">Паро&shy;проницаемость</th>
 					<td class="compare__col">
 						<p class="compare__progress">
 							5/6
@@ -234,21 +246,21 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Водостойкость</th>
+					<th class="compare__col _title h6 ttu">Водостойкость</th>
 					<td class="compare__col">28000 мм</td>
 					<td class="compare__col">28000 мм</td>
 					<td class="compare__col">28000 мм</td>
 					<td class="compare__col">28000 мм</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Вес</th>
+					<th class="compare__col _title h6 ttu">Вес</th>
 					<td class="compare__col">520 г</td>
 					<td class="compare__col">520 г</td>
 					<td class="compare__col">520 г</td>
 					<td class="compare__col">520 г</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Карманы</th>
+					<th class="compare__col _title h6 ttu">Карманы</th>
 					<td class="compare__col">
 						<p>4&nbsp;шт:</p>
 						<ul>
@@ -283,14 +295,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Объем</th>
+					<th class="compare__col _title h6 ttu">Объем</th>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Цвета</th>
+					<th class="compare__col _title h6 ttu">Цвета</th>
 					<td class="compare__col">
 						<ul class="compare__colors">
 							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
@@ -319,14 +331,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Доставка</th>
+					<th class="compare__col _title h6 ttu">Доставка</th>
 					<td class="compare__col">Самовывоз</td>
 					<td class="compare__col">Курьер</td>
 					<td class="compare__col">Курьер</td>
 					<td class="compare__col">Курьер</td>
 				</tr>
 				<tr>
-					<th class="compare__col _title h6 ttu" scope="row">Манжеты на липучках</th>
+					<th class="compare__col _title h6 ttu">Манжеты на липучках</th>
 					<td class="compare__col">
 						{{ icon({
 							iconName: 'check',
