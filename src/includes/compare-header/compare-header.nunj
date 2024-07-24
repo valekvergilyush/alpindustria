@@ -4,6 +4,14 @@
 	<div class="compare-header__container container">
 		<p class="compare-header__qty">4&nbsp;товара</p>
 
+		<ul class="compare-header__products">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
 		{{ button({
 			className: 'compare-header__delete p2',
 			text: 'Удалить все',

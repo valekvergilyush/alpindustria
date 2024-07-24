@@ -11,7 +11,7 @@
 ] %}
 
 <div class="compare" data-compare>
-	<div class="compare__container">
+	<div class="compare__container" data-compare-container>
 		<table class="compare__table">
 			<tbody>
 				<tr>
@@ -19,8 +19,19 @@
 					{% for product in productList %}
 						<td class="compare__col _product">{{ productCard(product) }}</td>
 					{% endfor %}
+
+					<td class="compare__col _new">
+						<a class="compare__add" href="/catalog">
+							{{ icon({
+								iconName: 'plus',
+								className: 'compare__add-icon',
+								attr: 'width="58" height="58"'
+							}) }}
+							<span class="compare__add-text">Добавить товар</span>
+						</a>
+					</td>
 				</tr>
-				<tr class="compare__row _mobile">
+				<tr class="compare__row _toggle">
 					<td class="compare__toggle">
 						<span id="only-differences">Только различия</span>
 						{{ switch({
@@ -73,6 +84,7 @@
 							attr: 'data-show-more-toggle data-close-text="Свернуть"'
 						}) }}
 					</td>
+					<td class="compare__col _desc"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Размеры</th>
@@ -102,6 +114,7 @@
 							<li>XL</li>
 						</ul>
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Бренд</th>
@@ -141,11 +154,13 @@
 							iconData: 'width="16" height="16"'
 						}) }}
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Вид активности</th>
 					<td class="compare__col">Ски-тур</td>
 					<td class="compare__col">Ски-тур</td>
+					<td class="compare__col"></td>
 					<td class="compare__col"></td>
 					<td class="compare__col"></td>
 				</tr>
@@ -203,6 +218,7 @@
 							<span>16 оценок</span>
 						</p>
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Состав</th>
@@ -210,6 +226,7 @@
 					<td class="compare__col">основной: 100% полиэстер</td>
 					<td class="compare__col">основной: 100% полиэстер</td>
 					<td class="compare__col">основной: 100% полиэстер</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Материал</th>
@@ -217,6 +234,7 @@
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
 					<td class="compare__col">Gore-Tex Pro&reg; 3L</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Паро&shy;проницаемость</th>
@@ -244,6 +262,7 @@
 							<span class="compare__progress-line" style="--progress:5/6"></span>
 						</p>
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Водостойкость</th>
@@ -251,13 +270,15 @@
 					<td class="compare__col">28000 мм</td>
 					<td class="compare__col">28000 мм</td>
 					<td class="compare__col">28000 мм</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Вес</th>
-					<td class="compare__col">520 г</td>
-					<td class="compare__col">520 г</td>
-					<td class="compare__col">520 г</td>
-					<td class="compare__col">520 г</td>
+					<td class="compare__col">520&nbsp;г</td>
+					<td class="compare__col">520&nbsp;г</td>
+					<td class="compare__col">520&nbsp;г</td>
+					<td class="compare__col">520&nbsp;г</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Карманы</th>
@@ -293,6 +314,7 @@
 							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
 						</ul>
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Объем</th>
@@ -300,6 +322,7 @@
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
 					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Цвета</th>
@@ -329,6 +352,7 @@
 							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
 						</ul>
 					</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Доставка</th>
@@ -336,6 +360,7 @@
 					<td class="compare__col">Курьер</td>
 					<td class="compare__col">Курьер</td>
 					<td class="compare__col">Курьер</td>
+					<td class="compare__col"></td>
 				</tr>
 				<tr>
 					<th class="compare__col _title h6 ttu">Манжеты на липучках</th>
@@ -355,8 +380,22 @@
 					</td>
 					<td class="compare__col"></td>
 					<td class="compare__col"></td>
+					<td class="compare__col"></td>
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	<div class="compare__nav">
+		{{ button({
+			className: 'compare__nav-button _prev',
+			icon: 'arrow-left',
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
+		})}}
+		{{ button({
+			className: 'compare__nav-button _next',
+			icon: 'arrow-right',
+			iconData: 'width="16" height="16"'
+		})}}
 	</div>
 </div>

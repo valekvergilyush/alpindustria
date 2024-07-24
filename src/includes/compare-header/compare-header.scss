@@ -1,6 +1,9 @@
 .compare-header {
+	$this: &;
+	--bd-color: #{rgba($gray-dark, 0.2)};
+
 	position: sticky;
-	z-index: 2;
+	z-index: 5;
 	top: 0;
 	box-sizing: border-box;
 	display: flex;
@@ -9,6 +12,7 @@
 	border-bottom: 1px solid var(--gray-dark);
 	background-color: var(--white);
 	transition: top 0.1s linear;
+	overflow: hidden;
 
 	@media (max-width: $mobile-lg) {
 		height: rem(56);
@@ -43,6 +47,30 @@
 		.button__icon {
 			width: var(--icon-size);
 			height: var(--icon-size);
+		}
+	}
+	&__products {
+		position: absolute;
+		z-index: 2;
+		left: var(--left-pos);
+		display: flex;
+		width: max-content;
+		height: 100%;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity $default-transition-duration $default-transition-function;
+		> * {
+			box-sizing: border-box;
+			width: var(--col-width);
+			background-color: var(--gray-light);
+			border-right: 1px solid var(--bd-color);
+			&:first-child {
+				border-left: 1px solid var(--bd-color);
+			}
+		}
+		#{$this}._active & {
+			opacity: 1;
+			pointer-events: all;
 		}
 	}
 }
