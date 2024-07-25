@@ -29,6 +29,9 @@ class Compare {
 
 	initShowMore() {
 		const toggles = this.container.querySelectorAll('[data-show-more-toggle]');
+		if (toggles.length === 0) {
+			return;
+		}
 		const toggleText = toggles[0].textContent;
 		const closeText = toggles[0].getAttribute('data-close-text');
 
@@ -44,24 +47,30 @@ class Compare {
 		});
 	}
 	initSlider() {
+		const header = document.querySelector('[data-compare-header]');
 		const container = this.container.querySelector('[data-compare-container]');
+		const headerContainer = header.querySelector('.compare-header__products-wrapper');
 		const cols = this.container.querySelectorAll('td');
+		const headerProducts = header.querySelectorAll('.compare-header__product');
 		const prevButton = this.container.querySelector('.compare__nav-button._prev');
 		const nextButton = this.container.querySelector('.compare__nav-button._next');
+		const prevHeaderButton = header.querySelector('.compare__nav-button._prev');
+		const nextHeaderButton = header.querySelector('.compare__nav-button._next');
 		let colWidth = cols[0].offsetWidth;
-		this.colWidth = colWidth;
 		let leftPos = cols[0].getBoundingClientRect().left;
-		this.leftPos = leftPos;
 		let xPos = 0;
 		let isScrolling = false;
 
 		const updateDisabled = utils.debounce(() => {
 			isScrolling = false;
 			this.container.classList.remove(ClassName.SCROLLING);
+			header.classList.remove(ClassName.SCROLLING);
 			prevButton.disabled = xPos === 0;
+			prevHeaderButton.disabled = xPos === 0;
 			nextButton.disabled = container.scrollWidth - window.innerWidth <= xPos;
+			nextHeaderButton.disabled = container.scrollWidth - window.innerWidth <= xPos;
 
-			cols.forEach(col => {
+			[...cols, ...headerProducts].forEach(col => {
 				const rect = col.getBoundingClientRect();
 				const isActive =
 					rect.right - colWidth / 2 < window.innerWidth && rect.left > leftPos - colWidth / 2;
@@ -76,22 +85,25 @@ class Compare {
 
 				isScrolling = true;
 				this.container.classList.add(ClassName.SCROLLING);
+				header.classList.add(ClassName.SCROLLING);
 				xPos += direction * colWidth;
 				container.scrollTo({ left: xPos, behavior: 'smooth' });
+				headerContainer.scrollTo({ left: xPos, behavior: 'smooth' });
 				updateDisabled();
 			};
 		};
 
 		prevButton.addEventListener('click', handleScroll(-1));
+		prevHeaderButton.addEventListener('click', handleScroll(-1));
 		nextButton.addEventListener('click', handleScroll(1));
+		nextHeaderButton.addEventListener('click', handleScroll(1));
 
 		window.addEventListener('resize', () => {
 			container.scrollTo({ left: 0 });
+			headerContainer.scrollTo({ left: 0 });
 			xPos = 0;
 			colWidth = cols[0].offsetWidth;
 			leftPos = cols[0].getBoundingClientRect().left;
-			this.colWidth = colWidth;
-			this.leftPos = leftPos;
 			updateDisabled();
 		});
 
@@ -100,21 +112,20 @@ class Compare {
 	initHeader() {
 		const header = document.querySelector('[data-compare-header]');
 		const desc = this.container.querySelector('.compare__col._desc');
-		const colWidth = this.colWidth;
-		const leftPos = this.leftPos.toFixed(0);
-		const headerRect = header.getBoundingClientRect();
+		const firstCol = this.container.querySelector('th');
+		let leftPos = firstCol.offsetWidth;
 
-		header.style.setProperty('--col-width', `${colWidth}px`);
 		header.style.setProperty('--left-pos', `${leftPos}px`);
 
 		window.addEventListener('resize', () => {
-			header.style.setProperty('--col-width', `${colWidth}px`);
+			leftPos = firstCol.offsetWidth;
+
 			header.style.setProperty('--left-pos', `${leftPos}px`);
 		});
 
 		ScrollTrigger.create({
 			trigger: desc,
-			start: `top top+=${headerRect.bottom}`,
+			start: `top top+=${header.offsetHeight * 3}`,
 			onEnter: () => {
 				header.classList.add(ClassName.ACTIVE);
 			},
@@ -122,6 +133,10 @@ class Compare {
 				header.classList.remove(ClassName.ACTIVE);
 			},
 		});
+
+		setTimeout(() => {
+			header.classList.add('_inited');
+		}, 400);
 	}
 }
 

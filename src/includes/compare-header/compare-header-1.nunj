@@ -2,10 +2,7 @@
 {% from "../components/icon/icon.nunj" import icon %}
 
 {% set productList = [
-	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-1' },
-	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-2', inWishlist: true },
-	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-3', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' },
-	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-4', featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-1' }
 ] %}
 
 <div class="compare-header" data-compare-header>
@@ -37,6 +34,16 @@
 						<img class="compare-header__product-img" src="{{ item.photo }}.png" srcset="{{ item.photo }}@2x.png 2x" width="49" height="57" alt="">
 					</li>
 				{% endfor %}
+				<li class="compare-header__product _new">
+					<a class="compare-header__add" href="/catalog">
+						{{ icon({
+							iconName: 'plus',
+							className: 'compare-header__add-icon',
+							attr: 'width="36" height="36"'
+						}) }}
+						<span class="compare-header__add-text">Добавить товар</span>
+					</a>
+				</li>
 				<li class="compare-header__product _new">
 					<a class="compare-header__add" href="/catalog">
 						{{ icon({

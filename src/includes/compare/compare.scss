@@ -7,6 +7,7 @@
 	--padding: #{rem(24)};
 
 	position: relative;
+	z-index: 0;
 	color: var(--gray-dark);
 	background-color: var(--white);
 	overflow: hidden;
@@ -43,16 +44,23 @@
 		display: flex;
 		justify-content: space-between;
 		pointer-events: none;
+		@media (max-width: $laptop-lg) {
+			top: rem(197);
+			left: rem(332);
+		}
 		@media (max-width: $laptop-sm) {
 			--size: #{rem(48)};
 			--icon-size: #{rem(24)};
 
+			top: rem(288);
 			left: calc(var(--container-padding) / 2);
 			right: calc(var(--container-padding) / 2);
 		}
 		@media (max-width: $mobile-lg) {
 			--size: #{rem(32)};
 			--icon-size: #{rem(16)};
+
+			top: rem(223);
 		}
 	}
 	&__nav-button {
@@ -87,11 +95,14 @@
 			margin-top: rem(-77);
 			border: 0;
 			background: 0 !important;
+			._empty & {
+				display: none;
+			}
 		}
 		@media (max-width: $laptop-sm) {
 			&._toggle {
 				width: 100vw;
-				margin-top: rem(-24);
+				margin-top: rem(-25);
 
 				border-bottom: 1px solid var(--bd-color);
 			}
@@ -100,7 +111,7 @@
 			&._toggle {
 				--padding: #{rem(16)};
 
-				margin-top: rem(-20);
+				margin-top: rem(-21);
 				border-top: 1px solid var(--bd-color);
 			}
 		}
@@ -113,12 +124,32 @@
 		padding: var(--padding);
 		vertical-align: middle;
 		border: 1px solid var(--bd-color);
-		border-collapse: collapse;
 		border-top: 0;
 		border-bottom: 0;
 		background-color: var(--white);
+		& + & {
+			border-left: 0;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: var(--bd-color);
+		}
 		&:first-child {
 			border-left: 0;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: var(--bd-color);
+			}
 		}
 		&:last-child {
 			border-right: 0;
@@ -164,6 +195,10 @@
 				background-color: rgba($gray-dark, 0.5);
 			}
 		}
+		._empty &._new {
+			box-sizing: border-box;
+			height: rem(540);
+		}
 		ul:not([class]) {
 			@extend .p3;
 
@@ -183,19 +218,30 @@
 			padding-bottom: rem(20);
 			&._header {
 				padding-block: rem(19) rem(24);
-				padding-right: var(--container-padding);
+				padding-right: rem(24);
+			}
+			._empty &._new {
+				height: rem(450);
 			}
 		}
 		@media (max-width: $laptop-sm) {
 			padding-block: 0;
 			line-height: rem(24);
 			grid-row: 2/3;
+			width: auto;
+			&::after {
+				display: none;
+			}
 			&._title,
 			&._header {
 				grid-column: span 2 / -1;
 				grid-row: 1/2;
 				border-right: 0;
 				width: max-content;
+				&::before,
+				&::after {
+					display: none;
+				}
 			}
 			&._title {
 				padding-block: 0;
@@ -231,6 +277,20 @@
 			}
 			&._product {
 				padding: 0;
+				border-bottom: 1px solid var(--bd-color);
+			}
+			._empty &._new {
+				height: rem(380);
+				border-top: 1px solid var(--bd-color);
+			}
+			&._new {
+				border-top: 1px solid var(--bd-color);
+				border-bottom: 1px solid var(--bd-color);
+			}
+			._empty & {
+				&:nth-child(n + 4) {
+					display: none;
+				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
@@ -256,14 +316,16 @@
 					width: rem(16);
 				}
 			}
+			._empty &._new {
+				height: rem(320);
+			}
 		}
 	}
 	&__table {
 		border: 0;
-		border-collapse: collapse;
+		flex-grow: 1;
 		tr {
 			position: relative;
-			border-bottom: 1px solid var(--bd-color);
 			&:nth-child(even) {
 				#{$this}__col {
 					background-color: var(--gray-light-2);
@@ -287,11 +349,20 @@
 			}
 		}
 
+		&._empty {
+			tr {
+				&:first-child {
+					padding-bottom: 0;
+					border-bottom: 1px solid var(--bd-color);
+				}
+			}
+		}
+
 		@media (max-width: $laptop-sm) {
 			tr {
 				display: grid;
 				grid-auto-flow: column;
-				grid-auto-columns: min-content;
+				grid-auto-columns: 1fr;
 				border: 0;
 				row-gap: rem(14);
 				padding-block: rem(24);
@@ -502,6 +573,36 @@
 			--icon-size: #{rem(40)};
 
 			padding: rem(16);
+		}
+	}
+	&__col-delete {
+		--offset: #{rem(12)};
+		--size: #{rem(32)};
+		--icon-size: #{rem(22)};
+
+		position: absolute;
+		top: var(--offset);
+		right: var(--offset);
+		z-index: 1;
+		width: var(--size);
+		height: var(--size);
+		&:hover {
+			opacity: 0.8;
+		}
+
+		.button__icon {
+			width: var(--icon-size);
+			height: var(--icon-size);
+		}
+
+		@media (max-width: $laptop-sm) {
+			--offset: #{rem(8)};
+		}
+
+		@media (max-width: $mobile-lg) {
+			--offset: #{rem(6)};
+			--size: #{rem(24)};
+			--icon-size: #{rem(16)};
 		}
 	}
 }

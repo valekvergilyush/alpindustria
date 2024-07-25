@@ -17,7 +17,15 @@
 				<tr>
 					<th class="compare__col _header">Выбранные товары</th>
 					{% for product in productList %}
-						<td class="compare__col _product">{{ productCard(product) }}</td>
+						<td class="compare__col _product">
+							{{ productCard(product) }}
+							{{ button({
+								className: 'compare__col-delete',
+								icon: 'close-popup',
+								iconData: 'width="22" height="22"',
+								attr: 'aria-label="Удалить из сравнения"'
+							}) }}
+						</td>
 					{% endfor %}
 
 					<td class="compare__col _new">
@@ -395,7 +403,8 @@
 		{{ button({
 			className: 'compare__nav-button _next',
 			icon: 'arrow-right',
-			iconData: 'width="16" height="16"'
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
 		})}}
 	</div>
 </div>
