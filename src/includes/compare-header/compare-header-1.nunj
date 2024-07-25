@@ -7,7 +7,7 @@
 
 <div class="compare-header" data-compare-header>
 	<div class="compare-header__container container">
-		<p class="compare-header__qty p2">4&nbsp;товара</p>
+		<p class="compare-header__qty p2">1&nbsp;товар</p>
 
 		<div class="compare-header__products-wrapper">
 			<ul class="compare-header__products">
