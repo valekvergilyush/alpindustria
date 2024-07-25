@@ -39,6 +39,11 @@
 		visibility: hidden;
 		opacity: 0;
 	}
+	&._compare-delete-category {
+		#{$this}__content.notification-compare-delete-category {
+			display: flex;
+		}
+	}
 	&._compare-new {
 		box-sizing: border-box;
 		width: rem(427);

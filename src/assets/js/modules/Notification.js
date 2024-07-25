@@ -21,6 +21,11 @@ class Notification {
 				this.hide();
 			});
 		});
+		window.addEventListener('keydown', evt => {
+			if (evt.key === 'Escape') {
+				this.hide();
+			}
+		});
 	}
 
 	show(name) {

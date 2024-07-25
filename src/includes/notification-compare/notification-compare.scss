@@ -9,6 +9,24 @@
 	@media (max-width: $mobile-lg) {
 		padding-block: rem(4) rem(58);
 	}
+	&__icon {
+		--size: #{rem(52)};
+
+		flex-shrink: 0;
+		width: var(--size);
+		height: var(--size);
+		margin: auto rem(24) auto rem(20);
+		@media (max-width: $laptop-sm) {
+			--size: #{rem(48)};
+
+			margin: auto rem(16) auto rem(12);
+		}
+		@media (max-width: $mobile-lg) {
+			--size: #{rem(40)};
+
+			margin-left: 0;
+		}
+	}
 	&__imgs {
 		flex-shrink: 0;
 		display: flex;
