@@ -46,6 +46,10 @@ class Header {
 		const currentScrollTop = utils.getCurrentScrollTop();
 		this.onWindowScroll(currentScrollTop);
 
+		if (this.scrollY > this.headerElementHeight * 1.5) {
+			this.showHeader();
+		}
+
 		clearImmediate(this.helpersTO);
 		this.helpersTO = setTimeout(() => {
 			ScrollHelper.onScroll.add(yPos => this.onWindowScroll(yPos));
