@@ -170,10 +170,11 @@
 		}
 	}
 	&._compare {
-		min-height: rem(357);
+		min-height: rem(429);
 		padding-bottom: 0;
 		background-color: var(--white);
 		#{$this}__container {
+			justify-content: center;
 			padding-top: rem(94);
 			padding-bottom: rem(64);
 		}
@@ -196,7 +197,7 @@
 			}
 		}
 		@media (max-width: $laptop-sm) {
-			min-height: 457px;
+			min-height: rem(520);
 			#{$this}__container {
 				padding-top: rem(135);
 				padding-bottom: rem(56);
@@ -206,7 +207,7 @@
 			}
 		}
 		@media (max-width: $mobile-lg) {
-			min-height: 328px;
+			min-height: rem(384);
 			#{$this}__container {
 				padding-top: rem(91);
 				padding-bottom: 60px;

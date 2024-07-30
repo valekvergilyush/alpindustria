@@ -12,9 +12,17 @@
 	background-color: var(--white);
 	overflow: hidden;
 
+	&._empty {
+		--first-col-width: #{rem(382)};
+	}
+
 	@media (max-width: $laptop-lg) {
 		--col-width: #{rem(347)};
 		--first-col-width: #{rem(361)};
+
+		&._empty {
+			--first-col-width: #{rem(389)};
+		}
 	}
 
 	@media (max-width: $laptop-sm) {
@@ -95,7 +103,10 @@
 			margin-top: rem(-77);
 			border: 0;
 			background: 0 !important;
-			._empty & {
+			#{$this}._empty & {
+				display: none;
+			}
+			&._mobile {
 				display: none;
 			}
 		}
@@ -105,6 +116,9 @@
 				margin-top: rem(-25);
 
 				border-bottom: 1px solid var(--bd-color);
+				&._mobile {
+					display: flex;
+				}
 			}
 		}
 		@media (max-width: $mobile-lg) {
@@ -195,7 +209,7 @@
 				background-color: rgba($gray-dark, 0.5);
 			}
 		}
-		._empty &._new {
+		#{$this}._empty &._new {
 			box-sizing: border-box;
 			height: rem(540);
 		}
@@ -220,7 +234,7 @@
 				padding-block: rem(19) rem(24);
 				padding-right: rem(24);
 			}
-			._empty &._new {
+			#{$this}._empty &._new {
 				height: rem(450);
 			}
 		}
@@ -279,7 +293,7 @@
 				padding: 0;
 				border-bottom: 1px solid var(--bd-color);
 			}
-			._empty &._new {
+			#{$this}._empty &._new {
 				height: rem(380);
 				border-top: 1px solid var(--bd-color);
 			}
@@ -287,7 +301,7 @@
 				border-top: 1px solid var(--bd-color);
 				border-bottom: 1px solid var(--bd-color);
 			}
-			._empty & {
+			#{$this}._empty & {
 				&:nth-child(n + 4) {
 					display: none;
 				}
@@ -316,7 +330,7 @@
 					width: rem(16);
 				}
 			}
-			._empty &._new {
+			#{$this}._empty &._new {
 				height: rem(320);
 			}
 		}
@@ -349,7 +363,7 @@
 			}
 		}
 
-		&._empty {
+		#{$this}._empty & {
 			tr {
 				&:first-child {
 					padding-bottom: 0;
@@ -530,10 +544,20 @@
 		flex-grow: 1;
 		align-items: center;
 		gap: rem(12);
+		text-transform: none;
 		opacity: 1 !important;
+
+		&._desktop {
+			position: absolute;
+			bottom: rem(24);
+			left: var(--container-padding);
+		}
 
 		@media (max-width: $laptop-sm) {
 			justify-content: space-between;
+			&._desktop {
+				display: none;
+			}
 		}
 
 		@media (max-width: $mobile-lg) {

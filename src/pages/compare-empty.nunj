@@ -6,7 +6,7 @@
 
 {% block mainContent %}
 	<main class="page__main">
-		{% include "../includes/hero-catalog/hero-catalog-compare.nunj" %}
+		{% include "../includes/hero-catalog/hero-catalog-compare-empty.nunj" %}
 		<div class="compare-wrapper">
 			{% include "../includes/compare-header/compare-header-empty.nunj" %}
 			{% include "../includes/compare/compare-empty.nunj" %}

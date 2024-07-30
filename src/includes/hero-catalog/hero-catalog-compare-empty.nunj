@@ -1,0 +1,19 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="page__hero hero-catalog _compare">
+	<div class="hero-catalog__bg-img-wrapper">
+		{{ picture({
+			className: 'hero-catalog__bg-img _hero',
+			path: '/assets/images/hero-compare/hero-compare',
+			ext: 'jpg',
+			width: 1728,
+			height: 357,
+			attr: 'aria-hidden="true"'
+		}) }}
+	</div>
+	<div class="hero-catalog__container container">
+		<h1 class="hero-catalog__title ttu tac">
+			<span class="hero-catalog__title-category h4">Сравнение</span>
+		</h1>
+	</div>
+</section>

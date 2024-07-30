@@ -13,7 +13,7 @@
 	height: var(--height);
 	border-bottom: 1px solid var(--gray-dark);
 	background-color: var(--white);
-	transition: top $fast-transition-duration linear;
+	transition: top $fast-transition-duration linear, height $fast-transition-duration linear;
 	overflow: hidden;
 	&._active {
 		--height: #{rem(109)};
@@ -62,6 +62,9 @@
 		}
 	}
 	&__qty {
+		position: absolute;
+		top: rem(22);
+		left: var(--container-padding);
 		@media (max-width: $laptop-sm) {
 			#{$this}._active & {
 				opacity: 0;
@@ -72,7 +75,9 @@
 		--icon-size: #{rem(24)};
 
 		gap: rem(8);
+		margin-left: auto;
 		color: var(--red-dark);
+		letter-spacing: -0.025em;
 		&:hover {
 			.button__text {
 				transform: translateX(0.2em);
@@ -97,6 +102,7 @@
 		opacity: 0;
 		pointer-events: none;
 		overflow: hidden;
+		transition: opacity $fast-transition-duration $default-transition-function;
 		#{$this}._active & {
 			opacity: 1;
 			pointer-events: all;
@@ -193,6 +199,7 @@
 		}
 	}
 	&__product-price {
+		@extend .c-gray-dark;
 		@media (max-width: $laptop-sm) {
 			font-size: rem(14);
 		}

@@ -15,7 +15,18 @@
 		<table class="compare__table">
 			<tbody>
 				<tr>
-					<th class="compare__col _header">Выбранные товары</th>
+					<th class="compare__col _header">
+						Выбранные товары
+						<div class="compare__toggle _desktop">
+							<span id="only-differences-desktop">Только различия</span>
+							{{ switch({
+								className: 'compare__toggle-switch _rounded _sm',
+								name: 'only-differences',
+								value: 'only-differences',
+								attr: 'aria-labelledby="only-differences-desktop"'
+							}) }}
+						</div>
+					</th>
 					{% for product in productList %}
 						<td class="compare__col _product">
 							{{ productCard(product) }}
@@ -39,7 +50,7 @@
 						</a>
 					</td>
 				</tr>
-				<tr class="compare__row _toggle">
+				<tr class="compare__row _toggle _mobile">
 					<td class="compare__toggle">
 						<span id="only-differences">Только различия</span>
 						{{ switch({
