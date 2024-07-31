@@ -2,7 +2,7 @@
 
 <section class="cookies _hidden" data-cookies>
 	<div class="cookies__text p3">
-		<p>Этот сайт использует <span>cookies</span>, чтобы помочь улучшить ваш пользовательский опыт</p>
+		<p>Этот сайт использует <a href="https://alpindustria.ru/" target="_blank">cookies</a>, чтобы помочь улучшить ваш пользовательский опыт</p>
 
 		<button class="cookies__close" type="button" aria-label="Закрыть">
 			{{ icon({

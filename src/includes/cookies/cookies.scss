@@ -45,9 +45,13 @@
 		background-color: var(--white);
 		transform: translateY(calc(-100% + rem(16)));
 		border: 1px solid var(--blue-dark);
-		span,
 		a {
 			color: var(--blue-light);
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+				color: var(--blue-light);
+			}
 		}
 
 		&::after {
