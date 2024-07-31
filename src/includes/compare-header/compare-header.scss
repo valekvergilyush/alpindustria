@@ -36,6 +36,10 @@
 
 		--height: #{rem(56)};
 
+		&._empty {
+			--col-width: #{rem(194)};
+		}
+
 		&._active {
 			--height: #{rem(75)};
 		}
@@ -96,13 +100,23 @@
 		position: absolute;
 		z-index: 2;
 		top: 0;
-		left: var(--left-pos);
+		left: calc(var(--left-pos) - 1px);
 		right: 0;
 		height: 100%;
 		opacity: 0;
 		pointer-events: none;
 		overflow: hidden;
+		border-left: 1px solid var(--bd-color);
 		transition: opacity $fast-transition-duration $default-transition-function;
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 1px;
+			height: 100%;
+		}
 		#{$this}._active & {
 			opacity: 1;
 			pointer-events: all;
@@ -119,7 +133,6 @@
 		display: flex;
 		min-width: 100%;
 		width: max-content;
-		border-left: 1px solid var(--bd-color);
 	}
 	&__product {
 		position: relative;
@@ -131,7 +144,8 @@
 		width: var(--col-width);
 		padding: rem(19) rem(24);
 		padding-bottom: rem(12);
-		border-right: 1px solid var(--bd-color);
+		box-shadow: inset -1px 0 0 0 var(--bd-color), inset 0 -1px 0 0 var(--bd-color),
+			-1px -1px 0 0 var(--bd-color), 0 -1px 0 0 var(--bd-color);
 		background-color: var(--gray-light);
 		&:last-child {
 			border-right: none;
@@ -150,12 +164,6 @@
 			opacity: 1;
 		}
 
-		@media (max-width: $laptop-sm) {
-			._empty &:nth-child(n + 3) {
-				display: none;
-			}
-		}
-
 		@media (max-width: $laptop-lg) {
 			box-sizing: border-box;
 		}
@@ -163,6 +171,10 @@
 		@media (max-width: $laptop-sm) {
 			padding: rem(14) rem(10);
 			padding-bottom: rem(10);
+
+			._empty &:nth-child(n + 3) {
+				display: none;
+			}
 		}
 		@media (max-width: $mobile-lg) {
 			padding: rem(9) rem(6);
