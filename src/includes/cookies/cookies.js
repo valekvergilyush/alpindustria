@@ -1,3 +1,5 @@
+import Popups from '../../assets/js/modules/Popups';
+
 const ClassName = {
 	HIDDEN: '_hidden',
 };
@@ -16,10 +18,10 @@ class Cookies {
 
 		const cookiesName = 'cookies-info-shown';
 		const closeButton = this.container.querySelector('.cookies__close');
-		const hasCookie = this.getCookie(cookiesName);
+		this.hasCookie = this.getCookie(cookiesName);
 
 		setTimeout(() => {
-			!hasCookie && this.container.classList.remove(ClassName.HIDDEN);
+			!this.hasCookie && this.container.classList.remove(ClassName.HIDDEN);
 		}, 1000);
 
 		closeButton &&
@@ -27,6 +29,8 @@ class Cookies {
 				evt.preventDefault();
 				this.setCookie(cookiesName, 'closed');
 				this.container.classList.add(ClassName.HIDDEN);
+
+				Popups.open('subscription-news');
 			});
 	}
 
