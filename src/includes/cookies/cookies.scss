@@ -1,0 +1,126 @@
+.cookies {
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	align-items: start;
+	padding: rem(30);
+	padding-bottom: 0;
+	color: var(--black);
+	opacity: 1;
+	transition: opacity $default-transition-duration $default-transition-function;
+	pointer-events: all;
+	&._hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	@media (max-width: $mobile-lg) {
+		bottom: rem(-7);
+		flex-direction: column-reverse;
+		padding: rem(12);
+		padding-bottom: 0;
+	}
+	&::before {
+		content: '';
+		display: block;
+		width: rem(182);
+		height: auto;
+		aspect-ratio: 182/185;
+		background: url('/assets/images/footer/cookies-man.svg') no-repeat;
+		background-size: contain;
+
+		@media (max-width: $mobile-lg) {
+			width: rem(144);
+			aspect-ratio: 144/146;
+		}
+	}
+	&__text {
+		position: relative;
+		z-index: 1;
+		box-sizing: border-box;
+		width: rem(320);
+		padding: rem(16) rem(58) rem(20) rem(18);
+		background-color: var(--white);
+		transform: translateY(calc(-100% + rem(16)));
+		border: 1px solid var(--blue-dark);
+		a {
+			color: var(--blue-light);
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+				color: var(--blue-light);
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0;
+			z-index: 1;
+			border-style: solid;
+			border-width: rem(14) rem(14) 0 0;
+			border-color: var(--white) transparent transparent transparent;
+			bottom: rem(-14);
+			left: rem(35);
+			margin-left: -10px;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0;
+			z-index: 0;
+			border-style: solid;
+			border-width: rem(16) rem(16) 0 0;
+			border-color: var(--blue-dark) transparent transparent transparent;
+			bottom: rem(-16);
+			left: rem(35);
+			margin-left: rem(-11);
+		}
+
+		@media (max-width: $mobile-lg) {
+			width: 100%;
+			min-height: rem(71);
+			padding: rem(12) rem(46) rem(12) rem(12);
+			margin-bottom: rem(13);
+			transform: none;
+			font-size: rem(14);
+			line-height: rem(22);
+			&::after,
+			&::before {
+				left: rem(123);
+			}
+		}
+	}
+	&__close {
+		@include reset-btn;
+		@extend .animated;
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 1;
+		display: flex;
+		color: var(--blue-dark);
+		&:hover {
+			color: var(--gray-dark);
+		}
+
+		@media (max-width: $mobile-lg) {
+			top: rem(13);
+			right: rem(14);
+		}
+	}
+	&__close-icon {
+		--size: #{rem(25)};
+
+		width: var(--size);
+		height: var(--size);
+
+		@media (max-width: $mobile-lg) {
+			--size: #{rem(19)};
+		}
+	}
+}

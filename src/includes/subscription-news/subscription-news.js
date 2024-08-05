@@ -1,4 +1,5 @@
 import Popups from '../../assets/js/modules/Popups';
+import Cookies from '../cookies/cookies';
 
 class SubscriptionNews {
 	constructor() {
@@ -10,7 +11,7 @@ class SubscriptionNews {
 		this.init();
 	}
 	init() {
-		if (!localStorage.getItem('subscription-news')) {
+		if (!localStorage.getItem('subscription-news') && Cookies.hasCookie) {
 			Popups.open('subscription-news');
 		}
 
