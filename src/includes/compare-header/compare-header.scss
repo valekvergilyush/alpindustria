@@ -70,9 +70,13 @@
 		top: rem(22);
 		left: var(--container-padding);
 		@media (max-width: $laptop-sm) {
+			top: rem(26);
 			#{$this}._active & {
 				opacity: 0;
 			}
+		}
+		@media (max-width: $mobile-lg) {
+			top: rem(16);
 		}
 	}
 	&__delete {
