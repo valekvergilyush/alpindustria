@@ -26,6 +26,7 @@
 	&__actions {
 		display: flex;
 		flex-basis: 50%;
+		align-items: center;
 	}
 	&__actions {
 		justify-content: flex-end;
@@ -50,7 +51,7 @@
 				width: 71px;
 				height: 36px;
 			}
-			@media (max-width: $mobile) {
+			@media (max-width: $mobile-lg) {
 				width: 50px;
 				height: 26px;
 			}
@@ -151,7 +152,7 @@
 		}
 	}
 	&__search {
-		margin-left: rem(52);
+		margin-left: rem(46);
 		@media (max-width: $laptop-lg) {
 			margin-left: 46px;
 		}
@@ -160,6 +161,21 @@
 		}
 		@media (max-width: $mobile-lg) {
 			margin-left: 11px;
+		}
+	}
+	&__compare-link {
+		@extend .animated;
+		--btn-size: #{rem(36)};
+
+		width: var(--btn-size);
+		height: var(--btn-size);
+		margin-left: rem(20);
+		&:hover {
+			opacity: 0.7;
+		}
+
+		@media (max-width: $mobile-lg) {
+			display: none;
 		}
 	}
 	&._fixed,

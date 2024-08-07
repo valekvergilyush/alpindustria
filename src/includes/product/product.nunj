@@ -88,10 +88,18 @@
 							<p class="product__old-price">45 780 руб.</p>
 							<p class="product__price s1">33 150 руб.</p>
 						</div>
-						{{ button({
-							className: 'product__favorite _wishlist _wishlist-sm',
-							attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist-list"'
-						}) }}
+						<div class="product__user-buttons">
+							{{ button({
+								className: 'product__favorite _wishlist _wishlist-sm',
+								attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist-list"'
+							}) }}
+							{{ button({
+								className: 'product__compare _compare',
+								icon: 'compare',
+								iconData: 'width="40" height="40"',
+								attr: 'aria-label="Добавить в сравнение" data-notification-open="compare-new" data-tippy-content="Добавить в сравнение товаров" data-tippy-placement="bottom"'
+							}) }}
+						</div>
 						<div class="product__badges">
 							{% include "../product-badge/new.nunj" %}
 							{% include "../product-badge/discount.nunj" %}

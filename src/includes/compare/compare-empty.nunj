@@ -1,0 +1,149 @@
+{% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/switch/switch.nunj" import switch %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set productList = [
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' },
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-2', zoomPhoto: '/assets/images/catalog/item-4-zoom', inWishlist: true },
+	{ className: 'compare__item-product _no-bd _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-3', zoomPhoto: '/assets/images/catalog/item-4-zoom', new: true, featureImg: '/assets/images/catalog/product-feature', featureImgAlt: 'Core-Tex products Guaranteed to keep you dry' }
+] %}
+
+<div class="compare _empty" data-compare>
+	<div class="compare__container" data-compare-container>
+		<table class="compare__table">
+			<tbody>
+				<tr>
+					<th class="compare__col _header">Выбранные товары</th>
+					{% for product in productList %}
+						<td class="compare__col _new">
+							<a class="compare__add" href="/catalog">
+								{{ icon({
+									iconName: 'plus',
+									className: 'compare__add-icon',
+									attr: 'width="58" height="58"'
+								}) }}
+								<span class="compare__add-text">Добавить товар</span>
+							</a>
+						</td>
+					{% endfor %}
+				</tr>
+				<tr class="compare__row _toggle">
+					<td class="compare__toggle">
+						<span id="only-differences">Только различия</span>
+						{{ switch({
+							className: 'compare__toggle-switch _rounded _sm',
+							name: 'only-differences',
+							value: 'only-differences',
+							attr: 'aria-labelledby="only-differences"'
+						}) }}
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title">Описание</th>
+					<td class="compare__col _desc"></td>
+					<td class="compare__col _desc"></td>
+					<td class="compare__col _desc"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Размеры</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Бренд</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Вид активности</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Рейтинг</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Состав</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Материал</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Паро&shy;проницаемость</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Водостойкость</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Вес</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Карманы</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Объем</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Цвета</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Доставка</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Манжеты на липучках</th>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="compare__nav">
+		{{ button({
+			className: 'compare__nav-button _prev',
+			icon: 'arrow-left',
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
+		})}}
+		{{ button({
+			className: 'compare__nav-button _next',
+			icon: 'arrow-right',
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
+		})}}
+	</div>
+</div>

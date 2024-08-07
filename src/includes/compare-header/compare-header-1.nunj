@@ -1,0 +1,81 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set productList = [
+	{ url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', price: '33&nbsp;150&nbsp;₽', photo: '/assets/images/catalog/item-1' }
+] %}
+
+<div class="compare-header" data-compare-header>
+	<div class="compare-header__container container">
+		<p class="compare-header__qty p2">1&nbsp;товар</p>
+
+		<div class="compare-header__products-wrapper">
+			<ul class="compare-header__products">
+				{% for item in productList %}
+					<li class="compare-header__product">
+						<div class="compare-header__product-container">
+							<p class="compare-header__product-title">
+								<a href="/catalog/product-page.html">{{ item.title }}</a>
+							</p>
+							<p class="compare-header__product-price">{{ item.price }}</p>
+						</div>
+						<div class="compare-header__product-buttons">
+							{{ button({
+								className: 'compare-header__product-button _delete',
+								icon: 'close-popup',
+								iconData: 'width="16" height="16"',
+								attr: 'aria-label="Удалить из сравнения"'
+							}) }}
+							{{ button({
+								className: 'compare-header__product-button _wishlist',
+								attr: 'aria-label="Добавить в вишлист" data-popup-opener="wishlist-list"'
+							}) }}
+						</div>
+						<img class="compare-header__product-img" src="{{ item.photo }}.png" srcset="{{ item.photo }}@2x.png 2x" width="49" height="57" alt="">
+					</li>
+				{% endfor %}
+				<li class="compare-header__product _new">
+					<a class="compare-header__add" href="/catalog">
+						{{ icon({
+							iconName: 'plus',
+							className: 'compare-header__add-icon',
+							attr: 'width="36" height="36"'
+						}) }}
+						<span class="compare-header__add-text">Добавить товар</span>
+					</a>
+				</li>
+				<li class="compare-header__product _new">
+					<a class="compare-header__add" href="/catalog">
+						{{ icon({
+							iconName: 'plus',
+							className: 'compare-header__add-icon',
+							attr: 'width="36" height="36"'
+						}) }}
+						<span class="compare-header__add-text">Добавить товар</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="compare-header__nav">
+			{{ button({
+				className: 'compare__nav-button _prev',
+				icon: 'arrow-left',
+				iconData: 'width="16" height="16"',
+				attr: 'disabled'
+			})}}
+			{{ button({
+				className: 'compare__nav-button _next',
+				icon: 'arrow-right',
+				iconData: 'width="16" height="16"'
+			})}}
+		</div>
+
+		{{ button({
+			className: 'compare-header__delete p2',
+			text: 'Удалить все',
+			icon: 'trash-outline',
+			iconData: 'width="24" height="24"',
+			attr: 'data-notification-open="compare-delete-category"'
+		}) }}
+	</div>
+</div>

@@ -247,13 +247,16 @@
 			letter-spacing: 0;
 		}
 	}
-	&__favorite {
+	&__user-buttons {
 		grid-column: 1/2;
-		margin-top: rem(32);
-		margin-bottom: rem(32);
+		display: flex;
+		gap: rem(24);
+		margin-top: rem(30);
+		margin-bottom: rem(30);
 		@media (max-width: $laptop-lg) {
 			margin-top: 22px;
 			margin-bottom: 32px;
+			gap: rem(16);
 		}
 		@media (max-width: $laptop-md) {
 			margin-top: 20px;
@@ -263,6 +266,19 @@
 			margin: 0;
 		}
 	}
+	&__compare.button {
+		--size: #{rem(40)};
+		@media (max-width: $laptop-lg) {
+			--size: 32px;
+		}
+		@media (max-width: $mobile-lg) {
+			--size: 32px;
+			.button__icon {
+				--size: 25px;
+			}
+		}
+	}
+
 	&__badges {
 		grid-column: 2/3;
 		grid-row: 2/3;

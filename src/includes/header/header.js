@@ -8,6 +8,7 @@ const ClassName = {
 	HEADER_OPENED: '_header-opened',
 	FILTERS_OPENED: '_filters-opened',
 	HIDDEN_NUM: '_hidden-num',
+	HEADER_CLOSING: '_header-closing',
 };
 
 const Direction = {
@@ -44,6 +45,10 @@ class Header {
 
 		const currentScrollTop = utils.getCurrentScrollTop();
 		this.onWindowScroll(currentScrollTop);
+
+		if (this.scrollY > this.headerElementHeight * 1.5) {
+			this.showHeader();
+		}
 
 		clearImmediate(this.helpersTO);
 		this.helpersTO = setTimeout(() => {
@@ -114,14 +119,19 @@ class Header {
 		if (this.menu.animating) {
 			return;
 		}
+
 		this.isHeaderHidden = !this.isHeaderHidden;
 		gsap.to(this.headerElement, {
 			yPercent: -100,
 			duration: 0.1,
 			ease: 'linear',
+			onStart: () => {
+				HTML_CLASSLIST.add(ClassName.HEADER_CLOSING);
+			},
 			onComplete: () => {
 				this.headerElement.classList.remove(ClassName.FIXED);
 				HTML_CLASSLIST.remove(ClassName.HEADER_OPENED);
+				HTML_CLASSLIST.remove(ClassName.HEADER_CLOSING);
 			},
 		});
 		this.timeline &&

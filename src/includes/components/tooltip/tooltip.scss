@@ -9,26 +9,57 @@
 	background-color: var(--white);
 	border: 1px solid currentColor;
 	border-radius: 0;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		top: -1px;
+		background-color: var(--white);
+		border-top: 1px solid var(--blue-dark);
+	}
 }
 
 .tippy-content {
+	z-index: 10;
 	padding: rem(8);
 	text-align: center;
+	font-size: rem(12);
+	line-height: rem(16);
+	background-color: var(--white);
 }
 
+.tippy-box[data-placement^='top'] > .tippy-arrow::after {
+	bottom: -7px;
+	border-width: 10px 10px 0;
+	border-top-color: var(--blue-dark);
+	transform-origin: center top;
+	transform: translate(-50%, 1px);
+}
+.tippy-box[data-placement^='bottom'] > .tippy-arrow::after {
+	top: -7px;
+	border-width: 0 10px 10px;
+	border-bottom-color: var(--blue-dark);
+	transform-origin: center bottom;
+	transform: translate(-50%, -1px);
+}
+.tippy-box[data-placement^='left'] > .tippy-arrow::after {
+	border-width: 10px 0 10px 10px;
+	border-left-color: var(--blue-dark);
+	right: -7px;
+	transform-origin: center left;
+}
+.tippy-box[data-placement^='right'] > .tippy-arrow::after {
+	left: -7px;
+	border-width: 10px 10px 10px 0;
+	border-right-color: var(--blue-dark);
+	transform-origin: center right;
+}
 .tippy-arrow {
 	color: var(--white);
 	&::before {
-		position: absolute;
-		top: rem(6);
-		left: 0;
-		box-sizing: border-box;
-		width: 100%;
-		height: 100%;
-		border-style: none;
-		background-color: var(--white);
-		border-left: 1px solid var(--blue-dark) !important;
-		border-bottom: 1px solid var(--blue-dark) !important;
-		transform: rotate(-45deg) translateX(-50%);
+		z-index: 2;
 	}
+}
+.tippy-arrow::after {
+	left: 50%;
 }

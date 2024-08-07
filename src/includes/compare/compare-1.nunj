@@ -1,0 +1,237 @@
+{% from "../components/product-card/product-card.nunj" import productCard %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/switch/switch.nunj" import switch %}
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set productList = [
+	{ className: 'compare__item-product _no-compare', url: '/catalog/product-page.html', title: 'Куртка The North Face M Dryzzle All Weather Jkt', brand: 'The North Face', price: '33 150 ₽', photo: '/assets/images/catalog/item-1', zoomPhoto: '/assets/images/catalog/item-4-zoom' }
+] %}
+
+<div class="compare" data-compare>
+	<div class="compare__container" data-compare-container>
+		<table class="compare__table">
+			<tbody>
+				<tr>
+					<th class="compare__col _header">
+						Выбранные товары
+						<div class="compare__toggle _desktop">
+							<span id="only-differences-desktop">Только различия</span>
+							{{ switch({
+								className: 'compare__toggle-switch _rounded _sm',
+								name: 'only-differences',
+								value: 'only-differences',
+								attr: 'aria-labelledby="only-differences-desktop"'
+							}) }}
+						</div>
+					</th>
+					{% for product in productList %}
+						<td class="compare__col _product">
+							{{ productCard(product) }}
+							{{ button({
+								className: 'compare__col-delete',
+								icon: 'close-popup',
+								iconData: 'width="22" height="22"',
+								attr: 'aria-label="Удалить из сравнения"'
+							}) }}
+						</td>
+					{% endfor %}
+
+					<td class="compare__col _new">
+						<a class="compare__add" href="/catalog">
+							{{ icon({
+								iconName: 'plus',
+								className: 'compare__add-icon',
+								attr: 'width="58" height="58"'
+							}) }}
+							<span class="compare__add-text">Добавить товар</span>
+						</a>
+					</td>
+					<td class="compare__col _new">
+						<a class="compare__add" href="/catalog">
+							{{ icon({
+								iconName: 'plus',
+								className: 'compare__add-icon',
+								attr: 'width="58" height="58"'
+							}) }}
+							<span class="compare__add-text">Добавить товар</span>
+						</a>
+					</td>
+				</tr>
+				<tr class="compare__row _toggle _mobile">
+					<td class="compare__toggle">
+						<span id="only-differences">Только различия</span>
+						{{ switch({
+							className: 'compare__toggle-switch _rounded _sm',
+							name: 'only-differences',
+							value: 'only-differences',
+							attr: 'aria-labelledby="only-differences"'
+						}) }}
+					</td>
+				</tr>
+				<tr>
+					<th class="compare__col _title">Описание</th>
+					<td class="compare__col _desc">
+						<div data-show-more-text>
+							<p>Kailas Mont-X - штормовая куртка, предназначенная для восхождений на высоты от 5000 до 6000 метров. Изготовлена из мембранного материала GORE-TEX - Артикул: # 8000PM3T</p>
+						</div>
+						{{ button({
+							className: 'compare__show-more',
+							text: 'Читать дальше',
+							attr: 'data-show-more-toggle data-close-text="Свернуть"'
+						}) }}
+					</td>
+					<td class="compare__col _desc"></td>
+					<td class="compare__col _desc"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Размеры</th>
+					<td class="compare__col">
+						<ul class="compare__sizes">
+							<li>M</li>
+							<li>L</li>
+							<li>XL</li>
+						</ul>
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Бренд</th>
+					<td class="compare__col">
+						{{ button({
+							className: 'compare__link _arrow-s p2',
+							href: '#',
+							text: 'Montura',
+							icon: 'promo-arrow',
+							iconData: 'width="16" height="16"'
+						}) }}
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Вид активности</th>
+					<td class="compare__col">Ски-тур</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Рейтинг</th>
+					<td class="compare__col">
+						<p class="compare__rating">
+							<a href="#">
+								{{ icon({
+									iconName: 'star',
+									className: 'compare__rating-icon',
+									attr: 'width="16" height="16"'
+								}) }}
+								5.0
+							</a>
+							<span>6 оценок</span>
+						</p>
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Состав</th>
+					<td class="compare__col">основной: 100% полиэстер<br> юбка: 90% полиэстер, 10% спандекс</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Материал</th>
+					<td class="compare__col">Gore-Tex Pro&reg;&nbsp;3L</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Паро&shy;проницаемость</th>
+					<td class="compare__col">
+						<p class="compare__progress">
+							5/6
+							<span class="compare__progress-line" style="--progress:5/6"></span>
+						</p>
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Водостойкость</th>
+					<td class="compare__col">28000 мм</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Вес</th>
+					<td class="compare__col">520&nbsp;г</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Карманы</th>
+					<td class="compare__col">
+						<p>4&nbsp;шт:</p>
+						<ul>
+							<li>Внешние нагрудные на&nbsp;молниях: 2&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;молнии: 1&nbsp;шт.</li>
+							<li>Внутренний на&nbsp;липучке: 1&nbsp;шт.</li>
+						</ul>
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Объем</th>
+					<td class="compare__col">От&nbsp;24&nbsp;до&nbsp;30&nbsp;литров</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Цвета</th>
+					<td class="compare__col">
+						<ul class="compare__colors">
+							<li style="--color:#03836e"><span class="visually-hidden">зелёный</span></li>
+							<li style="--color:#6f2876"><span class="visually-hidden">фиолетовый</span></li>
+							<li style="--color:#342c25"><span class="visually-hidden">чёрный</span></li>
+						</ul>
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Доставка</th>
+					<td class="compare__col">Самовывоз</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+				<tr>
+					<th class="compare__col _title h6 ttu">Манжеты на липучках</th>
+					<td class="compare__col">
+						{{ icon({
+							iconName: 'check',
+							className: 'compare__check-icon',
+							attr: 'width="32" height="32" aria-label="Есть"'
+						}) }}
+					</td>
+					<td class="compare__col"></td>
+					<td class="compare__col"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="compare__nav">
+		{{ button({
+			className: 'compare__nav-button _prev',
+			icon: 'arrow-left',
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
+		})}}
+		{{ button({
+			className: 'compare__nav-button _next',
+			icon: 'arrow-right',
+			iconData: 'width="16" height="16"',
+			attr: 'disabled'
+		})}}
+	</div>
+</div>

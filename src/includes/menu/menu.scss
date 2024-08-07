@@ -403,7 +403,8 @@
 		}
 	}
 	&__location,
-	&__user-link {
+	&__user-link,
+	&__compare-link {
 		@include reset-btn();
 		display: flex;
 		align-items: baseline;
@@ -421,12 +422,16 @@
 			line-height: 1;
 		}
 	}
-	&__user-link {
+	&__user-link,
+	&__compare-link {
 		display: none;
 		@media (max-width: $mobile-lg) {
 			display: flex;
 			margin-bottom: 25px;
 		}
+	}
+	&__user-icon {
+		fill: none;
 	}
 	&__location-icon {
 		--size: #{rem(16)};

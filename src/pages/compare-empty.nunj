@@ -1,0 +1,16 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Сравнение | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_compare' %}
+
+{% block mainContent %}
+	<main class="page__main">
+		{% include "../includes/hero-catalog/hero-catalog-compare-empty.nunj" %}
+		<div class="compare-wrapper">
+			{% include "../includes/compare-header/compare-header-empty.nunj" %}
+			{% include "../includes/compare/compare-empty.nunj" %}
+		</div>
+		{% include "../includes/catalog-accordion/catalog-accordion-compare.nunj" %}
+	</main>
+{% endblock %}

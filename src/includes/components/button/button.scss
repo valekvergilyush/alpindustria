@@ -134,6 +134,7 @@
 			border-color: var(--blue-dark);
 			color: var(--white);
 			background-color: var(--blue-dark);
+			pointer-events: none;
 			#{$this}__icon {
 				display: block;
 			}
@@ -317,7 +318,7 @@
 		}
 	}
 	&._wishlist {
-		--size: #{rem(50)};
+		--size: #{rem(32)};
 		width: var(--size);
 		height: var(--size);
 		background-image: inline('heart.svg');
@@ -336,7 +337,6 @@
 			}
 		}
 		@media (max-width: $mobile-lg) {
-			--size: 40px;
 			background-size: 24px;
 			&:not(._active):hover {
 				background-size: 24px;
@@ -349,9 +349,44 @@
 	&._wishlist-sm {
 		--size: #{rem(40)};
 		background-size: #{rem(40)};
+		&:hover,
+		&._active {
+			background-size: rem(38);
+		}
 		@media (max-width: $laptop-lg) {
 			--size: 32px;
 			background-size: 32px;
+			&:hover,
+			&._active {
+				background-size: 30px;
+			}
+		}
+		@media (max-width: $mobile-lg) {
+			background-size: 24px;
+			&:not(._active):hover {
+				background-size: 24px;
+			}
+			&._active {
+				background-size: 22px;
+			}
+		}
+	}
+	&._compare {
+		--size: #{rem(32)};
+		width: var(--size);
+		height: var(--size);
+		@media (max-width: $mobile-lg) {
+			--size: #{rem(24)};
+		}
+		#{$this}__icon {
+			width: var(--size);
+			height: var(--size);
+			fill: none;
+		}
+		&._active {
+			#{$this}__icon {
+				fill: var(--blue-dark);
+			}
 		}
 	}
 	&._show-more {

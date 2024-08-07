@@ -17,6 +17,10 @@
 		&:has(:checked) {
 			opacity: 1;
 		}
+		&._sm {
+			width: rem(58);
+			height: rem(29);
+		}
 	}
 	@media (max-width: $laptop-md) {
 		width: 80px;
@@ -31,6 +35,10 @@
 		&._rounded {
 			width: 64px;
 			height: 32px;
+			&._sm {
+				width: rem(48);
+				height: rem(24);
+			}
 		}
 	}
 	&__input {
@@ -57,15 +65,27 @@
 				border-radius: 50%;
 				background-color: var(--white);
 			}
+			#{$this}._rounded._sm & {
+				--offset: 3px;
+				--width: #{rem(21)};
+			}
 			@media (max-width: $laptop-md) {
 				--width: 24px;
 				#{$this}._rounded & {
 					--offset: 1px;
 					--width: 28px;
 				}
+				#{$this}._rounded._sm & {
+					--offset: 3px;
+					--width: #{rem(21)};
+				}
 			}
 			@media (max-width: $mobile-lg) {
 				--width: 20px;
+
+				#{$this}._rounded._sm & {
+					--offset: 1px;
+				}
 			}
 		}
 		input:checked ~ & {

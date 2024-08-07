@@ -95,6 +95,7 @@ class AlpIndustry {
 			DiscountCard: require('../../includes/discount-card/discount-card').default,
 			TitleBlock: require('../../includes/components/title-block/title-block').default,
 			SubscriptionNews: require('../../includes/subscription-news/subscription-news').default,
+			Compare: require('../../includes/compare/compare').default,
 			Cookies: require('../../includes/cookies/cookies').default,
 		};
 		this.helpers = {

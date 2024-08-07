@@ -219,11 +219,18 @@ $button: '.button';
 					--badge-size: 40px;
 					.button {
 						&._wishlist {
-							left: 16px;
+							--size: 40px;
+							left: 20px;
+							bottom: 20px;
 							background-size: 40px;
 							&._active {
 								background-size: 36px;
 							}
+						}
+						&._compare {
+							--size: 40px;
+							left: 76px;
+							bottom: 19px;
 						}
 						&._product-card {
 							right: 16px;
@@ -244,12 +251,18 @@ $button: '.button';
 					--fs-badge: 8px;
 					.button {
 						&._wishlist {
-							--size: 40px;
-							left: 4px;
+							--size: 24px;
+							left: 8px;
+							bottom: 10px;
 							background-size: 24px;
 							&._active {
 								background-size: 22px;
 							}
+						}
+						&._compare {
+							--size: 24px;
+							left: 46px;
+							bottom: 9px;
 						}
 						&._product-card {
 							right: 8px;
@@ -367,13 +380,16 @@ $button: '.button';
 				--card-padding-bottom: 56px;
 				.button {
 					&._wishlist {
-						--size: 50px;
-						left: 8px;
-						bottom: 4px;
-						background-size: 32px;
+						left: 11px;
+						bottom: 12px;
+						background-size: 24px;
 						&._active {
-							background-size: 28px;
+							background-size: 22px;
 						}
+					}
+					&._compare {
+						left: 52px;
+						bottom: 16px;
 					}
 					&._product-card {
 						--size: 50px;

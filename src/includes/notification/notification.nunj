@@ -7,7 +7,9 @@
 	{% include "../notification-cart/notification-cart.nunj" %}
 	{% include "../notification-link/notification-link.nunj" %}
 	{% include "../notification-save/notification-save.nunj" %}
-	<button class="notification__close" type="button" data-notification-close>
+	{% include "../notification-compare/notification-compare-new.nunj" %}
+	{% include "../notification-compare/notification-compare-delete-category.nunj" %}
+	<button class="notification__close" type="button" aria-label="Закрыть" data-notification-close>
 		{{ icon({
 			iconName: "close-popup",
 			className: "popups__close-icon",
