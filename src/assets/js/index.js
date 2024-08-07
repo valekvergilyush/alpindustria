@@ -96,6 +96,7 @@ class AlpIndustry {
 			TitleBlock: require('../../includes/components/title-block/title-block').default,
 			SubscriptionNews: require('../../includes/subscription-news/subscription-news').default,
 			Compare: require('../../includes/compare/compare').default,
+			Cookies: require('../../includes/cookies/cookies').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),
