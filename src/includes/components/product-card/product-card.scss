@@ -237,6 +237,9 @@
 				left: auto;
 				right: 8px;
 				bottom: 8px;
+				#{$this}._no-compare & {
+					display: none;
+				}
 			}
 			@media (max-width: $mobile-lg) {
 				right: 0;
