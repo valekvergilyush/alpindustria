@@ -1,0 +1,88 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/radio/radio-button.nunj" import radioButton %}
+{% from "../components/radio/radio-img.nunj" import radioImg %}
+{% from "../components/input/input.nunj" import input %}
+
+{% set prices = ['3&nbsp;000&nbsp;₽', '5&nbsp;000&nbsp;₽', '10&nbsp;000&nbsp;₽', '15&nbsp;000&nbsp;₽', '20&nbsp;000&nbsp;₽', '25&nbsp;000&nbsp;₽'] %}
+{% set designs = ['card-1.jpg', 'card-2.jpg', 'card-3.jpg', 'card-1.jpg', 'card-2.jpg', 'card-1.jpg', 'card-2.jpg', 'card-3.jpg'] %}
+{% set designsLg = ['card-1-lg.jpg', 'card-2-lg.jpg', 'card-3-lg.jpg', 'card-1-lg.jpg', 'card-2-lg.jpg', 'card-1-lg.jpg', 'card-2-lg.jpg', 'card-3-lg.jpg'] %}
+
+<section class="new-cert" data-new-cert>
+	<form class="new-cert__wrapper">
+		<div class="new-cert__content">
+			<h2 class="new-cert__title h4 ttu">Подарочный сертификат</h2>
+
+			<div class="new-cert__content-section">
+				<h3 class="new-cert__subtitle h6 ttu">Номинал</h3>
+				<ul class="new-cert__prices">
+					{% for price in prices %}
+						<li>
+							{{ radioButton({
+								id: 'new-cert-price-' + loop.index,
+								className: 'new-cert__price',
+								name: 'new-cert-price',
+								value: price,
+								text: price,
+								checked: loop.index === 4
+							}) }}
+						</li>
+					{% endfor %}
+				</ul>
+				{{ input({
+					type: 'text',
+					id: 'new-cert-price-value',
+					className: 'new-cert__input',
+					name: 'other-price',
+					label: 'Или укажите свой номинал'
+				}) }}
+			</div>
+
+			<div class="new-cert__content-section">
+				<h3 class="new-cert__subtitle h6 ttu">Дизайн</h3>
+				<ul class="new-cert__designs">
+					{% for design in designs %}
+						<li>
+							{{ radioImg({
+								className: 'new-cert__design',
+								name: 'new-cert-img',
+								value: 'design-' + loop.index,
+								checked: loop.index === 2,
+								src: '/assets/images/certificates/' + design,
+								attr: 'data-new-cert-radio'
+							}) }}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="new-cert__preview-wrapper">
+			<div class="new-cert__preview">
+				<p class="new-cert__preview-text h6 ttu">Подарочный<br> сертификат</p>
+				{{ icon({
+					iconName: 'logo-full',
+					className: 'new-cert__preview-logo',
+					attr: 'width="642" height="69"'
+				}) }}
+				{% for design in designsLg %}
+					<img class="new-cert__preview-img{% if loop.index === 2 %} _active{% endif %}" src="/assets/images/certificates/{{ design }}" width="688" height="451" alt="" data-new-cert-img>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="new-cert__total">
+			<p class="new-cert__total-price h5">
+				<span class="p3">Номинал:</span>
+				15&nbsp;000&nbsp;₽
+			</p>
+			{{ button({
+				type: 'submit',
+				text: 'Оформить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'new-cert__submit _arrow'
+			}) }}
+		</div>
+	</form>
+</section>

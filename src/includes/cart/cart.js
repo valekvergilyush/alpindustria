@@ -133,23 +133,7 @@ class Cart {
 				showInputsError(deliveryFormInputs);
 			}
 
-			const registerFormInvalidInput = registerForm.querySelector(
-				'[data-validate-type].is-invalid'
-			);
-
-			let deliveryFormInvalidInput;
-
-			if (deliveryForm) {
-				deliveryFormInvalidInput = deliveryForm.querySelector('[data-validate-type].is-invalid');
-			}
-
-			if (registerFormInvalidInput) {
-				registerFormInvalidInput && registerFormInvalidInput.querySelector('input').focus();
-			} else if (deliveryFormInvalidInput) {
-				deliveryFormInvalidInput && deliveryFormInvalidInput.querySelector('input').focus();
-			} else {
-				this.openPay();
-			}
+			this.openPay();
 		}
 	}
 	onRentSubmitButtonClick(evt) {

@@ -1,0 +1,13 @@
+{% macro radioImg(props) %}
+	<label class="radio _img{% if props.className %} {{ props.className }}{% endif %}">
+		<input
+			class="radio__input visually-hidden"
+			type="radio"
+			name="{{ props.name }}"
+			value="{% if props.value %}{{ props.value }}{% else %}{{ props.name }}{% endif %}"
+			{% if props.checked %} checked{% endif %}
+			{% if props.attr %} {{ props.attr }}{% endif %}
+		>
+		<img class="radio__img" src="{{ props.src }}" width="174" height="112" alt="">
+	</label>
+{% endmacro %}

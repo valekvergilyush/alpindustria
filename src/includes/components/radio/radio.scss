@@ -41,6 +41,32 @@
 			}
 		}
 	}
+	&._img {
+		display: block;
+		cursor: pointer;
+		&::before {
+			@extend .animated;
+			content: '';
+			position: absolute;
+			inset: rem(-4);
+			border: 1px solid transparent;
+			border-radius: rem(12);
+		}
+		#{$this}__img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 174/112;
+			object-fit: cover;
+			border-radius: rem(8);
+		}
+		&:has(*:checked),
+		&:hover,
+		&:focus-within {
+			&::before {
+				border-color: var(--blue-dark);
+			}
+		}
+	}
 	&__label {
 		--size: #{rem(24)};
 		position: relative;
