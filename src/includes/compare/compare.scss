@@ -378,10 +378,8 @@
 	}
 	[data-show-more-text] {
 		--lines: 3;
-		display: -webkit-box;
-		-webkit-line-clamp: var(--lines);
-		line-clamp: var(--lines);
-		-webkit-box-orient: vertical;
+		display: block;
+		height: calc(1lh * var(--lines));
 		overflow: hidden;
 		&._active {
 			--lines: initial;
