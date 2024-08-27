@@ -1,5 +1,42 @@
 .new-cert-form {
 	position: relative;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	overflow: hidden;
+	@media (max-width: $laptop-lg-3) {
+		grid-template-columns: auto;
+	}
+	&__title-wrapper {
+		display: flex;
+		align-items: center;
+		column-gap: rem(12);
+		margin-bottom: rem(60);
+	}
+	&__title {
+		padding-top: 0.15em;
+	}
+	&__back-btn {
+		display: none;
+	}
+	&__card {
+		padding: var(--container-padding);
+		background-color: var(--white);
+		border-right: 1px solid var(--blue-dark);
+	}
+	&__preview {
+		max-width: rem(447);
+		margin-bottom: rem(68);
+	}
+	&__price {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		font-family: var(--font-family-suisse);
+		font-size: rem(32);
+		span {
+			font-size: rem(16);
+		}
+	}
 	&__form {
 		padding: var(--container-padding);
 	}

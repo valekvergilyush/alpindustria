@@ -1,9 +1,47 @@
 {% from "../components/icon/icon.nunj" import icon %}
 {% from "../components/textarea/textarea.nunj" import textarea %}
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/button/button.nunj" import button %}
 
 <section class="new-cert-form">
+	<div class="new-cert-form__card">
+		<div class="new-cert-form__title-wrapper">
+			{{ button({
+				href: '/certificates.html',
+				icon: 'double-arrow-left',
+				iconData: 'width="32" height="32"',
+				className: 'new-cert-form__back-btn'
+			}) }}
+			<h2 class="new-cert-form__title h5 ttu">Сертификат</h2>
+		</div>
+
+		<div class="new-cert-form__preview cert-preview">
+			<p class="cert-preview__text h6 ttu">Подарочный<br> сертификат</p>
+			{{ icon({
+				iconName: 'logo-full',
+				className: 'cert-preview__logo',
+				attr: 'width="642" height="69"'
+			}) }}
+			<img class="cert-preview__img" src="/assets/images/certificates/card-2-lg.jpg" width="688" height="451" alt="">
+		</div>
+
+		<p class="new-cert-form__price">
+			<span>Номинал:</span>
+			15 000 руб.
+		</p>
+	</div>
+
 	<div class="new-cert-form__form stages" data-stages>
+		<div class="new-cert-form__title-wrapper">
+			{{ button({
+				href: '/certificates.html',
+				icon: 'double-arrow-left',
+				iconData: 'width="32" height="32"',
+				className: 'new-cert-form__back-btn'
+			}) }}
+			<h2 class="new-cert-form__title h5 ttu">Оформление</h2>
+		</div>
+
 		<section class="stages__block _active" data-stages-item>
 			<h2 class="stages__title ttu h6">01. Ваши контактные данные</h2>
 			<div class="stages__content">

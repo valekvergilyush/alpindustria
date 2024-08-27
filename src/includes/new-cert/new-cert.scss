@@ -67,51 +67,6 @@
 			padding: var(--container-padding);
 		}
 	}
-	&__preview {
-		--offset-x: #{rem(32)};
-		--offset-y: #{rem(48)};
-		position: relative;
-		display: grid;
-		color: var(--white);
-		background-color: var(--blue-light);
-		border-radius: rem(24);
-		overflow: hidden;
-		@media (max-width: $laptop-md) {
-			max-width: rem(688);
-			margin: auto;
-		}
-		@media (max-width: $mobile-lg) {
-			--offset-x: #{rem(16)};
-			--offset-y: #{rem(24)};
-		}
-	}
-	&__preview-text {
-		grid-area: 1/1/-1/-1;
-		z-index: 2;
-		min-width: 35.6%;
-		justify-self: end;
-		padding: var(--offset-y) var(--offset-x);
-	}
-	&__preview-logo {
-		grid-area: 1/1/-1/-1;
-		z-index: 2;
-		width: calc(100% - var(--offset-x));
-		height: auto;
-		margin: auto;
-		margin-bottom: var(--offset-y);
-	}
-	&__preview-img {
-		grid-area: 1/1/-1/-1;
-		opacity: 0;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 688/451;
-		object-fit: cover;
-		transition: opacity $default-transition-duration $default-transition-function;
-		&._active {
-			opacity: 1;
-		}
-	}
 	&__total {
 		position: sticky;
 		z-index: 2;
@@ -137,5 +92,54 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(12);
+	}
+}
+
+.cert-preview {
+	--offset-x: #{rem(32)};
+	--offset-y: #{rem(48)};
+	position: relative;
+	display: grid;
+	color: var(--white);
+	background-color: var(--blue-light);
+	border-radius: rem(24);
+	overflow: hidden;
+	@media (max-width: $laptop-md) {
+		max-width: rem(688);
+		margin: auto;
+	}
+	@media (max-width: $mobile-lg) {
+		--offset-x: #{rem(16)};
+		--offset-y: #{rem(24)};
+	}
+	&__text {
+		grid-area: 1/1/-1/-1;
+		z-index: 2;
+		min-width: 35.6%;
+		justify-self: end;
+		padding: var(--offset-y) var(--offset-x);
+	}
+	&__logo {
+		grid-area: 1/1/-1/-1;
+		z-index: 2;
+		width: calc(100% - var(--offset-x));
+		height: auto;
+		margin: auto;
+		margin-bottom: var(--offset-y);
+	}
+	&__img {
+		grid-area: 1/1/-1/-1;
+		opacity: 0;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 688/451;
+		object-fit: cover;
+		transition: opacity $default-transition-duration $default-transition-function;
+		&:only-of-type {
+			opacity: 1;
+		}
+		&._active {
+			opacity: 1;
+		}
 	}
 }
