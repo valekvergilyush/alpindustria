@@ -381,6 +381,7 @@
 		display: block;
 		height: calc(1lh * var(--lines));
 		overflow: hidden;
+		word-break: break-word;
 		&._active {
 			--lines: initial;
 		}
