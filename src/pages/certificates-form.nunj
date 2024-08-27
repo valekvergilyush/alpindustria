@@ -6,6 +6,6 @@
 
 {% block mainContent %}
 	<main class="page__main _pt">
-		{% include "../includes/new-cert/new-cert.nunj" %}
+		{% include "../includes/new-cert-form/new-cert-form.nunj" %}
 	</main>
 {% endblock %}

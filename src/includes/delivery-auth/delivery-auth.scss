@@ -183,6 +183,18 @@
 		&._email {
 			display: none;
 		}
+		[data-delivery-auth='tel'] & {
+			display: block;
+			&._email {
+				display: none;
+			}
+		}
+		[data-delivery-auth='email'] & {
+			display: none;
+			&._email {
+				display: block;
+			}
+		}
 		.cart__block._email & {
 			display: none;
 			&._email {

@@ -98,6 +98,8 @@ class AlpIndustry {
 			Compare: require('../../includes/compare/compare').default,
 			Cookies: require('../../includes/cookies/cookies').default,
 			NewCert: require('../../includes/new-cert/new-cert').default,
+			UserForm: require('../../includes/user-form/user-form').default,
+			Stages: require('../../includes/components/stages/stages').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

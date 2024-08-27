@@ -21,6 +21,13 @@
 		&:not(:last-child) {
 			margin-bottom: rem(24);
 		}
+		&._datetime {
+			display: none;
+		}
+		&._radio {
+			gap: rem(8);
+			align-items: stretch;
+		}
 		@media (max-width: $mobile-lg) {
 			flex-direction: column;
 			row-gap: 16px;
@@ -52,9 +59,15 @@
 	}
 	&__checkbox {
 		margin-top: rem(34);
+		&._datetime {
+			margin-bottom: rem(16);
+		}
 		@media (max-width: $laptop) {
 			margin-top: 32px;
 		}
+	}
+	&__checkbox._datetime:has(:checked) ~ &__fields._datetime {
+		display: flex;
 	}
 	&__link {
 		display: inline-flex;

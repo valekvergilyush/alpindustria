@@ -10,6 +10,20 @@
 
 <section class="new-cert" data-new-cert>
 	<form class="new-cert__wrapper">
+		<div class="new-cert__preview-wrapper">
+			<div class="new-cert__preview">
+				<p class="new-cert__preview-text h6 ttu">Подарочный<br> сертификат</p>
+				{{ icon({
+					iconName: 'logo-full',
+					className: 'new-cert__preview-logo',
+					attr: 'width="642" height="69"'
+				}) }}
+				{% for design in designsLg %}
+					<img class="new-cert__preview-img{% if loop.index === 2 %} _active{% endif %}" src="/assets/images/certificates/{{ design }}" width="688" height="451" alt="" data-new-cert-img>
+				{% endfor %}
+			</div>
+		</div>
+
 		<div class="new-cert__content">
 			<h2 class="new-cert__title h4 ttu">Подарочный сертификат</h2>
 
@@ -54,20 +68,6 @@
 						</li>
 					{% endfor %}
 				</ul>
-			</div>
-		</div>
-
-		<div class="new-cert__preview-wrapper">
-			<div class="new-cert__preview">
-				<p class="new-cert__preview-text h6 ttu">Подарочный<br> сертификат</p>
-				{{ icon({
-					iconName: 'logo-full',
-					className: 'new-cert__preview-logo',
-					attr: 'width="642" height="69"'
-				}) }}
-				{% for design in designsLg %}
-					<img class="new-cert__preview-img{% if loop.index === 2 %} _active{% endif %}" src="/assets/images/certificates/{{ design }}" width="688" height="451" alt="" data-new-cert-img>
-				{% endfor %}
 			</div>
 		</div>
 

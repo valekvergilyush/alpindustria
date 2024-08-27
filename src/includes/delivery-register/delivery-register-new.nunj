@@ -1,0 +1,112 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/button/button.nunj" import button %}
+
+<form class="delivery-register _new-user">
+	<div class="delivery-register__fields">
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-name',
+			name: 'Имя',
+			label: 'Имя*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
+			className: 'delivery-register__input _gray'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-surname',
+			name: 'Фамилия',
+			label: 'Фамилия*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
+			className: 'delivery-register__input _gray'
+		}) }}
+	</div>
+	<div class="delivery-register__fields">
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-tel',
+			name: 'Телефон',
+			label: 'Телефон*',
+			className: 'delivery-register__input _gray',
+			inputAttr: 'required inputmode="tel"',
+			attr: 'data-validate-type="phone"'
+		}) }}
+		{{ input({
+			type: 'email',
+			id: 'delivery-register-new-email',
+			name: 'Почта',
+			label: 'Почта*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="email"',
+			className: 'delivery-register__input _gray'
+		}) }}
+	</div>
+	{{ checkbox({
+		className: 'delivery-register__checkbox',
+		id: 'delivery-register-new-checkbox',
+		name: 'legal-entity',
+		text: 'Я являюсь юридическим лицом',
+		inputAttr: 'data-legal-checkbox'
+	}) }}
+	<div class="delivery-register__legal hidden" data-legal-block>
+		<p class="delivery-register__legal-text p4 c-gray-dark">Работаем без НДС</p>
+		<div class="delivery-register__fields _legal">
+			{{ input({
+				type: 'text',
+				id: 'delivery-register-new-organisation-name',
+				name: 'Название организации',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: 'number',
+				id: 'delivery-register-new-settlement-account',
+				name: 'Р/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields _legal">
+			{{ input({
+				type: 'text',
+				id: 'delivery-register-new-legal-address',
+				name: 'Юридический адрес',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: 'number',
+				id: 'delivery-register-new-correspondent-account',
+				name: 'К/С',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields _legal">
+			{{ input({
+				type: 'number',
+				id: 'delivery-register-new-inn',
+				name: 'ИНН',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: 'number',
+				id: 'delivery-register-new-kpp',
+				name: 'КПП',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+		<div class="delivery-register__fields _legal">
+			{{ input({
+				type: 'text',
+				id: 'delivery-register-new-bank',
+				name: 'Полное наименование банка',
+				className: 'delivery-register__input _gray'
+			}) }}
+			{{ input({
+				type: 'number',
+				id: 'delivery-register-new-bik',
+				name: 'БИК',
+				className: 'delivery-register__input _gray'
+			}) }}
+		</div>
+	</div>
+</form>

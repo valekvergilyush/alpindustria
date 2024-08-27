@@ -1,0 +1,29 @@
+<div class="user-form" data-user-form="new">
+	<button class="user-form__button _auth p3" type="button" data-user-form-toggle="auth">
+		<span>У меня есть аккаунт</span>
+		{{ icon({
+			iconName: 'user',
+			className: 'user-form__icon',
+			attr: 'width="24" height="24" viewBox="0 0 32 33"'
+		}) }}
+	</button>
+	<button class="user-form__button _new p3" type="button" data-user-form-toggle="new">
+		<span>У меня нет аккаунта</span>
+		{{ icon({
+			iconName: 'user',
+			className: 'user-form__icon',
+			attr: 'width="24" height="24" viewBox="0 0 32 33"'
+		}) }}
+	</button>
+	<button class="user-form__button _exit p3" type="button" data-user-form-toggle="exit">
+		<span>Выйти из аккаунта</span>
+		{{ icon({
+			iconName: 'log-out',
+			className: 'user-form__icon',
+			attr: 'width="24" height="24"'
+		}) }}
+	</button>
+	<div class="user-form__section _data">{% include "../order-auth-data/order-auth-data.nunj" %}</div>
+	<div class="user-form__section _auth" data-validate>{% include "../delivery-auth/delivery-auth.nunj" %}</div>
+	<div class="user-form__section _new" data-validate>{% include "../delivery-register/delivery-register-new.nunj" %}</div>
+</div>

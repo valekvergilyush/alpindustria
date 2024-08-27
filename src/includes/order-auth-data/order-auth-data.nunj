@@ -17,7 +17,7 @@
 	</div>
 	<div class="order-auth-data__bottom">
 		<button class="order-auth-data__btn p3" type="button" data-edit-data>
-			<span>Изменить свои данные</span>
+			<span>Изменить данные</span>
 			{{ icon({
 				iconName: 'pencil',
 				className: 'order-auth-data__btn-icon',

@@ -1,0 +1,91 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/textarea/textarea.nunj" import textarea %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+
+<section class="new-cert-form">
+	<div class="new-cert-form__form stages" data-stages>
+		<section class="stages__block _active" data-stages-item>
+			<h2 class="stages__title ttu h6">01. Ваши контактные данные</h2>
+			<div class="stages__content">
+				{% include "../user-form/user-form.nunj" %}
+			</div>
+			<button class="stages__next" type="button" data-stages-next>
+				Дальше
+				{{ icon({
+					iconName: "down",
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</section>
+
+		<section class="stages__block _hidden" data-stages-item>
+			<h2 class="stages__title ttu h6">02. Получатель</h2>
+			<div class="stages__content">
+				{% include "../user-form/user-form-target.nunj" %}
+			</div>
+			<button class="stages__next" type="button" data-stages-next>
+				Дальше
+				{{ icon({
+					iconName: "down",
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</section>
+
+		<section class="stages__block _hidden" data-stages-item>
+			<h2 class="stages__title ttu h6">03. Поздравление</h2>
+			<div class="stages__content">
+				<div class="stages__edit-content">
+					{{ textarea({
+						id: 'new-cert-form-comment',
+						label: 'Комментарий'
+					}) }}
+					{{ checkbox({
+						className: 'delivery-register__checkbox _datetime',
+						id: 'new-cert-form-comment-checkbox',
+						name: 'no-comment',
+						text: 'Не добавлять'
+					}) }}
+				</div>
+
+				<div class="stages__result">
+					<div class="stages__result-content p3 c-gray-dark">
+						<p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p>
+					</div>
+
+					<div class="stages__result-bottom">
+						<button class="order-auth-data__btn p3" type="button" data-edit-data>
+							<span>Изменить данные</span>
+							{{ icon({
+								iconName: 'pencil',
+								className: 'order-auth-data__btn-icon',
+								attr: 'width="24" height="24"'
+							}) }}
+						</button>
+					</div>
+				</div>
+			</div>
+			<button class="stages__next" type="button" data-stages-next>
+				Дальше
+				{{ icon({
+					iconName: "down",
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</section>
+
+		<section class="stages__block _hidden" data-stages-item>
+			<h2 class="stages__title ttu h6">04. Дисконтная карта и промокод</h2>
+			<div class="stages__content">
+
+			</div>
+			<button class="stages__next" type="button" data-stages-next>
+				Дальше
+				{{ icon({
+					iconName: "down",
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</section>
+	</div>
+</section>
