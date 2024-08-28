@@ -28,6 +28,9 @@
 		._complete & {
 			display: none !important;
 		}
+		@media (max-width: $mobile-only) {
+			position: static;
+		}
 		@media (max-width: $mobile-lg) {
 			gap: 8px;
 		}

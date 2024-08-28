@@ -100,6 +100,7 @@ class AlpIndustry {
 			NewCert: require('../../includes/new-cert/new-cert').default,
 			UserForm: require('../../includes/user-form/user-form').default,
 			Stages: require('../../includes/components/stages/stages').default,
+			NewCertForm: require('../../includes/new-cert-form/new-cert-form').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

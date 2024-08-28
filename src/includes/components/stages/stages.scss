@@ -7,8 +7,9 @@
 		flex-direction: column;
 		background-color: var(--white);
 		border: 1px solid rgba($blue-light, 0.2);
-		& + & {
-			margin-top: rem(16);
+		margin-bottom: rem(16);
+		&:last-of-type {
+			margin-bottom: var(--container-padding);
 		}
 		&._hidden {
 			#{$this}__title {
@@ -36,8 +37,11 @@
 		}
 	}
 	&__title {
-		padding: rem(32);
+		padding: rem(32) rem(230) rem(45) rem(32);
 		color: var(--gray-dark);
+		@media (max-width: $mobile-only) {
+			padding-right: rem(32);
+		}
 	}
 	&__content {
 		padding: rem(32);
@@ -106,5 +110,25 @@
 			margin-top: 24px;
 			padding-top: 24px;
 		}
+	}
+	&__edit-content {
+		.textarea__label {
+			padding-top: rem(11);
+		}
+		.textarea__input {
+			height: rem(62);
+		}
+	}
+	&__checkbox {
+		margin-top: rem(22);
+	}
+	&__submit {
+		--popup-padding: var(--container-padding);
+		&._hidden {
+			display: none;
+		}
+	}
+	&__block:last-of-type:has(+ &__submit:not(._hidden)) {
+		margin-bottom: rem(48);
 	}
 }

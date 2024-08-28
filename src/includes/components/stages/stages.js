@@ -11,7 +11,7 @@ class Stages {
 		}
 
 		const stages = this.container.querySelectorAll('[data-stages-item]');
-		document.querySelector('[data-stages-item]');
+		const stagesSubmit = this.container.querySelectorAll('[data-stages-submit]');
 
 		stages.forEach(stage => {
 			const editButton = stage.querySelector('[data-edit-data]');
@@ -25,6 +25,7 @@ class Stages {
 
 				const nextStage = stage.nextElementSibling;
 				if (!nextStage) {
+					stagesSubmit.classList.remove('_hidden');
 					return;
 				}
 

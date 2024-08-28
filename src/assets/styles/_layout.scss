@@ -67,9 +67,6 @@
 		right: rem(24);
 		visibility: hidden;
 		transform: translateY(20px);
-		._no-button-up & {
-			display: none;
-		}
 	}
 	&._menu-opened {
 		#{$this}__menu {

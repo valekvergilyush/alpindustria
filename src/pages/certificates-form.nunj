@@ -2,7 +2,7 @@
 
 {% block title %}Оформление сертификата | {{ super() }}{% endblock title %}
 
-{% set htmlClassMods = '_no-button-up' %}
+{% set noFooter = true %}
 
 {% block mainContent %}
 	<main class="page__main _pt">

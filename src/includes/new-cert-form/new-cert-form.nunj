@@ -3,14 +3,14 @@
 {% from "../components/checkbox/checkbox.nunj" import checkbox %}
 {% from "../components/button/button.nunj" import button %}
 
-<section class="new-cert-form">
+<section class="new-cert-form _edit" data-cert-form>
 	<div class="new-cert-form__card">
 		<div class="new-cert-form__title-wrapper">
 			{{ button({
 				href: '/certificates.html',
 				icon: 'double-arrow-left',
 				iconData: 'width="32" height="32"',
-				className: 'new-cert-form__back-btn'
+				className: 'new-cert-form__back-btn _cert'
 			}) }}
 			<h2 class="new-cert-form__title h5 ttu">Сертификат</h2>
 		</div>
@@ -31,99 +31,188 @@
 		</p>
 	</div>
 
-	<div class="new-cert-form__form stages" data-stages>
+	<div class="new-cert-form__form stages" data-stages data-cert-form-fields>
 		<div class="new-cert-form__title-wrapper">
 			{{ button({
 				href: '/certificates.html',
 				icon: 'double-arrow-left',
 				iconData: 'width="32" height="32"',
-				className: 'new-cert-form__back-btn'
+				className: 'new-cert-form__back-btn _form',
+				attr: 'aria-label="Вернуться к выбору сертификата"'
 			}) }}
 			<h2 class="new-cert-form__title h5 ttu">Оформление</h2>
 		</div>
 
-		<section class="stages__block _active" data-stages-item>
-			<h2 class="stages__title ttu h6">01. Ваши контактные данные</h2>
-			<div class="stages__content">
-				{% include "../user-form/user-form.nunj" %}
-			</div>
-			<button class="stages__next" type="button" data-stages-next>
-				Дальше
-				{{ icon({
-					iconName: "down",
-					attr: 'width="24" height="24"'
-				}) }}
-			</button>
-		</section>
-
-		<section class="stages__block _hidden" data-stages-item>
-			<h2 class="stages__title ttu h6">02. Получатель</h2>
-			<div class="stages__content">
-				{% include "../user-form/user-form-target.nunj" %}
-			</div>
-			<button class="stages__next" type="button" data-stages-next>
-				Дальше
-				{{ icon({
-					iconName: "down",
-					attr: 'width="24" height="24"'
-				}) }}
-			</button>
-		</section>
-
-		<section class="stages__block _hidden" data-stages-item>
-			<h2 class="stages__title ttu h6">03. Поздравление</h2>
-			<div class="stages__content">
-				<div class="stages__edit-content">
-					{{ textarea({
-						id: 'new-cert-form-comment',
-						label: 'Комментарий'
-					}) }}
-					{{ checkbox({
-						className: 'delivery-register__checkbox _datetime',
-						id: 'new-cert-form-comment-checkbox',
-						name: 'no-comment',
-						text: 'Не добавлять'
-					}) }}
+		<div class="new-cert-form__form-content">
+			<section class="stages__block _active" data-stages-item>
+				<h2 class="stages__title ttu h6">01. Ваши контактные данные</h2>
+				<div class="stages__content">
+					{% include "../user-form/user-form.nunj" %}
 				</div>
-
-				<div class="stages__result">
-					<div class="stages__result-content p3 c-gray-dark">
-						<p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p>
+				<button class="stages__next" type="button" data-stages-next>
+					Дальше
+					{{ icon({
+						iconName: "down",
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+			</section>
+			<section class="stages__block _hidden" data-stages-item>
+				<h2 class="stages__title ttu h6">02. Получатель</h2>
+				<div class="stages__content">
+					{% include "../user-form/user-form-target.nunj" %}
+				</div>
+				<button class="stages__next" type="button" data-stages-next>
+					Дальше
+					{{ icon({
+						iconName: "down",
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+			</section>
+			<section class="stages__block _hidden" data-stages-item>
+				<h2 class="stages__title ttu h6">03. Поздравление</h2>
+				<div class="stages__content">
+					<div class="stages__edit-content">
+						{{ textarea({
+							id: 'new-cert-form-comment',
+							label: 'Комментарий'
+						}) }}
+						{{ checkbox({
+							className: 'stages__checkbox',
+							id: 'new-cert-form-comment-checkbox',
+							name: 'no-comment',
+							text: 'Не добавлять'
+						}) }}
 					</div>
-
-					<div class="stages__result-bottom">
-						<button class="order-auth-data__btn p3" type="button" data-edit-data>
-							<span>Изменить данные</span>
-							{{ icon({
-								iconName: 'pencil',
-								className: 'order-auth-data__btn-icon',
-								attr: 'width="24" height="24"'
-							}) }}
-						</button>
+					<div class="stages__result">
+						<div class="stages__result-content p3 c-gray-dark">
+							<p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p>
+						</div>
+						<div class="stages__result-bottom">
+							<button class="order-auth-data__btn p3" type="button" data-edit-data>
+								<span>Изменить данные</span>
+								{{ icon({
+									iconName: 'pencil',
+									className: 'order-auth-data__btn-icon',
+									attr: 'width="24" height="24"'
+								}) }}
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<button class="stages__next" type="button" data-stages-next>
-				Дальше
-				{{ icon({
-					iconName: "down",
-					attr: 'width="24" height="24"'
+				<button class="stages__next" type="button" data-stages-next>
+					Дальше
+					{{ icon({
+						iconName: "down",
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+			</section>
+			<section class="stages__block _hidden" data-stages-item>
+				<h2 class="stages__title ttu h6">04. Дисконтная карта</h2>
+				<div class="stages__content">
+					<div class="stages__edit-content">
+						{% include "../cart-discount/cart-discount-cert.nunj" %}
+					</div>
+					<div class="stages__result">
+						{% include "../order-auth-data/order-auth-data-discount.nunj" %}
+					</div>
+				</div>
+				<button class="stages__next" type="button" data-stages-next>
+					Дальше
+					{{ icon({
+						iconName: "down",
+						attr: 'width="24" height="24"'
+					}) }}
+				</button>
+			</section>
+			<div class="stages__submit cart-bottom _hidden" data-stages-submit>
+				<p class="cart__price _white p3">
+					Итого с учетом доставки:<br>
+					<span class="cart__price-value h5 ttu">145 000 ₽ <span class="cart__label"><span>-</span> <span>100</span> <span class="cart__label-small">баллов</span></span></span>
+				</p>
+				{{ button({
+					text: 'Оформить',
+					icon: 'promo-arrow',
+					iconData: 'width="18" height="18"',
+					className: 'cart__submit _arrow',
+					attr: 'data-cert-form-submit'
 				}) }}
-			</button>
-		</section>
-
-		<section class="stages__block _hidden" data-stages-item>
-			<h2 class="stages__title ttu h6">04. Дисконтная карта и промокод</h2>
-			<div class="stages__content">
-
 			</div>
-			<button class="stages__next" type="button" data-stages-next>
-				Дальше
-				{{ icon({
-					iconName: "down",
-					attr: 'width="24" height="24"'
-				}) }}
-			</button>
-		</section>
+		</div>
+
+		<div class="new-cert-form__form-result">
+			<table class="new-cert-form__table">
+				<caption class="h6 ttu">Отправитель</caption>
+				<tr>
+					<th>ФИО</th>
+					<td>Константин Константинопольский</td>
+				</tr>
+				<tr>
+					<th>Почта</th>
+					<td>konstantin@gmail.com</td>
+				</tr>
+				<tr>
+					<th>Телефон</th>
+					<td>+7 (902) 222 01 02</td>
+				</tr>
+			</table>
+			<table class="new-cert-form__table">
+				<caption class="h6 ttu">Получатель</caption>
+				<tr>
+					<th>ФИО</th>
+					<td>Константин Константинопольский</td>
+				</tr>
+				<tr>
+					<th>Почта</th>
+					<td>konstantin@gmail.com</td>
+				</tr>
+				<tr>
+					<th>Телефон</th>
+					<td>+7 (902) 222 01 02</td>
+				</tr>
+				<tr>
+					<th>Дата и время</th>
+					<td>21.08.24 в 19:00</td>
+				</tr>
+				<tr>
+					<th>Получение</th>
+					<td>На почту</td>
+				</tr>
+				<tr>
+					<th>Поздравление</th>
+					<td><p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="new-cert-form__pay">
+		<div class="new-cert-form__title-wrapper">
+			{{ button({
+				icon: 'double-arrow-left',
+				iconData: 'width="32" height="32"',
+				className: 'new-cert-form__back-btn _form',
+				attr: 'data-cert-form-edit aria-label="Вернуться к оформлению сертификата"'
+			}) }}
+			<h2 class="new-cert-form__title h5 ttu">Оплата</h2>
+		</div>
+
+		{% include '../cart-pay/cart-pay-cert.nunj' %}
+
+		<div class="new-cert-form__submit cart-bottom">
+			<p class="cart__price _white p3">
+				Итого с учетом доставки:<br>
+				<span class="cart__price-value h5 ttu">145 000 ₽ <span class="cart__label"><span>-</span> <span>100</span> <span class="cart__label-small">баллов</span></span></span>
+			</p>
+			{{ button({
+				type: 'submit',
+				text: 'Оформить',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: 'cart__submit _arrow'
+			}) }}
+		</div>
 	</div>
 </section>
