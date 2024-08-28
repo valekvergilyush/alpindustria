@@ -1,14 +1,16 @@
 class CartDiscount {
-	constructor() {
-		this.init();
+	constructor(el) {
+		this.init(el);
 	}
 
-	init() {
-		this.container = document.querySelector('.cart-discount');
+	init(el) {
+		this.container = el;
 
 		if (!this.container) {
 			return;
 		}
+
+		this.container.instance = this;
 
 		this.addCardBtn = this.container.querySelector('[data-add-card]');
 		this.smsBackBtn = this.container.querySelector('[data-sms-back]');
@@ -78,4 +80,6 @@ class CartDiscount {
 	}
 }
 
-export default new CartDiscount();
+document.querySelectorAll('.cart-discount').forEach(el => new CartDiscount(el));
+
+export default CartDiscount;
