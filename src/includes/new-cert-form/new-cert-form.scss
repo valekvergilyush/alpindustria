@@ -113,6 +113,7 @@
 		background-color: var(--white);
 		border-left: 1px solid var(--blue-dark);
 		overflow: auto;
+		overflow-x: hidden;
 		@media (max-width: $laptop-md) {
 			border: none;
 		}
