@@ -1,3 +1,5 @@
+@import 'lib/mixins';
+
 $default-transition-duration: 0.3s;
 $fast-transition-duration: 0.15s;
 $long-transition-duration: 0.6s;
@@ -112,7 +114,7 @@ $mobile-sm: 320px;
 	--container-padding: 5rem; // 80px
 	--community-nav-height: 3.4375rem; // 55px
 	@media (max-width: $desktop) {
-		--container-padding: 64px;
+		@include smoothValue('--container-padding', 40px, 64px, $laptop-lg, $desktop);
 	}
 	@media (max-width: $laptop-lg) {
 		--add-block-height: 134px;
