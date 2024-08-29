@@ -60,23 +60,58 @@
 		}
 	}
 	&__bottom {
-		width: 100%;
-		padding: 0 var(--popup-padding);
-		padding-top: rem(39);
-		padding-bottom: rem(48);
+		box-sizing: border-box;
+		width: calc(100% + var(--popup-padding) * 2);
+
 		margin-left: calc(1px - var(--popup-padding));
 		margin-top: rem(28);
 		border-top: 1px solid var(--blue-dark);
+		.club-card-form {
+			display: none;
+		}
+		&._active {
+			padding: 0 var(--popup-padding);
+			padding-top: rem(39);
+			padding-bottom: rem(48);
+			.club-card-form {
+				display: flex;
+			}
+		}
 		@media (max-width: $laptop-lg) {
-			padding-block: 23px;
-			padding-bottom: 42px;
+			&._active {
+				padding-block: 23px;
+				padding-bottom: 42px;
+			}
 			margin-top: 23px;
 		}
+		@media (max-width: $laptop-sm) {
+			width: calc(100% + rem(16) * 2);
+
+			margin-left: calc(0px - rem(16));
+		}
 		@media (max-width: $mobile-lg) {
-			padding-block: 16px;
-			padding-top: 13px;
-			padding-bottom: 42px;
+			&._active {
+				padding-top: 13px;
+				padding-bottom: 42px;
+			}
 			margin-top: 16px;
+		}
+	}
+	&__bottom-toggle._arrow {
+		display: flex;
+		text-transform: uppercase;
+		width: 100%;
+		min-height: rem(72);
+		.button__icon {
+			--size: #{rem(24)};
+
+			transform: none;
+		}
+		._active & {
+			display: none;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: rem(48);
 		}
 	}
 }
