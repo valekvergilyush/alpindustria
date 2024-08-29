@@ -11,6 +11,9 @@
 		padding: var(--container-padding);
 		padding-bottom: rem(98);
 		background-color: var(--white);
+		@media (max-width: $laptop-md) {
+			padding-bottom: rem(32);
+		}
 	}
 	&__content-section {
 		& + & {
@@ -18,7 +21,7 @@
 		}
 		@media (max-width: $mobile-lg) {
 			& + & {
-				margin-top: rem(40);
+				margin-top: rem(36);
 			}
 		}
 	}
@@ -38,14 +41,17 @@
 			margin-bottom: rem(20);
 		}
 		@media (max-width: $mobile-lg) {
-			margin-bottom: rem(16);
+			margin-bottom: rem(14);
 		}
 	}
 	&__prices {
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(9);
+		gap: rem(8);
 		margin-bottom: rem(6);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: rem(10);
+		}
 	}
 	&__designs {
 		display: grid;
@@ -62,9 +68,9 @@
 	&__preview-wrapper {
 		grid-area: 1/2/2/3;
 		padding: rem(88);
-		padding-top: rem(199);
+		padding-top: vh(199, 1040);
 		@media (max-width: $laptop-md) {
-			padding: var(--container-padding);
+			padding: rem(24) var(--container-padding);
 		}
 	}
 	&__total {
@@ -87,17 +93,38 @@
 		@media (max-width: $laptop-md) {
 			padding-block: rem(30) rem(24);
 		}
+		@media (max-width: $mobile-lg) {
+			padding-block: rem(16) rem(14);
+		}
 	}
 	&__total-price {
 		display: flex;
 		flex-direction: column;
 		gap: rem(12);
+
+		@media (max-width: $mobile-lg) {
+			gap: rem(6);
+			font-size: rem(18);
+			span {
+				font-size: rem(10);
+			}
+		}
+	}
+	&__submit {
+		@media (max-width: $mobile-lg) {
+			position: relative;
+			right: 3px;
+			bottom: 3px;
+		}
 	}
 }
 
 .cert-preview {
 	--offset-x: #{rem(32)};
 	--offset-y: #{rem(48)};
+	--font-size: #{rem(24)};
+	--text-width: 35.6%;
+
 	position: relative;
 	display: grid;
 	color: var(--white);
@@ -107,17 +134,20 @@
 	@media (max-width: $laptop-md) {
 		max-width: rem(688);
 		margin: auto;
+		border-radius: rem(12);
 	}
 	@media (max-width: $mobile-lg) {
 		--offset-x: #{rem(16)};
 		--offset-y: #{rem(24)};
+		@include smoothValue('--font-size', 14px, 24px, $mobile, $mobile-lg);
 	}
 	&__text {
 		grid-area: 1/1/-1/-1;
 		z-index: 2;
-		min-width: 35.6%;
+		min-width: var(--text-width);
 		justify-self: end;
 		padding: var(--offset-y) var(--offset-x);
+		font-size: var(--font-size);
 	}
 	&__logo {
 		grid-area: 1/1/-1/-1;

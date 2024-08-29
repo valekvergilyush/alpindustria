@@ -40,7 +40,14 @@
 		padding: rem(32) rem(230) rem(45) rem(32);
 		color: var(--gray-dark);
 		@media (max-width: $mobile-only) {
-			padding-right: rem(32);
+			padding: rem(24) rem(15);
+			padding-bottom: rem(14);
+			._hidden & {
+				padding-bottom: rem(21);
+			}
+			._complete & {
+				padding-bottom: rem(30);
+			}
 		}
 	}
 	&__content {
@@ -51,6 +58,11 @@
 		}
 		._active & {
 			display: block;
+		}
+
+		@media (max-width: $mobile-lg) {
+			padding: rem(16);
+			padding-top: 0;
 		}
 	}
 	&__next {
@@ -120,12 +132,19 @@
 		}
 	}
 	&__checkbox {
-		margin-top: rem(22);
+		margin-top: rem(24);
 	}
-	&__submit {
+	&__submit.cart-bottom {
 		--popup-padding: var(--container-padding);
 		&._hidden {
 			display: none;
+		}
+		@media (max-width: $mobile-lg) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			margin-inline: 0;
 		}
 	}
 	&__block:last-of-type:has(+ &__submit:not(._hidden)) {

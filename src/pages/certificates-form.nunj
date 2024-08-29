@@ -3,6 +3,7 @@
 {% block title %}Оформление сертификата | {{ super() }}{% endblock title %}
 
 {% set noFooter = true %}
+{% set noButtonUp = true %}
 
 {% block mainContent %}
 	<main class="page__main _pt">

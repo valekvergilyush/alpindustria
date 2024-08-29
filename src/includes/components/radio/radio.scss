@@ -94,6 +94,9 @@
 		@media (max-width: $tablet) {
 			row-gap: 8px;
 			font-size: 16px;
+			._button & {
+				min-height: 32px;
+			}
 		}
 	}
 	&__box {

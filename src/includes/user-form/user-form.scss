@@ -32,7 +32,8 @@
 			position: static;
 		}
 		@media (max-width: $mobile-lg) {
-			gap: 8px;
+			gap: rem(8);
+			margin-bottom: rem(32);
 		}
 	}
 	&__icon {

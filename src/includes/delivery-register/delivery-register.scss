@@ -27,6 +27,7 @@
 		&._radio {
 			gap: rem(8);
 			align-items: stretch;
+			margin-top: rem(47);
 		}
 		@media (max-width: $mobile-lg) {
 			flex-direction: column;
@@ -58,7 +59,7 @@
 		}
 	}
 	&__checkbox {
-		margin-top: rem(34);
+		margin-top: rem(24);
 		&._datetime {
 			margin-bottom: rem(16);
 		}

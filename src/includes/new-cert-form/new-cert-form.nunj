@@ -58,7 +58,7 @@
 				</button>
 			</section>
 			<section class="stages__block _hidden" data-stages-item>
-				<h2 class="stages__title ttu h6">02. Получатель</h2>
+				<h2 class="stages__title ttu h6">02. Данные получателя</h2>
 				<div class="stages__content">
 					{% include "../user-form/user-form-target.nunj" %}
 				</div>
@@ -189,7 +189,7 @@
 	</div>
 
 	<div class="new-cert-form__pay">
-		<div class="new-cert-form__title-wrapper">
+		<div class="new-cert-form__title-wrapper _pay">
 			{{ button({
 				icon: 'double-arrow-left',
 				iconData: 'width="32" height="32"',
