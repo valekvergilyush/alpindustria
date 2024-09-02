@@ -1,0 +1,17 @@
+.loader {
+	position: relative;
+	width: rem(175);
+	text-align: center;
+	user-select: none;
+	opacity: 0;
+	transition: opacity $fast-transition-duration $default-transition-function;
+	&._inited {
+		opacity: 1;
+	}
+	&._hidden {
+		opacity: 0;
+	}
+	&__img {
+		aspect-ratio: 233/192;
+	}
+}
