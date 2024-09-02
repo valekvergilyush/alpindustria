@@ -131,6 +131,7 @@
 	background-color: var(--blue-light);
 	border-radius: rem(24);
 	overflow: hidden;
+	user-select: none;
 	@media (max-width: $laptop-md) {
 		max-width: rem(688);
 		margin: auto;
