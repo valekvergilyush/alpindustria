@@ -102,6 +102,7 @@ class AlpIndustry {
 			Stages: require('../../includes/components/stages/stages').default,
 			NewCertForm: require('../../includes/new-cert-form/new-cert-form').default,
 			CartPay: require('../../includes/cart-pay/cart-pay').default,
+			GetCert: require('../../includes/get-cert/get-cert').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

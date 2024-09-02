@@ -1,0 +1,10 @@
+{% from "../components/loader/loader.nunj" import loader %}
+
+<section class="get-cert _loader" data-get-cert>
+	<div class="get-cert__container container">
+		{{ loader({
+			className: 'get-cert__loader',
+			text: 'Идёт загрузка, это займет пару секунд'
+		}) }}
+	</div>
+</section>

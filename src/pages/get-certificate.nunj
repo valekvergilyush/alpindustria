@@ -1,0 +1,12 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Получение сертификата | {{ super() }}{% endblock title %}
+
+{% set noFooter = true %}
+{% set noButtonUp = true %}
+
+{% block mainContent %}
+	<main class="page__main _pt _white-bg">
+		{% include "../includes/get-cert/get-cert.nunj" %}
+	</main>
+{% endblock %}
