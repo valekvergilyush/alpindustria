@@ -1,8 +1,10 @@
 .loader {
 	position: relative;
+	z-index: 2;
 	width: rem(175);
+	height: min-content;
 	text-align: center;
-	user-select: none;
+	pointer-events: none;
 	opacity: 0;
 	transition: opacity $fast-transition-duration $default-transition-function;
 	&._inited {

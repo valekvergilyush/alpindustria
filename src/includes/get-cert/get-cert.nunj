@@ -1,10 +1,75 @@
 {% from "../components/loader/loader.nunj" import loader %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
 
 <section class="get-cert _loader" data-get-cert>
-	<div class="get-cert__container container">
-		{{ loader({
-			className: 'get-cert__loader',
-			text: 'Идёт загрузка, это займет пару секунд'
-		}) }}
+	<img class="get-cert__bg-img _mountain-4" src="/assets/images/certificates/mountain-4.webp" srcset="/assets/images/certificates/mountain-4@2x.webp 2x" alt="" data-get-cert-layer>
+	<img class="get-cert__bg-img _mountain-3" src="/assets/images/certificates/mountain-3.webp" srcset="/assets/images/certificates/mountain-3@2x.webp 2x" alt="" data-get-cert-layer>
+	<img class="get-cert__bg-img _mountain-2" src="/assets/images/certificates/mountain-2.webp" srcset="/assets/images/certificates/mountain-2@2x.webp 2x" alt="" data-get-cert-layer>
+	<img class="get-cert__bg-img _mountain-1" src="/assets/images/certificates/mountain-1.webp" srcset="/assets/images/certificates/mountain-1@2x.webp 2x" alt="" data-get-cert-layer>
+	<img class="get-cert__bg-img _gift" src="/assets/images/certificates/gift.webp" srcset="/assets/images/certificates/gift@2x.webp 2x" alt="" data-get-cert-layer>
+
+	<div class="get-cert__container" data-get-cert-content>
+		<div class="get-cert__preview cert-preview">
+			<p class="cert-preview__text h6 ttu">Подарочный<br> сертификат<br> на&nbsp;3&nbsp;000&nbsp;₽</p>
+			{{ icon({
+				iconName: 'logo-full',
+				className: 'cert-preview__logo',
+				attr: 'width="670" height="74"'
+			}) }}
+			<img class="cert-preview__img" src="/assets/images/certificates/card-2-lg.jpg" width="739" height="484" alt="">
+		</div>
+
+		<div class="get-cert__wrapper _quote">
+			<blockquote class="get-cert__quote p2 c-gray-dark">
+				<p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p>
+			</blockquote>
+			<p class="h7 ttu c-blue-dark">Алексей Смирнов</p>
+		</div>
+
+		<div class="get-cert__wrapper _info">
+			<div class="get-cert__wrapper-content">
+				<dl class="get-cert__list">
+					<div>
+						<dt class="p3 c-gray-dark">Номинал:</dt>
+						<dd class="h6">3&nbsp;000&nbsp;₽</dd>
+					</div>
+					<div>
+						<dt class="p3 c-gray-dark">Номер сертификата:</dt>
+						<dd class="h6">45578</dd>
+					</div>
+					<div>
+						<dt class="p3 c-gray-dark">Проверочный код:</dt>
+						<dd class="h6">812</dd>
+					</div>
+					<div>
+						<dt class="p3 c-gray-dark">Срок действия:</dt>
+						<dd class="h6">25.05.25</dd>
+					</div>
+				</dl>
+				<div class="get-cert__text">
+					<p>Добавь карту при оформлении заказа в&nbsp;интернет-магазине или покажи qr-код при покупке в&nbsp;офлайн-магазине. Для оплаты вы&nbsp;можете использовать любую сумму, доступную на&nbsp;вашей карте.</p>
+				</div>
+			</div>
+
+			<div class="get-cert__qr">
+				{% include "./qr-code.nunj" %}
+			</div>
+		</div>
+
+		<div class="get-cert__submit">
+			{{ button({
+				href: '/catalog',
+				text: 'Перейти к покупкам',
+				icon: 'promo-arrow',
+				iconData: 'width="18" height="18"',
+				className: '_arrow'
+			}) }}
+		</div>
 	</div>
+
+	{{ loader({
+		className: 'get-cert__loader',
+		text: 'Идёт загрузка, это займет пару секунд'
+	}) }}
 </section>
