@@ -1,6 +1,4 @@
-import env from '../../assets/js/utils/env';
 import Popups from '../../assets/js/modules/Popups';
-import DeliveryAuth from '../delivery-auth/delivery-auth';
 import { showInputsError } from '../../assets/js/classes/form-validate';
 
 const ClassName = {

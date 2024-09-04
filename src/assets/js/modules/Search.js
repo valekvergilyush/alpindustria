@@ -1,5 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import Env from '../utils/env';
+import { lock as disableBodyScroll, unlock as enableBodyScroll } from 'tua-body-scroll-lock';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -57,24 +56,14 @@ class Search {
 		this.searchInput.focus();
 		this.isOpened = !this.isOpened;
 
-		if (!Env.isIOS) {
-			disableBodyScroll(this.container);
-		}
-		if (Env.isIOS) {
-			document.body.style.overflow = 'hidden';
-		}
+		disableBodyScroll(this.container);
 	}
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.searchInput.blur();
 		this.isOpened = !this.isOpened;
 		this.resetSearchInput();
-		if (!Env.isIOS) {
-			enableBodyScroll(this.container);
-		}
-		if (Env.isIOS) {
-			document.body.style.overflow = '';
-		}
+		enableBodyScroll(this.container);
 	}
 	toggle() {
 		this.isOpened ? this.close() : this.open();

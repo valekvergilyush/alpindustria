@@ -1,20 +1,14 @@
-const body = document.querySelector('body');
+import { lock, unlock } from 'tua-body-scroll-lock';
 
-let scrollPosition = 0;
+const body = document.querySelector('body');
 
 export default {
 	enable() {
-		scrollPosition = window.scrollY;
 		body.style.overflow = 'hidden';
-		body.style.position = 'fixed';
-		document.querySelector('.wrapper').style.top = `-${scrollPosition}px`;
-		body.style.width = '100%';
+		lock();
 	},
 	disable() {
 		body.style.removeProperty('overflow');
-		body.style.removeProperty('position');
-		document.querySelector('.wrapper').style.removeProperty('top');
-		body.style.removeProperty('width');
-		window.scrollTo(0, scrollPosition);
+		unlock();
 	},
 };

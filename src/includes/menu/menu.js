@@ -1,4 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { lock as disableBodyScroll, unlock as enableBodyScroll } from 'tua-body-scroll-lock';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
