@@ -122,7 +122,7 @@
 .cert-preview {
 	--offset-x: #{rem(32)};
 	--offset-y: #{rem(48)};
-	--font-size: #{rem(24)};
+	--font-size: #{rem(28)};
 	--text-width: 35.6%;
 
 	position: relative;
@@ -140,7 +140,7 @@
 	@media (max-width: $mobile-lg) {
 		--offset-x: #{rem(16)};
 		--offset-y: #{rem(24)};
-		@include smoothValue('--font-size', 14px, 24px, $mobile, $mobile-lg);
+		@include smoothValue('--font-size', 14px, 28px, $mobile, $mobile-lg);
 	}
 	&__text {
 		grid-area: 1/1/-1/-1;
