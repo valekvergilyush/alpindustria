@@ -86,7 +86,7 @@
     "flickity": "^3.0.0",
     "flickity-fade": "^2.0.0",
     "global": "^4.4.0",
-    "gsap": "^3.7.0",
+    "gsap": "^3.12.5",
     "gulp-dart-sass": "^1.0.2",
     "imask": "^7.5.0",
     "intl-tel-input": "^17.0.19",
