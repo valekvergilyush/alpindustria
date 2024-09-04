@@ -3,11 +3,28 @@
 {% from "../components/button/button.nunj" import button %}
 
 <section class="get-cert _loader" data-get-cert>
-	<img class="get-cert__bg-img _mountain-4" src="/assets/images/certificates/mountain-4.webp" srcset="/assets/images/certificates/mountain-4@2x.webp 2x" alt="" data-get-cert-layer>
-	<img class="get-cert__bg-img _mountain-3" src="/assets/images/certificates/mountain-3.webp" srcset="/assets/images/certificates/mountain-3@2x.webp 2x" alt="" data-get-cert-layer>
-	<img class="get-cert__bg-img _mountain-2" src="/assets/images/certificates/mountain-2.webp" srcset="/assets/images/certificates/mountain-2@2x.webp 2x" alt="" data-get-cert-layer>
-	<img class="get-cert__bg-img _mountain-1" src="/assets/images/certificates/mountain-1.webp" srcset="/assets/images/certificates/mountain-1@2x.webp 2x" alt="" data-get-cert-layer>
-	<img class="get-cert__bg-img _gift" src="/assets/images/certificates/gift.webp" srcset="/assets/images/certificates/gift@2x.webp 2x" alt="" data-get-cert-layer>
+	<div class="get-cert__bg">
+		<picture>
+			<source media="(max-width: 768px)" srcset="/assets/images/certificates/mountain-4-mobile.webp, /assets/images/certificates/mountain-4-mobile@2x.webp 2x" type="image/webp">
+			<img class="get-cert__bg-img _mountain-4" src="/assets/images/certificates/mountain-4.webp" srcset="/assets/images/certificates/mountain-4@2x.webp 2x" alt="" data-get-cert-layer>
+		</picture>
+		<picture>
+			<source media="(max-width: 768px)" srcset="/assets/images/certificates/mountain-3-mobile.webp, /assets/images/certificates/mountain-3-mobile@2x.webp 2x" type="image/webp">
+			<img class="get-cert__bg-img _mountain-3" src="/assets/images/certificates/mountain-3.webp" srcset="/assets/images/certificates/mountain-3@2x.webp 2x" alt="" data-get-cert-layer>
+		</picture>
+		<picture>
+			<source media="(max-width: 768px)" srcset="/assets/images/certificates/mountain-2-mobile.webp, /assets/images/certificates/mountain-2-mobile@2x.webp 2x" type="image/webp">
+			<img class="get-cert__bg-img _mountain-2" src="/assets/images/certificates/mountain-2.webp" srcset="/assets/images/certificates/mountain-2@2x.webp 2x" alt="" data-get-cert-layer>
+		</picture>
+		<picture>
+			<source media="(max-width: 768px)" srcset="/assets/images/certificates/mountain-1-mobile.webp, /assets/images/certificates/mountain-1-mobile@2x.webp 2x" type="image/webp">
+			<img class="get-cert__bg-img _mountain-1" src="/assets/images/certificates/mountain-1.webp" srcset="/assets/images/certificates/mountain-1@2x.webp 2x" alt="" data-get-cert-layer>
+		</picture>
+		<picture>
+			<source media="(max-width: 768px)" srcset="/assets/images/certificates/gift-mobile.webp, /assets/images/certificates/gift-mobile@2x.webp 2x" type="image/webp">
+			<img class="get-cert__bg-img _gift" src="/assets/images/certificates/gift.webp" srcset="/assets/images/certificates/gift@2x.webp 2x" alt="" data-get-cert-layer>
+		</picture>
+	</div>
 
 	<div class="get-cert__container" data-get-cert-content>
 		<div class="get-cert__preview cert-preview">

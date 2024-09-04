@@ -1,4 +1,6 @@
 import gsap from 'gsap';
+import LockScroll from '../../assets/js/utils/scroll-lock';
+import AnchorLinks from '../../assets/js/modules/AnchorLinks';
 
 const ClassName = {
 	HIDDEN: '_hidden',
@@ -19,12 +21,13 @@ class GetCert {
 
 		this.loaderEl = this.container.querySelector('[data-loader]');
 
+		LockScroll.enable();
 		this.showLoader();
 
 		setTimeout(() => {
 			this.hideLoader();
 			this._initAnim();
-		}, 1000);
+		}, 1200);
 	}
 
 	showLoader() {
@@ -39,29 +42,33 @@ class GetCert {
 		const contentEl = this.container.querySelector('[data-get-cert-content]');
 		const layers = this.container.querySelectorAll('[data-get-cert-layer]');
 
-		const tl = gsap.timeline({
-			ease: 'Power4.out',
-		});
+		const mm = gsap.matchMedia();
 
-		tl.from(
-			layers[0],
-			{
+		const onAnimComplete = () => {
+			LockScroll.disable();
+			AnchorLinks.scrollTo(contentEl);
+		};
+
+		const tl = gsap
+			.timeline({
+				ease: 'Power4.out',
+				onComplete: onAnimComplete,
+			})
+			.from(layers[0], {
 				scale: 2,
 				bottom: '10%',
 				right: '20.5%',
 				filter: 'blur(0px)',
-				duration: 2.5,
-			},
-			'<'
-		)
+				duration: 3,
+			})
 			.from(
 				layers[1],
 				{
 					scale: 2,
-					bottom: '-100%',
+					bottom: '-50%',
 					left: '-13%',
 					filter: 'blur(0px)',
-					duration: 2,
+					duration: 3,
 				},
 				'<'
 			)
@@ -71,7 +78,7 @@ class GetCert {
 					scale: 2,
 					right: '30%',
 					bottom: '-100%',
-					duration: 2,
+					duration: 3,
 				},
 				'<'
 			)
@@ -80,26 +87,25 @@ class GetCert {
 				{
 					scale: 1.2,
 					bottom: '-90%',
-					duration: 2,
+					duration: 2.2,
 				},
-				'<+0.5'
+				'<0.8'
 			)
 			.from(
 				layers[4],
 				{
 					bottom: '-50%',
-					duration: 1.5,
+					duration: 1.4,
 				},
-				'<+0.9'
-			)
-			.from(
-				contentEl,
-				{
-					xPercent: 100,
-					duration: 0.8,
-				},
-				'+=0.1'
+				'<0.8'
 			);
+
+		mm.add('(min-width: 769px)', () => {
+			tl.from(contentEl, {
+				xPercent: 100,
+				duration: 0.8,
+			});
+		});
 	}
 }
 
