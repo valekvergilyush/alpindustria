@@ -1,4 +1,5 @@
 .breadcrumbs {
+	$this: &;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -16,6 +17,27 @@
 		scrollbar-width: none;
 		@include scrollbar {
 			display: none;
+		}
+	}
+	&._hero {
+		background: none;
+		border-bottom: 0;
+		display: inline-flex;
+		padding: 0;
+		justify-content: center;
+		gap: 0;
+		margin-bottom: rem(16);
+		#{$this}__item {
+			&::after {
+				margin: 0 rem(6);
+				font-family: var(--font-family-suisse);
+			}
+		}
+		#{$this}__link {
+			font-size: var(--font-size-h7);
+			font-family: var(--font-family-suisse);
+			text-transform: uppercase;
+			color: var(--gray-light);
 		}
 	}
 	&__list {
