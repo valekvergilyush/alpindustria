@@ -1,5 +1,6 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import utils from '../../assets/js/utils/utils';
+import gsap from 'gsap';
 
 const ClassName = {
 	ACTIVE: '_active',
@@ -21,6 +22,7 @@ class Compare {
 		this.initShowMore();
 		this.initSlider();
 		this.initHeader();
+		this.initCompare();
 
 		setTimeout(() => {
 			this.container.classList.add('_inited');
@@ -137,6 +139,21 @@ class Compare {
 		setTimeout(() => {
 			header.classList.add('_inited');
 		}, 400);
+	}
+	initCompare() {
+		const compareNavigation = this.container.querySelector('[data-compare-nav]');
+		const container = this.container;
+
+		const transform = getComputedStyle(compareNavigation).transform;
+		const translateY = transform.match(/(\d+(\.\d+)?)/g).at(-1);
+		const initialTop = parseFloat(translateY);
+		const offset = container.clientHeight / 2 - initialTop;
+
+		window.addEventListener('scroll', () => {
+			const scrollTop = window.scrollY;
+			const newTop = Math.min(initialTop + offset, initialTop + scrollTop);
+			compareNavigation.style.transform = `translateY(${newTop}px)`;
+		});
 	}
 }
 

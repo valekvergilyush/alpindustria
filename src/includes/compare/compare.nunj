@@ -404,7 +404,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="compare__nav">
+	<div class="compare__nav" data-compare-nav>
 		{{ button({
 			className: 'compare__nav-button _prev',
 			icon: 'arrow-left',

@@ -46,21 +46,24 @@
 
 		position: absolute;
 		z-index: 4;
-		top: rem(242);
+		top: rem(0);
 		left: rem(416);
 		right: calc(var(--container-padding) - var(--size) / 2);
 		display: flex;
 		justify-content: space-between;
 		pointer-events: none;
+		transform: translateY(rem(242));
+		will-change: transform;
+
 		@media (max-width: $laptop-lg) {
-			top: rem(197);
+			transform: translateY(rem(197));
 			left: rem(332);
 		}
 		@media (max-width: $laptop-sm) {
 			--size: #{rem(48)};
 			--icon-size: #{rem(24)};
 
-			top: rem(288);
+			transform: translateY(rem(288));
 			left: calc(var(--container-padding) / 2);
 			right: calc(var(--container-padding) / 2);
 		}
@@ -68,7 +71,7 @@
 			--size: #{rem(32)};
 			--icon-size: #{rem(16)};
 
-			top: rem(223);
+			transform: translateY(rem(223));
 		}
 	}
 	&__nav-button {
