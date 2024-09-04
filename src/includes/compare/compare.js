@@ -142,17 +142,17 @@ class Compare {
 	}
 	initCompare() {
 		const compareNavigation = this.container.querySelector('[data-compare-nav]');
-		const container = this.container;
-
-		const transform = getComputedStyle(compareNavigation).transform;
-		const translateY = transform.match(/(\d+(\.\d+)?)/g).at(-1);
-		const initialTop = parseFloat(translateY);
-		const offset = container.clientHeight / 2 - initialTop;
-
+		const container = this.container.querySelector('[data-compare-container]');
+		const initialTop = compareNavigation.offsetTop;
+		const offset = container.clientHeight / 2 + 500;
 		window.addEventListener('scroll', () => {
 			const scrollTop = window.scrollY;
 			const newTop = Math.min(initialTop + offset, initialTop + scrollTop);
-			compareNavigation.style.transform = `translateY(${newTop}px)`;
+			if (newTop >= initialTop + offset) {
+				compareNavigation.classList.add('hide');
+			} else {
+				compareNavigation.classList.remove('hide');
+			}
 		});
 	}
 }
