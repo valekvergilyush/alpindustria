@@ -4,11 +4,11 @@ const body = document.querySelector('body');
 
 export default {
 	enable() {
-		body.style.overflow = 'hidden';
 		lock();
+		body.style.overflow = 'hidden';
 	},
 	disable() {
-		body.style.removeProperty('overflow');
 		unlock();
+		body.style.removeProperty('overflow');
 	},
 };
