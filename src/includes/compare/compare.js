@@ -23,7 +23,7 @@ class Compare {
 		this.initShowMore();
 		this.initSlider();
 		this.initHeader();
-		this.initCompare();
+		this.initArrows();
 
 		setTimeout(() => {
 			this.container.classList.add('_inited');
@@ -141,7 +141,7 @@ class Compare {
 			header.classList.add('_inited');
 		}, 400);
 	}
-	initCompare() {
+	initArrows() {
 		const container = this.container.querySelector('[data-compare-container]');
 		const navContainer = document.querySelector('[data-compare-nav-container]');
 		const button = navContainer.querySelector('button');
