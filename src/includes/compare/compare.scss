@@ -63,8 +63,8 @@
 				--icon-size: #{rem(24)};
 			}
 			@media (max-width: $mobile-lg) {
-				--size: #{rem(32)};
-				--icon-size: #{rem(16)};
+				--size: #{rem(40)};
+				--icon-size: #{rem(20)};
 			}
 		}
 
@@ -113,6 +113,9 @@
 			position: relative;
 			top: rem(264);
 			@media (max-width: $laptop-lg) {
+				top: rem(280);
+			}
+			@media (max-width: $mobile-lg) {
 				top: rem(200);
 			}
 			&:first-child {
@@ -121,14 +124,14 @@
 					left: rem(332);
 				}
 				@media (max-width: $laptop-sm) {
-					left: rem(220);
-				}
-				@media (max-width: $mobile-lg) {
-					left: rem(160);
+					left: rem(8);
 				}
 			}
 			&:last-child {
 				right: calc(var(--container-padding) - var(--size) / 2);
+				@media (max-width: $laptop-sm) {
+					right: rem(8);
+				}
 			}
 		}
 		&:hover {

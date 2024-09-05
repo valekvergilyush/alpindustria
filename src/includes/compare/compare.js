@@ -141,14 +141,16 @@ class Compare {
 		}, 400);
 	}
 	initCompare() {
-		const compareNavigation = this.container.querySelector('[data-compare-nav]');
 		const container = this.container.querySelector('[data-compare-container]');
-		const initialTop = compareNavigation.offsetTop;
-		const offset = container.clientHeight / 2 + 500;
+		const compareNavigation = this.container.querySelector('[data-compare-nav]');
+
+		const isElementOutOfViewport = (el, offset = -400) => {
+			const rect = el.getBoundingClientRect();
+			return rect.bottom < -offset;
+		};
+
 		window.addEventListener('scroll', () => {
-			const scrollTop = window.scrollY;
-			const newTop = Math.min(initialTop + offset, initialTop + scrollTop);
-			if (newTop >= initialTop + offset) {
+			if (isElementOutOfViewport(container)) {
 				compareNavigation.classList.add('hide');
 			} else {
 				compareNavigation.classList.remove('hide');
