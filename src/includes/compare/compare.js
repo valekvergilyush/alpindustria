@@ -5,6 +5,7 @@ import gsap from 'gsap';
 const ClassName = {
 	ACTIVE: '_active',
 	SCROLLING: '_scrolling',
+	HIDE: '_hide',
 };
 
 class Compare {
@@ -142,18 +143,22 @@ class Compare {
 	}
 	initCompare() {
 		const container = this.container.querySelector('[data-compare-container]');
-		const compareNavigation = document.querySelector('.compare__nav-container');
-
-		const isElementOutOfViewport = (el, offset = -600) => {
-			const rect = el.getBoundingClientRect();
-			return rect.bottom < -offset;
-		};
+		const navContainer = document.querySelector('[data-compare-nav-container]');
+		const button = navContainer.querySelector('button');
 
 		window.addEventListener('scroll', () => {
-			if (isElementOutOfViewport(container)) {
-				compareNavigation.classList.add('hide');
+			const buttonRect = button.getBoundingClientRect();
+			const containerRect = container.getBoundingClientRect();
+
+			const buttonBottom = buttonRect.bottom;
+			const containerBottom = containerRect.bottom;
+
+			const gap = 100;
+
+			if (buttonBottom > containerBottom - gap) {
+				navContainer.classList.add(ClassName.HIDE);
 			} else {
-				compareNavigation.classList.remove('hide');
+				navContainer.classList.remove(ClassName.HIDE);
 			}
 		});
 	}

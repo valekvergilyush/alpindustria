@@ -46,8 +46,10 @@
 		height: 100%;
 		width: 100%;
 		top: rem(264);
-		&.hide {
+		transition: opacity $fast-transition-duration $default-transition-function;
+		&._hide {
 			opacity: 0;
+			transition: opacity $fast-transition-duration $default-transition-function;
 		}
 		@media (max-width: $laptop-lg) {
 			top: rem(280);
