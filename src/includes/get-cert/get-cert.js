@@ -44,67 +44,115 @@ class GetCert {
 
 		const mm = gsap.matchMedia();
 
-		const onAnimComplete = () => {
-			LockScroll.disable();
-			AnchorLinks.scrollTo(contentEl);
-		};
-
-		const tl = gsap
-			.timeline({
-				ease: 'Power4.out',
-				onComplete: onAnimComplete,
-			})
-			.from(layers[0], {
-				scale: 2,
-				bottom: '10%',
-				right: '20.5%',
-				filter: 'blur(0px)',
-				duration: 3,
-			})
-			.from(
-				layers[1],
-				{
+		mm.add('(min-width: 769px)', () => {
+			gsap
+				.timeline({
+					ease: 'Power4.out',
+				})
+				.from(layers[0], {
 					scale: 2,
-					bottom: '-50%',
-					left: '-13%',
+					bottom: '10%',
+					right: '20.5%',
 					filter: 'blur(0px)',
 					duration: 3,
-				},
-				'<'
-			)
-			.from(
-				layers[2],
-				{
+				})
+				.from(
+					layers[1],
+					{
+						scale: 2,
+						bottom: '-100%',
+						left: '-13%',
+						filter: 'blur(0px)',
+						duration: 2.8,
+					},
+					'<'
+				)
+				.from(
+					layers[2],
+					{
+						scale: 2,
+						right: '30%',
+						bottom: '-110%',
+						duration: 3,
+					},
+					'<'
+				)
+				.from(
+					layers[3],
+					{
+						scale: 1.2,
+						bottom: '-90%',
+						duration: 2.2,
+					},
+					'<0.8'
+				)
+				.from(
+					layers[4],
+					{
+						bottom: '-50%',
+						duration: 1.4,
+					},
+					'<0.8'
+				)
+				.from(contentEl, {
+					xPercent: 100,
+					duration: 0.8,
+				});
+		});
+		mm.add('(max-width: 768px)', () => {
+			gsap
+				.timeline({
+					ease: 'Power4.out',
+					onComplete: () => {
+						LockScroll.disable();
+						AnchorLinks.scrollTo(contentEl);
+					},
+				})
+				.from(layers[0], {
 					scale: 2,
-					right: '30%',
-					bottom: '-100%',
+					bottom: '10%',
+					right: '20.5%',
+					filter: 'blur(0px)',
 					duration: 3,
-				},
-				'<'
-			)
-			.from(
-				layers[3],
-				{
-					scale: 1.2,
-					bottom: '-90%',
-					duration: 2.2,
-				},
-				'<0.8'
-			)
-			.from(
-				layers[4],
-				{
-					bottom: '-50%',
-					duration: 1.4,
-				},
-				'<0.8'
-			);
-
-		mm.add('(min-width: 769px)', () => {
-			tl.from(contentEl, {
-				xPercent: 100,
-				duration: 0.8,
-			});
+				})
+				.from(
+					layers[1],
+					{
+						scale: 2,
+						bottom: '-50%',
+						left: '-13%',
+						filter: 'blur(0px)',
+						duration: 2.8,
+					},
+					'<'
+				)
+				.from(
+					layers[2],
+					{
+						scale: 2,
+						right: '30%',
+						bottom: '-80%',
+						duration: 3,
+					},
+					'<'
+				)
+				.from(
+					layers[3],
+					{
+						scale: 1.2,
+						bottom: '-90%',
+						duration: 2.2,
+					},
+					'<0.8'
+				)
+				.from(
+					layers[4],
+					{
+						bottom: '-50%',
+						duration: 1.4,
+					},
+					'<0.8'
+				);
 		});
 	}
 }
