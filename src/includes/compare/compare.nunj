@@ -404,18 +404,20 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="compare__nav _compare-nav" data-compare-nav>
-		{{ button({
-			className: 'compare__nav-button _prev',
-			icon: 'arrow-left',
-			iconData: 'width="16" height="16"',
-			attr: 'disabled'
-		})}}
-		{{ button({
-			className: 'compare__nav-button _next',
-			icon: 'arrow-right',
-			iconData: 'width="16" height="16"',
-			attr: 'disabled'
-		})}}
+	<div class="compare__nav-container">
+		<div class="compare__nav _compare-nav" data-compare-nav>
+			{{ button({
+				className: 'compare__nav-button _prev',
+				icon: 'arrow-left',
+				iconData: 'width="16" height="16"',
+				attr: 'disabled'
+			})}}
+			{{ button({
+				className: 'compare__nav-button _next',
+				icon: 'arrow-right',
+				iconData: 'width="16" height="16"',
+				attr: 'disabled'
+			})}}
+		</div>
 	</div>
 </div>

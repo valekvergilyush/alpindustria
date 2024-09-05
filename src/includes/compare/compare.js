@@ -142,9 +142,9 @@ class Compare {
 	}
 	initCompare() {
 		const container = this.container.querySelector('[data-compare-container]');
-		const compareNavigation = this.container.querySelector('[data-compare-nav]');
+		const compareNavigation = document.querySelector('.compare__nav-container');
 
-		const isElementOutOfViewport = (el, offset = -400) => {
+		const isElementOutOfViewport = (el, offset = -600) => {
 			const rect = el.getBoundingClientRect();
 			return rect.bottom < -offset;
 		};
