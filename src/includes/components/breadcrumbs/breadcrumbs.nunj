@@ -1,5 +1,5 @@
 {% macro breadcrumbs(props) %}
-	<div class="breadcrumbs">
+	<div class="breadcrumbs{% if props.className %} {{ props.className }}{% endif %}">
 		<ul class="breadcrumbs__list">
 			{% for item in props.list %}
 				<li class="breadcrumbs__item p3">

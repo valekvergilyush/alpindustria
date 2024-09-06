@@ -10,7 +10,8 @@
 	z-index: 0;
 	color: var(--gray-dark);
 	background-color: var(--white);
-	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 
 	&._empty {
 		--first-col-width: #{rem(382)};
@@ -40,27 +41,69 @@
 		display: flex;
 		overflow: hidden;
 	}
+	&__nav-container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: rem(264);
+		transition: opacity $fast-transition-duration $default-transition-function;
+		&._hide {
+			opacity: 0;
+			transition: opacity $fast-transition-duration $default-transition-function;
+		}
+		@media (max-width: $laptop-lg) {
+			top: rem(280);
+		}
+		@media (max-width: $mobile-lg) {
+			top: rem(264);
+		}
+	}
 	&__nav {
 		--size: #{rem(56)};
 		--icon-size: #{rem(24)};
+		--card-height: #{rem(720)};
+		&._compare-nav {
+			position: sticky;
+			order: -1;
+			z-index: 40;
+			top: 50vh;
+			transform: translateY(-50%);
+			display: flex;
+			right: auto;
+			left: auto;
+			justify-content: space-between;
+			pointer-events: none;
+
+			@media (max-width: $laptop-sm) {
+				--size: #{rem(48)};
+				--icon-size: #{rem(24)};
+			}
+			@media (max-width: $mobile-lg) {
+				--size: #{rem(40)};
+				--icon-size: #{rem(20)};
+			}
+		}
 
 		position: absolute;
 		z-index: 4;
-		top: rem(242);
+		top: rem(0);
 		left: rem(416);
 		right: calc(var(--container-padding) - var(--size) / 2);
 		display: flex;
 		justify-content: space-between;
 		pointer-events: none;
+		transform: translateY(rem(242));
+		will-change: transform;
+
 		@media (max-width: $laptop-lg) {
-			top: rem(197);
+			transform: translateY(rem(197));
 			left: rem(332);
 		}
 		@media (max-width: $laptop-sm) {
 			--size: #{rem(48)};
 			--icon-size: #{rem(24)};
 
-			top: rem(288);
+			transform: translateY(rem(288));
 			left: calc(var(--container-padding) / 2);
 			right: calc(var(--container-padding) / 2);
 		}
@@ -68,7 +111,7 @@
 			--size: #{rem(32)};
 			--icon-size: #{rem(16)};
 
-			top: rem(223);
+			transform: translateY(rem(223));
 		}
 	}
 	&__nav-button {
@@ -79,6 +122,23 @@
 		background-color: var(--blue-dark);
 		pointer-events: all;
 		transition: opacity $fast-transition-duration $default-transition-function;
+		._compare-nav & {
+			&:first-child {
+				left: rem(416);
+				@media (max-width: $laptop-lg) {
+					left: rem(332);
+				}
+				@media (max-width: $laptop-sm) {
+					left: rem(8);
+				}
+			}
+			&:last-child {
+				right: calc(var(--container-padding) - var(--size) / 2);
+				@media (max-width: $laptop-sm) {
+					right: rem(8);
+				}
+			}
+		}
 		&:hover {
 			opacity: 0.9;
 		}

@@ -1,9 +1,11 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import utils from '../../assets/js/utils/utils';
+import gsap from 'gsap';
 
 const ClassName = {
 	ACTIVE: '_active',
 	SCROLLING: '_scrolling',
+	HIDE: '_hide',
 };
 
 class Compare {
@@ -21,6 +23,7 @@ class Compare {
 		this.initShowMore();
 		this.initSlider();
 		this.initHeader();
+		this.initArrows();
 
 		setTimeout(() => {
 			this.container.classList.add('_inited');
@@ -137,6 +140,27 @@ class Compare {
 		setTimeout(() => {
 			header.classList.add('_inited');
 		}, 400);
+	}
+	initArrows() {
+		const container = this.container.querySelector('[data-compare-container]');
+		const navContainer = document.querySelector('[data-compare-nav-container]');
+		const button = navContainer.querySelector('button');
+
+		window.addEventListener('scroll', () => {
+			const buttonRect = button.getBoundingClientRect();
+			const containerRect = container.getBoundingClientRect();
+
+			const buttonBottom = buttonRect.bottom;
+			const containerBottom = containerRect.bottom;
+
+			const gap = 100;
+
+			if (buttonBottom > containerBottom - gap) {
+				navContainer.classList.add(ClassName.HIDE);
+			} else {
+				navContainer.classList.remove(ClassName.HIDE);
+			}
+		});
 	}
 }
 
