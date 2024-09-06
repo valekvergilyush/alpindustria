@@ -239,13 +239,13 @@
 		position: relative;
 		grid-column: 3/4;
 		grid-row: 1/-1;
-		height: 100%;
 		display: none;
 		flex-direction: column;
 		margin-top: calc(0px - var(--popup-padding));
 		margin-right: calc(0px - var(--popup-padding));
 		padding: var(--popup-padding);
 		padding-bottom: 0;
+		overflow: auto;
 		&::after {
 			content: '';
 			position: absolute;
