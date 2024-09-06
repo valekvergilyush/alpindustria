@@ -11,8 +11,11 @@
 		padding: var(--container-padding);
 		padding-bottom: rem(98);
 		background-color: var(--white);
+		border-right: 1px solid var(--blue-dark);
 		@media (max-width: $laptop-md) {
 			padding-bottom: rem(32);
+			border-right: 0;
+			border-top: 1px solid var(--blue-dark);
 		}
 	}
 	&__content-section {
