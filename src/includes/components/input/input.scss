@@ -46,6 +46,7 @@
 		transition: top $fast-transition-duration $default-transition-function,
 			font-size $fast-transition-duration $default-transition-function;
 		pointer-events: none;
+		white-space: nowrap;
 		@media (max-width: $mobile-lg) {
 			top: 50%;
 			font-size: 12px;

@@ -1,7 +1,5 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Accordion from '../../assets/js/modules/Accordion';
 import Catalog from '../catalog/catalog';
-import Env from '../../assets/js/utils/env';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 const TABLET_BREAKPOINT = 992;
@@ -59,12 +57,6 @@ class Filters {
 	open() {
 		HTML_CLASSLIST.add(ClassName.OPENED);
 		this.isOpened = true;
-		// if (!Env.isIOS) {
-		// 	disableBodyScroll(this.filtersForm);
-		// }
-		// if (Env.isIOS) {
-		// 	document.body.style.overflow = 'hidden';
-		// }
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			gsap.to(window, {
@@ -108,13 +100,6 @@ class Filters {
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.isOpened = false;
-
-		if (!Env.isIOS) {
-			enableBodyScroll(this.filtersForm);
-		}
-		if (Env.isIOS) {
-			document.body.style.overflow = '';
-		}
 
 		if (window.innerWidth > TABLET_BREAKPOINT) {
 			this.layout && Catalog.setLayout(this.layout);

@@ -68,6 +68,8 @@
 @import '../../includes/components/tooltip/tooltip';
 @import '../../includes/components/video/video';
 @import '../../includes/components/button-up/button-up';
+@import '../../includes/components/stages/stages';
+@import '../../includes/components/loader/loader';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
@@ -221,6 +223,10 @@
 @import '../../includes/compare-header/compare-header';
 @import '../../includes/compare/compare';
 @import '../../includes/cookies/cookies';
+@import '../../includes/new-cert/new-cert';
+@import '../../includes/new-cert-form/new-cert-form';
+@import '../../includes/user-form/user-form';
+@import '../../includes/get-cert/get-cert';
 
 // ======= PAGES =======
 @import 'pages/index';

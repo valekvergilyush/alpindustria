@@ -1,0 +1,10 @@
+{% macro loader(props) %}
+<div class="loader{% if props.className %} {{ props.className }}{% endif %}" data-loader>
+	<div class="loader__img" data-lottie-animation="/assets/jsons/card-anim.json" data-lottie-loop="true"></div>
+	{% if props.text %}
+		<div class="loader__text p3">
+			<p>{{ props.text }}</p>
+		</div>
+	{% endif %}
+</div>
+{% endmacro %}

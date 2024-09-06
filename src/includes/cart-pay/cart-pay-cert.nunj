@@ -1,0 +1,60 @@
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/radio/radio-button.nunj" import radioButton %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+
+<div class="cart__cart-pay cart-pay">
+	<div class="cart-pay__radios">
+		{{ radio({
+			id: 'cart-pay-cert-radio-1',
+			className: 'delivery-address__radio _text',
+			name: 'pay-way-cert-radio',
+			value: 'visit',
+			attr: 'data-value="visit"',
+			text: 'Оплата при получении любым удобным способом',
+			checked: true
+		}) }}
+		{{ radio({
+			id: 'cart-pay-cert-radio-2',
+			className: 'delivery-address__radio _text',
+			name: 'pay-way-cert-radio',
+			value: 'online',
+			attr: 'data-value="online"',
+			text: 'Оплата картой на сайте (AlfaBank)'
+		}) }}
+	</div>
+	{{ checkbox({
+		className: 'cart-pay__checkbox',
+		id: 'cart-pay-cert-sms-checkbox',
+		name: 'sms-info',
+		text: 'SMS информирование об операциях по заказу'
+	}) }}
+	<div class="cart-pay__sms-info" >
+		{{ radioButton({
+			id: 'cart-pay-cert-call',
+			className: 'delivery-address__radio',
+			name: 'pay-info-cert-radio',
+			value: 'call',
+			text: 'Позвонить',
+			checked: true
+		}) }}
+		{{ radioButton({
+			id: 'cart-pay-cert-whatsapp',
+			className: 'delivery-address__radio',
+			name: 'pay-info-cert-radio',
+			value: 'whatsapp',
+			text: 'WhatsApp'
+		}) }}
+	</div>
+	<a class="cart-pay__offer-link" href="#" data-popup-opener="offer">Нажимая "оплатить", вы соглашаетесь с условиями оферты</a>
+	<div class="cart-pay__bottom" data-validate>
+		{{ button({
+			text: 'Добавить сертификат',
+			icon: 'plus-circle-blue',
+			iconData: 'width="24" height="24"',
+			className: 'cart-pay__bottom-toggle _arrow',
+			attr: 'data-cart-pay-bottom-toggle'
+		}) }}
+		{% include "../club-card-form/club-card-form.nunj" %}
+	</div>
+</div>

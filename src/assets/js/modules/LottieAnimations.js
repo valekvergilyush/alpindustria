@@ -28,6 +28,10 @@ class LottieAnimations {
 		});
 
 		isAutoplay && this.player.play();
+
+		this.player.addEventListener('data_ready', () => {
+			container.parentElement.classList.add('_inited');
+		});
 	}
 	play() {
 		this.player.play();

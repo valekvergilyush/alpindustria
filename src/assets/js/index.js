@@ -97,6 +97,12 @@ class AlpIndustry {
 			SubscriptionNews: require('../../includes/subscription-news/subscription-news').default,
 			Compare: require('../../includes/compare/compare').default,
 			Cookies: require('../../includes/cookies/cookies').default,
+			NewCert: require('../../includes/new-cert/new-cert').default,
+			UserForm: require('../../includes/user-form/user-form').default,
+			Stages: require('../../includes/components/stages/stages').default,
+			NewCertForm: require('../../includes/new-cert-form/new-cert-form').default,
+			CartPay: require('../../includes/cart-pay/cart-pay').default,
+			GetCert: require('../../includes/get-cert/get-cert').default,
 		};
 		this.helpers = {
 			ScrollHelper: require('./helpers/ScrollHelper'),

@@ -15,6 +15,7 @@ class DeliveryAuth {
 		}
 
 		this.container = container;
+		this.changeButtons = this.container.querySelectorAll('[data-delivery-auth-change]');
 		this.authForm = this.container.querySelector('.delivery-auth__form');
 		this.authButton = this.container.querySelector('.delivery-auth__submit-btn');
 		this.checkCodeButton = this.container.querySelector('.delivery-auth__check-code');
@@ -33,6 +34,16 @@ class DeliveryAuth {
 		if (this.changeUserButton) {
 			this.changeUserButton.addEventListener('click', this._onChangeUserButtonClick);
 		}
+		this.changeButtons.forEach(button =>
+			button.addEventListener('click', evt => {
+				evt.preventDefault();
+
+				this.container.setAttribute(
+					'data-delivery-auth',
+					button.getAttribute('data-delivery-auth-change')
+				);
+			})
+		);
 	}
 	_onCheckCodeButtonClick(evt) {
 		evt.preventDefault();
@@ -67,5 +78,7 @@ class DeliveryAuth {
 		this.telInput.closest('.delivery-auth__input').classList.remove('_filled');
 	}
 }
+
+document.querySelectorAll('[data-delivery-auth]').forEach(el => (el.auth = new DeliveryAuth(el)));
 
 export default DeliveryAuth;

@@ -8,7 +8,7 @@
 	{ text: 'Google', href: '#', className: ' _google ttu p1' }
 ] %}
 
-<form class="delivery-auth" data-form-stage="default">
+<form class="delivery-auth" data-delivery-auth data-form-stage="default">
 	<div class="delivery-auth__form">
 		<div class="delivery-auth__fields _tel">
 			{{ input({
@@ -56,7 +56,7 @@
 			{% for authLink in authLinks %}
 				<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
 			{% endfor %}
-			<button class="delivery-auth__change-auth" type="button" data-delivery-auth-change>
+			<button class="delivery-auth__change-auth" type="button" data-delivery-auth-change="email">
 				<span>Войти через почту</span>
 				{{ icon({
 					iconName: 'promo-arrow-filled',
@@ -88,7 +88,7 @@
 			{% for authLink in authLinks %}
 				<a class="delivery-auth__link{{ authLink.className }}" href="{{ authLink.href }}">{{ authLink.text }}</a>
 			{% endfor %}
-			<button class="delivery-auth__change-auth" type="button" data-delivery-auth-change>
+			<button class="delivery-auth__change-auth" type="button" data-delivery-auth-change="tel">
 				<span>Войти по номеру</span>
 				{{ icon({
 					iconName: 'promo-arrow-filled',

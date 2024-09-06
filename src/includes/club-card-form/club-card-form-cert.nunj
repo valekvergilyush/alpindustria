@@ -1,0 +1,58 @@
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/button/button.nunj" import button %}
+
+<form class="club-card-form" data-form-stage="add">
+	{{ input({
+		type: 'text',
+		id: 'club-card-form-number-cert',
+		className: 'club-card-form__input _card-number',
+		name: 'Номер сертификата',
+		inputAttr: 'required autocomplete="off" inputmode="numeric"'
+	}) }}
+	{{ input({
+		type: 'text',
+		id: 'club-card-form-sms-cert',
+		className: 'club-card-form__input _check-code',
+		name: 'Код из СМС',
+		inputAttr: 'autocomplete="off" inputmode="numeric"'
+	}) }}
+	<p class="club-card-form__available p3 c-gray-dark">
+		Сумма сертификата:
+		<span class="club-card-form__available-number h6">5000</span>
+	</p>
+	{{ button({
+		type: 'button',
+		text: 'Добавить',
+		icon: 'promo-arrow',
+		iconData: 'width="16" height="16"',
+		className: 'club-card-form__btn _add _arrow-s ttu'
+	}) }}
+	{{ button({
+		type: 'button',
+		icon: 'arrow-right',
+		iconData: 'width="16" height="16"',
+		className: 'club-card-form__btn _check-code _arrow-s',
+		attr: 'aria-label="Отправить"'
+	}) }}
+	{{ button({
+		type: 'button',
+		text: 'Потратить',
+		icon: 'plus',
+		iconData: 'width="24" height="24"',
+		className: 'club-card-form__btn _pay _arrow-s ttu'
+	}) }}
+	{{ button({
+		type: 'button',
+		text: 'Отменить',
+		icon: 'minus',
+		iconData: 'width="24" height="24"',
+		className: 'club-card-form__btn _cancel _arrow-s ttu'
+	}) }}
+	{{ button({
+		type: 'button',
+		text: 'Выслать код повторно',
+		icon: 'promo-arrow-filled',
+		iconData: 'width="8" height="8"',
+		className: 'club-card-form__btn _send-code'
+	}) }}
+</form>

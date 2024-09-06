@@ -1,0 +1,59 @@
+.user-form {
+	$this: &;
+
+	&[data-user-form='new'] {
+		#{$this}__section._new {
+			display: block;
+		}
+		#{$this}__button._auth {
+			display: flex;
+		}
+	}
+	&[data-user-form='auth'] {
+		#{$this}__section._auth {
+			display: block;
+		}
+		#{$this}__button._new {
+			display: flex;
+		}
+	}
+	&__button {
+		@include reset-btn;
+		position: absolute;
+		top: rem(36);
+		right: rem(32);
+		display: none;
+		gap: rem(16);
+		color: var(--greydark);
+		._complete & {
+			display: none !important;
+		}
+		@media (max-width: $mobile-only) {
+			position: static;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: rem(8);
+			margin-bottom: rem(32);
+		}
+	}
+	&__icon {
+		--size: #{rem(24)};
+		width: var(--size);
+		height: var(--size);
+		@media (max-width: $mobile-lg) {
+			--size: 16px;
+		}
+	}
+	&__section {
+		display: none;
+		._complete & {
+			&._auth,
+			&._new {
+				display: none !important;
+			}
+			&._data {
+				display: block !important;
+			}
+		}
+	}
+}

@@ -73,7 +73,8 @@ class FormValidate {
 	};
 	cartDiscountPhoneValidationSuccessCallback = e => {
 		e.preventDefault();
-		cartDiscount.addCard();
+		const container = e.target.closest('.cart-discount');
+		container.instance.addCard();
 		this.resetForm(e.target);
 	};
 	saveAddressValidationSuccessCallback = e => {

@@ -1,0 +1,4 @@
+<div class="user-form _target" data-user-form="new">
+	<div class="user-form__section _data">{% include "../order-auth-data/order-auth-data.nunj" %}</div>
+	<div class="user-form__section _new" data-validate>{% include "../delivery-register/delivery-register-new-target.nunj" %}</div>
+</div>

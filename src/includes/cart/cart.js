@@ -1,6 +1,4 @@
-import env from '../../assets/js/utils/env';
 import Popups from '../../assets/js/modules/Popups';
-import DeliveryAuth from '../delivery-auth/delivery-auth';
 import { showInputsError } from '../../assets/js/classes/form-validate';
 
 const ClassName = {
@@ -39,7 +37,7 @@ class Cart {
 		this.rentButton = this.container.querySelector('[data-cart-rent]');
 		this.rentSubmitButton = this.container.querySelector('[data-cart-rent-submit]');
 		this.legalBlock = this.container.querySelector('[data-legal-block]');
-		this.legalCheckboxes = this.container.querySelectorAll('[data-legal-checkbox]');
+		this.legalCheckboxes = document.querySelectorAll('[data-legal-checkbox]');
 		this.authBtns = this.container.querySelectorAll('[data-auth-btn]');
 		this.editProfileDataBtns = this.container.querySelectorAll('[data-edit-profile-data]');
 		this.authBlock = this.container.querySelector('[data-contact-auth-block]');
@@ -133,23 +131,7 @@ class Cart {
 				showInputsError(deliveryFormInputs);
 			}
 
-			const registerFormInvalidInput = registerForm.querySelector(
-				'[data-validate-type].is-invalid'
-			);
-
-			let deliveryFormInvalidInput;
-
-			if (deliveryForm) {
-				deliveryFormInvalidInput = deliveryForm.querySelector('[data-validate-type].is-invalid');
-			}
-
-			if (registerFormInvalidInput) {
-				registerFormInvalidInput && registerFormInvalidInput.querySelector('input').focus();
-			} else if (deliveryFormInvalidInput) {
-				deliveryFormInvalidInput && deliveryFormInvalidInput.querySelector('input').focus();
-			} else {
-				this.openPay();
-			}
+			this.openPay();
 		}
 	}
 	onRentSubmitButtonClick(evt) {
@@ -196,8 +178,6 @@ class Cart {
 					this.popupWrapper.classList.remove(ClassName.ANIMATION);
 				},
 			});
-			const authContainers = document.querySelectorAll('[data-delivery-auth]');
-			authContainers.forEach(container => (container.auth = new DeliveryAuth(container)));
 		}
 	}
 	openDefault() {
@@ -229,7 +209,7 @@ class Cart {
 		this.animTO = setTimeout(() => this.popupWrapper.classList.remove(ClassName.ANIMATION), 300);
 	}
 	onLegalCheckboxChange(e) {
-		const legalBlock = e.target.parentNode.parentNode.querySelector('[data-legal-block]');
+		const legalBlock = e.target.closest('.delivery-register').querySelector('[data-legal-block]');
 		if (legalBlock) {
 			legalBlock.classList.toggle(ClassName.HIDDEN);
 		}
