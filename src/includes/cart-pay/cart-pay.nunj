@@ -55,6 +55,6 @@
 			className: 'cart-pay__bottom-toggle _arrow',
 			attr: 'data-cart-pay-bottom-toggle'
 		}) }}
-		{% include "../club-card-form/club-card-form.nunj" %}
+		{% include "../club-card-form/club-card-form-cert.nunj" %}
 	</div>
 </div>

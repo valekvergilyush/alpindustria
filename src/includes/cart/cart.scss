@@ -246,7 +246,6 @@
 		margin-right: calc(0px - var(--popup-padding));
 		padding: var(--popup-padding);
 		padding-bottom: 0;
-		overflow: auto;
 		&::after {
 			content: '';
 			position: absolute;
@@ -260,7 +259,7 @@
 			display: none;
 		}
 		.cart-bottom {
-			margin-left: calc(1px - var(--popup-padding));
+			margin-inline: calc(1px - var(--popup-padding));
 		}
 		@media (max-width: $laptop-sm) {
 			padding: rem(16);

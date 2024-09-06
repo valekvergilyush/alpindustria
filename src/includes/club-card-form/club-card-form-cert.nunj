@@ -4,21 +4,21 @@
 <form class="club-card-form" data-form-stage="add">
 	{{ input({
 		type: 'text',
-		id: 'club-card-form-number',
+		id: 'club-card-form-number-cert',
 		className: 'club-card-form__input _card-number',
 		name: 'Номер сертификата',
 		inputAttr: 'required autocomplete="off" inputmode="numeric"'
 	}) }}
 	{{ input({
 		type: 'text',
-		id: 'club-card-form-sms',
+		id: 'club-card-form-sms-cert',
 		className: 'club-card-form__input _check-code',
 		name: 'Код из СМС',
 		inputAttr: 'autocomplete="off" inputmode="numeric"'
 	}) }}
 	<p class="club-card-form__available p3 c-gray-dark">
 		Сумма сертификата:
-		<span class="club-card-form__available-number h6">255</span>
+		<span class="club-card-form__available-number h6">5000</span>
 	</p>
 	{{ button({
 		type: 'button',

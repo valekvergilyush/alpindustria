@@ -6,12 +6,12 @@ const FormStage = {
 };
 
 class ClubCardForm {
-	constructor() {
-		this.init();
+	constructor(el) {
+		this.init(el);
 	}
 
-	init() {
-		this.container = document.querySelector('.club-card-form');
+	init(el) {
+		this.container = el;
 
 		this.addButton = this.container.querySelector('.club-card-form__btn._add');
 		this.payButton = this.container.querySelector('.club-card-form__btn._pay');
@@ -98,4 +98,6 @@ class ClubCardForm {
 	}
 }
 
-export default new ClubCardForm();
+document.querySelectorAll('.club-card-form').forEach(el => new ClubCardForm(el));
+
+export default ClubCardForm;
