@@ -27,8 +27,17 @@
 		justify-content: center;
 		gap: 0;
 		margin-bottom: rem(16);
+		@media (max-width: $mobile-lg) {
+			justify-content: flex-start;
+		}
 		#{$this}__item {
+			@media (max-width: $mobile-lg) {
+				&:first-child {
+					display: block;
+				}
+			}
 			&::after {
+				content: '/';
 				margin: 0 rem(6);
 				font-family: var(--font-family-suisse);
 			}
@@ -38,6 +47,7 @@
 			font-family: var(--font-family-suisse);
 			text-transform: uppercase;
 			color: var(--gray-light);
+			min-height: rem(22);
 		}
 	}
 	&__list {

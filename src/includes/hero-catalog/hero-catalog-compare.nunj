@@ -3,6 +3,9 @@
 
 {% set breadcrumbsData = {
 	list:	[
+		{ text: 'Магазин', href: '/catalog.html'},
+		{ text: 'Магазин', href: '/catalog.html'},
+		{ text: 'Магазин', href: '/catalog.html'},
 		{ text: 'Магазин', href: '/catalog.html'}
 	],
 	link: {
