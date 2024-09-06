@@ -439,7 +439,7 @@
 	[data-show-more-text] {
 		--lines: 3;
 		display: block;
-		height: calc(1lh * var(--lines));
+		height: calc(1.5em * var(--lines));
 		overflow: hidden;
 		word-break: break-word;
 		&._active {
