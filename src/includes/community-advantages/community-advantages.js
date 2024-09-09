@@ -46,6 +46,7 @@ class CommunityAdvantages {
 				start: 'top top',
 				end: `+=${scrollWrapper.scrollHeight - window.innerHeight}`,
 				pin: true,
+				pinSpacing: true,
 				invalidateOnRefresh: true,
 				scrub: true,
 			});
@@ -72,6 +73,7 @@ class CommunityAdvantages {
 				start: 'top top',
 				end: `+=${getToValue()}`,
 				pin: true,
+				pinSpacing: true,
 				invalidateOnRefresh: true,
 				scrub: true,
 				onLeave: () => {
@@ -80,19 +82,18 @@ class CommunityAdvantages {
 
 						if (title) {
 							this.lastScrollY = window.scrollY + title.offsetHeight;
-							this.startMarginBottom = parseFloat(getComputedStyle(title).marginBottom);
+							this.startMarginTop = parseFloat(getComputedStyle(title).marginTop);
 
 							this._onWindowScroll = () => {
 								const deltaY = this.lastScrollY - window.scrollY;
 
-								title.style.marginBottom = getComputedStyle(title).marginBottom;
-								title.style.marginTop = 'auto';
+								title.style.marginTop = getComputedStyle(title).marginTop;
 
-								let currentMarginBottom = this.startMarginBottom + deltaY;
-								currentMarginBottom = currentMarginBottom < 0 ? 0 : currentMarginBottom;
+								let currentMarginTop = this.startMarginTop + deltaY;
+								currentMarginTop = currentMarginTop < 0 ? 0 : currentMarginTop;
 
 								gsap.to(title, {
-									marginBottom: currentMarginBottom,
+									marginTop: currentMarginTop,
 									duration: 0.5,
 								});
 								// title.style.marginBottom = `${currentMarginBottom}px`;
