@@ -4,26 +4,28 @@
 ] %}
 
 <section class="community-advantages _how" data-community-advantages data-background="#8b4192">
-	<div class="community-advantages__container container">
+	<div class="community-advantages__container">
 		<div class="community-advantages__title-wrapper">
 			<h2 class="community-advantages__title h4 ttu" data-community-advantages-title="top" data-animation="words">Как стать участни&shy;ком</h2>
 		</div>
 		<div class="community-advantages__wrapper" data-community-advantages-wrapper="top">
-			<ul class="community-advantages__list s2">
-				{% for item in list %}
-					<li class="community-advantages__item">
-						<p class="community-advantages__item-text" data-animation="fade-right">{{ item }}</p>
-					</li>
-				{% endfor %}
-			</ul>
-			<div class="community-advantages__text p2" data-animation="fade-right">
-				<span class="community-advantages__asterisk h5 ttu">***</span><br>
-				<p>Членский взнос Горного клуба&nbsp;&mdash; 1500&nbsp;рублей.<br>
-				Эти деньги мы&nbsp;тратим на&nbsp;развитие клуба, покупку снаряжения, аптечки, связь. И&nbsp;оплачиваем работу преподавателей и&nbsp;тренеров.</p>
-				<p>Также вы&nbsp;можете вступить в&nbsp;Федерацию альпинизма России и&nbsp;оформить карточку участника&nbsp;&mdash; для этого напишите на&nbsp;почту <a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>.</p>
-				<p>Подробности о&nbsp;членстве на&nbsp;сайте <a href="https://alpfederation.ru" target="_blank" rel="nofollow noopener">alpfederation.ru</a>.</p>
+			<div class="community-advantages__inner">
+				<ul class="community-advantages__list s2">
+					{% for item in list %}
+						<li class="community-advantages__item">
+							<p class="community-advantages__item-text" data-animation="fade-right">{{ item }}</p>
+						</li>
+					{% endfor %}
+				</ul>
+				<div class="community-advantages__text p2" data-animation="fade-right">
+					<span class="community-advantages__asterisk h5 ttu">***</span><br>
+					<p>Членский взнос Горного клуба&nbsp;&mdash; 1500&nbsp;рублей.<br>
+					Эти деньги мы&nbsp;тратим на&nbsp;развитие клуба, покупку снаряжения, аптечки, связь. И&nbsp;оплачиваем работу преподавателей и&nbsp;тренеров.</p>
+					<p>Также вы&nbsp;можете вступить в&nbsp;Федерацию альпинизма России и&nbsp;оформить карточку участника&nbsp;&mdash; для этого напишите на&nbsp;почту <a href="mailto:school@alpindustria.ru">school@alpindustria.ru</a>.</p>
+					<p>Подробности о&nbsp;членстве на&nbsp;сайте <a href="https://alpfederation.ru" target="_blank" rel="nofollow noopener">alpfederation.ru</a>.</p>
+				</div>
+				<a class="community-advantages__link ttu" href="#" data-animation="fade-right">Перейти на форму</a>
 			</div>
-			<a class="community-advantages__link ttu" href="#" data-animation="fade-right">Перейти на форму</a>
 		</div>
 	</div>
 </section>

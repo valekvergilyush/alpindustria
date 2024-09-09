@@ -5,20 +5,22 @@
 ] %}
 
 <section class="community-advantages _partner _vacancies-suit" data-community-advantages>
-	<div class="community-advantages__container container">
+	<div class="community-advantages__container">
 		<div class="community-advantages__title-wrapper">
 			<h2 class="community-advantages__title h4 ttu" data-animation="words">
 				Вы&nbsp;нам подходите, если:
 			</h2>
 		</div>
 		<div class="community-advantages__wrapper">
-			<ul class="community-advantages__list s2">
-				{% for item in list %}
-					<li class="community-advantages__item">
-						<p class="community-advantages__item-text" data-animation="fade-right">{{ item }}</p>
-					</li>
-				{% endfor %}
-			</ul>
+			<div class="community-advantages__inner">
+				<ul class="community-advantages__list s2">
+					{% for item in list %}
+						<li class="community-advantages__item">
+							<p class="community-advantages__item-text" data-animation="fade-right">{{ item }}</p>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>
