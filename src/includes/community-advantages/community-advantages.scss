@@ -7,6 +7,18 @@
 	background-color: var(--blue-light);
 	height: 100vh;
 	overflow: hidden;
+	&._sticky {
+		height: auto;
+		overflow: initial;
+
+		#{$this}__title-wrapper {
+			position: sticky;
+			top: 0;
+		}
+		#{$this}__title {
+			position: static;
+		}
+	}
 	&._how {
 		@media (max-width: $tablet) {
 			background-color: var(--violet-light);
@@ -305,6 +317,11 @@
 	}
 	@media (max-width: $tablet) {
 		height: auto;
+		&._sticky {
+			#{$this}__title-wrapper {
+				position: static;
+			}
+		}
 	}
 	&__container {
 		--col-padding: #{rem(63)};
@@ -317,7 +334,7 @@
 		}
 		@media (max-width: $tablet) {
 			flex-direction: column;
-			padding-block: 76px;
+			padding: 76px var(--container-padding);
 			--col-padding: 24px;
 		}
 		@media (max-width: $mobile-lg) {
@@ -355,11 +372,13 @@
 		display: flex;
 		flex-grow: 1;
 		height: var(--100vh);
+		padding-left: var(--container-padding);
 		padding-right: var(--col-padding);
 		border-right: 1px solid currentColor;
 		@media (max-width: $tablet) {
 			height: auto;
 			border: 0;
+			padding: 0;
 		}
 	}
 	&__inner {
@@ -390,6 +409,10 @@
 			width: auto;
 		}
 	}
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
 	&__list {
 		counter-reset: num;
 		margin-bottom: rem(56);
@@ -414,7 +437,7 @@
 		padding-top: rem(56);
 		padding-bottom: rem(46);
 		padding-left: var(--col-padding);
-		padding-right: 0;
+		padding-right: var(--container-padding);
 		min-height: rem(280);
 		box-sizing: border-box;
 		&::before {
@@ -428,7 +451,7 @@
 			position: absolute;
 			left: 0;
 			bottom: 0;
-			width: 100vw;
+			width: 100%;
 			height: 1px;
 			background-color: currentColor;
 		}
@@ -502,6 +525,7 @@
 	&__text {
 		max-width: rem(576);
 		margin-left: var(--col-padding);
+		padding-right: var(--container-padding);
 		margin-bottom: rem(32);
 		p {
 			font: inherit;
@@ -533,6 +557,7 @@
 		}
 		@media (max-width: $tablet) {
 			max-width: none;
+			padding: 0;
 			margin-right: var(--container-padding);
 			margin-bottom: 14px;
 		}
