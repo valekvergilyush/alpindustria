@@ -38,6 +38,29 @@ class CommunityAdvantages {
 			gsap.set(scrollWrapper, {
 				y: window.innerHeight,
 			});
+		} else {
+			const title = document.querySelector('[data-community-advantages-title="top"]');
+			const mtop = window.innerHeight - title.clientHeight;
+
+			const timelineTitle = gsap.timeline({
+				scrollTrigger: {
+					trigger: scrollWrapper,
+					start: 'top top',
+					end: 'bottom bottom',
+					invalidateOnRefresh: true,
+					scrub: true,
+				},
+			});
+
+			timelineTitle.fromTo(
+				title,
+				{
+					marginTop: mtop,
+				},
+				{
+					marginTop: 0,
+				}
+			);
 		}
 
 		const initTopWrapperScrollTrigger = () => {
@@ -76,33 +99,6 @@ class CommunityAdvantages {
 				pinSpacing: true,
 				invalidateOnRefresh: true,
 				scrub: true,
-				onLeave: () => {
-					if (!this._onWindowScroll) {
-						const title = document.querySelector('[data-community-advantages-title="top"]');
-
-						if (title) {
-							this.lastScrollY = window.scrollY + title.offsetHeight;
-							this.startMarginTop = parseFloat(getComputedStyle(title).marginTop);
-
-							this._onWindowScroll = () => {
-								const deltaY = this.lastScrollY - window.scrollY;
-
-								title.style.marginTop = getComputedStyle(title).marginTop;
-
-								let currentMarginTop = this.startMarginTop + deltaY;
-								currentMarginTop = currentMarginTop < 0 ? 0 : currentMarginTop;
-
-								gsap.to(title, {
-									marginTop: currentMarginTop,
-									duration: 0.5,
-								});
-								// title.style.marginBottom = `${currentMarginBottom}px`;
-							};
-							this._onWindowScroll = this._onWindowScroll.bind(this);
-							window.addEventListener('scroll', this._onWindowScroll);
-						}
-					}
-				},
 			});
 			container.scrollWrapper = gsap.set(scrollWrapper, {
 				y: 0,
