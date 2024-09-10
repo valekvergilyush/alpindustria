@@ -34,17 +34,16 @@ class CommunityAdvantages {
 		const getToValue = () => (scrollWrapper.scrollHeight / window.innerHeight) * window.innerHeight;
 		const isTopPos = scrollWrapper.getAttribute('data-community-advantages-wrapper') === 'top';
 
-		if (!isTopPos) {
-			gsap.set(scrollWrapper, {
-				y: window.innerHeight,
-			});
-		} else {
+		gsap.set(scrollWrapper, {
+			y: window.innerHeight,
+		});
+		if (isTopPos) {
 			const title = document.querySelector('[data-community-advantages-title="top"]');
 			const mtop = window.innerHeight - title.clientHeight;
 
 			const timelineTitle = gsap.timeline({
 				scrollTrigger: {
-					trigger: scrollWrapper,
+					trigger: scrollWrapper.parentElement,
 					start: 'top top',
 					end: 'bottom bottom',
 					invalidateOnRefresh: true,
@@ -83,7 +82,7 @@ class CommunityAdvantages {
 					scrub: true,
 					onUpdate: self => {
 						gsap.set(scrollWrapper, {
-							y: -(scrollWrapper.scrollHeight - window.innerHeight) * self.progress,
+							y: window.innerHeight - getToValue() * self.progress,
 						});
 					},
 				},
