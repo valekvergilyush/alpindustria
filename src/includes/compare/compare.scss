@@ -47,6 +47,7 @@
 		width: 100%;
 		top: rem(264);
 		transition: opacity $fast-transition-duration $default-transition-function;
+		pointer-events: none;
 		&._hide {
 			opacity: 0;
 			transition: opacity $fast-transition-duration $default-transition-function;
@@ -72,7 +73,6 @@
 			right: auto;
 			left: auto;
 			justify-content: space-between;
-			pointer-events: none;
 
 			@media (max-width: $laptop-sm) {
 				--size: #{rem(48)};
