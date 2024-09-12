@@ -48,6 +48,7 @@
 			}
 		}
 		#{$this}__list {
+			row-gap: rem(8);
 			@media (max-width: $mobile-lg) {
 				justify-content: center;
 			}
