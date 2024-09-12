@@ -1,17 +1,6 @@
 {% from "../components/picture/picture.nunj" import picture %}
 {% from "../components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
 
-{% set breadcrumbsData = {
-	list:	[
-		{ text: 'Магазин', href: '/catalog.html'}
-	],
-	link: {
-		href: '/',
-		text: 'Куртки'
-	},
-	className: '_hero'
-} %}
-
 <section class="page__hero hero-catalog _compare">
 	<div class="hero-catalog__bg-img-wrapper">
 		{{ picture({
@@ -24,7 +13,6 @@
 		}) }}
 	</div>
 	<div class="hero-catalog__container container">
-		{{ breadcrumbs(breadcrumbsData) }}
 		<h1 class="hero-catalog__title ttu tac">
 			<span class="hero-catalog__title-category h4">Сравнение</span>
 		</h1>

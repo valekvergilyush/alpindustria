@@ -6,12 +6,8 @@
 		{ text: 'Магазин', href: '/catalog.html'},
 		{ text: 'Магазин', href: '/catalog.html'},
 		{ text: 'Магазин', href: '/catalog.html'},
-		{ text: 'Магазин', href: '/catalog.html'}
+		{ text: 'Куртки', href: '/'}
 	],
-	link: {
-		href: '/',
-		text: 'Куртки'
-	},
 	className: '_hero'
 } %}
 

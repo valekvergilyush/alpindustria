@@ -27,19 +27,29 @@
 		justify-content: center;
 		gap: 0;
 		margin-bottom: rem(16);
-		@media (max-width: $mobile-lg) {
-			justify-content: flex-start;
-		}
 		#{$this}__item {
+			line-height: 1;
 			@media (max-width: $mobile-lg) {
 				&:first-child {
 					display: block;
 				}
 			}
 			&::after {
+				position: relative;
+				bottom: 0.05em;
 				content: '/';
 				margin: 0 rem(6);
 				font-family: var(--font-family-suisse);
+			}
+			&:last-child {
+				&::after {
+					content: none;
+				}
+			}
+		}
+		#{$this}__list {
+			@media (max-width: $mobile-lg) {
+				justify-content: center;
 			}
 		}
 		#{$this}__link {
@@ -54,7 +64,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		@media (max-width: $mobile-lg) {
-			flex-wrap: nowrap;
 			scrollbar-width: none;
 			@include scrollbar {
 				display: none;
