@@ -1,4 +1,3 @@
-import cartDiscount from '../../../includes/cart-discount/cart-discount';
 import DeliveryAddress from '../../../includes/delivery-address/delivery-address';
 import DiscountCard from '../../../includes/discount-card/discount-card';
 import FormsValidate from '../classes/form-validate';

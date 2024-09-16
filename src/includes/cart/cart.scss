@@ -240,12 +240,14 @@
 		grid-column: 3/4;
 		grid-row: 1/-1;
 		display: none;
+		height: 100%;
 		flex-direction: column;
 		margin-top: calc(0px - var(--popup-padding));
 		margin-right: calc(0px - var(--popup-padding));
 		padding: var(--popup-padding);
 		padding-bottom: 0;
 		overflow: auto;
+		overflow-x: hidden;
 		&::after {
 			content: '';
 			position: absolute;
@@ -265,6 +267,7 @@
 			padding: rem(16);
 			padding-bottom: 0;
 			margin-top: 0;
+			height: auto;
 			.cart-bottom {
 				margin-left: calc(0px - var(--popup-padding));
 			}
@@ -667,11 +670,13 @@
 				display: none;
 			}
 			&__delivery {
-				grid-column: 1/2;
-				margin-left: 0;
+				display: none;
 			}
 			&__pay {
 				grid-column: 2/3;
+				&::after {
+					content: none;
+				}
 			}
 		}
 		@media (max-width: $laptop) {
