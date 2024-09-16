@@ -253,7 +253,7 @@
 			position: absolute;
 			top: calc(0px - var(--popup-padding));
 			left: 1px;
-			height: var(--100vh);
+			height: 100%;
 			width: 1px;
 			background-color: var(--blue-dark);
 		}
