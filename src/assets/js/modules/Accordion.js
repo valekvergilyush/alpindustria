@@ -50,7 +50,9 @@ export default class Accordion {
 
 		this.trigger.getAttribute('data-accordion-toggle') === 'opened' && this.open();
 	}
-	toggle() {
+	toggle(evt) {
+		evt.preventDefault();
+
 		this.isExpanded = this.trigger.getAttribute('aria-expanded') === 'true';
 		this.isExpanded ? this.close() : this.open();
 	}

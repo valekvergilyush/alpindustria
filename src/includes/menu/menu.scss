@@ -486,6 +486,7 @@
 		}
 		@media (max-width: $laptop-md) {
 			--item-height: 36px;
+
 			position: relative;
 			display: flex;
 			flex-direction: column;
@@ -512,6 +513,13 @@
 				width: 24px;
 				height: 24px;
 			}
+		}
+	}
+
+	[data-menu-accordion-content] {
+		@media (max-width: $laptop-md) {
+			height: 0;
+			overflow: hidden;
 		}
 	}
 }
