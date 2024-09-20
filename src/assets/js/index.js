@@ -117,9 +117,6 @@ class AlpIndustry {
 			document.documentElement.classList.remove('_loading');
 
 			document
-				.querySelectorAll('.page__menu [data-accordion-toggle]')
-				.forEach(toggle => (toggle.accordion = new this.modules.Accordion(toggle)));
-			document
 				.querySelectorAll('.services-accordion [data-accordion-toggle]')
 				.forEach(toggle => (toggle.accordion = new this.modules.Accordion(toggle)));
 			document

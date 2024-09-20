@@ -104,7 +104,7 @@
 					<a
 						class="menu__nav-link ttu"
 						href="{{ link.url }}"
-						{% if link.list or link.list1 or link.list2 %} data-accordion-toggle{% if link.opened %}="opened"{% endif %}{% endif %}
+						{% if link.list or link.list1 or link.list2 %} data-menu-accordion-toggle{% if link.opened %}="opened"{% endif %}{% endif %}
 						{% if link.img %} data-menu-img-src="{{ link.img.src }}" data-menu-img-srcset="{{ link.img.srcset }}"{% endif %}
 					>
 						{{ link.text }}
@@ -117,24 +117,26 @@
 						{% endif %}
 					</a>
 					{% if link.list %}
-						<ul class="menu__dropdown">
-							{% for item in link.list %}
-								<li class="menu__dropdown-item">
-									<a
-										class="menu__dropdown-link h7 ttu"
-										href="{{ item.url }}"
-										{% if item.img %} data-menu-img-src="{{ item.img.src }}" data-menu-img-srcset="{{ item.img.srcset }}"{% endif %}
-									>{{ item.text }}</a>
-								</li>
-							{% endfor %}
-						</ul>
+						<div data-menu-accordion-content>
+							<ul class="menu__dropdown">
+								{% for item in link.list %}
+									<li class="menu__dropdown-item">
+										<a
+											class="menu__dropdown-link h7 ttu"
+											href="{{ item.url }}"
+											{% if item.img %} data-menu-img-src="{{ item.img.src }}" data-menu-img-srcset="{{ item.img.srcset }}"{% endif %}
+										>{{ item.text }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
 					{% endif %}
 
 					{% if link.list1 or link.list2 %}
-					<div>
+					<div data-menu-accordion-content>
 						{% if link.list1 %}
 							<div class="menu__catalog-accordion">
-								<button type="button" data-accordion-toggle>
+								<button type="button" data-menu-accordion-inner-toggle>
 									Товары
 									<svg width="32" height="32">
 										<use xlink:href="#icon-accordion-arrow"></use>
@@ -156,7 +158,7 @@
 
 						{% if link.list2 %}
 							<div class="menu__catalog-accordion">
-								<button type="button" data-accordion-toggle>
+								<button type="button" data-menu-accordion-inner-toggle>
 									Активности
 									<svg width="32" height="32">
 										<use xlink:href="#icon-accordion-arrow"></use>
