@@ -5,8 +5,8 @@
 {% from "../components/input/input.nunj" import input %}
 
 {% set prices = ['3&nbsp;000&nbsp;₽', '5&nbsp;000&nbsp;₽', '10&nbsp;000&nbsp;₽', '15&nbsp;000&nbsp;₽', '20&nbsp;000&nbsp;₽', '25&nbsp;000&nbsp;₽'] %}
-{% set designs = ['card-1.jpg', 'card-2.jpg', 'card-3.jpg', 'card-1.jpg', 'card-2.jpg', 'card-1.jpg', 'card-2.jpg', 'card-3.jpg'] %}
-{% set designsLg = ['card-1-lg.jpg', 'card-2-lg.jpg', 'card-3-lg.jpg', 'card-1-lg.jpg', 'card-2-lg.jpg', 'card-1-lg.jpg', 'card-2-lg.jpg', 'card-3-lg.jpg'] %}
+{% set designs = ['card-1.jpg', 'card-2.jpg', 'card-3.jpg', 'card-4.jpg', 'card-5.jpg', 'card-6.jpg', 'card-7.jpg'] %}
+{% set designsLg = ['card-1-lg.jpg', 'card-2-lg.jpg', 'card-3-lg.jpg', 'card-4-lg.jpg', 'card-5-lg.jpg', 'card-6-lg.jpg', 'card-7-lg.jpg'] %}
 
 <section class="new-cert" data-new-cert>
 	<form class="new-cert__wrapper">
