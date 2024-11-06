@@ -33,6 +33,70 @@
 			width: 50%;
 		}
 
+		&[data-modal-wrapper='add-certificate'] {
+			#{$this}__icon {
+				display: block;
+			}
+
+			@media (max-width: $laptop) {
+				width: 100%;
+				height: min-content;
+				margin-top: auto;
+
+				#{$this}__modal {
+					margin-top: auto;
+					height: min-content;
+					overflow: visible !important;
+				}
+				#{$this}__icon {
+					display: none;
+				}
+				#{$this}__inner-icon {
+					display: block;
+					z-index: 50;
+					top: 0;
+					left: 50%;
+					transform: translate(-50%, rem(-48)) rotate(90deg);
+				}
+			}
+			@media (max-width: $tablet) {
+				margin-top: 0;
+				height: 100%;
+				overflow: auto;
+				scrollbar-width: none;
+
+				@include scrollbar {
+					display: none;
+				}
+
+				#{$this}__modal {
+					margin-top: 50vh;
+					overflow: visible;
+					min-height: auto;
+				}
+			}
+
+			@media (max-width: $mobile-lg) {
+				#{$this}__modal {
+					&::before {
+						content: '';
+						position: absolute;
+						z-index: 1;
+						top: rem(5);
+						left: 50%;
+						transform: translateX(-50%);
+						width: rem(40);
+						height: 2px;
+						background-color: var(--blue-dark);
+						opacity: 0.2;
+					}
+				}
+				#{$this}__inner-icon {
+					display: none;
+				}
+			}
+		}
+
 		&[data-modal-wrapper='city-form'],
 		&[data-modal-wrapper='create-card'],
 		&[data-modal-wrapper='delivery-addresses'],
@@ -152,5 +216,8 @@
 		@media (max-width: $mobile-lg) {
 			--size: 18px;
 		}
+	}
+	&__inner-icon {
+		display: none;
 	}
 }
