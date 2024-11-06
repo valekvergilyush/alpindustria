@@ -19,10 +19,7 @@
 		{% include '../cart-list/cart-list.nunj' %}
 		{% include '../cart-list/cart-list-readonly.nunj' %}
 
-		<p class="cart__price _shop _secondary p3">
-			Стоимость товаров:<br>
-			<span class="cart__price-value">145 000 руб.</span>
-		</p>
+		{% include "../cart-bill/cart-bill.nunj" %}
 	</div>
 
 	<div class="cart__delivery" data-flatpickr-scroll="close">

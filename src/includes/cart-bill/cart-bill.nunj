@@ -1,0 +1,29 @@
+<div class="cart__bill cart-bill _has-label">
+	<p class="cart-bill__label" style="--label-bg: var(--green-dark)">Бесплатная доставка при заказе от&nbsp;4&nbsp;999&nbsp;₽</p>
+	<p class="cart-bill__label hidden" style="--label-bg: var(--violet-dark)">Бесплатная доставка при заказе от&nbsp;4&nbsp;999&nbsp;₽</p>
+	<table class="cart-bill__table c-blue-light">
+		<tbody>
+			<tr>
+				<th scope="row"><span class="cart-bill__name">4 товара на сумму</span></th>
+				<td>14 000 ₽</td>
+			</tr>
+			<tr class="c-green-dark">
+				<th scope="row"><span class="cart-bill__name">Сертификат</span></th>
+				<td>-5 000 ₽</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<span class="cart-bill__name">Доставка</span>
+					<span class="cart-bill__note">При использовании сертификата доставка платная</span>
+				</th>
+				<td>1 999 ₽</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr class="cart-bill__total">
+				<th scope="row">Итого</th>
+				<td class="h5">10 999 ₽</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

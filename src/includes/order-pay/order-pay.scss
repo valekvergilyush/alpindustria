@@ -1,0 +1,83 @@
+.order-pay {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: rem(16);
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: rem(16) 0;
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba($blue-light, 0.2);
+		}
+	}
+	&__cert {
+		display: flex;
+		justify-content: space-between;
+		padding: rem(16);
+		border: 1px solid rgba($blue-dark, 0.3);
+	}
+	&__cert-value {
+		display: inline-block;
+		margin-top: rem(8);
+	}
+	&__cert-button {
+		@include reset-btn;
+
+		position: relative;
+		display: flex;
+		box-sizing: border-box;
+		width: 100%;
+		padding: rem(16);
+		align-items: center;
+		justify-content: space-between;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 1px;
+			bottom: 1px;
+			left: 0;
+			width: 1px;
+			background-image: linear-gradient(to bottom, rgba($blue-dark, 0.4) 50%, transparent 0%);
+			background-size: 1px 24px;
+		}
+		&::after {
+			left: auto;
+			right: 0;
+		}
+	}
+	&__cert-button-bottom,
+	&__cert-button-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba($blue-dark, 0.4) 50%, transparent 0%);
+		background-size: 24px 1px;
+	}
+	&__cert-button-bottom {
+		top: auto;
+		bottom: 0;
+	}
+	&__offer-link {
+		@extend .animated;
+
+		display: inline-block;
+		margin-top: rem(48);
+		margin-bottom: rem(32);
+		font-size: rem(12);
+		color: var(--gray-dark);
+		opacity: 0.4;
+		text-decoration: underline;
+		&:hover {
+			opacity: 1;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 10px;
+		}
+	}
+}

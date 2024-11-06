@@ -12,7 +12,9 @@
 		<label class="radio__label text" for="{{ props.id }}">
 			<span class="radio__box"></span>
 			{{ props.label }}
-			<span class="radio__text">{{ props.text }}</span>
+			{% if props.text %}
+				<span class="radio__text">{{ props.text }}</span>
+			{% endif %}
 		</label>
 	</div>
 {% endmacro %}

@@ -1,0 +1,37 @@
+{% from "../components/input/input.nunj" import input %}
+
+<section class="add-certificate" data-validate>
+	<p class="add-certificate__title ttu h5">Подарочный сертификат</p>
+
+	<div class="add-certificate__content">
+		<form class="add-certificate__form">
+			{{ input({
+				type: 'text',
+				id: 'add-certificate-number',
+				name: 'certificate-number',
+				label: 'Введите номер сертификата',
+				inputAttr: 'maxlength="6" inputmode="numeric" required autocomplete="off"',
+				attr: 'data-validate-type="text" data-limitations="digit"',
+				className: 'add-certificate__input _gray'
+			}) }}
+			{{ input({
+				type: 'text',
+				id: 'add-certificate-code',
+				name: 'certificate-code',
+				label: 'Введите проверочный код',
+				inputAttr: 'maxlength="3" inputmode="numeric" required autocomplete="off"',
+				attr: 'data-validate-type="text" data-limitations="digit"',
+				className: 'add-certificate__input _gray'
+			}) }}
+			<button class="add-certificate__btn _promo h7 ttu" type="submit">
+				<span>Применить</span>
+				{{ icon({
+					iconName: 'promo-arrow',
+					className: 'add-certificate__btn-icon',
+					attr: 'width="16" height="16"'
+				}) }}
+			</button>
+		</form>
+		<img class="add-certificate__img" src="/assets/images/cart/add-certificate.jpg" width="448" height="280" alt="">
+	</div>
+</section>
