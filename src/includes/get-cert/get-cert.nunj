@@ -37,6 +37,11 @@
 			<img class="cert-preview__img" src="/assets/images/certificates/card-2-lg.jpg" width="739" height="484" alt="">
 		</div>
 
+		<p class="get-cert__title h5 c-black ttu">
+			Вам подарок&nbsp;от [имя],<br>
+			сертификат на&nbsp;сумму 3&nbsp;000&nbsp;₽!
+		</p>
+
 		<div class="get-cert__wrapper _quote">
 			<blockquote class="get-cert__quote p2 c-gray-dark">
 				<p>C&nbsp;днем рождения! Пусть в&nbsp;жизни будут только удача, радость, горы и&nbsp;путешествия, чтобы каждый новый день был праздником! И&nbsp;пусть мечты обязательно станут реальностью!</p>
