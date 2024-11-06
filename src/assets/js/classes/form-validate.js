@@ -187,7 +187,9 @@ const validateTextInput = input => {
 	if (!minLength) {
 		minLength = 1;
 	}
-	if (input.value.length >= minLength) {
+	let maxLength = +input.getAttribute('maxlength');
+
+	if (input.value.length >= minLength && (!maxLength || input.value.length <= maxLength)) {
 		parent.classList.add('is-valid');
 		parent.classList.remove('is-invalid');
 		input.setAttribute('aria-invalid', 'false');
