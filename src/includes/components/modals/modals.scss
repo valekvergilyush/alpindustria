@@ -34,16 +34,31 @@
 		}
 
 		&[data-modal-wrapper='add-certificate'] {
+			#{$this}__close-button {
+				top: rem(78);
+				right: rem(68);
+				svg {
+					--size: #{rem(24)};
+				}
+			}
 			#{$this}__icon {
 				display: block;
 			}
 
+			@media (max-width: $laptop-lg) {
+				width: rem(575);
+				#{$this}__close-button {
+					top: rem(43);
+					right: rem(44);
+				}
+			}
 			@media (max-width: $laptop) {
 				width: 100%;
 				height: min-content;
 				margin-top: auto;
 
 				#{$this}__modal {
+					padding: rem(40);
 					margin-top: auto;
 					height: min-content;
 					overflow: visible !important;
@@ -77,7 +92,15 @@
 			}
 
 			@media (max-width: $mobile-lg) {
+				#{$this}__close-button {
+					top: rem(16);
+					right: rem(18);
+					svg {
+						--size: #{rem(20)};
+					}
+				}
 				#{$this}__modal {
+					padding: rem(16);
 					&::before {
 						content: '';
 						position: absolute;

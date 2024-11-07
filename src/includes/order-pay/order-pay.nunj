@@ -63,20 +63,20 @@
 	{% include "../cart-bill/cart-bill-pay.nunj" %}
 
 	<button class="cart__next-button _submit" type="button">
-		Оплатить картой
+		<span class="h7">Оплатить картой</span>
 		{{ icon({
 			iconName: "credit-card",
 			attr: 'width="32" height="32"'
 		}) }}
 	</button>
 	<button class="cart__next-button _submit hidden" type="button">
-		Оплатить при получении
+		<span class="h7">Оплатить при получении</span>
 		{{ icon({
 			iconName: "home",
 			attr: 'width="32" height="32"'
 		}) }}
 	</button>
 	<button class="cart__next-button _submit hidden" type="button">
-		Оплатить
+		<span class="h7">Оплатить</span>
 	</button>
 </div>

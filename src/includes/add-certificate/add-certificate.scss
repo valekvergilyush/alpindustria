@@ -1,7 +1,10 @@
 .add-certificate {
 	&__title {
 		max-width: rem(400);
-		margin-bottom: rem(40);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: rem(40);
+		}
 		@media (max-width: $laptop) {
 			max-width: none;
 		}
@@ -25,16 +28,16 @@
 
 		display: flex;
 		align-items: center;
-		gap: rem(8);
+		gap: rem(16);
 		margin-top: rem(24);
 		margin-left: auto;
 		font-weight: 400;
 		@media (max-width: $laptop) {
 			justify-self: flex-end;
 		}
-		@media (max-width: $mobile-only) {
-			gap: 16px;
-			font-size: 18px;
+		@media (max-width: $mobile-lg) {
+			gap: rem(8);
+			font-size: rem(14);
 		}
 	}
 	&__btn-icon {
@@ -51,13 +54,21 @@
 		width: 100%;
 		max-width: rem(448);
 		height: auto;
+		@media (max-width: $laptop-lg) {
+			max-width: none;
+			margin-top: rem(39);
+		}
 		@media (max-width: $laptop) {
 			order: -1;
 			margin-top: 0;
 		}
 		@media (max-width: $tablet) {
-			margin-top: rem(48);
-			max-width: none;
+			margin-top: rem(51);
+			border-radius: rem(24);
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: rem(47);
+			border-radius: rem(12);
 		}
 	}
 }

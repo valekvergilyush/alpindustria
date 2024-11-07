@@ -154,6 +154,9 @@
 	&__counter {
 		min-width: rem(111);
 		--font-size: #{rem(24)};
+		.counter__number {
+			flex-grow: 0;
+		}
 		button {
 			transition: transform $fast-transition-duration $default-transition-duration;
 			&:hover {

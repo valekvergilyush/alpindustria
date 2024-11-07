@@ -5,18 +5,18 @@
 		<tbody>
 			<tr>
 				<th scope="row"><span class="cart-bill__name">4 товара на сумму</span></th>
-				<td>14 000 ₽</td>
+				<td class="h7">14 000 ₽</td>
 			</tr>
 			<tr class="c-green-dark">
 				<th scope="row"><span class="cart-bill__name">Сертификат</span></th>
-				<td>-5 000 ₽</td>
+				<td class="h7">-5 000 ₽</td>
 			</tr>
 			<tr>
 				<th scope="row">
 					<span class="cart-bill__name">Доставка</span>
 					<span class="cart-bill__note">При использовании сертификата доставка платная</span>
 				</th>
-				<td>1 999 ₽</td>
+				<td class="h7">1 999 ₽</td>
 			</tr>
 		</tbody>
 		<tfoot>
