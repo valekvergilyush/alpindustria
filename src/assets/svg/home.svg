@@ -1,7 +1,7 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 	<g fill="none">
-		<path
-			d="M28 10L21.4 4H10.6L4 10M28 10H4M28 10V16H25.6M4 10V16H6.4M6.4 16V28H13M6.4 16H25.6M25.6 16V28H19M13 28V20.8H19V28M13 28H19"
-			stroke="currentColor" stroke-width="2" />
+		<path stroke="currentColor" stroke-width="2"
+			d="M6.4,16h-2.4v-6l6.6-6h10.8l6.6,6v6h-2.4M6.4,16v12h6.6M6.4,16h19.2M25.6,16v12h-6.6M13,28v-7.2h6v7.2M13,28h6" />
+		<line stroke="currentColor" stroke-width="2" x1="28" y1="10" x2="4" y2="10" />
 	</g>
 </svg>
