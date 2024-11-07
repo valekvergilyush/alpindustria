@@ -16,12 +16,12 @@
 					<span class="cart-bill__name">Доставка</span>
 					<span class="cart-bill__note">При использовании сертификата доставка платная</span>
 				</th>
-				<td>1 999 ₽</td>
+				<td><span class="h7">1 999 ₽</span></td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr class="cart-bill__total">
-				<th scope="row">Итого</th>
+				<th scope="row">Итого:</th>
 				<td class="h5">10 999 ₽</td>
 			</tr>
 		</tfoot>

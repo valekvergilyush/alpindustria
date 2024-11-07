@@ -23,6 +23,11 @@
 			display: block;
 		}
 	}
+	&__input {
+		&.is-invalid {
+			margin-bottom: rem(24);
+		}
+	}
 	&__btn {
 		@include reset-btn;
 

@@ -21,7 +21,7 @@
 		</tbody>
 		<tfoot>
 			<tr class="cart-bill__total">
-				<th scope="row">Итого</th>
+				<th scope="row">Итого:</th>
 				<td class="h5">10 999 ₽</td>
 			</tr>
 		</tfoot>
