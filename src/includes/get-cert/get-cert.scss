@@ -123,6 +123,7 @@
 		border: 1px solid var(--blue-dark);
 		margin-top: rem(32);
 		&._quote {
+			margin-top: rem(30);
 			position: relative;
 			padding-right: rem(160);
 			background-color: rgba($blue-light, 0.1);
@@ -148,6 +149,7 @@
 			padding-bottom: rem(12);
 			&._quote {
 				padding-right: rem(15);
+				margin-top: rem(22);
 				&::after {
 					content: none;
 				}
@@ -165,6 +167,11 @@
 		gap: rem(32);
 		@media (max-width: $mobile-only) {
 			gap: rem(46);
+		}
+	}
+	&__title {
+		@media (max-width: $mobile-only) {
+			margin-bottom: rem(24);
 		}
 	}
 	&__quote {
@@ -227,6 +234,7 @@
 	}
 	&__preview {
 		margin-top: rem(-5);
+		margin-bottom: rem(50);
 		.cert-preview__logo {
 			--offset-x: #{rem(60)};
 		}
@@ -237,6 +245,7 @@
 		}
 		@media (max-width: $mobile-only) {
 			margin: 0;
+			margin-bottom: rem(35);
 			.cert-preview__logo {
 				--offset-x: #{rem(30)};
 			}

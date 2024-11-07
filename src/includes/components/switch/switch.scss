@@ -21,6 +21,10 @@
 			width: rem(58);
 			height: rem(29);
 		}
+		&._xs {
+			width: rem(48);
+			height: rem(24);
+		}
 	}
 	@media (max-width: $laptop-md) {
 		width: 80px;
@@ -68,6 +72,10 @@
 			#{$this}._rounded._sm & {
 				--offset: 3px;
 				--width: #{rem(21)};
+			}
+			#{$this}._rounded._xs & {
+				--offset: 1px;
+				--width: #{rem(20)};
 			}
 			@media (max-width: $laptop-md) {
 				--width: 24px;

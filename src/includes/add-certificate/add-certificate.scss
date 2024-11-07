@@ -1,0 +1,74 @@
+.add-certificate {
+	&__title {
+		max-width: rem(400);
+		margin-bottom: rem(64);
+		@media (max-width: $laptop-lg) {
+			margin-bottom: rem(40);
+		}
+		@media (max-width: $laptop) {
+			max-width: none;
+		}
+		@media (max-width: $mobile-lg) {
+			max-width: 80%;
+			margin-bottom: rem(32);
+		}
+	}
+	&__content {
+		@media (max-width: $laptop) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: rem(45);
+		}
+		@media (max-width: $tablet) {
+			display: block;
+		}
+	}
+	&__btn {
+		@include reset-btn;
+
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		margin-top: rem(24);
+		margin-left: auto;
+		font-weight: 400;
+		@media (max-width: $laptop) {
+			justify-self: flex-end;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: rem(8);
+			font-size: rem(14);
+		}
+	}
+	&__btn-icon {
+		--size: #{rem(16)};
+
+		width: var(--size);
+		height: var(--size);
+		fill: var(--blue-dark);
+	}
+	&__img {
+		display: block;
+		border-radius: rem(16);
+		margin-top: rem(64);
+		width: 100%;
+		max-width: rem(448);
+		height: auto;
+		@media (max-width: $laptop-lg) {
+			max-width: none;
+			margin-top: rem(39);
+		}
+		@media (max-width: $laptop) {
+			order: -1;
+			margin-top: 0;
+		}
+		@media (max-width: $tablet) {
+			margin-top: rem(51);
+			border-radius: rem(24);
+		}
+		@media (max-width: $mobile-lg) {
+			margin-top: rem(47);
+			border-radius: rem(12);
+		}
+	}
+}

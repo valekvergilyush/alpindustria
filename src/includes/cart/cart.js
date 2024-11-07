@@ -94,6 +94,8 @@ class Cart {
 		if (this.submitSmsAuthBtn) {
 			this.submitSmsAuthBtn.addEventListener('click', this.onSubmitSmsAuthBtnClick);
 		}
+
+		this._initPaySection();
 	}
 	onSubmitButtonClick(evt) {
 		evt.preventDefault();
@@ -321,6 +323,60 @@ class Cart {
 			btn.classList.add(`_${ClassName.HIDDEN}`);
 		});
 		nextBtn.classList.remove(`_${ClassName.HIDDEN}`);
+	}
+
+	_initPaySection() {
+		const container = this.container.querySelector('.order-pay');
+
+		if (!container) {
+			return;
+		}
+
+		const radioButtons = container.querySelectorAll('.order-pay__list input[type="radio"]');
+		this.payButtons = container.querySelectorAll('.cart__next-button._submit');
+		this.activePayButton = this.payButtons[0];
+		this.activePayRadioIndex = 0;
+
+		radioButtons.forEach((radioButton, index) => {
+			radioButton.addEventListener('change', () => {
+				if (radioButton.checked) {
+					this.activePayRadioIndex = index;
+
+					if (!this.showDefaultPayButton) {
+						this.activePayButton.classList.add('hidden');
+						this.activePayButton = this.payButtons[index];
+						this.activePayButton.classList.remove('hidden');
+					}
+				}
+			});
+		});
+
+		const certSwitcher = this.container.querySelector('.order-pay__cert input[type="checkbox"]');
+		certSwitcher.addEventListener('change', () => {
+			this.toggleDefaultPay();
+		});
+	}
+	toggleCertVisibility() {
+		const certContainer = this.container.querySelector('.order-pay__cert');
+		const certButton = this.container.querySelector('[data-modal-opener="add-certificate"]');
+
+		if (!certContainer || !certButton) {
+			return;
+		}
+
+		certButton.classList.toggle('hidden');
+		certContainer.classList.toggle('hidden');
+	}
+	toggleDefaultPay() {
+		this.showDefaultPayButton = !this.showDefaultPayButton;
+		this.activePayButton.classList.add('hidden');
+
+		const index = !this.showDefaultPayButton
+			? this.activePayRadioIndex
+			: this.payButtons.length - 1;
+
+		this.activePayButton = this.payButtons[index];
+		this.activePayButton.classList.remove('hidden');
 	}
 }
 

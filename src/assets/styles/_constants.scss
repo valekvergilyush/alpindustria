@@ -25,6 +25,7 @@ $default-black: #000;
 $light-slate-grey: #84919a;
 $lucky: #99930b;
 $solitude: #f2f4f8;
+$cart-bill-bg: #f5f7fa;
 
 // ======= BREAKPOINTS =======
 $desktop-lg: 1920px;
@@ -78,6 +79,7 @@ $mobile-sm: 320px;
 	--default-black: #{$default-black};
 	--light-slate-grey: #{$light-slate-grey};
 	--solitude: #{$solitude};
+	--cart-bill-bg: #{$cart-bill-bg};
 
 	// ======= SPACING VARIANTS =======
 	--vr-0: 0.5rem; // 8px

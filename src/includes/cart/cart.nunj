@@ -19,10 +19,7 @@
 		{% include '../cart-list/cart-list.nunj' %}
 		{% include '../cart-list/cart-list-readonly.nunj' %}
 
-		<p class="cart__price _shop _secondary p3">
-			Стоимость товаров:<br>
-			<span class="cart__price-value">145 000 руб.</span>
-		</p>
+		{% include "../cart-bill/cart-bill.nunj" %}
 	</div>
 
 	<div class="cart__delivery" data-flatpickr-scroll="close">
@@ -42,7 +39,7 @@
 		{% include '../cart-delivery/cart-delivery-total.nunj' %}
 		{% include '../cart-delivery/cart-delivery-total-services.nunj' %}
 
-		<div class="cart-bottom _hidden" data-order-bottom>
+		<div class="cart-bottom" data-order-bottom>
 			<p class="cart__price _white p3 _shop">
 				Итого с учетом доставки:<br>
 				<span class="cart__price-value h5 ttu">145 000 ₽ <span class="cart__label"><span>-</span> <span>100</span> <span class="cart__label-small">баллов</span></span></span>
