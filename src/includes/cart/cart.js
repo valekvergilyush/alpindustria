@@ -272,10 +272,6 @@ class Cart {
 		const button = e.target;
 		const targetId = button.getAttribute('data-cart-next');
 		const targetBlock = this.container.querySelector(`#${targetId}`) || this.orderButton;
-		const yPos = targetBlock.getBoundingClientRect().top;
-		const headerHeight = this.header.offsetHeight;
-		const buttonHeight = button.offsetHeight;
-		const scrollOffset = yPos - headerHeight - buttonHeight - 16;
 		const currentBlock = e.target.closest('.cart__block');
 
 		currentBlock.classList.add(`_${ClassName.COMPLETE}`);
@@ -300,18 +296,25 @@ class Cart {
 			uncompleteBlockNextBtn.classList.remove(`_${ClassName.HIDDEN}`);
 		}
 
-		if (window.innerWidth > 768) {
-			this.deliverySection.scrollBy({
-				top: scrollOffset,
-				left: 0,
-			});
-		} else {
-			this.popup.scrollBy({
-				top: scrollOffset,
-				left: 0,
-				behavior: 'smooth',
-			});
-		}
+		const yPos = targetBlock.getBoundingClientRect().top;
+		const headerHeight = this.header.offsetHeight;
+		const buttonHeight = button.offsetHeight;
+		const scrollOffset = yPos - headerHeight - buttonHeight - 16;
+
+		setTimeout(() => {
+			if (window.innerWidth > 768) {
+				this.deliverySection.scrollBy({
+					top: scrollOffset,
+					left: 0,
+				});
+			} else {
+				this.popup.scrollBy({
+					top: scrollOffset,
+					left: 0,
+					behavior: 'smooth',
+				});
+			}
+		}, 100);
 	}
 	onEditDataButtonClick(e) {
 		e.preventDefault();
