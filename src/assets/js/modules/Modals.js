@@ -1,4 +1,4 @@
-import ScrollLock from '../utils/scroll-lock';
+import PageScroll from '../utils/scroll-lock';
 import Signal from '../classes/Signal';
 import Accordion from './Accordion';
 
@@ -93,7 +93,7 @@ class Modals {
 			!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
 			!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 		) {
-			ScrollLock.enable();
+			PageScroll.disabled(this.activeModal);
 		}
 
 		if (!modal) {
@@ -267,7 +267,7 @@ class Modals {
 				!HTML_CLASSLIST.contains(ClassName.OPENED_MENU) &&
 				!HTML_CLASSLIST.contains(ClassName.OPENED_POPUP)
 			) {
-				ScrollLock.disable();
+				PageScroll.enabled(this.activeModal);
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-import { lock as disableBodyScroll, unlock as enableBodyScroll } from 'tua-body-scroll-lock';
+import PageScroll from '../utils/scroll-lock';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -56,14 +56,14 @@ class Search {
 		this.searchInput.focus();
 		this.isOpened = !this.isOpened;
 
-		disableBodyScroll(this.container);
+		PageScroll.disabled(this.container);
 	}
 	close() {
 		HTML_CLASSLIST.remove(ClassName.OPENED);
 		this.searchInput.blur();
 		this.isOpened = !this.isOpened;
 		this.resetSearchInput();
-		enableBodyScroll(this.container);
+		PageScroll.enabled(this.container);
 	}
 	toggle() {
 		this.isOpened ? this.close() : this.open();

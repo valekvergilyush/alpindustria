@@ -1,4 +1,4 @@
-import { lock as disableBodyScroll, unlock as enableBodyScroll } from 'tua-body-scroll-lock';
+import PageScroll from '../../assets/js/utils/scroll-lock';
 
 const HTML_CLASSLIST = document.documentElement.classList;
 
@@ -151,15 +151,18 @@ class Menu {
 		HTML_CLASSLIST.add(ClassName.MENU_OPENED);
 		this.menuOpener.classList.add(ClassName.OPENED);
 		this.isMenuOpened = !this.isMenuOpened;
-		disableBodyScroll(this.menu);
+		PageScroll.disabled(this.menu);
 		this.onWindowResize();
 	}
 	closeMenu() {
+		if (!this.isMenuOpened) {
+			return;
+		}
 		HTML_CLASSLIST.remove(ClassName.MENU_OPENED);
 		this.menuOpener.classList.remove(ClassName.OPENED);
 		this.menuImg.classList.remove(ClassName.OPENED);
-		this.isMenuOpened = !this.isMenuOpened;
-		enableBodyScroll(this.menu);
+		this.isMenuOpened = false;
+		PageScroll.enabled(this.menu);
 	}
 	toggleMenu() {
 		this.menu.animating = true;

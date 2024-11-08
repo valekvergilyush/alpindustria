@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import LockScroll from '../../assets/js/utils/scroll-lock';
+import PageScroll from '../../assets/js/utils/scroll-lock';
 import AnchorLinks from '../../assets/js/modules/AnchorLinks';
 
 const ClassName = {
@@ -21,7 +21,7 @@ class GetCert {
 
 		this.loaderEl = this.container.querySelector('[data-loader]');
 
-		LockScroll.enable();
+		PageScroll.disabled();
 		this.showLoader();
 
 		setTimeout(() => {
@@ -104,7 +104,7 @@ class GetCert {
 				.timeline({
 					ease: 'Power4.out',
 					onComplete: () => {
-						LockScroll.disable();
+						PageScroll.enabled();
 						AnchorLinks.scrollTo(contentEl);
 					},
 				})
