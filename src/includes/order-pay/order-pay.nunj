@@ -1,37 +1,74 @@
 {% from "../components/radio/radio.nunj" import radio %}
 {% from "../components/switch/switch.nunj" import switch %}
 
+{% set items = [
+	{
+		id: 'cart-pay-card',
+		name: 'cart-pay-radio',
+		value: 'bank-card',
+		label: 'Оплата картой',
+		checked: true,
+		iconName: "credit-card"
+	},
+	{
+		id: 'cart-pay-home',
+		name: 'cart-pay-radio',
+		value: 'home',
+		label: 'Оплата при получении',
+		iconName: "home"
+	},
+	{
+		id: 'cart-pay-sbp',
+		name: 'cart-pay-radio',
+		value: 'sbp',
+		label: 'СБП',
+		iconName: "sbp"
+	},
+	{
+		id: 'cart-pay-shares',
+		name: 'cart-pay-radio',
+		value: 'shares',
+		label: 'Подели',
+		iconName: "share"
+	},
+	{
+		id: 'cart-pay-shares-2',
+		name: 'cart-pay-radio',
+		value: 'shares-2',
+		label: 'Долями',
+		iconName: "chart"
+	},
+	{
+		id: 'cart-pay-t-bank',
+		name: 'cart-pay-radio',
+		value: 't-bank',
+		label: 'Рассрочка Tinkoff',
+		iconName: "t-bank"
+	},
+	{
+		id: 'cart-pay-legal-entities',
+		name: 'cart-pay-radio',
+		value: 'legal-entities',
+		label: 'Оплата по счету для юр.лиц',
+		iconName: "user"
+	}
+] %}
+
 <div class="cart__block _hidden _last order-pay" id="cart-pay">
 	<div class="cart__title-wrap">
 		<p class="cart__block-title ttu h6">05. Оплата</p>
 	</div>
 	<div class="cart__inner">
 		<ul class="order-pay__list">
-			<li class="order-pay__item">
-				{{ radio({
-					id: 'cart-pay-card',
-					name: 'cart-pay-radio',
-					value: 'bank-card',
-					label: 'Оплата картой',
-					checked: true
-				}) }}
-				{{ icon({
-					iconName: "credit-card",
-					attr: 'width="32" height="32"'
-				}) }}
-			</li>
-			<div class="order-pay__item">
-				{{ radio({
-					id: 'cart-pay-home',
-					name: 'cart-pay-radio',
-					value: 'home',
-					label: 'Оплата при получении'
-				}) }}
-				{{ icon({
-					iconName: "home",
-					attr: 'width="32" height="32"'
-				}) }}
-			</div>
+			{% for item in items %}
+				<li class="order-pay__item">
+					{{ radio(item) }}
+					{{ icon({
+						iconName: item.iconName,
+						attr: 'width="32" height="32" viewBox="0 0 32 32" fill="none"'
+					}) }}
+				</li>
+			{% endfor %}
 		</ul>
 
 		<div class="order-pay__cert p3 c-gray-dark hidden">
@@ -62,20 +99,15 @@
 
 	{% include "../cart-bill/cart-bill-pay.nunj" %}
 
-	<button class="cart__next-button _submit" type="button">
-		<span class="h7">Оплатить картой</span>
-		{{ icon({
-			iconName: "credit-card",
-			attr: 'width="32" height="32"'
-		}) }}
-	</button>
-	<button class="cart__next-button _submit hidden" type="button">
-		<span class="h7">Оплатить при получении</span>
-		{{ icon({
-			iconName: "home",
-			attr: 'width="32" height="32"'
-		}) }}
-	</button>
+	{% for item in items %}
+		<button class="cart__next-button _submit {% if loop.index !== 1 %}hidden{% endif %}" type="button">
+			<span class="h7">{{ item.label }}</span>
+			{{ icon({
+				iconName: item.iconName,
+				attr: 'width="32" height="32" viewBox="0 0 32 32" fill="none"'
+			}) }}
+		</button>
+	{% endfor %}
 	<button class="cart__next-button _submit hidden" type="button">
 		<span class="h7">Оплатить</span>
 	</button>
