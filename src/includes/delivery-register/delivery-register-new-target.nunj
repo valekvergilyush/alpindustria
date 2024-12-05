@@ -5,8 +5,26 @@
 {% from "../components/input-time/input-time.nunj" import inputTime %}
 {% from "../components/radio/radio-button.nunj" import radioButton %}
 
-<form class="delivery-register _new-user">
-	<div class="delivery-register__fields">
+<form class="delivery-register _new-user" data-tabs>
+	<div class="delivery-register__fields _radio">
+		{{ radioButton({
+			id: 'delivery-register-new-target-radio-1',
+			className: 'delivery-register__radio _selected',
+			name: 'delivery-type',
+			value: 'email',
+			text: 'Отправить на почту',
+			attrContainer: 'id="delivery-register-new-target-email" role="tab" data-tab-trigger aria-selected="true" tabindex="-1"'
+		}) }}
+		{{ radioButton({
+			id: 'delivery-register-new-target-radio-2',
+			className: 'delivery-register__radio',
+			name: 'delivery-type',
+			value: 'sms',
+			text: 'Отправить по СМС',
+			attrContainer: 'id="delivery-register-new-target-sms" role="tab" data-tab-trigger aria-selected="true" tabindex="0"'
+		}) }}
+	</div>
+	<div class="delivery-register__fields" aria-labelledby="delivery-register-new-target-email" role="tabpanel" data-tab-panel aria-hidden="false">
 		{{ input({
 			type: 'text',
 			id: 'delivery-register-new-target-name',
@@ -25,17 +43,6 @@
 			attr: 'data-validate-type="text"',
 			className: 'delivery-register__input _gray'
 		}) }}
-	</div>
-	<div class="delivery-register__fields">
-		{{ input({
-			type: 'text',
-			id: 'delivery-register-new-target-tel',
-			name: 'Телефон',
-			label: 'Телефон*',
-			className: 'delivery-register__input _gray',
-			inputAttr: 'required inputmode="tel"',
-			attr: 'data-validate-type="phone"'
-		}) }}
 		{{ input({
 			type: 'email',
 			id: 'delivery-register-new-target-email',
@@ -44,6 +51,35 @@
 			inputAttr: 'required',
 			attr: 'data-validate-type="email"',
 			className: 'delivery-register__input _gray'
+		}) }}
+	</div>
+	<div class="delivery-register__fields _hidden" aria-labelledby="delivery-register-new-target-sms" role="tabpanel" data-tab-panel aria-hidden="false">
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-target-name',
+			name: 'Имя',
+			label: 'Имя*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
+			className: 'delivery-register__input _gray'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-target-surname',
+			name: 'Фамилия',
+			label: 'Фамилия*',
+			inputAttr: 'required',
+			attr: 'data-validate-type="text"',
+			className: 'delivery-register__input _gray'
+		}) }}
+		{{ input({
+			type: 'text',
+			id: 'delivery-register-new-target-tel',
+			name: 'Телефон',
+			label: 'Телефон*',
+			className: 'delivery-register__input _gray',
+			inputAttr: 'required inputmode="tel"',
+			attr: 'data-validate-type="phone"'
 		}) }}
 	</div>
 	{{ checkbox({
@@ -67,24 +103,6 @@
 			id: 'delivery-time-input-target',
 			value: '19:00',
 			className: 'delivery-register__input'
-		}) }}
-	</div>
-
-	<div class="delivery-register__fields _radio">
-		{{ radioButton({
-			id: 'delivery-register-new-target-radio-1',
-			className: 'delivery-register__radio',
-			name: 'delivery-type',
-			value: 'email',
-			text: 'Отправить на почту',
-			checked: true
-		}) }}
-		{{ radioButton({
-			id: 'delivery-register-new-target-radio-2',
-			className: 'delivery-register__radio',
-			name: 'delivery-type',
-			value: 'sms',
-			text: 'Отправить по СМС'
 		}) }}
 	</div>
 </form>

@@ -133,6 +133,13 @@
 			font-size: 12px;
 		}
 	}
+	&._selected {
+		#{$this}__label {
+			background-color: var(--blue-dark);
+			border-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
 	&__input:checked {
 		+ #{$this}__label {
 			#{$this}__box {

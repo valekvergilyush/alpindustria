@@ -50,7 +50,6 @@ class Tabs {
 		if (e.currentTarget.index === this.selectedTab) {
 			return;
 		}
-
 		this.selectTab(e.currentTarget.index, true);
 	}
 	_keydownEvent(e) {
