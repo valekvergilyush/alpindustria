@@ -1,4 +1,5 @@
 .delivery-register {
+	$this: &;
 	&__title {
 		margin-bottom: rem(46);
 		@media (max-width: $laptop-lg) {
@@ -86,5 +87,15 @@
 	}
 	&__legal-text {
 		margin-top: rem(24);
+	}
+	&._new-user {
+		#{$this}__fields {
+			&._radio {
+				margin-top: 0;
+			}
+			&._hidden {
+				display: none;
+			}
+		}
 	}
 }

@@ -1,5 +1,5 @@
 {% macro radioButton(props) %}
-	<div class="radio _button{% if props.className %} {{ props.className }}{% endif %}">
+	<div class="radio _button{% if props.className %} {{ props.className }}{% endif %}"{% if props.attrContainer %} {{ props.attrContainer }}{% endif %}>
 		<input
 			class="radio__input visually-hidden"
 			type="radio"
