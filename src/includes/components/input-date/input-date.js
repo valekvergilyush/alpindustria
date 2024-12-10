@@ -1,10 +1,39 @@
-import flatpickr from 'flatpickr';
-import { Russian } from 'flatpickr/dist/l10n/ru';
+import Picker from 'pickerjs';
+
+const formatDate = (date = new Date()) => {
+	const day = String(date.getDate()).padStart(2, '0');
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const year = date.getFullYear();
+
+	return `${day}.${month}.${year}`;
+};
+const addDays = (date = new Date(), qty = 1) => {
+	const newDate = new Date(date);
+	newDate.setDate(newDate.getDate() + qty);
+
+	return newDate;
+};
 
 const OPTIONS = {
-	disableMobile: 'true',
-	dateFormat: 'd/m/y',
-	locale: Russian,
+	format: 'DD.MMMM.YYYY',
+	text: {
+		cancel: 'Закрыть',
+		confirm: 'OK',
+	},
+	months: [
+		'Январь',
+		'Февраль',
+		'Март',
+		'Апрель',
+		'Май',
+		'Июнь',
+		'Июль',
+		'Август',
+		'Сентябрь',
+		'Октябрь',
+		'Ноябрь',
+		'Декабрь',
+	],
 };
 class InputDate {
 	constructor() {
@@ -21,34 +50,32 @@ class InputDate {
 		}
 
 		this.inputs.forEach(input => {
-			const minDate = input.dataset.minDate || false;
-			const maxDate = input.dataset.maxDate || false;
-			const defaultDate = input.dataset.minDate === 'today' && new Date();
-			input.flatpickrInstance = flatpickr(input, {
-				...OPTIONS,
-				minDate,
-				maxDate,
-				defaultDate,
+			input.datepicker = new Picker(input, OPTIONS);
+			input.datepicker.picker.classList.add('_date');
+
+			input.addEventListener('change', () => {
+				input.value = formatDate(input.datepicker.date);
 			});
-			input.flatpickrInstance.set;
-			this.flatpickrs.push(input.flatpickrInstance);
 		});
 
 		this.rangeDateContainers.forEach(container => {
 			const startInput = container.querySelector('[data-start-date]');
 			const endInput = container.querySelector('[data-end-date]');
 
-			startInput.flatpickrInstance.config.onChange.push(function (selectedDates) {
-				endInput.flatpickrInstance.set('minDate', selectedDates[0]);
-			});
-		});
+			const start = new Date();
+			const end = addDays(start, 1);
 
-		const closeFlatpickrBlocks = document.querySelectorAll('[data-flatpickr-scroll="close"]');
-		closeFlatpickrBlocks.forEach(block => {
-			block.addEventListener('scroll', () => {
-				this.flatpickrs.forEach(f => {
-					if (f.isOpen) {
-						f.close();
+			startInput.value = formatDate(start);
+			endInput.value = formatDate(end);
+
+			[startInput, endInput].forEach(input => {
+				input.addEventListener('change', () => {
+					const startVal = startInput.datepicker.date;
+					const endVal = endInput.datepicker.date;
+
+					if (startVal > endVal) {
+						endInput.value = formatDate(startVal);
+						endInput.datepicker.setDate(startVal);
 					}
 				});
 			});

@@ -71,3 +71,10 @@
 		}
 	}
 }
+
+.picker._date {
+	.picker-dialog {
+		width: rem(400);
+		max-width: calc(100% - rem(16));
+	}
+}
