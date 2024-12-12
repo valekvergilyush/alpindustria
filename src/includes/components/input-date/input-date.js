@@ -1,26 +1,23 @@
+import IMask from 'imask';
 import flatpickr from 'flatpickr';
 import { Russian } from 'flatpickr/dist/l10n/ru';
 
 const OPTIONS = {
 	disableMobile: 'true',
-	dateFormat: 'd/m/y',
+	dateFormat: 'd.m.Y',
 	locale: Russian,
 };
+
 class InputDate {
 	constructor() {
-		this.flatpickrs = [];
 		this.init();
 	}
 
 	init() {
-		this.inputs = document.querySelectorAll('[data-datepicker]');
-		this.rangeDateContainers = document.querySelectorAll('[data-range-date]');
+		const datepickerInputs = document.querySelectorAll('[data-datepicker]');
+		const dateInputs = document.querySelectorAll('[data-dateinput]');
 
-		if (!this.inputs.length) {
-			return;
-		}
-
-		this.inputs.forEach(input => {
+		datepickerInputs.forEach(input => {
 			const minDate = input.dataset.minDate || false;
 			const maxDate = input.dataset.maxDate || false;
 			const defaultDate = input.dataset.minDate === 'today' && new Date();
@@ -30,27 +27,19 @@ class InputDate {
 				maxDate,
 				defaultDate,
 			});
-			input.flatpickrInstance.set;
-			this.flatpickrs.push(input.flatpickrInstance);
 		});
 
-		this.rangeDateContainers.forEach(container => {
-			const startInput = container.querySelector('[data-start-date]');
-			const endInput = container.querySelector('[data-end-date]');
-
-			startInput.flatpickrInstance.config.onChange.push(function (selectedDates) {
-				endInput.flatpickrInstance.set('minDate', selectedDates[0]);
+		dateInputs.forEach(input => {
+			const dateMask = IMask(input, {
+				mask: Date,
 			});
-		});
+			input.dateMask = dateMask;
 
-		const closeFlatpickrBlocks = document.querySelectorAll('[data-flatpickr-scroll="close"]');
-		closeFlatpickrBlocks.forEach(block => {
-			block.addEventListener('scroll', () => {
-				this.flatpickrs.forEach(f => {
-					if (f.isOpen) {
-						f.close();
-					}
-				});
+			input.addEventListener('focus', () => {
+				dateMask.updateOptions({ lazy: false });
+			});
+			input.addEventListener('blur', () => {
+				dateMask.updateOptions({ lazy: true });
 			});
 		});
 	}

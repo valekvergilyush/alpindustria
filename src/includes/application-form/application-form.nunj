@@ -73,7 +73,7 @@
 					className: 'application-form__input _gray',
 					name: 'Дата рождения',
 					label: 'Дата рождения*',
-					inputAttr: 'required readonly data-datepicker',
+					inputAttr: 'required data-dateinput',
 					attr: 'data-validate-type="text"'
 				}) }}
 			</div>
