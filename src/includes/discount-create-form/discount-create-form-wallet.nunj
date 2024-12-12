@@ -48,7 +48,7 @@
 			className: 'discount-create-form__input _gray',
 			name: 'Дата рождения',
 			label: 'Дата рождения*',
-			inputAttr: 'required readonly data-datepicker',
+			inputAttr: 'required data-datepicker',
 			attr: 'data-validate-type="text"'
 		}) }}
 		<div class="discount-create-form__radios">
