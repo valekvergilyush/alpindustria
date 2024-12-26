@@ -1,10 +1,15 @@
 {% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/button/button.nunj" import button %}
 
 <section class="cookies _hidden" data-cookies>
 	<div class="cookies__text p3">
-		<p>Этот сайт использует <a href="https://alpindustria.ru/" target="_blank">cookies</a>, чтобы помочь улучшить ваш пользовательский опыт</p>
-
-		<button class="cookies__close" type="button" aria-label="Закрыть">
+		<p class="cookies__p">Этот сайт использует <a href="https://alpindustria.ru/" target="_blank">cookies</a>, чтобы помочь улучшить ваш пользовательский опыт</p>
+		{{ button({
+			className: 'cookies__button h7',
+			attr: 'data-cookies-close',
+			text: 'Принять'
+		}) }}
+		<button class="cookies__close" type="button" aria-label="Закрыть" data-cookies-close>
 			{{ icon({
 				iconName: "close-popup",
 				className: "cookies__close-icon",

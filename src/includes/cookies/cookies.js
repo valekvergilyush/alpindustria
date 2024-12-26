@@ -17,20 +17,22 @@ class Cookies {
 		}
 
 		const cookiesName = 'cookies-info-shown';
-		const closeButton = this.container.querySelector('.cookies__close');
+		const closeButtons = this.container.querySelectorAll('[data-cookies-close]');
 		this.hasCookie = this.getCookie(cookiesName);
 
 		setTimeout(() => {
 			!this.hasCookie && this.container.classList.remove(ClassName.HIDDEN);
 		}, 1000);
 
-		closeButton &&
-			closeButton.addEventListener('click', evt => {
-				evt.preventDefault();
-				this.setCookie(cookiesName, 'closed');
-				this.container.classList.add(ClassName.HIDDEN);
+		closeButtons.length &&
+			closeButtons.forEach(button => {
+				button.addEventListener('click', evt => {
+					evt.preventDefault();
+					this.setCookie(cookiesName, 'closed');
+					this.container.classList.add(ClassName.HIDDEN);
 
-				Popups.open('subscription-news');
+					Popups.open('subscription-news');
+				});
 			});
 	}
 
