@@ -66,21 +66,8 @@
 			border-color: var(--white) transparent transparent transparent;
 			transform: rotate(90deg);
 			top: rem(12);
-			left: rem(-18);
-		}
-		&::before {
-			content: '';
-			position: absolute;
-			display: block;
-			width: 0;
-			height: 0;
-			z-index: 0;
-			border-style: solid;
-			border-width: rem(20) rem(20) 0 0;
-			border-color: var(--blue-dark) transparent transparent transparent;
-			transform: rotate(90deg);
-			top: rem(11);
-			left: rem(-20);
+			left: rem(-16);
+			filter: drop-shadow(-1px 2px 0 var(--blue-dark));
 		}
 
 		@media (max-width: $mobile-lg) {
@@ -91,18 +78,11 @@
 			transform: none;
 			font-size: rem(14);
 			line-height: rem(22);
-			&::after,
-			&::before {
-				top: calc(100%);
-				transform: none;
-			}
 			&::after {
+				top: calc(100% - 2px);
+				transform: none;
 				left: rem(113);
 				border-width: rem(13) rem(13) 0 0;
-			}
-			&::before {
-				left: rem(112);
-				border-width: rem(15) rem(15) 0 0;
 			}
 		}
 	}
