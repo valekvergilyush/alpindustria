@@ -790,8 +790,8 @@ html.with-fancybox body.hide-scrollbar {
 .has-iframe .fancybox__content,
 .has-map .fancybox__content,
 .has-pdf .fancybox__content {
-	width: calc(100% - 120px);
-	height: 90%;
+	width: calc(100% - 120px) !important;
+	height: 90% !important;
 }
 .fancybox__container.is-compact .has-iframe .fancybox__content,
 .fancybox__container.is-compact .has-map .fancybox__content,

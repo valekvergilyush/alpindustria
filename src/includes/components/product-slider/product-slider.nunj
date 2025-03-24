@@ -7,13 +7,13 @@
 					data-thumb-src="{{ item.img }}.png" {% if item.type == 'video' %}data-video="{{ item.index }}"{% endif %}
 				>
 					{% if item.type == 'video' %}
-					<a class="product-slider__img f-panzoom__content _has-video" href="https://www.youtube.com/embed/R4tLjFDcnf8" data-fancybox="gallery">
-						<img
-							class="product-slider__img f-panzoom__content"
-							src="{{ item.img }}.png"
-							alt=""
-						>
-					</a>
+						<a class="product-slider__img f-panzoom__content _has-video" href='data:text/html,<iframe width="100%" height="100%" src="https://rutube.ru/play/embed/e4b71c77edb05215b1693daf39515696?skinColor=000000" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' data-fancybox="gallery" data-type="iframe">
+							<img
+								class="product-slider__img f-panzoom__content"
+								src="{{ item.img }}.png"
+								alt=""
+							>
+						</a>
 					{% else %}
 					<img
 						class="product-slider__img f-panzoom__content"
