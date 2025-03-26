@@ -792,6 +792,13 @@ html.with-fancybox body.hide-scrollbar {
 .has-pdf .fancybox__content {
 	width: calc(100% - 120px) !important;
 	height: 90% !important;
+
+	@media (max-width: $laptop-lg) {
+		width: 100% !important;
+		height: auto !important;
+		aspect-ratio: 1.77778 / 1;
+		padding: 0;
+	}
 }
 .fancybox__container.is-compact .has-iframe .fancybox__content,
 .fancybox__container.is-compact .has-map .fancybox__content,
