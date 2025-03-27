@@ -800,7 +800,7 @@ html.with-fancybox body.hide-scrollbar {
 		padding: 0;
 	}
 
-	@media (orientation: landscape) and (max-height: rem(600)) {
+	@media (orientation: landscape) and (max-height: rem(600)) and (max-width: rem(1000)) {
 		width: auto !important;
 		height: 90% !important;
 	}
