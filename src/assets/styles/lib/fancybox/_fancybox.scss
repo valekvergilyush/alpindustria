@@ -799,6 +799,11 @@ html.with-fancybox body.hide-scrollbar {
 		aspect-ratio: 1.77778 / 1;
 		padding: 0;
 	}
+
+	@media (orientation: landscape) and (max-height: rem(600)) {
+		width: auto !important;
+		height: 90% !important;
+	}
 }
 .fancybox__container.is-compact .has-iframe .fancybox__content,
 .fancybox__container.is-compact .has-map .fancybox__content,
