@@ -169,3 +169,7 @@
 		--stroke-color: var(--blue-dark);
 	}
 }
+
+[data-popup-wrapper='cart'] {
+	height: calc(100% - 2px) !important;
+}

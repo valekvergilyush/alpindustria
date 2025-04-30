@@ -62,10 +62,14 @@ class Class {
 			trigger: this.payBlock,
 			start: 'bottom bottom',
 			onEnter: () => {
-				this.priceBlock.classList.add(ClassName.NO_BG);
+				if (this.priceBlock) {
+					this.priceBlock.classList.add(ClassName.NO_BG);
+				}
 			},
 			onLeaveBack: () => {
-				this.priceBlock.classList.remove(ClassName.NO_BG);
+				if (this.priceBlock) {
+					this.priceBlock.classList.remove(ClassName.NO_BG);
+				}
 			},
 		});
 	}
