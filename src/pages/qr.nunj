@@ -1,0 +1,54 @@
+{% from "../includes/components/picture/picture.nunj" import picture %}
+{% from "../includes/components/button/button.nunj" import button %}
+{% extends "../templates/base.nunj" %}
+
+{% block title %}QR | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_qr' %}
+
+{% block content %}
+	<main class="page__main">
+		<div class="qr-bg__img-wrapper">
+			{{ picture({
+				className: 'qr-bg__img',
+				path: '/assets/images/qr/qr-bg',
+				ext: 'jpg',
+				width: 375,
+				height: 712,
+				attr: 'aria-hidden="true"'
+			}) }}
+		</div>
+		<div class="qr-content-wrapper">
+			<div class="qr-title-wrapper">
+				<h1 class="h4 ttu qr-title">
+					Держи&nbsp;карту всегда&nbsp;под&nbsp;рукой
+				</h1>
+			</div>
+			<div class="qr-phone__img-wrapper">
+				{{ picture({
+					className: 'qr-phone__img',
+					path: '/assets/images/qr/qr-phone',
+					ext: 'png',
+					width: 317,
+					height: 401,
+					attr: 'aria-hidden="true"'
+				}) }}
+			</div>
+			<div class="qr-button-wrapper">
+				{{ button({
+					text: 'Telegram бот-помощник',
+					href: '#',
+					className: '_qr',
+					attr: 'data-tippy-content="Telegram бот-помощник"'
+				}) }}
+				{{ button({
+					text: 'Добавить в Google Pay',
+					href: '#',
+					className: '_qr',
+					attr: 'data-tippy-content="Добавить в Google Pay"'
+				}) }}
+			</div>
+		</div>
+
+	</main>
+{% endblock %}

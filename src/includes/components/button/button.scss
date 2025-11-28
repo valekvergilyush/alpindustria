@@ -741,6 +741,17 @@
 			background-size: contain;
 		}
 	}
+	&._qr{
+		background-color: var(--blue-dark);
+		width: 100%;
+		display: block;
+		color: var(--white);
+		text-transform: uppercase;
+		padding: rem(16);
+		font-size: rem(18);
+		line-height: rem(24);
+		text-align: center;
+	}
 }
 
 ._mobile {
