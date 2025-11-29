@@ -1,0 +1,18 @@
+{% macro rentCategoryCard(props) %}
+{% set url = props.url if props.url else '/catalog/' %}
+<div class="rent-category-card">
+	<a class="rent-category-card__stack" href="{{ url }}" style="--total: {{ props.images | length }};">
+		{% for image in props.images %}
+			<div class="rent-category-card__item" style="--i: {{ loop.index0 }};">
+				<img src="{{ image.src }}" {% if image.srcset %}srcset="{{ image.srcset }}"{% endif %} alt="" aria-hidden="true">
+			</div>
+		{% endfor %}
+	</a>
+	<div class="rent-category-card__info">
+		<h3 class="rent-category-card__title h5 ttu">
+			<a href="{{ url }}">{{ props.name }}</a>
+		</h3>
+		<p class="rent-category-card__count p3">{{ props.count }} товаров</p>
+	</div>
+</div>
+{% endmacro %}

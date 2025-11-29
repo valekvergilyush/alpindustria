@@ -1,0 +1,30 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set addressData = {
+	title: 'Адрес',
+	street: 'ул. Первомайская, 18',
+	metro: 'м.Измайловская',
+	schedule: 'Ежедневно с 10:00 до 23:00',
+	phone: '+7 (495) 232-97-79',
+	email: 'info@alpindustria.ru'
+} %}
+
+<section class="rent-address">
+	<div class="rent-address__map map" data-map="address"></div>
+	<div class="rent-address__info">
+		<h2 class="rent-address__title h5 ttu">{{ addressData.title }}</h2>
+		<div class="rent-address__details p2">
+            <p>{{ addressData.street }}</p>
+			<p>{{ addressData.metro }}</p>
+			<p>{{ addressData.schedule }}</p>
+			<p>Телефон: <a href="tel:{{ addressData.phone | replace(' ', '') | replace('(', '') | replace(')', '') | replace('-', '') }}">{{ addressData.phone }}</a></p>
+			<a href="mailto:{{ addressData.email }}">{{ addressData.email }}</a>
+		</div>
+		{{ button({
+            className: 'rent-address__button',
+			text: 'связаться с прокатом',
+			href: '#contact-rent'
+		}) }}
+	</div>
+</section>
+
