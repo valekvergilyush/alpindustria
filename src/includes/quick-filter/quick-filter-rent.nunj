@@ -1,0 +1,47 @@
+{% from "../components/button/button.nunj" import button %}
+
+{% set seasons = [
+	{ name: 'Зима', value: 'winter' },
+	{ name: 'Лето', value: 'summer', active: true }
+] %}
+
+{% set locations = [
+	{ name: 'Прокат с доставкой', value: 'delivery', white: true },
+	{ name: 'Москва. Пролетарская', value: 'moscow-proletarskaya', active: true },
+	{ name: 'Москва.Измайловская', value: 'moscow-izmaylovskaya' },
+	{ name: 'Красная поляна', value: 'krasnaya-polyana' },
+	{ name: 'Приэльбрусье', value: 'prielbrusye' },
+	{ name: 'Архыз', value: 'arhyz' },
+	{ name: 'Пермь', value: 'perm' },
+	{ name: 'Краснодар', value: 'krasnodar' },
+	{ name: 'Красноярск', value: 'krasnoyarsk' },
+	{ name: 'Екатеринбург', value: 'ekaterinburg' },
+	{ name: 'Новосибирск', value: 'novosibirsk' },
+	{ name: 'Нижний Новгород', value: 'nizhniy-novgorod' }
+] %}
+
+<div class="quick-filter-rent" data-quick-filter-rent>
+	<ul class="quick-filter-rent__seasons">
+		{% for season in seasons %}
+			<li class="quick-filter-rent__season-item">
+				{{ button({
+					className: 'button _quick-filter' + (' _active' if season.active else ''),
+					text: season.name,
+					attr: 'data-season="' + season.value + '"'
+				}) }}
+			</li>
+		{% endfor %}
+	</ul>
+
+	<ul class="quick-filter-rent__locations">
+		{% for location in locations %}
+			<li class="quick-filter-rent__location-item">
+				{{ button({
+					className: 'button _quick-filter' + (' _white-bg' if location.white else '') + (' _active' if location.active else ''),
+					text: location.name,
+					attr: 'data-location="' + location.value + '"'
+				}) }}
+			</li>
+		{% endfor %}
+	</ul>
+</div>

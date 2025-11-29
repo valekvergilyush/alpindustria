@@ -126,3 +126,54 @@
 		}
 	}
 }
+
+.quick-filter-rent {
+	--gap: #{rem(16)};
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: calc(var(--gap) * 2);
+	width: 100%;
+	padding-bottom: rem(32);
+	@media (max-width: $tablet) {
+		--gap: 8px;
+	}
+	&__seasons,
+	&__locations {
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		gap: var(--gap);
+		@media (max-width: $mobile-lg) {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			width: 100%;
+			padding-inline: var(--container-padding);
+			box-sizing: border-box;
+			scrollbar-width: none;
+			@include scrollbar {
+				display: none;
+			}
+		}
+	}
+	&__season-item,
+	&__location-item {
+		display: flex;
+		flex-shrink: 0;
+	}
+	.button._quick-filter {
+		border-color: var(--white);
+		color: var(--white);
+		&._white-bg {
+			background-color: var(--white);
+			border-color: var(--white);
+			color: var(--blue-dark);
+		}
+		&:hover,
+		&._active {
+			background-color: var(--blue-dark);
+			border-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+}
