@@ -1,0 +1,140 @@
+.rent-product-item {
+	$this: &;
+	display: flex;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+	padding: rem(20) rem(16);
+
+	@media (max-width: $tablet) {
+		flex-direction: column;
+	}
+
+	&__left {
+		display: flex;
+		gap: rem(16);
+		width: 70%;
+
+		@media (max-width: $tablet) {
+			width: 100%;
+			margin-bottom: rem(16);
+		}
+	}
+
+	&__image {
+		flex-shrink: 0;
+		width: rem(126);
+		height: rem(160);
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+	}
+
+	&__title {
+		max-width: rem(324);
+		margin: 0;
+		color: var(--blue-dark);
+	}
+
+	&__details-btn {
+		display: flex;
+		align-items: center;
+		gap: rem(12);
+		color: var(--gray-dark);
+		opacity: 0.4;
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		@extend .animated;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__details-icon {
+		width: rem(24);
+		height: rem(24);
+		transition: transform $default-transition-duration $default-transition-function;
+
+		#{$this}._opened & {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+		width: 30%;
+		justify-content: space-between;
+
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+
+	&__values {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+
+		@media (max-width: $tablet) {
+			justify-content: space-between;
+		}
+	}
+
+	&__period {
+		flex: 1;
+		position: relative;
+	}
+
+	
+
+	&__price,
+	&__deposit {
+		flex: 1;
+	}
+
+	&__price-value,
+	&__deposit-value {
+		margin: 0;
+		color: var(--blue-dark);
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__book-btn {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		padding: rem(16);
+		width: 100%;
+		background-color: var(--blue-dark);
+		color: var(--white);
+		font-size: rem(18);
+		text-transform: uppercase;
+		max-width: rem(360);
+		@extend .animated;
+
+		&:hover {
+			background-color: var(--blue-light);
+		}
+
+		.button__icon {
+			width: rem(20);
+			height: rem(20);
+		}
+	}
+}

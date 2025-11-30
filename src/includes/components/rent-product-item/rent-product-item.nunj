@@ -1,0 +1,50 @@
+{% from "../button/button.nunj" import button %}
+{% from "../icon/icon.nunj" import icon %}
+{% from "../rent-period-select/rent-period-select.nunj" import rentPeriodSelect %}
+
+{% macro rentProductItem(props) %}
+<article class="rent-product-item{% if props.opened %} _opened{% endif %}" data-rent-product-item>
+	<div class="rent-product-item__left">
+		<div class="rent-product-item__image">
+			<img src="{{ props.image }}" {% if props.imageSrcset %}srcset="{{ props.imageSrcset }}"{% endif %} width="126" height="160" alt="">
+		</div>
+		<div class="rent-product-item__info">
+			<h3 class="rent-product-item__title h7 ttu">{{ props.title }}</h3>
+			<button class="rent-product-item__details-btn p3" type="button" data-rent-product-details>
+				<span>Подробнее</span>
+				{{ icon({
+					iconName: 'arrow-down',
+					className: 'rent-product-item__details-icon',
+					attr: 'width="24" height="24"'
+				}) }}
+			</button>
+		</div>
+	</div>
+	
+	<div class="rent-product-item__right">
+		<div class="rent-product-item__values">
+			<div class="rent-product-item__period">
+				{{ rentPeriodSelect({
+					defaultValue: '1-7 дней'
+				}) }}
+			</div>
+			<div class="rent-product-item__price">
+				<p class="rent-product-item__price-value p2">{{ props.price1 if props.price1 else '100 000 ₽' }}</p>
+			</div>
+			<div class="rent-product-item__deposit">
+				<p class="rent-product-item__deposit-value p2">{{ props.price2 if props.price2 else '120 000 ₽' }}</p>
+			</div>
+		</div>
+		<div class="rent-product-item__actions">
+			{{ button({
+				className: 'rent-product-item__book-btn',
+				text: 'забронировать',
+				icon: 'call',
+				iconData: 'width="20" height="20"',
+				href: '#booking'
+			}) }}
+		</div>
+	</div>
+</article>
+{% endmacro %}
+

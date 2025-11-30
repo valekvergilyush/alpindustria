@@ -10,6 +10,6 @@
 	<main id="catalog-main" class="page__main">
 		{% include "../../includes/rent-categories/rent-categories.nunj" %}
 		{% include "../../includes/rent-address/rent-address.nunj" %}
-		{% include ".../../includes/catalog-accordion/catalog-accordion-article.nunj" %}
+		{% include ".../../includes/rent-news/rent-news.nunj" %}
 	</main>
 {% endblock %}

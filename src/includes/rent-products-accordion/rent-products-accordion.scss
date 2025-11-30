@@ -1,0 +1,124 @@
+.rent-products-accordion {
+	$this: &;
+	margin-bottom: rem(64);
+	&__section {
+		border-top: 1px solid var(--gray-light);
+
+		&:last-child {
+			border-bottom: 1px solid var(--gray-light);
+		}
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: rem(18) var(--container-padding) rem(18);
+		margin: 0;
+		background-color: var(--blue-dark);
+		color: var(--white);
+		cursor: pointer;
+		transition: background-color $default-transition-duration $default-transition-function;
+
+		&:hover {
+			background-color: var(--blue-light);
+		}
+
+		@media (max-width: $tablet) {
+			padding: rem(16) rem(32);
+		}
+
+		@media (max-width: $mobile-lg) {
+			padding: rem(12) rem(16);
+		}
+	}
+
+	&__header-text {
+		flex-grow: 1;
+	}
+
+	&__header-tooltip {
+		position: relative;
+		top: rem(4);
+	}
+
+	&__icon {
+		width: rem(22);
+		height: rem(22);
+		flex-shrink: 0;
+		transition: transform $default-transition-duration $default-transition-function;
+
+		#{$this}__section._opened & {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__content {
+		height: 0;
+		overflow: hidden;
+	}
+
+	&__content-inner {
+		padding: rem(40) var(--container-padding) 0;
+
+		@media (max-width: $tablet) {
+			padding: rem(32) var(--container-padding) 0;
+		}
+
+		@media (max-width: $mobile-lg) {
+			padding: rem(16) var(--container-padding) 0;
+		}
+	}
+
+	&__table-header {
+		display: flex;
+		padding-block: rem(16);
+		padding-inline: rem(16);
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__header-left {
+		width: 70%;
+
+		@media (max-width: $tablet) {
+			width: 100%;
+			margin-bottom: rem(8);
+		}
+	}
+
+	&__header-right {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		width: 30%;
+
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+
+	&__header-col {
+		color: var(--blue-dark);
+		opacity: 0.4;
+
+		&._period {
+			flex: 1;
+
+			@media (max-width: $tablet) {
+				width: 33.33%;
+			}
+		}
+
+		&._price,
+		&._deposit {
+			flex: 1;
+
+			@media (max-width: $tablet) {
+				width: 33.33%;
+			}
+		}
+	}
+}

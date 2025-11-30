@@ -1,0 +1,78 @@
+.rent-period-select {
+	$this: &;
+	position: relative;
+	max-width: rem(125);
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(8);
+		padding: rem(4) rem(12);
+		width: 100%;
+		border: 1px solid var(--blue-dark);
+		border-radius: rem(247);
+		color: var(--blue-dark);
+		background: var(--default-bg-color);
+		cursor: pointer;
+		white-space: nowrap;
+		@extend .animated;
+
+		&:hover {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+	}
+
+	&__icon {
+		width: rem(12);
+		height: rem(6);
+		flex-shrink: 0;
+		transition: transform $default-transition-duration $default-transition-function;
+	}
+
+	&__dropdown {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		display: none;
+		flex-direction: column;
+		gap: rem(4);
+		min-width: 100%;
+	}
+
+	&__option {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		padding: rem(4) rem(12);
+		border: 1px solid var(--blue-dark);
+		border-radius: rem(247);
+		background-color: var(--default-bg-color);
+		color: var(--blue-dark);
+		cursor: pointer;
+		white-space: nowrap;
+		@extend .animated;
+
+		&:hover {
+			background-color: var(--blue-dark);
+			color: var(--white);
+		}
+
+		&._active {
+			background-color: var(--blue-dark);
+			color: var(--white);
+
+			&:hover {
+				background-color: var(--blue-light);
+			}
+		}
+	}
+
+	&._opened {
+		#{$this}__dropdown {
+			display: flex;
+		}
+	}
+}

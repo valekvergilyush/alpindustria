@@ -8,18 +8,20 @@
 ] %}
 
 {% set categories = [
-	{ name: 'Туристическое снаряжение', count: 16, url: '#', images: categoryImages },
-	{ name: 'Альпинистское снаряжение', count: 16, url: '#', images: categoryImages },
-	{ name: 'Одежда', count: 16, url: '#', images: categoryImages },
-	{ name: 'Обувь', count: 16, url: '#', images: categoryImages }
+	{ name: 'Туристическое снаряжение', count: 16, url: '/rent-by-call/category.html', images: categoryImages },
+	{ name: 'Альпинистское снаряжение', count: 16, url: '/rent-by-call/category.html', images: categoryImages },
+	{ name: 'Одежда', count: 16, url: '/rent-by-call/category.html', images: categoryImages },
+	{ name: 'Обувь', count: 16, url: '/rent-by-call/category.html', images: categoryImages }
 ] %}
 
 <section class="rent-categories">
 	<div class="rent-categories__grid">
 		{% for category in categories %}
-			<div class="rent-categories__item">
-				{{ rentCategoryCard(category) }}
-			</div>
+			{% if not rentCategoriesLimit or loop.index <= rentCategoriesLimit %}
+				<div class="rent-categories__item">
+					{{ rentCategoryCard(category) }}
+				</div>
+			{% endif %}
 		{% endfor %}
 	</div>
 </section>

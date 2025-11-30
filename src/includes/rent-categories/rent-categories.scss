@@ -19,16 +19,16 @@
 		padding-inline: var(--container-padding);
 
 		@media (max-width: $laptop) {
-            gap: rem(40) rem(40);
+			gap: rem(40) rem(40);
 		}
 
 		@media (max-width: $tablet) {
 			grid-template-columns: 1fr;
-            gap: rem(40) rem(40);
+			gap: rem(40) rem(40);
 		}
 
 		@media (max-width: $mobile-lg) {
-            gap: rem(40) rem(40);
+			gap: rem(40) rem(40);
 		}
 	}
 
@@ -36,4 +36,3 @@
 		min-width: 0;
 	}
 }
-

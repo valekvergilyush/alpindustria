@@ -9,7 +9,7 @@
 	email: 'info@alpindustria.ru'
 } %}
 
-<section class="rent-address">
+<section class="rent-address{% if rentAddressNoMargin %} _no-margin{% endif %}">
 	<div class="rent-address__map map" data-map="address"></div>
 	<div class="rent-address__info">
 		<h2 class="rent-address__title h5 ttu">{{ addressData.title }}</h2>

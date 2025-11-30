@@ -1,0 +1,19 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set categoryName = categoryName if categoryName else 'Туристическое снаряжение' %}
+
+<section class="rent-category-hero">
+	<div class="rent-category-hero__container container">
+		<h1 class="rent-category-hero__title h4 ttu">{{ categoryName }}</h1>
+		<a href="#contact-rent" class="rent-category-hero__link h7 ttu">
+			<span>связаться с прокатом</span>
+			{{ icon({
+				iconName: 'slider-arrow-left',
+				className: 'rent-category-hero__icon',
+				attr: 'width="24" height="24"'
+			}) }}
+		</a>
+	</div>
+</section>
+
+

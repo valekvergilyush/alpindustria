@@ -1,0 +1,27 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro rentPeriodSelect(props) %}
+<div class="rent-period-select{% if props.className %} {{ props.className }}{% endif %}" data-rent-period-dropdown>
+	<button class="rent-period-select__btn p3" type="button" data-rent-period-toggle>
+		<span data-rent-period-value>{{ props.defaultValue if props.defaultValue else '1-7 дней' }}</span>
+		{{ icon({
+			iconName: 'chevron',
+			className: 'rent-period-select__icon',
+			attr: 'width="12" height="6"'
+		}) }}
+	</button>
+	<div class="rent-period-select__dropdown" data-rent-period-list>
+		{% set periods = props.periods if props.periods else [
+			{ value: '1-7', label: '1-7 дней' },
+			{ value: '5-7', label: '5-7 дней' },
+			{ value: '8-15', label: '8-15 дней' },
+			{ value: '16-23', label: '16-23 дней' }
+		] %}
+		{% for period in periods %}
+			<button class="rent-period-select__option p3{% if period.active %} _active{% endif %}" type="button" data-rent-period-option="{{ period.value }}">
+				<span>{{ period.label }}</span>
+			</button>
+		{% endfor %}
+	</div>
+</div>
+{% endmacro %}

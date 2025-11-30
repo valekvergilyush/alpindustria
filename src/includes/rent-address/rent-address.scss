@@ -2,7 +2,11 @@
 	display: flex;
 	border-top: 1px solid var(--blue-dark);
 	border-bottom: 1px solid var(--blue-dark);
-    margin-bottom: rem(86);
+	margin-bottom: rem(86);
+
+	&._no-margin {
+		margin-bottom: 0;
+	}
 
 	@media (max-width: $tablet) {
 		flex-direction: column;
@@ -37,20 +41,20 @@
 		}
 	}
 
-    &__button {
-        min-width: rem(360);
-        padding: rem(16);
-        background-color: var(--blue-dark);
-        color: var(--white);
-        font-size: rem(18);
-        line-height: 1.5;
-        text-transform: uppercase;
-        @extend .animated;
+	&__button {
+		min-width: rem(360);
+		padding: rem(16);
+		background-color: var(--blue-dark);
+		color: var(--white);
+		font-size: rem(18);
+		line-height: 1.5;
+		text-transform: uppercase;
+		@extend .animated;
 
-        &:hover {
-            background-color: var(--blue-light);
-        }
-    }
+		&:hover {
+			background-color: var(--blue-light);
+		}
+	}
 
 	&__title {
 		margin: 0 0 rem(24);
@@ -76,4 +80,3 @@
 		}
 	}
 }
-

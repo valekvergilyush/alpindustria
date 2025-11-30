@@ -1,0 +1,59 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/rent-product-item/rent-product-item.nunj" import rentProductItem %}
+{% from "../components/tooltip/tooltip.nunj" import tooltip %}
+
+{% set categories = [
+	{ label: 'Карематы', opened: true },
+	{ label: 'Палатки' },
+	{ label: 'Горелки' },
+	{ label: 'Обувь' }
+] %}
+
+{% set productItems = [
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-1.png', imageSrcset: '/assets/images/catalog/item-1@2x.png 2x' },
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-2.png', imageSrcset: '/assets/images/catalog/item-2@2x.png 2x' }
+] %}
+
+<div class="rent-products-accordion">
+	{% for category in categories %}
+		<section class="rent-products-accordion__section{% if category.opened %} _opened{% endif %}" data-rent-accordion-section>
+			<h2 class="rent-products-accordion__header h7 ttu" data-rent-accordion-header>
+				<span class="rent-products-accordion__header-text">{{ category.label }}</span>
+				{{ icon({
+					iconName: 'slider-arrow-left',
+					className: 'rent-products-accordion__icon',
+					attr: 'width="22" height="22"'
+				}) }}
+			</h2>
+			<div class="rent-products-accordion__content" data-rent-accordion-content>
+				<div class="rent-products-accordion__content-inner">
+					<div class="rent-products-accordion__table-header">
+						<div class="rent-products-accordion__header-left"></div>
+						<div class="rent-products-accordion__header-right">
+							<div class="rent-products-accordion__header-col _period p3">
+                Количество дней
+								{{ tooltip({
+									className: 'rent-products-accordion__header-tooltip',
+									text: 'Указаны минимальные периоды аренды'
+								}) }}
+                </div>
+							<div class="rent-products-accordion__header-col _price p3">
+                Стоимость
+                {{ tooltip({
+									className: 'rent-products-accordion__header-tooltip',
+									text: 'Стоимость указана за выбранный период аренды'
+								}) }}
+                </div>
+							<div class="rent-products-accordion__header-col _deposit p3">Залог**</div>
+						</div>
+					</div>
+					<div class="rent-products-accordion__list">
+						{% for product in productItems %}
+							{{ rentProductItem(product) }}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+</div>
