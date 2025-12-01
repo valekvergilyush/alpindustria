@@ -8,11 +8,9 @@
 			</div>
 		{% endfor %}
 	</a>
-	<div class="rent-category-card__info">
-		<h3 class="rent-category-card__title h5 ttu">
-			<a href="{{ url }}">{{ props.name }}</a>
-		</h3>
-		<p class="rent-category-card__count p3">{{ props.count }} товаров</p>
-	</div>
+	<h3 class="rent-category-card__title h5 ttu">
+		<a href="{{ url }}">{{ props.name }}</a>
+	</h3>
+	<p class="rent-category-card__count p3">{{ props.count }} товаров</p>
 </div>
 {% endmacro %}

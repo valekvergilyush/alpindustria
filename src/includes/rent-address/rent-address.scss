@@ -23,6 +23,7 @@
 	}
 
 	&__info {
+		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -50,7 +51,11 @@
 		line-height: 1.5;
 		text-transform: uppercase;
 		@extend .animated;
-
+		@media (max-width: $mobile-lg) {
+			min-width: auto;
+			padding: rem(12);
+			width: 100%;
+		}
 		&:hover {
 			background-color: var(--blue-light);
 		}
@@ -67,9 +72,7 @@
 	&__details {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: rem(56);
 		color: var(--blue-dark);
-
 		a {
 			color: inherit;
 			@extend .animated;
@@ -77,6 +80,27 @@
 			&:hover {
 				color: $gray-dark;
 			}
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: rem(56);
+		width: 100%;
+		@media (max-width: $tablet) {
+			flex-direction: row;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: rem(24);
+			flex-direction: column;
+		}
+	}
+	&__btn-wrap {
+		@media (max-width: $tablet) {
+			align-self: flex-end;
+		}
+		@media (max-width: $mobile-lg) {
+			align-self: stretch;
 		}
 	}
 }

@@ -28,11 +28,18 @@
 		}
 
 		@media (max-width: $mobile-lg) {
-			gap: rem(40) rem(40);
+			gap: rem(20) rem(20);
 		}
 	}
 
 	&__item {
 		min-width: 0;
+        @media (max-width: $mobile-lg) {
+            border-bottom: 1px solid rgba($blue-dark, 0.2);
+            padding-bottom: rem(40);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
 	}
 }
