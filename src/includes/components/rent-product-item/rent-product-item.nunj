@@ -13,11 +13,31 @@
 			<button class="rent-product-item__details-btn p3" type="button" data-rent-product-details>
 				<span>Подробнее</span>
 				{{ icon({
-					iconName: 'arrow-down',
+					iconName: 'double-arrow-left',
 					className: 'rent-product-item__details-icon',
 					attr: 'width="24" height="24"'
 				}) }}
 			</button>
+			<div class="rent-product-item__details" data-rent-product-details-content>
+				<div class="rent-product-item__details-inner">
+					<h4 class="rent-product-item__details-title h7 ttu">Особенности</h4>
+					{% set features = props.features if props.features else [
+						'Верх: Cordura® / микрофибра',
+						'Съемный внутренник',
+						'Стелька из углеродного волокна Zamberlan® 5 мм',
+						'Промежуточная подошва: двойной слой полиуретана + Zamberlan® PCS EVO',
+						'Подошва Zamberlan® Vibram® Penia',
+						'Колодка: Z8000',
+						'Совместимость с автоматическими кошками',
+						'Вес: 2640 г (пара 42 р)'
+					] %}
+					<ul class="rent-product-item__features">
+						{% for feature in features %}
+							<li class="rent-product-item__feature p3">{{ feature }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -39,7 +59,7 @@
 			{{ button({
 				className: 'rent-product-item__book-btn',
 				text: 'забронировать',
-				icon: 'call',
+				icon: 'phone',
 				iconData: 'width="20" height="20"',
 				href: '#booking'
 			}) }}

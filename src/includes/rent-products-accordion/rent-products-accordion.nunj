@@ -20,7 +20,7 @@
 			<h2 class="rent-products-accordion__header h7 ttu" data-rent-accordion-header>
 				<span class="rent-products-accordion__header-text">{{ category.label }}</span>
 				{{ icon({
-					iconName: 'slider-arrow-left',
+					iconName: 'chevron-xl',
 					className: 'rent-products-accordion__icon',
 					attr: 'width="22" height="22"'
 				}) }}

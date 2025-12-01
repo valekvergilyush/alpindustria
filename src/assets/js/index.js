@@ -55,6 +55,8 @@ class AlpIndustry {
 				require('../../includes/rent-products-accordion/rent-products-accordion').default,
 			RentPeriodSelect: require('../../includes/components/rent-period-select/rent-period-select')
 				.default,
+			RentProductItem: require('../../includes/components/rent-product-item/rent-product-item')
+				.default,
 			Ticker: require('../../includes/components/ticker/ticker').default,
 			Counter: require('../../includes/components/counter/counter').default,
 			Tabs: require('../../includes/components/tabs/tabs').default,

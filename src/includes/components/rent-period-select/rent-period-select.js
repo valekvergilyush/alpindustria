@@ -41,6 +41,14 @@ class RentPeriodSelect {
 		document.addEventListener('click', evt => {
 			this.closeAllDropdowns(evt);
 		});
+
+		window.addEventListener('resize', () => {
+			this.dropdowns.forEach(dropdown => {
+				if (dropdown.classList.contains(ClassName.OPENED)) {
+					this.positionDropdown(dropdown);
+				}
+			});
+		});
 	}
 
 	toggleDropdown(dropdown) {
@@ -49,13 +57,43 @@ class RentPeriodSelect {
 		this.dropdowns.forEach(d => {
 			if (d !== dropdown) {
 				d.classList.remove(ClassName.OPENED);
+				this.resetDropdownPosition(d);
 			}
 		});
 
 		if (isOpened) {
 			dropdown.classList.remove(ClassName.OPENED);
+			this.resetDropdownPosition(dropdown);
 		} else {
+			this.positionDropdown(dropdown);
 			dropdown.classList.add(ClassName.OPENED);
+		}
+	}
+
+	positionDropdown(dropdown) {
+		const list = dropdown.querySelector('[data-rent-period-list]');
+		const activeOption = dropdown.querySelector('[data-rent-period-option]._active');
+
+		if (!list || !activeOption) {
+			return;
+		}
+
+		list.style.visibility = 'hidden';
+		list.style.display = 'flex';
+
+		const listRect = list.getBoundingClientRect();
+		const activeRect = activeOption.getBoundingClientRect();
+		const offset = activeRect.top - listRect.top;
+
+		list.style.transform = `translateY(-${offset}px)`;
+		list.style.visibility = '';
+		list.style.display = '';
+	}
+
+	resetDropdownPosition(dropdown) {
+		const list = dropdown.querySelector('[data-rent-period-list]');
+		if (list) {
+			list.style.transform = '';
 		}
 	}
 

@@ -70,6 +70,54 @@
 		}
 	}
 
+	&__details {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows $default-transition-duration $default-transition-function;
+
+		#{$this}._opened & {
+			grid-template-rows: 1fr;
+		}
+	}
+
+	&__details-inner {
+		overflow: hidden;
+		padding-top: rem(16);
+	}
+
+	&__details-title {
+		margin: 0 0 rem(16) 0;
+		color: var(--blue-dark);
+	}
+
+	&__features {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: rem(12);
+	}
+
+	&__feature {
+		position: relative;
+		padding-left: rem(20);
+		color: var(--gray-dark);
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: rem(8);
+			width: rem(10);
+			height: rem(6);
+			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 0.353516L6.35352 6.35352L12.3535 0.353516' stroke='%23324481' fill='none' stroke-width='1' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
+			background-size: contain;
+			background-repeat: no-repeat;
+			transform: rotate(-90deg);
+		}
+	}
+
 	&__right {
 		display: flex;
 		flex-direction: column;
@@ -96,8 +144,6 @@
 		flex: 1;
 		position: relative;
 	}
-
-	
 
 	&__price,
 	&__deposit {
