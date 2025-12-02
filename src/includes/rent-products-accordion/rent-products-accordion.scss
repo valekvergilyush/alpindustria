@@ -39,7 +39,6 @@
 
 	&__header-tooltip {
 		position: relative;
-		top: rem(4);
 	}
 
 	&__icon {
@@ -70,11 +69,11 @@
 		padding: 0 var(--container-padding) 0;
 
 		@media (max-width: $tablet) {
-			padding: rem(32) var(--container-padding) 0;
+			padding: 0 var(--container-padding) 0;
 		}
 
 		@media (max-width: $mobile-lg) {
-			padding: rem(16) var(--container-padding) 0;
+			padding: 0 var(--container-padding) 0;
 		}
 	}
 
@@ -82,14 +81,20 @@
 		display: flex;
 		padding-block: rem(16);
 		padding-inline: rem(16);
-
-		@media (max-width: $tablet) {
+		color: var(--gray-dark);
+		opacity: 0.5;
+		@media (max-width: $laptop) {
 			flex-direction: column;
+			display: none;
+
 		}
 	}
 
 	&__header-left {
 		width: 70%;
+		@media (max-width: $laptop-lg) {
+			width: 65%;
+		}
 
 		@media (max-width: $tablet) {
 			width: 100%;
@@ -102,31 +107,30 @@
 		align-items: center;
 		gap: rem(8);
 		width: 30%;
-
+		@media (max-width: $laptop-lg) {
+			width: 35%;
+		}
 		@media (max-width: $tablet) {
 			width: 100%;
 		}
 	}
 
 	&__header-col {
-		color: var(--blue-dark);
-		opacity: 0.4;
-
-		&._period {
+		&._period,
+		&._price,
+		&._deposit {
+			position: relative;
 			flex: 1;
-
 			@media (max-width: $tablet) {
 				width: 33.33%;
 			}
 		}
-
-		&._price,
-		&._deposit {
-			flex: 1;
-
-			@media (max-width: $tablet) {
-				width: 33.33%;
-			}
+		span {
+			white-space: nowrap;
+			position: relative;
+		}
+		button {
+			top: rem(4);
 		}
 	}
 

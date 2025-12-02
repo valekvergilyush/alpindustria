@@ -31,11 +31,13 @@
 						<div class="rent-products-accordion__header-left"></div>
 						<div class="rent-products-accordion__header-right">
 							<div class="rent-products-accordion__header-col _period p3">
-                Количество дней
+                Количество 
+                <span>дней
 								{{ tooltip({
 									className: 'rent-products-accordion__header-tooltip',
 									text: 'Указаны минимальные периоды аренды'
 								}) }}
+                </span>
                 </div>
 							<div class="rent-products-accordion__header-col _price p3">
                 Стоимость
