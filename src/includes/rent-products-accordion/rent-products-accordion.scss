@@ -125,6 +125,9 @@
 				width: 33.33%;
 			}
 		}
+		&._period{
+			flex: 0 0 40%;
+		}
 		span {
 			white-space: nowrap;
 			position: relative;
@@ -136,5 +139,14 @@
 
 	&__list{
 		margin-bottom: rem(32);
+	}
+}
+.rent-products-important {
+	padding-block: rem(80);
+	&__title {
+		margin-bottom: rem(48);
+	}
+	&__text {
+		max-width: rem(960);
 	}
 }

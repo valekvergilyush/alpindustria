@@ -1,24 +1,14 @@
-{% extends "../../templates/inner-page.nunj" %}
+{% extends "../../templates/index-page.nunj" %}
 
-{% from "../../includes/components/breadcrumbs/breadcrumbs.nunj" import breadcrumbs %}
 {% from "../../includes/components/ticker/ticker.nunj" import ticker %}
 
 {% block title %}Прокат | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_catalog' %}
-{% set locationName = locationName if locationName else 'Москва.Пролетарская' %}
-
-{% set breadcrumbsData = {
-	list: [
-		{ href: '/rent-by-call/', text: 'Прокат' },
-		{ href: '#', text: locationName }
-	]
-} %}
 
 {% block mainContent %}
 	{% set categoryName = 'Туристическое снаряжение' %}
-	<main id="catalog-main" class="page__main _pt">
-	{{ breadcrumbs(breadcrumbsData) }}
-	{% include "../../includes/rent-category-hero/rent-category-hero.nunj" %}
+	<main id="catalog-main" class="page__main">
+	{% include "../../includes/hero-catalog/hero-catalog-rent-by-call-category.nunj" %}
 	{% include "../../includes/rent-products-accordion/rent-products-accordion.nunj" %}
 	{% set rentAddressNoMargin = true %}
 	{% include "../../includes/rent-address/rent-address.nunj" %}

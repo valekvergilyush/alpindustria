@@ -25,7 +25,7 @@
 				{{ button({
 					className: 'rent-address__button',
 					text: 'связаться с прокатом',
-					href: '#contact-rent'
+					href: 'tel:+74952329779'
 					}) }}
 				</div>
 			</div>

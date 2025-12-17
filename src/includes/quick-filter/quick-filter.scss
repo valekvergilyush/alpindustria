@@ -128,6 +128,7 @@
 }
 
 .quick-filter-rent {
+	margin-top: 4rem;
 	--gap: #{rem(16)};
 	display: flex;
 	flex-direction: column;
@@ -140,6 +141,7 @@
 	}
 	@media (max-width: $mobile-lg) {
 		gap: calc(var(--gap) * 4);
+		align-items: flex-start;
 	}
 
 	&__seasons,
@@ -151,13 +153,24 @@
 		@media (max-width: $mobile-lg) {
 			flex-wrap: wrap;
 			overflow-x: auto;
-			width: 100%;
+			width: 1000px;
 			padding-inline: var(--container-padding);
 			box-sizing: border-box;
 			scrollbar-width: none;
 			@include scrollbar {
 				display: none;
 			}
+		}
+	}
+	&__locations-wrapper {
+		width: calc(100% + var(--container-padding));
+		&._opened {
+			padding-left: var(--container-padding);
+		}
+		&[data-drag-scroll] {
+			padding-bottom: rem(25);
+			margin-bottom: rem(-25);
+			@include blue-scrollbar;
 		}
 	}
 	&__season-item,

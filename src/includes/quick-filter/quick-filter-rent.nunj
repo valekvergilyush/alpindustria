@@ -32,8 +32,8 @@
 			</li>
 		{% endfor %}
 	</ul>
-
-	<ul class="quick-filter-rent__locations">
+	<div class="quick-filter-rent__locations-wrapper _grab" data-drag-scroll data-catalog-menu>
+	<ul class="quick-filter-rent__locations" data-catalog-opened>
 		{% for location in locations %}
 			<li class="quick-filter-rent__location-item">
 				{{ button({
@@ -44,4 +44,6 @@
 			</li>
 		{% endfor %}
 	</ul>
+	</div>
 </div>
+

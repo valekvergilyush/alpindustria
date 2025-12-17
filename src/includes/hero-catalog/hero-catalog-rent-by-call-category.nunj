@@ -1,0 +1,32 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="page__hero hero-catalog _rent-by-call _subcategory" data-parallax>
+	<div class="hero-catalog__bg-img-wrapper">
+		{{ picture({
+			className: 'hero-catalog__bg-img _hero',
+			path: '/assets/images/hero-services/hero-services',
+			ext: 'jpg',
+			width: 1728,
+			height: 720,
+			attr: 'aria-hidden="true"'
+		}) }}
+	</div>
+	<div class="hero-catalog__container container">
+<h1 class="hero-catalog__title ttu tac" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+			<span class="hero-catalog__title-root h7">
+				<span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+					<a class="hero-catalog__title-link" href="/rent-by-call/" itemprop="item">
+						<span itemprop="name">Прокат</span>
+					</a>
+					<meta itemprop="position" content="1"></span>
+				<span class="hero-catalog__title-separator">/</span>
+			</span>
+			<span class="hero-catalog__title-category h4" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+				<span itemprop="name">Туристическое снаряжение</span>
+				<meta itemprop="position" content="2">
+			</span>
+		</h1>
+		{% include "../quick-filter/quick-filter-rent.nunj" %}
+	</div>
+	
+</section>

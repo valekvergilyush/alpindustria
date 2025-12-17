@@ -46,7 +46,7 @@
 		min-width: rem(360);
 		padding: rem(16);
 		background-color: var(--blue-dark);
-		color: var(--white);
+		color: var(--white)!important;
 		font-size: rem(18);
 		line-height: 1.5;
 		text-transform: uppercase;

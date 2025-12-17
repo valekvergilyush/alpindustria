@@ -14,6 +14,8 @@
     }
 
 	&__left {
+		box-sizing: border-box;
+		padding-right: rem(16);
 		display: flex;
 		gap: rem(16);
 		width: 70%;
@@ -151,9 +153,9 @@
 	&__right {
 		display: flex;
 		flex-direction: column;
-		gap: rem(16);
+		gap: rem(32);
 		width: 30%;
-		justify-content: space-between;
+		justify-content: flex-start;
 		@media (max-width: $laptop-lg) {
 			width: 35%;
 		}
@@ -183,12 +185,7 @@
 	}
 
     &__period{
-        @media (max-width: $laptop) {
-            flex: 0 0 35%
-        }
-        @media (max-width: $tablet) {
-            flex: 0 0 40%
-        }
+		flex: 0 0 40%;
     }
 
     &__period-label,
@@ -233,17 +230,11 @@
 		display: flex;
 		align-items: center;
 		gap: rem(8);
-		padding: rem(16);
-		width: 100%;
-		background-color: var(--blue-dark);
-		color: var(--white);
 		font-size: rem(18);
 		text-transform: uppercase;
-		max-width: rem(360);
 		@extend .animated;
 
 		&:hover {
-			background-color: var(--blue-light);
 		}
         @media (max-width: $laptop) {
             color: var(--blue-dark);
@@ -253,6 +244,7 @@
             padding: rem(8);
             font-size: rem(14);
             max-width: 100%;
+			width: 100%;
         }
 
 		.button__icon {
