@@ -20,7 +20,7 @@
 	{ name: 'Нижний Новгород', value: 'nizhniy-novgorod' }
 ] %}
 
-<div class="quick-filter-rent" data-quick-filter-rent>
+<div class="quick-filter-rent" data-quick-filter>
 	<ul class="quick-filter-rent__seasons">
 		{% for season in seasons %}
 			<li class="quick-filter-rent__season-item">

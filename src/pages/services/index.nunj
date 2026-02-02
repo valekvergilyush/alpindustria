@@ -1,0 +1,15 @@
+{% extends "../../templates/index-page.nunj" %}
+
+{% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+
+{% block title %}Прокат | {{ super() }}{% endblock title %}
+{% set htmlClassMods = '_catalog' %}
+
+{% block mainContent %}
+	{% include "../../includes/hero-catalog/hero-catalog-rent-by-call.nunj" %}
+	<main id="catalog-main" class="page__main">
+		{% include "../../includes/rent-categories/rent-categories.nunj" %}
+		{% include "../../includes/rent-address/rent-address.nunj" %}
+		{% include ".../../includes/rent-news/rent-news.nunj" %}
+	</main>
+{% endblock %}

@@ -142,19 +142,16 @@
 	@media (max-width: $mobile-lg) {
 		gap: calc(var(--gap) * 4);
 		align-items: flex-start;
+		padding-bottom: 0;
 	}
 
 	&__seasons,
 	&__locations {
 		display: flex;
-		justify-content: flex-start;
 		flex-wrap: wrap;
 		gap: var(--gap);
 		@media (max-width: $mobile-lg) {
-			flex-wrap: wrap;
 			overflow-x: auto;
-			width: 1000px;
-			padding-inline: var(--container-padding);
 			box-sizing: border-box;
 			scrollbar-width: none;
 			@include scrollbar {
@@ -162,8 +159,22 @@
 			}
 		}
 	}
+	&__seasons {
+		justify-content: center;
+		@media (max-width: $mobile-lg) {
+			width: 100%;
+		}
+	}
+	&__locations {
+		justify-content: flex-start;
+		@media (max-width: $mobile-lg) {
+			width: 1000px;
+		}
+	}
 	&__locations-wrapper {
 		width: calc(100% + var(--container-padding));
+		margin-left: calc(0px - var(--container-padding));
+        padding-left: var(--container-padding);
 		&._opened {
 			padding-left: var(--container-padding);
 		}
