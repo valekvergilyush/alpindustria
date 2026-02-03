@@ -5,6 +5,7 @@
 		<a
 		class="{% if props.className %}{{ props.className }} {% endif %}button"
 		href="{{ props.href }}"
+		{% if props.booknow %}data-booknow{% endif %}
 		{% if props.attr %} {{ props.attr }}{% endif %}>
 			{{ buttonInner(props) }}
 		</a>

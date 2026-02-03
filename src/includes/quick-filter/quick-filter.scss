@@ -172,9 +172,13 @@
 		}
 	}
 	&__locations-wrapper {
-		width: calc(100% + var(--container-padding));
-		margin-left: calc(0px - var(--container-padding));
-        padding-left: var(--container-padding);
+		--container-max-width: #{rem(1920)};
+		max-width: max(var(--container-max-width), 100% - var(--container-padding) * 2);
+		@media (max-width: $mobile-lg) {
+			width: calc(100% + var(--container-padding));
+			margin-left: calc(0px - var(--container-padding));
+			padding-left: var(--container-padding);
+		}
 		&._opened {
 			padding-left: var(--container-padding);
 		}

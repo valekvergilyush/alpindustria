@@ -80,7 +80,8 @@
 				text: 'забронировать',
 				icon: 'phone',
 				iconData: 'width="20" height="20"',
-				href: '#booking'
+				href: 'tel:+74952329779',
+				booknow: true
 			}) }}
 		</div>
 	</div>
@@ -91,7 +92,8 @@
 				text: 'забронировать',
 				icon: 'phone',
 				iconData: 'width="20" height="20"',
-				href: '#booking'
+				href: 'tel:+74952329779',
+				booknow: true
 			}) }}
 		</div>
 </article>
