@@ -63,6 +63,7 @@ class Compare {
 		let leftPos = cols[0].getBoundingClientRect().left;
 		let xPos = 0;
 		let isScrolling = false;
+		let lastWidth = container.offsetWidth;
 
 		const updateDisabled = utils.debounce(() => {
 			isScrolling = false;
@@ -102,11 +103,15 @@ class Compare {
 		nextHeaderButton.addEventListener('click', handleScroll(1));
 
 		window.addEventListener('resize', () => {
-			container.scrollTo({ left: 0 });
-			headerContainer.scrollTo({ left: 0 });
-			xPos = 0;
-			colWidth = cols[0].offsetWidth;
-			leftPos = cols[0].getBoundingClientRect().left;
+			const currentWidth = container.offsetWidth;
+			if (currentWidth !== lastWidth) {
+				lastWidth = currentWidth;
+				container.scrollTo({ left: 0 });
+				headerContainer.scrollTo({ left: 0 });
+				xPos = 0;
+				colWidth = cols[0].offsetWidth;
+				leftPos = cols[0].getBoundingClientRect().left;
+			}
 			updateDisabled();
 		});
 
