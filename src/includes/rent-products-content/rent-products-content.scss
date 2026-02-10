@@ -1,0 +1,86 @@
+.rent-products-content {
+	margin-bottom: rem(64);
+
+	&__header-tooltip {
+		position: relative;
+	}
+
+	&__table-header {
+		display: flex;
+		padding-block: rem(16);
+		padding-inline: rem(16);
+		color: var(--gray-dark);
+		opacity: 0.5;
+		@media (max-width: $laptop) {
+			flex-direction: column;
+			display: none;
+
+		}
+	}
+
+	&__header-left {
+		width: 70%;
+		@media (max-width: $laptop-lg) {
+			width: 65%;
+		}
+
+		@media (max-width: $tablet) {
+			width: 100%;
+			margin-bottom: rem(8);
+		}
+	}
+
+	&__header-right {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		width: 30%;
+		@media (max-width: $laptop-lg) {
+			width: 35%;
+		}
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+
+	&__header-col {
+		&._period,
+		&._price,
+		&._deposit {
+			position: relative;
+			flex: 1;
+			@media (max-width: $tablet) {
+				width: 33.33%;
+			}
+		}
+		&._period{
+			flex: 0 0 40%;
+		}
+		span {
+			white-space: nowrap;
+			position: relative;
+		}
+		button {
+			top: rem(4);
+		}
+	}
+
+	&__list{
+		margin-bottom: rem(32);
+	}
+}
+.rent-products-important {
+	padding-block: rem(80);
+	@media (max-width: $mobile-lg) {
+		padding-block: rem(48);
+	}
+	&__title {
+		margin-bottom: rem(48);
+		@media (max-width: $mobile-lg) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__text {
+		max-width: rem(960);
+	}
+}

@@ -48,7 +48,7 @@
 				<div class="rent-product-item__period-label">
 					Кол-во дней
 					{{ tooltip({
-						className: 'rent-products-accordion__header-tooltip',
+						className: 'rent-products-content__header-tooltip',
 						text: 'Указаны минимальные периоды аренды'
 					}) }}			
 				</div>
@@ -61,7 +61,7 @@
 				<div class="rent-product-item__price-label">
 					Стоимость
 					{{ tooltip({
-						className: 'rent-products-accordion__header-tooltip',
+						className: 'rent-products-content__header-tooltip',
 						text: 'Стоимость указана за выбранный период аренды'
 					}) }}			
 				</div>

@@ -9,7 +9,7 @@
 	{% set categoryName = 'Туристическое снаряжение' %}
 	<main id="catalog-main" class="page__main">
 	{% include "../../includes/hero-catalog/hero-catalog-rent-by-call-category.nunj" %}
-	{% include "../../includes/rent-products-accordion/rent-products-accordion.nunj" %}
+	{% include "../../includes/rent-products-content/rent-products-content.nunj" %}
 	{% set rentAddressNoMargin = true %}
 	{% include "../../includes/rent-address/rent-address.nunj" %}
 	{% set rentCategoriesLimit = 2 %}

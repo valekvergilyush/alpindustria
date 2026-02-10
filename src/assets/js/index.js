@@ -51,8 +51,8 @@ class AlpIndustry {
 			Catalog: require('../../includes/catalog/catalog').default,
 			ProductSlider: require('../../includes/components/product-slider/product-slider').default,
 			CatalogAccordion: require('../../includes/catalog-accordion/catalog-accordion').default,
-			RentProductsAccordion:
-				require('../../includes/rent-products-accordion/rent-products-accordion').default,
+			PrimaryAccordion: require('../../includes/components/primary-accordion/primary-accordion')
+				.default,
 			RentPeriodSelect: require('../../includes/components/rent-period-select/rent-period-select')
 				.default,
 			RentProductItem: require('../../includes/components/rent-product-item/rent-product-item')

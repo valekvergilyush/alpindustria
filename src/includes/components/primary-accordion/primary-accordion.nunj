@@ -1,0 +1,19 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro primaryAccordion(props) %}
+<section class="primary-accordion{% if props.opened %} _opened{% endif %}{% if props.className %} {{ props.className }}{% endif %}" data-primary-accordion-section>
+	<h2 class="primary-accordion__header h7 ttu" data-primary-accordion-header>
+		<span class="primary-accordion__header-text">{{ props.headerText }}</span>
+		{{ icon({
+			iconName: 'chevron-xl',
+			className: 'primary-accordion__icon',
+			attr: 'width="22" height="22"'
+		}) }}
+	</h2>
+	<div class="primary-accordion__content" data-primary-accordion-content>
+		<div class="primary-accordion__content-inner">
+			{{ caller() }}
+		</div>
+	</div>
+</section>
+{% endmacro %}

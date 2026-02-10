@@ -2,20 +2,20 @@ const ClassName = {
 	OPENED: '_opened',
 };
 
-class RentProductsAccordion {
+class PrimaryAccordion {
 	constructor() {
 		this.init();
 	}
 
 	init() {
-		this.sections = document.querySelectorAll('[data-rent-accordion-section]');
+		this.sections = document.querySelectorAll('[data-primary-accordion-section]');
 
 		if (!this.sections.length) {
 			return;
 		}
 
 		this.sections.forEach(section => {
-			const header = section.querySelector('[data-rent-accordion-header]');
+			const header = section.querySelector('[data-primary-accordion-header]');
 
 			if (!header) {
 				return;
@@ -32,4 +32,4 @@ class RentProductsAccordion {
 	}
 }
 
-export default new RentProductsAccordion();
+export default new PrimaryAccordion();
