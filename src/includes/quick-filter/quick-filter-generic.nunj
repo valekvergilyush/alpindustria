@@ -1,0 +1,38 @@
+{% from "../components/button/button.nunj" import button %}
+
+{# 
+  Params:
+  - rootClass: string (required)
+  - locationsClassPrefix: string (required)
+  - seasons: array|null (optional)
+  - locations: array (required)
+#}
+
+<div class="{{ rootClass }}" data-quick-filter>
+	{% if seasons and seasons.length %}
+		<ul class="{{ rootClass }}__seasons">
+			{% for season in seasons %}
+				<li class="{{ rootClass }}__season-item">
+					{{ button({
+						className: 'button _quick-filter' + (' _active' if season.active else ''),
+						text: season.name,
+						attr: 'data-season="' + season.value + '"'
+					}) }}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<div class="{{ locationsClassPrefix }}__locations-wrapper _grab" data-drag-scroll data-catalog-menu>
+	<ul class="{{ locationsClassPrefix }}__locations" data-catalog-opened>
+		{% for location in locations %}
+			<li class="{{ locationsClassPrefix }}__location-item">
+				{{ button({
+					className: 'button _quick-filter' + (' _white-bg' if location.white else '') + (' _active' if location.active else ''),
+					text: location.name,
+					attr: 'data-location="' + location.value + '"'
+				}) }}
+			</li>
+		{% endfor %}
+	</ul>
+	</div>
+</div>

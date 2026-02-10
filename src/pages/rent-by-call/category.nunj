@@ -1,14 +1,16 @@
 {% extends "../../templates/index-page.nunj" %}
 
 {% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+{% from "../../includes/components/hero-catalog-section/hero-catalog-section.nunj" import heroCatalogSection %}
 
 {% block title %}Прокат | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_catalog' %}
 
 {% block mainContent %}
-	{% set categoryName = 'Туристическое снаряжение' %}
 	<main id="catalog-main" class="page__main">
-	{% include "../../includes/hero-catalog/hero-catalog-rent-by-call-category.nunj" %}
+	{% call heroCatalogSection('Прокат', '_rent-by-call _subcategory', '/assets/images/hero-services/hero-services', 'Туристическое снаряжение', '/rent-by-call/') %}
+		{% include "../../includes/quick-filter/quick-filter-rent.nunj" %}
+	{% endcall %}
 	{% include "../../includes/rent-products-content/rent-products-content.nunj" %}
 	{% set rentAddressNoMargin = true %}
 	{% include "../../includes/rent-address/rent-address.nunj" %}

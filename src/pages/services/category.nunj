@@ -1,12 +1,15 @@
 {% extends "../../templates/inner-page.nunj" %}
 
 {% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+{% from "../../includes/components/hero-catalog-section/hero-catalog-section.nunj" import heroCatalogSection %}
 
 {% block title %}Сервисы | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_catalog' %}
 
 {% block mainContent %}
-	{% include "../../includes/hero-catalog/hero-services-new.nunj" %}
+	{% call heroCatalogSection('Сервисы', '_services-new', '/assets/images/services/services-hero', none, none, true) %}
+		{% include "../../includes/quick-filter/quick-filter-services-new.nunj" %}
+	{% endcall %}
 	<main id="catalog-main" class="page__main">
 		{% include "../../includes/services-categories/services-categories.nunj" %}
 	</main>
