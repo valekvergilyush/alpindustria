@@ -1,6 +1,39 @@
 {% from "../components/primary-accordion/primary-accordion.nunj" import primaryAccordion %}
 {% from "../components/rent-product-item/rent-product-item.nunj" import rentProductItem %}
 {% from "../components/tooltip/tooltip.nunj" import tooltip %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/shop-card/shop-card.nunj" import shopCard %}
+
+{% set shopCardsList = [
+	{
+		address: 'ул. Первомайская, 18',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'Сколковское шоссе, 31, ТВЦ СпортХит, 3 этаж, пав. 14',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'ул. Смольная, 63Б, ТЦ Экстрим, 3 этаж, Л-18',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'ул. Смольная, 63Б, TЦ Экстрим, 2 этаж, Д-3',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	}
+] %}
 
 {% set categories = [
 	{ label: 'Установка креплений', opened: true },
