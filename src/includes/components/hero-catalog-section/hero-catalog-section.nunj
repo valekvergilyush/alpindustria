@@ -1,12 +1,12 @@
 {% from "../picture/picture.nunj" import picture %}
 
-{% macro heroCatalogSection(title, sectionMod, imagePath, categoryName, rootUrl, isSimpleImage) %}
+{% macro heroCatalogSection(title, sectionMod, imagePath, categoryName, rootUrl, isSimpleImage, imageExt='jpg') %}
 <section class="page__hero hero-catalog {{ sectionMod }}" data-parallax>
 	<div class="hero-catalog__bg-img-wrapper">
 		{{ picture({
 			className: 'hero-catalog__bg-img _hero',
 			path: imagePath,
-			ext: 'jpg',
+			ext: imageExt,
 			width: 1728,
 			height: 720,
 			attr: 'aria-hidden="true"',

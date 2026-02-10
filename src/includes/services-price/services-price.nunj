@@ -1,4 +1,4 @@
-<table class="services-price">
+<table class="services-price {{ classModificator }}">
 	<tr class="services-price__row">
 		<td class="services-price__name h7 ttu">Заточка ледоруба</td>
 		<td class="services-price__price p1 c-gray-dark">от 300 ₽</td>

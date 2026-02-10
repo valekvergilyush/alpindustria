@@ -57,4 +57,18 @@
 			text-align: right;
 		}
 	}
+	&._new{
+		.services-price__name{
+			width: 55%;
+			@media (max-width: $laptop-lg) {
+				width: 50%;
+			}
+			@media (max-width: $laptop-md) {
+				width: 50%;
+			}
+			@media (max-width: $laptop-sm) {
+				width: 336px;
+			}
+		}
+	}
 }

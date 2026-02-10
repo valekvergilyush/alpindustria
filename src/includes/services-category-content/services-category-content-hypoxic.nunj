@@ -1,0 +1,65 @@
+{% from "../components/primary-accordion/primary-accordion.nunj" import primaryAccordion %}
+{% from "../components/rent-product-item/rent-product-item.nunj" import rentProductItem %}
+{% from "../components/tooltip/tooltip.nunj" import tooltip %}
+
+{% set categories = [
+	{ label: 'Установка креплений', opened: true },
+	{ label: 'Термоформовка' },
+	{ label: 'Ремонт лыж и сноубордов' },
+	{ label: 'Обработка парафином' }
+] %}
+
+{% set productItems = [
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-1.png', imageSrcset: '/assets/images/catalog/item-1@2x.png 2x' },
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-2.png', imageSrcset: '/assets/images/catalog/item-2@2x.png 2x' }
+] %}
+<div class="rent-products-important pb-0">
+	<div class="container _mt">
+		<div class="h5 ttu rent-products-important__title">Об услуге</div>
+		<p class="p1 c-black">
+			Возможные варианты тренировок:<br/>
+			1. Пассивные. Дыхание газовой смесью через маску сидя в кресле.<br/>
+			2. Активные. Дыхание через маску с получением физической нагрузки на беговой дорожке. Есть возможность добавить дополнительный вес.<br/>
+			3. Аренда гипоксической палатки — забираешь оборудование домой и тренируешься в удобном режиме.<br/><br/>
+		</p>
+		<p class="p1 c-black">
+			Для достижения наилучшей эффективности и безопасности мы пишем программу тренировок для каждого индивидуально.
+			Её разрабатывает специалист с огромным опытом Селиванов Андрей Федорович - врач по спортивной медицине НЦСМ ФМБА, врач анестезиолог-реаниматолог, КМС по альпинизму, инструктор альпинизма 2 категории, участник 5 экспедиций на Эверест и одной на К2 в качестве врача экспедиций. Андрей Федорович 5 сезонов работал гидом на Хан-Тенгри и 5 сезонов на Монблане.
+			В процессе тренировок мониторинг вашего состояния осуществляется при помощи современного высокоточного оборудования.
+		</p>
+	</div>
+</div>
+<div class="rent-products-important">
+	<div class="container _mt">
+		<div class="h5 ttu rent-products-important__title">Важно</div>
+		<p class="p1 rent-products-important__text c-black">
+			Перед визитом лучше позвонить в магазин и уточнить, есть ли сейчас нужная услуга и какие у неё сроки, т.к. в течение сезона опции могут добавиться или убавиться, а цена измениться. Сроки зависят от конкретного магазина и графика работы мастера, но обычно мы всё делаем быстро.
+		</p>
+	</div>
+</div>
+<div class="services-category-content">
+	<div class="container _mt">
+		<div class="h5 ttu rent-products-important__title">Стоимость услуг</div>
+	</div>
+	{% for category in categories %}
+		{% call primaryAccordion({ headerText: category.label, opened: category.opened }) %}
+		<div class="services-content__block _1 _new">
+		{% set classModificator = "_new" %}
+		{% include "../services-price/services-price.nunj" %}
+		<p class="services-content__price-text p4 c-gray">*Мастер оставляет за&nbsp;собой право увеличить стоимость в&nbsp;зависимости от&nbsp;состояния кошек.<br>Перед заточкой стоимость согласовывается с&nbsp;клиентом.</p>
+	</div>
+		{% endcall %}
+	{% endfor %}
+</div>
+<div class="rent-products-important">
+	<div class="container _mt">
+		<div class="services-content__block">
+			<p class="h5 ttu">Адреса</p>
+			<div class="services-content__cards">
+							{% for card in shopCardsList %}
+								{{shopCard(card)}}
+							{% endfor %}
+						</div>
+		</div>
+	</div>
+</div>

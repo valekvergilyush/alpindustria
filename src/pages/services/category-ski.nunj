@@ -1,0 +1,15 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+{% from "../../includes/components/hero-catalog-section/hero-catalog-section.nunj" import heroCatalogSection %}
+
+{% block title %}Сервисы | {{ super() }}{% endblock title %}
+{% set htmlClassMods = '_catalog' %}
+
+{% block mainContent %}
+	{% call heroCatalogSection('Сервисы', '_services-new _subcategory', '/assets/images/services/hero-service-ski', 'Ски-сервисы и бутфитинг', '/services', true, 'webp') %}
+		{% include "../../includes/quick-filter/quick-filter-services-new.nunj" %}
+	{% endcall %}
+	{% include "../../includes/services-category-content/services-category-content.nunj" %}
+	{% include ".../../includes/catalog-accordion/catalog-accordion-article.nunj" %}
+{% endblock %}

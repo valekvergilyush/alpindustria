@@ -1,0 +1,81 @@
+{% from "../components/primary-accordion/primary-accordion.nunj" import primaryAccordion %}
+{% from "../components/rent-product-item/rent-product-item.nunj" import rentProductItem %}
+{% from "../components/tooltip/tooltip.nunj" import tooltip %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/shop-card/shop-card.nunj" import shopCard %}
+
+{% set shopCardsList = [
+	{
+		address: 'ул. Первомайская, 18',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'Сколковское шоссе, 31, ТВЦ СпортХит, 3 этаж, пав. 14',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'ул. Смольная, 63Б, ТЦ Экстрим, 3 этаж, Л-18',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	},
+	{
+		address: 'ул. Смольная, 63Б, TЦ Экстрим, 2 этаж, Д-3',
+		metro: 'м.Первомайская',
+		schedule: 'Ежедневно c 10:00 до 22:00',
+		phone: '+7&nbsp;(812)&nbsp;242&#8209;11&#8209;95',
+		email: 'info.spb@alpindustria.ru'
+	}
+] %}
+{% set categories = [
+	{ label: 'Установка креплений', opened: true },
+	{ label: 'Термоформовка' },
+	{ label: 'Ремонт лыж и сноубордов' },
+	{ label: 'Обработка парафином' }
+] %}
+
+{% set productItems = [
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-1.png', imageSrcset: '/assets/images/catalog/item-1@2x.png 2x' },
+	{ title: 'РЮКЗАК KOHLA ALPINIST GUIDE 28L ALL WEATHER JKT', image: '/assets/images/catalog/item-2.png', imageSrcset: '/assets/images/catalog/item-2@2x.png 2x' }
+] %}
+<div class="rent-products-important">
+	<div class="container _mt">
+		<div class="h5 ttu rent-products-important__title">Важно</div>
+		<p class="p1 rent-products-important__text c-black">
+			Перед визитом лучше позвонить в магазин и уточнить, есть ли сейчас нужная услуга и какие у неё сроки, т.к. в течение сезона опции могут добавиться или убавиться, а цена измениться. Сроки зависят от конкретного магазина и графика работы мастера, но обычно мы всё делаем быстро.
+		</p>
+	</div>
+</div>
+<div class="services-category-content">
+	<div class="container _mt">
+		<div class="h5 ttu rent-products-important__title">Стоимость услуг</div>
+	</div>
+	{% for category in categories %}
+		{% call primaryAccordion({ headerText: category.label, opened: category.opened }) %}
+		<div class="services-content__block _1 _new">
+		{% set classModificator = "_new" %}
+		{% include "../services-price/services-price.nunj" %}
+		<p class="services-content__price-text p4 c-gray">*Мастер оставляет за&nbsp;собой право увеличить стоимость в&nbsp;зависимости от&nbsp;состояния кошек.<br>Перед заточкой стоимость согласовывается с&nbsp;клиентом.</p>
+	</div>
+		{% endcall %}
+	{% endfor %}
+</div>
+<div class="rent-products-important">
+	<div class="container _mt">
+		<div class="services-content__block">
+			<p class="h5 ttu">Адреса</p>
+			<div class="services-content__cards">
+							{% for card in shopCardsList %}
+								{{shopCard(card)}}
+							{% endfor %}
+						</div>
+		</div>
+	</div>
+</div>

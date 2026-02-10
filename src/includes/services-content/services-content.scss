@@ -28,6 +28,9 @@
 		&._1 {
 			gap: rem(24);
 		}
+		&._new{
+			padding: rem(24) 0 rem(48);
+		}
 	}
 	&__text {
 		max-width: rem(960);

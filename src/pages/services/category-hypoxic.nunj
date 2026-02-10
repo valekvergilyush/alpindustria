@@ -7,10 +7,9 @@
 {% set htmlClassMods = '_catalog' %}
 
 {% block mainContent %}
-	{% call heroCatalogSection('Сервисы', '_services-new', '/assets/images/services/services-hero', none, none, true) %}
+	{% call heroCatalogSection('Сервисы', '_services-new _subcategory', '/assets/images/services/hero-service-hypoxic', 'Гипоксические тренировки', '/services', true, 'webp') %}
 		{% include "../../includes/quick-filter/quick-filter-services-new.nunj" %}
 	{% endcall %}
-	<main id="catalog-main" class="page__main">
-		{% include "../../includes/services-categories/services-categories.nunj" %}
-	</main>
+	{% include "../../includes/services-category-content/services-category-content-hypoxic.nunj" %}
+	{% include ".../../includes/catalog-accordion/catalog-accordion-article.nunj" %}
 {% endblock %}
