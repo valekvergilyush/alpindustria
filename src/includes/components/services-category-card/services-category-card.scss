@@ -1,0 +1,106 @@
+.services-category-card {
+	$this: &;
+	--padding: #{rem(48)};
+	--arrow-size: #{rem(72)};
+	--aspect-ratio: 780 / 540;
+	position: relative;
+	display: block;
+	aspect-ratio: var(--aspect-ratio);
+	overflow: hidden;
+	color: var(--white);
+	text-decoration: none;
+
+	@media (max-width: $laptop-lg) {
+		--padding: #{rem(32)};
+	}
+
+	@media (max-width: $laptop) {
+		--arrow-size: #{rem(64)};
+	}
+
+	@media (max-width: $mobile-lg) {
+		--padding: 16px;
+		--arrow-size: 40px;
+	}
+
+	@media (max-width: $mobile-only) {
+		--aspect-ratio: 720 / 317;
+	}
+
+	@media (max-width: $mobile-md) {
+		--aspect-ratio: 343 / 260;
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__line {
+		position: absolute;
+		top: var(--padding);
+		left: var(--padding);
+		width: calc(100% - var(--padding) * 2);
+		height: 2px;
+		background-color: var(--white);
+	}
+
+	&__arrow {
+		position: absolute;
+		right: var(--padding);
+		bottom: var(--padding);
+		width: var(--arrow-size);
+		height: var(--arrow-size);
+		background-image: inline('promo-arrow.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: background $default-transition-duration $default-transition-function;
+	}
+
+	&:hover &__arrow {
+		background-image: inline('promo-arrow-white.svg');
+	}
+
+	&__arrow-lines {
+		position: absolute;
+		top: 50%;
+		right: calc(100% + var(--padding) / 2);
+		width: calc(var(--arrow-size) * 1.5);
+		transform: translateY(-50%);
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			height: 1px;
+			background-color: var(--white);
+		}
+
+		&::before {
+			width: 100%;
+			margin-bottom: rem(8);
+		}
+
+		&::after {
+			width: 70%;
+			margin-left: auto;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		left: var(--padding);
+		bottom: var(--padding);
+		margin: 0;
+		max-width: 60%;
+
+		@media (max-width: $mobile-lg) {
+			max-width: 70%;
+		}
+	}
+}

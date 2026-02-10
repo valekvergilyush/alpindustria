@@ -1,0 +1,10 @@
+{% macro servicesCategoryCard(props) %}
+{% set url = props.url if props.url else '/services/' %}
+<a class="services-category-card" href="{{ url }}">
+	{% set img2x = props.img | replace('.webp', '@2x.webp') %}
+	<img class="services-category-card__img" src="{{ props.img }}" srcset="{{ props.img }} 1x, {{ img2x }} 2x" alt="{{ props.name }}">
+	<span class="services-category-card__line"></span>
+	<span class="services-category-card__arrow"></span>
+	<h3 class="services-category-card__title h5 ttu">{{ props.name }}</h3>
+</a>
+{% endmacro %}

@@ -150,6 +150,25 @@
 			}
 		}
 	}
+	&._services-new {
+		min-height: rem(732);
+		padding-bottom: 0;
+		@media (max-width: $laptop-lg) {
+			min-height: 632px;
+		}
+		@media (max-width: $mobile-lg) {
+			min-height: 600px;
+		}
+		#{$this}__title {
+			margin-top: auto;
+			@media (max-width: $laptop-lg) {
+				margin-top: auto;
+			}
+			@media (max-width: $laptop-sm) {
+				margin-bottom: auto;
+			}
+		}
+	}
 	&._rent {
 		#{$this}__title {
 		}

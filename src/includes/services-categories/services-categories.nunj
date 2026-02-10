@@ -1,0 +1,28 @@
+{% from "../components/services-category-card/services-category-card.nunj" import servicesCategoryCard %}
+
+{% set categories = [
+	{ name: 'Ски-сервисы<br/>и бутфитинг', url: '/services/category.html', img: '/assets/images/services/service-ski.webp' },
+	{ name: 'Гипоксические тренировки', url: '/services/category.html', img: '/assets/images/services/service-hypoxic.webp' },
+	{ name: 'Скалодром «Альпиндустрия»', url: '/services/category.html', img: '/assets/images/services/service-climb.webp' },
+	{ name: 'Прачечная<br/>PRO-стирка', url: '/services/category.html', img: '/assets/images/services/service-laundry.webp' },
+	{ name: 'Заправка баллонов', url: '/services/category.html', img: '/assets/images/services/service-refill.webp' },
+	{ name: 'Ремонт снаряжения', url: '/services/category.html', img: '/assets/images/services/service-repair.webp' },
+	{ name: 'Ремонт скальных туфель', url: '/services/category.html', img: '/assets/images/services/service-shoe-repair.webp' },
+	{ name: 'Трейд ин', url: '/services/category.html', img: '/assets/images/services/service-trade-in.webp' },
+	{ name: 'Заточка кошек, ледорубов', url: '/services/category.html', img: '/assets/images/services/service-sharpening.webp' },
+	{ name: 'Приём газовых баллонов', url: '/services/category.html', img: '/assets/images/services/service-gas.webp' },
+	{ name: 'Приём батареек', url: '/services/category.html', img: '/assets/images/services/service-battery.webp' },
+	{ name: 'Гравировка на посуде и снаряжении', url: '/services/category.html', img: '/assets/images/services/service-engraving.webp' },
+	{ name: 'Озонирование одежды', url: '/services/category.html', img: '/assets/images/services/service-ozone.webp' }
+] %}
+
+<section class="services-categories">
+	<div class="services-categories__grid">
+		{% for category in categories %}
+			<div class="services-categories__item">
+				{{ servicesCategoryCard(category) }}
+			</div>
+		{% endfor %}
+	</div>
+</section>
+

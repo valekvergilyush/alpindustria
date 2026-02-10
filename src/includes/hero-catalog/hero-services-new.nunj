@@ -1,0 +1,15 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="page__hero hero-catalog _services-new" data-parallax>
+	<div class="hero-catalog__bg-img-wrapper">
+		<div class="hero-catalog__bg-img _hero">
+			<img src="/assets/images/services/services-hero.jpg" srcset="/assets/images/services/services-hero@2x.jpg 2x" width="1728" height="720" alt="">
+		</div>
+	</div>
+	<div class="hero-catalog__container container">
+		<h1 class="hero-catalog__title ttu tac">
+			<span class="hero-catalog__title-category h4">Сервисы</span>
+		</h1>
+		{% include "../quick-filter/quick-filter-services-new.nunj" %}
+	</div>
+</section>
