@@ -1,18 +1,19 @@
 {% from "../components/button/button.nunj" import button %}
 
-{# 
+{#
   Params:
-  - rootClass: string (required)
-  - locationsClassPrefix: string (required)
+  - rootMods: string (optional, space-separated modifier classes)
   - seasons: array|null (optional)
   - locations: array (required)
 #}
 
+{% set rootClass = "quick-filter-main" + (" " + rootMods if rootMods else "") %}
+
 <div class="{{ rootClass }}" data-quick-filter>
 	{% if seasons and seasons.length %}
-		<ul class="{{ rootClass }}__seasons">
+		<ul class="quick-filter-main__seasons">
 			{% for season in seasons %}
-				<li class="{{ rootClass }}__season-item">
+				<li class="quick-filter-main__season-item">
 					{{ button({
 						className: 'button _quick-filter' + (' _active' if season.active else ''),
 						text: season.name,
@@ -22,10 +23,10 @@
 			{% endfor %}
 		</ul>
 	{% endif %}
-	<div class="{{ locationsClassPrefix }}__locations-wrapper _grab" data-drag-scroll data-catalog-menu>
-	<ul class="{{ locationsClassPrefix }}__locations" data-catalog-opened>
+	<div class="quick-filter-main__locations-wrapper _grab" data-drag-scroll data-catalog-menu>
+	<ul class="quick-filter-main__locations" data-catalog-opened>
 		{% for location in locations %}
-			<li class="{{ locationsClassPrefix }}__location-item">
+			<li class="quick-filter-main__location-item">
 				{{ button({
 					className: 'button _quick-filter' + (' _white-bg' if location.white else '') + (' _active' if location.active else ''),
 					text: location.name,

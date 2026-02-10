@@ -1,4 +1,4 @@
-{% from "../components/picture/picture.nunj" import picture %}
+{% from "../picture/picture.nunj" import picture %}
 
 {% macro heroCatalogSection(title, sectionMod, imagePath, categoryName, rootUrl, isSimpleImage) %}
 <section class="page__hero hero-catalog {{ sectionMod }}" data-parallax>

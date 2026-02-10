@@ -18,9 +18,5 @@
 	{ name: 'Нижний Новгород', value: 'nizhniy-novgorod' }
 ] %}
 
-{% include "./quick-filter-generic.nunj" with {
-	rootClass: "quick-filter-rent",
-	locationsClassPrefix: "quick-filter-rent",
-	seasons: seasons,
-	locations: locations
-} %}
+{% set rootMods = "_rent" %}
+{% include "./quick-filter-generic.nunj" %}
