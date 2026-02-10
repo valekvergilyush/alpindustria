@@ -178,7 +178,13 @@
 		}
 	}
 	&__locations {
-		justify-content: flex-start;
+		&._back-link {
+			position: relative;
+			padding-left: calc(rem(40) + var(--gap));
+			@media (max-width: $mobile-lg) {
+				padding-left: calc(rem(32) + var(--gap));
+			}
+		}
 		@media (max-width: $mobile-lg) {
 			width: 1000px;
 		}
@@ -204,6 +210,10 @@
 	&__location-item {
 		display: flex;
 		flex-shrink: 0;
+		&._back-link {
+			position: absolute;
+			left: 0;
+		}
 	}
 	.button._quick-filter {
 		border-color: var(--white);

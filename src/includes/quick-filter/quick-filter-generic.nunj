@@ -5,6 +5,7 @@
   - rootMods: string (optional, space-separated modifier classes)
   - seasons: array|null (optional)
   - locations: array (required)
+  - hasBackLink: bool (optional)
 #}
 
 {% set rootClass = "quick-filter-main" + (" " + rootMods if rootMods else "") %}
@@ -24,7 +25,18 @@
 		</ul>
 	{% endif %}
 	<div class="quick-filter-main__locations-wrapper _grab" data-drag-scroll data-catalog-menu>
-	<ul class="quick-filter-main__locations" data-catalog-opened>
+	<ul class="quick-filter-main__locations{{ ' _back-link' if hasBackLink }}" data-catalog-opened>
+		{% if hasBackLink %}
+		<li class="quick-filter-main__location-item _back-link">
+			{{ button({
+						className: 'quick-filter__button _back',
+						attr: 'aria-label="Назад"',
+						icon: 'arrow-left',
+						iconData: 'width="24" height="24"',
+						href: backLink
+					}) }}
+		</li>
+		{% endif %}
 		{% for location in locations %}
 			<li class="quick-filter-main__location-item">
 				{{ button({

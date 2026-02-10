@@ -6,8 +6,10 @@
 {% block title %}Сервисы | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_catalog' %}
 
+{% set hasBackLink = true %}
+{% set backLink = '/services' %}
 {% block mainContent %}
-	{% call heroCatalogSection('Сервисы', '_services-new _subcategory', '/assets/images/services/hero-service-ski', 'Ски-сервисы и бутфитинг', '/services', true, 'webp') %}
+	{% call heroCatalogSection('Сервисы', '_services-new _subcategory', '/assets/images/services/hero-service-ski', 'Ски-сервисы и бутфитинг', backLink, true, 'webp') %}
 		{% include "../../includes/quick-filter/quick-filter-services-new.nunj" %}
 	{% endcall %}
 	{% include "../../includes/services-category-content/services-category-content.nunj" %}
