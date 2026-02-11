@@ -1,6 +1,6 @@
 {% extends "../templates/inner-page.nunj" %}
 
-{% block title %}Трейлы | {{ super() }}{% endblock title %}
+{% block title %}Разводная страница | {{ super() }}{% endblock title %}
 
 {% block mainContent %}
 	<main class="page__main _pt">
