@@ -37,5 +37,5 @@ export default {
 		robots: 'src/assets/robots/**/*.*',
 		docs: 'src/assets/docs/**/*.*',
 	},
-	clean: 'public/',
+	clean: 'build/',
 };
