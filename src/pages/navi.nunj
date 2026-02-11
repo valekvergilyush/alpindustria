@@ -1,0 +1,9 @@
+{% extends "../templates/inner-page.nunj" %}
+
+{% block title %}Трейлы | {{ super() }}{% endblock title %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../includes/hero-navi/hero-navi.nunj" %}
+	</main>
+{% endblock %}
