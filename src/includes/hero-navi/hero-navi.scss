@@ -6,6 +6,9 @@
 	display: grid;
 	grid-template-rows: 100%;
 	overflow: hidden;
+	@media (max-width: $mobile-lg) {
+		min-height: calc(80vh - var(--header-height));
+	}
 	&._tours {
 		#{$this}__title {
 			margin-bottom: auto;
@@ -231,7 +234,7 @@
 				margin-bottom: 0;
 				&::after {
 					opacity: 1;
-					background-image: inline('promo-arrow-blue.svg');
+					background-image: inline('promo-arrow-blue-filled.svg');
 				}
 			}
 			&::after {
@@ -258,7 +261,7 @@
 				}
 				&:hover {
 					#{$this}__title::after {
-						background-image: inline('promo-arrow.svg');
+						background-image: inline('promo-arrow-white.svg');
 					}
 				}
 				#{$this}__tags {
@@ -270,8 +273,10 @@
 		}
 		@media (max-width: $mobile-lg) {
 			--arrow-size: 40px;
-			min-height: 497px;
-			margin-bottom: calc(0px - var(--item-height) * 0.88);
+			--item-height: 386px;
+			--collapsed-visible-height: 58px;
+			min-height: 400px;
+			margin-bottom: calc(0px - var(--item-height) + var(--collapsed-visible-height));
 			padding-top: 19px;
 			&:first-child {
 				border-top: 0;
