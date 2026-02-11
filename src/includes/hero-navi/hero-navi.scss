@@ -217,6 +217,10 @@
 		@media (max-width: $tablet) {
 			--item-height: 483px;
 			--visible-height: calc(var(--item-height) * 0.24);
+			--visible-padding-top: calc((var(--visible-height) - 1em) / 2);
+			--visible-height-total: calc(
+				var(--visible-height) + var(--visible-padding-top) + var(--container-padding)
+			);
 			position: relative;
 			z-index: var(--i);
 			flex-direction: column;
@@ -228,7 +232,7 @@
 			transform: none !important;
 			margin-bottom: calc(0px - var(--item-height) * 0.76);
 			transition: padding-top var(--duration) var(--easing), margin var(--duration) var(--easing);
-			padding-top: calc((var(--visible-height) - 1em) / 2);
+			padding-top: var(--visible-padding-top);
 			#{$this}__title {
 				gap: rem(16);
 				margin-bottom: 0;
@@ -275,9 +279,11 @@
 			--arrow-size: 40px;
 			--item-height: 386px;
 			--collapsed-visible-height: 58px;
+			--visible-height: var(--collapsed-visible-height);
+			--visible-padding-top: 19px;
 			min-height: 400px;
 			margin-bottom: calc(0px - var(--item-height) + var(--collapsed-visible-height));
-			padding-top: 19px;
+			padding-top: var(--visible-padding-top);
 			&:first-child {
 				border-top: 0;
 				&::after {
@@ -307,9 +313,17 @@
 			max-width: none;
 			position: absolute;
 			left: 50%;
-			top: calc(var(--visible-height) / 2);
+			top: calc(var(--visible-height-total) / 2);
 			transform: translate(-50%, -50%);
 			transition: top var(--duration) var(--easing);
+		}
+		@media (max-width: $mobile-lg) {
+			top: calc(var(--visible-height-total) / 2);
+			transform: translate(-50%, 0%);
+			transition: top var(--duration) var(--easing);
+		}
+		@media (max-width: $mobile-md) {
+			transform: translate(-50%, -50%);
 		}
 		._active & {
 			@media (max-width: $tablet) {

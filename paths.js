@@ -11,18 +11,6 @@ export default {
 		robots: 'public/',
 		docs: 'public/docs/',
 	},
-	public: {
-		html: 'public',
-		scripts: 'public/assets/js/',
-		styles: 'public/assets/css/',
-		images: 'public/assets/images/',
-		fonts: 'public/assets/fonts/',
-		sprites: 'public/assets/images/sprites/',
-		svg: 'public/assets/svg/',
-		jsons: 'public/assets/jsons/',
-		robots: 'public/',
-		docs: 'public/docs/',
-	},
 	src: {
 		templates: './src/',
 		nunj: 'src/pages/**/*.nunj',
