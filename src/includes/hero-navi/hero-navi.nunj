@@ -21,7 +21,7 @@
 ] %}
 
 <section class="hero-navi">
-	<ul class="hero-trails__list" style="--total: {{ navItems.length }};--closed: {{ navItems.length - 1 }};" data-vaccordion>
+	<ul class="hero-trails__list" style="--total: {{ navItems.length }};--closed: {{ navItems.length - 1 }};" data-vaccordion data-autoplay="true" data-autoplay-speed="3000">
 		{% for navItem in navItems %}
 			<li class="hero-navi__item{% if navItem.className %} {{ navItem.className }}{% endif %}" style="--i:{{ loop.index0 }}" data-vaccordion-item>
 				<span class="hero-navi__label h3 ttu c-blue-dark">{{ navItem.title }}</span>

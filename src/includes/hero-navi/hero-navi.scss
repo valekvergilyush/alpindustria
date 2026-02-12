@@ -39,15 +39,12 @@
 				border-color: var(--blue-dark);
 				padding-top: 19px;
 				margin-bottom: calc(0px - var(--item-height) * 1.15);
-				&._active {
-					border-left: 0;
-					border-right: 0;
-					margin-bottom: 0;
-				}
 				&:last-child {
 					margin-bottom: calc(0px - var(--item-height) * 1.1);
 				}
-				&:last-child._active {
+				&._active {
+					border-left: 0;
+					border-right: 0;
 					margin-bottom: 0;
 				}
 			}
@@ -57,12 +54,6 @@
 				padding-bottom: 22px;
 				margin-bottom: calc(0px - var(--item-height) + 110px);
 				&._active {
-					margin-bottom: 0;
-				}
-				&:last-child {
-					margin-bottom: calc(0px - var(--item-height) + 110px);
-				}
-				&:last-child._active {
 					margin-bottom: 0;
 				}
 			}
@@ -146,9 +137,13 @@
 			border-left: 0;
 			#{$this}__title {
 				transition: transform var(--duration) var(--easing);
+				transform: translate3d(0, 0, 0);
 			}
 			#{$this}__info {
 				color: var(--white);
+				& > * {
+					opacity: 1;
+				}
 			}
 			#{$this}__bg-img {
 				opacity: 1;
@@ -161,14 +156,6 @@
 				#{$this}__title::after {
 					background-image: inline('promo-arrow-white.svg');
 				}
-			}
-			#{$this}__info {
-				& > * {
-					opacity: 1;
-				}
-			}
-			#{$this}__title {
-				transform: translate3d(0, 0, 0);
 			}
 			@media (max-width: $tablet) {
 				#{$this}__title {
@@ -263,11 +250,6 @@
 				#{$this}__title::after {
 					background-image: inline('promo-arrow-white.svg');
 				}
-				&:hover {
-					#{$this}__title::after {
-						background-image: inline('promo-arrow-white.svg');
-					}
-				}
 				#{$this}__tags {
 					max-height: 200px;
 					opacity: 1;
@@ -318,9 +300,7 @@
 			transition: top var(--duration) var(--easing);
 		}
 		@media (max-width: $mobile-lg) {
-			top: calc(var(--visible-height-total) / 2);
 			transform: translate(-50%, 0%);
-			transition: top var(--duration) var(--easing);
 		}
 		@media (max-width: $mobile-md) {
 			transform: translate(-50%, -50%);
@@ -332,6 +312,7 @@
 			}
 		}
 	}
+	
 	&__title {
 		--offset-x: calc(var(--item-width) - var(--nav-item-offset) - var(--container-padding) / 2);
 		display: inline-flex;
