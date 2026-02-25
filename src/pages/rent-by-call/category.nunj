@@ -5,11 +5,12 @@
 
 {% block title %}Прокат | {{ super() }}{% endblock title %}
 {% set htmlClassMods = '_catalog' %}
-
+{% set hasBackLink = true %}
+{% set backLink = '/rent-by-call' %}
 {% block mainContent %}
 	<main id="catalog-main" class="page__main">
-	{% call heroCatalogSection('Прокат', '_rent-by-call _subcategory', '/assets/images/hero-services/hero-services', 'Туристическое снаряжение', '/rent-by-call/') %}
-		{% include "../../includes/quick-filter/quick-filter-rent.nunj" %}
+	{% call heroCatalogSection('Прокат / Москва. Пролетарская', '_rent-by-call _subcategory', '/assets/images/hero-services/hero-services', 'Туристическое снаряжение', '/rent-by-call/') %}
+		{% include "../../includes/quick-filter/quick-filter-rent-category.nunj" %}
 	{% endcall %}
 	{% include "../../includes/rent-products-content/rent-products-content.nunj" %}
 	{% set rentAddressNoMargin = true %}

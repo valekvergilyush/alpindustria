@@ -141,6 +141,9 @@
 		gap: calc(var(--gap) * 4);
 		align-items: flex-start;
 	}
+	&._rent-category {
+		align-items: flex-start;
+	}
 
 	&._rent {
 		margin-top: 4rem;

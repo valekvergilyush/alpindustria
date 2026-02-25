@@ -2,7 +2,7 @@
 import webpack from 'webpack';
 import path from 'path';
 
-import { PRODUCTION, hmrEnabled } from './config';
+import { PRODUCTION, hmrEnabled, JS_MINIFY } from './config';
 import paths from './paths';
 
 const entryPoints = {
@@ -47,7 +47,7 @@ export const config = {
 	devtool: PRODUCTION ? false : '#eval',
 	mode: PRODUCTION ? 'production' : 'development',
 	optimization: {
-		minimize: PRODUCTION,
+		minimize: PRODUCTION && JS_MINIFY,
 	},
 	watch: !PRODUCTION && !hmrEnabled,
 };

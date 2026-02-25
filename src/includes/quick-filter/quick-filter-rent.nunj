@@ -1,10 +1,7 @@
 {% set seasons = [
-	{ name: 'Зима', value: 'winter' },
-	{ name: 'Лето', value: 'summer', active: true }
 ] %}
 
 {% set locations = [
-	{ name: 'Прокат с доставкой', value: 'delivery', white: true },
 	{ name: 'Москва. Пролетарская', value: 'moscow-proletarskaya', active: true },
 	{ name: 'Москва.Измайловская', value: 'moscow-izmaylovskaya' },
 	{ name: 'Красная поляна', value: 'krasnaya-polyana' },

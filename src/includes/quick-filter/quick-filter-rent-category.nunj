@@ -1,0 +1,12 @@
+{% set seasons = [
+] %}
+
+{% set locations = [
+	{ name: 'туристическое снаряжение', value: 'tourist-equipment', active: true },
+	{ name: 'альпинистское снаряжение', value: 'climbing-equipment' },
+	{ name: 'одежда', value: 'clothes' },
+	{ name: 'обувь', value: 'shoes' }
+] %}
+
+{% set rootMods = "_rent _rent-category" %}
+{% include "./quick-filter-generic.nunj" %}

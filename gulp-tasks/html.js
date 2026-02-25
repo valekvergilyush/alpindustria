@@ -8,7 +8,7 @@ import gulpif from 'gulp-if';
 import log from 'fancy-log';
 import colors from 'ansi-colors';
 
-import { PRODUCTION } from '../config';
+import { PRODUCTION, JS_MINIFY } from '../config';
 import PATHS from '../paths';
 import * as extensions from '../src/templates/lib/extensions.js';
 import filters from '../src/templates/lib/filters.js';
@@ -57,6 +57,6 @@ export default function html() {
 				})
 			)
 		)
-		.pipe(gulpif(PRODUCTION, minifyInline()))
+		.pipe(gulpif(PRODUCTION && JS_MINIFY, minifyInline()))
 		.pipe(gulp.dest(PATHS.build.html));
 }
