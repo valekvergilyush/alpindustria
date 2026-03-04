@@ -1,10 +1,10 @@
 {% from "../components/rent-category-card/rent-category-card.nunj" import rentCategoryCard %}
 
 {% set categoryImages = [
-	{ src: '/assets/images/catalog/item-3.png', srcset: '/assets/images/catalog/item-3@2x.png 2x' },
-	{ src: '/assets/images/catalog/item-1.png', srcset: '/assets/images/catalog/item-1@2x.png 2x' },
-	{ src: '/assets/images/catalog/item-2.png', srcset: '/assets/images/catalog/item-2@2x.png 2x' },
-	{ src: '/assets/images/catalog/item-4.png', srcset: '/assets/images/catalog/item-4@2x.png 2x' }
+	{ src: '/assets/images/test-rent/item-1.webp', srcset: '/assets/images/test-rent/item-1@2x.webp 2x' },
+	{ src: '/assets/images/test-rent/item-1.webp', srcset: '/assets/images/test-rent/item-1@2x.webp 2x' },
+	{ src: '/assets/images/test-rent/item-1.webp', srcset: '/assets/images/test-rent/item-1@2x.webp 2x' },
+	{ src: '/assets/images/test-rent/item-1.webp', srcset: '/assets/images/test-rent/item-1@2x.webp 2x' }
 ] %}
 
 {% set categories = [
