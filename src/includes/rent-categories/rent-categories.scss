@@ -33,6 +33,39 @@
 		}
 	}
 
+	.activities__slider--rent-4 .activities__button {
+		display: none;
+	}
+
+	.activities__slider--rent-4 .activities__slide-img,
+	.activities__slider--rent-many .activities__slide-img {
+		height: 0;
+		padding-bottom: calc(480 / 360 * 100%);
+	}
+
+	.activities__slider--rent-3 .activities__slide-img {
+		height: 0;
+		padding-bottom: calc(480 / 575 * 100%);
+
+		@media (max-width: $tablet) {
+			padding-bottom: calc(480 / 360 * 100%);
+		}
+	}
+
+	.activities__slider--rent-2 .activities__slide-img {
+		height: 0;
+		padding-bottom: calc(480 / 864 * 100%);
+
+		@media (max-width: $tablet) {
+			padding-bottom: calc(480 / 360 * 100%);
+		}
+	}
+
+	.activities__slider[data-rent-categories] .activities__slide-img img {
+		object-fit: cover;
+		object-position: center;
+	}
+
 	&__item {
 		min-width: 0;
         @media (max-width: $mobile-lg) {

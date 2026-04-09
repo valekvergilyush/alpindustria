@@ -21,18 +21,20 @@
 ] %}
 
 <section class="hero-navi">
-	<ul class="hero-trails__list" style="--total: {{ navItems.length }};--closed: {{ navItems.length - 1 }};" data-vaccordion data-autoplay="true" data-autoplay-speed="3000">
+	<ul class="hero-trails__list" style="--total: {{ navItems.length }};--closed: {{ navItems.length - 1 }};" data-vaccordion data-autoplay="true" data-autoplay-speed="30000">
 		{% for navItem in navItems %}
 			<li class="hero-navi__item{% if navItem.className %} {{ navItem.className }}{% endif %}" style="--i:{{ loop.index0 }}" data-vaccordion-item>
-				<span class="hero-navi__label h3 ttu c-blue-dark">{{ navItem.title }}</span>
+				<a href="/prokat">
+				<span class="hero-navi__label ttu c-blue-dark">{{ navItem.title }}</span>
 				<div class="hero-navi__info">
-					<h2 class="hero-navi__title h2 ttu">{{ navItem.title }}</h2>
+					<h2 class="hero-navi__title ttu">{{ navItem.title }}</h2>
 					<div class="hero-navi__tags">
 						{% for tag in navItem.tags %}
 							<span class="hero-navi__tag button _quick-filter">{{ tag }}</span>
 						{% endfor %}
 					</div>
 				</div>
+				</a>
 				{% if navItem.img %}
 					<img class="hero-navi__bg-img" src="{{ navItem.img }}.webp" srcset="{{ navItem.img }}@2x.webp 2x" width="1289" height="900" alt="">
 				{% endif %}

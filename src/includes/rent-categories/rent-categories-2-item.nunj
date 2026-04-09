@@ -4,11 +4,7 @@
 
 {% set categories = [
 	{ name: 'Снаряжение для скитура', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-skitour.webp', src2x: '/assets/images/test-rent/bg-skitour@2x.webp 2x' },
-	{ name: 'Одежда', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-mountain.webp', src2x: '/assets/images/test-rent/bg-mountain@2x.webp 2x' },
-	{ name: 'Обувь', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-skitour.webp', src2x: '/assets/images/test-rent/bg-skitour@2x.webp 2x' },
-	{ name: 'Туристическое снаряжение', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-mountain.webp', src2x: '/assets/images/test-rent/bg-mountain@2x.webp 2x' },
-	{ name: 'Альпинистское снаряжение', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-skitour.webp', src2x: '/assets/images/test-rent/bg-skitour@2x.webp 2x' },
-	{ name: 'Лавинное снаряжение', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-mountain.webp', src2x: '/assets/images/test-rent/bg-mountain@2x.webp 2x' }
+	{ name: 'Одежда', count: 16, url: '/rent-by-call/category.html', src: '/assets/images/test-rent/bg-mountain.webp', src2x: '/assets/images/test-rent/bg-mountain@2x.webp 2x' }
 ] %}
 
 <section class="rent-categories">
@@ -25,6 +21,7 @@
 		</ul>
 
 		<div class="swiper-pagination"></div>
+
 
 		<button class="activities__button swiper-button-prev" type="button" aria-label="Previous">
 			{{ icon({

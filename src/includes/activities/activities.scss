@@ -203,3 +203,38 @@
 		}
 	}
 }
+
+.rent-categories .swiper-pagination {
+	display: none;
+	bottom: 24px;
+	@media (max-width: $tablet) {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		span {
+			display: block;
+			border: 0;
+			color: transparent;
+			box-sizing: border-box;
+			width: 10px;
+			height: 10px;
+			margin: 0;
+			border-radius: 100vmax;
+			border: 1px solid var(--white);
+			background-color: var(--white);
+			opacity: 1;
+			transition: width $default-transition-duration $default-transition-function,
+				background-color $default-transition-duration $default-transition-function;
+			&.swiper-pagination-bullet {
+				margin: 0;
+			}
+			&.swiper-pagination-bullet-active {
+				width: 43px;
+				background-color: transparent;
+			}
+		}
+	}
+	@media (max-width: $mobile-lg) {
+		bottom: 16px;
+	}
+}

@@ -1,0 +1,18 @@
+{% extends "../../templates/index-page.nunj" %}
+
+{% from "../../includes/components/ticker/ticker.nunj" import ticker %}
+{% from "../../includes/components/hero-catalog-section/hero-catalog-section.nunj" import heroCatalogSection %}
+
+{% block title %}Прокат | {{ super() }}{% endblock title %}
+{% set htmlClassMods = '_catalog' %}
+
+{% block mainContent %}
+	{% call heroCatalogSection('Прокат', '_rent', '/assets/images/hero-services/hero-services') %}
+		{% include "../../includes/quick-filter/quick-filter-rent.nunj" %}
+	{% endcall %}
+	<main id="catalog-main" class="page__main">
+		{% include "../../includes/rent-categories/rent-categories-2-item.nunj" %}
+		{% include "../../includes/rent-address/rent-address.nunj" %}
+		{% include ".../../includes/rent-news/rent-news.nunj" %}
+	</main>
+{% endblock %}
