@@ -152,36 +152,47 @@
 		&._max,
 		&._tg,
 		&._mailto {
+			--size: #{rem(72)};
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--size);
+			height: var(--size);
 			color: var(--white);
-			transition: color $default-transition-duration $default-transition-function;
+			background-color: transparent;
+			border: 2px solid currentColor;
+			border-radius: 50%;
+			transition:
+				color $default-transition-duration $default-transition-function,
+				background-color $default-transition-duration $default-transition-function;
 			&:hover {
 				color: var(--blue-dark);
+				background-color: var(--white);
+			}
+			@media (max-width: $mobile-lg) {
+				--size: 4.05rem;
 			}
 		}
 		svg {
 			display: block;
 			width: auto;
-			height: rem(64);
+			height: rem(48);
 			@media (max-width: $mobile-lg) {
-				height: 3.6rem;
+				height: 2.7rem;
 			}
 		}
 		&._max svg {
-			height: rem(54);
-			margin-top: rem(2);
+			height: rem(40);
 			@media (max-width: $mobile-lg) {
-				height: 3.06rem;
-				margin-top: 0.09rem;
+				height: 2.3rem;
 			}
 		}
 		&._mailto {
-			font-size: var(--font-size-h4);
+			font-size: var(--font-size-h5);
 			line-height: 1;
 			font-weight: var(--default-font-weight);
-			margin-top: 0;
-			margin-bottom: 0;
 			@media (max-width: $mobile-lg) {
-				font-size: 4.05rem;
+				font-size: 3rem;
 			}
 		}
 	}
