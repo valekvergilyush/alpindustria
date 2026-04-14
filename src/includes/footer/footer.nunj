@@ -5,9 +5,9 @@
 	<div class="footer__container container">
 		<div class="footer__top">
 			<div class="footer__socials">
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _vk h4 ttu" aria-label="VK">VK</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _tg h4 ttu" aria-label="Telegram">TG</a>
-				<a href="#" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _yt h4 ttu" aria-label="Youtube">YT</a>
+				<a href="https://vk.com/alpindustria_ru" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _vk h4 ttu" aria-label="VK">VK</a>
+				<a href="https://t.me/Alpindustria_ru" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _tg h4 ttu" aria-label="Telegram">TG</a>
+				<a href="https://m.youtube.com/channel/UCypaJB1cdG1cYD1A89gT9yw?sub_confirmation=1" target="_blank" rel="nofollow noopener" class="footer__social-link button _white-border _social-l _yt h4 ttu" aria-label="Youtube">YT</a>
 			</div>
 			<a href="#" class="footer__to-top" data-anchor-link aria-label="Наверх">
 				{{ icon({
@@ -19,68 +19,67 @@
 		</div>
 		<div class="footer__center">
 			<div class="footer__center-left">
-				<a href="mailto:sale@alpindustria.ru" class="footer__email ttu h5">sale@alpindustria.ru</a>
+				<div class="footer__wu">
+					<span class="footer__email ttu h5">напишите нам</span>
+					<div class="footer__socials">
+						<a href="https://max.ru/u/f9LHodD0cOJ-duf8exmakC58vhr5-BH4nkdiM4WfnX9nFsWD6EUf-bjco3E" target="_blank" rel="nofollow noopener" class="footer__social-link-wu _max button" aria-label="Max" title="Max"><img src="/assets/images/footer/writeus/max.svg" alt="Max"></a>
+						<a href="https://t.me/im_alpindustria" target="_blank" rel="nofollow noopener" class="footer__social-link-wu _tg button" aria-label="Telegram" title="Telegram"><img src="/assets/images/footer/writeus/tg.svg" alt="Telegram"></a>
+						<a href="mailto:sale@alpindustria.ru" class="footer__social-link-wu _mailto button" aria-label="MailTo" title="MailTo">@</a>
+					</div>
+				</div>
 				<ul class="footer__phones">
 					<li class="footer__phones-item h6">
 						<a href="tel:88007751630" class="footer__phone">8 800 775 16 30</a>
 					</li>
 					<li class="footer__phones-item h6">
-						<a href="tel:88125283776" class="footer__phone">8 812 528 37 76</a>
+						<a href="tel:84956455773" class="footer__phone">8 495 645 57 73</a>
+					</li>
+					<li class="footer__phones-item h6">
+						<a href="mailto:sale@alpindustria.ru" class="footer__phone">sale@alpindustria.ru</a>
 					</li>
 				</ul>
 			</div>
 			<ul class="footer__partners">
 				<li class="footer__partners-item">
-					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
+					<a href="http://alpfederation.ru" target="_blank" rel="nofollow noopener" class="footer__partner">
 						<img class="footer__partner-img"
-							src="/assets/images/footer/logo-partner-1.png"
-							srcset="/assets/images/footer/logo-partner-1@2x.png 2x"
+							src="/assets/images/footer/logo-partner-1.svg"
 							width="88"
-							height="88"
-							alt="logo-partner-1">
+							alt="Федерация Альпинизма России">
 					</a>
 				</li>
 				<li class="footer__partners-item">
-					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
-					<img
-						class="footer__partner-img"
-						src="/assets/images/footer/logo-partner-2.png"
-						srcset="/assets/images/footer/logo-partner-2@2x.png 2x"
-						width="88"
-						height="62"
-						alt="logo-partner-2">
-				</a>
-				</li>
-				<li class="footer__partners-item">
-					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
-						<img
-							class="footer__partner-img"
-							src="/assets/images/footer/logo-partner-3.png"
-							srcset="/assets/images/footer/logo-partner-3@2x.png 2x"
+					<a href="http://rmga.ru" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img class="footer__partner-img"
+							src="/assets/images/footer/logo-partner-2.svg"
 							width="88"
-							height="88"
-							alt="logo-partner-3">
+							alt="Ассоциация горных гидов России">
 					</a>
 				</li>
 				<li class="footer__partners-item">
-					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
-						<img
-							class="footer__partner-img"
+					<a href="http://www.faism.ru" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img class="footer__partner-img"
+							src="/assets/images/footer/logo-partner-3.svg"
+							width="88"
+							alt="Федерация Альпинизма и Скалолазания Москвы">
+					</a>
+				</li>
+				<li class="footer__partners-item">
+					<a href="http://www.bezengi.ru" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img class="footer__partner-img"
 							src="/assets/images/footer/logo-partner-4.png"
-							srcset="/assets/images/footer/logo-partner-4@2x.png 2x"
+							srcset="/assets/images/footer/logo-partner-4.png 2x"
 							width="88"
-							height="88"
-							alt="logo-partner-4">
+							alt="Альплагерь Безенги">
 					</a>
 				</li>
 				<li class="footer__partners-item">
-					<a href="#" target="_blank" rel="nofollow noopener" class="footer__partner">
-						<img
-							class="footer__partner-img"
-							src="/assets/images/footer/logo-partner-5.svg"
+					<a href="https://avalancheassociation.ru/" target="_blank" rel="nofollow noopener" class="footer__partner">
+						<img class="footer__partner-img"
+							src="/assets/images/footer/logo-partner-5.png"
+							srcset="/assets/images/footer/logo-partner-5.png 2x"
 							width="88"
-							height="44"
-							alt="logo-partner-5">
+							alt="Лавинная ассоциация России">
 					</a>
 				</li>
 			</ul>
@@ -89,21 +88,24 @@
 					<a href="tel:88007751630" class="footer__phone">8 800 775 16 30</a>
 				</li>
 				<li class="footer__phones-item h6">
-					<a href="tel:88125283776" class="footer__phone">8 812 528 37 76</a>
+					<a href="tel:84956455773" class="footer__phone">8 495 645 57 73</a>
+				</li>
+				<li class="footer__phones-item h6">
+					<a href="mailto:sale@alpindustria.ru" class="footer__phone">sale@alpindustria.ru</a>
 				</li>
 			</ul>
 			<ul class="footer__links">
 				<li class="footer__link-item">
-					<a href="/partner.html" class="footer__arrow-link ttu h7">Стать партнером</a>
+					<a href="/become_partner/" class="footer__arrow-link ttu h7">Стать партнером</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="/distribution.html" class="footer__arrow-link ttu h7">Дистрибьюция</a>
+					<a href="/distribution/" class="footer__arrow-link ttu h7">Дистрибуция</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="/vacancies.html" class="footer__arrow-link ttu h7">Карьера у нас</a>
+					<a href="/vacancy/" class="footer__arrow-link ttu h7">Карьера у нас</a>
 				</li>
 				<li class="footer__link-item">
-					<a href="/delivery.html" class="footer__arrow-link ttu h7">Доставка</a>
+					<a href="/service/" class="footer__arrow-link ttu h7">Доставка и оплата</a>
 				</li>
 			</ul>
 			{% include "../subscribe-form/subscribe-form.nunj" %}
@@ -114,11 +116,11 @@
 			attr: 'width="1600" height="185"'
 		}) }}
 		<div class="footer__bottom">
-			<a href="#" class="footer__link _copy p4">(c) 2020 EDELVEIS, OOO</a>
-			<a href="#" class="footer__link p4" data-popup-opener="offer-2">Условия использования сайта</a>
+			<span class="footer__link _copy p4"></span>
+			<a href="/not_public_offer.html" class="footer__link p4" data-popup-opener="offer-2">Условия использования сайта</a>
 			<a href="#" class="footer__link p4" data-popup-opener="contacts-shop">Контакты юр. лица «Интернет-магазин»</a>
 			<a href="#" class="footer__link p4" data-popup-opener="contacts-community">Контакты юр. лица «Сообщество»</a>
-			<a href="#" class="footer__link p4" data-popup-opener="contacts-distribution">Контакты юр. лица «Дистрибьюция»</a>
+			<a href="#" class="footer__link p4" data-popup-opener="contacts-distribution">Контакты юр. лица «Дистрибуция»</a>
 		</div>
 	</div>
 </footer>
