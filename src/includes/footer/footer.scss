@@ -146,19 +146,27 @@
 		a:hover {
 			color: var(--footer-hover);
 		}
-		a img:hover {
-			filter: brightness(0.9);
-		}
 	}
 	&__social-link-wu {
 		margin-right: var(--footer-spacing-2);
-		img {
+		&._max,
+		&._tg,
+		&._mailto {
+			color: var(--white);
+			transition: color $default-transition-duration $default-transition-function;
+			&:hover {
+				color: var(--blue-dark);
+			}
+		}
+		svg {
+			display: block;
+			width: auto;
 			height: rem(64);
 			@media (max-width: $mobile-lg) {
 				height: 3.6rem;
 			}
 		}
-		&._max img {
+		&._max svg {
 			height: rem(54);
 			margin-top: rem(2);
 			@media (max-width: $mobile-lg) {
@@ -167,7 +175,6 @@
 			}
 		}
 		&._mailto {
-			color: var(--white);
 			font-size: var(--font-size-h4);
 			line-height: 1;
 			font-weight: var(--default-font-weight);
