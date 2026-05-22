@@ -9,7 +9,7 @@
 	--padding-y: #{rem(120)};
 	box-sizing: border-box;
 	padding: 0 0 var(--padding-y);
-	background-color: var(--white);
+	background-color: var(--gray-light);
 	@media (max-width: $laptop-lg) {
 		--padding-y: 88px;
 	}
@@ -60,6 +60,11 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: 50% 70%;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+		&._active {
+			opacity: 1;
+		}
 	}
 	&__list {
 		position: relative;
@@ -85,7 +90,7 @@
 	&__item {
 		position: relative;
 		min-width: 0;
-		background-color: var(--white);
+		background-color: var(--gray-light);
 		transition: opacity 0.3s ease;
 		&._open {
 			z-index: 2;
@@ -100,7 +105,7 @@
 		gap: rem(24);
 		box-sizing: border-box;
 		padding: rem(40) rem(40) rem(48);
-		background-color: var(--white);
+		background-color: var(--gray-light);
 		overflow: hidden;
 		pointer-events: none;
 		opacity: 0;

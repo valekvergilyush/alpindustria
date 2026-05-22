@@ -4,7 +4,7 @@
 	--padding-y: #{rem(96)};
 	box-sizing: border-box;
 	padding: var(--padding-y) 0;
-	background-color: var(--white);
+	background-color: var(--gray-light);
 	@media (max-width: $laptop-lg) {
 		--padding-y: 72px;
 	}

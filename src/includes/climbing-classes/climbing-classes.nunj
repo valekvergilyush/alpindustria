@@ -1,0 +1,68 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/class-item/class-item.nunj" import classItem %}
+
+{% set climbingClasses = [
+	{
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен. Под руководством инструктора альпинизма ФАР Ивана Аленцева участники осваивают базовые техники альпинизма и&nbsp;технически, физически и&nbsp;психологически готовятся к&nbsp;первому выезду в&nbsp;горы.',
+		img: '/assets/images/article/article-img-3',
+		date: ['21-25', 'августа'],
+		price: '100 ₽'
+	},
+	{
+		title: 'Курс «Введение в альпинизм»',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен.',
+		img: '/assets/images/article/article-img-4',
+		date: ['21-25', 'августа'],
+		price: '175 500 ₽'
+	},
+	{
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен.',
+		img: '/assets/images/article/article-img-5',
+		date: ['21-25', 'августа'],
+		price: '175 500 ₽'
+	},
+	{
+		title: 'Мастер-класс по вязанию узлов #2',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм. Каждое занятие включает теорию и&nbsp;практику и&nbsp;длится 3&nbsp;часа. Альпинистский опыт не&nbsp;нужен.',
+		img: '/assets/images/article/article-img-3',
+		date: ['21-25', 'августа'],
+		price: '65 500 ₽'
+	},
+	{
+		title: 'Курс «Введение в альпинизм»',
+		place: 'Скалодром «Big Wall», Москва',
+		text: 'Курс из&nbsp;10&nbsp;занятий на&nbsp;скалодроме Bigwall ВДНХ от&nbsp;простого к&nbsp;сложному&nbsp;&mdash; для новичков, которые хотят открыть для себя альпинизм.',
+		img: '/assets/images/article/article-img-4',
+		date: ['21-25', 'августа'],
+		price: '12 000 ₽'
+	}
+] %}
+
+<section class="climbing-classes page__climbing-classes">
+	<h2 class="climbing-classes__title page__section-title h4 ttu">Ближайшие занятия</h2>
+
+	<div class="climbing-classes__slider swiper" data-climbing-classes>
+		<ul class="climbing-classes__list swiper-wrapper">
+			{% for item in climbingClasses %}
+				<li class="climbing-classes__slide community-classes-list__item swiper-slide">
+					{{ classItem(item) }}
+				</li>
+			{% endfor %}
+		</ul>
+
+		<div class="climbing-classes__pagination swiper-pagination"></div>
+
+		<button class="climbing-classes__button climbing-classes__button_prev swiper-button-prev" type="button" aria-label="Previous" data-climbing-classes-prev>
+			{{ icon({ iconName: 'slider-arrow-left', attr: 'width="56" height="56"' }) }}
+		</button>
+		<button class="climbing-classes__button climbing-classes__button_next swiper-button-next" type="button" aria-label="Next" data-climbing-classes-next>
+			{{ icon({ iconName: 'slider-arrow-right', attr: 'width="56" height="56"' }) }}
+		</button>
+	</div>
+</section>

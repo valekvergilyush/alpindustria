@@ -7,7 +7,7 @@
 	gap: rem(80);
 	box-sizing: border-box;
 	padding: var(--padding-y) var(--padding-x);
-	background-color: var(--white);
+	background-color: var(--gray-light);
 	@media (max-width: $laptop-lg) {
 		--padding-y: 88px;
 		gap: 56px;

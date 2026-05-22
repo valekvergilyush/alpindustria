@@ -9,6 +9,7 @@
 		{% include "../../includes/climbing-hero/climbing-hero.nunj" %}
 		{% include "../../includes/climbing-about/climbing-about.nunj" %}
 		{% include "../../includes/climbing-directions/climbing-directions.nunj" %}
+		{% include "../../includes/climbing-classes/climbing-classes.nunj" %}
 		{% include "../../includes/climbing-slider/climbing-slider.nunj" %}
 		{% include "../../includes/climbing-price/climbing-price.nunj" %}
 		{% include "../../includes/climbing-address/climbing-address.nunj" %}

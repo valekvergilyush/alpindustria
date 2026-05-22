@@ -40,12 +40,13 @@
 		<span class="word-wrapper"><span class="word">Направления</span></span>
 	</h2>
 	<div class="climbing-directions__body">
-		<div class="climbing-directions__media">
-			<img class="climbing-directions__img" src="/assets/images/community/climbing/climbing-directions.webp" alt="" aria-hidden="true">
+		<div class="climbing-directions__media" data-direction-media>
+			<img class="climbing-directions__img _active" src="/assets/images/community/climbing/climbing-directions.webp" alt="" aria-hidden="true" data-direction-media-layer>
+			<img class="climbing-directions__img" src="/assets/images/community/climbing/climbing-directions.webp" alt="" aria-hidden="true" data-direction-media-layer>
 		</div>
 		<ul class="climbing-directions__list" data-directions-list>
 			{% for item in directions %}
-				<li class="climbing-directions__item" data-direction>
+				<li class="climbing-directions__item" data-direction data-direction-image="/assets/images/community/climbing/climbing-directions-{{ (loop.index0 % 4) + 1 }}.webp">
 					<button class="climbing-directions__link" type="button" data-direction-open>
 						<span class="climbing-directions__link-title h5 ttu c-blue-light">{{ item.title | safe }}</span>
 						{{ icon({

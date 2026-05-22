@@ -21,6 +21,7 @@ class ClimbingDirections {
 			if (openBtn) {
 				const item = openBtn.closest('[data-direction]');
 				if (!item) return;
+				this.swapMedia(list, item);
 				if (this.isMobile()) {
 					item.classList.toggle('_open');
 				} else if (!item.classList.contains('_open')) {
@@ -31,6 +32,30 @@ class ClimbingDirections {
 				if (item) this.close(list, item);
 			}
 		});
+	}
+
+	swapMedia(list, item) {
+		const url = item.getAttribute('data-direction-image');
+		if (!url) return;
+		const section = list.closest('.climbing-directions');
+		const media = section ? section.querySelector('[data-direction-media]') : null;
+		if (!media) return;
+		const layers = media.querySelectorAll('[data-direction-media-layer]');
+		if (layers.length < 2) return;
+		const active = media.querySelector('[data-direction-media-layer]._active') || layers[0];
+		const next = Array.from(layers).find(l => l !== active) || layers[1];
+		if (active.getAttribute('src') === url) return;
+		const reveal = () => {
+			next.classList.add('_active');
+			active.classList.remove('_active');
+		};
+		if (next.getAttribute('src') === url && next.complete) {
+			reveal();
+			return;
+		}
+		next.onload = reveal;
+		next.setAttribute('src', url);
+		if (next.complete) reveal();
 	}
 
 	handleResize() {
