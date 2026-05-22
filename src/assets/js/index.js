@@ -75,6 +75,7 @@ class AlpIndustry {
 			ClassSlider: require('../../includes/class-slider/class-slider').default,
 			HeroTrails: require('../../includes/hero-trails/hero-trails').default,
 			TrailVideo: require('../../includes/trail-video/trail-video').default,
+			ClimbingAbout: require('../../includes/climbing-about/climbing-about').default,
 			DiscountCreateForm: require('../../includes/discount-create-form/discount-create-form')
 				.default,
 			Addresses: require('../../includes/addresses/addresses').default,

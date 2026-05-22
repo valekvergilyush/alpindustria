@@ -19,7 +19,7 @@
 	&__container {
 		position: relative;
 		padding: 0 calc(var(--arrow-size) + var(--arrow-gap));
-		@media (max-width: $mobile-lg) {
+		@media (max-width: $laptop) {
 			padding: 0;
 		}
 	}
@@ -80,7 +80,7 @@
 		&_next {
 			right: 0;
 		}
-		@media (max-width: $mobile-lg) {
+		@media (max-width: $laptop) {
 			display: none;
 		}
 	}
@@ -90,7 +90,7 @@
 		justify-content: center;
 		gap: 10px;
 		margin-top: rem(16);
-		@media (max-width: $mobile-lg) {
+		@media (max-width: $laptop) {
 			display: flex;
 		}
 		span {

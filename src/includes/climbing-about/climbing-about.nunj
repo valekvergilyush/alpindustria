@@ -8,7 +8,7 @@
 		</h2>
 		<p class="climbing-about__text p2 _anim-first" data-animation='fade-right'>В&nbsp;зимний период и&nbsp;межсезонье скалодром функционирует в&nbsp;качестве полигона для альпинистских тренировок.<br><br>А&nbsp;в&nbsp;тёплое время года здесь также будут рады скалолазам. Как опытным спортсменам, так и&nbsp;начинающим, делающим первые шаги. И, конечно&nbsp;же, детям.</p>
 	</div>
-	<div class="climbing-about__video" data-video="XzX6TmITa5I">
+	<div class="climbing-about__video" data-video="https://vk.com/video_ext.php?oid=-230124062&id=456239018&hd=2&autoplay=1&mute=1">
 		<button class="climbing-about__play-button" type="button" aria-label="Play" data-video-play>
 			{{ icon({
 				iconName: 'play',
@@ -18,9 +18,10 @@
 		{{ picture({
 			className: 'climbing-about__preview',
 			path: '/assets/images/community/climbing/climbing-about',
-			ext: 'jpg',
-			width: 880,
-			height: 660,
+			ext: 'webp',
+			width: 915,
+			height: 824,
+			isSimple: true,
 			attr: 'aria-hidden="true"'
 		}) }}
 	</div>

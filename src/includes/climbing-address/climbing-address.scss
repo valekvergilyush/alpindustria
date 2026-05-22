@@ -54,7 +54,6 @@
 	&__details {
 		display: flex;
 		flex-direction: column;
-		gap: rem(16);
 		margin-bottom: rem(40);
 
 		@media (max-width: $mobile-lg) {
@@ -89,7 +88,7 @@
 	}
 
 	&__schedule {
-		margin-top: rem(8) !important;
+		margin-top: rem(16) !important;
 	}
 
 	&__socials {
@@ -102,16 +101,26 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-width: rem(68);
-		padding: rem(10) rem(20);
+		padding: rem(8) rem(16);
 		border: 1px solid var(--blue-dark);
 		border-radius: rem(40);
 		color: var(--blue-dark);
+		font-size: rem(20);
+		line-height: 1;
 		@extend .animated;
 
 		&:hover {
 			background-color: var(--blue-dark);
 			color: var(--white);
+		}
+
+		@media (max-width: $laptop) {
+			padding: rem(6) rem(13);
+			font-size: rem(16);
+		}
+
+		@media (max-width: $mobile-lg) {
+			font-size: rem(14);
 		}
 	}
 
