@@ -1,0 +1,17 @@
+{% extends "../../templates/inner-page.nunj" %}
+
+{% block title %}Сообщество | {{ super() }}{% endblock title %}
+
+{% set htmlClassMods = '_community' %}
+
+{% block mainContent %}
+	<main class="page__main _pt">
+		{% include "../../includes/climbing-hero/climbing-hero.nunj" %}
+		{% include "../../includes/climbing-about/climbing-about.nunj" %}
+		{% include "../../includes/climbing-directions/climbing-directions.nunj" %}
+		{% include "../../includes/climbing-slider/climbing-slider.nunj" %}
+		{% include "../../includes/climbing-price/climbing-price.nunj" %}
+		{% include "../../includes/climbing-address/climbing-address.nunj" %}
+		{% include "../../includes/climbing-instructors/climbing-instructors.nunj" %}
+	</main>
+{% endblock %}

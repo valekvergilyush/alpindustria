@@ -1,0 +1,71 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set directions = [
+	{
+		title: 'Скалолазание',
+		text: 'На скалодроме регулярно проводятся различные практические курсы. Мастер-классы от&nbsp;известных альпинистов и&nbsp;скалолазов, курсы по&nbsp;узлам, страховке, мультипитчу и&nbsp;так далее. А&nbsp;в&nbsp;тёплое время года организовываются выезды на&nbsp;скалы. Но, чтобы туда поехать, нужно сперва подготовиться.<br><br>Следите за&nbsp;анонсами мероприятий в&nbsp;разделе <a href="#">«Лекции и&nbsp;практика»</a>, там вы&nbsp;найдёте много интересного.'
+	},
+	{
+		title: 'Альпинизм',
+		text: 'Полноценные альпинистские тренировки в&nbsp;черте города: ледолазание, работа с&nbsp;кошками и&nbsp;ледорубом, прохождение скально-ледовых маршрутов. Идеально для подготовки к&nbsp;восхождениям.'
+	},
+	{
+		title: 'Скалолазание<br>для&nbsp;детей',
+		text: 'Группы для детей от&nbsp;6&nbsp;лет. Тренеры с&nbsp;опытом работы с&nbsp;детьми, специальное снаряжение, дружелюбная атмосфера. Запись через администратора.'
+	},
+	{
+		title: 'Гипоксические<br>тренировки',
+		text: 'Подготовка к&nbsp;высотным восхождениям с&nbsp;использованием гипоксических масок и&nbsp;палаток. Программа подбирается индивидуально под цели восхождения.'
+	},
+	{
+		title: 'Прокат<br>снаряжения',
+		text: 'Скальные туфли, страховочные системы, верёвки, оттяжки, ледовое снаряжение&nbsp;&mdash; всё необходимое можно взять напрокат прямо на&nbsp;скалодроме.'
+	},
+	{
+		title: 'Курсы и&nbsp;мастер-классы',
+		text: 'Регулярные курсы по&nbsp;работе с&nbsp;верёвкой, страховке, спасработам и&nbsp;технике прохождения маршрутов. Ведут опытные инструкторы и&nbsp;действующие альпинисты.'
+	},
+	{
+		title: 'Праздники<br>на&nbsp;скалодроме',
+		text: 'Дни рождения, корпоративы, тимбилдинги&nbsp;&mdash; организуем активный праздник с&nbsp;инструкторами, играми на&nbsp;стенде и&nbsp;зоной для отдыха.'
+	},
+	{
+		title: 'Выездные тренировки<br>на&nbsp;скалах',
+		text: 'Выезды на&nbsp;скальные районы Подмосковья, Крыма, Кавказа и&nbsp;других регионов. Подходящие маршруты для разных уровней подготовки.'
+	}
+] %}
+
+<section class="climbing-directions page__climbing-directions">
+	<h2 class="climbing-directions__title h4 ttu c-blue-light">
+		<span class="word-wrapper"><span class="word">Направления</span></span>
+	</h2>
+	<div class="climbing-directions__body">
+		<div class="climbing-directions__media">
+			<img class="climbing-directions__img" src="/assets/images/community/climbing/climbing-directions.webp" alt="" aria-hidden="true">
+		</div>
+		<ul class="climbing-directions__list" data-directions-list>
+			{% for item in directions %}
+				<li class="climbing-directions__item" data-direction>
+					<button class="climbing-directions__link" type="button" data-direction-open>
+						<span class="climbing-directions__link-title h5 ttu c-blue-light">{{ item.title | safe }}</span>
+						{{ icon({
+							iconName: 'promo-arrow-blue',
+							className: 'climbing-directions__link-icon',
+							attr: 'width="40" height="40" aria-hidden="true"'
+						}) }}
+					</button>
+					<div class="climbing-directions__panel" aria-hidden="true">
+						<h3 class="climbing-directions__panel-title text-stroke _blue-light ttu">{{ item.title | safe }}</h3>
+						<p class="climbing-directions__panel-text p2 c-blue-light">{{ item.text | safe }}</p>
+						<button class="climbing-directions__close" type="button" data-direction-close aria-label="Закрыть">
+							{{ icon({
+								iconName: 'close-popup',
+								attr: 'width="32" height="32"'
+							}) }}
+						</button>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

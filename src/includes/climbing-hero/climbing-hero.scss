@@ -1,0 +1,111 @@
+.climbing-hero {
+	@media (max-width: $laptop-sm) {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: repeat(2, minmax(0, min(calc(100vw * 440 / 768), 440px)));
+		gap: 0;
+	}
+	@media (max-width: $mobile-lg) {
+		grid-template-rows: repeat(2, minmax(0, min(calc(100vw * 428 / 375), 428px)));
+	}
+	.community-hero__title {
+		@media (max-width: $laptop-sm) {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+			align-self: start;
+		}
+		@media (max-width: $desktop) {
+			font-size: 92px;
+		}
+		@media (max-width: $laptop-lg-2) {
+			font-size: 64px;
+		}
+		@media (max-width: $mobile-only) {
+			font-size: 80px;
+		}
+		@media (max-width: ($mobile-lg - 1px)) {
+			font-size: 38px;
+		}
+	}
+	.community-hero__text {
+		@media (max-width: $laptop-sm) {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+			align-self: end;
+			margin-bottom: rem(36);
+		}
+	}
+	.community-hero__img {
+		@media (max-width: $laptop-sm) {
+			grid-column: 1/-1;
+			grid-row: 2/3;
+			justify-self: stretch;
+			width: calc(100% + var(--padding-x) * 2);
+			height: 100%;
+			margin-inline: calc(0px - var(--padding-x));
+			overflow: hidden;
+		}
+		img {
+			@media (max-width: $laptop-sm) {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+	&__signup {
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+		padding-right: 0 !important;
+		&::before {
+			display: none !important;
+		}
+		@media (max-width: $mobile-lg) {
+			gap: 16px;
+		}
+		@media (max-width: $laptop-sm) {
+			position: relative;
+			z-index: 1;
+			grid-column: 1/-1;
+			grid-row: 2/3;
+			align-self: end;
+			justify-self: end;
+			margin-right: var(--padding-x);
+			margin-bottom: 80px;
+		}
+		@media (max-width: $mobile-lg) {
+			justify-self: end;
+			margin-right: var(--padding-x);
+		}
+	}
+	&__signup-title {
+		@media (max-width: $laptop-sm) {
+			font-size: 30px;
+		}
+		@media (max-width: $mobile-lg) {
+			font-size: 22px;
+		}
+	}
+	&__signup-socials {
+		display: flex;
+		gap: rem(16);
+		@media (max-width: $laptop-sm) {
+			gap: 11px;
+		}
+	}
+	&__signup-link.button._social-l {
+		font-size: rem(44);
+		line-height: 1;
+		padding: 12px 26px;
+		@media (max-width: $laptop-sm) {
+			padding: 10px 20px;
+			font-size: 30px;
+		}
+		@media (max-width: $mobile-lg) {
+			padding: 8px 18px;
+			font-size: 22px;
+		}
+	}
+}

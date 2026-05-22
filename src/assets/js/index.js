@@ -98,6 +98,8 @@ class AlpIndustry {
 			CartBreadcrumbs: require('../../includes/cart-breadcrumbs/cart-breadcrumbs').default,
 			ReviewForm: require('../../includes/review-form/review-form').default,
 			Activities: require('../../includes/activities/activities').default,
+			ClimbingSlider: require('../../includes/climbing-slider/climbing-slider').default,
+			ClimbingDirections: require('../../includes/climbing-directions/climbing-directions').default,
 			DiscountCard: require('../../includes/discount-card/discount-card').default,
 			TitleBlock: require('../../includes/components/title-block/title-block').default,
 			SubscriptionNews: require('../../includes/subscription-news/subscription-news').default,

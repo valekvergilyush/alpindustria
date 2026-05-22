@@ -1,0 +1,46 @@
+{% from "../components/team-section/team-section.nunj" import teamSection %}
+
+{% set instructorsList = [
+	{
+		name: 'Тимохин Артём',
+		title: 'Альпинист. Горный гид. Тренер по&nbsp;ледолазанию и&nbsp;скалолазанию',
+		info: '<p>Неоднократный финалист этапов Кубка России и&nbsp;Чемпионата Москвы по&nbsp;ледолазанию. 1&nbsp;место Кубка Федерации Альпинизма России 2024&nbsp;года. Сертифицированный инструктор по&nbsp;скалолазанию ФСР.</p>',
+		photoSrc: '/assets/images/community/instructors/artem1.webp'
+	},
+	{
+		name: 'Удалова Алиса',
+		title: 'КМС по&nbsp;спортивному туризму, инструктор',
+		info: '<p>Победитель Чемпионата России, инструктор детско-юношеского туризма, ходит походы высших категорий сложности. Сертифицированный инструктор по&nbsp;скалолазанию ФСР.</p>',
+		photoSrc: '/assets/images/community/instructors/alisa1.webp'
+	},
+	{
+		name: 'Кирилл Фомичев',
+		title: 'Тренер по&nbsp;скалолазанию',
+		info: '<p>Опыт работы с&nbsp;детьми и&nbsp;взрослыми. Практика на&nbsp;естественном рельефе в&nbsp;Турции, Таиланде и&nbsp;России. Специализация: лазание на&nbsp;трудность и&nbsp;боулдеринг. Уровень: 7C (on&nbsp;sight) и&nbsp;7B (боулдеринг). Сертифицированный инструктор по&nbsp;скалолазанию ФСР.</p>',
+		photoSrc: '/assets/images/community/instructors/kirill.webp'
+	},
+	{
+		name: 'Шеломенцев Вячеслав',
+		title: 'Тренер-инструктор по&nbsp;скалолазанию',
+		info: '<p>Сертифицированный инструктор по&nbsp;скалолазанию ФСР.</p>',
+		photoSrc: '/assets/images/community/instructors/vjacheslav.webp'
+	},
+	{
+		name: 'Логода Джонни',
+		title: 'Альпинист, инструктор',
+		info: '<p>Горный турист, инструктор детско-юношеского туризма.</p>',
+		photoSrc: '/assets/images/community/instructors/logoda.webp'
+	},
+	{
+		name: 'Екатерина Обжелян',
+		title: 'Профессиональный альпинист, инструктор',
+		info: '<p>Сертифицированный инструктор по&nbsp;скалолазанию ФСР.</p>',
+		photoSrc: '/assets/images/community/instructors/obzhelyan.webp'
+	}
+] %}
+
+{{ teamSection({
+	title: 'Наши инструкторы',
+	className: '_climbing-instructors',
+	list: instructorsList
+}) }}

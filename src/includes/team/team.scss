@@ -18,6 +18,14 @@
 			margin-bottom: 16px;
 		}
 	}
+	&._climbing-instructors &__title {
+		@media (max-width: $laptop-lg-2) {
+			font-size: 56px;
+		}
+		@media (max-width: $mobile-only) {
+			font-size: 32px;
+		}
+	}
 	&__list {
 		--gap: 1px;
 		display: flex;

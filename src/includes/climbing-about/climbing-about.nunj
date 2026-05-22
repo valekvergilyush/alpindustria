@@ -1,0 +1,27 @@
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="climbing-about page__climbing-about">
+	<div class="climbing-about__content">
+		<h2 class="climbing-about__title h4 ttu c-blue-light _anim-first" data-animation='words'>
+			<span class="word-wrapper"><span class="word">О&nbsp;скалодроме</span></span>
+		</h2>
+		<p class="climbing-about__text p2 _anim-first" data-animation='fade-right'>В&nbsp;зимний период и&nbsp;межсезонье скалодром функционирует в&nbsp;качестве полигона для альпинистских тренировок.<br><br>А&nbsp;в&nbsp;тёплое время года здесь также будут рады скалолазам. Как опытным спортсменам, так и&nbsp;начинающим, делающим первые шаги. И, конечно&nbsp;же, детям.</p>
+	</div>
+	<div class="climbing-about__video" data-video="XzX6TmITa5I">
+		<button class="climbing-about__play-button" type="button" aria-label="Play" data-video-play>
+			{{ icon({
+				iconName: 'play',
+				attr: 'width="152" height="152"'
+			}) }}
+		</button>
+		{{ picture({
+			className: 'climbing-about__preview',
+			path: '/assets/images/community/climbing/climbing-about',
+			ext: 'jpg',
+			width: 880,
+			height: 660,
+			attr: 'aria-hidden="true"'
+		}) }}
+	</div>
+</section>

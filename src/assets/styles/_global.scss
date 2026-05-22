@@ -172,6 +172,9 @@
 	&._blue-dark {
 		--stroke-color: var(--blue-dark);
 	}
+	&._blue-light {
+		--stroke-color: var(--blue-light);
+	}
 }
 
 [data-popup-wrapper='cart'] {

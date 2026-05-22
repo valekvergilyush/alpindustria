@@ -1,0 +1,96 @@
+.climbing-price {
+	--padding-x: var(--container-padding);
+	--padding-y: #{rem(120)};
+	box-sizing: border-box;
+	padding: var(--padding-y) 0 0;
+	background-color: var(--white);
+	@media (max-width: $laptop-lg) {
+		--padding-y: 88px;
+	}
+	@media (max-width: $laptop-md) {
+		--padding-y: 64px;
+	}
+	@media (max-width: $mobile-lg) {
+		--padding-y: 40px;
+	}
+	&__head {
+		padding: 0 var(--padding-x) rem(40);
+		@media (max-width: $laptop-md) {
+			padding-bottom: 24px;
+		}
+	}
+	&__title {
+		padding-top: 0.07em;
+		@media (max-width: $laptop-lg-2) {
+			font-size: 56px;
+		}
+		@media (max-width: $mobile-only) {
+			font-size: 32px;
+		}
+	}
+	&__accordion {
+		border-top: 0;
+		&:last-child {
+			border-bottom: 0;
+		}
+		.primary-accordion__content-inner {
+			padding: 0;
+		}
+	}
+	&__table {
+		display: flex;
+		flex-direction: column;
+		padding: rem(8) 0 rem(24);
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
+		gap: rem(40);
+		padding: rem(20) var(--padding-x);
+		border-bottom: 1px solid var(--gray-light);
+		&:last-child {
+			border-bottom: 0;
+		}
+		&_head {
+			padding-top: rem(24);
+			padding-bottom: rem(16);
+		}
+		@media (max-width: $laptop-md) {
+			gap: 24px;
+		}
+		@media (max-width: $laptop-sm) {
+			grid-template-columns: 1fr;
+			gap: 8px;
+			&_head {
+				display: none;
+			}
+		}
+	}
+	&__cell {
+		&_price {
+			white-space: normal;
+		}
+	}
+	&__head-text {
+		font-size: 14px;
+		line-height: 1.5;
+		color: #8a8886;
+	}
+	&__mobile-label {
+		display: none;
+		margin-bottom: 8px;
+	}
+	@media (max-width: $mobile-only) {
+		&__row {
+			gap: 16px;
+			padding-top: rem(24);
+			padding-bottom: rem(24);
+		}
+		&__cell_name {
+			margin-bottom: 8px;
+		}
+		&__mobile-label {
+			display: block;
+		}
+	}
+}

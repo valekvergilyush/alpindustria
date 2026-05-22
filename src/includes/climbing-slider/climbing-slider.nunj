@@ -1,0 +1,40 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set climbingSlides = [
+	{ src: '/assets/images/community/climbing-slider/climbing-slider' },
+	{ src: '/assets/images/community/climbing-slider/climbing-slider' },
+	{ src: '/assets/images/community/climbing-slider/climbing-slider' }
+] %}
+
+<section class="climbing-slider page__climbing-slider">
+	<div class="climbing-slider__container container">
+		<div class="climbing-slider__inner swiper" data-climbing-slider>
+			<ul class="climbing-slider__list swiper-wrapper">
+				{% for item in climbingSlides %}
+					<li class="climbing-slider__slide swiper-slide">
+						<picture class="climbing-slider__picture">
+							<source media="(max-width: 768px)" srcset="{{ item.src }}-sm.webp, {{ item.src }}-sm@2x.webp 2x" type="image/webp">
+							<source srcset="{{ item.src }}.webp, {{ item.src }}@2x.webp 2x" type="image/webp">
+							<img class="climbing-slider__img" src="{{ item.src }}.webp" srcset="{{ item.src }}@2x.webp 2x" width="1440" height="548" alt="" aria-hidden="true">
+						</picture>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<div class="climbing-slider__pagination swiper-pagination"></div>
+		</div>
+
+		<button class="climbing-slider__button climbing-slider__button_prev swiper-button-prev" type="button" aria-label="Previous" data-climbing-slider-prev>
+			{{ icon({
+				iconName: 'double-arrow-left',
+				attr: 'width="32" height="32"'
+			}) }}
+		</button>
+		<button class="climbing-slider__button climbing-slider__button_next swiper-button-next" type="button" aria-label="Next" data-climbing-slider-next>
+			{{ icon({
+				iconName: 'double-arrow-right',
+				attr: 'width="32" height="32"'
+			}) }}
+		</button>
+	</div>
+</section>

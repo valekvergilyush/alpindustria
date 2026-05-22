@@ -1,0 +1,46 @@
+{% from "../components/icon/icon.nunj" import icon %}
+
+{% set climbingAddressData = {
+	street: 'ул. Симоновский Вал, 7Б',
+	metro: 'м.Пролетарская',
+	schedule: 'По предварительной записи с&nbsp;12:00 до&nbsp;22:00',
+	phone: '+7 910 089 33 11',
+	socials: [
+		{ label: 'TG', href: 'https://t.me/Alpindustria_ru' },
+		{ label: 'VK', href: 'https://vk.com/alpindustria_ru' },
+		{ label: 'TG-БОТ', href: 'https://t.me/Alpindustria_ru' }
+	],
+	disclaimer: 'Нажимая "Зарегистрироваться",<br>вы&nbsp;соглашаетесь с&nbsp;условиями оферты',
+	cta: { text: 'Записаться на&nbsp;тренировку', href: '#' }
+} %}
+
+<section class="climbing-address page__climbing-address">
+	<div class="climbing-address__map map" data-map="address"></div>
+	<div class="climbing-address__right">
+		<div class="climbing-address__info">
+			<h2 class="climbing-address__title h5 ttu c-blue-light">Адрес и&nbsp;контакты</h2>
+			<div class="climbing-address__details">
+				<p class="climbing-address__street p1">{{ climbingAddressData.street }}</p>
+				<p class="climbing-address__metro p2"><span class="climbing-address__metro-dot" aria-hidden="true"></span>{{ climbingAddressData.metro }}</p>
+				<p class="climbing-address__schedule p2">{{ climbingAddressData.schedule | safe }}</p>
+				<p class="climbing-address__phone p2"><a href="tel:{{ climbingAddressData.phone | replace(' ', '') }}">{{ climbingAddressData.phone }}</a></p>
+			</div>
+			<div class="climbing-address__socials">
+				{% for social in climbingAddressData.socials %}
+					<a class="climbing-address__social h7 ttu" href="{{ social.href }}" target="_blank" rel="nofollow noopener">{{ social.label }}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="climbing-address__footer">
+			<p class="climbing-address__disclaimer p3">{{ climbingAddressData.disclaimer | safe }}</p>
+			<a class="climbing-address__cta ttu" href="{{ climbingAddressData.cta.href }}">
+				<span>{{ climbingAddressData.cta.text | safe }}</span>
+				{{ icon({
+					iconName: 'arrow-right',
+					className: 'climbing-address__cta-icon',
+					attr: 'width="24" height="24" aria-hidden="true"'
+				}) }}
+			</a>
+		</div>
+	</div>
+</section>

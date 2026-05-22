@@ -1,0 +1,72 @@
+{% from "../components/primary-accordion/primary-accordion.nunj" import primaryAccordion %}
+
+{% set climbingPriceItems = [
+	{
+		name: 'Самостоятельная тренировка',
+		price: 'До&nbsp;17:00&nbsp;&mdash; 500&#8381; После 17:00&nbsp;&mdash; 600&#8381;<br>Выходные и&nbsp;праздничные дни&nbsp;&mdash; 600&#8381;',
+		description: 'Разовое посещение скалодрома. Продолжительность: 3&nbsp;часа. Каждый последующий час&nbsp;&mdash; 200&#8381;'
+	},
+	{
+		name: 'Групповое занятие с&nbsp;тренером (от&nbsp;3х&nbsp;человек)',
+		price: '2000&#8381;',
+		description: 'Продолжительность: 2&nbsp;часа. Включено: вход на&nbsp;скалодром'
+	},
+	{
+		name: 'Персональное занятие с&nbsp;тренером',
+		price: '3500&#8381;',
+		description: 'Продолжительность: 2&nbsp;часа. Включено: вход на&nbsp;скалодром. Снаряжение: каска, ИСС, ССУ, ус&nbsp;самостраховки, карабин'
+	},
+	{
+		name: 'Персональное занятие с&nbsp;тренером',
+		price: '3500&#8381;',
+		description: 'Продолжительность: 2&nbsp;часа. Включено: вход на&nbsp;скалодром. Снаряжение: каска, ИСС, ССУ, ус&nbsp;самостраховки, карабин'
+	},
+	{
+		name: 'Персональное занятие с&nbsp;тренером',
+		price: '3500&#8381;',
+		description: 'Продолжительность: 2&nbsp;часа. Включено: вход на&nbsp;скалодром. Снаряжение: каска, ИСС, ССУ, ус&nbsp;самостраховки, карабин'
+	}
+] %}
+
+{% set climbingPriceCategories = [
+	{ label: 'Альпинизм', opened: true, items: climbingPriceItems },
+	{ label: 'Скалолазание', items: climbingPriceItems },
+	{ label: 'Скалолазание для детей', items: climbingPriceItems },
+	{ label: 'Прокат снаряжения', items: climbingPriceItems },
+	{ label: 'Гипоксические тренировки', items: climbingPriceItems },
+	{ label: 'Прочее', items: climbingPriceItems }
+] %}
+
+<section class="climbing-price page__climbing-price">
+	<div class="climbing-price__head">
+		<h2 class="climbing-price__title h4 ttu c-blue-light">Прайс</h2>
+	</div>
+	<div class="climbing-price__list">
+		{% for category in climbingPriceCategories %}
+			{% call primaryAccordion({ headerText: category.label, opened: category.opened, className: 'climbing-price__accordion' }) %}
+				{% if category.items.length %}
+					<div class="climbing-price__table">
+						<div class="climbing-price__row climbing-price__row_head">
+							<div class="climbing-price__cell climbing-price__cell_name climbing-price__head-text">Услуга</div>
+							<div class="climbing-price__cell climbing-price__cell_price climbing-price__head-text">Стоимость</div>
+							<div class="climbing-price__cell climbing-price__cell_desc climbing-price__head-text">Описание</div>
+						</div>
+						{% for item in category.items %}
+							<div class="climbing-price__row">
+								<div class="climbing-price__cell climbing-price__cell_name h7 ttu c-blue-light">{{ item.name | safe }}</div>
+								<div class="climbing-price__cell climbing-price__cell_price p2">
+										<div class="climbing-price__mobile-label climbing-price__head-text">Стоимость</div>
+										{{ item.price | safe }}
+									</div>
+									<div class="climbing-price__cell climbing-price__cell_desc p2">
+										<div class="climbing-price__mobile-label climbing-price__head-text">Описание</div>
+										{{ item.description | safe }}
+									</div>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+			{% endcall %}
+		{% endfor %}
+	</div>
+</section>

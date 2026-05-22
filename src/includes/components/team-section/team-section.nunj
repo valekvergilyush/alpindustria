@@ -1,0 +1,36 @@
+{% from "../button/button.nunj" import button %}
+
+{% macro teamSection(props) %}
+	<section class="team{% if props.className %} {{ props.className }}{% endif %}">
+		<div class="container">
+			<h2 class="team__title ttu h4">{{ props.title }}</h2>
+		</div>
+		<ul class="team__list" data-team-list>
+			{% for item in props.list %}
+				<li class="team__item" data-team-item>
+					<div class="team__item-details">
+						<p class="team__item-name h5 ttu">{{ item.name }}</p>
+						<p class="team__item-title p3">{{ item.title }}</p>
+						<div class="team__item-info p3">{{ item.info }}</div>
+					</div>
+					<img
+						class="team__item-photo"
+						src="{{ item.photoSrc }}"
+						{% if item.photoSrcset %}srcset="{{ item.photoSrcset }}"{% endif %}
+						width="432"
+						height="432"
+						alt=""
+					>
+				</li>
+			{% endfor %}
+		</ul>
+		{% if props.showMore %}
+			{{ button({
+				className: 'team__show-more-btn _show-more',
+				text: 'Показать еще',
+				icon: 'plus-circle',
+				iconData: 'width="32" height="32"'
+			}) }}
+		{% endif %}
+	</section>
+{% endmacro %}

@@ -1,0 +1,24 @@
+{% from "../components/picture/picture.nunj" import picture %}
+
+<section class="climbing-hero community-hero page__community-hero">
+	<h1 class="community-hero__title h2 ttu _anim-first" data-animation='words'>
+		<span class="word-wrapper"><span class="word">Скалодром</span></span>
+	</h1>
+	<p class="community-hero__text p1 _anim-first" data-animation='fade-right'>Встречайте&nbsp;&mdash; наш скалодром на&nbsp;Пролетарской для всех и&nbsp;каждого! Теперь в&nbsp;Москве стало на&nbsp;одно отличное место для тренировок и&nbsp;отдыха больше&nbsp;&mdash; мы&nbsp;открыли новый современный скалодром.</p>
+	{{ picture({
+		className: 'community-hero__img',
+		path: '/assets/images/community/climbing/climbing-hero',
+		ext: 'webp',
+		width: 703,
+		height: 836,
+		isSimple: true,
+		attr: 'aria-hidden="true"'
+	}) }}
+	<div class="climbing-hero__signup community-hero__link">
+		<span class="climbing-hero__signup-title h5 ttu">Записаться<br> на&nbsp;тренировку</span>
+		<div class="climbing-hero__signup-socials">
+			<a href="https://t.me/Alpindustria_ru" target="_blank" rel="nofollow noopener" class="climbing-hero__signup-link button _white-border _social-l _tg h4 ttu" aria-label="Telegram">TG</a>
+			<a href="https://vk.com/alpindustria_ru" target="_blank" rel="nofollow noopener" class="climbing-hero__signup-link button _white-border _social-l _vk h4 ttu" aria-label="VK">VK</a>
+		</div>
+	</div>
+</section>
