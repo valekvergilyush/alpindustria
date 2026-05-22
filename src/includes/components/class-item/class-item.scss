@@ -6,7 +6,12 @@
 	min-height: rem(556);
 	box-sizing: border-box;
 	@media (max-width: $laptop-lg) {
-		min-height: 564px;
+		flex-direction: column;
+		min-height: auto;
+		row-gap: 24px;
+		padding: 20px;
+	}
+	&._stacked {
 		flex-direction: column;
 		min-height: auto;
 		row-gap: 24px;
@@ -44,6 +49,14 @@
 			grid-template-rows: auto auto 1fr;
 			grid-template-columns: repeat(1, auto);
 		}
+		._stacked & {
+			grid-template-areas:
+				'title'
+				'img'
+				'content';
+			grid-template-rows: auto auto 1fr;
+			grid-template-columns: repeat(1, auto);
+		}
 	}
 	&__content-inner {
 		grid-area: content;
@@ -55,6 +68,10 @@
 		grid-area: title;
 		@extend .animated;
 		@media (max-width: $laptop-lg) {
+			min-height: 62px;
+			margin-bottom: 20px;
+		}
+		._stacked & {
 			min-height: 62px;
 			margin-bottom: 20px;
 		}
@@ -75,9 +92,9 @@
 		margin-bottom: rem(96);
 		color: rgba($default-black, 0.4);
 		@media (max-width: $laptop-lg) {
-			margin-bottom: 72px;
+			margin-bottom: 16px;
 		}
-		@media (max-width: $laptop-lg) {
+		._stacked & {
 			margin-bottom: 16px;
 		}
 		@media (max-width: $mobile-lg) {
@@ -108,9 +125,9 @@
 		color: var(--gray-dark);
 		opacity: 0.7;
 		@media (max-width: $laptop-lg) {
-			-webkit-line-clamp: 11;
+			-webkit-line-clamp: 5;
 		}
-		@media (max-width: $laptop-lg) {
+		._stacked & {
 			-webkit-line-clamp: 5;
 		}
 		@media (max-width: $laptop-sm) {
@@ -130,6 +147,12 @@
 			width: 210px;
 		}
 		@media (max-width: $laptop-lg) {
+			width: 100%;
+			height: 196px;
+			margin-left: 0;
+			margin-bottom: 16px;
+		}
+		._stacked & {
 			width: 100%;
 			height: 196px;
 			margin-left: 0;
@@ -164,6 +187,10 @@
 			flex-direction: row;
 			margin-left: 0;
 		}
+		._stacked & {
+			flex-direction: row;
+			margin-left: 0;
+		}
 	}
 	&__date {
 		display: flex;
@@ -171,6 +198,11 @@
 		align-items: flex-end;
 		text-align: right;
 		@media (max-width: $laptop-lg) {
+			flex-direction: row;
+			text-align: left;
+			column-gap: 8px;
+		}
+		._stacked & {
 			flex-direction: row;
 			text-align: left;
 			column-gap: 8px;

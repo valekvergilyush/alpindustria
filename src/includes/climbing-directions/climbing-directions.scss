@@ -1,36 +1,15 @@
-@property --fill {
-	syntax: '<color>';
-	initial-value: transparent;
-	inherits: true;
-}
-
 .climbing-directions {
+	@include section-vertical-padding;
 	--padding-x: var(--container-padding);
-	--padding-y: #{rem(120)};
 	box-sizing: border-box;
 	padding: 0 0 var(--padding-y);
 	background-color: var(--gray-light);
-	@media (max-width: $laptop-lg) {
-		--padding-y: 88px;
-	}
-	@media (max-width: $laptop-md) {
-		--padding-y: 64px;
-	}
-	@media (max-width: $mobile-lg) {
-		--padding-y: 40px;
-	}
 	&__title {
-		padding: 0 var(--padding-x);
-		padding-top: 0.07em;
+		@extend %section-title-responsive;
+		padding-inline: var(--padding-x);
 		margin-bottom: rem(64);
-		@media (max-width: $laptop-lg-2) {
-			font-size: 56px;
-		}
 		@media (max-width: $laptop-md) {
 			margin-bottom: 40px;
-		}
-		@media (max-width: $mobile-only) {
-			font-size: 32px;
 		}
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 24px;
@@ -202,7 +181,7 @@
 			padding: 18px 20px;
 		}
 		&:hover .climbing-directions__link-icon {
-			--fill: currentColor;
+			fill: currentColor;
 		}
 	}
 	&__link-title {
@@ -218,7 +197,10 @@
 		flex-shrink: 0;
 		width: rem(40);
 		height: rem(40);
-		transition: --fill $default-transition-duration $default-transition-function,
+		color: var(--blue-light);
+		fill: transparent;
+		stroke: var(--blue-light);
+		transition: fill $default-transition-duration $default-transition-function,
 			transform $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop) {
 			width: 24px;
@@ -257,7 +239,6 @@
 		&__item._open &__link-title {
 			color: transparent;
 			-webkit-text-stroke: 1px var(--blue-light);
-			text-stroke: 1px var(--blue-light);
 		}
 		&__item._open &__link-icon {
 			transform: scaleX(-1);

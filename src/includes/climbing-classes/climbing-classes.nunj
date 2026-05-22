@@ -51,7 +51,7 @@
 		<ul class="climbing-classes__list swiper-wrapper">
 			{% for item in climbingClasses %}
 				<li class="climbing-classes__slide community-classes-list__item swiper-slide">
-					{{ classItem(item) }}
+					{{ classItem({ title: item.title, place: item.place, text: item.text, img: item.img, date: item.date, price: item.price, className: '_stacked' }) }}
 				</li>
 			{% endfor %}
 		</ul>

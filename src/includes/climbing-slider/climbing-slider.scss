@@ -1,20 +1,13 @@
 .climbing-slider {
+	@include section-vertical-padding($desktop: 96, $lg: 72, $md: 56);
 	--arrow-size: #{rem(32)};
 	--arrow-gap: #{rem(16)};
-	--padding-y: #{rem(96)};
 	box-sizing: border-box;
 	padding: var(--padding-y) 0;
 	background-color: var(--gray-light);
-	@media (max-width: $laptop-lg) {
-		--padding-y: 72px;
-	}
 	@media (max-width: $laptop-md) {
-		--padding-y: 56px;
 		--arrow-size: 28px;
 		--arrow-gap: 12px;
-	}
-	@media (max-width: $mobile-lg) {
-		--padding-y: 40px;
 	}
 	&__container {
 		position: relative;
@@ -93,25 +86,6 @@
 		@media (max-width: $laptop) {
 			display: flex;
 		}
-		span {
-			display: block;
-			box-sizing: border-box;
-			width: 10px;
-			height: 10px;
-			margin: 0;
-			border: 1px solid var(--blue-dark);
-			border-radius: 100vmax;
-			background-color: var(--blue-dark);
-			opacity: 1;
-			transition: width $default-transition-duration $default-transition-function,
-				background-color $default-transition-duration $default-transition-function;
-			&.swiper-pagination-bullet {
-				margin: 0;
-			}
-			&.swiper-pagination-bullet-active {
-				width: 43px;
-				background-color: transparent;
-			}
-		}
+		@include swiper-dots-pagination;
 	}
 }

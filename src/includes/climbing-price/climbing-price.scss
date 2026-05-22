@@ -1,18 +1,11 @@
 .climbing-price {
+	@include section-vertical-padding;
 	--padding-x: var(--container-padding);
-	--padding-y: #{rem(120)};
+	--row-border-color: #dcd8d5;
+	--head-text-color: #8a8886;
 	box-sizing: border-box;
 	padding: var(--padding-y) 0 0;
 	background-color: var(--gray-light);
-	@media (max-width: $laptop-lg) {
-		--padding-y: 88px;
-	}
-	@media (max-width: $laptop-md) {
-		--padding-y: 64px;
-	}
-	@media (max-width: $mobile-lg) {
-		--padding-y: 40px;
-	}
 	&__head {
 		padding: 0 var(--padding-x) rem(40);
 		@media (max-width: $laptop-md) {
@@ -20,13 +13,7 @@
 		}
 	}
 	&__title {
-		padding-top: 0.07em;
-		@media (max-width: $laptop-lg-2) {
-			font-size: 56px;
-		}
-		@media (max-width: $mobile-only) {
-			font-size: 32px;
-		}
+		@extend %section-title-responsive;
 	}
 	&__accordion {
 		border-top: 0;
@@ -47,7 +34,7 @@
 		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
 		gap: rem(40);
 		padding: rem(20) var(--padding-x);
-		border-bottom: 1px solid #dcd8d5;
+		border-bottom: 1px solid var(--row-border-color);
 		&:last-child {
 			border-bottom: 0;
 		}
@@ -74,7 +61,7 @@
 	&__head-text {
 		font-size: 14px;
 		line-height: 1.5;
-		color: #8a8886;
+		color: var(--head-text-color);
 	}
 	&__mobile-label {
 		display: none;

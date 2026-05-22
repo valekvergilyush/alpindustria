@@ -1,7 +1,7 @@
 .climbing-about {
+	@include section-vertical-padding;
 	$this: &;
 	--padding-x: var(--container-padding);
-	--padding-y: #{rem(120)};
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: rem(80);
@@ -9,19 +9,14 @@
 	padding: var(--padding-y) var(--padding-x);
 	background-color: var(--gray-light);
 	@media (max-width: $laptop-lg) {
-		--padding-y: 88px;
 		gap: 56px;
 	}
 	@media (max-width: $laptop-md) {
-		--padding-y: 64px;
 		gap: 40px;
 	}
 	@media (max-width: $laptop-sm) {
 		grid-template-columns: 1fr;
 		gap: 32px;
-	}
-	@media (max-width: $mobile-lg) {
-		--padding-y: 40px;
 	}
 	&__content {
 		display: flex;
@@ -33,13 +28,7 @@
 		}
 	}
 	&__title {
-		padding-top: 0.07em;
-		@media (max-width: $laptop-lg-2) {
-			font-size: 56px;
-		}
-		@media (max-width: $mobile-only) {
-			font-size: 32px;
-		}
+		@extend %section-title-responsive;
 	}
 	&__text {
 		max-width: rem(480);
@@ -111,9 +100,6 @@
 	&__preview {
 		position: absolute;
 		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
 		img {
 			width: 100%;
 			height: 100%;

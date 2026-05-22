@@ -168,7 +168,7 @@
 			width: auto;
 			&:hover {
 				#{$this}__link-icon {
-					--fill: var(--blue-dark);
+					fill: var(--blue-dark);
 				}
 			}
 		}
@@ -245,6 +245,9 @@
 		--size: #{rem(64)};
 		width: var(--size);
 		height: var(--size);
+		fill: transparent;
+		stroke: currentColor;
+		transition: fill $default-transition-duration $default-transition-function;
 		@media (max-width: $laptop) {
 			--size: 40px;
 		}

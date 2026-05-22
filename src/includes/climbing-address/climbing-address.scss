@@ -60,10 +60,6 @@
 			margin-bottom: rem(24);
 		}
 
-		p {
-			margin: 0;
-		}
-
 		a {
 			color: inherit;
 			@extend .animated;
@@ -88,7 +84,7 @@
 	}
 
 	&__schedule {
-		margin-top: rem(16) !important;
+		margin-top: rem(16);
 	}
 
 	&__socials {
