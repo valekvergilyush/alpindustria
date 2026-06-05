@@ -63,6 +63,10 @@ class HeroTrails {
 
 		this.triggers.forEach(trigger => {
 			trigger.addEventListener('click', evt => {
+				if (evt.currentTarget === this.activeTrigger) {
+					return;
+				}
+
 				evt.preventDefault();
 				this.switchSlide(evt.currentTarget);
 				this.startAutoplay();

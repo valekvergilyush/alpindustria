@@ -1,6 +1,7 @@
 {% set navItems = [
 	{
 		title: 'Прокат',
+		href: '/prokat/',
 		dates: '05.08.2022 – 07.08.2022',
 		img: '/assets/images/navi/navi-1',
 		tags: ['Снаряжение', 'Сноуборды', 'Лыжи', 'Палки', 'Рюкзаки', 'Лавинное снаряжение', 'Рюкзаки', 'Горнолыжные ботинки', 'Спальники', 'Карематы', 'И другое'],
@@ -8,12 +9,14 @@
 	},
 	{
 		title: 'Сервисы',
+		href: '/servisy/',
 		dates: '05.08.2022 – 07.08.2022',
 		img: '/assets/images/navi/navi-2',
 		tags: ['Бутфитинг', 'Заточка кошек', 'Заправка баллонов', 'Палки', 'Рюкзаки', 'Лавинное снаряжение', 'Рюкзаки', 'Горнолыжные ботинки', 'Спальники', 'И другое']
 	},
 	{
 		title: 'Скалодром',
+		href: '/school/skalodrom/',
 		dates: '05.08.2022 – 07.08.2022',
 		img: '/assets/images/navi/navi-3',
 		tags: ['Тренировки', 'Мастер-классы', 'Обучения', 'Палки', 'Рюкзаки', 'Лавинное снаряжение', 'Рюкзаки', 'Горнолыжные ботинки', 'Спальники', 'И другое']
@@ -24,7 +27,7 @@
 	<ul class="hero-trails__list" style="--total: {{ navItems.length }};--closed: {{ navItems.length - 1 }};" data-vaccordion data-autoplay="true" data-autoplay-speed="30000">
 		{% for navItem in navItems %}
 			<li class="hero-navi__item{% if navItem.className %} {{ navItem.className }}{% endif %}" style="--i:{{ loop.index0 }}" data-vaccordion-item>
-				<a href="/prokat">
+				<a href="{{ navItem.href }}">
 				<span class="hero-navi__label ttu c-blue-dark">{{ navItem.title }}</span>
 				<div class="hero-navi__info">
 					<h2 class="hero-navi__title ttu">{{ navItem.title }}</h2>

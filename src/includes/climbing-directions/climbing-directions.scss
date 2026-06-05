@@ -127,6 +127,18 @@
 			overflow-y: auto;
 			overscroll-behavior: contain;
 			-webkit-overflow-scrolling: touch;
+			scrollbar-width: thin;
+			scrollbar-color: var(--blue-light) transparent;
+			&::-webkit-scrollbar {
+				width: rem(4);
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: var(--blue-light);
+				border-radius: rem(2);
+			}
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
 		}
 		@media (min-width: $desktop-3) {
 			max-width: 80%;
