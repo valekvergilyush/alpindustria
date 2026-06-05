@@ -303,9 +303,6 @@
 			transition: top var(--duration) var(--easing);
 		}
 		@media (max-width: $mobile-lg) {
-			transform: translate(-50%, 0%);
-		}
-		@media (max-width: $mobile-md) {
 			transform: translate(-50%, -50%);
 		}
 		._active & {
@@ -321,6 +318,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: rem(32);
+		font-family: var(--font-family-suisse);
 		font-size: var(--font-size-h2);
 		line-height: 1.2;
 		font-weight: var(--default-font-weight);
@@ -368,13 +366,14 @@
 		@media (max-width: $mobile-lg) {
 			margin-bottom: 14px;
 		}
-		@media (max-width: $mobile-md) {
+		@media (max-width: $mobile-lg) {
 			font-size: rem(40);
 		}
 	}
 	&__label {
 		position: absolute;
 		right: 0;
+		font-family: var(--font-family-suisse);
 		font-size: var(--font-size-h3);
 		bottom: calc(var(--nav-item-offset) / 2);
 		width: var(--nav-item-offset);
@@ -451,6 +450,7 @@
 	&__tag {
 		padding-top: 0.2em !important;
 		pointer-events: none;
+		white-space: nowrap;
 		@media (max-width: $laptop) {
 			padding-inline: 19px !important;
 		}
